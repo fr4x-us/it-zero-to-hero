@@ -9,7 +9,7 @@ di setiap PR batch.
 | Item | Nilai | Sumber |
 |---|---|---|
 | Tahap | PERSIAPAN; implementasi **belum diizinkan** | [`CLAUDE.md`](../CLAUDE.md), [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) |
-| `main` saat checkpoint ditulis | `caa9d8a` (merge PR #14) | `git log` |
+| `main` saat checkpoint ditulis | `9804a05` (merge PR #15) | `git log` |
 | Kode aplikasi / proyek Gradle / workflow CI / APK | Tidak ada | isi repositori |
 | Build atau test Android pernah dijalankan | **Belum pernah** | [QUALITY_GATES.md](QUALITY_GATES.md) EV-1 |
 
@@ -31,7 +31,8 @@ di setiap PR batch.
 | #12 | [JAPAN_CALENDAR_HOLIDAY_SPEC.md](JAPAN_CALENDAR_HOLIDAY_SPEC.md) (Batch 07) | Merged 2026-11-23 sebagai `8fe5f5c` (di-merge Claude atas instruksi owner setelah review ChatGPT PASS) |
 | #13 | [UI_ACCESSIBILITY_VISUAL_SPEC.md](UI_ACCESSIBILITY_VISUAL_SPEC.md) (Batch 08) | Merged 2026-11-23 sebagai `ec74570` (di-merge Claude atas instruksi owner setelah review ChatGPT PASS) |
 | #14 | [CURRICULUM_OFFLINE_LAB_SPEC.md](CURRICULUM_OFFLINE_LAB_SPEC.md) (Batch 09) | Merged 2026-11-23 sebagai `caa9d8a` (di-merge Claude atas persetujuan eksplisit owner) |
-| PR Batch 10 | [FINAL_PLANNING_READINESS_REVIEW.md](FINAL_PLANNING_READINESS_REVIEW.md), aturan NO AUTO-MERGE ([GITHUB_BRIDGE.md](GITHUB_BRIDGE.md) §5, `CLAUDE.md`), handoff, log keputusan | Terbuka, menunggu review; **tidak di-merge Claude** |
+| #15 | [FINAL_PLANNING_READINESS_REVIEW.md](FINAL_PLANNING_READINESS_REVIEW.md), aturan NO AUTO-MERGE (Batch 10) | Merged oleh owner 2026-11-23 sebagai `9804a05` |
+| PR Audit Batch 01–10 | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) + handoff | Terbuka, menunggu review; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -41,11 +42,11 @@ merge." untuk PR itu saja ([GITHUB_BRIDGE.md](GITHUB_BRIDGE.md) §5).
 
 ## Tugas terakhir
 
-Batch 10: [FINAL_PLANNING_READINESS_REVIEW.md](FINAL_PLANNING_READINESS_REVIEW.md)
-— inventaris dokumen/PR, audit konsistensi (KS-01–KS-10), register OPEN,
-ketergantungan, kategori blocker (RB/PF/tunda), matriks prioritas,
-rekomendasi untuk owner, checklist kesiapan C-1–C-16, pekerjaan tersisa,
-dan rencana evaluasi skill. Kesimpulan: **belum siap implementasi**.
+Audit Batch 01–10: [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md)
+— status per batch (hanya Batch 02 dan NO AUTO-MERGE yang COMPLETE),
+54 pekerjaan belum selesai (P0 11, P1 14, P2 16, P3 13), audit keputusan,
+pemeriksaan konsistensi D-01–D-10, urutan penyelesaian, dan checklist
+PLANNING CLEAR. **PLANNING CLEAR: NO. IMPLEMENTATION VERIFIED: NO.**
 Status: PR terbuka, menunggu review.
 
 ## Blocker
@@ -70,9 +71,10 @@ B-2 (sumber Batch 02 belum ada) selesai di PR #7.
 
 ## Langkah berikutnya (usulan, menunggu owner)
 
-1. Review PR Batch 10 (ChatGPT) → instruksi merge eksplisit bila PASS.
-2. Keputusan owner paling mendesak: B-3, izin prototipe + batas uji O-04,
-   O-01 + minSdk (B-9), OD-3, O-07/OD-4, B-7, O-02, O-16
-   ([FINAL_PLANNING_READINESS_REVIEW.md](FINAL_PLANNING_READINESS_REVIEW.md) §5–7).
-3. Daftar delapan skill tambahan yang akan dievaluasi (PENDING SOURCE).
+1. Review PR audit (ChatGPT). Jangan lanjut tahap berikutnya sebelum owner
+   menyetujui penyelesaian audit.
+2. Keputusan P0 owner: UW-01 (Batch 01), UW-05 (DataStore), UW-09 (restore),
+   UW-11 (agregasi/basis lulus), UW-10 (O-04), UW-03/UW-04 (toolchain,
+   minSdk), UW-06–UW-08 ([BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) §3, §5).
+3. Perapian dokumentasi P3 oleh Claude setelah disetujui (UW-44–UW-51).
 4. Implementasi tetap menunggu izin eksplisit (B-1).
