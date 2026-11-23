@@ -139,11 +139,11 @@ dan tidak ada gate yang ditutup.
 
 | Gate | Status | Dokumen terkait |
 |---|---|---|
-| AB-3 | OPEN | [ANDROID_TOOLCHAIN_DECISION_SHEET.md](ANDROID_TOOLCHAIN_DECISION_SHEET.md) (O-01, PROPOSED) |
-| OF-3 | OPEN | O-02; [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
-| GR-10 | OPEN sebagian | Arah "bulatkan hanya untuk tampilan" APPROVED (TD:21); agregasi/representasi di [ASSESSMENT_STATE_MACHINE_SPEC.md](ASSESSMENT_STATE_MACHINE_SPEC.md) OP-1–OP-3 |
-| LB-2 | OPEN | [PYTHON_OFFLINE_FEASIBILITY_PLAN.md](PYTHON_OFFLINE_FEASIBILITY_PLAN.md) (O-04) |
+| AB-3 | Diputuskan sebagai baseline sementara (D-06); **NOT VERIFIED** | [ANDROID_TOOLCHAIN_DECISION_SHEET.md](ANDROID_TOOLCHAIN_DECISION_SHEET.md) |
+| OF-3 | Diputuskan (D-08: `INTERNET` untuk fitur opsional); verifikasi offline inti dan isolasi lab **NOT VERIFIED** | [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) D-08 |
+| GR-10 | OPEN sebagian | Arah "bulatkan hanya untuk tampilan" APPROVED (TD:21); basis skor terbaik dan kelulusan per modul diputuskan (D-04); agregasi program dan representasi angka tetap OPEN ([ASSESSMENT_STATE_MACHINE_SPEC.md](ASSESSMENT_STATE_MACHINE_SPEC.md) §10) |
+| LB-2 | OPEN — ambang uji disetujui (D-10), eksekusi tidak diizinkan | [PYTHON_OFFLINE_FEASIBILITY_PLAN.md](PYTHON_OFFLINE_FEASIBILITY_PLAN.md) §9 |
 | CL-3 | OPEN | Arah APPROVED (TD:23); detail di [JAPAN_CALENDAR_HOLIDAY_SPEC.md](JAPAN_CALENDAR_HOLIDAY_SPEC.md) CO-1–CO-3 |
 | SC-1 | OPEN | [ENCRYPTED_BACKUP_RESTORE_SPEC.md](ENCRYPTED_BACKUP_RESTORE_SPEC.md) OD-1 (O-06) |
-| SC-6 | OPEN | [ENCRYPTED_BACKUP_RESTORE_SPEC.md](ENCRYPTED_BACKUP_RESTORE_SPEC.md) OD-4 (O-07) |
+| SC-6 | Diputuskan (D-07: AB-1); perilaku transfer antarperangkat **NOT VERIFIED** | [ENCRYPTED_BACKUP_RESTORE_SPEC.md](ENCRYPTED_BACKUP_RESTORE_SPEC.md) §12 |
 | AP-5 | OPEN | O-08 |

@@ -104,7 +104,7 @@ terdokumentasi tanpa izin sendiri (S14).
 
 | Topik | D | A | U |
 |---|---|---|---|
-| Chaquopy MIT, minSdk 24, ABI 64-bit, AGP 7.3–9.5, Python 3.10–3.15 | ✓ | | |
+| Chaquopy MIT, syarat minSdk ≥ 24, ABI 64-bit, AGP 7.3–9.5, Python 3.10–3.15 | ✓ | | |
 | Chaquopy di proses utama, tanpa penghentian paksa | ✓ | | |
 | CPython Android Tier 3, embedded via JNI, rilis python.org | ✓ | | |
 | Audit hook bukan sandbox | ✓ | | |
@@ -120,7 +120,7 @@ terdokumentasi tanpa izin sendiri (S14).
 ## 6. Matriks uji kelayakan (dijalankan hanya setelah prototipe diizinkan)
 
 Target perangkat minimal: satu perangkat fisik `arm64-v8a` dan satu
-emulator `x86_64`; minSdk mengikuti O-01 (≥ 24 bila K1 dipilih, D S3).
+emulator `x86_64`; minSdk **29** (D-05; semula "mengikuti O-01, ≥ 24 bila K1" — SUPERSEDED).
 Semua hasil wajib memakai bukti EV-1–EV-6 ([`QUALITY_GATES.md`](QUALITY_GATES.md)).
 
 | ID | Uji | PASS | FAIL | Gate |
@@ -155,7 +155,7 @@ Hentikan dan minta keputusan owner bila salah satu terjadi:
 2. **F-11 atau F-12 FAIL** — kode pengguna dapat membekukan/mematikan
    aplikasi.
 3. **F-03 atau F-04** melebihi batas, atau batas belum ditetapkan owner.
-4. **minSdk ≥ 24** (K1) bertentangan dengan target perangkat (M-19, O-01).
+4. *(Tidak berlaku lagi: minSdk 29 ditetapkan D-05, memenuhi syarat K1 ≥ 24.)*
 5. Kandidat satu-satunya yang lolos adalah **K3 (WebView)** atau **K4
    (bukan CPython)** — keduanya menyentuh guardrail Batch 01 atau
    kecocokan kurikulum.
@@ -173,3 +173,32 @@ Hentikan dan minta keputusan owner bila salah satu terjadi:
 - Urutan uji yang disarankan (bukan keputusan): K1 lebih dulu karena
   integrasi Gradle-nya terdokumentasi (S1–S3), K2 sebagai pembanding bila
   F-07 gagal pada K1, K3/K4 hanya bila K1 dan K2 gagal.
+
+## 9. Keputusan owner D-10 dan D-08 (2026-11-23)
+
+**D-10: PLANNING APPROVED; EXECUTION NOT AUTHORIZED.** Cakupan F-01–F-15 dan
+ambang penerimaan berikut disetujui sebagai **keputusan perencanaan**. Ini
+ambang yang diusulkan, **bukan** hasil pengukuran. F-01–F-15 tetap
+**NOT VERIFIED**; runtime final **tidak** dipilih.
+
+| Uji | Ambang PASS yang disetujui |
+|---|---|
+| F-03 Ukuran APK | ≤ 100 MB per ABI |
+| F-04 Start interpreter dingin | ≤ 5 detik |
+| F-11 Batas waktu eksekusi | 3 detik per latihan; aplikasi tetap responsif, tanpa ANR |
+| F-12 Memori | Target batas memori proses Python 128 MB; aplikasi utama tetap hidup bila batas terlampaui. Apakah Android dapat menegakkan batas memori per proses **belum diverifikasi** |
+| F-13 Output | ≤ 64 KB per eksekusi; sisanya dipotong |
+| Target uji | 1 perangkat fisik ARM64 + 1 emulator x86_64 |
+| API minimum | 29 |
+
+Syarat eksekusi prototipe (belum terpenuhi):
+1. Kebutuhan perencanaan yang tersisa selesai.
+2. Izin owner terpisah yang eksplisit.
+3. Cakupan eksperimental terisolasi, bukan kode produksi.
+
+**D-08 (`INTERNET` diizinkan untuk fitur opsional):** aplikasi akan
+memiliki izin jaringan, sehingga F-09 (kode pengguna tidak dapat membuka
+socket/HTTP) menjadi **syarat wajib** yang harus dibuktikan oleh isolasi
+proses, bukan oleh ketiadaan izin aplikasi. Threat model, isolasi proses,
+dan uji penolakan jaringan wajib. F-09 tetap **NOT VERIFIED**; tidak ada
+klaim sandbox aman.

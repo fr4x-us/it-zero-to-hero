@@ -276,3 +276,16 @@ Contoh (identitas aktivitas masih OPEN; label "kuis-W9-1" hanya ilustrasi):
 | OP-10 | Komponen mana yang boleh diulang saat `NOT_PASSED` | A-04 |
 | OP-11 | Interval/debounce autosave | P-03 |
 | OP-12 | Status persetujuan `PLANNING_COMPLETION_BATCH.md` (sumber RECOVERED) | B-3 |
+
+## 10. Keputusan owner D-04 (2026-11-23)
+
+Dicatat dari [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md).
+
+| Butir | Keputusan | Dampak pada spesifikasi ini |
+|---|---|---|
+| Basis kelulusan | Skor **terbaik** per komponen; setiap attempt disimpan | OP-2 / OPEN-CONFIRM §2.3 **diputuskan**: contoh §6 dengan skor terbaik berlaku |
+| Unit kelulusan | **Per modul**: nilai tertimbang ≥ 80 dan setiap komponen ≥ 75, tanpa pembulatan | OP-1 diputuskan untuk tingkat modul; "unit penilaian" §2.3 = modul |
+| Unlock | Modul berikutnya terbuka linear setelah modul sebelumnya lulus | C6 diperjelas; detail pratinjau mengikuti D-01 M-04 (pratinjau boleh, latihan/ujian terkunci, modul lulus tetap dapat diakses) |
+| Penyelesaian program | Seluruh 16 modul lulus **dan** capstone selesai menurut rubrik yang akan disetujui | Tidak ada rata-rata program atau ambang tambahan |
+| Masih OPEN | Agregasi numerik tingkat program; representasi angka (OP-3); rubrik capstone (CU-9) | — |
+| Implikasi untuk dikonfirmasi | Kelulusan per modul dengan empat komponen berarti setiap modul memerlukan Theory, Laboratory, Mini-project, dan Concept explanation | **Tidak** diputuskan di sini; dicatat pada CU-2 |

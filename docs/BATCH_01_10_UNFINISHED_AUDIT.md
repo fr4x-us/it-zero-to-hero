@@ -435,3 +435,64 @@ PC-2 sampai PC-7 tetap NO; PC-8 tetap PARTIAL.
 **PLANNING CLEAR: NO** — D-02 sampai D-11 masih AWAITING OWNER.
 **IMPLEMENTATION VERIFIED: NO.**
 
+## 12. Pembaruan status — keputusan owner D-02–D-11 (2026-11-23)
+
+Basis: `main` = `777f5dc` (merge PR #18). Sumber keputusan:
+[`OWNER_DECISION_CHECKLIST.md`](OWNER_DECISION_CHECKLIST.md). Status di
+bawah berlaku saat PR pencatatan D-02–D-11 di-merge. Sebuah butir hanya
+menjadi COMPLETE bila acceptance criteria-nya di §3 terpenuhi; persetujuan
+arah saja tidak cukup.
+
+| ID | Status baru | Alasan / bukti |
+|---|---|---|
+| UW-03 | **COMPLETE** (keputusan) | AC "Kombinasi APPROVED di DECISIONS_LOG": D-06 tercatat sebagai baseline sementara. Verifikasi tetap di UW-13, UW-52, UW-54 |
+| UW-04 | **COMPLETE** | AC "Nilai tercatat": minSdk 29 (D-05); referensi 24 ditandai SUPERSEDED |
+| UW-05 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-02. Versi DataStore dilacak di UW-52 |
+| UW-06 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-07 AB-1. Verifikasi transfer antarperangkat → UW-55 (baru) |
+| UW-07 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-08 opsi (b). Isolasi jaringan lab tetap di UW-12 (F-09) |
+| UW-08 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-09 opsi (b). Verifikasi terhadap toolchain di UW-13 |
+| UW-09 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-03. Detail OD-8 tetap di UW-33 |
+| UW-10 | **BLOCKED** | AC "Batas tertulis; izin eksplisit": batas tertulis (D-10) ✓, izin eksekusi ✗ |
+| UW-11 | **BLOCKED** | AC "Aturan tertulis": basis lulus dan kelulusan per modul ✓ (D-04); agregasi numerik program ✗ |
+| UW-02 | **BLOCKED** | D-11 DEFERRED |
+| UW-19 | **COMPLETE** | AC "Label konsisten": palet APPROVED (D-01 M-17) di UI spec UI-07 dan §11; TD:25 kini konsisten |
+| UW-20 | **COMPLETE** | AC "Keputusan tertulis": kerangka 16 minggu disetujui (D-01 M-02, PR #18); dicatat di Curriculum §11 |
+| UW-45 | **NOT STARTED** (tidak lagi BLOCKED) | D-01 sudah diputuskan; penyeragaman label lintas dokumen belum dikerjakan |
+| UW-36 | **BLOCKED** (diperbarui) | Ditambah: implikasi D-04 bahwa setiap modul memiliki empat komponen (CU-2) perlu konfirmasi owner |
+| UW-55 | **NOT VERIFIED** (baru) | Verifikasi perilaku transfer antarperangkat dengan `allowBackup=false`, termasuk pengecualian per produsen (D-07). Oleh: T, setelah izin implementasi. AC: hasil uji per jalur (cloud, D2D) terdokumentasi dengan bukti EV |
+
+UW-52 kini juga mencakup pemilihan dan verifikasi versi DataStore (D-02).
+UW-12 tetap NOT STARTED: ambang F-01–F-15 sudah disetujui (D-10), tetapi
+eksekusi tidak diizinkan; F-01–F-15 **NOT VERIFIED**.
+
+### Jumlah per status (55 butir)
+
+| Status | Jumlah | Butir |
+|---|---|---|
+| COMPLETE dengan bukti | 17 | UW-01, UW-03–UW-09, UW-19, UW-20, UW-42, UW-46–UW-51 |
+| OPEN (NOT STARTED / PARTIAL) | 6 | UW-12, UW-26, UW-37, UW-45, UW-52 (NOT STARTED); UW-44 (PARTIAL) |
+| BLOCKED | 29 | UW-02, UW-10, UW-11, UW-14–UW-18, UW-21–UW-25, UW-27–UW-36, UW-38–UW-41, UW-43, UW-53 |
+| NOT VERIFIED | 3 | UW-13, UW-54, UW-55 |
+
+### Checklist PLANNING CLEAR (pembaruan §8)
+
+| # | Kriteria | Status | Bukti |
+|---|---|---|---|
+| PC-1 | Sumber Batch 01 disetujui | YES | D-01, PR #18 |
+| PC-2 | Konflik kritis: restore, DataStore | YES | D-03, D-02 |
+| PC-3 | Toolchain + minSdk | YES (provisional, NOT VERIFIED) | D-06, D-05 |
+| PC-4 | Kebijakan manifest awal (Auto Backup, `INTERNET`) | YES | D-07, D-08 |
+| PC-5 | Stack test minimal | YES | D-09 |
+| PC-6 | Aturan model data penilaian | PARTIAL | D-04; agregasi program dan representasi angka OPEN |
+| PC-7 | Keputusan O-04 | PARTIAL | Ambang disetujui (D-10); eksekusi tidak diizinkan |
+| PC-8 | Dokumentasi konsisten | PARTIAL | UW-43, UW-44, UW-45 |
+| PC-9 | Tidak ada tautan rusak | YES | Skrip cek |
+| PC-10 | Aturan kerja dan merge tersimpan | YES | `GITHUB_BRIDGE.md` §5 |
+
+Owner menambahkan syarat (D-11): seluruh butir perencanaan Batch 01–10
+yang belum selesai harus diselesaikan dan direview sebelum PLANNING CLEAR
+dinyatakan YES.
+
+**PLANNING CLEAR: NO** — PC-6, PC-7, PC-8 belum terpenuhi dan 38 butir
+register belum COMPLETE. **IMPLEMENTATION VERIFIED: NO.**
+
