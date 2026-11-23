@@ -1,15 +1,17 @@
 # IT ZERO → HERO — Owner Decision Checklist (P0)
 
-Status: **AWAITING OWNER** untuk semua butir · tidak ada keputusan yang
-diisi atas nama owner · tidak ada izin implementasi atau prototipe.
-Tanggal: **2026-11-23**. Basis: `main` = `5931ece` (merge PR #16).
+Status: D-01 **APPROVED BY OWNER** (2026-11-23) · D-02–D-11 **AWAITING
+OWNER** · tidak ada keputusan yang diisi atas nama owner · tidak ada izin
+implementasi atau prototipe.
+Tanggal: **2026-11-23**. Basis awal: `main` = `5931ece` (merge PR #16);
+D-01 dicatat pada basis `4eacaa0` (merge PR #17).
 
 Sumber register: [`BATCH_01_10_UNFINISHED_AUDIT.md`](BATCH_01_10_UNFINISHED_AUDIT.md)
 §3 (UW-01–UW-11). Blueprint terkunci: [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md).
 
 Kolom **Rekomendasi teknis** adalah saran Claude, **bukan** keputusan.
-Kolom **Keputusan final** sengaja kosong dan hanya diisi berdasarkan
-jawaban tertulis owner (melalui PR yang disetujui).
+Kolom **Keputusan final** hanya diisi berdasarkan jawaban tertulis owner
+(melalui PR yang disetujui). Saat ini hanya D-01 yang terisi.
 
 ## 0. Urutan berdasarkan ketergantungan
 
@@ -37,7 +39,7 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 
 | Butir | Isi |
 |---|---|
-| Sumber | [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) baris 3 (DRAFT), §6; HANDOFF B-3; OP-12, CO-7, UO-10 |
+| Sumber | [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) (semula DRAFT, kini §7); HANDOFF B-3; OP-12, CO-7, UO-10 |
 | Masalah | Dokumen sudah di-merge (PR #5) tetapi header masih *DRAFT FOR OWNER REVIEW*; Batch 05–09 memakai isinya sebagai RECOVERED/PROPOSED; TD:25 menyebut palet/guardrail-nya "approved" |
 | Pilihan | (a) Setujui seluruhnya; (b) setujui dengan revisi tertulis per butir M; (c) tolak sebagian (sebutkan butir) |
 | Rekomendasi teknis | (b) bila ada butir yang ingin diubah, selain itu (a). Keputusan ini membuka paling banyak butir lain |
@@ -45,8 +47,9 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko (b) | Butuh waktu meninjau 19 butir M |
 | Risiko (c) | Butir yang ditolak harus ditulis ulang; dokumen Batch 05–09 perlu diselaraskan |
 | Ketergantungan | Tidak ada; menjadi prasyarat D-02, D-03, D-04, UW-19, UW-20 |
-| Status | **AWAITING OWNER** |
-| Keputusan final | |
+| Status | **APPROVED BY OWNER** (2026-11-23) — dicatat lewat PR dokumentasi D-01; berlaku efektif setelah PR itu di-merge |
+| Keputusan final | Opsi (a) dengan ketentuan: owner menyetujui M-01–M-19 sebagaimana dirinci di [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) §7.1; seluruh detail teknis, konten, dan pengujian yang belum selesai tetap OPEN/PARTIAL; M-09 belum selesai; blueprint tidak berubah; tidak ada izin implementasi/prototipe |
+| Dampak | Membuka tindak lanjut UW-19 (status palet: dikonfirmasi M-17), UW-20 (kerangka 16 minggu: disetujui M-02), dan UW-45 (penyeragaman label). Status butir-butir itu **belum** diubah di PR ini. Konflik restore (D-03) dan DataStore (D-02) tetap terbuka |
 
 ### D-02 — DataStore dalam baseline (UW-05)
 
@@ -210,7 +213,7 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 
 | ID | Keputusan | Kelompok | Status | Keputusan final |
 |---|---|---|---|---|
-| D-01 | Status Batch 01 | Produk | AWAITING OWNER | |
+| D-01 | Status Batch 01 | Produk | **APPROVED BY OWNER** (2026-11-23) | Setujui M-01–M-19 dengan ketentuan (lihat D-01) |
 | D-02 | DataStore | Produk/data | AWAITING OWNER | |
 | D-03 | Mode restore | Produk/data | AWAITING OWNER | |
 | D-04 | Agregasi skor + basis lulus | Produk | AWAITING OWNER | |

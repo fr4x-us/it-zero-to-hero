@@ -403,3 +403,35 @@ Catatan: UW-12 berstatus NOT STARTED, tetapi praktis menunggu D-10.
 **PLANNING CLEAR: NO** — PC-1 sampai PC-7 (§8) belum berubah karena tidak
 ada keputusan owner baru. PC-8 tetap PARTIAL (UW-43, UW-45).
 
+## 11. Pembaruan status — D-01 (2026-11-23)
+
+Basis: `main` = `4eacaa0` (merge PR #17). Owner menyetujui M-01–M-19
+dengan ketentuan; rincian di
+[`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) §7 dan
+[`OWNER_DECISION_CHECKLIST.md`](OWNER_DECISION_CHECKLIST.md) D-01.
+
+| ID | Status baru | Bukti |
+|---|---|---|
+| UW-01 | **COMPLETE** — berlaku saat PR pencatatan D-01 di-merge | Keputusan owner 2026-11-23; header Batch 01 dan §7 diperbarui; checklist D-01 terisi |
+
+Dampak yang **belum** diterapkan di sini (perlu tindak lanjut terpisah):
+UW-19 (palet dikonfirmasi M-17; label dokumen UI belum diselaraskan),
+UW-20 (kerangka 16 minggu disetujui M-02), UW-45 (penyeragaman label kini
+tidak lagi menunggu D-01). Statusnya dibiarkan seperti §10 sampai
+diperbarui dalam PR berikutnya.
+
+### Jumlah per status (54 butir)
+
+| Status | Jumlah | Perubahan |
+|---|---|---|
+| COMPLETE dengan bukti | 8 | + UW-01 |
+| OPEN | 5 | — |
+| BLOCKED | 39 | − UW-01 |
+| NOT VERIFIED | 2 | — |
+
+PLANNING CLEAR checklist §8: **PC-1 → YES** (setelah PR ini di-merge).
+PC-2 sampai PC-7 tetap NO; PC-8 tetap PARTIAL.
+
+**PLANNING CLEAR: NO** — D-02 sampai D-11 masih AWAITING OWNER.
+**IMPLEMENTATION VERIFIED: NO.**
+

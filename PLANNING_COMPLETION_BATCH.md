@@ -1,6 +1,7 @@
 # IT ZERO → HERO — Planning Completion Batch 01
 
-**Status:** DRAFT FOR OWNER REVIEW · PREPARATION ONLY · NO APPLICATION IMPLEMENTATION  
+**Status:** OWNER-APPROVED WITH CONDITIONS (2026-11-23, D-01) · PREPARATION ONLY · NO APPLICATION IMPLEMENTATION  
+**Approval:** M-01–M-19 approved by the owner on 2026-11-23 as recorded in §7. Details listed as OPEN/PARTIAL in §7 remain undecided. Originally merged as *DRAFT FOR OWNER REVIEW* (PR #5).  
 **Date:** 2026-11-23  
 **Authority:** Supplement to `docs/BLUEPRINT_LOCKED.md` and `CLAUDE.md`; neither is modified or superseded.  
 **Purpose:** Transfer previously agreed planning details into a single, reviewable document, without fabricating missing technical decisions.
@@ -104,7 +105,68 @@ The following remain **OPEN** until approved or feasibility-tested. Do not silen
 
 ## 6. Batch completion criteria
 
-- [ ] Owner reviews and approves the supplement as an accurate record of prior decisions.
-- [ ] Single documentation PR contains only the approved planning supplement (and optionally a link in a docs index).
-- [ ] PR review confirms consistency with locked blueprint.
-- [ ] No implementation work started.
+- [x] Owner reviews and approves the supplement as an accurate record of prior decisions. — 2026-11-23, with conditions (§7).
+- [x] Single documentation PR contains only the approved planning supplement (and optionally a link in a docs index). — PR #5 added only this file.
+- [ ] PR review confirms consistency with locked blueprint. — Pending review of the D-01 recording PR (§7.3 lists the consistency check).
+- [x] No implementation work started. — Repository contains documentation only.
+
+## 7. Persetujuan owner — D-01 (2026-11-23)
+
+Owner menyetujui M-01–M-19 pada 2026-11-23 (keputusan D-01 di
+[`docs/OWNER_DECISION_CHECKLIST.md`](docs/OWNER_DECISION_CHECKLIST.md)),
+dengan ketentuan bahwa seluruh detail teknis, konten, dan pengujian yang
+belum selesai tetap OPEN/PARTIAL. Persetujuan ini **tidak** mengubah
+`docs/BLUEPRINT_LOCKED.md`, **tidak** memberi izin implementasi atau
+prototipe, dan **tidak** menyelesaikan keputusan D-02–D-11.
+
+Matriks §2 di atas dipertahankan sebagai catatan historis. Bila ada
+perbedaan, tabel §7.1 (keputusan owner) yang berlaku untuk M-01–M-19,
+dan blueprint tetap berlaku di atas keduanya.
+
+### 7.1 Keputusan owner per butir
+
+| ID | Disetujui owner | Masih OPEN / PARTIAL |
+|---|---|---|
+| M-01 | Dokumen diterima sebagai ringkasan perencanaan, bukan transkrip verbatim. | — |
+| M-02 | Kerangka kurikulum 16 minggu disetujui. | Materi lengkap belum selesai. |
+| M-03 | Target 128 jam; jadwal fleksibel mengikuti shift; tanpa tenggat kalender wajib. | Alokasi per pelajaran. |
+| M-04 | Empat fase; unlock linear per modul; remedial tanpa batas; pratinjau materi modul berikutnya boleh; latihan dan ujian terkunci sampai prasyarat lulus; modul yang sudah lulus tetap dapat diakses. | Agregasi skor (D-04). |
+| M-05 | Bobot 30/40/20/10; lulus bila nilai tertimbang ≥ 80 dan setiap komponen ≥ 75; semua percobaan disimpan; nilai terbaik per komponen dipertahankan. | Presisi, agregasi, dan basis kelulusan formal (D-04). |
+| M-06 | Penjelasan konsep dinilai dengan tugas objektif, terstruktur, offline, tanpa AI. Format: memilih alasan, mengurutkan proses, mencocokkan konsep, menemukan kesalahan. | Rubrik, nilai parsial, bank soal. |
+| M-07 | Ujian teori berwaktu berdasarkan jumlah, jenis, dan kompleksitas soal; deadline persisten; timer berjalan saat aplikasi ditutup; jawaban tersimpan dapat dipulihkan; status autosave terlihat. | Rumus durasi, frekuensi autosave, mitigasi manipulasi waktu. |
+| M-08 | Lab dan mini-project tanpa batas waktu; pause/resume; autosave dan pemulihan progres tersimpan. | Detail interupsi dan submission. |
+| M-09 | Kebutuhan mini-project dan capstone beserta rubrik dan acceptance test disetujui. | Topik, fixture, rubrik, dan acceptance test konkret. **M-09 belum selesai.** |
+| M-10 | Lab offline dipertahankan: Python, logika/flowchart, biner, SQL, HTML/CSS, test case. | Runtime Python dan keamanan isolasi menunggu feasibility gate (D-10); prototipe butuh izin terpisah. |
+| M-11 | XP, level, achievement, mastery, dan streak terpisah dari nilai akademik; remedial tidak menyebabkan farming atau penalti XP. | Formula dan katalog. |
+| M-12 | Kalender Asia/Tokyo; Minggu dan hari libur nasional Jepang merah, Sabtu biru; termasuk libur pengganti dan *citizens' holiday*. | Data resmi dan aturan lokalisasi sampai diverifikasi. |
+| M-13 | Libur nasional Jepang dipisahkan dari hari kerja/libur perusahaan; mendukung perubahan shift dan reschedule. | Sumber kalender perusahaan. |
+| M-14 | Mulai Januari 2027; jadwal awal akhir pekan 4 jam/hari, fleksibel; pengingat sesi belum selesai tiap 60 menit, tunduk pada izin dan pembatasan Android; jam tenang 22:00–07:00 JST. | Detail penjadwalan. |
+| M-15 | Snapshot lokal otomatis dan ekspor manual. | Frekuensi, retensi, kuota. |
+| M-16 | Backup portabel terenkripsi kata sandi; pratinjau; konfirmasi eksplisit; pemeriksaan integritas/versi; rollback; perlindungan data dan riwayat percobaan; tanpa auto-merge riwayat nilai. | Algoritma, KDF, parameter, dan kebijakan restore (keputusan terpisah: D-03, OD-1). |
+| M-17 | Colorful Academy dan palet yang tercatat dipertahankan; aksesibilitas/kontras wajib diperhatikan. | Tipografi, aset, validasi visual (termasuk solusi kontras UO-1). |
+| M-18 | Lima tab Home, Learn, Lab, Calendar, Progress; profil melalui avatar; onboarding empat layar; layar pendukung. | Detail navigasi. |
+| M-19 | UI native Android yang responsif dan aksesibel. | minSdk (D-05), breakpoint, tablet/orientasi, target pengujian. |
+
+### 7.2 Status setelah persetujuan
+
+| Butir | Status |
+|---|---|
+| M-01 | APPROVED |
+| M-02–M-19 | APPROVED (arah/kebutuhan) dengan detail OPEN/PARTIAL sesuai §7.1 |
+| M-09 | Kebutuhan APPROVED; isi konkret **belum selesai** |
+| D-02–D-11 | Tetap AWAITING OWNER |
+| PLANNING CLEAR | NO |
+| IMPLEMENTATION VERIFIED | NO |
+
+### 7.3 Pemeriksaan konsistensi saat pencatatan
+
+| # | Temuan | Penanganan |
+|---|---|---|
+| 1 | Semua butir §7.1 sejalan dengan `docs/BLUEPRINT_LOCKED.md` (BL:15–71); tidak ada keputusan blueprint yang diubah. | — |
+| 2 | M-18 memakai nama tab blueprint (Home, Learn, Lab, Calendar, Progress); label lama di matriks §2 ("Learning Journey, IT Lab, Schedule/Calendar") tidak berlaku. | Dicatat; DECISIONS_LOG K-3 |
+| 3 | M-03 "tanpa tenggat kalender wajib" mengatur jadwal belajar; tenggat persisten ujian teori (BL:36, M-07) tetap berlaku. | Dicatat, tidak ada konflik |
+| 4 | M-04 menambah detail: pratinjau boleh, latihan/ujian terkunci sampai prasyarat lulus, modul lulus tetap dapat diakses. Sejalan dengan BL:21. | Dicatat |
+| 5 | M-16 "tanpa auto-merge riwayat nilai" dan BL:63–64 "attempt-history preservation" tetap harus dipertemukan oleh mode restore. | **Tidak diselesaikan di sini**; tetap D-03 |
+| 6 | DataStore (TD:26) tidak disebut dalam M-01–M-19. | **Tidak diselesaikan di sini**; tetap D-02 |
+| 7 | M-17 mengonfirmasi palet; temuan kontras (UI spec §2.2) tetap berlaku. | Tetap UO-1 |
+
