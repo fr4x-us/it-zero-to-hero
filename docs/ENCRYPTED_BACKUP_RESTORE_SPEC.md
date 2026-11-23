@@ -18,9 +18,19 @@ keamanan bergantung pada pengujian dan review di masa implementasi.
 | **PROPOSED** | Usulan desain dokumen ini; perlu persetujuan owner. |
 | **OPEN** | Belum diputuskan. |
 
-Butir dari [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md)
-(`B01 M-xx`) ditandai PROPOSED karena status persetujuannya masih
-menunggu konfirmasi owner (blocker B-3).
+Label sumber Batch 01:
+
+| Label | Arti |
+|---|---|
+| **RECOVERED** | Hanya asal-usul historis: butir berasal dari [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) (B01). Bukan status persetujuan. |
+| **OWNER APPROVED WITH CONDITIONS** | Disetujui owner melalui D-01 (PR #18) sebagaimana tertulis di kolom "Disetujui owner" B01 §7.1. Detail di kolom "Masih OPEN / PARTIAL" **tidak** ikut disetujui. Ditulis `OWNER APPROVED WITH CONDITIONS (D-01 M-xx)`. |
+| **NOT VERIFIED** | Klaim yang masih menunggu bukti (uji, build, atau sumber resmi). |
+| **PROPOSED** | Detail yang belum disetujui owner. |
+
+Label sumber Batch 01 diseragamkan (UW-45, 2026-11-23): persetujuan
+sumber Batch 01 melalui D-01 **tidak** otomatis menyetujui setiap rincian
+teknis yang diusulkan dokumen ini. Butir B01 di luar M-01–M-19 (mis. B01
+§3) tetap PROPOSED kecuali disetujui keputusan lain.
 
 ## 1. Sumber
 
@@ -47,9 +57,9 @@ seharusnya bersumber dari dokumen tersebut tidak ditulis sebagai VERIFIED.
 | A-3 | Restore aman: pratinjau, konfirmasi, validasi, rollback, pelestarian riwayat percobaan. | APPROVED | BL:63–64 |
 | A-4 | Bukti yang dibutuhkan sebelum memilih: threat model, envelope berversi, AEAD, KDF + parameter, integritas, rollback restore, uji pemulihan. AES-GCM/Argon2id hanya kandidat. | APPROVED (arah) | TD:46 |
 | A-5 | Kebijakan backup OS Android (eksposur data sensitif, aturan ekstraksi/`allowBackup`) harus ditentukan. | APPROVED (arah), pilihan OPEN | TD:48 |
-| A-6 | Tidak ada penggabungan otomatis riwayat nilai; kehilangan kata sandi membuat ekspor tidak dapat dipulihkan. | PROPOSED (B01 M-16, B-3) | B01 M-16 |
+| A-6 | Tidak ada penggabungan otomatis riwayat nilai; kehilangan kata sandi membuat ekspor tidak dapat dipulihkan. | OWNER APPROVED WITH CONDITIONS (D-01 M-16) untuk "tanpa penggabungan otomatis" (lihat juga D-03); PROPOSED (RECOVERED) untuk konsekuensi kata sandi hilang | B01 M-16 |
 | A-7 | Kata sandi backup tidak disimpan, tidak di-log, tidak dikirim. | APPROVED (gate) | QG SC-2 |
-| A-8 | Attempt *append-only*; restore mempertahankan riwayat; ledger XP ikut backup tanpa duplikasi. | PROPOSED | ASSESSMENT spec P-07, P-10, X-06 |
+| A-8 | Attempt *append-only*; restore mempertahankan riwayat; ledger XP ikut backup tanpa duplikasi. | PROPOSED | ASM:P-07, ASM:P-10, ASM:X-06 |
 
 ## 3. Threat model
 
@@ -233,9 +243,9 @@ Opsi (tidak dipilih di sini):
 |---|---|
 | I-01 | Setiap attempt punya ID stabil (PROPOSED); tidak ada dua attempt dengan ID sama setelah restore. |
 | I-02 | Jumlah attempt setelah restore sesuai mode yang dipilih (§6.2) dan manifest; tidak ada attempt hilang tanpa jejak (tersimpan di database aktif atau snapshot). |
-| I-03 | Skor terbaik setelah restore sama dengan maksimum dari attempt yang ter-restore (ASSESSMENT P-08). |
+| I-03 | Skor terbaik setelah restore sama dengan maksimum dari attempt yang ter-restore (ASM:P-08). |
 | I-04 | Ledger XP: paling banyak satu award per identitas aktivitas; total XP = jumlah entri ledger. |
-| I-05 | Status lulus dan unlock konsisten dengan skor terbaik dan aturan A-02 (ASSESSMENT §6). |
+| I-05 | Status lulus dan unlock konsisten dengan skor terbaik dan aturan ASM:A-02 (ASM §6). |
 | I-06 | Attempt yang sedang `IN_PROGRESS` di data aktif: perilaku saat restore **OPEN**. |
 
 ## 7. Interaksi dengan Android Auto Backup (O-07)

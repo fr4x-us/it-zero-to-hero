@@ -141,7 +141,7 @@ dan tidak ada gate yang ditutup.
 |---|---|---|
 | AB-3 | Diputuskan sebagai baseline sementara (D-06); **NOT VERIFIED** | [ANDROID_TOOLCHAIN_DECISION_SHEET.md](ANDROID_TOOLCHAIN_DECISION_SHEET.md) |
 | OF-3 | Diputuskan (D-08: `INTERNET` untuk fitur opsional); verifikasi offline inti dan isolasi lab **NOT VERIFIED** | [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) D-08 |
-| GR-10 | OPEN sebagian | Arah "bulatkan hanya untuk tampilan" APPROVED (TD:21); basis skor terbaik dan kelulusan per modul diputuskan (D-04); agregasi program dan representasi angka tetap OPEN ([ASSESSMENT_STATE_MACHINE_SPEC.md](ASSESSMENT_STATE_MACHINE_SPEC.md) §10) |
+| GR-10 | OPEN sebagian | Arah "bulatkan hanya untuk tampilan" APPROVED (TD:21); basis skor terbaik dan kelulusan per modul diputuskan (D-04); agregasi program dan representasi angka tetap OPEN ([ASSESSMENT_STATE_MACHINE_SPEC.md](ASSESSMENT_STATE_MACHINE_SPEC.md) §10; opsi representasi di [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md)) |
 | LB-2 | OPEN — ambang uji disetujui (D-10), eksekusi tidak diizinkan | [PYTHON_OFFLINE_FEASIBILITY_PLAN.md](PYTHON_OFFLINE_FEASIBILITY_PLAN.md) §9 |
 | CL-3 | OPEN | Arah APPROVED (TD:23); detail di [JAPAN_CALENDAR_HOLIDAY_SPEC.md](JAPAN_CALENDAR_HOLIDAY_SPEC.md) CO-1–CO-3 |
 | SC-1 | OPEN | [ENCRYPTED_BACKUP_RESTORE_SPEC.md](ENCRYPTED_BACKUP_RESTORE_SPEC.md) OD-1 (O-06) |

@@ -94,13 +94,13 @@ dilaporkan di §1.0.
 | Aspek | Isi |
 |---|---|
 | Tujuan (TD:60) | Rencana uji: kandidat runtime, kriteria sukses/gagal, batas keamanan, target Android |
-| Selesai | Perbandingan 4 kandidat dari sumber resmi; risiko R1–R8; matriks F-01–F-15; 7 kondisi eskalasi |
-| Sebagian | Kriteria PASS untuk F-03/F-04/F-11–F-13 belum berangka (batas waktu, memori, ukuran, start); target perangkat belum dipilih |
+| Selesai | Perbandingan 4 kandidat dari sumber resmi; risiko PY:R1–R8; matriks PY:F-01–F-15; 7 kondisi eskalasi |
+| Sebagian | Kriteria PASS untuk PY:F-03/F-04/F-11–F-13 belum berangka (batas waktu, memori, ukuran, start); target perangkat belum dipilih |
 | Belum | Uji kelayakan (butuh izin) |
 | OPEN | O-04; batas uji; mekanisme IPC |
 | Konflik/kesalahan | Situs resmi diblokir; sumber dibaca dari repo resmi (transparan, §1) |
 | Bukti | `PYTHON_OFFLINE_FEASIBILITY_PLAN.md` §3, §6, §8 |
-| Tindakan | Owner: batas uji + izin prototipe (UW-10); Test: F-01–F-15 (UW-12) |
+| Tindakan | Owner: batas uji + izin prototipe (UW-10); Test: PY:F-01–F-15 (UW-12) |
 
 #### Batch 04 — Toolchain Decision Sheet (PR #9)
 
@@ -120,10 +120,10 @@ dilaporkan di §1.0.
 | Aspek | Isi |
 |---|---|
 | Tujuan (TD:62) | Kriteria state machine, persistensi, timer/process death, aturan lulus tanpa pembulatan |
-| Selesai | Model state, tabel transisi, P-01–P-10, D-01–D-08, rumus + kasus batas (dicek aritmetika eksak), ledger XP |
+| Selesai | Model state, tabel transisi, ASM:P-01–P-10, ASM:D-01–D-08, rumus + kasus batas (dicek aritmetika eksak), ledger XP |
 | Sebagian | Banyak aturan berlabel RECOVERED (bergantung Batch 01) |
 | OPEN | OP-1–OP-12 |
-| Konflik/kesalahan | ID `B-01…B-10` (kasus batas) mirip nomor blocker HANDOFF (KS-07) |
+| Konflik/kesalahan | ID `ASM:B-01…B-10` (kasus batas) mirip nomor blocker `HS:B-n` (KS-07) |
 | Bukti | `ASSESSMENT_STATE_MACHINE_SPEC.md` §1–9 |
 | Tindakan | Owner: OP-1/OP-2 (UW-11), OP-3 (UW-22), OP-4–OP-11 (UW-26–UW-32) |
 
@@ -132,7 +132,7 @@ dilaporkan di §1.0.
 | Aspek | Isi |
 |---|---|
 | Tujuan (TD:63) | Threat model, kriteria restore, tanpa memilih parameter kripto secara asal |
-| Selesai | Aset, batas kepercayaan, T-01–T-13, ketersediaan primitif Android (dibaca dari tabel resmi), alur R1–R11, F-01–F-12, G-01–G-12 |
+| Selesai | Aset, batas kepercayaan, BKP:T-01–T-13, ketersediaan primitif Android (dibaca dari tabel resmi), alur BKP:R1–R11, BKP:F-01–F-12, BKP:G-01–G-12 |
 | Sebagian | RFC/NIST tidak terbaca; parameter OWASP berlaku untuk *password storage*, penerapan ke KDF backup adalah inferensi |
 | OPEN | OD-1–OD-10 (O-06, O-07) |
 | Konflik/kesalahan | Mode restore vs BL:63–64 (KS-05); minSdk 24 vs PBKDF2-SHA256 API 26+ |
@@ -144,7 +144,7 @@ dilaporkan di §1.0.
 | Aspek | Isi |
 |---|---|
 | Tujuan (TD:64) | Spesifikasi dataset hari libur + kriteria kalender |
-| Selesai | Lapisan L1/L2, format dataset, validasi V-01–V-06, aturan JST/jam tenang, AC/skenario |
+| Selesai | Lapisan L1/L2, format dataset, validasi CAL:V-01–V-06, aturan JST/jam tenang, AC/skenario |
 | Belum | Dataset dari sumber resmi; tidak ada tanggal VERIFIED |
 | OPEN | CO-1–CO-7 |
 | Konflik/kesalahan | Contoh tanggal dari cuplikan pencarian (ditandai wajib verifikasi) |
@@ -182,7 +182,7 @@ dilaporkan di §1.0.
 | Tujuan | Audit kesiapan + aturan merge permanen |
 | Selesai | NO AUTO-MERGE di `GITHUB_BRIDGE.md` §5 dan `CLAUDE.md` (**COMPLETE**); KS-01–KS-10; kategori blocker; checklist |
 | Sebagian | Daftar delapan skill tambahan PENDING SOURCE |
-| Konflik/kesalahan | Baris status PR Batch 10 basi di HANDOFF dan FINAL REVIEW §1 (UW-42, diperbaiki di PR ini); checklist C-4 "PASS" hanya berarti dokumen ada, bukan pekerjaan selesai |
+| Konflik/kesalahan | Baris status PR Batch 10 basi di HANDOFF dan FINAL REVIEW §1 (UW-42, diperbaiki di PR ini); checklist FIN:C-4 "PASS" hanya berarti dokumen ada, bukan pekerjaan selesai |
 | Bukti | `FINAL_PLANNING_READINESS_REVIEW.md` §1, §8, §10 |
 | Tindakan | Owner: daftar skill (UW-41) |
 
@@ -195,7 +195,7 @@ dilaporkan di §1.0.
 | **Disetujui (APPROVED)** | Semua butir blueprint; Batch 02: O-12 (DI manual), O-13 (Navigation Compose), O-14 (satu modul), O-15 (StateFlow; detail effect OPEN), arah O-03 (bulat hanya tampilan), arah O-05 (dataset offline + pembaruan terkontrol), arah O-17 (XP sekali per identitas), CI di GitHub Actions, UI Colorful Academy lima tab; NO AUTO-MERGE |
 | **Diusulkan (PROPOSED, belum disetujui)** | Kombinasi toolchain; minSdk 24; seluruh tabel transisi/persistensi Batch 05; envelope/restore Batch 06; format dataset Batch 07; peran palet/navigasi/komponen Batch 08; format konten/ID/remedial Batch 09; rekomendasi FINAL REVIEW §7 |
 | **Menunggu owner** | B-3, B-7, O-01, minSdk, O-02, O-07/OD-4, O-16, OD-3, OP-1/OP-2, batas uji O-04, OD-2, UO-1, UO-2, palet vs TD:25, CU-1, CU-10, daftar skill |
-| **Butuh bukti teknis** | O-04 (F-01–F-15), O-01 (build CI), OD-1 (ukur KDF), CU-7 (WebView/HTML), dataset hari libur (CO-3) |
+| **Butuh bukti teknis** | O-04 (PY:F-01–F-15), O-01 (build CI), OD-1 (ukur KDF), CU-7 (WebView/HTML), dataset hari libur (CO-3) |
 | **Tidak boleh sebelum izin implementasi** | Scaffold proyek, workflow CI, prototipe runtime/kripto, screenshot, APK |
 
 ### 2.2 Per keluarga ID
@@ -226,28 +226,28 @@ asli dipertahankan.
 | UW-03 | 04 | Persetujuan kombinasi toolchain | BLOCKED | Menunggu owner | UW-04 | O | Review sheet | Kombinasi APPROVED di DECISIONS_LOG | O-01, AB-3 |
 | UW-04 | 04/06/03 | minSdk final | BLOCKED | Saling terkait | M-19, O-04, OD-1 | O | Pilih 24/26/lainnya | Nilai tercatat | B-9, OD-10 |
 | UW-05 | 02 | DataStore di baseline | BLOCKED | TD:26 vs BL:11 | — | O | Konfirmasi | Keputusan tertulis | B-7, K-1, KS-02 |
-| UW-06 | 06 | Kebijakan Auto Backup | BLOCKED | Default aktif | UW-09 | O | Pilih AB-1/2/3 | Keputusan tertulis | O-07, OD-4 |
+| UW-06 | 06 | Kebijakan Auto Backup | BLOCKED | Default aktif | UW-09 | O | Pilih BKP:AB-1/2/3 | Keputusan tertulis | O-07, OD-4 |
 | UW-07 | 02/07 | Izin `INTERNET` | BLOCKED | Video opsional, isolasi lab | — | O | Putuskan | Keputusan tertulis | O-02, OF-3 |
 | UW-08 | 04/08 | Stack test minimal | BLOCKED | Belum dipilih | UW-03 | O (C dapat menyiapkan opsi) | Pilih alat unit/UI/screenshot | Keputusan tertulis | O-16, UO-8 |
-| UW-09 | 06 | Mode restore | BLOCKED | Konflik BL:63–64 vs B01 M-16 | UW-01 | O | Pilih M-1/M-2/M-3 | Keputusan tertulis | OD-3, KS-05 |
-| UW-10 | 03 | Batas uji + izin prototipe O-04 | BLOCKED | Angka belum ada | — | O | Tetapkan batas, beri/tolak izin | Batas tertulis; izin eksplisit | O-04, F-03/F-04/F-11–F-13 |
+| UW-09 | 06 | Mode restore | BLOCKED | Konflik BL:63–64 vs B01 M-16 | UW-01 | O | Pilih BKP:M-1/M-2/M-3 | Keputusan tertulis | OD-3, KS-05 |
+| UW-10 | 03 | Batas uji + izin prototipe O-04 | BLOCKED | Angka belum ada | — | O | Tetapkan batas, beri/tolak izin | Batas tertulis; izin eksplisit | O-04, PY:F-03/F-04/F-11–F-13 |
 | UW-11 | 05 | Agregasi skor + basis lulus | BLOCKED | Tidak boleh ditebak (TD:32) | UW-01 | O | Putuskan | Aturan tertulis | OP-1, OP-2, CU-2 |
 
 ### P1 — tinggi; sebelum milestone terkait / risiko besar
 
 | ID | Batch | Pekerjaan | Status | Penyebab | Ketergantungan | Oleh | Langkah | Acceptance criteria | Referensi |
 |---|---|---|---|---|---|---|---|---|---|
-| UW-12 | 03 | Uji kelayakan Python F-01–F-15 | NOT STARTED | Butuh izin | UW-10 | T | Prototipe terbatas | F-01–F-15 PASS dengan bukti EV | O-04 |
+| UW-12 | 03 | Uji kelayakan Python PY:F-01–F-15 | NOT STARTED | Butuh izin | UW-10 | T | Prototipe terbatas | PY:F-01–F-15 PASS dengan bukti EV | O-04 |
 | UW-13 | 04 | Bukti toolchain di GitHub Actions | NOT VERIFIED | Belum ada proyek | UW-02, UW-03 | T | Build CI pertama | Checklist toolchain §7 PASS | AB-5 |
-| UW-14 | 07 | Verifikasi dataset hari libur resmi | BLOCKED | `www8.cao.go.jp` diblokir | Akses jaringan/owner | T (eksternal) | Unduh `syukujitsu.csv`, cocokkan | AC-02 PASS | CO-3, B-12, C-13 |
-| UW-15 | 06 | Pilih KDF/AEAD + ukur di perangkat | BLOCKED | Butuh pengukuran | UW-04 | O + T | Ukur kandidat C-1–C-4 | Parameter tertulis + bukti | OD-1, O-06 |
-| UW-16 | 06 | Penerimaan risiko pemalsuan nilai oleh pemilik kata sandi | BLOCKED | Tidak dapat dimitigasi kripto offline | — | O | Terima/ubah kebijakan | Keputusan tertulis | OD-2, T-03 |
+| UW-14 | 07 | Verifikasi dataset hari libur resmi | BLOCKED | `www8.cao.go.jp` diblokir | Akses jaringan/owner | T (eksternal) | Unduh `syukujitsu.csv`, cocokkan | CAL:AC-02 PASS | CO-3, HS:B-12, FIN:C-13 |
+| UW-15 | 06 | Pilih KDF/AEAD + ukur di perangkat | BLOCKED | Butuh pengukuran | UW-04 | O + T | Ukur kandidat BKP:C-1–C-4 | Parameter tertulis + bukti | OD-1, O-06 |
+| UW-16 | 06 | Penerimaan risiko pemalsuan nilai oleh pemilik kata sandi | BLOCKED | Tidak dapat dimitigasi kripto offline | — | O | Terima/ubah kebijakan | Keputusan tertulis | OD-2, BKP:T-03 |
 | UW-17 | 08 | Solusi kontras palet | BLOCKED | Semua warna < 4,5:1 dengan putih | UW-19 | O | Pilih KC-1/2/3 | Token memenuhi U1 | UO-1 |
 | UW-18 | 08 | Dark mode | BLOCKED | BL:12 terang | — | O | Putuskan | Keputusan tertulis | UO-2, KS-04 |
 | UW-19 | 02/08 | Status palet & guardrail (TD:25 "approved" vs B01 DRAFT) | BLOCKED | Dua sumber berbeda | UW-01 | O → C | Owner konfirmasi; Claude menyelaraskan label | Label konsisten di semua dokumen | TD:25, UI-07, UI-09 |
 | UW-20 | 09 | Persetujuan garis besar 16 minggu | BLOCKED | Hanya RECOVERED | UW-01 | O | Setujui/revisi | Keputusan tertulis | CU-1, M-02 |
 | UW-21 | 09 | Alternatif minggu 9–12 bila O-04 gagal | BLOCKED (kondisional) | Bergantung UW-12 | UW-12 | O | Putuskan bila perlu | Keputusan tertulis | CU-8 |
-| UW-22 | 05 | Representasi angka/presisi/seri | BLOCKED | TD:21 menyisakan detail | UW-11 | O (C dapat menyiapkan opsi) | Putuskan | Kasus batas B-01–B-10 lolos secara eksak | OP-3 |
+| UW-22 | 05 | Representasi angka/presisi/seri | BLOCKED | TD:21 menyisakan detail | UW-11 | O (C dapat menyiapkan opsi) | Putuskan | Kasus batas ASM:B-01–B-10 lolos secara eksak | OP-3 |
 | UW-23 | 07 | Rentang dan mekanisme pembaruan dataset | BLOCKED | Menunggu owner | UW-07 | O | Pilih | Keputusan tertulis | CO-1, CO-2 |
 | UW-24 | — | Runner emulator/perangkat | BLOCKED | Tidak ada KVM di cloud | — | O | Pilih | Runner tersedia | O-09 |
 | UW-25 | 09 | Penerimaan risiko kunci jawaban dapat diekstrak | BLOCKED | Konsekuensi offline | — | O | Terima/ubah | Keputusan tertulis | CU-10 |
@@ -257,10 +257,10 @@ asli dipertahankan.
 | ID | Batch | Pekerjaan | Status | Oleh | Langkah | Acceptance criteria | Referensi |
 |---|---|---|---|---|---|---|---|
 | UW-26 | 05/09 | Rubrik + bank tugas penjelasan konsep | NOT STARTED | O + konten | Rancang rubrik objektif | CC-08 | OP-4, M-06 |
-| UW-27 | 05 | Rumus durasi ujian, format soal | BLOCKED | O | Putuskan | D-08 terisi | OP-5, M-07 |
-| UW-28 | 05 | Kebijakan manipulasi jam, toleransi NTP | BLOCKED | O | Putuskan | E-01–E-04 punya kebijakan | OP-6 |
+| UW-27 | 05 | Rumus durasi ujian, format soal | BLOCKED | O | Putuskan | ASM:D-08 terisi | OP-5, M-07 |
+| UW-28 | 05 | Kebijakan manipulasi jam, toleransi NTP | BLOCKED | O | Putuskan | ASM:E-01–E-04 punya kebijakan | OP-6 |
 | UW-29 | 05 | Aturan pengumpulan/interupsi lab-proyek | BLOCKED | O | Putuskan | L5 terisi | OP-7, M-08 |
-| UW-30 | 05/09 | Identitas XP, rumus, level, streak, revisi konten | BLOCKED | O | Putuskan | X-07 terisi | OP-8, CU-4, O-17, M-11 |
+| UW-30 | 05/09 | Identitas XP, rumus, level, streak, revisi konten | BLOCKED | O | Putuskan | ASM:X-07 terisi | OP-8, CU-4, O-17, M-11 |
 | UW-31 | 05 | Aturan unlock rinci | BLOCKED | O | Putuskan | C6 terisi | OP-9, M-04 |
 | UW-32 | 05 | Komponen yang boleh diulang; debounce autosave | BLOCKED | O | Putuskan | OP-10, OP-11 terisi | OP-10, OP-11 |
 | UW-33 | 06 | Detail backup: format payload, aturan kata sandi, batas ukuran, retensi snapshot, attempt berjalan | BLOCKED | O | Putuskan | OD-5–OD-9 terisi | OD-5–OD-9, M-15, M-16 |
@@ -280,11 +280,11 @@ asli dipertahankan.
 | UW-42 | 10 | Baris status PR Batch 10 basi | **Diperbaiki di PR ini** | C | Perbarui HANDOFF dan FINAL REVIEW §1 | Status = merged | HANDOFF, FINAL REVIEW §1 |
 | UW-43 | 01/02 | Path `docs/PLANNING_COMPLETION_BATCH.md` | BLOCKED | O | Pindahkan file atau terima | Rujukan valid | B-4, KS-01 |
 | UW-44 | 05–09 | ID lokal dipakai ulang | NOT STARTED | C (setelah persetujuan) | Prefiks per dokumen atau aturan rujukan | Tidak ada ID ambigu | KS-07, K-4 |
-| UW-45 | 05–09 | Label sumber Batch 01 tidak seragam (RECOVERED vs PROPOSED) | NOT STARTED | C (setelah UW-01) | Seragamkan | Satu label per sumber | §4 D-05 |
+| UW-45 | 05–09 | Label sumber Batch 01 tidak seragam (RECOVERED vs PROPOSED) | NOT STARTED | C (setelah UW-01) | Seragamkan | Satu label per sumber | AUD:D-05 |
 | UW-46 | fondasi | `GITHUB_BRIDGE.md` §2 (alur Issue) vs praktik; daftar dokumen terkait kurang | NOT STARTED | C | Perbarui | Alur dan daftar sesuai praktik | §1.0 |
 | UW-47 | fondasi | DECISIONS_LOG tidak menunjuk dokumen Batch 03–10 | NOT STARTED | C | Tambah tabel rujukan | Semua dokumen batch terdaftar | DECISIONS_LOG |
 | UW-48 | fondasi | QUALITY_GATES: GR-10 dan gate OPEN tanpa rujukan ke dokumen batch | NOT STARTED | C (dengan izin) | Tambah rujukan | Setiap gate OPEN menunjuk dokumen terkait | K-5 |
-| UW-49 | — | Urutan/agregasi blocker HANDOFF (B-10 sebelum B-9; B-5 menggabung banyak butir) | NOT STARTED | C | Rapikan | Blocker terurut | HANDOFF |
+| UW-49 | — | Urutan/agregasi blocker HANDOFF (HS:B-10 sebelum HS:B-9; HS:B-5 menggabung banyak butir) | NOT STARTED | C | Rapikan | Blocker terurut | HANDOFF |
 | UW-50 | — | README hanya 2 baris | NOT STARTED | C | Tambah ringkasan + tautan dokumen | README menunjuk dokumen inti | README.md |
 | UW-51 | fondasi | Label `documentation` di template Issue belum dicek | NOT VERIFIED | C | Cek label repo | Label ada atau dihapus dari template | `.github/ISSUE_TEMPLATE/` |
 | UW-52 | 04 | Kesegaran versi toolchain | NOT STARTED | C | Cek ulang tepat sebelum scaffold | Sumber resmi bertanggal baru | TD:47 |
@@ -292,6 +292,10 @@ asli dipertahankan.
 | UW-54 | 04 | Butir V toolchain (BOM mapping, KSP 2.3.14, Room↔KSP, API 37 runner) | NOT VERIFIED | T | Bagian dari UW-13 | Log CI | Toolchain §3 |
 
 ## 4. Pemeriksaan konsistensi
+
+Catatan ID (UW-44, ditambahkan kemudian): ID `D-01`–`D-10` di tabel ini
+adalah pemeriksaan konsistensi audit dan dirujuk sebagai `AUD:D-xx`. Di
+bagian lain, `D-01`–`D-11` berarti keputusan owner.
 
 | ID | Jenis | Temuan | Status |
 |---|---|---|---|
@@ -303,7 +307,7 @@ asli dipertahankan.
 | D-06 | Konflik aturan | Restore: BL:63–64 vs B01 M-16 | OPEN (UW-09) |
 | D-07 | Klaim VERIFIED | Backup: tabel Android + OWASP (dibaca) — memadai. Calendar: hanya `JapaneseCalendar` (dibaca) — memadai; tanggal tidak diklaim VERIFIED. UI: ambang 48dp/4,5:1 (dibaca) — memadai; rasio kontras berlabel "VERIFIED — hasil hitung" memakai rumus luminans WCAG yang sumber W3C-nya tidak terbaca → **sebaiknya dibaca sebagai hasil hitung yang dapat diulang, bukan verifikasi sumber** | Catatan |
 | D-08 | DRAFT dianggap final | TD:25 (owner-approved) merujuk palet/guardrail Batch 01 sebagai "approved" padahal Batch 01 DRAFT; dokumen Claude tidak menganggap B01 final | OPEN (UW-01, UW-19) |
-| D-09 | Ditandai selesai padahal belum diuji | FINAL REVIEW C-4 "PASS" berarti dokumen ada, bukan teruji; tidak ditemukan klaim build/test/UI/keamanan PASS | Catatan |
+| D-09 | Ditandai selesai padahal belum diuji | FIN:C-4 "PASS" berarti dokumen ada, bukan teruji; tidak ditemukan klaim build/test/UI/keamanan PASS | Catatan |
 | D-10 | Snapshot historis | PLANNING_HISTORY, QG GR-10 lebih lama dari Batch 02 (disengaja, TD:69) | Diterima |
 
 Tidak ada keputusan terkunci yang diubah oleh audit ini.
@@ -312,7 +316,7 @@ Tidak ada keputusan terkunci yang diubah oleh audit ini.
 
 1. **UW-01** — Status Batch 01 (setujui / revisi / tolak sebagian).
 2. **UW-05** — DataStore masuk baseline atau tidak.
-3. **UW-09** — Mode restore (M-1 / M-2 / M-3).
+3. **UW-09** — Mode restore (BKP:M-1 / M-2 / M-3).
 4. **UW-11** — Agregasi skor dan basis lulus (skor terbaik?).
 5. **UW-10** — Batas uji O-04 dan izin prototipe kelayakan.
 6. **UW-03 + UW-04** — Toolchain dan minSdk.
@@ -353,8 +357,8 @@ Tidak ada keputusan terkunci yang diubah oleh audit ini.
 | PC-5 | Stack test minimal dipilih | NO | UW-08 |
 | PC-6 | Aturan model data penilaian (agregasi, basis lulus) | NO | UW-11 |
 | PC-7 | Keputusan O-04 (izin uji + batas) | NO | UW-10 |
-| PC-8 | Dokumentasi konsisten (path, status PR, label) | PARTIAL | D-01, D-05 OPEN; D-03 diperbaiki di PR ini |
-| PC-9 | Tidak ada tautan rusak | YES | D-02 |
+| PC-8 | Dokumentasi konsisten (path, status PR, label) | PARTIAL | AUD:D-01, AUD:D-05 OPEN; AUD:D-03 diperbaiki di PR #16 |
+| PC-9 | Tidak ada tautan rusak | YES | AUD:D-02 |
 | PC-10 | Aturan kerja dan merge tersimpan | YES | `GITHUB_BRIDGE.md` §5, `CLAUDE.md` |
 
 **PLANNING CLEAR: NO** — PC-1 sampai PC-7 belum terpenuhi.
@@ -363,9 +367,9 @@ Tidak ada keputusan terkunci yang diubah oleh audit ini.
 
 **NO.** Tidak ada implementasi. Hal yang memang harus menunggu
 implementasi: build CI dan toolchain (UW-13, UW-54), uji runtime Python
-pada build nyata (UW-12), uji KDF/restore (UW-15, G-01–G-12), screenshot
+pada build nyata (UW-12), uji KDF/restore (UW-15, BKP:G-01–G-12), screenshot
 dan uji aksesibilitas (UI §8–10), uji kalender dengan dataset terverifikasi
-(AC-01–AC-08), uji penilaian (S-01–S-10), APK dan uji perangkat (AP-1–AP-5).
+(CAL:AC-01–AC-08), uji penilaian (ASM:S-01–S-10), APK dan uji perangkat (AP-1–AP-5).
 
 ## 10. Pembaruan status — audit cleanup (2026-11-23)
 
@@ -448,8 +452,8 @@ arah saja tidak cukup.
 | UW-03 | **COMPLETE** (keputusan) | AC "Kombinasi APPROVED di DECISIONS_LOG": D-06 tercatat sebagai baseline sementara. Verifikasi tetap di UW-13, UW-52, UW-54 |
 | UW-04 | **COMPLETE** | AC "Nilai tercatat": minSdk 29 (D-05); referensi 24 ditandai SUPERSEDED |
 | UW-05 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-02. Versi DataStore dilacak di UW-52 |
-| UW-06 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-07 AB-1. Verifikasi transfer antarperangkat → UW-55 (baru) |
-| UW-07 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-08 opsi (b). Isolasi jaringan lab tetap di UW-12 (F-09) |
+| UW-06 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-07 BKP:AB-1. Verifikasi transfer antarperangkat → UW-55 (baru) |
+| UW-07 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-08 opsi (b). Isolasi jaringan lab tetap di UW-12 (PY:F-09) |
 | UW-08 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-09 opsi (b). Verifikasi terhadap toolchain di UW-13 |
 | UW-09 | **COMPLETE** (keputusan) | AC "Keputusan tertulis": D-03. Detail OD-8 tetap di UW-33 |
 | UW-10 | **BLOCKED** | AC "Batas tertulis; izin eksplisit": batas tertulis (D-10) ✓, izin eksekusi ✗ |
@@ -462,8 +466,8 @@ arah saja tidak cukup.
 | UW-55 | **NOT VERIFIED** (baru) | Verifikasi perilaku transfer antarperangkat dengan `allowBackup=false`, termasuk pengecualian per produsen (D-07). Oleh: T, setelah izin implementasi. AC: hasil uji per jalur (cloud, D2D) terdokumentasi dengan bukti EV |
 
 UW-52 kini juga mencakup pemilihan dan verifikasi versi DataStore (D-02).
-UW-12 tetap NOT STARTED: ambang F-01–F-15 sudah disetujui (D-10), tetapi
-eksekusi tidak diizinkan; F-01–F-15 **NOT VERIFIED**.
+UW-12 tetap NOT STARTED: ambang PY:F-01–F-15 sudah disetujui (D-10), tetapi
+eksekusi tidak diizinkan; PY:F-01–F-15 **NOT VERIFIED**.
 
 ### Jumlah per status (55 butir)
 
@@ -495,4 +499,35 @@ dinyatakan YES.
 
 **PLANNING CLEAR: NO** — PC-6, PC-7, PC-8 belum terpenuhi dan 38 butir
 register belum COMPLETE. **IMPLEMENTATION VERIFIED: NO.**
+
+## 13. Pembaruan status — cleanup UW-45, UW-22, UW-44 (2026-11-23)
+
+Basis: `main` = `2114ca8` (merge PR #19). Berlaku saat PR cleanup ini
+di-merge.
+
+| ID | Status baru | AC (§3) | Bukti |
+|---|---|---|---|
+| UW-45 | **COMPLETE** | "Satu label per sumber" | Lima dokumen Batch 05–09 (ASM, BKP, CAL, UI, CUR) memakai legenda yang sama: RECOVERED = asal-usul saja; OWNER APPROVED WITH CONDITIONS (D-01 M-xx) = disetujui sesuai B01 §7.1; PROPOSED = belum disetujui (termasuk B01 §3 di luar M-01–M-19); NOT VERIFIED = menunggu bukti. Pemindaian `grep` tidak menemukan lagi "RECOVERED" sebagai status persetujuan atau label "menunggu B-3". Rincian yang tidak tercantum di D-01 (mis. penilaian otomatis setelah tenggat, ASM:T7/ASM:D-04/ASM:D-05; konsekuensi kata sandi hilang, BKP:A-6; B01 §3 di CUR:K-10–K-12, CUR:RM-03) tetap PROPOSED |
+| UW-22 | **BLOCKED** (menunggu owner) | "Kasus batas lolos secara eksak" + keputusan owner | Lembar keputusan [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) dibuat: 4 opsi, bukti hitungan (19 kombinasi skor bulat diputuskan salah oleh float naif), rekomendasi NP-4. Belum ada keputusan owner |
+| UW-44 | **COMPLETE** | "Tidak ada ID ambigu" | Rujukan lintas dokumen ke ID lokal yang dipakai ulang kini memakai kode dokumen (`PY:`, `BKP:`, `ASM:`, `CAL:`, `UI:`, `FIN:`, `AUD:`, `HS:`). Konvensi diperluas di DECISIONS_LOG (termasuk `D-01`–`D-11` = keputusan owner, `BKP:AB-x` vs gate `AB-x`). Catatan ID ditambahkan di ASM §0 (kriteria tenggat lokal `D-xx`) dan audit §4 (`AUD:D-xx`). Pemindaian otomatis tersisa 12 kecocokan, semuanya bukan ambigu: rujukan gate QG `AB-3`, kelanjutan rentang `BKP:M-1 / M-2 / M-3`, dan teks penjelasan konvensi. ID historis tidak dinomori ulang; dokumen verbatim/terkunci (BL, TD, PLANNING_HISTORY) tidak diubah dan tidak memiliki rujukan ambigu yang memerlukan perubahan |
+
+### Jumlah per status (55 butir)
+
+| Status | Jumlah | Perubahan dari §12 |
+|---|---|---|
+| COMPLETE dengan bukti | 19 | + UW-44, UW-45 |
+| OPEN (NOT STARTED / PARTIAL) | 4 | − UW-44, UW-45 |
+| BLOCKED | 29 | UW-22 tetap BLOCKED (menunggu owner) |
+| NOT VERIFIED | 3 | — |
+
+OPEN tersisa: UW-12 (menunggu izin D-10), UW-26, UW-37, UW-52.
+
+### Checklist PLANNING CLEAR
+
+PC-8 (dokumentasi konsisten): UW-44 dan UW-45 selesai; **UW-43** (path
+`PLANNING_COMPLETION_BATCH.md`) tetap BLOCKED karena menyentuh dokumen
+Batch 02 yang verbatim → PC-8 tetap **PARTIAL**.
+
+**PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
+prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
 

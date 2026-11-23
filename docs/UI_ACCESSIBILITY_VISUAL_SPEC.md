@@ -14,7 +14,10 @@ mendesain ulang UI yang disetujui dan tidak mengubah
 |---|---|
 | **APPROVED** | Blueprint (`BL:n`) atau Batch 02 (`TD:n`). |
 | **VERIFIED** | Fakta dari sumber resmi yang terbaca di sesi ini, atau hasil hitungan yang dapat diulang. |
-| **PROPOSED** | Usulan dokumen ini; perlu persetujuan owner. Termasuk butir dari [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) (`B01`), karena statusnya menunggu B-3. |
+| **PROPOSED** | Usulan dokumen ini atau rincian B01 yang belum disetujui; perlu persetujuan owner. |
+| **RECOVERED** | Hanya asal-usul historis: butir berasal dari [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) (B01). Bukan status persetujuan. |
+| **OWNER APPROVED WITH CONDITIONS** | Disetujui owner melalui D-01 (PR #18) sebagaimana tertulis di kolom "Disetujui owner" B01 §7.1. Detail di kolom "Masih OPEN / PARTIAL" **tidak** ikut disetujui. Ditulis `OWNER APPROVED WITH CONDITIONS (D-01 M-xx)`. |
+| **NOT VERIFIED** | Klaim yang masih menunggu bukti (uji, build, atau sumber resmi). |
 | **OPEN** | Belum diputuskan. |
 
 Sumber resmi:
@@ -38,9 +41,9 @@ umum dipakai WCAG; ambang yang dipakai adalah ambang U1.
 | UI-04 | UI Android yang aksesibel, mudah dibaca, dan responsif. | APPROVED | BL:71 |
 | UI-05 | Compose native; ikuti palet dan guardrail aksesibilitas/anti-generik Batch 01. Aset, tipografi, dan target terukur OPEN. | APPROVED (arah) | TD:25 |
 | UI-06 | Navigation Compose untuk lima tab; satu modul `app`; UI state immutable + StateFlow. | APPROVED | TD:18–20 |
-| UI-07 | Palet: ungu `#7565F5`, biru `#3B82F6`, hijau `#22C55E`, kuning `#FFB020`, merah muda `#FF6B91`. | APPROVED (D-01 M-17, 2026-11-23; semula PROPOSED) | B01 M-17, TD:25 |
-| UI-08 | Profil lewat avatar; onboarding 4 layar; tampilan pelajaran, kuis, ujian, hasil, XP/mastery/achievement, rapor akademik, pengaturan, backup/restore. | PROPOSED (B01 M-18) | B01 M-18 |
-| UI-09 | Guardrail anti-generik: Compose native (bukan dashboard web), palet dipakai secara semantik, hindari grid kartu berulang, gradien berlebih, emoji dekoratif, stock art generik, glassmorphism, animasi tanpa tujuan; validasi dengan screenshot ukuran perangkat nyata. | PROPOSED (B01 §3) | B01 §3 |
+| UI-07 | Palet: ungu `#7565F5`, biru `#3B82F6`, hijau `#22C55E`, kuning `#FFB020`, merah muda `#FF6B91`. | OWNER APPROVED WITH CONDITIONS (D-01 M-17); semula PROPOSED | B01 M-17, TD:25 |
+| UI-08 | Profil lewat avatar; onboarding 4 layar; tampilan pelajaran, kuis, ujian, hasil, XP/mastery/achievement, rapor akademik, pengaturan, backup/restore. | OWNER APPROVED WITH CONDITIONS (D-01 M-18): profil lewat avatar, onboarding empat layar, layar pendukung. Daftar rinci layar tetap PROPOSED | B01 M-18 |
+| UI-09 | Guardrail anti-generik: Compose native (bukan dashboard web), palet dipakai secara semantik, hindari grid kartu berulang, gradien berlebih, emoji dekoratif, stock art generik, glassmorphism, animasi tanpa tujuan; validasi dengan screenshot ukuran perangkat nyata. | APPROVED arah (TD:25 merujuk guardrail Batch 01); RECOVERED (B01 §3); rincian penerapan PROPOSED | B01 §3, TD:25 |
 | UI-10 | Target sentuh minimal 48dp × 48dp. | VERIFIED | U1 |
 | UI-11 | Kontras teks: ≥ 4,5:1 untuk teks < 18sp (atau tebal < 14sp); ≥ 3:1 untuk teks lain. | VERIFIED | U1 |
 
@@ -107,7 +110,7 @@ Tipografi, skala spasi, bentuk sudut, ikon, ilustrasi, dan warna netral
 | Calendar | Kalender JST | Hari libur nasional, kalender kerja, jadwal belajar ([JAPAN_CALENDAR_HOLIDAY_SPEC.md](JAPAN_CALENDAR_HOLIDAY_SPEC.md)) |
 | Progress | Nilai dan gamifikasi | Rapor akademik (4 komponen, ambang) **terpisah** dari XP/level/achievement |
 
-Profil dan pengaturan backup dibuka dari avatar (B01 M-18, PROPOSED).
+Profil dan pengaturan backup dibuka dari avatar (OWNER APPROVED WITH CONDITIONS (D-01 M-18)).
 
 ### 3.2 Aturan navigasi (PROPOSED)
 
@@ -115,7 +118,7 @@ Profil dan pengaturan backup dibuka dari avatar (B01 M-18, PROPOSED).
 |---|---|
 | N-01 | Tab bar selalu terlihat di layar tingkat atas; disembunyikan pada layar fokus (ujian berjalan, editor lab) — perilaku persis **OPEN**. |
 | N-02 | Tombol Kembali sistem dan predictive back berfungsi; tidak ada alur yang memerlukan gesture khusus (§4, A-07). |
-| N-03 | Keluar dari ujian berjalan tidak menghentikan timer (ASSESSMENT A-12); dialog konfirmasi menjelaskan hal itu. |
+| N-03 | Keluar dari ujian berjalan tidak menghentikan timer (ASM:A-12); dialog konfirmasi menjelaskan hal itu. |
 | N-04 | State setiap tab dipertahankan saat berpindah tab dan setelah process death. |
 
 ### 3.3 Layar utama dan hierarki (PROPOSED)
@@ -160,7 +163,7 @@ Variasi visual antar-tab diizinkan secara sengaja (UI-09).
 |---|---|---|
 | C-01 | Tema terang sebagai tema utama. | APPROVED (BL:12) |
 | C-02 | **Dark mode:** blueprint menetapkan *bright/light theme*. Dukungan dark mode akan menambah keputusan produk dan **tidak** diasumsikan. Perilaku saat sistem dalam mode gelap (tetap terang, atau tema gelap terpisah): **OPEN**. | OPEN |
-| C-03 | Rotasi layar tidak menghilangkan input, posisi gulir, atau state ujian/lab. | APPROVED arah (OF-4, ASSESSMENT P-04) |
+| C-03 | Rotasi layar tidak menghilangkan input, posisi gulir, atau state ujian/lab. | APPROVED arah (OF-4, ASM:P-04) |
 | C-04 | Orientasi lanskap dan tablet: dukungan **OPEN** (B01 M-19); minimal tidak rusak/terpotong. | OPEN |
 | C-05 | Ukuran layar: breakpoint **OPEN**; usulan uji pada ponsel kecil, ponsel umum, dan satu ukuran besar. | PROPOSED |
 | C-06 | Perubahan konfigurasi lain (bahasa sistem, ukuran font, zona waktu) tidak menyebabkan kehilangan data; tanggal tetap JST. | PROPOSED |
@@ -234,11 +237,11 @@ Belum ada screenshot. Tidak ada klaim visual yang teruji.
 ## 11. Daftar keputusan
 
 ### APPROVED
-UI-01–UI-06, UI-07 (palet, D-01 M-17), C-01, ambang U1 (UI-10, UI-11 VERIFIED).
+UI-01–UI-06; UI-07 (palet) dan UI-08 (avatar, onboarding empat layar, layar pendukung) — OWNER APPROVED WITH CONDITIONS (D-01); UI-09 arah (TD:25); C-01; ambang U1 (UI-10, UI-11 VERIFIED).
 
 ### PROPOSED (perlu persetujuan)
-Peran semantik palet (§2.1), daftar layar (UI-08), guardrail
-(UI-09), isi tab (§3.1), aturan navigasi N-01–N-04, komponen (§3.4),
+Peran semantik palet (§2.1), daftar rinci layar (UI-08), penerapan
+guardrail (UI-09), isi tab (§3.1), aturan navigasi N-01–N-04, komponen (§3.4),
 A-05–A-10, C-05–C-06, UI state (§6), P-01–P-04, S-01–S-06.
 
 ### OPEN
@@ -253,4 +256,4 @@ A-05–A-10, C-05–C-06, UI state (§6), P-01–P-04, S-01–S-06.
 | UO-7 | Target performa terukur dan alatnya (P-05) |
 | UO-8 | Alat screenshot test dan baseline (S-04, O-16) |
 | UO-9 | Detail field setiap layar (B01 M-18) |
-| UO-10 | Konfirmasi status palet dan guardrail Batch 01 (B-3) |
+| UO-10 | *(Selesai: palet oleh D-01 M-17; guardrail arah oleh TD:25.)* |

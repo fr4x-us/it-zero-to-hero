@@ -31,14 +31,14 @@ tabel ini menunjukkan keputusan owner yang lebih baru.
 |---|---|---|---|---|
 | D-01 | APPROVED (PR #18) | M-01–M-19 disetujui dengan ketentuan | B-3, K-3 | Detail per M (`PLANNING_COMPLETION_BATCH.md` §7.1) |
 | D-02 | OWNER APPROVED | DataStore untuk preferensi aplikasi; Room sumber kebenaran data akademik | K-1 / B-7 (DataStore kini keputusan owner, bukan klaim blueprint) | Versi DataStore |
-| D-03 | OWNER APPROVED | Restore M-2 default; M-1 eksplisit + peringatan + konfirmasi + snapshot pra-restore; tanpa auto-merge | OD-3; konflik BL:63–64 vs B01 M-16 | Retensi snapshot, batas penyimpanan, detail rollback, parameter kripto (OD-1, OD-8) |
+| D-03 | OWNER APPROVED | Restore BKP:M-2 default; BKP:M-1 eksplisit + peringatan + konfirmasi + snapshot pra-restore; tanpa auto-merge | OD-3; konflik BL:63–64 vs B01 M-16 | Retensi snapshot, batas penyimpanan, detail rollback, parameter kripto (OD-1, OD-8) |
 | D-04 | OWNER APPROVED | Skor terbaik per komponen; kelulusan per modul (≥ 80 dan tiap komponen ≥ 75, tanpa pembulatan); unlock linear; program = 16 modul lulus + capstone | OP-2; OP-1 sebagian (tingkat modul) | Agregasi numerik tingkat program, representasi angka (OP-3), rubrik capstone (CU-9), implikasi komponen per modul (CU-2) |
 | D-05 | OWNER APPROVED | minSdk 29 | B-9, OD-10; usulan 24 dan rekomendasi 26 SUPERSEDED | — |
 | D-06 | OWNER APPROVED (provisional) | Baseline toolchain sementara | O-01 (arah) | Cek ulang sebelum scaffold; verifikasi CI setelah izin implementasi; versi DataStore |
-| D-07 | OWNER APPROVED | AB-1: Auto Backup dinonaktifkan | O-07, OD-4 | Perilaku transfer antarperangkat (NOT VERIFIED) |
-| D-08 | OWNER APPROVED | `INTERNET` diizinkan untuk fitur opsional; lab Python tanpa jaringan | O-02 | Isolasi jaringan lab (F-09 NOT VERIFIED) |
+| D-07 | OWNER APPROVED | BKP:AB-1: Auto Backup dinonaktifkan | O-07, OD-4 | Perilaku transfer antarperangkat (NOT VERIFIED) |
+| D-08 | OWNER APPROVED | `INTERNET` diizinkan untuk fitur opsional; lab Python tanpa jaringan | O-02 | Isolasi jaringan lab (PY:F-09 NOT VERIFIED) |
 | D-09 | OWNER APPROVED | JUnit, kotlinx-coroutines-test, Compose UI Test, Robolectric | O-16 (baseline) | Alat screenshot (milestone UI); verifikasi terhadap D-06 |
-| D-10 | PLANNING APPROVED; EXECUTION NOT AUTHORIZED | Ambang F-01–F-15 disetujui sebagai rencana | Batas uji O-04 | Izin eksekusi; runtime; F-01–F-15 NOT VERIFIED |
+| D-10 | PLANNING APPROVED; EXECUTION NOT AUTHORIZED | Ambang PY:F-01–F-15 disetujui sebagai rencana | Batas uji O-04 | Izin eksekusi; runtime; PY:F-01–F-15 NOT VERIFIED |
 | D-11 | DEFERRED; NOT AUTHORIZED | Implementasi ditunda sampai perencanaan selesai dan izin baru | — | Izin implementasi |
 
 Status Batch 02 "Tetap OPEN" yang terdampak: O-01 → provisional (D-06);
@@ -62,7 +62,8 @@ blueprint atau Batch 02.
 | 09 | [CURRICULUM_OFFLINE_LAB_SPEC.md](CURRICULUM_OFFLINE_LAB_SPEC.md) | #14 | CU-1–CU-11, M-01–M-19 |
 | 10 | [FINAL_PLANNING_READINESS_REVIEW.md](FINAL_PLANNING_READINESS_REVIEW.md) | #15 | Ringkasan kesiapan |
 | Audit | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) | #16 | UW-01–UW-54 |
-| Checklist | [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) | #17, #18, PR D-02–D-11 | D-01–D-11 (lihat §Keputusan owner) |
+| Checklist | [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) | #17, #18, #19 | D-01–D-11 (lihat §Keputusan owner) |
+| UW-22 | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) | PR cleanup UW-22/44/45 | OP-3 / UW-22 — menunggu owner |
 
 ## Aturan rujukan lintas dokumen (editorial, UW-44)
 
@@ -82,7 +83,12 @@ diganti. Saat merujuk ID lokal dari dokumen lain, tulis kode dokumennya:
 | `UI:` | UI spec |
 | `CUR:` | Curriculum spec |
 | `HS:B-n` | Blocker di HANDOFF_STATE |
+| `FIN:` | FINAL_PLANNING_READINESS_REVIEW (mis. `FIN:C-4`) |
+| `AUD:D-xx` | Pemeriksaan konsistensi audit §4 |
+| `NUM:` | NUMERIC_PRECISION_DECISION_SHEET |
 | `UW-nn` | Register audit (ID global, unik) |
+| `D-01`–`D-11` (tanpa kode) | Keputusan owner (global) — [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
+| `O-`, `OP-`, `OD-`, `CO-`, `UO-`, `CU-`, `KS-`, gate QG (`AB-`, `OF-`, `GR-`, `LB-`, `CL-`, `SC-`, `AP-`, `EV-`) | ID global unik, tanpa kode. Pengecualian: opsi Auto Backup `AB-1`–`AB-3` di BKP §7 bentrok dengan gate `AB-1`–`AB-8`, sehingga ditulis `BKP:AB-x` |
 
 Contoh: `ASM:B-03` (kasus batas skor), `BKP:M-1` (mode restore),
 `HS:B-3` (blocker status Batch 01).
