@@ -131,7 +131,7 @@ Batch 01 (TD:56).
 
 | # | Temuan | Status |
 |---|---|---|
-| K-1 | (Diselesaikan oleh D-02: DataStore disetujui owner sebagai keputusan baru untuk preferensi aplikasi.) TD:26 menyebut **DataStore** sebagai bagian "existing blueprint baseline", padahal `BLUEPRINT_LOCKED.md` hanya menyebut Room/SQLite (BL:11). Dicatat apa adanya; perlu konfirmasi owner bahwa DataStore adalah tambahan yang disetujui, bukan bagian blueprint. | Butuh konfirmasi |
+| K-1 | Catatan historis: TD:26 menyebut **DataStore** sebagai bagian "existing blueprint baseline", padahal `BLUEPRINT_LOCKED.md` hanya menyebut Room/SQLite (BL:11). DataStore bukan bagian blueprint awal. Owner kemudian menyetujuinya melalui D-02 (2026-11-23) sebagai keputusan baru, khusus untuk preferensi aplikasi; Room/SQLite tetap sumber kebenaran data akademik dan versi DataStore masih OPEN. TD:26 tidak diubah. Blocker terkait: B-7 (HANDOFF_STATE). | Selesai oleh D-02 |
 | K-2 | TD:5 dan TD:68 merujuk `docs/PLANNING_COMPLETION_BATCH.md`, sedangkan file tersebut berada di root repo. | Informasi |
 | K-3 | (Diselesaikan oleh D-01 M-18: nama tab blueprint berlaku.) Batch 01 M-18 memakai label tab "Learning Journey, IT Lab, Schedule/Calendar"; blueprint (BL:69) dan TD:25 memakai "Learn, Lab, Calendar". Blueprint yang berlaku. | Informasi |
 | K-4 | ID lokal dipakai ulang antardokumen (mis. `A-xx`, `B-0x`, `F-xx`, `M-1…M-3` vs `M-01…M-19`). Rujukan lintas dokumen harus menyebut nama dokumen. Detail: FINAL_PLANNING_READINESS_REVIEW KS-07. | Informasi |
