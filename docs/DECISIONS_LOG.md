@@ -18,7 +18,7 @@ atau menggantikan [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) dan
 |---|---|---|---|---|
 | Baseline | [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md), [`CLAUDE.md`](../CLAUDE.md) | AVAILABLE | LOCKED | Sumber tertinggi. |
 | Inventaris | [`PLANNING_HISTORY.md`](PLANNING_HISTORY.md) | AVAILABLE | Di-merge (PR #4) | Snapshot berbasis repo per `260800d`. |
-| Batch 01 | [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) | AVAILABLE (di root repo, bukan `docs/`) | Di-merge (PR #5); header dokumen masih **DRAFT FOR OWNER REVIEW** dan kriteria selesai §6 belum dicentang | Perlu konfirmasi owner apakah merge PR #5 = persetujuan isi. |
+| Batch 01 | [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) | AVAILABLE (di root repo, bukan `docs/`) | **OWNER-APPROVED WITH CONDITIONS** (D-01, 2026-11-23): M-01–M-19 disetujui; detail OPEN/PARTIAL tercatat di §7 dokumen | Matriks §2 historis; §7.1 berlaku. Merge PR #5 sendiri bukan persetujuan. |
 | Batch 02 | [`TECHNICAL_DECISIONS_BATCH_02.md`](TECHNICAL_DECISIONS_BATCH_02.md) | AVAILABLE | OWNER-APPROVED (header dokumen, TD:3) | Disalin tanpa perubahan dari lampiran owner (SHA-256 `0a27420e…a980b`). |
 
 ## Dokumen batch (spesifikasi, bukan sumber keputusan)
@@ -109,6 +109,6 @@ Batch 01 (TD:56).
 |---|---|---|
 | K-1 | TD:26 menyebut **DataStore** sebagai bagian "existing blueprint baseline", padahal `BLUEPRINT_LOCKED.md` hanya menyebut Room/SQLite (BL:11). Dicatat apa adanya; perlu konfirmasi owner bahwa DataStore adalah tambahan yang disetujui, bukan bagian blueprint. | Butuh konfirmasi |
 | K-2 | TD:5 dan TD:68 merujuk `docs/PLANNING_COMPLETION_BATCH.md`, sedangkan file tersebut berada di root repo. | Informasi |
-| K-3 | Batch 01 M-18 memakai label tab "Learning Journey, IT Lab, Schedule/Calendar"; blueprint (BL:69) dan TD:25 memakai "Learn, Lab, Calendar". Blueprint yang berlaku. | Informasi |
+| K-3 | (Diselesaikan oleh D-01 M-18: nama tab blueprint berlaku.) Batch 01 M-18 memakai label tab "Learning Journey, IT Lab, Schedule/Calendar"; blueprint (BL:69) dan TD:25 memakai "Learn, Lab, Calendar". Blueprint yang berlaku. | Informasi |
 | K-4 | ID lokal dipakai ulang antardokumen (mis. `A-xx`, `B-0x`, `F-xx`, `M-1…M-3` vs `M-01…M-19`). Rujukan lintas dokumen harus menyebut nama dokumen. Detail: FINAL_PLANNING_READINESS_REVIEW KS-07. | Informasi |
 | K-5 | `QUALITY_GATES.md` GR-10 lebih lama dari TD:21; arah "bulatkan hanya untuk tampilan" sudah APPROVED (TD:21), agregasi/representasi tetap OPEN. | Informasi |
