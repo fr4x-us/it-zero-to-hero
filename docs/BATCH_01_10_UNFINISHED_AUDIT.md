@@ -366,3 +366,40 @@ implementasi: build CI dan toolchain (UW-13, UW-54), uji runtime Python
 pada build nyata (UW-12), uji KDF/restore (UW-15, G-01–G-12), screenshot
 dan uji aksesibilitas (UI §8–10), uji kalender dengan dataset terverifikasi
 (AC-01–AC-08), uji penilaian (S-01–S-10), APK dan uji perangkat (AP-1–AP-5).
+
+## 10. Pembaruan status — audit cleanup (2026-11-23)
+
+Basis: `main` = `5931ece` (merge PR #16). Status di tabel §3 di atas
+adalah status per audit awal; tabel ini adalah status terbaru.
+
+| ID | Status baru | Bukti |
+|---|---|---|
+| UW-42 | **COMPLETE** | PR #16 (merged `5931ece`): baris status PR #15 diperbaiki di HANDOFF dan FINAL REVIEW §1 |
+| UW-46 | **COMPLETE** | `GITHUB_BRIDGE.md` §2 menggambarkan alur berbasis prompt + STOP + merge berizin; §6 memuat seluruh dokumen inti |
+| UW-47 | **COMPLETE** | `DECISIONS_LOG.md` §Dokumen batch: Batch 03–10, audit, checklist |
+| UW-48 | **COMPLETE** | `QUALITY_GATES.md` §10: setiap gate OPEN (AB-3, OF-3, GR-10, LB-2, CL-3, SC-1, SC-6, AP-5) menunjuk dokumen terkait; isi gate tidak diubah |
+| UW-49 | **COMPLETE** | `HANDOFF_STATE.md` §Blocker dikelompokkan (keputusan owner / izin / verifikasi eksternal), nomor `B-n` dipertahankan, rujukan ke checklist dan register |
+| UW-50 | **COMPLETE** | `README.md` menjadi pintu masuk: status, urutan baca, daftar dokumen, aturan PR |
+| UW-51 | **COMPLETE** | Label `documentation` ada di repo (GitHub API: warna `0075ca`, "Improvements or additions to documentation"); template tidak perlu diubah |
+| UW-44 | **PARTIAL** | `DECISIONS_LOG.md` §Aturan rujukan lintas dokumen (kode dokumen untuk ID lokal). ID lama **tidak** diganti; dokumen lama belum memakai kode itu. Penggantian ID memerlukan persetujuan owner |
+| UW-43 | **BLOCKED** | Usulan: (a) pindahkan file ke `docs/` dan perbarui tautan, atau (b) pertahankan di root dan catat di Batch 02 sebagai errata. Keduanya butuh owner karena menyentuh dokumen Batch 02 yang disalin verbatim |
+| UW-45 | **BLOCKED** | Penyeragaman label (RECOVERED/PROPOSED/APPROVED) bergantung D-01 di [`OWNER_DECISION_CHECKLIST.md`](OWNER_DECISION_CHECKLIST.md) |
+
+Butir P0 UW-01–UW-11 kini dipetakan ke D-01–D-11 di
+[`OWNER_DECISION_CHECKLIST.md`](OWNER_DECISION_CHECKLIST.md); status tetap
+BLOCKED (AWAITING OWNER).
+
+### Jumlah per status (54 butir)
+
+| Status | Jumlah | Butir |
+|---|---|---|
+| COMPLETE dengan bukti | 7 | UW-42, UW-46–UW-51 |
+| OPEN (NOT STARTED / PARTIAL, tidak menunggu pihak lain) | 5 | UW-12, UW-26, UW-37 (NOT STARTED); UW-44 (PARTIAL); UW-52 (NOT STARTED) |
+| BLOCKED | 40 | UW-01–UW-11, UW-14–UW-25, UW-27–UW-36, UW-38–UW-41, UW-43, UW-45, UW-53 |
+| NOT VERIFIED | 2 | UW-13, UW-54 |
+
+Catatan: UW-12 berstatus NOT STARTED, tetapi praktis menunggu D-10.
+
+**PLANNING CLEAR: NO** — PC-1 sampai PC-7 (§8) belum berubah karena tidak
+ada keputusan owner baru. PC-8 tetap PARTIAL (UW-43, UW-45).
+

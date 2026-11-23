@@ -9,7 +9,7 @@ di setiap PR batch.
 | Item | Nilai | Sumber |
 |---|---|---|
 | Tahap | PERSIAPAN; implementasi **belum diizinkan** | [`CLAUDE.md`](../CLAUDE.md), [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) |
-| `main` saat checkpoint ditulis | `9804a05` (merge PR #15) | `git log` |
+| `main` saat checkpoint ditulis | `5931ece` (merge PR #16) | `git log` |
 | Kode aplikasi / proyek Gradle / workflow CI / APK | Tidak ada | isi repositori |
 | Build atau test Android pernah dijalankan | **Belum pernah** | [QUALITY_GATES.md](QUALITY_GATES.md) EV-1 |
 
@@ -32,7 +32,8 @@ di setiap PR batch.
 | #13 | [UI_ACCESSIBILITY_VISUAL_SPEC.md](UI_ACCESSIBILITY_VISUAL_SPEC.md) (Batch 08) | Merged 2026-11-23 sebagai `ec74570` (di-merge Claude atas instruksi owner setelah review ChatGPT PASS) |
 | #14 | [CURRICULUM_OFFLINE_LAB_SPEC.md](CURRICULUM_OFFLINE_LAB_SPEC.md) (Batch 09) | Merged 2026-11-23 sebagai `caa9d8a` (di-merge Claude atas persetujuan eksplisit owner) |
 | #15 | [FINAL_PLANNING_READINESS_REVIEW.md](FINAL_PLANNING_READINESS_REVIEW.md), aturan NO AUTO-MERGE (Batch 10) | Merged oleh owner 2026-11-23 sebagai `9804a05` |
-| PR Audit Batch 01–10 | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) + handoff | Terbuka, menunggu review; **tidak di-merge Claude** |
+| #16 | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) (audit Batch 01–10) | Merged 2026-11-23 sebagai `5931ece` (di-merge Claude atas persetujuan eksplisit owner) |
+| PR Cleanup | Cleanup UW-44/46–51 + [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) | Terbuka, menunggu review; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -42,39 +43,55 @@ merge." untuk PR itu saja ([GITHUB_BRIDGE.md](GITHUB_BRIDGE.md) §5).
 
 ## Tugas terakhir
 
-Audit Batch 01–10: [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md)
-— status per batch (hanya Batch 02 dan NO AUTO-MERGE yang COMPLETE),
-54 pekerjaan belum selesai (P0 11, P1 14, P2 16, P3 13), audit keputusan,
-pemeriksaan konsistensi D-01–D-10, urutan penyelesaian, dan checklist
-PLANNING CLEAR. **PLANNING CLEAR: NO. IMPLEMENTATION VERIFIED: NO.**
-Status: PR terbuka, menunggu review.
+Audit cleanup + owner decision preparation: UW-46, UW-47, UW-48, UW-49,
+UW-50, UW-51 COMPLETE; UW-44 PARTIAL (aturan rujukan, ID lama tidak
+diganti); UW-43 dan UW-45 tetap BLOCKED (butuh owner).
+[OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) memuat D-01–D-11
+(UW-01–UW-11), semuanya AWAITING OWNER. **PLANNING CLEAR: NO.** Status: PR
+terbuka, menunggu review.
 
 ## Blocker
 
-| # | Blocker | Butuh |
+Dikelompokkan menurut siapa yang dapat membukanya (UW-49). Nomor `B-n`
+dipertahankan agar rujukan lama tetap valid. Daftar keputusan P0:
+[OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md).
+
+### Keputusan owner
+
+| # | Blocker | Checklist / register |
 |---|---|---|
-| B-1 | Implementasi belum diizinkan. | Izin eksplisit owner. |
-| B-3 | `PLANNING_COMPLETION_BATCH.md` sudah di-merge tetapi header-nya masih *DRAFT FOR OWNER REVIEW* dan checklist §6 belum dicentang. Batch 02 merujuknya sebagai sumber guardrail UI. | Konfirmasi owner apakah isinya disetujui. |
-| B-4 | `PLANNING_COMPLETION_BATCH.md` berada di root repo; Batch 02 merujuk `docs/`. File tidak dipindahkan. | Keputusan owner (opsional). |
-| B-5 | O-01, O-02, O-04, O-06–O-11, O-16 masih OPEN. O-01 punya kombinasi PROPOSED tetapi belum terbukti di CI. O-04 sudah punya rencana uji, tetapi belum ada bukti; runtime Chaquopy berjalan di proses utama aplikasi, jadi isolasi bergantung pada uji `isolatedProcess` (F-07–F-10). | Izin prototipe + batas uji dari owner. |
-| B-6 | Android SDK tidak tersedia di container cloud; `dl.google.com` 403. Tidak menghalangi karena build direncanakan di GitHub Actions. | — |
-| B-7 | DataStore disebut "existing blueprint baseline" di Batch 02 (TD:26), tetapi tidak ada di blueprint (catatan K-1 di [DECISIONS_LOG.md](DECISIONS_LOG.md)). | Konfirmasi owner. |
-| B-8 | Host dokumentasi resmi (`chaquo.com`, `docs.python.org`, `pyodide.org`, `docs.gradle.org`, `github.com`, `dl.google.com`, `rfc-editor.org`, `csrc.nist.gov`, `www8.cao.go.jp`, `laws.e-gov.go.jp`) diblokir dari sesi cloud; riset memakai sumber dokumen di repositori resmi via `raw.githubusercontent.com`, `developer.android.com`, `kotlinlang.org`, dan Maven Central. | Opsional: buka host di pengaturan jaringan. |
-| B-10 | Spesifikasi penilaian bergantung pada keputusan OPEN: cakupan agregasi skor, basis lulus (skor terbaik — OPEN-CONFIRM), representasi angka, rubrik penjelasan konsep, rumus durasi ujian, identitas XP, aturan unlock (OP-1–OP-12). | Keputusan owner. |
-| B-11 | Backup: pemalsuan nilai oleh pemilik kata sandi tidak dapat dicegah kripto offline (OD-2); mode restore bertentangan antara pelestarian riwayat (BL:63–64) dan larangan merge otomatis (B01 M-16) (OD-3); Auto Backup aktif secara default (OD-4). | Keputusan owner. |
-| B-12 | Kalender: situs resmi Kantor Kabinet Jepang dan e-Gov diblokir; dataset hari libur dan contoh tanggal belum terverifikasi; rentang tahun, mekanisme pembaruan, kalender perusahaan, label era, dan perilaku jam tenang OPEN (CO-1–CO-7). | Akses ke `www8.cao.go.jp` + keputusan owner. |
-| B-13 | UI: tidak satu pun warna palet mencapai kontras 4,5:1 dengan teks putih (ungu 4,25; hijau/kuning/merah muda < 3); dark mode tidak tercakup *bright/light theme* blueprint; tipografi/aset/breakpoint/alat screenshot OPEN (UO-1–UO-10). | Keputusan owner. |
-| B-14 | Kurikulum: garis besar 16 minggu hanya RECOVERED (B-3); naskah, bank soal, rubrik, test case belum ada; lab minggu 9–12 (dan mungkin 16) bergantung O-04; bentuk lab SQL/HTML/Git dan kunci jawaban yang dapat diekstrak dari APK OPEN (CU-1–CU-11). | Keputusan owner + penulisan konten. |
-| B-9 | minSdk 24 hanya usulan; terkait M-19 (target perangkat), O-04 (Chaquopy butuh ≥ 24), dan O-06 (`PBKDF2withHmacSHA256` platform baru tersedia di API 26+). | Keputusan owner. |
+| B-3 | `PLANNING_COMPLETION_BATCH.md` di-merge tetapi header masih *DRAFT FOR OWNER REVIEW*; §6 belum dicentang. | D-01 / UW-01 |
+| B-7 | DataStore disebut baseline di TD:26 tetapi tidak ada di blueprint (DECISIONS_LOG K-1). | D-02 / UW-05 |
+| B-9 | minSdk 24 hanya usulan; terkait M-19, O-04 (Chaquopy ≥ 24), O-06 (PBKDF2-SHA256 API 26+). | D-05 / UW-04 |
+| B-10 | Penilaian: agregasi, basis lulus, representasi angka, rubrik, durasi, identitas XP, unlock (OP-1–OP-12). | D-04 / UW-11, UW-22, UW-26–UW-32 |
+| B-11 | Backup: risiko pemalsuan oleh pemilik kata sandi (OD-2); konflik mode restore (OD-3); Auto Backup default aktif (OD-4). | D-03, D-07 / UW-09, UW-06, UW-16 |
+| B-13 | UI: kontras palet; dark mode; tipografi/aset/breakpoint/alat screenshot (UO-1–UO-10). | UW-17–UW-19, UW-35 |
+| B-14 | Kurikulum: garis besar hanya RECOVERED; konten belum ada; lab minggu 9–12 bergantung O-04; CU-1–CU-11. | UW-20, UW-21, UW-25, UW-36, UW-37 |
+| B-4 | `PLANNING_COMPLETION_BATCH.md` di root; Batch 02 merujuk `docs/`. | UW-43 |
+| B-5 | O-01, O-02, O-04, O-06–O-11, O-16 masih OPEN. | D-06, D-08, D-09, D-10 / UW-03, UW-07, UW-08, UW-10, UW-24, UW-38 |
+
+### Izin
+
+| # | Blocker | Checklist / register |
+|---|---|---|
+| B-1 | Implementasi belum diizinkan. | D-11 / UW-02 |
+| (B-5) | Prototipe kelayakan O-04 butuh izin dan batas uji. | D-10 / UW-10 |
+
+### Verifikasi sumber eksternal / lingkungan
+
+| # | Blocker | Register |
+|---|---|---|
+| B-12 | Sumber resmi hari libur Jepang (Kantor Kabinet, e-Gov) diblokir; dataset belum terverifikasi. | UW-14, UW-23, UW-34 |
+| B-8 | Host dokumentasi resmi diblokir (`chaquo.com`, `docs.python.org`, `pyodide.org`, `docs.gradle.org`, `github.com`, `dl.google.com`, `rfc-editor.org`, `csrc.nist.gov`, `www8.cao.go.jp`, `laws.e-gov.go.jp`); riset memakai `raw.githubusercontent.com`, `developer.android.com`, `kotlinlang.org`, Maven Central. | UW-53 |
+| B-6 | Android SDK tidak tersedia di container cloud; `dl.google.com` 403. Tidak menghalangi (build di GitHub Actions). | UW-39 |
 
 B-2 (sumber Batch 02 belum ada) selesai di PR #7.
 
 ## Langkah berikutnya (usulan, menunggu owner)
 
-1. Review PR audit (ChatGPT). Jangan lanjut tahap berikutnya sebelum owner
-   menyetujui penyelesaian audit.
-2. Keputusan P0 owner: UW-01 (Batch 01), UW-05 (DataStore), UW-09 (restore),
-   UW-11 (agregasi/basis lulus), UW-10 (O-04), UW-03/UW-04 (toolchain,
-   minSdk), UW-06–UW-08 ([BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) §3, §5).
-3. Perapian dokumentasi P3 oleh Claude setelah disetujui (UW-44–UW-51).
-4. Implementasi tetap menunggu izin eksplisit (B-1).
+1. Review PR cleanup (ChatGPT). Jangan lanjut tahap berikutnya sebelum owner
+   menyetujui.
+2. Owner menjawab [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md),
+   dimulai dari D-01 (status Batch 01).
+3. Setelah D-01: Claude menyeragamkan label sumber Batch 01 (UW-45).
+4. Implementasi dan prototipe tetap menunggu izin eksplisit (D-10, D-11).

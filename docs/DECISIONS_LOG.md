@@ -21,6 +21,48 @@ atau menggantikan [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) dan
 | Batch 01 | [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) | AVAILABLE (di root repo, bukan `docs/`) | Di-merge (PR #5); header dokumen masih **DRAFT FOR OWNER REVIEW** dan kriteria selesai §6 belum dicentang | Perlu konfirmasi owner apakah merge PR #5 = persetujuan isi. |
 | Batch 02 | [`TECHNICAL_DECISIONS_BATCH_02.md`](TECHNICAL_DECISIONS_BATCH_02.md) | AVAILABLE | OWNER-APPROVED (header dokumen, TD:3) | Disalin tanpa perubahan dari lampiran owner (SHA-256 `0a27420e…a980b`). |
 
+## Dokumen batch (spesifikasi, bukan sumber keputusan)
+
+Dokumen berikut menjabarkan kriteria dan usulan. Isinya **bukan**
+keputusan kecuali butir yang berlabel APPROVED dengan rujukan ke
+blueprint atau Batch 02.
+
+| Batch | Dokumen | PR | Topik OPEN utama |
+|---|---|---|---|
+| 03 | [PYTHON_OFFLINE_FEASIBILITY_PLAN.md](PYTHON_OFFLINE_FEASIBILITY_PLAN.md) | #8 | O-04 |
+| 04 | [ANDROID_TOOLCHAIN_DECISION_SHEET.md](ANDROID_TOOLCHAIN_DECISION_SHEET.md) | #9 | O-01, minSdk |
+| 05 | [ASSESSMENT_STATE_MACHINE_SPEC.md](ASSESSMENT_STATE_MACHINE_SPEC.md) | #10 | OP-1–OP-12 |
+| 06 | [ENCRYPTED_BACKUP_RESTORE_SPEC.md](ENCRYPTED_BACKUP_RESTORE_SPEC.md) | #11 | OD-1–OD-10 (O-06, O-07) |
+| 07 | [JAPAN_CALENDAR_HOLIDAY_SPEC.md](JAPAN_CALENDAR_HOLIDAY_SPEC.md) | #12 | CO-1–CO-7 (O-05) |
+| 08 | [UI_ACCESSIBILITY_VISUAL_SPEC.md](UI_ACCESSIBILITY_VISUAL_SPEC.md) | #13 | UO-1–UO-10 |
+| 09 | [CURRICULUM_OFFLINE_LAB_SPEC.md](CURRICULUM_OFFLINE_LAB_SPEC.md) | #14 | CU-1–CU-11, M-01–M-19 |
+| 10 | [FINAL_PLANNING_READINESS_REVIEW.md](FINAL_PLANNING_READINESS_REVIEW.md) | #15 | Ringkasan kesiapan |
+| Audit | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) | #16 | UW-01–UW-54 |
+| Checklist | [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) | PR cleanup | UW-01–UW-11 (P0) |
+
+## Aturan rujukan lintas dokumen (editorial, UW-44)
+
+Beberapa dokumen memakai ID lokal yang sama (mis. `B-01` kasus batas vs
+blocker `B-1`; `M-1` mode restore vs gap `M-01`). ID yang ada **tidak**
+diganti. Saat merujuk ID lokal dari dokumen lain, tulis kode dokumennya:
+
+| Kode | Dokumen |
+|---|---|
+| `BL:n` / `TD:n` | Blueprint / Batch 02 (nomor baris) |
+| `B01 M-xx` | Batch 01 |
+| `PY:` | Python plan |
+| `TC:` | Toolchain sheet |
+| `ASM:` | Assessment spec |
+| `BKP:` | Backup spec |
+| `CAL:` | Calendar spec |
+| `UI:` | UI spec |
+| `CUR:` | Curriculum spec |
+| `HS:B-n` | Blocker di HANDOFF_STATE |
+| `UW-nn` | Register audit (ID global, unik) |
+
+Contoh: `ASM:B-03` (kasus batas skor), `BKP:M-1` (mode restore),
+`HS:B-3` (blocker status Batch 01).
+
 ## Batch 02 — Keputusan teknis
 
 Sumber: [`TECHNICAL_DECISIONS_BATCH_02.md`](TECHNICAL_DECISIONS_BATCH_02.md)
