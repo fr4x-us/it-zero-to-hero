@@ -28,7 +28,7 @@ Rekomendasi di sini adalah **saran untuk owner**, bukan keputusan.
 | 14 | [`JAPAN_CALENDAR_HOLIDAY_SPEC.md`](JAPAN_CALENDAR_HOLIDAY_SPEC.md) | Batch 07, O-05 | #12 | Merged |
 | 15 | [`UI_ACCESSIBILITY_VISUAL_SPEC.md`](UI_ACCESSIBILITY_VISUAL_SPEC.md) | Batch 08 | #13 | Merged |
 | 16 | [`CURRICULUM_OFFLINE_LAB_SPEC.md`](CURRICULUM_OFFLINE_LAB_SPEC.md) | Batch 09 | #14 | Merged |
-| 17 | Dokumen ini | Batch 10 | PR Batch 10 | Terbuka (tidak di-merge Claude) |
+| 17 | Dokumen ini | Batch 10 | #15 | Merged oleh owner 2026-11-23 (`9804a05`) |
 
 Isi repositori saat audit: hanya dokumentasi, template GitHub, dan skill.
 Tidak ada kode aplikasi, proyek Gradle, workflow CI, atau APK.
