@@ -256,3 +256,13 @@ menunjuk dokumen yang menjabarkan kriteria, **bukan** menutup gap.
 | CU-9 | Topik, rubrik, dan fixture mini-project/capstone | M-09 |
 | CU-10 | Penerimaan risiko kunci jawaban dapat diekstrak dari APK | §4.2 |
 | CU-11 | Pembagian topik minggu 9 dan 10 | §2 |
+
+## 11. Keputusan owner terkait (2026-11-23)
+
+| Keputusan | Dampak | Status butir |
+|---|---|---|
+| D-01 M-02 | Kerangka kurikulum 16 minggu disetujui; materi lengkap belum selesai | CU-1: kerangka **disetujui**; tujuan rinci per minggu tetap PROPOSED |
+| D-01 M-04 | Pratinjau modul berikutnya boleh; latihan/ujian terkunci sampai prasyarat lulus; modul lulus tetap dapat diakses | RM-08 diperjelas |
+| D-04 | Kelulusan per modul (empat komponen); program = 16 modul lulus + capstone | CU-2: implikasi bahwa setiap modul memiliki keempat komponen **perlu dikonfirmasi owner**; CU-9 tetap OPEN |
+| D-08 | `INTERNET` diizinkan untuk fitur opsional | CC-02 tetap: materi inti harus offline |
+| D-10 | Ambang uji Python disetujui; eksekusi tidak diizinkan | Lab minggu 9–12 tetap bergantung pada O-04 (NOT VERIFIED) |

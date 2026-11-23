@@ -118,7 +118,7 @@ Catatan: kolom H2 (format, encoding) belum dapat diperiksa di sesi ini
 |---|---|---|
 | U-1 Bersama rilis aplikasi | Dataset dibundel sebagai aset; diperbarui saat rilis baru | Paling sederhana; tidak perlu jaringan atau izin. |
 | U-2 Impor file dataset oleh pengguna | Pengguna memilih file lewat SAF | Butuh validasi tanda tangan/checksum; risiko file palsu. |
-| U-3 Unduh otomatis | Aplikasi mengambil H2 | Butuh `INTERNET` (O-02 OPEN); bertentangan dengan prinsip offline. |
+| U-3 Unduh otomatis | Aplikasi mengambil H2 | Butuh `INTERNET` (diizinkan untuk fitur opsional oleh D-08); kalender inti tetap harus berfungsi offline. Pilihan mekanisme tetap CO-2 (OPEN). |
 
 PROPOSED: U-1 sebagai default. Pilihan final **OPEN**.
 

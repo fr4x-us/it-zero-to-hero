@@ -1,17 +1,19 @@
 # IT ZERO → HERO — Owner Decision Checklist (P0)
 
-Status: D-01 **APPROVED BY OWNER** (2026-11-23) · D-02–D-11 **AWAITING
-OWNER** · tidak ada keputusan yang diisi atas nama owner · tidak ada izin
-implementasi atau prototipe.
+Status: D-01 **APPROVED** · D-02–D-09 **OWNER APPROVED** (tunduk pada
+verifikasi yang tersisa) · D-10 **PLANNING APPROVED; EXECUTION NOT
+AUTHORIZED** · D-11 **DEFERRED; IMPLEMENTATION NOT AUTHORIZED** · tidak
+ada keputusan yang diisi atas nama owner · **PLANNING CLEAR: NO** ·
+**IMPLEMENTATION VERIFIED: NO**.
 Tanggal: **2026-11-23**. Basis awal: `main` = `5931ece` (merge PR #16);
-D-01 dicatat pada basis `4eacaa0` (merge PR #17).
+D-01 dicatat pada basis `4eacaa0` (merge PR #17); D-02–D-11 dicatat pada basis `777f5dc` (merge PR #18).
 
 Sumber register: [`BATCH_01_10_UNFINISHED_AUDIT.md`](BATCH_01_10_UNFINISHED_AUDIT.md)
 §3 (UW-01–UW-11). Blueprint terkunci: [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md).
 
 Kolom **Rekomendasi teknis** adalah saran Claude, **bukan** keputusan.
 Kolom **Keputusan final** hanya diisi berdasarkan jawaban tertulis owner
-(melalui PR yang disetujui). Saat ini hanya D-01 yang terisi.
+(melalui PR yang disetujui). D-01–D-11 kini terisi sesuai keputusan owner 2026-11-23; kolom Rekomendasi teknis tetap dipertahankan sebagai catatan historis.
 
 ## 0. Urutan berdasarkan ketergantungan
 
@@ -63,8 +65,8 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko (b) | Preferensi bercampur dengan data akademik di Room |
 | Risiko (c) | Ketidakjelasan saat scaffold |
 | Ketergantungan | D-01 (konsistensi sumber); memengaruhi D-06 |
-| Status | **AWAITING OWNER** |
-| Keputusan final | |
+| Status | **OWNER APPROVED** (2026-11-23) — tunduk pada verifikasi yang tersisa; berlaku efektif setelah PR pencatatan D-02–D-11 di-merge |
+| Keputusan final | Opsi (a): Jetpack DataStore ditambahkan ke arsitektur rencana **hanya untuk preferensi aplikasi**; Room/SQLite tetap sumber kebenaran data akademik. Versi DataStore **OPEN** sampai verifikasi kompatibilitas. Tidak ada perubahan arsitektur lain. Ini keputusan baru owner, bukan bagian blueprint (TD:26 dikoreksi oleh keputusan ini) |
 
 ### D-03 — Mode restore backup (UW-09)
 
@@ -78,8 +80,8 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko M-2 | Pengguna bisa terhalang memulihkan data |
 | Risiko M-3 | Bertentangan dengan "no automatic merging" kecuali owner mengizinkan |
 | Ketergantungan | D-01 (status B01 M-16); memengaruhi D-07 dan model data attempt |
-| Status | **AWAITING OWNER** |
-| Keputusan final | |
+| Status | **OWNER APPROVED** (2026-11-23) — tunduk pada verifikasi yang tersisa; berlaku efektif setelah PR pencatatan D-02–D-11 di-merge |
+| Keputusan final | **M-2 default aman**: restore ditolak bila akan menghilangkan attempt akademik yang ada di data aktif tetapi tidak ada di backup. **M-1 hanya sebagai pilihan eksplisit pengguna** (penggantian penuh) dengan peringatan jelas, konfirmasi eksplisit, dan snapshot pra-restore yang berhasil dibuat serta dapat dipulihkan. **Tanpa penggabungan riwayat nilai otomatis** (M-3 ditolak). OPEN: retensi snapshot, batas penyimpanan, detail rollback, parameter kriptografi |
 
 ### D-04 — Agregasi skor dan basis kelulusan (UW-11)
 
@@ -94,8 +96,8 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko (b)/(c) | Unlock modul butuh aturan terpisah |
 | Risiko (ii) | Remedial yang lebih buruk menurunkan status — bertentangan dengan semangat BL:34 |
 | Ketergantungan | D-01; memengaruhi model data, CU-2, UW-22 |
-| Status | **AWAITING OWNER** |
-| Keputusan final | |
+| Status | **OWNER APPROVED** (2026-11-23) — tunduk pada verifikasi yang tersisa; berlaku efektif setelah PR pencatatan D-02–D-11 di-merge |
+| Keputusan final | Skor terbaik per komponen; setiap attempt disimpan. **Kelulusan modul**: nilai tertimbang ≥ 80 dan setiap komponen ≥ 75, tanpa pembulatan. Modul berikutnya terbuka linear setelah modul sebelumnya lulus. **Penyelesaian program**: seluruh 16 modul lulus **dan** capstone selesai menurut rubrik yang akan disetujui kemudian. Tidak ada rata-rata program atau ambang tambahan baru. OPEN: agregasi numerik tingkat program, representasi angka, rubrik capstone |
 
 ### D-07 — Kebijakan Android Auto Backup (UW-06)
 
@@ -109,8 +111,8 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko AB-2 | Aturan ekstraksi harus diuji untuk cloud dan D2D di API ≤ 30 dan ≥ 31 |
 | Risiko AB-3 | Data akademik di cloud tanpa enkripsi aplikasi; restore otomatis melewati alur restore aman |
 | Ketergantungan | D-03; D-02 (bila DataStore dipakai) |
-| Status | **AWAITING OWNER** |
-| Keputusan final | |
+| Status | **OWNER APPROVED** (2026-11-23) — tunduk pada verifikasi yang tersisa; berlaku efektif setelah PR pencatatan D-02–D-11 di-merge |
+| Keputusan final | **AB-1**: Android Auto Backup dinonaktifkan; aplikasi memakai mekanisme backup terenkripsinya sendiri (selaras D-03). `allowBackup=false` **tidak** dianggap menjamin semua jalur transfer tercegah; perilaku transfer antarperangkat (termasuk pengecualian per produsen) **wajib diverifikasi** (NOT VERIFIED) |
 
 ### D-08 — Izin `INTERNET` (UW-07)
 
@@ -123,8 +125,8 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko (a) | Tidak ada pembaruan data/konten lewat jaringan (sesuai offline-first) |
 | Risiko (b) | Permukaan serangan lebih besar; lab Python bisa mengakses jaringan bila isolasi gagal |
 | Ketergantungan | Independen; memengaruhi D-07, D-10, CO-2 |
-| Status | **AWAITING OWNER** |
-| Keputusan final | |
+| Status | **OWNER APPROVED** (2026-11-23) — tunduk pada verifikasi yang tersisa; berlaku efektif setelah PR pencatatan D-02–D-11 di-merge |
+| Keputusan final | **Opsi (b)**: izin `INTERNET` diperbolehkan untuk fitur opsional. Fitur belajar inti tetap berfungsi offline. Eksekusi lab Python **tidak boleh** mendapat akses jaringan; threat model, isolasi proses, dan uji penolakan jaringan **wajib**. F-09 tetap feasibility gate yang **NOT VERIFIED**. Tidak ada klaim sandbox aman |
 
 ## B. Keputusan teknis
 
@@ -141,8 +143,8 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko (b) | Jangkauan perangkat sedikit berkurang (data jangkauan perangkat belum diperiksa) |
 | Risiko (c) | Jangkauan berkurang lebih jauh |
 | Ketergantungan | D-01 (M-19); memengaruhi D-06, D-10, OD-1 |
-| Status | **AWAITING OWNER** |
-| Keputusan final | |
+| Status | **OWNER APPROVED** (2026-11-23) — tunduk pada verifikasi yang tersisa; berlaku efektif setelah PR pencatatan D-02–D-11 di-merge |
+| Keputusan final | **minSdk = 29 (Android 10)**. Menggantikan usulan minSdk 24 (Batch 04) dan rekomendasi teknis 26 (keduanya kini SUPERSEDED) |
 
 ### D-06 — Kombinasi toolchain (UW-03)
 
@@ -156,8 +158,8 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko (b) | ALT-4 keluar dari rentang dukungan Kotlin |
 | Risiko (c) | Tanpa persetujuan arah, scaffold tetap tertahan |
 | Ketergantungan | D-05; D-02 (versi DataStore) |
-| Status | **AWAITING OWNER** |
-| Keputusan final | |
+| Status | **OWNER APPROVED AS PROVISIONAL BASELINE** (2026-11-23) — belum terverifikasi build |
+| Keputusan final | Baseline sementara: AGP 9.3.1 · Gradle 9.7.0 · JDK 17 · Kotlin 2.4.21 · Compose Compiler 2.4.21 · Compose BOM 2026.11.01 · KSP 2.3.12 · Room 2.8.5 · Navigation Compose 2.10.2 · compileSdk 37 · targetSdk 36 · minSdk 29 · Build Tools 36.0.0 · DataStore (versi belum dipilih). Ketersediaan dan kompatibilitas semua dependensi **wajib dicek ulang sebelum scaffold** dan **diverifikasi di CI hanya setelah izin implementasi terpisah**. **Tidak** build-verified |
 
 ### D-09 — Stack test minimal (UW-08)
 
@@ -171,8 +173,8 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko (b) | Robolectric perlu diverifikasi dengan toolchain D-06 |
 | Risiko (c) | Lebih banyak dependensi sebelum ada UI |
 | Ketergantungan | D-06; O-09 (runner) |
-| Status | **AWAITING OWNER** |
-| Keputusan final | |
+| Status | **OWNER APPROVED** (2026-11-23) — tunduk pada verifikasi yang tersisa; berlaku efektif setelah PR pencatatan D-02–D-11 di-merge |
+| Keputusan final | **Opsi (b)**: baseline awal JUnit, kotlinx-coroutines-test, Compose UI Test, Robolectric. Alat screenshot test dipilih pada milestone UI. Robolectric dan semua dependensi test wajib diverifikasi terhadap toolchain D-06. Tidak membuat test, infrastruktur test, atau workflow CI sekarang |
 
 ## C. Izin prototipe
 
@@ -189,9 +191,9 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko (b) | Lab Python tetap tidak dapat direncanakan |
 | Risiko (c) | Mengubah cakupan kurikulum terkunci (BL:19, BL:41) — butuh revisi blueprint |
 | Ketergantungan | D-05 (minSdk); D-08 (jaringan); izin ini **tidak** sama dengan D-11 |
-| Status | **AWAITING OWNER** |
-| Batas yang ditetapkan owner | |
-| Keputusan final | |
+| Status | **PLANNING APPROVED; EXECUTION NOT AUTHORIZED** (2026-11-23) |
+| Batas yang ditetapkan owner | APK maks. 100 MB per ABI (F-03) · start interpreter dingin maks. 5 detik (F-04) · batas waktu eksekusi 3 detik per latihan (F-11) · target batas memori proses Python 128 MB (F-12) · output maks. 64 KB per eksekusi (F-13) · target uji: 1 perangkat fisik ARM64 + 1 emulator x86_64 · API minimum 29. **Ambang penerimaan yang diusulkan, bukan hasil pengukuran** |
+| Keputusan final | Cakupan dan ambang penerimaan F-01–F-15 disetujui **sebagai keputusan perencanaan**. Prototipe **tidak** diizinkan untuk diimplementasikan atau dijalankan sekarang. Eksekusi butuh: (1) penyelesaian kebutuhan perencanaan yang tersisa; (2) izin owner terpisah yang eksplisit; (3) cakupan eksperimental yang terisolasi. Runtime final **tidak** dipilih; F-01–F-15 **NOT VERIFIED** |
 
 ## D. Izin implementasi
 
@@ -206,25 +208,37 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko (a) | Keputusan yang masih terbuka di P1/P2 dapat memaksa refaktor kemudian |
 | Risiko (b) | Toolchain tidak pernah terbukti; versi menua |
 | Ketergantungan | D-01–D-09 |
-| Status | **AWAITING OWNER** |
-| Keputusan final | |
+| Status | **DEFERRED — IMPLEMENTATION NOT AUTHORIZED** (2026-11-23) |
+| Keputusan final | Owner menulis "D-11 opsi A", tetapi instruksi substantifnya adalah **menunda** implementasi; opsi (a) di checklist ini berarti mengizinkan scaffold terbatas, sehingga **tidak** dicatat sebagai opsi (a). Keputusan yang dicatat: selesaikan dulu seluruh butir perencanaan Batch 01–10 yang belum selesai; PLANNING CLEAR: YES hanya setelah penyelesaian terdokumentasi dan direview; minta izin owner baru yang eksplisit sebelum implementasi apa pun. Tetap dilarang: coding aplikasi, scaffold Android, proyek Gradle, workflow CI, implementasi/eksekusi prototipe Python, build APK, instalasi skill tambahan, auto-merge PR |
 
 ## Ringkasan
 
 | ID | Keputusan | Kelompok | Status | Keputusan final |
 |---|---|---|---|---|
 | D-01 | Status Batch 01 | Produk | **APPROVED BY OWNER** (2026-11-23) | Setujui M-01–M-19 dengan ketentuan (lihat D-01) |
-| D-02 | DataStore | Produk/data | AWAITING OWNER | |
-| D-03 | Mode restore | Produk/data | AWAITING OWNER | |
-| D-04 | Agregasi skor + basis lulus | Produk | AWAITING OWNER | |
-| D-05 | minSdk | Teknis | AWAITING OWNER | |
-| D-06 | Toolchain | Teknis | AWAITING OWNER | |
-| D-07 | Auto Backup | Produk/data | AWAITING OWNER | |
-| D-08 | `INTERNET` | Produk | AWAITING OWNER | |
-| D-09 | Stack test | Teknis | AWAITING OWNER | |
-| D-10 | Prototipe O-04 | Izin prototipe | AWAITING OWNER | |
-| D-11 | Implementasi tahap pertama | Izin implementasi | AWAITING OWNER | |
+| D-02 | DataStore | Produk/data | OWNER APPROVED | (a) preferensi saja; Room sumber kebenaran; versi OPEN |
+| D-03 | Mode restore | Produk/data | OWNER APPROVED | M-2 default; M-1 eksplisit + snapshot; tanpa auto-merge |
+| D-04 | Agregasi skor + basis lulus | Produk | OWNER APPROVED | Skor terbaik; lulus per modul; program = 16 modul + capstone; agregasi program OPEN |
+| D-05 | minSdk | Teknis | OWNER APPROVED | 29 |
+| D-06 | Toolchain | Teknis | OWNER APPROVED (provisional) | Baseline sementara; belum build-verified |
+| D-07 | Auto Backup | Produk/data | OWNER APPROVED | AB-1; D2D NOT VERIFIED |
+| D-08 | `INTERNET` | Produk | OWNER APPROVED | (b) untuk fitur opsional; lab Python tanpa jaringan (F-09 NOT VERIFIED) |
+| D-09 | Stack test | Teknis | OWNER APPROVED | (b) JUnit, coroutines-test, Compose UI Test, Robolectric |
+| D-10 | Prototipe O-04 | Izin prototipe | PLANNING APPROVED; EXECUTION NOT AUTHORIZED | Ambang disetujui; prototipe tidak diizinkan |
+| D-11 | Implementasi tahap pertama | Izin implementasi | DEFERRED; NOT AUTHORIZED | Selesaikan perencanaan dulu; izin baru diperlukan |
 
 Cara menjawab: owner mengirim jawaban per ID (mis. "D-03: M-2"). Claude
 mencatatnya di PR terpisah, memperbarui DECISIONS_LOG, dan mengubah
 status menjadi APPROVED hanya setelah PR itu disetujui.
+
+## Catatan konsistensi saat pencatatan D-02–D-11
+
+| # | Temuan | Penanganan |
+|---|---|---|
+| 1 | D-05 (minSdk 29) menggantikan usulan 24 (Batch 04) dan rekomendasi 26. | Dokumen terkait diberi label SUPERSEDED; nilai lama dipertahankan sebagai riwayat |
+| 2 | D-08 opsi (b) berbeda dari rekomendasi teknis (a). Akibatnya isolasi jaringan lab Python menjadi syarat wajib, bukan sekadar efek samping tanpa izin. | Dicatat di Python plan §9 |
+| 3 | D-11: label "opsi A" vs instruksi menunda. | Dicatat sebagai DEFERRED sesuai instruksi substantif owner |
+| 4 | D-04 menetapkan kelulusan per modul dengan empat komponen. Implikasinya: setiap modul memerlukan keempat komponen penilaian (termasuk mini-project dan penjelasan konsep). | **Tidak** diselesaikan diam-diam; dicatat sebagai implikasi yang perlu dikonfirmasi pada CU-2 |
+| 5 | D-04: "16 modul lulus dan capstone selesai" — capstone juga merupakan minggu 16 di kerangka kurikulum. | Hubungan modul 16 dengan capstone dan rubriknya tetap OPEN (CU-9) |
+| 6 | D-10: batas memori 128 MB adalah target; kemampuan Android menegakkan batas memori per proses belum diverifikasi. | Tetap bagian F-12 (NOT VERIFIED) |
+

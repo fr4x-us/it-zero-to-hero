@@ -118,9 +118,11 @@ anti-kecurangan terhadap pemilik kata sandi (T-03).
 | PBKDF2-HMAC-SHA1 | `PBKDF2withHmacSHA1` | 10+ |
 | Argon2id | **Tidak ada** di tabel `SecretKeyFactory` Android | — |
 
-Implikasi: dengan `minSdk 24` (usulan Batch 04), `PBKDF2withHmacSHA256`
-**tidak** tersedia di API 24–25 melalui platform. Argon2id selalu butuh
-pustaka pihak ketiga. Keduanya memengaruhi O-06 dan minSdk (B-9).
+Implikasi: *(SUPERSEDED oleh D-05, minSdk 29.)* Semula: dengan `minSdk 24`
+(usulan Batch 04), `PBKDF2withHmacSHA256` **tidak** tersedia di API 24–25.
+Dengan minSdk 29, seluruh primitif platform di tabel di atas kecuali
+GCM-SIV (API 30+) tersedia. Argon2id tetap butuh pustaka pihak ketiga
+(O-06 tetap OPEN).
 
 ### 4.2 Rekomendasi parameter dari OWASP (VERIFIED sebagai isi K6)
 
@@ -138,7 +140,7 @@ backup adalah inferensi (PROPOSED).
 | Kandidat | Kelebihan | Kekurangan / yang wajib diuji |
 |---|---|---|
 | C-1 Argon2id + AES-256-GCM (disebut B01) | KDF memory-hard; AES-GCM tersedia API 10+ | Butuh pustaka pihak ketiga (lisensi, ukuran, pemeliharaan); waktu derivasi di perangkat lemah; memori. |
-| C-2 PBKDF2-HMAC-SHA256 + AES-256-GCM | Semua dari platform pada API 26+ | Tidak memory-hard; ≥ 600.000 iterasi (K6) perlu diukur waktunya; minSdk 24 bermasalah (§4.1). |
+| C-2 PBKDF2-HMAC-SHA256 + AES-256-GCM | Semua dari platform pada API 26+ | Tidak memory-hard; ≥ 600.000 iterasi (K6) perlu diukur waktunya; minSdk 24 bermasalah (§4.1) — *selesai oleh D-05 (minSdk 29)*. |
 | C-3 scrypt + AES-256-GCM | Memory-hard | Pustaka pihak ketiga; parameter K6 perlu diukur di perangkat. |
 | C-4 KDF terpilih + ChaCha20-Poly1305 | Cepat tanpa akselerasi AES | API 28+; perlu alasan memilih selain AES-GCM. |
 
@@ -291,7 +293,7 @@ terhapus; ekspor manual harus disimpan di lokasi pilihan pengguna (K4).
 | T-11/T-12 Auto Backup | Tinggi (default aktif) | Sedang–Tinggi | Perlu keputusan O-07 |
 | T-06 nonce reuse | Rendah bila desain diikuti | Tinggi | Salt + nonce baru per ekspor; perlu uji |
 | T-04 file berbahaya | Rendah | Sedang | Validasi bertahap; perlu uji fuzz |
-| minSdk 24 vs PBKDF2-SHA256 (API 26+) | Pasti bila C-2 + minSdk 24 | Sedang | Keputusan O-06 + B-9 |
+| minSdk 24 vs PBKDF2-SHA256 (API 26+) | — | — | **Selesai oleh D-05** (minSdk 29) |
 | Pustaka Argon2id/scrypt pihak ketiga | — | Sedang (rantai pasok) | Review lisensi/pemeliharaan |
 
 ## 10. Skenario pengujian (Given–When–Then, bukan test executable)
@@ -317,11 +319,28 @@ terhapus; ekspor manual harus disimpan di lokasi pilihan pengguna (K4).
 |---|---|---|
 | OD-1 | Kandidat KDF + AEAD (C-1–C-4) dan parameternya setelah pengukuran | O-06, §4 |
 | OD-2 | Penerimaan risiko T-03 (pemalsuan nilai oleh pemilik kata sandi) | §3.4 |
-| OD-3 | Mode restore: M-1 / M-2 / M-3 | §6.2, BL:63–64, B01 M-16 |
-| OD-4 | Kebijakan Auto Backup: AB-1 / AB-2 / AB-3 | O-07, §7 |
+| OD-3 | Mode restore: M-1 / M-2 / M-3 — **diputuskan D-03** (§12) | §6.2, BL:63–64, B01 M-16 |
+| OD-4 | Kebijakan Auto Backup: AB-1 / AB-2 / AB-3 — **diputuskan D-07: AB-1** (§12) | O-07, §7 |
 | OD-5 | Format payload P-A / P-B | §5.2 |
 | OD-6 | Aturan kekuatan kata sandi | T-01 |
 | OD-7 | Batas ukuran file impor dan biaya KDF maksimum yang diterima | F-10, F-11 |
 | OD-8 | Retensi snapshot pra-restore dan local snapshot (frekuensi, jumlah) | B01 M-15 |
 | OD-9 | Perlakuan attempt `IN_PROGRESS` saat restore | I-06 |
-| OD-10 | minSdk final terhadap ketersediaan primitif (API 26+ untuk PBKDF2-SHA256) | B-9, §4.1 |
+| OD-10 | minSdk final terhadap ketersediaan primitif — **diputuskan D-05: 29** | B-9, §4.1 |
+
+## 12. Keputusan owner (2026-11-23)
+
+Dicatat dari [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md).
+Bagian §6.2 dan §7 di atas dipertahankan sebagai analisis opsi.
+
+| Keputusan | Isi | Masih OPEN / NOT VERIFIED |
+|---|---|---|
+| D-03 (OD-3) | **M-2 default aman**: restore ditolak bila akan menghilangkan attempt akademik yang ada di data aktif tetapi tidak ada di backup. **M-1** hanya sebagai pilihan eksplisit pengguna, dengan peringatan jelas, konfirmasi eksplisit, dan snapshot pra-restore yang berhasil dibuat dan dapat dipulihkan. **M-3 ditolak**: tanpa penggabungan riwayat nilai otomatis. | Retensi snapshot (OD-8), batas penyimpanan, detail rollback, parameter kripto (OD-1) |
+| D-07 (OD-4) | **AB-1**: Android Auto Backup dinonaktifkan; backup memakai mekanisme terenkripsi aplikasi. | Perilaku transfer antarperangkat (termasuk pengecualian per produsen, §7) **NOT VERIFIED**; `allowBackup=false` tidak dianggap menutup semua jalur |
+| D-05 (OD-10) | minSdk 29 | — |
+| D-08 | `INTERNET` diizinkan untuk fitur opsional. | Alur ekspor/impor tetap offline (§5.3); tidak berubah |
+
+Dampak pada invarian: I-02 kini mengikuti M-2 (default) atau M-1
+(eksplisit); attempt yang tidak ada di backup tidak pernah hilang tanpa
+snapshot. Skenario G-11 mengikuti keputusan ini. OD-1, OD-2, OD-5–OD-9
+tetap OPEN.

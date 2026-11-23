@@ -1,7 +1,10 @@
 # IT ZERO → HERO — Android Toolchain Decision Sheet (O-01)
 
-Status: PERSIAPAN · semua versi **PROPOSED**, bukan LOCKED · O-01 tetap
-**OPEN** sampai owner menyetujui dan kombinasi terbukti di GitHub Actions.
+Status: PERSIAPAN · kombinasi §2 **OWNER APPROVED AS PROVISIONAL BASELINE**
+(D-06, 2026-11-23) dengan minSdk **29** (D-05) · **belum build-verified** ·
+dicek ulang sebelum scaffold dan diverifikasi di CI hanya setelah izin
+implementasi terpisah (D-11 DEFERRED). Dokumen semula ditulis dengan status
+PROPOSED (PR #9); nilai lama yang diganti ditandai SUPERSEDED.
 Tanggal pemeriksaan sumber: **2026-11-23**.
 
 Dokumen ini tidak membuat proyek Android, file Gradle, kode, workflow, atau
@@ -66,12 +69,14 @@ dari T12 dan T19).
 | `compileSdk` | **37** | D / V | Diwajibkan Navigation 2.10 (T11); API maksimum AGP 9.3 = 37 (T1). Ketersediaan paket platform 37 di runner: V. |
 | SDK Build Tools | **36.0.0** | D | Minimum dan default AGP 9.3 (T1). |
 | `targetSdk` | **36** | D / A | Google Play: app baru dan update wajib target ≥ API 36 (Android 16) (T15). Memilih 36 (bukan 37) adalah usulan (A) untuk menghindari perubahan perilaku API 37 sebelum diuji. |
-| `minSdk` | **24** | A | AndroidX default minSdk 23 (T11); Chaquopy membutuhkan ≥ 24 (T21). 24 menjaga opsi Chaquopy terbuka **tanpa** memilihnya. Keputusan akhir mengikuti M-19 dan O-04. |
+| `minSdk` | **29** (D-05) | OWNER APPROVED | Keputusan owner 2026-11-23. Memenuhi AndroidX default 23 (T11) dan Chaquopy ≥ 24 (T21) tanpa memilih Chaquopy. *SUPERSEDED: usulan awal 24 (A) di dokumen ini dan rekomendasi 26 di checklist.* |
+| DataStore | **versi OPEN** (D-02) | OWNER APPROVED (komponen) | Untuk preferensi aplikasi; versi dipilih dan diverifikasi kompatibilitasnya sebelum scaffold. |
 
 Ringkasnya: **AGP 9.3.1 · Gradle 9.7.0 · JDK 17 · Kotlin 2.4.21 · Compose
 Compiler 2.4.21 · Compose BOM 2026.11.01 · KSP 2.3.12 · Room 2.8.5 ·
-Navigation 2.10.2 · compileSdk 37 · targetSdk 36 · minSdk 24 · Build Tools
-36.0.0.**
+Navigation 2.10.2 · compileSdk 37 · targetSdk 36 · minSdk 29 · Build Tools
+36.0.0 · DataStore (versi OPEN).** Status: OWNER APPROVED AS PROVISIONAL
+BASELINE (D-06); minSdk awal 24 SUPERSEDED oleh D-05.
 
 ## 3. Matriks kompatibilitas
 
@@ -90,7 +95,8 @@ Navigation 2.10.2 · compileSdk 37 · targetSdk 36 · minSdk 24 · Build Tools
 | Compose 1.13 / BOM 2026.11.01 ↔ compileSdk, Kotlin | Tidak ditemukan pernyataan eksplisit | 37 / 2.4.21 | V |
 | Built-in Kotlin AGP 9 ↔ KSP dan plugin Compose | Halaman migrasi tidak memuat matriks versi (T4) | — | V |
 | Chaquopy 17.2 ↔ AGP | AGP 7.3–9.5 (T21) | 9.3.1 | D ✓ (bila kelak dipilih) |
-| Chaquopy ↔ minSdk | ≥ 24 (T21) | 24 | D ✓ (bila kelak dipilih) |
+| Chaquopy ↔ minSdk | ≥ 24 (T21) | 29 | D ✓ (bila kelak dipilih) |
+| DataStore ↔ toolchain | Belum dicari | versi OPEN | V |
 
 ## 4. Alasan pemilihan
 
@@ -127,9 +133,9 @@ Navigation 2.10.2 · compileSdk 37 · targetSdk 36 · minSdk 24 · Build Tools
 | R2 | Paket platform `android-37` mungkin belum terpasang di runner GitHub. | Langkah CI memasang eksplisit via `sdkmanager` dan mencatat lognya. |
 | R3 | Pemetaan BOM 2026.11.01 dibaca dari urutan tabel. | Cek `dependencies`/`dependencyInsight` di CI. |
 | R4 | Interaksi built-in Kotlin AGP 9 dengan KSP dan plugin Compose belum ada matriks resmi. | Build CI pertama adalah bukti; bila gagal, kembali ke owner. |
-| R5 | `minSdk 24` adalah usulan; bila owner memilih lebih rendah, Chaquopy tidak dapat dipakai (T21). | Putuskan bersama M-19 dan O-04. |
+| R5 | *(Selesai oleh D-05: minSdk 29.)* Semula: `minSdk 24` adalah usulan; bila lebih rendah, Chaquopy tidak dapat dipakai (T21). | — |
 | R6 | `dl.google.com` diblokir di sesi cloud; verifikasi hanya mungkin di GitHub Actions. | Sesuai L-100 (CI sebagai lingkungan build). |
-| R7 | DataStore (TD:26) belum punya versi di sini karena status B-7 belum dikonfirmasi. | Tambahkan setelah B-7 selesai. |
+| R7 | DataStore disetujui (D-02) tetapi versinya belum dipilih/diverifikasi. | Pilih versi stabil dari sumber resmi saat pengecekan ulang sebelum scaffold. |
 
 ## 7. Daftar periksa GitHub Actions (saat implementasi diizinkan)
 
@@ -151,7 +157,7 @@ dan owner menyetujui kombinasi.
 
 | Item | Status |
 |---|---|
-| Kombinasi §2 | PROPOSED |
-| O-01 | **OPEN** |
-| minSdk final | OPEN (M-19, O-04) |
+| Kombinasi §2 | OWNER APPROVED AS PROVISIONAL BASELINE (D-06); belum build-verified |
+| O-01 | Arah diputuskan (provisional); verifikasi **NOT VERIFIED** |
+| minSdk final | **29** (D-05) |
 | Runtime Python | OPEN (O-04); Chaquopy **tidak** dipilih — batasnya dicatat agar kombinasi tidak menutup opsi tersebut |

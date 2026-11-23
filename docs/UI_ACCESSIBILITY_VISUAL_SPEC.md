@@ -38,7 +38,7 @@ umum dipakai WCAG; ambang yang dipakai adalah ambang U1.
 | UI-04 | UI Android yang aksesibel, mudah dibaca, dan responsif. | APPROVED | BL:71 |
 | UI-05 | Compose native; ikuti palet dan guardrail aksesibilitas/anti-generik Batch 01. Aset, tipografi, dan target terukur OPEN. | APPROVED (arah) | TD:25 |
 | UI-06 | Navigation Compose untuk lima tab; satu modul `app`; UI state immutable + StateFlow. | APPROVED | TD:18–20 |
-| UI-07 | Palet: ungu `#7565F5`, biru `#3B82F6`, hijau `#22C55E`, kuning `#FFB020`, merah muda `#FF6B91`. | PROPOSED (B01 M-17; TD:25 merujuk "approved palette") | B01 M-17 |
+| UI-07 | Palet: ungu `#7565F5`, biru `#3B82F6`, hijau `#22C55E`, kuning `#FFB020`, merah muda `#FF6B91`. | APPROVED (D-01 M-17, 2026-11-23; semula PROPOSED) | B01 M-17, TD:25 |
 | UI-08 | Profil lewat avatar; onboarding 4 layar; tampilan pelajaran, kuis, ujian, hasil, XP/mastery/achievement, rapor akademik, pengaturan, backup/restore. | PROPOSED (B01 M-18) | B01 M-18 |
 | UI-09 | Guardrail anti-generik: Compose native (bukan dashboard web), palet dipakai secara semantik, hindari grid kartu berulang, gradien berlebih, emoji dekoratif, stock art generik, glassmorphism, animasi tanpa tujuan; validasi dengan screenshot ukuran perangkat nyata. | PROPOSED (B01 §3) | B01 §3 |
 | UI-10 | Target sentuh minimal 48dp × 48dp. | VERIFIED | U1 |
@@ -234,10 +234,10 @@ Belum ada screenshot. Tidak ada klaim visual yang teruji.
 ## 11. Daftar keputusan
 
 ### APPROVED
-UI-01–UI-06, C-01, ambang U1 (UI-10, UI-11 VERIFIED).
+UI-01–UI-06, UI-07 (palet, D-01 M-17), C-01, ambang U1 (UI-10, UI-11 VERIFIED).
 
 ### PROPOSED (perlu persetujuan)
-Palet dan peran semantik (UI-07, §2.1), daftar layar (UI-08), guardrail
+Peran semantik palet (§2.1), daftar layar (UI-08), guardrail
 (UI-09), isi tab (§3.1), aturan navigasi N-01–N-04, komponen (§3.4),
 A-05–A-10, C-05–C-06, UI state (§6), P-01–P-04, S-01–S-06.
 
