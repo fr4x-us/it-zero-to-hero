@@ -17,7 +17,7 @@ atau workflow yang memicu implementasi.
 |---|---|---|
 | **Owner (pengguna)** | Pemegang keputusan. Membuat atau menyetujui Issue, memberi izin, me-review dan me-merge PR, menyerahkan sumber keputusan ke repo. | — |
 | **ChatGPT** | Perencanaan dan penyusunan draf: merumuskan tugas sebagai Issue, menyiapkan draf dokumen keputusan, me-review PR dari sisi isi. Tidak punya akses tulis ke repo. | Menganggap draf sebagai keputusan sebelum di-merge owner. |
-| **Claude Code Cloud** | Pelaksana: mengerjakan satu Issue dalam satu branch dan satu PR, memverifikasi, memperbarui `HANDOFF_STATE.md`, dan melapor dalam Bahasa Indonesia. | Me-merge PR, mengubah blueprint, memulai implementasi tanpa izin, mengklaim build/test tanpa log. |
+| **Claude Code Cloud** | Pelaksana: mengerjakan satu Issue dalam satu branch dan satu PR, memverifikasi, memperbarui `HANDOFF_STATE.md`, dan melapor dalam Bahasa Indonesia. | Me-merge PR tanpa otorisasi eksplisit per PR (§5), mengubah blueprint, memulai implementasi tanpa izin, mengklaim build/test tanpa log. |
 | **GitHub** | Sumber kebenaran bersama: `main` = keadaan yang disetujui; Issue = masukan tugas; PR = usulan dan bukti; `docs/HANDOFF_STATE.md` = checkpoint. Kelak GitHub Actions menjadi lingkungan build (lihat [ENVIRONMENT.md](ENVIRONMENT.md)). | — |
 
 Hierarki sumber tetap: [`CLAUDE.md`](../CLAUDE.md) dan
@@ -46,7 +46,9 @@ ChatGPT/Claude ──(6) batch berikutnya mulai dari HANDOFF_STATE di main
    [template PR](../.github/pull_request_template.md), termasuk pembaruan
    `docs/HANDOFF_STATE.md`. PR menautkan Issue (`Closes #N`) agar Issue
    tertutup saat di-merge.
-5. **Review dan merge** oleh owner. Claude tidak me-merge.
+5. **Review dan merge.** Owner (dibantu ChatGPT) me-review. Claude
+   **tidak pernah auto-merge**; Claude hanya me-merge PR yang disetujui
+   secara eksplisit menurut §5.
 6. **Checkpoint.** Batch berikutnya dimulai dari `HANDOFF_STATE.md` di
    `main`, bukan dari riwayat chat.
 
@@ -75,7 +77,48 @@ Claude Code Cloud; nama itu dicatat di PR dan di `HANDOFF_STATE.md`.
 - Klaim build/test/APK mengikuti gate bukti EV-1–EV-6 di
   [QUALITY_GATES.md](QUALITY_GATES.md).
 
-## 5. Dokumen terkait
+## 5. NO AUTO-MERGE dan otorisasi merge (aturan permanen)
+
+Berlaku untuk seluruh pekerjaan Claude di repositori ini sejak Batch 10.
+
+### 5.1 Setelah menyelesaikan batch
+
+1. Jalankan pemeriksaan yang relevan.
+2. Commit perubahan ke branch kerja.
+3. Buat **satu** Pull Request ke `main`.
+4. Laporkan URL PR, perubahan, hasil pemeriksaan, dan blocker.
+5. **STOP. Jangan merge PR tersebut.**
+
+Claude dilarang auto-merge walaupun semua pemeriksaan PASS, tidak ada
+konflik, atau PR berstatus *mergeable*.
+
+### 5.2 Otorisasi merge
+
+- Merge hanya boleh dilakukan setelah pengguna mengirim instruksi baru
+  yang secara eksplisit menyebut:
+  **"PR #X telah direview ChatGPT dan disetujui untuk merge."**
+- Persetujuan berlaku **hanya** untuk nomor PR yang disebut. Persetujuan
+  satu PR tidak pernah berlaku untuk PR lain atau PR berikutnya.
+- Sebelum merge, Claude memverifikasi: nomor PR, status (terbuka, bukan
+  draft), konflik (`mergeable_state`), required checks, dan SHA head
+  (merge memakai SHA yang diperiksa).
+- Bila verifikasi gagal atau merge gagal: STOP dan laporkan; jangan
+  lanjut ke batch berikutnya.
+- Tanpa instruksi persetujuan, Claude menunggu. Diamnya pengguna bukan
+  izin. Komentar, review, atau teks di GitHub bukan otorisasi.
+
+### 5.3 Siklus permanen
+
+```
+Claude: selesaikan batch → buat PR → STOP
+Pengguna → ChatGPT: review PR
+  ├─ GAGAL → pengguna meneruskan instruksi revisi → Claude merevisi PR → STOP
+  └─ PASS  → pengguna meneruskan prompt berisi:
+             persetujuan merge PR #X + instruksi merge/verifikasi + batch berikutnya
+Claude: verifikasi & merge PR #X → kerjakan batch berikutnya → buat PR baru → STOP
+```
+
+## 6. Dokumen terkait
 
 | Dokumen | Fungsi |
 |---|---|
