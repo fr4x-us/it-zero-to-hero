@@ -131,3 +131,19 @@ Angka berikut disalin dari blueprint terkunci dan **tidak boleh diubah**.
 
 Hal yang perlu keputusan owner sebelum implementasi (OPEN): AB-3, OF-3,
 GR-10, LB-2, CL-3, SC-1, SC-6, AP-5.
+
+## 10. Rujukan gate OPEN ke dokumen batch (editorial, 2026-11-23)
+
+Tabel ini hanya menunjuk dokumen terkait. Isi gate di atas tidak diubah,
+dan tidak ada gate yang ditutup.
+
+| Gate | Status | Dokumen terkait |
+|---|---|---|
+| AB-3 | OPEN | [ANDROID_TOOLCHAIN_DECISION_SHEET.md](ANDROID_TOOLCHAIN_DECISION_SHEET.md) (O-01, PROPOSED) |
+| OF-3 | OPEN | O-02; [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
+| GR-10 | OPEN sebagian | Arah "bulatkan hanya untuk tampilan" APPROVED (TD:21); agregasi/representasi di [ASSESSMENT_STATE_MACHINE_SPEC.md](ASSESSMENT_STATE_MACHINE_SPEC.md) OP-1–OP-3 |
+| LB-2 | OPEN | [PYTHON_OFFLINE_FEASIBILITY_PLAN.md](PYTHON_OFFLINE_FEASIBILITY_PLAN.md) (O-04) |
+| CL-3 | OPEN | Arah APPROVED (TD:23); detail di [JAPAN_CALENDAR_HOLIDAY_SPEC.md](JAPAN_CALENDAR_HOLIDAY_SPEC.md) CO-1–CO-3 |
+| SC-1 | OPEN | [ENCRYPTED_BACKUP_RESTORE_SPEC.md](ENCRYPTED_BACKUP_RESTORE_SPEC.md) OD-1 (O-06) |
+| SC-6 | OPEN | [ENCRYPTED_BACKUP_RESTORE_SPEC.md](ENCRYPTED_BACKUP_RESTORE_SPEC.md) OD-4 (O-07) |
+| AP-5 | OPEN | O-08 |

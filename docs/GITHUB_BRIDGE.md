@@ -25,35 +25,40 @@ Hierarki sumber tetap: [`CLAUDE.md`](../CLAUDE.md) dan
 
 ## 2. Alur satu batch
 
+Alur yang dipakai dalam praktik (diselaraskan 2026-11-23, UW-46):
+
 ```
-Owner/ChatGPT ──(1) Issue dari template──▶ GitHub
-Owner ──(2) "kerjakan Issue #N"──▶ Claude Code Cloud
-Claude ──(3) baca Issue + HANDOFF_STATE + file relevan
-Claude ──(4) satu branch, satu PR (template PR), HANDOFF_STATE diperbarui──▶ GitHub
-Owner (+ ChatGPT) ──(5) review──▶ merge atau minta revisi
-ChatGPT/Claude ──(6) batch berikutnya mulai dari HANDOFF_STATE di main
+Owner/ChatGPT ──(1) prompt batch (opsional: Issue dari template)──▶ Claude Code Cloud
+Claude ──(2) baca CLAUDE.md + HANDOFF_STATE + file relevan saja
+Claude ──(3) satu branch, satu PR (template PR), HANDOFF_STATE diperbarui──▶ GitHub
+Claude ──(4) laporan singkat → STOP (tanpa merge, §5)
+Owner → ChatGPT ──(5) review PR
+  ├─ GAGAL → instruksi revisi → Claude merevisi PR yang sama → STOP
+  └─ PASS  → prompt berikutnya berisi persetujuan merge PR #X + batch berikutnya
+Claude ──(6) verifikasi & merge PR #X (§5.2) → mulai batch berikutnya dari HANDOFF_STATE di main
 ```
 
-1. **Issue.** Tugas ditulis dengan template
-   [`documentation_task.md`](../.github/ISSUE_TEMPLATE/documentation_task.md):
-   tujuan, file yang boleh dibaca, file yang boleh diubah, batasan, dan
-   kriteria selesai.
-2. **Perintah singkat.** Owner cukup mengirim nomor Issue ke Claude Code
-   Cloud. Tidak perlu menyalin ulang konteks.
-3. **Baca terarah.** Claude membaca Issue, `docs/HANDOFF_STATE.md`, dan
-   hanya file yang disebut di Issue.
-4. **Satu PR.** Semua perubahan batch masuk ke satu PR yang mengikuti
+1. **Masukan tugas.** Dalam praktik, owner meneruskan prompt (biasanya
+   disusun ChatGPT) langsung ke Claude Code Cloud. Template Issue
+   [`documentation_task.md`](../.github/ISSUE_TEMPLATE/documentation_task.md)
+   tetap tersedia dan boleh dipakai; bila dipakai, PR menautkan Issue
+   (`Closes #N`).
+2. **Baca terarah.** Claude membaca `CLAUDE.md`,
+   `docs/HANDOFF_STATE.md`, dan hanya file yang disebut tugas.
+3. **Satu PR.** Semua perubahan batch masuk ke satu PR yang mengikuti
    [template PR](../.github/pull_request_template.md), termasuk pembaruan
-   `docs/HANDOFF_STATE.md`. PR menautkan Issue (`Closes #N`) agar Issue
-   tertutup saat di-merge.
-5. **Review dan merge.** Owner (dibantu ChatGPT) me-review. Claude
-   **tidak pernah auto-merge**; Claude hanya me-merge PR yang disetujui
-   secara eksplisit menurut §5.
+   `docs/HANDOFF_STATE.md`.
+4. **Laporan dan STOP.** Claude melaporkan URL PR, perubahan, hasil
+   pemeriksaan, dan blocker, lalu berhenti.
+5. **Review.** Owner meminta ChatGPT me-review. Claude **tidak pernah
+   auto-merge**; Claude hanya me-merge PR yang disetujui secara eksplisit
+   menurut §5.
 6. **Checkpoint.** Batch berikutnya dimulai dari `HANDOFF_STATE.md` di
    `main`, bukan dari riwayat chat.
 
-Branch: satu branch per batch. Nama branch dapat ditentukan oleh sesi
-Claude Code Cloud; nama itu dicatat di PR dan di `HANDOFF_STATE.md`.
+Branch: nama branch ditentukan oleh sesi Claude Code Cloud (saat ini
+`ccr-d1e86790-ts505m`). Setelah PR-nya di-merge, branch yang sama dimulai
+ulang dari `main` terbaru untuk batch berikutnya. Nama branch dicatat di PR.
 
 ## 3. Aturan penghematan token
 
@@ -123,8 +128,13 @@ Claude: verifikasi & merge PR #X → kerjakan batch berikutnya → buat PR baru 
 | Dokumen | Fungsi |
 |---|---|
 | [HANDOFF_STATE.md](HANDOFF_STATE.md) | Checkpoint antarbatch. |
-| [DECISIONS_LOG.md](DECISIONS_LOG.md) | Daftar sumber keputusan per batch, termasuk Batch 02 (PENDING SOURCE). |
+| [DECISIONS_LOG.md](DECISIONS_LOG.md) | Sumber keputusan per batch dan rujukan dokumen batch. |
+| [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) | Keputusan P0 yang menunggu owner. |
+| [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) | Register pekerjaan belum selesai (UW-01–UW-54). |
+| [FINAL_PLANNING_READINESS_REVIEW.md](FINAL_PLANNING_READINESS_REVIEW.md) | Readiness review Batch 10. |
 | [PLANNING_HISTORY.md](PLANNING_HISTORY.md) | Inventaris keputusan berbasis repo (snapshot). |
-| [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) | Batch 01, suplemen perencanaan (berada di root repo). |
+| [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) | Batch 01, suplemen perencanaan (berada di root repo; DRAFT). |
+| [TECHNICAL_DECISIONS_BATCH_02.md](TECHNICAL_DECISIONS_BATCH_02.md) | Batch 02, keputusan teknis owner-approved. |
 | [QUALITY_GATES.md](QUALITY_GATES.md) | Standar verifikasi. |
 | [ENVIRONMENT.md](ENVIRONMENT.md) | Lingkungan dan rencana CI. |
+| Dokumen spesifikasi Batch 03–09 | Lihat [DECISIONS_LOG.md](DECISIONS_LOG.md) §Dokumen batch. |
