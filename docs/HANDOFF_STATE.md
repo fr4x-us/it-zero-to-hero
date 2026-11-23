@@ -9,7 +9,7 @@ di setiap PR batch.
 | Item | Nilai | Sumber |
 |---|---|---|
 | Tahap | PERSIAPAN; implementasi **belum diizinkan** | [`CLAUDE.md`](../CLAUDE.md), [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) |
-| `main` saat checkpoint ditulis | `86ee7cb` (merge PR #11) | `git log` |
+| `main` saat checkpoint ditulis | `8fe5f5c` (merge PR #12) | `git log` |
 | Kode aplikasi / proyek Gradle / workflow CI / APK | Tidak ada | isi repositori |
 | Build atau test Android pernah dijalankan | **Belum pernah** | [QUALITY_GATES.md](QUALITY_GATES.md) EV-1 |
 
@@ -28,16 +28,17 @@ di setiap PR batch.
 | #9 | [ANDROID_TOOLCHAIN_DECISION_SHEET.md](ANDROID_TOOLCHAIN_DECISION_SHEET.md) (Batch 04) | Merged |
 | #10 | [ASSESSMENT_STATE_MACHINE_SPEC.md](ASSESSMENT_STATE_MACHINE_SPEC.md) (Batch 05) | Merged |
 | #11 | [ENCRYPTED_BACKUP_RESTORE_SPEC.md](ENCRYPTED_BACKUP_RESTORE_SPEC.md) (Batch 06) | Merged |
-| PR Batch 07 | [JAPAN_CALENDAR_HOLIDAY_SPEC.md](JAPAN_CALENDAR_HOLIDAY_SPEC.md) + handoff | Terbuka, menunggu review owner |
+| #12 | [JAPAN_CALENDAR_HOLIDAY_SPEC.md](JAPAN_CALENDAR_HOLIDAY_SPEC.md) (Batch 07) | Merged 2026-11-23 sebagai `8fe5f5c` (di-merge Claude atas instruksi owner setelah review ChatGPT PASS) |
+| PR Batch 08 | [UI_ACCESSIBILITY_VISUAL_SPEC.md](UI_ACCESSIBILITY_VISUAL_SPEC.md) + handoff | Terbuka, menunggu review owner |
 
 ## Tugas terakhir
 
-Batch 07: [JAPAN_CALENDAR_HOLIDAY_SPEC.md](JAPAN_CALENDAR_HOLIDAY_SPEC.md)
-— sumber resmi hari libur Jepang, aturan libur pengganti dan *citizens'
-holiday*, lapisan hari libur nasional vs kalender kerja, format dan
-validasi dataset offline, aturan JST/jam tenang, acceptance criteria
-AC-01–AC-08, skenario K-01–K-12, dan keputusan CO-1–CO-7. Sumber resmi
-Jepang diblokir, jadi tidak ada tanggal yang ditandai VERIFIED. Status: PR
+Batch 08: [UI_ACCESSIBILITY_VISUAL_SPEC.md](UI_ACCESSIBILITY_VISUAL_SPEC.md)
+— design system Colorful Academy (peran semantik palet), lima tab dan
+hierarki layar, aksesibilitas (TalkBack, 48dp, kontras, font, fokus, tanpa
+gesture wajib), konfigurasi, UI state, kriteria animasi/performa, rencana
+screenshot/visual regression, AC-01–AC-10, G-01–G-10, dan UO-1–UO-10.
+Belum ada UI atau screenshot; tidak ada klaim visual teruji. Status: PR
 terbuka, belum di-merge.
 
 ## Blocker
@@ -54,17 +55,19 @@ terbuka, belum di-merge.
 | B-10 | Spesifikasi penilaian bergantung pada keputusan OPEN: cakupan agregasi skor, basis lulus (skor terbaik — OPEN-CONFIRM), representasi angka, rubrik penjelasan konsep, rumus durasi ujian, identitas XP, aturan unlock (OP-1–OP-12). | Keputusan owner. |
 | B-11 | Backup: pemalsuan nilai oleh pemilik kata sandi tidak dapat dicegah kripto offline (OD-2); mode restore bertentangan antara pelestarian riwayat (BL:63–64) dan larangan merge otomatis (B01 M-16) (OD-3); Auto Backup aktif secara default (OD-4). | Keputusan owner. |
 | B-12 | Kalender: situs resmi Kantor Kabinet Jepang dan e-Gov diblokir; dataset hari libur dan contoh tanggal belum terverifikasi; rentang tahun, mekanisme pembaruan, kalender perusahaan, label era, dan perilaku jam tenang OPEN (CO-1–CO-7). | Akses ke `www8.cao.go.jp` + keputusan owner. |
+| B-13 | UI: tidak satu pun warna palet mencapai kontras 4,5:1 dengan teks putih (ungu 4,25; hijau/kuning/merah muda < 3); dark mode tidak tercakup *bright/light theme* blueprint; tipografi/aset/breakpoint/alat screenshot OPEN (UO-1–UO-10). | Keputusan owner. |
 | B-9 | minSdk 24 hanya usulan; terkait M-19 (target perangkat), O-04 (Chaquopy butuh ≥ 24), dan O-06 (`PBKDF2withHmacSHA256` platform baru tersedia di API 26+). | Keputusan owner. |
 
 B-2 (sumber Batch 02 belum ada) selesai di PR #7.
 
 ## Langkah berikutnya (usulan, menunggu owner)
 
-Urutan persiapan Batch 02 §4 sudah dicakup Batch 03–07, kecuali kriteria
-aksesibilitas/screenshot UI.
+Seluruh urutan persiapan Batch 02 §4 sudah punya dokumen (Batch 03–08).
 
-1. Owner memutuskan butir prioritas: OD-2/OD-3/OD-4 (backup), OP-1–OP-3
-   (penilaian), CO-1/CO-2 (kalender), minSdk (B-9), batas uji O-04.
-2. Verifikasi dataset hari libur dari `syukujitsu.csv` resmi (CO-3).
-3. Spesifikasi kriteria aksesibilitas dan screenshot UI.
-4. Konfirmasi status Batch 01 (B-3) dan DataStore (B-7).
+1. Owner memutuskan butir prioritas: UO-1/UO-2 (kontras, dark mode),
+   OD-2/OD-3/OD-4 (backup), OP-1–OP-3 (penilaian), CO-1/CO-2 (kalender),
+   minSdk (B-9), batas uji O-04.
+2. Konfirmasi status Batch 01 (B-3) dan DataStore (B-7).
+3. Verifikasi dataset hari libur dari `syukujitsu.csv` resmi (CO-3).
+4. Setelah keputusan di atas: owner memutuskan apakah implementasi tahap
+   pertama (kerangka proyek + CI) diizinkan.
