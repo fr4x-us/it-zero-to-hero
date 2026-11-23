@@ -12,9 +12,16 @@ atau test case, dan tidak mengubah [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md).
 | Label | Arti |
 |---|---|
 | **APPROVED** | Blueprint (`BL:n`) atau Batch 02 (`TD:n`). |
-| **RECOVERED** | Dari [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) (`B01`). Dipakai sebagai konteks, tetapi persetujuannya menunggu konfirmasi owner (B-3). Diperlakukan setara PROPOSED. |
+| **RECOVERED** | Hanya asal-usul historis: butir berasal dari [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) (B01). Bukan status persetujuan. |
+| **OWNER APPROVED WITH CONDITIONS** | Disetujui owner melalui D-01 (PR #18) sebagaimana tertulis di kolom "Disetujui owner" B01 §7.1. Detail di kolom "Masih OPEN / PARTIAL" **tidak** ikut disetujui. Ditulis `OWNER APPROVED WITH CONDITIONS (D-01 M-xx)`. |
+| **NOT VERIFIED** | Klaim yang masih menunggu bukti (uji, build, atau sumber resmi). |
 | **PROPOSED** | Usulan dokumen ini; perlu persetujuan owner. |
 | **OPEN** | Belum diputuskan. |
+
+Label sumber Batch 01 diseragamkan (UW-45, 2026-11-23): persetujuan
+sumber Batch 01 melalui D-01 **tidak** otomatis menyetujui setiap rincian
+teknis yang diusulkan dokumen ini. Butir B01 di luar M-01–M-19 (mis. B01
+§3) tetap PROPOSED kecuali disetujui keputusan lain.
 
 Dokumen terkait: [`ASSESSMENT_STATE_MACHINE_SPEC.md`](ASSESSMENT_STATE_MACHINE_SPEC.md),
 [`PYTHON_OFFLINE_FEASIBILITY_PLAN.md`](PYTHON_OFFLINE_FEASIBILITY_PLAN.md),
@@ -30,13 +37,13 @@ Dokumen terkait: [`ASSESSMENT_STATE_MACHINE_SPEC.md`](ASSESSMENT_STATE_MACHINE_S
 | K-03 | Modul dibuka linear | APPROVED | BL:21 |
 | K-04 | Teori akademik, diagram, lab, latihan, kuis, proyek, ujian, ringkasan | APPROVED | BL:22–23 |
 | K-05 | Video YouTube online opsional | APPROVED | BL:24 |
-| K-06 | Mulai Januari 2027 | RECOVERED | B01 M-14, §3 |
-| K-07 | 8 jam/minggu; default Sabtu 4 jam + Minggu 4 jam; dapat dipindah karena shift | RECOVERED | B01 M-03 |
-| K-08 | Empat fase × empat modul (satu modul per minggu) | RECOVERED | B01 M-02, M-04 |
-| K-09 | Garis besar 16 minggu (lihat §2) | RECOVERED | B01 M-02 |
-| K-10 | Audiens: pemula berbahasa Indonesia yang bersiap kuliah IT; materi utama Bahasa Indonesia | RECOVERED | B01 §3 |
-| K-11 | Tambahan: ilustrasi interaktif, simulasi, glosarium, studi kasus | RECOVERED | B01 §3 |
-| K-12 | Latihan adaptif berbasis aturan; blueprint kompetensi tetap untuk ujian formal | RECOVERED | B01 §3 |
+| K-06 | Mulai Januari 2027 | OWNER APPROVED WITH CONDITIONS (D-01 M-14) | B01 M-14 |
+| K-07 | 8 jam/minggu; default Sabtu 4 jam + Minggu 4 jam; dapat dipindah karena shift | OWNER APPROVED WITH CONDITIONS (D-01 M-03, M-14) | B01 M-03, M-14 |
+| K-08 | Empat fase × empat modul (satu modul per minggu) | OWNER APPROVED WITH CONDITIONS (D-01 M-02, M-04) | B01 M-02, M-04 |
+| K-09 | Garis besar 16 minggu (lihat §2) | OWNER APPROVED WITH CONDITIONS (D-01 M-02) | B01 M-02 |
+| K-10 | Audiens: pemula berbahasa Indonesia yang bersiap kuliah IT; materi utama Bahasa Indonesia | PROPOSED (RECOVERED, B01 §3; di luar M-01–M-19) | B01 §3 |
+| K-11 | Tambahan: ilustrasi interaktif, simulasi, glosarium, studi kasus | PROPOSED (RECOVERED, B01 §3; di luar M-01–M-19) | B01 §3 |
+| K-12 | Latihan adaptif berbasis aturan; blueprint kompetensi tetap untuk ujian formal | PROPOSED (RECOVERED, B01 §3; di luar M-01–M-19) | B01 §3 |
 | K-13 | Naskah pelajaran, contoh, diagram, bank soal | **Belum ditulis** | B01 M-02 |
 
 Cek konsistensi (PROPOSED):
@@ -49,7 +56,7 @@ Cek konsistensi (PROPOSED):
 
 ## 2. Matriks per minggu
 
-Topik minggu = RECOVERED (B01 M-02). Kolom lain = **PROPOSED** sebagai
+Topik minggu = OWNER APPROVED WITH CONDITIONS (D-01 M-02); asal RECOVERED. Kolom lain = **PROPOSED** sebagai
 kerangka; isi rinci (tujuan terukur, materi, soal) **OPEN**.
 
 Kolom "Runtime" menunjukkan apakah lab minggu itu bergantung pada O-04
@@ -90,13 +97,13 @@ data") berpotensi tumpang-tindih; pembagian rinci **OPEN**.
 
 | Domain | Minggu | Fase BL | Status |
 |---|---|---|---|
-| IT fundamentals (hardware, OS, jaringan, keamanan) | 1–4 | 1 | RECOVERED |
-| Matematika, logika, berpikir komputasional, algoritma | 5–8 | 2 | RECOVERED |
-| Python | 9–12 | 3 | RECOVERED |
-| SQL | 13 | 4 | RECOVERED |
-| HTML/CSS | 14 | 4 | RECOVERED |
-| Git | 15 | 4 | RECOVERED |
-| Capstone | 16 | 4 | RECOVERED; isi OPEN (B01 M-09) |
+| IT fundamentals (hardware, OS, jaringan, keamanan) | 1–4 | 1 | OWNER APPROVED WITH CONDITIONS (D-01 M-02) |
+| Matematika, logika, berpikir komputasional, algoritma | 5–8 | 2 | OWNER APPROVED WITH CONDITIONS (D-01 M-02) |
+| Python | 9–12 | 3 | OWNER APPROVED WITH CONDITIONS (D-01 M-02) |
+| SQL | 13 | 4 | OWNER APPROVED WITH CONDITIONS (D-01 M-02) |
+| HTML/CSS | 14 | 4 | OWNER APPROVED WITH CONDITIONS (D-01 M-02) |
+| Git | 15 | 4 | OWNER APPROVED WITH CONDITIONS (D-01 M-02) |
+| Capstone | 16 | 4 | OWNER APPROVED WITH CONDITIONS (D-01 M-02, M-09); isi OPEN |
 
 ## 4. Format konten offline dan identitas stabil (PROPOSED)
 
@@ -136,7 +143,7 @@ dataset kalender). Mekanisme pembaruan konten: **OPEN**.
 
 Risiko: kunci jawaban dan test case tersembunyi yang dibundel di APK
 dapat diekstrak pengguna yang mahir. Ini konsekuensi penilaian offline
-dan sejalan dengan temuan T-03 di [`ENCRYPTED_BACKUP_RESTORE_SPEC.md`](ENCRYPTED_BACKUP_RESTORE_SPEC.md);
+dan sejalan dengan temuan BKP:T-03 di [`ENCRYPTED_BACKUP_RESTORE_SPEC.md`](ENCRYPTED_BACKUP_RESTORE_SPEC.md);
 penerimaan risikonya **OPEN** (owner).
 
 ## 5. Spesifikasi lab objektif (PROPOSED)
@@ -148,7 +155,7 @@ penerimaan risikonya **OPEN** (owner).
 | Test case | Terlihat (contoh) dan tersembunyi; deterministik; tanpa waktu nyata/acak kecuali di-seed (LB-5) |
 | Skor | Persentase bobot test case yang lulus → skor 0–100 tanpa pembulatan untuk keputusan (TD:21) |
 | Rubrik | Hanya kriteria yang dapat diperiksa mesin; tanpa AI (BL:38); rubrik proyek **OPEN** (B01 M-09) |
-| Batas eksekusi | Waktu, memori, ukuran output — nilai **OPEN** (O-04 F-11–F-13) |
+| Batas eksekusi | Waktu, memori, ukuran output — nilai **OPEN** (O-04, PY:F-11–F-13) |
 | Penyimpanan | Autosave pekerjaan; jeda/lanjut; attempt append-only (ASSESSMENT §3.2, §4) |
 | Pengumpulan | Mengunci attempt lalu menilai; aturan rinci **OPEN** (B01 M-08) |
 | Umpan balik | Test yang gagal ditampilkan tanpa membocorkan seluruh test tersembunyi (kebijakan OPEN) |
@@ -160,7 +167,7 @@ penerimaan risikonya **OPEN** (owner).
 | Klasifikasi, simulasi IT dasar | 1–4 | Tidak | Evaluator jawaban di aplikasi |
 | Numerik, biner, Boolean | 5–6 | Tidak | Evaluator pasti (konversi, tabel kebenaran) |
 | Urutan langkah, flowchart, trace table | 7–8 | Tidak | Penilaian objektif (LB-7); format editor flowchart **OPEN** |
-| Python | 9–12 | **Ya** | Bergantung hasil F-01–F-15; **belum terbukti** |
+| Python | 9–12 | **Ya** | Bergantung hasil PY:F-01–F-15; **belum terbukti** |
 | SQL | 13 | Tidak (SQLite platform) | Database latihan terpisah dan sementara (LB-6); dialek dan dataset **OPEN** (B01 M-10); B01 meminta tidak mengasumsikan sandbox SQL sebelum diuji |
 | HTML/CSS | 14 | Tidak | Penilaian struktur (parsing) vs render visual; render butuh WebView, yang menurut B01 tidak boleh diasumsikan sebelum diuji → **OPEN** |
 | Git | 15 | Tidak | Tidak ada Git CLI di Android; lab berupa simulasi konsep → bentuk **OPEN** |
@@ -179,7 +186,7 @@ kurikulum terkunci (BL:19, BL:41). Dokumen ini tidak memilih alternatif.
 |---|---|---|
 | RM-01 | Remedial tanpa batas | APPROVED (BL:33) |
 | RM-02 | Setiap attempt disimpan; skor terbaik per komponen dipertahankan | APPROVED (BL:34) |
-| RM-03 | Ujian formal memakai blueprint kompetensi tetap; latihan adaptif berbasis aturan | RECOVERED (B01 §3) |
+| RM-03 | Ujian formal memakai blueprint kompetensi tetap; latihan adaptif berbasis aturan | PROPOSED (RECOVERED, B01 §3) |
 | RM-04 | Bank soal berisi beberapa varian setara per kompetensi agar remedial tidak sekadar menghafal; jumlah varian minimum **OPEN** | PROPOSED |
 | RM-05 | Remedial ujian teori memilih varian berbeda dari attempt sebelumnya bila tersedia | PROPOSED |
 | RM-06 | Latihan adaptif mengulang kompetensi yang lemah; aturan pemilihan **OPEN** | PROPOSED |
@@ -200,7 +207,7 @@ kurikulum terkunci (BL:19, BL:41). Dokumen ini tidak memilih alternatif.
 | CC-07 | Setiap lab punya test case terlihat dan tersembunyi yang deterministik | LB-5 |
 | CC-08 | Tugas penjelasan konsep berbentuk terstruktur (mis. pilihan, urutan, pencocokan, isian terbatas) dan dinilai tanpa AI | BL:38, B01 M-06 |
 | CC-09 | Total estimasi waktu per minggu ≈ 8 jam; total 128 jam | BL:15, K-07 |
-| CC-10 | Diagram punya deskripsi teks (aksesibilitas) | UI spec A-10 |
+| CC-10 | Diagram punya deskripsi teks (aksesibilitas) | UI:A-10 |
 | CC-11 | Checksum paket konten valid saat dimuat | §4.2 |
 
 Skenario (Given–When–Then, bukan test executable):
@@ -221,10 +228,10 @@ menunjuk dokumen yang menjabarkan kriteria, **bukan** menutup gap.
 
 | ID | Topik | Status B01 | Tambahan Batch 03–08 | Gap tersisa |
 |---|---|---|---|---|
-| M-01 | Riwayat perencanaan | PARTIAL | — | Transkrip asli tidak ada; status B01 (B-3) |
+| M-01 | Riwayat perencanaan | PARTIAL | — | Transkrip asli tidak ada; status B01 diselesaikan D-01 (M-01: ringkasan, bukan transkrip) |
 | M-02 | Isi pelajaran | PARTIAL | Matriks §2 (kerangka) | Naskah, contoh, diagram, bank soal |
 | M-03 | Alokasi jam | PARTIAL | CC-09 | Alokasi per pelajaran |
-| M-04 | Aturan unlock | PARTIAL | ASSESSMENT C6, OP-9 | Aturan partial/remedial/pratinjau |
+| M-04 | Aturan unlock | PARTIAL | ASM:C6, OP-9 | Aturan partial/remedial/pratinjau |
 | M-05 | Rumus penilaian | PARTIAL | ASSESSMENT §6 | Agregasi, representasi angka (OP-1–OP-3) |
 | M-06 | Penjelasan konsep | PARTIAL | CC-08 | Bank tugas dan rubrik |
 | M-07 | Ujian teori | PARTIAL | ASSESSMENT §5 | Rumus durasi, format soal |
@@ -234,7 +241,7 @@ menunjuk dokumen yang menjabarkan kriteria, **bukan** menutup gap.
 | M-11 | XP/gamifikasi | PARTIAL | ASSESSMENT §7; RM-07–RM-09 | Rumus, batas, level, badge, identitas |
 | M-12 | Presentasi kalender | PARTIAL | Calendar spec | Label era, format |
 | M-13 | Kalender perusahaan | PARTIAL | Calendar spec §4 | Sumber/impor, default |
-| M-14 | Jadwal dan pengingat | PARTIAL | Calendar spec Z-04–Z-05 | Perilaku notifikasi, izin, Doze |
+| M-14 | Jadwal dan pengingat | PARTIAL | CAL:Z-04–Z-05 | Perilaku notifikasi, izin, Doze |
 | M-15 | Snapshot lokal | PARTIAL | Backup spec OD-8 | Frekuensi, retensi |
 | M-16 | Backup/restore | PARTIAL | Backup spec | Algoritma/parameter, mode restore |
 | M-17 | Visual | PARTIAL | UI spec §2 | Kontras palet, tipografi, aset |
@@ -245,7 +252,7 @@ menunjuk dokumen yang menjabarkan kriteria, **bukan** menutup gap.
 
 | ID | Keputusan | Rujukan |
 |---|---|---|
-| CU-1 | Persetujuan garis besar 16 minggu dan tujuan belajar per minggu | §2, B-3 |
+| CU-1 | *(Kerangka disetujui D-01 M-02.)* Tujuan belajar per minggu tetap PROPOSED | §2, §11 |
 | CU-2 | Penempatan ujian teori dan mini-project (per modul/per fase) | §2, OP-1 |
 | CU-3 | Format konten (markup teks, diagram) dan mekanisme pembaruan konten | §4.2 |
 | CU-4 | Identitas aktivitas untuk XP dan perlakuan konten direvisi | §4.1, TD:38–39 |

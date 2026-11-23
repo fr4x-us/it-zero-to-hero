@@ -9,7 +9,7 @@ di setiap PR batch.
 | Item | Nilai | Sumber |
 |---|---|---|
 | Tahap | PERSIAPAN; implementasi **belum diizinkan** | [`CLAUDE.md`](../CLAUDE.md), [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) |
-| `main` saat checkpoint ditulis | `777f5dc` (merge PR #18) | `git log` |
+| `main` saat checkpoint ditulis | `2114ca8` (merge PR #19) | `git log` |
 | Kode aplikasi / proyek Gradle / workflow CI / APK | Tidak ada | isi repositori |
 | Build atau test Android pernah dijalankan | **Belum pernah** | [QUALITY_GATES.md](QUALITY_GATES.md) EV-1 |
 
@@ -35,7 +35,8 @@ di setiap PR batch.
 | #16 | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) (audit Batch 01–10) | Merged 2026-11-23 sebagai `5931ece` (di-merge Claude atas persetujuan eksplisit owner) |
 | #17 | Cleanup UW-44/46–51 + [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) | Merged 2026-11-23 sebagai `4eacaa0` (di-merge Claude atas persetujuan eksplisit owner) |
 | #18 | Pencatatan persetujuan owner Batch 01 (D-01, M-01–M-19) | Merged 2026-11-23 sebagai `777f5dc` (di-merge Claude atas otorisasi eksplisit owner) |
-| PR D-02–D-11 | Pencatatan keputusan owner D-02–D-11 | Terbuka, menunggu review; **tidak di-merge Claude** |
+| #19 | Pencatatan keputusan owner D-02–D-11 | Merged 2026-11-23 sebagai `2114ca8` (di-merge Claude atas persetujuan eksplisit owner) |
+| PR Cleanup UW-45/22/44 | Penyeragaman label B01, lembar presisi angka, rujukan ID | Terbuka, menunggu review; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -53,18 +54,18 @@ merge." untuk PR itu saja ([GITHUB_BRIDGE.md](GITHUB_BRIDGE.md) §5).
 | D-11 | **DEFERRED; IMPLEMENTATION NOT AUTHORIZED** |
 | PLANNING CLEAR | **NO** |
 | IMPLEMENTATION VERIFIED | **NO** |
-| Python F-01–F-15 | **NOT VERIFIED** |
+| Python PY:F-01–F-15 | **NOT VERIFIED** |
 
 Rincian: [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md),
 [DECISIONS_LOG.md](DECISIONS_LOG.md) §Keputusan owner.
 
 ## Tugas terakhir
 
-Pencatatan keputusan owner D-02–D-11 (2026-11-23) di checklist,
-DECISIONS_LOG, audit §12, `PLANNING_COMPLETION_BATCH.md` §7.4, dan
-spesifikasi terkait (toolchain, backup, Python, penilaian, kurikulum, UI,
-kalender, quality gates). minSdk 24 ditandai SUPERSEDED oleh D-05 (29).
-D-11 dicatat sebagai DEFERRED. Status: PR terbuka, menunggu review.
+Cleanup setelah PR #19: UW-45 (label sumber Batch 01 diseragamkan di
+dokumen Batch 05–09) dan UW-44 (rujukan ID lintas dokumen memakai kode
+dokumen) COMPLETE; UW-22 punya lembar keputusan
+[NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md)
+dan tetap menunggu owner. Status: PR terbuka, menunggu review.
 
 ## Blocker
 
@@ -93,21 +94,19 @@ dipertahankan agar rujukan lama tetap valid.
 
 | # | Blocker | Register |
 |---|---|---|
-| B-15 | Keputusan yang harus diverifikasi saat diizinkan: toolchain D-06 di CI, versi DataStore, transfer antarperangkat dengan `allowBackup=false` (D-07), isolasi jaringan lab Python (D-08, F-09). | UW-13, UW-52, UW-54, UW-55, UW-12 |
+| B-15 | Keputusan yang harus diverifikasi saat diizinkan: toolchain D-06 di CI, versi DataStore, transfer antarperangkat dengan `allowBackup=false` (D-07), isolasi jaringan lab Python (D-08, PY:F-09). | UW-13, UW-52, UW-54, UW-55, UW-12 |
 | B-12 | Sumber resmi hari libur Jepang diblokir; dataset belum terverifikasi. | UW-14, UW-23, UW-34 |
 | B-8 | Host dokumentasi resmi diblokir (`chaquo.com`, `docs.python.org`, `pyodide.org`, `docs.gradle.org`, `github.com`, `dl.google.com`, `rfc-editor.org`, `csrc.nist.gov`, `www8.cao.go.jp`, `laws.e-gov.go.jp`); riset memakai `raw.githubusercontent.com`, `developer.android.com`, `kotlinlang.org`, Maven Central. | UW-53 |
 | B-6 | Android SDK tidak tersedia di container cloud. Tidak menghalangi (build di GitHub Actions). | UW-39 |
 
-Selesai: B-2 (PR #7); B-3 (D-01, PR #18); B-7 (D-02); B-9 (D-05). B-7 dan
-B-9 berlaku saat PR D-02–D-11 di-merge.
+Selesai: B-2 (PR #7); B-3 (D-01, PR #18); B-7 (D-02, PR #19); B-9 (D-05, PR #19).
 
 ## Langkah berikutnya (usulan, menunggu owner)
 
-1. Review PR D-02–D-11 (ChatGPT) → instruksi merge eksplisit bila PASS.
-2. Tugas dokumentasi berikutnya yang direkomendasikan (tanpa coding):
-   menyelesaikan butir perencanaan yang dapat dikerjakan Claude —
-   UW-45 (penyeragaman label sumber Batch 01) dan lembar opsi untuk UW-22
-   (representasi angka) — lalu menyiapkan keputusan owner berikutnya
-   (CU-2 implikasi empat komponen per modul, UO-1 kontras, UO-2 dark mode,
-   OD-1/OD-2).
-3. Implementasi dan prototipe tetap tidak diizinkan (D-10, D-11).
+1. Review PR cleanup (ChatGPT) → instruksi merge eksplisit bila PASS.
+2. Keputusan owner berikutnya: UW-22 (representasi angka, rekomendasi NP-4),
+   CU-2 (empat komponen per modul), UO-1 (kontras), UO-2 (dark mode),
+   OD-1/OD-2 (kripto, risiko pemalsuan), UW-43 (lokasi file Batch 01).
+3. Tugas dokumentasi berikutnya yang direkomendasikan: lembar keputusan
+   untuk CU-2 dan UO-1/UO-2 (tanpa coding).
+4. Implementasi dan prototipe tetap tidak diizinkan (D-10, D-11).

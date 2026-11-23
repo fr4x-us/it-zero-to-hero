@@ -25,11 +25,12 @@ Offline-first Android IT Learning Academy: aplikasi Android native
 
 | Topik | Dokumen |
 |---|---|
-| Suplemen perencanaan (Batch 01, DRAFT) | [`PLANNING_COMPLETION_BATCH.md`](PLANNING_COMPLETION_BATCH.md) |
+| Suplemen perencanaan (Batch 01, OWNER-APPROVED WITH CONDITIONS — D-01) | [`PLANNING_COMPLETION_BATCH.md`](PLANNING_COMPLETION_BATCH.md) |
 | Keputusan teknis (Batch 02) | [`docs/TECHNICAL_DECISIONS_BATCH_02.md`](docs/TECHNICAL_DECISIONS_BATCH_02.md) |
 | Python offline (Batch 03) | [`docs/PYTHON_OFFLINE_FEASIBILITY_PLAN.md`](docs/PYTHON_OFFLINE_FEASIBILITY_PLAN.md) |
 | Toolchain (Batch 04) | [`docs/ANDROID_TOOLCHAIN_DECISION_SHEET.md`](docs/ANDROID_TOOLCHAIN_DECISION_SHEET.md) |
 | Penilaian (Batch 05) | [`docs/ASSESSMENT_STATE_MACHINE_SPEC.md`](docs/ASSESSMENT_STATE_MACHINE_SPEC.md) |
+| Presisi angka penilaian (UW-22, menunggu owner) | [`docs/NUMERIC_PRECISION_DECISION_SHEET.md`](docs/NUMERIC_PRECISION_DECISION_SHEET.md) |
 | Backup (Batch 06) | [`docs/ENCRYPTED_BACKUP_RESTORE_SPEC.md`](docs/ENCRYPTED_BACKUP_RESTORE_SPEC.md) |
 | Kalender Jepang (Batch 07) | [`docs/JAPAN_CALENDAR_HOLIDAY_SPEC.md`](docs/JAPAN_CALENDAR_HOLIDAY_SPEC.md) |
 | UI dan aksesibilitas (Batch 08) | [`docs/UI_ACCESSIBILITY_VISUAL_SPEC.md`](docs/UI_ACCESSIBILITY_VISUAL_SPEC.md) |

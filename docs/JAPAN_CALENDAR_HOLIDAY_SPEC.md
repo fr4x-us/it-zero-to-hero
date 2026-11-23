@@ -16,9 +16,19 @@ diubah.
 | **PROPOSED** | Usulan dokumen ini; perlu persetujuan owner. |
 | **OPEN** | Belum diputuskan atau belum terverifikasi. |
 
-Butir dari [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md)
-(`B01 M-xx`) ditandai PROPOSED karena status persetujuannya menunggu
-konfirmasi owner (blocker B-3).
+Label sumber Batch 01:
+
+| Label | Arti |
+|---|---|
+| **RECOVERED** | Hanya asal-usul historis: butir berasal dari [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) (B01). Bukan status persetujuan. |
+| **OWNER APPROVED WITH CONDITIONS** | Disetujui owner melalui D-01 (PR #18) sebagaimana tertulis di kolom "Disetujui owner" B01 §7.1. Detail di kolom "Masih OPEN / PARTIAL" **tidak** ikut disetujui. Ditulis `OWNER APPROVED WITH CONDITIONS (D-01 M-xx)`. |
+| **NOT VERIFIED** | Klaim yang masih menunggu bukti (uji, build, atau sumber resmi). |
+| **PROPOSED** | Detail yang belum disetujui owner. |
+
+Label sumber Batch 01 diseragamkan (UW-45, 2026-11-23): persetujuan
+sumber Batch 01 melalui D-01 **tidak** otomatis menyetujui setiap rincian
+teknis yang diusulkan dokumen ini. Butir B01 di luar M-01–M-19 (mis. B01
+§3) tetap PROPOSED kecuali disetujui keputusan lain.
 
 ## 1. Keputusan yang sudah ada
 
@@ -31,8 +41,8 @@ konfirmasi owner (blocker B-3).
 | J-05 | Penjadwalan belajar fleksibel. | APPROVED | BL:56 |
 | J-06 | Jam tenang 22:00–07:00 JST. | APPROVED | BL:57 |
 | J-07 | Dataset hari libur Jepang tersedia offline + proses pembaruan terkontrol; menangani libur pengganti dan *citizens' holidays*. Sumber, rentang tahun, mekanisme pembaruan OPEN. | APPROVED (arah) | TD:23 |
-| J-08 | Minggu dan hari libur nasional merah, Sabtu biru; termasuk libur pengganti dan *citizens' holiday*. | PROPOSED (B01 M-12, B-3) | B01 M-12 |
-| J-09 | Jadwal belajar mulai Januari 2027; default akhir pekan 4 jam/hari; dapat disesuaikan dengan shift; pengingat sesi belum selesai tiap 60 menit, tunduk izin Android. | PROPOSED (B01 M-14, B-3) | B01 M-14 |
+| J-08 | Minggu dan hari libur nasional merah, Sabtu biru; termasuk libur pengganti dan *citizens' holiday*. | OWNER APPROVED WITH CONDITIONS (D-01 M-12) | B01 M-12 |
+| J-09 | Jadwal belajar mulai Januari 2027; default akhir pekan 4 jam/hari; dapat disesuaikan dengan shift; pengingat sesi belum selesai tiap 60 menit, tunduk izin Android. | OWNER APPROVED WITH CONDITIONS (D-01 M-14) | B01 M-14 |
 | J-10 | Sumber/impor kalender perusahaan dan asumsi hari kerja default. | OPEN | B01 M-13 |
 
 Gate terkait: [`QUALITY_GATES.md`](QUALITY_GATES.md) CL-1–CL-6.
@@ -138,7 +148,7 @@ PROPOSED: U-1 sebagai default. Pilihan final **OPEN**.
 | ID | Aturan | Status |
 |---|---|---|
 | Z-01 | Semua perhitungan "hari ini", hari libur, jadwal, dan jam tenang memakai `ZoneId.of("Asia/Tokyo")` secara eksplisit, bukan zona perangkat. | APPROVED arah (BL:52, CL-1); cara PROPOSED |
-| Z-02 | Waktu kejadian (attempt, autosave, tenggat) disimpan sebagai *instant* UTC; tanggal lokal diturunkan di Asia/Tokyo. | PROPOSED (selaras ASSESSMENT D-07) |
+| Z-02 | Waktu kejadian (attempt, autosave, tenggat) disimpan sebagai *instant* UTC; tanggal lokal diturunkan di Asia/Tokyo. | PROPOSED (selaras ASM:D-07) |
 | Z-03 | Pergantian tanggal pada 00:00 JST. | PROPOSED |
 | Z-04 | Jam tenang 22:00–07:00 JST melintasi tengah malam: aktif bila waktu JST ≥ 22:00 **atau** < 07:00. Batas tepat: 22:00 aktif, 07:00 tidak aktif. | APPROVED (rentang), interpretasi batas PROPOSED (CL-6) |
 | Z-05 | Notifikasi yang jatuh di jam tenang ditahan/ditunda; perilaku rinci (tunda ke 07:00 atau batalkan) **OPEN** (M-14). | OPEN |
@@ -190,7 +200,7 @@ Tanggal contoh **wajib diverifikasi terhadap H2** sebelum dipakai.
 | Memakai zona perangkat | Tanggal dan jam tenang salah saat pengguna bepergian | Z-01 |
 | Offset tetap +09:00 | Salah bila aturan zona berubah | Z-06 |
 | Pengingat 60 menit vs batas Android (izin notifikasi, alarm presisi, Doze) | Pengingat tidak muncul tepat waktu | Diputuskan bersama Z-05 (OPEN, B01 M-14) |
-| Status Batch 01 belum dikonfirmasi | J-08, J-09 bisa berubah | Konfirmasi B-3 |
+| *(Selesai oleh D-01.)* Status Batch 01 | J-08, J-09 kini disetujui | — |
 
 ## 9. Keputusan OPEN
 
@@ -202,4 +212,4 @@ Tanggal contoh **wajib diverifikasi terhadap H2** sebelum dipakai.
 | CO-4 | Sumber/impor kalender perusahaan dan default hari kerja | J-10, B01 M-13 |
 | CO-5 | Label era dan format tanggal Jepang; bahasa nama hari libur (Jepang/Indonesia) | M-12, Z-07 |
 | CO-6 | Perilaku notifikasi saat jam tenang (tunda/batalkan) dan pengingat 60 menit vs batas Android | M-14, Z-05 |
-| CO-7 | Konfirmasi status B01 untuk J-08 (warna) dan J-09 (jadwal) | B-3 |
+| CO-7 | *(Selesai oleh D-01, PR #18.)* Konfirmasi status B01 untuk J-08 dan J-09 | HS:B-3 |

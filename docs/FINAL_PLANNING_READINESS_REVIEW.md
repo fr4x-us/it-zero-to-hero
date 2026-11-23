@@ -65,7 +65,7 @@ Temuan:
 | ID | Topik | Status | Dokumen |
 |---|---|---|---|
 | O-01 | Toolchain | OPEN — kombinasi PROPOSED | Toolchain sheet |
-| O-02 | `INTERNET` / video opsional | OPEN | Calendar U-3, Curriculum |
+| O-02 | `INTERNET` / video opsional | OPEN | CAL:U-3, CUR |
 | O-03 | Presisi skor | Arah APPROVED; agregasi/representasi OPEN | Assessment OP-1–OP-3 |
 | O-04 | Python offline | OPEN — rencana uji | Python plan |
 | O-05 | Hari libur Jepang | Arah APPROVED; sumber/rentang/pembaruan OPEN | Calendar CO-1–CO-3 |
@@ -80,7 +80,7 @@ Temuan:
 | O-14 | Struktur Gradle | APPROVED (satu modul) | TD:19 |
 | O-15 | UI state | APPROVED; mekanisme effect OPEN | TD:20 |
 | O-16 | Library test | OPEN | UI UO-8 |
-| O-17 | XP farming | Arah APPROVED; identitas OPEN | Assessment X-07, Curriculum CU-4 |
+| O-17 | XP farming | Arah APPROVED; identitas OPEN | ASM:X-07, CU-4 |
 
 ### 3.2 Keluarga OPEN per dokumen
 
@@ -102,8 +102,8 @@ minSdk (B-9) ◄── O-04 (Chaquopy ≥ 24) ◄── OD-1 (PBKDF2-SHA256 plat
 O-01 toolchain ──► Navigation 2.10 butuh compileSdk 37 + AGP ≥ 9.2 ──► ketersediaan API 37 di runner (V)
 O-04 runtime ──► lab minggu 9–12 (+ capstone) ──► CU-8 alternatif bila gagal
 OP-1 agregasi ──► CU-2 penempatan ujian/mini-project ──► model data penilaian
-OD-3 mode restore ──► model data attempt (ID stabil) ──► Assessment P-07–P-10
-O-02 INTERNET ──► video opsional, Calendar U-3, Python plan F-09
+OD-3 mode restore ──► model data attempt (ID stabil) ──► ASM:P-07–P-10
+O-02 INTERNET ──► video opsional, CAL:U-3, PY:F-09
 ```
 
 ## 5. Kategori blocker
@@ -124,7 +124,7 @@ O-02 INTERNET ──► video opsional, Calendar U-3, Python plan F-09
 
 | ID | Butir | Bukti yang dibutuhkan |
 |---|---|---|
-| PF-1 | Runtime Python offline + isolasi (O-04) | F-01–F-15 |
+| PF-1 | Runtime Python offline + isolasi (O-04) | PY:F-01–F-15 |
 | PF-2 | Kombinasi toolchain di GitHub Actions (O-01) | Checklist toolchain §7 |
 | PF-3 | KDF/AEAD di perangkat target (OD-1) | Waktu/memori KDF, uji vektor, uji restore |
 | PF-4 | Lab HTML/CSS (render/WebView) dan simulasi Git (CU-7) | Uji perilaku offline |
@@ -165,13 +165,13 @@ Skor: Risiko × Dampak (1–3), ditambah jumlah butir yang bergantung.
 |---|---|---|---|
 | B-3 | (a) Setujui Batch 01 apa adanya; (b) setujui dengan revisi; (c) tolak sebagian | (b) bila ada butir yang perlu diperbaiki, selain itu (a) | Membuka banyak butir RECOVERED |
 | minSdk | 24 / 26 / lebih tinggi | **26** dipertimbangkan | Menyediakan `PBKDF2withHmacSHA256` platform (Backup §4.1) dan memenuhi Chaquopy (≥ 24); dampak ke jangkauan perangkat perlu dicek terhadap M-19 |
-| O-04 | Izinkan prototipe kelayakan terbatas F-01–F-15 | Izinkan, dengan batas uji ditetapkan dulu | Tanpa bukti, minggu 9–12 tidak bisa direncanakan |
-| OD-3 | M-1 ganti + snapshot / M-2 tolak / M-3 gabung ID | M-2 sebagai default aman, M-1 sebagai opsi eksplisit | Tidak ada riwayat hilang tanpa merge otomatis |
-| OD-4 | AB-1 / AB-2 / AB-3 | AB-1 atau AB-2, diputuskan bersama OD-3 | Menghindari salinan cloud tak terkendali |
+| O-04 | Izinkan prototipe kelayakan terbatas PY:F-01–F-15 | Izinkan, dengan batas uji ditetapkan dulu | Tanpa bukti, minggu 9–12 tidak bisa direncanakan |
+| OD-3 | BKP:M-1 ganti + snapshot / BKP:M-2 tolak / BKP:M-3 gabung ID | BKP:M-2 sebagai default aman, BKP:M-1 sebagai opsi eksplisit | Tidak ada riwayat hilang tanpa merge otomatis |
+| OD-4 | BKP:AB-1 / BKP:AB-2 / BKP:AB-3 | BKP:AB-1 atau BKP:AB-2, diputuskan bersama OD-3 | Menghindari salinan cloud tak terkendali |
 | UO-1 | KC-1 / KC-2 / KC-3 | KC-1 (teks gelap) + KC-2 bila perlu teks putih | Semua warna palet ≥ 4,5:1 dengan hitam |
 | UO-2 | Tetap terang / tambah tema gelap | Tetap terang untuk V1 kecuali owner menambah keputusan | Sesuai BL:12 |
 | B-7 | DataStore masuk baseline / tidak | Konfirmasi eksplisit | Hindari dependensi tanpa dasar |
-| O-02 | Tanpa `INTERNET` (video dibuka aplikasi eksternal) / dengan | Tanpa `INTERNET` di V1 | Prinsip offline + isolasi lab (F-09) |
+| O-02 | Tanpa `INTERNET` (video dibuka aplikasi eksternal) / dengan | Tanpa `INTERNET` di V1 | Prinsip offline + isolasi lab (PY:F-09) |
 
 ## 8. Checklist kesiapan implementasi
 
@@ -186,7 +186,7 @@ Skor: Risiko × Dampak (1–3), ditambah jumlah butir yang bergantung.
 | C-7 | Toolchain disetujui | BLOCKED | O-01 PROPOSED |
 | C-8 | Toolchain terbukti di CI | NOT RUN | Belum ada proyek |
 | C-9 | minSdk diputuskan | BLOCKED | B-9 |
-| C-10 | Runtime Python terbukti | NOT RUN | F-01–F-15 belum dijalankan |
+| C-10 | Runtime Python terbukti | NOT RUN | PY:F-01–F-15 belum dijalankan |
 | C-11 | Keamanan backup terbukti | NOT RUN | Belum ada implementasi |
 | C-12 | UI/aksesibilitas teruji | NOT RUN | Belum ada UI |
 | C-13 | Dataset hari libur terverifikasi | FAIL | Sumber resmi tidak dapat diakses (B-12) |
@@ -204,7 +204,7 @@ tetapi C-5, C-6, C-7, dan C-9 BLOCKED oleh keputusan owner.
 | Konten | Naskah 16 modul, diagram, glosarium, bank soal + varian, test case lab, tugas penjelasan konsep + rubrik, spesifikasi capstone |
 | Dokumentasi | Keputusan untuk butir OPEN; aturan unlock rinci; rumus durasi ujian; rumus XP; field layar; kebijakan notifikasi |
 | Data | Dataset hari libur terverifikasi dari sumber resmi |
-| Pengujian | Prototipe F-01–F-15; build CI pertama; uji KDF; semua gate EV/GR/OF/LB/CL/SC/AP setelah implementasi |
+| Pengujian | Prototipe PY:F-01–F-15; build CI pertama; uji KDF; semua gate EV/GR/OF/LB/CL/SC/AP setelah implementasi |
 
 ## 10. Rencana evaluasi delapan skill tambahan
 

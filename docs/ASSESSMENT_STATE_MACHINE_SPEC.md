@@ -13,9 +13,21 @@ timer/process death and unrounded pass rules*. Dokumen ini tidak mengubah
 | Label | Arti |
 |---|---|
 | **APPROVED** | Didukung blueprint (`BL:n`) atau keputusan Batch 02 (`TD:n`). |
-| **RECOVERED** | Dari [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) (`B01 M-xx`). Dipakai sebagai konteks perencanaan, tetapi status persetujuan dokumen itu masih menunggu konfirmasi owner (blocker B-3). |
+| **RECOVERED** | Hanya asal-usul historis: butir berasal dari [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) (B01). Bukan status persetujuan. |
+| **OWNER APPROVED WITH CONDITIONS** | Disetujui owner melalui D-01 (PR #18) sebagaimana tertulis di kolom "Disetujui owner" B01 §7.1. Detail di kolom "Masih OPEN / PARTIAL" **tidak** ikut disetujui. Ditulis `OWNER APPROVED WITH CONDITIONS (D-01 M-xx)`. |
+| **NOT VERIFIED** | Klaim yang masih menunggu bukti (uji, build, atau sumber resmi). |
 | **PROPOSED** | Usulan desain dokumen ini. Bukan keputusan; perlu persetujuan owner. |
 | **OPEN** | Belum diputuskan. Tidak boleh diisi saat implementasi tanpa keputusan owner. |
+
+Label sumber Batch 01 diseragamkan (UW-45, 2026-11-23): persetujuan
+sumber Batch 01 melalui D-01 **tidak** otomatis menyetujui setiap rincian
+teknis yang diusulkan dokumen ini. Butir B01 di luar M-01–M-19 (mis. B01
+§3) tetap PROPOSED kecuali disetujui keputusan lain.
+
+Catatan ID (UW-44): tabel §5.1 memakai ID lokal `D-01`–`D-08` (kriteria
+tenggat). Di luar tabel itu, `D-01`–`D-11` berarti keputusan owner
+([OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md)). Dari dokumen
+lain, kriteria tenggat dirujuk sebagai `ASM:D-xx`.
 
 Rujukan lain: [`QUALITY_GATES.md`](QUALITY_GATES.md) (GR-1–GR-10,
 OF-4–OF-6), [`PLANNING_HISTORY.md`](PLANNING_HISTORY.md) (L-xx, O-xx, M-xx),
@@ -36,9 +48,9 @@ OF-4–OF-6), [`PLANNING_HISTORY.md`](PLANNING_HISTORY.md) (L-xx, O-xx, M-xx),
 | A-09 | XP terpisah dari nilai akademik; tanpa penalti XP dan tanpa XP farming. | APPROVED | BL:35, BL:49, TD:37 |
 | A-10 | XP diberikan sekali per identitas aktivitas yang sama; pengulangan/remedial tidak memberi XP itu lagi; ledger award persisten. | APPROVED (arah) | TD:22, TD:38 |
 | A-11 | Modul dibuka secara linear. | APPROVED | BL:21 |
-| A-12 | Durasi ujian diturunkan dari jumlah, tipe, dan kompleksitas soal; tenggat dan jawaban autosave dipersisten; timer berjalan saat aplikasi tertutup; membuka kembali setelah tenggat menilai jawaban yang sudah tersimpan. | RECOVERED | B01 M-07 |
-| A-13 | Lab dan mini-project tidak berwaktu; dapat dijeda dan dilanjutkan. | RECOVERED | B01 M-08 |
-| A-14 | Penjelasan konsep memakai tugas terstruktur yang dapat diperiksa objektif secara offline, bukan esai bebas atau skor AI. | RECOVERED | B01 M-06 |
+| A-12 | Durasi ujian diturunkan dari jumlah, tipe, dan kompleksitas soal; tenggat dan jawaban autosave dipersisten; timer berjalan saat aplikasi tertutup; membuka kembali setelah tenggat menilai jawaban yang sudah tersimpan. | OWNER APPROVED WITH CONDITIONS (D-01 M-07), kecuali "membuka kembali setelah tenggat menilai jawaban yang sudah tersimpan": PROPOSED (RECOVERED) | B01 M-07 |
+| A-13 | Lab dan mini-project tidak berwaktu; dapat dijeda dan dilanjutkan. | OWNER APPROVED WITH CONDITIONS (D-01 M-08) | B01 M-08 |
+| A-14 | Penjelasan konsep memakai tugas terstruktur yang dapat diperiksa objektif secara offline, bukan esai bebas atau skor AI. | OWNER APPROVED WITH CONDITIONS (D-01 M-06) | B01 M-06 |
 | A-15 | Jangan menyimpulkan agregasi antarmodul tanpa aturan terpisah yang disetujui. | APPROVED | TD:32 |
 
 ## 2. Model state
@@ -94,12 +106,12 @@ perhitungan dengan skor terbaik, tetapi menandainya **OPEN-CONFIRM**.
 | # | Dari | Peristiwa | Ke | Efek wajib | Status |
 |---|---|---|---|---|---|
 | T1 | `NOT_STARTED` | Pengguna menekan "Mulai" | `IN_PROGRESS` | Simpan attempt, `startedAt`, dan **tenggat absolut** dalam satu transaksi **sebelum** soal pertama tampil. | PROPOSED (dasar A-06, A-12) |
-| T2 | `IN_PROGRESS` | Jawaban berubah | `IN_PROGRESS` | Autosave jawaban. | APPROVED/RECOVERED (BL:60, A-12) |
-| T3 | `IN_PROGRESS` | Aplikasi ditutup / process death / restart | `IN_PROGRESS` | Tidak ada; timer tetap berjalan. | RECOVERED (A-12) |
-| T4 | `IN_PROGRESS` | Dibuka kembali sebelum tenggat | `IN_PROGRESS` | Pulihkan jawaban dan sisa waktu dari tenggat tersimpan. | RECOVERED (A-12) |
+| T2 | `IN_PROGRESS` | Jawaban berubah | `IN_PROGRESS` | Autosave jawaban. | APPROVED (BL:60); OWNER APPROVED WITH CONDITIONS (D-01 M-07) |
+| T3 | `IN_PROGRESS` | Aplikasi ditutup / process death / restart | `IN_PROGRESS` | Tidak ada; timer tetap berjalan. | OWNER APPROVED WITH CONDITIONS (D-01 M-07) |
+| T4 | `IN_PROGRESS` | Dibuka kembali sebelum tenggat | `IN_PROGRESS` | Pulihkan jawaban dan sisa waktu dari tenggat tersimpan. | OWNER APPROVED WITH CONDITIONS (D-01 M-07) |
 | T5 | `IN_PROGRESS` | Pengguna menekan "Kumpulkan" sebelum tenggat | `SUBMITTED` | Kunci attempt; simpan `submittedAt`. | PROPOSED |
 | T6 | `IN_PROGRESS` | Tenggat tercapai saat aplikasi terbuka | `SUBMITTED` | Kunci; hanya jawaban yang tersimpan sebelum tenggat yang dipakai. | PROPOSED (dasar A-12) |
-| T7 | `IN_PROGRESS` | Dibuka kembali **setelah** tenggat | `SUBMITTED` → `GRADED` | Nilai jawaban yang sudah tersimpan. | RECOVERED (A-12) |
+| T7 | `IN_PROGRESS` | Dibuka kembali **setelah** tenggat | `SUBMITTED` → `GRADED` | Nilai jawaban yang sudah tersimpan. | PROPOSED (RECOVERED, B01 M-07; tidak tercantum di D-01 M-07) |
 | T8 | `SUBMITTED` | Penilai objektif selesai | `GRADED` | Simpan skor tanpa pembulatan; perbarui status komponen; proses XP (§7). | PROPOSED (dasar A-03, A-08) |
 
 Ujian teori tidak memiliki state `SAVED` (tidak ada jeda).
@@ -110,8 +122,8 @@ Ujian teori tidak memiliki state `SAVED` (tidak ada jeda).
 |---|---|---|---|---|---|
 | L1 | `NOT_STARTED` | Mulai | `IN_PROGRESS` | Simpan attempt. | PROPOSED |
 | L2 | `IN_PROGRESS` | Perubahan kode/jawaban | `IN_PROGRESS` | Autosave. | APPROVED (BL:60) |
-| L3 | `IN_PROGRESS` | Jeda / keluar / process death | `SAVED` | Semua pekerjaan sudah tersimpan. | RECOVERED (A-13) |
-| L4 | `SAVED` | Lanjutkan | `IN_PROGRESS` | Pulihkan seluruh pekerjaan. | RECOVERED (A-13) |
+| L3 | `IN_PROGRESS` | Jeda / keluar / process death | `SAVED` | Semua pekerjaan sudah tersimpan. | OWNER APPROVED WITH CONDITIONS (D-01 M-08) |
+| L4 | `SAVED` | Lanjutkan | `IN_PROGRESS` | Pulihkan seluruh pekerjaan. | OWNER APPROVED WITH CONDITIONS (D-01 M-08) |
 | L5 | `IN_PROGRESS` | Kumpulkan | `SUBMITTED` | Kunci attempt. | PROPOSED; aturan pengumpulan rinci **OPEN** (B01 M-08) |
 | L6 | `SUBMITTED` | Test case objektif selesai | `GRADED` | Simpan skor tanpa pembulatan; status komponen; XP. | PROPOSED (dasar A-08, LB-5) |
 
@@ -151,13 +163,13 @@ terpisah. Tidak ada transisi yang menghapus atau menimpa attempt lama.
 | ID | Kriteria | Status |
 |---|---|---|
 | D-01 | Tenggat disimpan sebagai **waktu absolut** saat attempt dimulai, sebelum soal tampil. | PROPOSED (dasar A-12) |
-| D-02 | Timer terus berjalan saat aplikasi ditutup, process death, dan restart perangkat. | RECOVERED (A-12) |
+| D-02 | Timer terus berjalan saat aplikasi ditutup, process death, dan restart perangkat. | OWNER APPROVED WITH CONDITIONS (D-01 M-07) |
 | D-03 | Sisa waktu selalu dihitung dari tenggat tersimpan, tidak dari timer di memori. | PROPOSED |
-| D-04 | Jawaban yang tersimpan sebelum tenggat dinilai; perubahan setelah tenggat ditolak. | RECOVERED (A-12) |
-| D-05 | Membuka aplikasi setelah tenggat langsung mengunci dan menilai jawaban tersimpan (T7). | RECOVERED (A-12) |
+| D-04 | Jawaban yang tersimpan sebelum tenggat dinilai; perubahan setelah tenggat ditolak. | PROPOSED (RECOVERED, B01 M-07) |
+| D-05 | Membuka aplikasi setelah tenggat langsung mengunci dan menilai jawaban tersimpan (T7). | PROPOSED (RECOVERED, B01 M-07) |
 | D-06 | Remedial membuat attempt baru dengan tenggat baru; tenggat attempt lama tidak berubah. | PROPOSED (dasar A-04) |
 | D-07 | Tenggat disimpan sebagai *instant* (UTC); tampilan memakai Asia/Tokyo (BL:52). | PROPOSED |
-| D-08 | Durasi ujian dihitung dari jumlah, tipe, dan kompleksitas soal; rumusnya **OPEN**. | RECOVERED arah, rumus OPEN |
+| D-08 | Durasi ujian dihitung dari jumlah, tipe, dan kompleksitas soal; rumusnya **OPEN**. | OWNER APPROVED WITH CONDITIONS (D-01 M-07) arah; rumus OPEN |
 
 ### 5.2 Risiko jam perangkat dan kasus tepi
 
@@ -275,7 +287,7 @@ Contoh (identitas aktivitas masih OPEN; label "kuis-W9-1" hanya ilustrasi):
 | OP-9 | Aturan unlock rinci: partial, remedial, konten pratinjau | BL:21, B01 M-04 |
 | OP-10 | Komponen mana yang boleh diulang saat `NOT_PASSED` | A-04 |
 | OP-11 | Interval/debounce autosave | P-03 |
-| OP-12 | Status persetujuan `PLANNING_COMPLETION_BATCH.md` (sumber RECOVERED) | B-3 |
+| OP-12 | *(Selesai oleh D-01, PR #18.)* Status persetujuan `PLANNING_COMPLETION_BATCH.md` | HS:B-3 |
 
 ## 10. Keputusan owner D-04 (2026-11-23)
 

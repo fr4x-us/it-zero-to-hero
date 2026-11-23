@@ -177,6 +177,6 @@ Dicatat dari `docs/OWNER_DECISION_CHECKLIST.md`. Tabel §7.1 tidak diubah.
 | Butir M | Keputusan | Yang masih OPEN |
 |---|---|---|
 | M-04, M-05 | D-04: skor terbaik per komponen; kelulusan per modul (≥ 80 dan tiap komponen ≥ 75, tanpa pembulatan); unlock linear; program = 16 modul lulus + capstone | Agregasi numerik tingkat program, representasi angka, rubrik capstone |
-| M-10 | D-10: ambang uji F-01–F-15 disetujui sebagai rencana; eksekusi prototipe **tidak** diizinkan. D-08: lab Python tidak boleh mendapat akses jaringan | Runtime dan isolasi (NOT VERIFIED) |
-| M-15, M-16 | D-03: restore M-2 default, M-1 eksplisit dengan snapshot pra-restore, tanpa auto-merge. D-07: Auto Backup Android dinonaktifkan | Retensi/kuota snapshot, rollback, kripto, transfer antarperangkat |
+| M-10 | D-10: ambang uji PY:F-01–F-15 disetujui sebagai rencana; eksekusi prototipe **tidak** diizinkan. D-08: lab Python tidak boleh mendapat akses jaringan | Runtime dan isolasi (NOT VERIFIED) |
+| M-15, M-16 | D-03: restore BKP:M-2 default, BKP:M-1 eksplisit dengan snapshot pra-restore, tanpa auto-merge. D-07: Auto Backup Android dinonaktifkan | Retensi/kuota snapshot, rollback, kripto, transfer antarperangkat |
 | M-19 | D-05: minSdk 29 | Breakpoint, tablet/orientasi, target pengujian |

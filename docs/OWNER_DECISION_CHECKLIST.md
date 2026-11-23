@@ -74,14 +74,14 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 |---|---|
 | Sumber | BL:63–64; B01 M-16; [`ENCRYPTED_BACKUP_RESTORE_SPEC.md`](ENCRYPTED_BACKUP_RESTORE_SPEC.md) §6.2, OD-3 |
 | Masalah | Blueprint meminta riwayat percobaan dipertahankan saat restore; B01 melarang penggabungan riwayat nilai otomatis. Restore "ganti total" bisa menghilangkan attempt yang tidak ada di file backup |
-| Pilihan | M-1 ganti total + snapshot pra-restore disimpan; M-2 tolak restore bila data aktif punya attempt yang tidak ada di backup; M-3 gabung berbasis ID stabil (append saja) |
-| Rekomendasi teknis | M-2 sebagai default aman, M-1 sebagai opsi eksplisit dengan peringatan |
-| Risiko M-1 | Riwayat hanya ada di snapshot; butuh kebijakan retensi |
-| Risiko M-2 | Pengguna bisa terhalang memulihkan data |
-| Risiko M-3 | Bertentangan dengan "no automatic merging" kecuali owner mengizinkan |
+| Pilihan | BKP:M-1 ganti total + snapshot pra-restore disimpan; BKP:M-2 tolak restore bila data aktif punya attempt yang tidak ada di backup; BKP:M-3 gabung berbasis ID stabil (append saja) |
+| Rekomendasi teknis | BKP:M-2 sebagai default aman, BKP:M-1 sebagai opsi eksplisit dengan peringatan |
+| Risiko BKP:M-1 | Riwayat hanya ada di snapshot; butuh kebijakan retensi |
+| Risiko BKP:M-2 | Pengguna bisa terhalang memulihkan data |
+| Risiko BKP:M-3 | Bertentangan dengan "no automatic merging" kecuali owner mengizinkan |
 | Ketergantungan | D-01 (status B01 M-16); memengaruhi D-07 dan model data attempt |
 | Status | **OWNER APPROVED** (2026-11-23) — tunduk pada verifikasi yang tersisa; berlaku efektif setelah PR pencatatan D-02–D-11 di-merge |
-| Keputusan final | **M-2 default aman**: restore ditolak bila akan menghilangkan attempt akademik yang ada di data aktif tetapi tidak ada di backup. **M-1 hanya sebagai pilihan eksplisit pengguna** (penggantian penuh) dengan peringatan jelas, konfirmasi eksplisit, dan snapshot pra-restore yang berhasil dibuat serta dapat dipulihkan. **Tanpa penggabungan riwayat nilai otomatis** (M-3 ditolak). OPEN: retensi snapshot, batas penyimpanan, detail rollback, parameter kriptografi |
+| Keputusan final | **BKP:M-2 default aman**: restore ditolak bila akan menghilangkan attempt akademik yang ada di data aktif tetapi tidak ada di backup. **BKP:M-1 hanya sebagai pilihan eksplisit pengguna** (penggantian penuh) dengan peringatan jelas, konfirmasi eksplisit, dan snapshot pra-restore yang berhasil dibuat serta dapat dipulihkan. **Tanpa penggabungan riwayat nilai otomatis** (BKP:M-3 ditolak). OPEN: retensi snapshot, batas penyimpanan, detail rollback, parameter kriptografi |
 
 ### D-04 — Agregasi skor dan basis kelulusan (UW-11)
 
@@ -105,20 +105,20 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 |---|---|
 | Sumber | TD:48 (O-07); [`ENCRYPTED_BACKUP_RESTORE_SPEC.md`](ENCRYPTED_BACKUP_RESTORE_SPEC.md) §7, OD-4 |
 | Masalah | Auto Backup aktif secara default; database bisa terunggah ke Google Drive; E2E hanya di Android 9+ dengan kunci layar; sebagian perangkat tetap melakukan transfer antarperangkat walau `allowBackup=false` |
-| Pilihan | AB-1 `allowBackup=false`; AB-2 izinkan tetapi kecualikan database dan snapshot; AB-3 izinkan semua |
-| Rekomendasi teknis | AB-1 atau AB-2, diputuskan bersama D-03 |
-| Risiko AB-1 | Pengguna hanya mengandalkan ekspor manual; D2D mungkin tetap terjadi |
-| Risiko AB-2 | Aturan ekstraksi harus diuji untuk cloud dan D2D di API ≤ 30 dan ≥ 31 |
-| Risiko AB-3 | Data akademik di cloud tanpa enkripsi aplikasi; restore otomatis melewati alur restore aman |
+| Pilihan | BKP:AB-1 `allowBackup=false`; BKP:AB-2 izinkan tetapi kecualikan database dan snapshot; BKP:AB-3 izinkan semua |
+| Rekomendasi teknis | BKP:AB-1 atau BKP:AB-2, diputuskan bersama D-03 |
+| Risiko BKP:AB-1 | Pengguna hanya mengandalkan ekspor manual; D2D mungkin tetap terjadi |
+| Risiko BKP:AB-2 | Aturan ekstraksi harus diuji untuk cloud dan D2D di API ≤ 30 dan ≥ 31 |
+| Risiko BKP:AB-3 | Data akademik di cloud tanpa enkripsi aplikasi; restore otomatis melewati alur restore aman |
 | Ketergantungan | D-03; D-02 (bila DataStore dipakai) |
 | Status | **OWNER APPROVED** (2026-11-23) — tunduk pada verifikasi yang tersisa; berlaku efektif setelah PR pencatatan D-02–D-11 di-merge |
-| Keputusan final | **AB-1**: Android Auto Backup dinonaktifkan; aplikasi memakai mekanisme backup terenkripsinya sendiri (selaras D-03). `allowBackup=false` **tidak** dianggap menjamin semua jalur transfer tercegah; perilaku transfer antarperangkat (termasuk pengecualian per produsen) **wajib diverifikasi** (NOT VERIFIED) |
+| Keputusan final | **BKP:AB-1**: Android Auto Backup dinonaktifkan; aplikasi memakai mekanisme backup terenkripsinya sendiri (selaras D-03). `allowBackup=false` **tidak** dianggap menjamin semua jalur transfer tercegah; perilaku transfer antarperangkat (termasuk pengecualian per produsen) **wajib diverifikasi** (NOT VERIFIED) |
 
 ### D-08 — Izin `INTERNET` (UW-07)
 
 | Butir | Isi |
 |---|---|
-| Sumber | BL:10, BL:24; O-02; QG OF-3; PY F-09; CAL U-3 |
+| Sumber | BL:10, BL:24; O-02; QG OF-3; PY:F-09; CAL:U-3 |
 | Masalah | Video YouTube opsional butuh jaringan; izin `INTERNET` juga membuka akses jaringan bagi kode lab bila isolasi gagal |
 | Pilihan | (a) Tanpa `INTERNET`; video dibuka di aplikasi/browser eksternal; (b) dengan `INTERNET` untuk fitur opsional |
 | Rekomendasi teknis | (a) untuk V1 |
@@ -126,7 +126,7 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Risiko (b) | Permukaan serangan lebih besar; lab Python bisa mengakses jaringan bila isolasi gagal |
 | Ketergantungan | Independen; memengaruhi D-07, D-10, CO-2 |
 | Status | **OWNER APPROVED** (2026-11-23) — tunduk pada verifikasi yang tersisa; berlaku efektif setelah PR pencatatan D-02–D-11 di-merge |
-| Keputusan final | **Opsi (b)**: izin `INTERNET` diperbolehkan untuk fitur opsional. Fitur belajar inti tetap berfungsi offline. Eksekusi lab Python **tidak boleh** mendapat akses jaringan; threat model, isolasi proses, dan uji penolakan jaringan **wajib**. F-09 tetap feasibility gate yang **NOT VERIFIED**. Tidak ada klaim sandbox aman |
+| Keputusan final | **Opsi (b)**: izin `INTERNET` diperbolehkan untuk fitur opsional. Fitur belajar inti tetap berfungsi offline. Eksekusi lab Python **tidak boleh** mendapat akses jaringan; threat model, isolasi proses, dan uji penolakan jaringan **wajib**. PY:F-09 tetap feasibility gate yang **NOT VERIFIED**. Tidak ada klaim sandbox aman |
 
 ## B. Keputusan teknis
 
@@ -183,17 +183,17 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 | Butir | Isi |
 |---|---|
 | Sumber | [`PYTHON_OFFLINE_FEASIBILITY_PLAN.md`](PYTHON_OFFLINE_FEASIBILITY_PLAN.md) §6–8; TD:45, TD:60 |
-| Masalah | Uji F-01–F-15 butuh (1) batas angka dan (2) izin prototipe terbatas |
-| Angka yang dibutuhkan | Ukuran APK maksimum per ABI (F-03); waktu start interpreter maksimum (F-04); batas waktu eksekusi (F-11); batas memori (F-12); batas output (F-13); perangkat uji |
+| Masalah | Uji PY:F-01–PY:F-15 butuh (1) batas angka dan (2) izin prototipe terbatas |
+| Angka yang dibutuhkan | Ukuran APK maksimum per ABI (PY:F-03); waktu start interpreter maksimum (PY:F-04); batas waktu eksekusi (PY:F-11); batas memori (PY:F-12); batas output (PY:F-13); perangkat uji |
 | Pilihan | (a) Izinkan prototipe terbatas setelah batas ditetapkan; (b) tunda; (c) tolak dan putuskan alternatif lab minggu 9–12 (CU-8) |
-| Rekomendasi teknis | (a). Prototipe hanya untuk F-01–F-15, terpisah dari aplikasi, tidak menjadi dasar kode produksi tanpa izin implementasi |
+| Rekomendasi teknis | (a). Prototipe hanya untuk PY:F-01–PY:F-15, terpisah dari aplikasi, tidak menjadi dasar kode produksi tanpa izin implementasi |
 | Risiko (a) | Waktu pengerjaan; hasil bisa gagal dan memicu eskalasi |
 | Risiko (b) | Lab Python tetap tidak dapat direncanakan |
 | Risiko (c) | Mengubah cakupan kurikulum terkunci (BL:19, BL:41) — butuh revisi blueprint |
 | Ketergantungan | D-05 (minSdk); D-08 (jaringan); izin ini **tidak** sama dengan D-11 |
 | Status | **PLANNING APPROVED; EXECUTION NOT AUTHORIZED** (2026-11-23) |
-| Batas yang ditetapkan owner | APK maks. 100 MB per ABI (F-03) · start interpreter dingin maks. 5 detik (F-04) · batas waktu eksekusi 3 detik per latihan (F-11) · target batas memori proses Python 128 MB (F-12) · output maks. 64 KB per eksekusi (F-13) · target uji: 1 perangkat fisik ARM64 + 1 emulator x86_64 · API minimum 29. **Ambang penerimaan yang diusulkan, bukan hasil pengukuran** |
-| Keputusan final | Cakupan dan ambang penerimaan F-01–F-15 disetujui **sebagai keputusan perencanaan**. Prototipe **tidak** diizinkan untuk diimplementasikan atau dijalankan sekarang. Eksekusi butuh: (1) penyelesaian kebutuhan perencanaan yang tersisa; (2) izin owner terpisah yang eksplisit; (3) cakupan eksperimental yang terisolasi. Runtime final **tidak** dipilih; F-01–F-15 **NOT VERIFIED** |
+| Batas yang ditetapkan owner | APK maks. 100 MB per ABI (PY:F-03) · start interpreter dingin maks. 5 detik (PY:F-04) · batas waktu eksekusi 3 detik per latihan (PY:F-11) · target batas memori proses Python 128 MB (PY:F-12) · output maks. 64 KB per eksekusi (PY:F-13) · target uji: 1 perangkat fisik ARM64 + 1 emulator x86_64 · API minimum 29. **Ambang penerimaan yang diusulkan, bukan hasil pengukuran** |
+| Keputusan final | Cakupan dan ambang penerimaan PY:F-01–PY:F-15 disetujui **sebagai keputusan perencanaan**. Prototipe **tidak** diizinkan untuk diimplementasikan atau dijalankan sekarang. Eksekusi butuh: (1) penyelesaian kebutuhan perencanaan yang tersisa; (2) izin owner terpisah yang eksplisit; (3) cakupan eksperimental yang terisolasi. Runtime final **tidak** dipilih; PY:F-01–PY:F-15 **NOT VERIFIED** |
 
 ## D. Izin implementasi
 
@@ -217,17 +217,17 @@ D-11 Izin implementasi (UW-02)       (butuh D-01–D-09; terpisah dari D-10)
 |---|---|---|---|---|
 | D-01 | Status Batch 01 | Produk | **APPROVED BY OWNER** (2026-11-23) | Setujui M-01–M-19 dengan ketentuan (lihat D-01) |
 | D-02 | DataStore | Produk/data | OWNER APPROVED | (a) preferensi saja; Room sumber kebenaran; versi OPEN |
-| D-03 | Mode restore | Produk/data | OWNER APPROVED | M-2 default; M-1 eksplisit + snapshot; tanpa auto-merge |
+| D-03 | Mode restore | Produk/data | OWNER APPROVED | BKP:M-2 default; BKP:M-1 eksplisit + snapshot; tanpa auto-merge |
 | D-04 | Agregasi skor + basis lulus | Produk | OWNER APPROVED | Skor terbaik; lulus per modul; program = 16 modul + capstone; agregasi program OPEN |
 | D-05 | minSdk | Teknis | OWNER APPROVED | 29 |
 | D-06 | Toolchain | Teknis | OWNER APPROVED (provisional) | Baseline sementara; belum build-verified |
-| D-07 | Auto Backup | Produk/data | OWNER APPROVED | AB-1; D2D NOT VERIFIED |
-| D-08 | `INTERNET` | Produk | OWNER APPROVED | (b) untuk fitur opsional; lab Python tanpa jaringan (F-09 NOT VERIFIED) |
+| D-07 | Auto Backup | Produk/data | OWNER APPROVED | BKP:AB-1; D2D NOT VERIFIED |
+| D-08 | `INTERNET` | Produk | OWNER APPROVED | (b) untuk fitur opsional; lab Python tanpa jaringan (PY:F-09 NOT VERIFIED) |
 | D-09 | Stack test | Teknis | OWNER APPROVED | (b) JUnit, coroutines-test, Compose UI Test, Robolectric |
 | D-10 | Prototipe O-04 | Izin prototipe | PLANNING APPROVED; EXECUTION NOT AUTHORIZED | Ambang disetujui; prototipe tidak diizinkan |
 | D-11 | Implementasi tahap pertama | Izin implementasi | DEFERRED; NOT AUTHORIZED | Selesaikan perencanaan dulu; izin baru diperlukan |
 
-Cara menjawab: owner mengirim jawaban per ID (mis. "D-03: M-2"). Claude
+Cara menjawab: owner mengirim jawaban per ID (mis. "D-03: BKP:M-2"). Claude
 mencatatnya di PR terpisah, memperbarui DECISIONS_LOG, dan mengubah
 status menjadi APPROVED hanya setelah PR itu disetujui.
 
@@ -240,5 +240,5 @@ status menjadi APPROVED hanya setelah PR itu disetujui.
 | 3 | D-11: label "opsi A" vs instruksi menunda. | Dicatat sebagai DEFERRED sesuai instruksi substantif owner |
 | 4 | D-04 menetapkan kelulusan per modul dengan empat komponen. Implikasinya: setiap modul memerlukan keempat komponen penilaian (termasuk mini-project dan penjelasan konsep). | **Tidak** diselesaikan diam-diam; dicatat sebagai implikasi yang perlu dikonfirmasi pada CU-2 |
 | 5 | D-04: "16 modul lulus dan capstone selesai" — capstone juga merupakan minggu 16 di kerangka kurikulum. | Hubungan modul 16 dengan capstone dan rubriknya tetap OPEN (CU-9) |
-| 6 | D-10: batas memori 128 MB adalah target; kemampuan Android menegakkan batas memori per proses belum diverifikasi. | Tetap bagian F-12 (NOT VERIFIED) |
+| 6 | D-10: batas memori 128 MB adalah target; kemampuan Android menegakkan batas memori per proses belum diverifikasi. | Tetap bagian PY:F-12 (NOT VERIFIED) |
 
