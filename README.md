@@ -31,6 +31,8 @@ Offline-first Android IT Learning Academy: aplikasi Android native
 | Toolchain (Batch 04) | [`docs/ANDROID_TOOLCHAIN_DECISION_SHEET.md`](docs/ANDROID_TOOLCHAIN_DECISION_SHEET.md) |
 | Penilaian (Batch 05) | [`docs/ASSESSMENT_STATE_MACHINE_SPEC.md`](docs/ASSESSMENT_STATE_MACHINE_SPEC.md) |
 | Presisi angka penilaian (UW-22, menunggu owner) | [`docs/NUMERIC_PRECISION_DECISION_SHEET.md`](docs/NUMERIC_PRECISION_DECISION_SHEET.md) |
+| Struktur komponen per modul (CU-2, menunggu owner) | [`docs/CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md`](docs/CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) |
+| Kontras palet dan dark mode (UO-1/UO-2, menunggu owner) | [`docs/ACCESSIBILITY_COLOR_DECISION_SHEET.md`](docs/ACCESSIBILITY_COLOR_DECISION_SHEET.md) |
 | Backup (Batch 06) | [`docs/ENCRYPTED_BACKUP_RESTORE_SPEC.md`](docs/ENCRYPTED_BACKUP_RESTORE_SPEC.md) |
 | Kalender Jepang (Batch 07) | [`docs/JAPAN_CALENDAR_HOLIDAY_SPEC.md`](docs/JAPAN_CALENDAR_HOLIDAY_SPEC.md) |
 | UI dan aksesibilitas (Batch 08) | [`docs/UI_ACCESSIBILITY_VISUAL_SPEC.md`](docs/UI_ACCESSIBILITY_VISUAL_SPEC.md) |
