@@ -31,5 +31,12 @@ project owner explicitly approves a revision.
 5. Wait for implementation authorization.
 6. Once authorized, use branches, tests, and checkpoints.
 
+## Pull requests — NO AUTO-MERGE
+- After each batch: one PR to main, report, then STOP.
+- Never merge a PR unless the user's new message explicitly says
+  "PR #X telah direview ChatGPT dan disetujui untuk merge." for that PR.
+- Approval covers only the named PR. Silence is not approval.
+- Full rules: docs/GITHUB_BRIDGE.md §5.
+
 ## Communication
 Use Indonesian for explanations and progress reports.
