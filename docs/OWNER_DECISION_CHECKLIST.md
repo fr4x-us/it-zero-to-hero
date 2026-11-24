@@ -517,3 +517,11 @@ CU-6-Q13 dan OD-15-Q2 dijawab owner (D-36, D-37). RM-Q2 dijawab (D-38); W01-ACC 
 |---|---|---|---|
 | D-38 | RM-Q2 | Nilai angka batas agregat eksekusi lab (LX-2) = keluaran verifikasi UW-12 (jalur V) | Pengukuran (UW-12; D-10 NOT AUTHORIZED) |
 | W01-ACC | Penerimaan W1 | Diterima sebagai modul kurikulum acuan | Batas review independen (dinyatakan owner): F-22 dan F-23 menerima review akhir terarah; pencatatan D-36/D-37 diperiksa; enumerasi independen mengonfirmasi 3.840 kombinasi dan 46 build valid. Tidak setiap baris CSV terbaru, setiap butir penilaian yang berubah, atau setiap penerapan kontrak visibilitas diaudit ulang secara independen. |
+
+## Penerimaan owner W02-ACC, W03-ACC, W04-ACC (2026-11-24)
+
+| ID | Pertanyaan | Keputusan | Batas |
+|---|---|---|---|
+| W02-ACC | Penerimaan W2 | Diterima (PR #27 di-merge, `846051f`) | Batas review independen (dinyatakan owner): delta review terarah PASS — F-49–F-59 dan F-71–F-72 lolos review terarah; integritas register F-28–F-72 diverifikasi; 16 simulasi normalisasi independen lolos. Regresi historis penuh, semua skrip validasi sementara, uji dengan pelajar, dan verifikasi runtime Android **tidak** diulang secara independen. |
+| W03-ACC | Penerimaan W3 | Diterima (PR #27 di-merge, `846051f`) | Batas review independen (dinyatakan owner): delta review terarah PASS — F-49–F-59 dan F-71–F-72 lolos review terarah; integritas register F-28–F-72 diverifikasi; 16 simulasi normalisasi independen lolos. Regresi historis penuh, semua skrip validasi sementara, uji dengan pelajar, dan verifikasi runtime Android **tidak** diulang secara independen. |
+| W04-ACC | Penerimaan W4 | Diterima (PR #27 di-merge, `846051f`) | Batas review independen (dinyatakan owner): delta review terarah PASS — F-49–F-59 dan F-71–F-72 lolos review terarah; integritas register F-28–F-72 diverifikasi; 16 simulasi normalisasi independen lolos. Regresi historis penuh, semua skrip validasi sementara, uji dengan pelajar, dan verifikasi runtime Android **tidak** diulang secara independen. |

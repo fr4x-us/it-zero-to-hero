@@ -14,7 +14,7 @@ review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1 + kore
 | Dokumentasi diproduksi | **YA** (CB-1) |
 | Review mandiri penyusun | **YA** (dokumen ini) |
 | Review independen (ChatGPT) | PR #27: **REQUEST CHANGES** (F-28–F-70, lalu delta F-28–F-72) → dikoreksi; **re-review BELUM** |
-| Diterima owner | **BELUM** |
+| Diterima owner (W04-ACC) | **YA** (2026-11-24, PR #27 merge `846051f`) — lihat bagian penerimaan di akhir dokumen |
 | Runtime diverifikasi | Tidak berlaku / tidak diklaim |
 | Durasi diuji dengan pelajar | **TIDAK** |
 
@@ -443,3 +443,12 @@ W2 1, W3 78.485.511.600, W4 163.840 — tidak berubah). F-24–F-27
 dipertahankan: tidak ada perubahan `.claude/`, izin, hooks, allowed-tools,
 asal skill, atau kontrak alur kerja; W1 tidak diubah. V03 tidak dijalankan
 ulang. TOKEN USAGE: **NOT MEASURABLE**.
+
+
+## Penerimaan W4 (W04-ACC) dan batas review independen
+
+PR #27 di-merge (head `1a58338bcc863320ff4eafbb0f407cee4b2a9f59`, merge commit `846051f66ee4d1e36e9b34e0c9d1787fb713617b`). Owner menerima W4 (W04-ACC, 2026-11-24).
+
+Verdict independen: **PASS — targeted delta review with disclosed limitations.** Batas review independen (dinyatakan owner): delta review terarah PASS — F-49–F-59 dan F-71–F-72 lolos review terarah; integritas register F-28–F-72 diverifikasi; 16 simulasi normalisasi independen lolos. Regresi historis penuh, semua skrip validasi sementara, uji dengan pelajar, dan verifikasi runtime Android **tidak** diulang secara independen.
+
+Register F-01–F-72 dan disposisinya di atas tetap sebagai catatan historis (39 FIXED, 5 DOCUMENTATION CLARIFIED, F-31 NOT REPRODUCED pada F-28–F-72). Penerimaan ini **bukan** verifikasi menyeluruh, verifikasi runtime, atau uji durasi dengan pelajar; temuan baru tetap boleh diangkat. Bukti aktivasi V03 tetap dari sesi segar sebelumnya.

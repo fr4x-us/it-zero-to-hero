@@ -43,7 +43,8 @@ di setiap PR batch.
 | #24 | Pencatatan D-23–D-25; lembar keputusan kurikulum; templat CB-0; tinjauan konsistensi | Merged 2026-11-24 sebagai `40ca205` (di-merge Claude atas persetujuan eksplisit owner) |
 | #25 | Pencatatan D-26–D-37; CB-0; konten W1; revisi kualitas W1 (F-01–F-23) | Merged 2026-11-24 sebagai `df76c5f` (head `f4cb173`; di-merge Claude atas otorisasi eksplisit owner) |
 | #26 | CB-0.5: D-38, W01-ACC, empat skill agen, PROJECT_MAP, protokol efisiensi token; revisi F-24–F-27 (hardening keamanan) | Merged 2026-11-24 sebagai `ab0103e` (head `691ae87`; di-merge Claude atas otorisasi eksplisit owner, master prompt CB-1) |
-| (CB-1) | V03 PASS; kurikulum W2–W4 (12 komponen); pembaruan status | Terbuka (branch `planning/cb1-w02-w04`); **tidak di-merge Claude** |
+| #27 | CB-1: V03 PASS; kurikulum W2–W4 (12 komponen); dua putaran koreksi F-28–F-72 | Merged 2026-11-24 sebagai `846051f` (head `1a58338`; di-merge Claude atas otorisasi eksplisit owner, master prompt CB-2) |
+| (CB-2) | Penerimaan W02-ACC–W04-ACC; kurikulum W5–W8 (16 komponen) | Branch `planning/cb2-w05-w08`; PR belum dibuka; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -93,18 +94,18 @@ Kontrak field: [AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTO
 
 | Field | Nilai |
 |---|---|
-| Tugas aktif dan lingkup | CB-1 TARGETED CORRECTION ROUND 2 — koreksi delta review PR #27 (REQUEST CHANGES, register F-28–F-72) pada PR yang sama; konten W2–W4 + dokumen status; tanpa PR baru, tanpa merge |
-| Fase | Koreksi putaran 2 selesai dan di-push ke PR #27; **menunggu re-review independen dan otorisasi owner** |
-| Selesai | Putaran 1 (F-28–F-70); putaran 2: F-49–F-51 sesuai deskripsi asli, F-52–F-55, F-57–F-59, F-71, F-72 diperbaiki; F-56 dan F-65 dipertahankan (inspeksi independen PASS); F-37 diklarifikasi; F-31 NOT REPRODUCED dengan bukti commit `9a562ce` dan head. Register 45 ID tanpa BLOCKED |
-| Sisa | Re-review independen PR #27; otorisasi merge owner; penerimaan W2–W4 terpisah |
-| Berkas relevan | `curriculum/mod-w02/`–`mod-w04/` (`review.md`: register + bagian koreksi terarah putaran 2), `docs/BATCH_01_10_UNFINISHED_AUDIT.md` §22, `docs/PLANNING_ROADMAP.md` §15 |
-| Versi kerja | Branch `planning/cb1-w02-w04`; basis `main` = `ab0103e4954ead4ded6343d105d73a2729916cd6`; head yang direview `145bb5693320c322eda4d7ea0d08b0a284018c9e`; versi terkini = head PR #27 di GitHub |
-| Keputusan | Owner: REQUEST CHANGES (delta) pada PR #27; deskripsi asli F-55–F-57, F-59 dipulihkan owner. Tidak ada perubahan keputusan terkunci, skor maksimum, durasi, atau XP |
-| Blocker | Tidak ada untuk register koreksi; menunggu review dan keputusan owner |
-| Pendekatan gagal | Format `zero` simulasi W2 berupa label, bukan ID → pemeriksaan F-71 diubah membaca depends_on dari rubrik; generator register sempat salah kutip (diperbaiki sebelum dipakai) |
-| Bukti verifikasi | `curriculum/mod-w0N/review.md` (register 45 ID, prosedur validasi dan hasil); V03 dari sesi sebelumnya, tidak diklaim ulang |
-| Aksi berikutnya yang diizinkan | Tidak ada sampai owner mengirim instruksi revisi atau kalimat otorisasi merge untuk PR #27 |
-| Kondisi berhenti | PR #27 diperbarui → STOP. Jangan merge, jangan mulai W5, jangan implementasi |
+| Tugas aktif dan lingkup | CB-2 — merge PR #27, catat W02-ACC–W04-ACC, produksi W5–W8 (16 komponen), satu PR baru; tanpa merge PR baru, tanpa W9–W16, tanpa implementasi |
+| Fase | Fase A (merge `846051f`) dan Fase B (penerimaan) selesai; Fase C produksi W5 dimulai |
+| Selesai | PR #27 merged (`846051f66ee4d1e36e9b34e0c9d1787fb713617b`); W02-ACC, W03-ACC, W04-ACC dicatat (DECISIONS_LOG, OWNER_DECISION_CHECKLIST, module.yaml, review.md) |
+| Sisa | W5 → W6 → W7 → W8 (satu per satu, validasi sebelum lanjut); sinkronisasi dokumen status; PR CB-2 |
+| Berkas relevan | `docs/CURRICULUM_TEMPLATES_CB0.md`, `docs/CURRICULUM_CONTENT_DECISION_SHEETS.md` §D (HA-A fase 2: M 150 · U 45 · L 120 · P 90 · C 30 · R 45), `docs/PROJECT_RUBRIC_DECISION_SHEETS.md` A.3, `docs/ASSESSMENT_FLOW_DECISION_SHEETS.md` A.4, `curriculum/mod-w01`–`mod-w04` (acuan) |
+| Versi kerja | Branch `planning/cb2-w05-w08` dari `main` = `846051f66ee4d1e36e9b34e0c9d1787fb713617b`; versi terkini = head branch di GitHub |
+| Keputusan | Owner: merge PR #27, W02-ACC–W04-ACC (batas review terarah diungkapkan), CB-2 diotorisasi. LO rinci W5–W8 disusun penyusun dari CUR §2 (CU-1 PROPOSED) |
+| Blocker | Format editor flowchart (M-10) dan bentuk entri ekspresi Boolean belum diputuskan → W6/W8 memakai bentuk jawaban terstruktur yang sudah ada (pilihan, isian eksak, tabel), tanpa editor graf; dicatat untuk owner |
+| Pendekatan gagal | — |
+| Bukti verifikasi | PR #27 `merged: true`, merge commit `846051f`; main lokal = remote, working tree bersih sebelum branch dibuat |
+| Aksi berikutnya yang diizinkan | Produksi W5, validasi, checkpoint; lanjut W6 hanya setelah W5 lolos |
+| Kondisi berhenti | PR CB-2 dibuka → STOP. Jangan merge, jangan mulai W9, jangan implementasi |
 
 ## Blocker
 
