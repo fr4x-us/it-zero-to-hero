@@ -1,0 +1,410 @@
+# W6 — rubrik mini-project (MR-A, D-33). Kunci, contoh jawaban, dan contoh evaluasi
+# hanya untuk reviewer/penilai; tidak ditampilkan kepada pelajar sebelum dinilai.
+component: mod-w06.project
+content_version: '1.0'
+max_points: 100
+constants:
+  variables:
+    P: pintu terbuka (1) / tertutup (0)
+    J: jendela terbuka (1) / tertutup (0)
+    M: mode malam aktif (1) / tidak (0)
+  row_order: Baris 1–8 = kombinasi P J M dari 000 sampai 111 (P bit paling kiri)
+  rules:
+    alarm: Alarm berbunyi bila mode malam aktif DAN (pintu terbuka ATAU jendela terbuka)
+    yellow: Lampu kuning menyala bila mode malam TIDAK aktif DAN (pintu terbuka ATAU jendela terbuka)
+  key:
+    F1:
+      R1: 0
+      R2: 0
+      R3: 0
+      R4: 1
+      R5: 0
+      R6: 1
+      R7: 0
+      R8: 1
+    F2_reference: M AND (P OR J)
+    F2_truth_table:
+    - 0
+    - 0
+    - 0
+    - 1
+    - 0
+    - 1
+    - 0
+    - 1
+    F3: 3
+    F4_reference: NOT M AND (P OR J)
+    F4_truth_table:
+    - 0
+    - 0
+    - 1
+    - 0
+    - 1
+    - 0
+    - 1
+    - 0
+    F5: 6
+field_rules:
+  cell_readable: Satu digit `0` atau `1` setelah spasi tepi dibuang; selain itu (kata, `true`, kosong)
+    → sel itu tidak terbaca
+  expression_readable: 'Tata bahasa BX (W6): ekspresi memakai variabel yang disebut di soal, kata kunci
+    `AND`, `OR`, `NOT`, dan kurung `( )`; token dipisahkan spasi (kurung boleh menempel). Prioritas: `NOT`
+    lebih dulu, lalu `AND`, lalu `OR`; operator setara dikerjakan dari kiri ke kanan; kurung mengubah
+    urutan. Kurung harus berpasangan. Token lain (mis. `&&`, `||`, `!`, `+`, `*`, `xor`, variabel yang
+    tidak disebut) membuat ekspresi tidak terbaca (INVALID_ANSWER). Variabel yang sah hanya P, J, M; kata
+    kunci dan variabel boleh huruf kecil (dibaca seperti huruf besar)'
+  expression_strict: 'K3: kata kunci ditulis huruf besar persis (`AND`, `OR`, `NOT`) dan variabel huruf
+    besar persis (`P`, `J`, `M`)'
+  equivalence: Ekspresi terbaca dievaluasi pada kedelapan kombinasi P, J, M; benar bila sama dengan truth_table
+    kunci di SEMUA baris (ekspresi ekuivalen apa pun diterima)
+  count_readable: 'NB-5 bilangan bulat tidak negatif tanpa nol di depan; F3 boleh diikuti kata `baris`
+    dengan/tanpa spasi. Tidak terbaca: desimal, kata, bilangan biner yang diberi awalan'
+  count_strict: 'K3: digit saja tanpa kata'
+  validity: 'Isian kosong/tidak terbaca → INVALID_ANSWER untuk isian itu saja; pemeriksaan yang depends_on
+    isian itu bernilai 0; isian lain tetap dinilai. F1: baris R1–R8 yang hilang = sel kosong; ID baris
+    tak dikenal diabaikan; struktur luar rusak (F1 bukan tabel baris) → seluruh F1 tidak terbaca. Kegagalan
+    aplikasi/konten → EVALUATION_ERROR (D-24 IE-2), bukan skor 0'
+  value_compare: 'F1 dan F3 dibandingkan dengan konstanta kunci yang diturunkan dari aturan (bukan dari
+    ekspresi pelajar): kredit independen MR-2'
+  dependency_rule: 'MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya kosong atau tidak terbaca;
+    tanpa gerbang nol global. Formulir tanpa isian sama sekali = 0 untuk K1–K3 (MR-6)'
+criteria:
+  K1:
+    name: Kebenaran fungsional
+    points: 60
+    checks:
+    - id: mod-w06.project.K1.c01
+      rule: F1.R1 (P J M = 000) = 0
+      depends_on:
+      - F1.R1 terbaca (cell_readable)
+      points: 3
+    - id: mod-w06.project.K1.c02
+      rule: F1.R2 (P J M = 001) = 0
+      depends_on:
+      - F1.R2 terbaca (cell_readable)
+      points: 3
+    - id: mod-w06.project.K1.c03
+      rule: F1.R3 (P J M = 010) = 0
+      depends_on:
+      - F1.R3 terbaca (cell_readable)
+      points: 3
+    - id: mod-w06.project.K1.c04
+      rule: F1.R4 (P J M = 011) = 1
+      depends_on:
+      - F1.R4 terbaca (cell_readable)
+      points: 3
+    - id: mod-w06.project.K1.c05
+      rule: F1.R5 (P J M = 100) = 0
+      depends_on:
+      - F1.R5 terbaca (cell_readable)
+      points: 3
+    - id: mod-w06.project.K1.c06
+      rule: F1.R6 (P J M = 101) = 1
+      depends_on:
+      - F1.R6 terbaca (cell_readable)
+      points: 3
+    - id: mod-w06.project.K1.c07
+      rule: F1.R7 (P J M = 110) = 0
+      depends_on:
+      - F1.R7 terbaca (cell_readable)
+      points: 3
+    - id: mod-w06.project.K1.c08
+      rule: F1.R8 (P J M = 111) = 1
+      depends_on:
+      - F1.R8 terbaca (cell_readable)
+      points: 3
+    - id: mod-w06.project.K1.c09
+      rule: F2 ekuivalen dengan kunci alarm di 8 kombinasi (equivalence)
+      depends_on:
+      - F2 terbaca (expression_readable)
+      points: 12
+    - id: mod-w06.project.K1.c10
+      rule: F3 = 3
+      depends_on:
+      - F3 terbaca (count_readable)
+      points: 6
+    - id: mod-w06.project.K1.c11
+      rule: F4 ekuivalen dengan kunci lampu kuning di 8 kombinasi (equivalence)
+      depends_on:
+      - F4 terbaca (expression_readable)
+      points: 12
+    - id: mod-w06.project.K1.c12
+      rule: F5 = 6 (110₂ ditulis desimal)
+      depends_on:
+      - F5 terbaca (count_readable)
+      points: 6
+  K2:
+    name: Kelengkapan deliverable
+    points: 20
+    definition: 'MR-A (D-33): deliverable ada DAN terbaca; kebenaran di K1'
+    checks:
+    - id: mod-w06.project.K2.c01
+      rule: Kedelapan sel F1 terbaca
+      depends_on:
+      - F1
+      points: 6
+    - id: mod-w06.project.K2.c02
+      rule: F2 terbaca
+      depends_on:
+      - F2
+      points: 5
+    - id: mod-w06.project.K2.c03
+      rule: F3 terbaca
+      depends_on:
+      - F3
+      points: 2
+    - id: mod-w06.project.K2.c04
+      rule: F4 terbaca
+      depends_on:
+      - F4
+      points: 5
+    - id: mod-w06.project.K2.c05
+      rule: F5 terbaca
+      depends_on:
+      - F5
+      points: 2
+  K3:
+    name: Struktur dan format
+    points: 10
+    checks:
+    - id: mod-w06.project.K3.c01
+      rule: F2 dan F4 terbaca DAN memenuhi expression_strict
+      depends_on:
+      - F2
+      - F4
+      points: 4
+    - id: mod-w06.project.K3.c02
+      rule: F3 terbaca DAN memenuhi count_strict
+      depends_on:
+      - F3
+      points: 3
+    - id: mod-w06.project.K3.c03
+      rule: F5 terbaca DAN memenuhi count_strict
+      depends_on:
+      - F5
+      points: 3
+  K4:
+    name: Penjelasan proyek (komposisi K-A, 5 × CE-S1, P = 2)
+    points: 10
+    note: 'Soal tentang tugas proyek ini; terpisah dari komponen Concept explanation W6 (D-33 A.2a). Posisi
+      kunci: c, a, d, b, a'
+    items:
+    - id: mod-w06.project.K4.q1
+      lo: comp-w06-table-01
+      stem: Mengapa tabel F1 memiliki tepat 8 baris?
+      options:
+        a: Karena alarm punya 8 bagian
+        b: Karena 8 adalah satu byte
+        c: 'Karena ada 3 input dan setiap input 2 nilai: 2³ = 8 kombinasi'
+        d: Karena aturan memakai 8 kata
+      key: c
+      points: 2
+      feedback: Tabel lengkap memuat setiap kombinasi input tepat sekali.
+    - id: mod-w06.project.K4.q2
+      lo: comp-w06-model-01
+      stem: Pada aturan alarm, mengapa `P OR J` ditulis di dalam kurung?
+      options:
+        a: Karena "pintu atau jendela" adalah satu syarat yang harus dihitung dulu sebelum digabung dengan
+          mode malam memakai AND
+        b: Karena kurung membuat ekspresi lebih panjang
+        c: Karena OR selalu dikerjakan lebih dulu
+        d: Kurung tidak berpengaruh
+      key: a
+      points: 2
+      feedback: 'Tanpa kurung, `M AND P OR J` dibaca `(M AND P) OR J`: jendela terbuka saja sudah membunyikan
+        alarm di siang hari.'
+    - id: mod-w06.project.K4.q3
+      lo: comp-w06-repr-01
+      stem: Pada F5, `110` adalah …
+      options:
+        a: Nilai Boolean benar
+        b: Bilangan seratus sepuluh
+        c: Tiga nilai Boolean yang dijumlahkan
+        d: Kode biner P J M yang bernilai 6 dalam desimal
+      key: d
+      points: 2
+      feedback: Deretan bit P J M dibaca sebagai bilangan biner 110₂ = 4 + 2 = 6; setiap bit sendiri adalah
+        nilai Boolean satu input.
+    - id: mod-w06.project.K4.q4
+      lo: comp-w06-ops-01
+      stem: Mengapa lampu kuning memakai `NOT M`?
+      options:
+        a: Karena NOT membuat lampu lebih terang
+        b: Karena lampu kuning hanya untuk saat mode malam tidak aktif; NOT M bernilai 1 tepat saat M
+          = 0
+        c: Karena M selalu 0
+        d: Karena NOT sama dengan OR
+      key: b
+      points: 2
+      feedback: NOT membalik nilai M.
+    - id: mod-w06.project.K4.q5
+      lo: comp-w06-table-01
+      stem: Bagaimana memastikan dua ekspresi berbeda untuk alarm sama-sama benar?
+      options:
+        a: Bandingkan hasilnya pada kedelapan baris tabel kebenaran; harus sama di semua baris
+        b: Bandingkan panjang tulisannya
+        c: Cukup coba satu baris
+        d: Hitung banyak kata AND
+      key: a
+      points: 2
+      feedback: Ekuivalen berarti sama di semua kombinasi input.
+point_check: K1 8×3 + 12 + 6 + 12 + 6 = 60; K2 6+5+2+5+2 = 20; K3 4+3+3 = 10; K4 5×2 = 10; total 100
+solution_analysis:
+  functions: F1, F3, F5 tunggal; F2 dan F4 masing-masing tepat satu fungsi Boolean (tabel kunci), dengan
+    tak hingga banyak penulisan ekuivalen yang semuanya diterima. Banyak tabel F1 bernilai penuh = 1 dari
+    2⁸ = 256 kemungkinan
+  reference_strict:
+    F1:
+      R1: '0'
+      R2: '0'
+      R3: '0'
+      R4: '1'
+      R5: '0'
+      R6: '1'
+      R7: '0'
+      R8: '1'
+    F2: M AND (P OR J)
+    F3: '3'
+    F4: NOT M AND (P OR J)
+    F5: '6'
+reviewer_examples:
+- id: E01
+  case: Isian acuan
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E02
+  case: F2 = `(P AND M) OR (J AND M)` (ekuivalen, bentuk berbeda)
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E03
+  case: F2 = `M AND P OR J` (tanpa kurung → dibaca `(M AND P) OR J`)
+  K1: 48
+  K2: 20
+  K3: 10
+  total: 88
+  zero:
+  - K1.c09
+- id: E04
+  case: F2 dan F4 huruf kecil (`m and (p or j)`, `not m and (p or j)`)
+  K1: 60
+  K2: 20
+  K3: 6
+  total: 96
+  zero:
+  - K3.c01
+- id: E05
+  case: F1.R4 = 0 (satu sel salah)
+  K1: 57
+  K2: 20
+  K3: 10
+  total: 97
+  zero:
+  - K1.c04
+- id: E06
+  case: F2 = `M && (P || J)` (simbol tak dikenal)
+  K1: 48
+  K2: 15
+  K3: 6
+  total: 79
+  zero:
+  - K1.c09
+  - K2.c02
+  - K3.c01
+- id: E07
+  case: 'F2 memakai variabel X: `X AND (P OR J)`'
+  K1: 48
+  K2: 15
+  K3: 6
+  total: 79
+  zero:
+  - K1.c09
+  - K2.c02
+  - K3.c01
+- id: E08
+  case: F3 = `3 baris`
+  K1: 60
+  K2: 20
+  K3: 7
+  total: 97
+  zero:
+  - K3.c02
+- id: E09
+  case: F5 = `110` (ditulis biner, bukan desimal)
+  K1: 54
+  K2: 20
+  K3: 10
+  total: 94
+  zero:
+  - K1.c12
+- id: E10
+  case: Semua isian kosong
+  K1: 0
+  K2: 0
+  K3: 0
+  total: 0 untuk K1–K3 (MR-6); K4 sesuai jawaban
+  zero: semua K1–K3
+- id: E11
+  case: F1.R2 = `benar` (kata, bukan 0/1)
+  K1: 57
+  K2: 14
+  K3: 10
+  total: 91
+  zero:
+  - K1.c02
+  - K2.c01
+- id: E12
+  case: F2 = `M AND (P OR J` (kurung tidak berpasangan)
+  K1: 48
+  K2: 15
+  K3: 6
+  total: 79
+  zero:
+  - K1.c09
+  - K2.c02
+  - K3.c01
+- id: E13
+  case: F1 tanpa baris R8
+  K1: 57
+  K2: 14
+  K3: 10
+  total: 91
+  zero:
+  - K1.c08
+  - K2.c01
+- id: E14
+  case: F4 = salinan F2 (ekspresi alarm)
+  K1: 48
+  K2: 20
+  K3: 10
+  total: 88
+  zero:
+  - K1.c11
+- id: E15
+  case: F1 berisi baris tak dikenal R9 = 1 di samping R1–R8 acuan
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E16
+  case: Struktur luar F1 rusak (daftar, bukan tabel baris)
+  K1: 36
+  K2: 14
+  K3: 10
+  total: 70
+  zero:
+  - K1.c01
+  - K1.c02
+  - K1.c03
+  - K1.c04
+  - K1.c05
+  - K1.c06
+  - K1.c07
+  - K1.c08
+  - K2.c01

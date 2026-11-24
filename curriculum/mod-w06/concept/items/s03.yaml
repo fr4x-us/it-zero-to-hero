@@ -1,0 +1,85 @@
+# W6 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.concept.s03
+competency: comp-w06-dec2bin-01
+required_concepts:
+- bobot bit
+- n bit dengan nol di depan
+- nilai terbesar 2ⁿ − 1
+format: CE-S5
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w06-c-s03-a
+  variant_id: mod-w06.concept.s03.vA
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan berikut. Satu baris salah. Temukan barisnya dan pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: Dengan 4 bit tak bertanda, nilai terbesar adalah 15.
+  - id: '2'
+    text: 26 dalam biner adalah 11010.
+  - id: '3'
+    text: Pada pembagian berulang dengan 2, sisa dibaca dari yang terakhir ke yang pertama.
+  - id: '4'
+    text: 37 dalam biner tepat 8 bit adalah 00100111.
+  - id: '5'
+    text: Nol di depan tidak mengubah nilai bilangan biner.
+  error_line: '4'
+  correction_options:
+  - id: a
+    text: '10100100'
+  - id: b
+    text: '00100110'
+  - id: c
+    text: '100101000'
+  - id: d
+    text: '00100101'
+  correction_key: d
+  distractor_rationale:
+    a: Urutan bit terbalik (164)
+    b: Bernilai 38
+    c: 9 bit dan bernilai 296
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: '37 = 32 + 4 + 1 → 100101 → tepat 8 bit: 00100101. Tulisan asli bernilai 39.'
+- item_id: item-w06-c-s03-b
+  variant_id: mod-w06.concept.s03.vB
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan berikut. Satu baris salah. Temukan barisnya dan pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: Dengan 6 bit tak bertanda ada 64 nilai berbeda.
+  - id: '2'
+    text: 21 dalam biner adalah 10101.
+  - id: '3'
+    text: 52 dalam biner tepat 8 bit adalah 00110010.
+  - id: '4'
+    text: Bit paling kiri pada bilangan 8 bit berbobot 128.
+  - id: '5'
+    text: Bilangan genap selalu berakhiran 0 bila ditulis dalam biner.
+  error_line: '3'
+  correction_options:
+  - id: a
+    text: '00110110'
+  - id: b
+    text: '01101000'
+  - id: c
+    text: '00110100'
+  - id: d
+    text: '0011010'
+  correction_key: c
+  distractor_rationale:
+    a: Bernilai 54
+    b: Bernilai 104 (bergeser satu posisi)
+    d: Hanya 7 bit dan bernilai 26
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: '52 = 32 + 16 + 4 → 110100 → tepat 8 bit: 00110100. Tulisan asli bernilai 50.'

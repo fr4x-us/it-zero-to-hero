@@ -1,0 +1,51 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s02
+competency: comp-w06-repr-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s02-a
+  variant_id: mod-w06.theory.s02.vA
+  item_version: '1.0'
+  stem: Pada bilangan biner `10100₂`, **bobot** (nilai posisi) digit 1 yang **paling kiri** adalah …
+  options:
+  - id: a
+    text: '4'
+  - id: b
+    text: '5'
+  - id: c
+    text: '10'
+  - id: d
+    text: '16'
+  key: d
+  distractor_rationale:
+    a: Bobot digit 1 yang lain (posisi 2)
+    b: Banyak digit, bukan bobot
+    c: Dibaca seolah desimal
+  explanation: Posisi dihitung dari kanan mulai 0. Digit paling kiri dari 5 digit ada di posisi 4; bobotnya
+    2⁴ = 16.
+  option_order: urutan alami (nilai/kategori), tetap
+- item_id: item-w06-t-s02-b
+  variant_id: mod-w06.theory.s02.vB
+  item_version: '1.0'
+  stem: Pada bilangan biner `1001000₂`, **bobot** (nilai posisi) digit 1 yang **paling kiri** adalah …
+  options:
+  - id: a
+    text: '7'
+  - id: b
+    text: '64'
+  - id: c
+    text: '100'
+  - id: d
+    text: '128'
+  key: b
+  distractor_rationale:
+    a: Banyak digit, bukan bobot
+    c: Dibaca seolah desimal
+    d: 2⁷; posisi dihitung mulai 0, jadi digit ke-7 dari kanan berposisi 6
+  explanation: Digit paling kiri dari 7 digit ada di posisi 6; bobotnya 2⁶ = 64.
+  option_order: urutan alami (nilai/kategori), tetap

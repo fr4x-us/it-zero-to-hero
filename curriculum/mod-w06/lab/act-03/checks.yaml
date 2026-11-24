@@ -1,0 +1,178 @@
+# W6 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w06.lab.act-03
+name: Ekspresi Boolean dan pemodelan
+competencies:
+- comp-w06-table-01
+- comp-w06-model-01
+- comp-w06-ops-01
+max_points: 30
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w06.lab (D-28 XI-2)
+normalization: 'c01, c02: Nilai Boolean: satu digit 0 atau 1; kata (benar/true) ditolak. c03–c05: Pilihan:
+  satu huruf a–d, huruf besar/kecil bebas. c06: Desimal: Buang spasi/tab di awal dan akhir; cocokkan persis
+  dengan salah satu accepted_answers. Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal
+  hanya koma (`12,5`) dengan tepat sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan
+  dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan
+  yang disebut di soal boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas);
+  untuk rupiah boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di
+  depan, pecahan (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta (boleh diikuti
+  kata `kombinasi`)'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk tidak
+  sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W6 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: 'Tidak memerlukan runtime Python; pemeriksa deterministik per jenis (EB-4, D-24): konversi biner
+  dan nilai Boolean'
+variants:
+- variant_id: mod-w06.lab.act-03.vA
+  visible_example:
+    note: 'Contoh terlihat (0 poin): "kipas menyala bila tombol A atau tombol B" → `A OR B`'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w06.lab.act-03.vA.c01
+    name: Evaluasi
+    question: '`A AND (B OR C)` pada A = 1, B = 1, C = 0'
+    accepted_answers:
+    - '1'
+    points: 5
+    explanation: B OR C = 1; 1 AND 1 = 1
+  - check_id: mod-w06.lab.act-03.vA.c02
+    name: Evaluasi
+    question: '`NOT A AND NOT C` pada A = 0, B = 1, C = 1'
+    accepted_answers:
+    - '0'
+    points: 5
+    explanation: NOT A = 1; NOT C = 0; 1 AND 0 = 0
+  - check_id: mod-w06.lab.act-03.vA.c03
+    name: Kalimat → ekspresi
+    question: Kunci pintu terbuka bila **kartu benar (K = 1) dan PIN benar (P = 1)**. Ekspresinya?
+    options:
+    - id: a
+      text: '`K OR P`'
+    - id: b
+      text: '`K AND P`'
+    - id: c
+      text: '`NOT K AND P`'
+    - id: d
+      text: '`K AND NOT P`'
+    expected: b
+    points: 5
+    explanation: '"dan" → AND'
+  - check_id: mod-w06.lab.act-03.vA.c04
+    name: Kalimat → ekspresi
+    question: Lampu darurat menyala bila **listrik padam (L = 1) atau tombol uji ditekan (U = 1)**. Ekspresinya?
+    options:
+    - id: a
+      text: '`L AND U`'
+    - id: b
+      text: '`NOT L`'
+    - id: c
+      text: '`L OR U`'
+    - id: d
+      text: '`L AND NOT U`'
+    expected: c
+    points: 5
+    explanation: '"atau" → OR'
+  - check_id: mod-w06.lab.act-03.vA.c05
+    name: Ekuivalen
+    question: Ekspresi yang ekuivalen dengan `A OR (A AND B)` di semua baris?
+    options:
+    - id: a
+      text: '`B`'
+    - id: b
+      text: '`A AND B`'
+    - id: c
+      text: '`NOT A`'
+    - id: d
+      text: '`A`'
+    expected: d
+    points: 5
+    explanation: 'Tabel: 0, 0, 1, 1 — sama dengan A'
+  - check_id: mod-w06.lab.act-03.vA.c06
+    name: Banyak kombinasi
+    question: Berapa kombinasi (A, B, C) dari 8 yang membuat `A AND (B OR C)` bernilai 1?
+    accepted_answers:
+    - '3'
+    - 3 kombinasi
+    - 3kombinasi
+    points: 5
+    explanation: 'A = 1 dan (B, C) ≠ (0, 0): 3'
+- variant_id: mod-w06.lab.act-03.vB
+  visible_example:
+    note: 'Contoh terlihat (0 poin): "kipas menyala bila tombol A atau tombol B" → `A OR B`'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w06.lab.act-03.vB.c01
+    name: Evaluasi
+    question: '`(A OR B) AND C` pada A = 0, B = 1, C = 1'
+    accepted_answers:
+    - '1'
+    points: 5
+    explanation: A OR B = 1; 1 AND 1 = 1
+  - check_id: mod-w06.lab.act-03.vB.c02
+    name: Evaluasi
+    question: '`NOT B AND C` pada A = 1, B = 0, C = 0'
+    accepted_answers:
+    - '0'
+    points: 5
+    explanation: NOT B = 1; C = 0; 1 AND 0 = 0
+  - check_id: mod-w06.lab.act-03.vB.c03
+    name: Kalimat → ekspresi
+    question: Mesin fotokopi bekerja bila **daya hidup (D = 1) dan kertas tersedia (K = 1)**. Ekspresinya?
+    options:
+    - id: a
+      text: '`D AND K`'
+    - id: b
+      text: '`D OR K`'
+    - id: c
+      text: '`NOT D AND K`'
+    - id: d
+      text: '`D AND NOT K`'
+    expected: a
+    points: 5
+    explanation: '"dan" → AND'
+  - check_id: mod-w06.lab.act-03.vB.c04
+    name: Kalimat → ekspresi
+    question: Bel berbunyi bila **tombol depan (F = 1) atau tombol belakang (G = 1)** ditekan. Ekspresinya?
+    options:
+    - id: a
+      text: '`F AND G`'
+    - id: b
+      text: '`F OR G`'
+    - id: c
+      text: '`NOT F`'
+    - id: d
+      text: '`F AND NOT G`'
+    expected: b
+    points: 5
+    explanation: '"atau" → OR'
+  - check_id: mod-w06.lab.act-03.vB.c05
+    name: Ekuivalen
+    question: Ekspresi yang ekuivalen dengan `A AND (A OR B)` di semua baris?
+    options:
+    - id: a
+      text: '`A OR B`'
+    - id: b
+      text: '`B`'
+    - id: c
+      text: '`A`'
+    - id: d
+      text: '`NOT B`'
+    expected: c
+    points: 5
+    explanation: 'Tabel: 0, 0, 1, 1 — sama dengan A'
+  - check_id: mod-w06.lab.act-03.vB.c06
+    name: Banyak kombinasi
+    question: Berapa kombinasi (A, B, C) dari 8 yang membuat `(A OR B) AND C` bernilai 1?
+    accepted_answers:
+    - '3'
+    - 3 kombinasi
+    - 3kombinasi
+    points: 5
+    explanation: 'C = 1 dan (A, B) ≠ (0, 0): 3'
+precedence: NOT lebih dulu, lalu AND, lalu OR; kurung mengubah urutan (Pelajaran 3 §3)

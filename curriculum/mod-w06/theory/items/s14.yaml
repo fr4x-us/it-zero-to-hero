@@ -1,0 +1,50 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s14
+competency: comp-w06-ops-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s14-a
+  variant_id: mod-w06.theory.s14.vA
+  item_version: '1.0'
+  stem: Operator yang menghasilkan 1 **hanya bila semua** inputnya 1 adalah …
+  options:
+  - id: a
+    text: AND
+  - id: b
+    text: OR
+  - id: c
+    text: NOT
+  - id: d
+    text: Tidak ada operator seperti itu
+  key: a
+  distractor_rationale:
+    b: OR sudah 1 bila satu input 1
+    c: NOT hanya punya satu input dan membalik nilainya
+    d: AND memenuhi deskripsi itu
+  explanation: Tabel AND hanya bernilai 1 pada baris 1, 1.
+  option_order: urutan tetap penyusun
+- item_id: item-w06-t-s14-b
+  variant_id: mod-w06.theory.s14.vB
+  item_version: '1.0'
+  stem: Operator yang menghasilkan 0 **hanya bila semua** inputnya 0 adalah …
+  options:
+  - id: a
+    text: AND
+  - id: b
+    text: NOT
+  - id: c
+    text: OR
+  - id: d
+    text: Tidak ada operator seperti itu
+  key: c
+  distractor_rationale:
+    a: AND sudah 0 bila satu input 0
+    b: NOT hanya punya satu input dan membalik nilainya
+    d: OR memenuhi deskripsi itu
+  explanation: Tabel OR hanya bernilai 0 pada baris 0, 0.
+  option_order: urutan tetap penyusun

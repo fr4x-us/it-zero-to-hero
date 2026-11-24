@@ -1,0 +1,138 @@
+# W6 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w06.lab.act-02
+name: Tabel kebenaran
+competencies:
+- comp-w06-ops-01
+- comp-w06-table-01
+max_points: 30
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w06.lab (D-28 XI-2)
+normalization: 'c01–c04, c06: Nilai Boolean: satu digit 0 atau 1; kata (benar/true) ditolak. c05: Desimal:
+  Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers. Aturan angka
+  NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat sebanyak angka
+  desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga digit (`1.250`);
+  tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal boleh ditulis setelah
+  angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah boleh diawali `Rp` dengan/tanpa
+  spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan lain, angka
+  desimal lebih/kurang dari yang diminta (boleh diikuti kata `baris`)'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk tidak
+  sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W6 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: 'Tidak memerlukan runtime Python; pemeriksa deterministik per jenis (EB-4, D-24): konversi biner
+  dan nilai Boolean'
+variants:
+- variant_id: mod-w06.lab.act-02.vA
+  visible_example:
+    note: 'Contoh terlihat (0 poin): `NOT A` pada A = 1 → 0; tabel lengkap 2 variabel = 4 baris'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w06.lab.act-02.vA.c01
+    name: Baris 1
+    question: '`NOT A OR B` pada A = 0, B = 0'
+    accepted_answers:
+    - '1'
+    points: 5
+    explanation: NOT A = 1; hasil 1
+  - check_id: mod-w06.lab.act-02.vA.c02
+    name: Baris 2
+    question: '`NOT A OR B` pada A = 0, B = 1'
+    accepted_answers:
+    - '1'
+    points: 5
+    explanation: NOT A = 1; hasil 1
+  - check_id: mod-w06.lab.act-02.vA.c03
+    name: Baris 3
+    question: '`NOT A OR B` pada A = 1, B = 0'
+    accepted_answers:
+    - '0'
+    points: 5
+    explanation: NOT A = 0; hasil 0
+  - check_id: mod-w06.lab.act-02.vA.c04
+    name: Baris 4
+    question: '`NOT A OR B` pada A = 1, B = 1'
+    accepted_answers:
+    - '1'
+    points: 5
+    explanation: NOT A = 0; hasil 1
+  - check_id: mod-w06.lab.act-02.vA.c05
+    name: Banyak baris bernilai 1
+    question: Pada tabel kebenaran lengkap `(A AND B) OR C` (8 baris), berapa baris bernilai 1?
+    accepted_answers:
+    - '5'
+    - 5 baris
+    - 5baris
+    points: 5
+    explanation: 'C = 1: 4 baris; C = 0 dan A = B = 1: 1 baris; total 5'
+  - check_id: mod-w06.lab.act-02.vA.c06
+    name: Satu baris
+    question: '`(A AND B) OR C` pada A = 1, B = 0, C = 0'
+    accepted_answers:
+    - '0'
+    points: 5
+    explanation: A AND B = 0; 0 OR 0 = 0
+- variant_id: mod-w06.lab.act-02.vB
+  visible_example:
+    note: 'Contoh terlihat (0 poin): `NOT A` pada A = 1 → 0; tabel lengkap 2 variabel = 4 baris'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w06.lab.act-02.vB.c01
+    name: Baris 1
+    question: '`A AND NOT B` pada A = 0, B = 0'
+    accepted_answers:
+    - '0'
+    points: 5
+    explanation: NOT B = 1; hasil 0
+  - check_id: mod-w06.lab.act-02.vB.c02
+    name: Baris 2
+    question: '`A AND NOT B` pada A = 0, B = 1'
+    accepted_answers:
+    - '0'
+    points: 5
+    explanation: NOT B = 0; hasil 0
+  - check_id: mod-w06.lab.act-02.vB.c03
+    name: Baris 3
+    question: '`A AND NOT B` pada A = 1, B = 0'
+    accepted_answers:
+    - '1'
+    points: 5
+    explanation: NOT B = 1; hasil 1
+  - check_id: mod-w06.lab.act-02.vB.c04
+    name: Baris 4
+    question: '`A AND NOT B` pada A = 1, B = 1'
+    accepted_answers:
+    - '0'
+    points: 5
+    explanation: NOT B = 0; hasil 0
+  - check_id: mod-w06.lab.act-02.vB.c05
+    name: Banyak baris bernilai 1
+    question: Pada tabel kebenaran lengkap `(A AND C) OR B` (8 baris), berapa baris bernilai 1?
+    accepted_answers:
+    - '5'
+    - 5 baris
+    - 5baris
+    points: 5
+    explanation: 'B = 1: 4 baris; B = 0 dan A = C = 1: 1 baris; total 5'
+  - check_id: mod-w06.lab.act-02.vB.c06
+    name: Satu baris
+    question: '`(A AND C) OR B` pada A = 0, B = 0, C = 1'
+    accepted_answers:
+    - '0'
+    points: 5
+    explanation: A AND C = 0; 0 OR 0 = 0
+precedence: NOT lebih dulu, lalu AND, lalu OR; kurung mengubah urutan (Pelajaran 3 §3)
+normalization_examples:
+  c01 (kunci 1, vA):
+    diterima:
+    - '1'
+    - ' 1 '
+    ditolak (0 poin):
+    - benar
+    - 'true'
+    - '01'
+    - B

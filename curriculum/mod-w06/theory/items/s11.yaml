@@ -1,0 +1,42 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s11
+competency: comp-w06-dec2bin-01
+format: TF-3
+difficulty: D3
+max_points: 4
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s11-a
+  variant_id: mod-w06.theory.s11.vA
+  item_version: '1.0'
+  stem: Berapa bilangan desimal **terkecil** yang membutuhkan **tepat 7 bit** bila ditulis tanpa nol di
+    depan?
+  accepted_answers:
+  - '64'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta. Jawaban adalah bilangan
+    desimal (basis 10)'
+  explanation: '7 bit tanpa nol di depan diawali 1 pada posisi 6: 1000000₂ = 2⁶ = 64. 63 hanya butuh 6
+    bit (111111₂).'
+- item_id: item-w06-t-s11-b
+  variant_id: mod-w06.theory.s11.vB
+  item_version: '1.0'
+  stem: Berapa bilangan desimal **terbesar** yang masih dapat ditulis dengan **7 bit** tak bertanda?
+  accepted_answers:
+  - '127'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta. Jawaban adalah bilangan
+    desimal (basis 10)'
+  explanation: 1111111₂ = 2⁷ − 1 = 127. 128 butuh 8 bit (10000000₂).

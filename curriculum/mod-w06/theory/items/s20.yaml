@@ -1,0 +1,52 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s20
+competency: comp-w06-model-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s20-a
+  variant_id: mod-w06.theory.s20.vA
+  item_version: '1.0'
+  stem: Ekspresi mana yang **ekuivalen** dengan `NOT (A AND B)` (bernilai sama pada **semua** kombinasi
+    A, B)?
+  options:
+  - id: a
+    text: '`NOT A OR NOT B`'
+  - id: b
+    text: '`NOT A AND NOT B`'
+  - id: c
+    text: '`A OR B`'
+  - id: d
+    text: '`NOT A AND B`'
+  key: a
+  distractor_rationale:
+    b: Berbeda pada A = 0, B = 1 (1 vs 0)
+    c: Berbeda pada A = 0, B = 0 (1 vs 0)
+    d: Berbeda pada A = 0, B = 0 (1 vs 0)
+  explanation: 'Tabel NOT (A AND B): 1, 1, 1, 0. Tabel NOT A OR NOT B: 1, 1, 1, 0 — sama di keempat baris.'
+  option_order: urutan tetap penyusun
+- item_id: item-w06-t-s20-b
+  variant_id: mod-w06.theory.s20.vB
+  item_version: '1.0'
+  stem: Ekspresi mana yang **ekuivalen** dengan `NOT (A OR B)` (bernilai sama pada **semua** kombinasi
+    A, B)?
+  options:
+  - id: a
+    text: '`NOT A OR NOT B`'
+  - id: b
+    text: '`A AND B`'
+  - id: c
+    text: '`NOT A OR B`'
+  - id: d
+    text: '`NOT A AND NOT B`'
+  key: d
+  distractor_rationale:
+    a: Berbeda pada A = 0, B = 1 (0 vs 1)
+    b: Berbeda pada A = 0, B = 0 (1 vs 0)
+    c: Berbeda pada A = 0, B = 1 (0 vs 1)
+  explanation: 'Tabel NOT (A OR B): 1, 0, 0, 0. Tabel NOT A AND NOT B: 1, 0, 0, 0 — sama di keempat baris.'
+  option_order: urutan tetap penyusun

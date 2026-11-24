@@ -1,0 +1,180 @@
+# W6 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w06.lab.act-01
+name: Konversi biner dan desimal
+competencies:
+- comp-w06-bin2dec-01
+- comp-w06-dec2bin-01
+- comp-w06-repr-01
+max_points: 40
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w06.lab (D-28 XI-2)
+normalization: 'c01–c04, c08: Desimal: Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah
+  satu accepted_answers. Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+  (`12,5`) dengan tepat sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan
+  kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang
+  disebut di soal boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas);
+  untuk rupiah boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di
+  depan, pecahan (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta. c05–c07: Biner
+  BN-6: hanya 0 dan 1, tanpa spasi di dalam, tanpa awalan/akhiran; "tanpa nol di depan" = digit pertama
+  1; "tepat n bit" = tepat n digit'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk tidak
+  sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W6 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: 'Tidak memerlukan runtime Python; pemeriksa deterministik per jenis (EB-4, D-24): konversi biner
+  dan nilai Boolean'
+variants:
+- variant_id: mod-w06.lab.act-01.vA
+  visible_example:
+    note: 'Contoh terlihat (0 poin): `11₂` = 3; 2 → biner `10`; 1 → tepat 4 bit `0001`'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w06.lab.act-01.vA.c01
+    name: Biner → desimal
+    question: '`110₂` = … (desimal)'
+    accepted_answers:
+    - '6'
+    points: 5
+    explanation: 4 + 2 = 6
+  - check_id: mod-w06.lab.act-01.vA.c02
+    name: Biner → desimal
+    question: '`10010₂` = … (desimal)'
+    accepted_answers:
+    - '18'
+    points: 5
+    explanation: 16 + 2 = 18
+  - check_id: mod-w06.lab.act-01.vA.c03
+    name: 8 bit → desimal
+    question: '`11110000₂` = … (desimal)'
+    accepted_answers:
+    - '240'
+    points: 5
+    explanation: 128 + 64 + 32 + 16 = 240
+  - check_id: mod-w06.lab.act-01.vA.c04
+    name: 8 bit → desimal
+    question: '`01010101₂` = … (desimal)'
+    accepted_answers:
+    - '85'
+    points: 5
+    explanation: 64 + 16 + 4 + 1 = 85
+  - check_id: mod-w06.lab.act-01.vA.c05
+    name: Desimal → biner
+    question: Ubah **22** ke biner (tanpa nol di depan).
+    accepted_answers:
+    - '10110'
+    points: 5
+    explanation: 22 = 16 + 4 + 2
+  - check_id: mod-w06.lab.act-01.vA.c06
+    name: Desimal → 8 bit
+    question: Ubah **9** ke biner **tepat 8 bit**.
+    accepted_answers:
+    - '00001001'
+    points: 5
+    explanation: 9 = 8 + 1 → 1001 → 00001001
+  - check_id: mod-w06.lab.act-01.vA.c07
+    name: Desimal → biner
+    question: Ubah **100** ke biner (tanpa nol di depan).
+    accepted_answers:
+    - '1100100'
+    points: 5
+    explanation: 100 = 64 + 32 + 4
+  - check_id: mod-w06.lab.act-01.vA.c08
+    name: Rentang n bit
+    question: Nilai desimal **terbesar** untuk **4 bit** tak bertanda?
+    accepted_answers:
+    - '15'
+    points: 5
+    explanation: 1111₂ = 2⁴ − 1 = 15
+- variant_id: mod-w06.lab.act-01.vB
+  visible_example:
+    note: 'Contoh terlihat (0 poin): `11₂` = 3; 2 → biner `10`; 1 → tepat 4 bit `0001`'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w06.lab.act-01.vB.c01
+    name: Biner → desimal
+    question: '`101₂` = … (desimal)'
+    accepted_answers:
+    - '5'
+    points: 5
+    explanation: 4 + 1 = 5
+  - check_id: mod-w06.lab.act-01.vB.c02
+    name: Biner → desimal
+    question: '`11001₂` = … (desimal)'
+    accepted_answers:
+    - '25'
+    points: 5
+    explanation: 16 + 8 + 1 = 25
+  - check_id: mod-w06.lab.act-01.vB.c03
+    name: 8 bit → desimal
+    question: '`10000001₂` = … (desimal)'
+    accepted_answers:
+    - '129'
+    points: 5
+    explanation: 128 + 1 = 129
+  - check_id: mod-w06.lab.act-01.vB.c04
+    name: 8 bit → desimal
+    question: '`00111100₂` = … (desimal)'
+    accepted_answers:
+    - '60'
+    points: 5
+    explanation: 32 + 16 + 8 + 4 = 60
+  - check_id: mod-w06.lab.act-01.vB.c05
+    name: Desimal → biner
+    question: Ubah **27** ke biner (tanpa nol di depan).
+    accepted_answers:
+    - '11011'
+    points: 5
+    explanation: 27 = 16 + 8 + 2 + 1
+  - check_id: mod-w06.lab.act-01.vB.c06
+    name: Desimal → 8 bit
+    question: Ubah **6** ke biner **tepat 8 bit**.
+    accepted_answers:
+    - '00000110'
+    points: 5
+    explanation: 6 = 4 + 2 → 110 → 00000110
+  - check_id: mod-w06.lab.act-01.vB.c07
+    name: Desimal → biner
+    question: Ubah **75** ke biner (tanpa nol di depan).
+    accepted_answers:
+    - '1001011'
+    points: 5
+    explanation: 75 = 64 + 8 + 2 + 1
+  - check_id: mod-w06.lab.act-01.vB.c08
+    name: Rentang n bit
+    question: Nilai desimal **terbesar** untuk **6 bit** tak bertanda?
+    accepted_answers:
+    - '63'
+    points: 5
+    explanation: 111111₂ = 2⁶ − 1 = 63
+normalization_examples:
+  c05 (kunci 10110, vA):
+    diterima:
+    - '10110'
+    - ' 10110 '
+    ditolak (0 poin):
+    - '010110'
+    - 1 0110
+    - '0b10110'
+    - 10110₂
+    - '22'
+  c06 (kunci 00001001, vA):
+    diterima:
+    - '00001001'
+    ditolak (0 poin):
+    - '1001'
+    - '0001001'
+    - '000001001'
+    - '9'
+  c03 (kunci 240, vA):
+    diterima:
+    - '240'
+    ditolak (0 poin):
+    - '0240'
+    - '11110000'
+    - 240₁₀
+    - 240,0

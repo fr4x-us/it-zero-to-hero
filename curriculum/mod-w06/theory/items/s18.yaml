@@ -1,0 +1,52 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s18
+competency: comp-w06-model-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s18-a
+  variant_id: mod-w06.theory.s18.vA
+  item_version: '1.0'
+  stem: Lampu teras menyala bila **saklar S1 hidup dan saklar S2 hidup** (hidup = 1). Ekspresi yang tepat
+    adalah …
+  options:
+  - id: a
+    text: '`S1 AND S2`'
+  - id: b
+    text: '`S1 OR S2`'
+  - id: c
+    text: '`NOT S1`'
+  - id: d
+    text: '`S1 AND NOT S2`'
+  key: a
+  distractor_rationale:
+    b: OR sudah menyala bila satu saklar hidup
+    c: Tidak melibatkan S2
+    d: Mensyaratkan S2 mati
+  explanation: '"dan" → AND: menyala hanya bila keduanya 1.'
+  option_order: urutan tetap penyusun
+- item_id: item-w06-t-s18-b
+  variant_id: mod-w06.theory.s18.vB
+  item_version: '1.0'
+  stem: Pintu otomatis terbuka bila **tombol dalam D ditekan atau sensor luar L mendeteksi orang** (ya
+    = 1). Ekspresi yang tepat adalah …
+  options:
+  - id: a
+    text: '`D AND L`'
+  - id: b
+    text: '`NOT D`'
+  - id: c
+    text: '`D OR L`'
+  - id: d
+    text: '`D AND NOT L`'
+  key: c
+  distractor_rationale:
+    a: AND mensyaratkan keduanya sekaligus
+    b: Tidak melibatkan L
+    d: Mensyaratkan L = 0
+  explanation: '"atau" → OR: terbuka bila sedikitnya satu bernilai 1.'
+  option_order: urutan tetap penyusun

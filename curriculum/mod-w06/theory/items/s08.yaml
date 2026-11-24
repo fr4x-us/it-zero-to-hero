@@ -1,0 +1,32 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s08
+competency: comp-w06-dec2bin-01
+format: TF-3
+difficulty: D1
+max_points: 2
+estimated_seconds: 60
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s08-a
+  variant_id: mod-w06.theory.s08.vA
+  item_version: '1.0'
+  stem: Ubah **13** ke biner (tanpa nol di depan).
+  accepted_answers:
+  - '1101'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan accepted_answers. Aturan biner
+    BN-6: hanya digit 0 dan 1, tanpa spasi di dalam, tanpa awalan atau akhiran (`0b`, `₂`, `(2)`); panjang
+    mengikuti instruksi soal — "tanpa nol di depan" berarti digit pertama 1 (kecuali bilangan 0), "tepat
+    n bit" berarti tepat n digit termasuk nol di depan'
+  explanation: 13 = 8 + 4 + 1 → 1101.
+- item_id: item-w06-t-s08-b
+  variant_id: mod-w06.theory.s08.vB
+  item_version: '1.0'
+  stem: Ubah **19** ke biner (tanpa nol di depan).
+  accepted_answers:
+  - '10011'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan accepted_answers. Aturan biner
+    BN-6: hanya digit 0 dan 1, tanpa spasi di dalam, tanpa awalan atau akhiran (`0b`, `₂`, `(2)`); panjang
+    mengikuti instruksi soal — "tanpa nol di depan" berarti digit pertama 1 (kecuali bilangan 0), "tepat
+    n bit" berarti tepat n digit termasuk nol di depan'
+  explanation: 19 = 16 + 2 + 1 → 10011.

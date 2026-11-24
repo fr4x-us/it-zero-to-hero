@@ -1,0 +1,32 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s09
+competency: comp-w06-dec2bin-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s09-a
+  variant_id: mod-w06.theory.s09.vA
+  item_version: '1.0'
+  stem: Ubah **45** ke biner **tepat 8 bit** (tambahkan nol di depan bila perlu).
+  accepted_answers:
+  - '00101101'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan accepted_answers. Aturan biner
+    BN-6: hanya digit 0 dan 1, tanpa spasi di dalam, tanpa awalan atau akhiran (`0b`, `₂`, `(2)`); panjang
+    mengikuti instruksi soal — "tanpa nol di depan" berarti digit pertama 1 (kecuali bilangan 0), "tepat
+    n bit" berarti tepat n digit termasuk nol di depan'
+  explanation: '45 = 32 + 8 + 4 + 1 → 101101; ditambah dua nol di depan: 00101101.'
+- item_id: item-w06-t-s09-b
+  variant_id: mod-w06.theory.s09.vB
+  item_version: '1.0'
+  stem: Ubah **90** ke biner **tepat 8 bit** (tambahkan nol di depan bila perlu).
+  accepted_answers:
+  - '01011010'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan accepted_answers. Aturan biner
+    BN-6: hanya digit 0 dan 1, tanpa spasi di dalam, tanpa awalan atau akhiran (`0b`, `₂`, `(2)`); panjang
+    mengikuti instruksi soal — "tanpa nol di depan" berarti digit pertama 1 (kecuali bilangan 0), "tepat
+    n bit" berarti tepat n digit termasuk nol di depan'
+  explanation: '90 = 64 + 16 + 8 + 2 → 1011010; ditambah satu nol di depan: 01011010.'

@@ -1,0 +1,84 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s16
+competency: comp-w06-table-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s16-a
+  variant_id: mod-w06.theory.s16.vA
+  item_version: '1.0'
+  stem: Tabel kombinasi input di bawah. Pada baris mana `A AND NOT B` bernilai 1? (NOT dikerjakan sebelum
+    AND.)
+  stimulus_table:
+  - - Baris
+    - A
+    - B
+  - - '1'
+    - '0'
+    - '0'
+  - - '2'
+    - '0'
+    - '1'
+  - - '3'
+    - '1'
+    - '0'
+  - - '4'
+    - '1'
+    - '1'
+  options:
+  - id: a
+    text: A = 0, B = 0
+  - id: b
+    text: A = 0, B = 1
+  - id: c
+    text: A = 1, B = 0
+  - id: d
+    text: A = 1, B = 1
+  key: c
+  distractor_rationale:
+    a: A = 0 membuat AND bernilai 0
+    b: A = 0 membuat AND bernilai 0
+    d: B = 1 membuat NOT B = 0
+  explanation: 'Perlu A = 1 dan NOT B = 1 (B = 0): hanya baris 3.'
+  option_order: urutan alami (nilai/kategori), tetap
+- item_id: item-w06-t-s16-b
+  variant_id: mod-w06.theory.s16.vB
+  item_version: '1.0'
+  stem: Tabel kombinasi input di bawah. Pada baris mana `NOT A AND B` bernilai 1? (NOT dikerjakan sebelum
+    AND.)
+  stimulus_table:
+  - - Baris
+    - A
+    - B
+  - - '1'
+    - '0'
+    - '0'
+  - - '2'
+    - '0'
+    - '1'
+  - - '3'
+    - '1'
+    - '0'
+  - - '4'
+    - '1'
+    - '1'
+  options:
+  - id: a
+    text: A = 0, B = 0
+  - id: b
+    text: A = 0, B = 1
+  - id: c
+    text: A = 1, B = 0
+  - id: d
+    text: A = 1, B = 1
+  key: b
+  distractor_rationale:
+    a: B = 0 membuat AND bernilai 0
+    c: A = 1 membuat NOT A = 0
+    d: A = 1 membuat NOT A = 0
+  explanation: 'Perlu NOT A = 1 (A = 0) dan B = 1: hanya baris 2.'
+  option_order: urutan alami (nilai/kategori), tetap

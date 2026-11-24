@@ -1,0 +1,70 @@
+# W6 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.concept.s05
+competency: comp-w06-table-01
+required_concepts:
+- 2ⁿ baris
+- urutan baris standar
+- prioritas NOT > AND > OR
+- ekuivalen = sama di semua baris
+format: CE-S2
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w06-c-s05-a
+  variant_id: mod-w06.concept.s05.vA
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang tabel kebenaran.
+  options:
+  - id: a
+    text: Tabel kebenaran 2 variabel memiliki 4 baris kombinasi
+  - id: b
+    text: Urutan baris standar 00, 01, 10, 11 mencegah kombinasi terlewat
+  - id: c
+    text: Tanpa kurung, OR dikerjakan sebelum NOT
+  - id: d
+    text: Dua ekspresi ekuivalen bila kolom hasilnya sama di semua baris
+  - id: e
+    text: Satu baris yang sama sudah membuktikan dua ekspresi ekuivalen
+  key:
+  - a
+  - b
+  - d
+  distractor_rationale:
+    c: NOT dikerjakan lebih dulu, lalu AND, lalu OR
+    e: Harus sama di **semua** baris
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: 2² = 4; urutan standar; ekuivalen harus sama di semua baris.
+- item_id: item-w06-c-s05-b
+  variant_id: mod-w06.concept.s05.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang tabel kebenaran.
+  options:
+  - id: a
+    text: Tabel 3 variabel memiliki 6 baris
+  - id: b
+    text: Tanpa kurung, AND dikerjakan sebelum OR
+  - id: c
+    text: '`A OR NOT A` bernilai 1 di semua baris'
+  - id: d
+    text: '`A AND NOT A` dapat bernilai 1'
+  - id: e
+    text: Setiap baris berisi tepat satu kombinasi nilai input
+  key:
+  - b
+  - c
+  - e
+  distractor_rationale:
+    a: 2³ = 8
+    d: A dan NOT A tidak pernah sama-sama 1
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: AND sebelum OR; A OR NOT A selalu 1; satu baris = satu kombinasi.
