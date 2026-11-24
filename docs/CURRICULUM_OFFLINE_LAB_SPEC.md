@@ -289,5 +289,5 @@ menunjuk dokumen yang menjabarkan kriteria, **bukan** menutup gap.
 |---|---|
 | D-19 | Program selesai = 16 modul lulus + capstone (mini-project modul 16) memenuhi rubrik khusus; tanpa skor program |
 | D-21 | Konten lengkap ke-16 modul (64 komponen) **wajib** sebelum PLANNING CLEAR; UW-37 tetap jalur P. Rencana produksi: [CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md) |
-| D-22 | UW-21 (CU-8: alternatif minggu 9–12 bila runtime Python gagal) ditunda ke milestone kelayakan Python; AC tetap |
+| D-22 | UW-21 (CU-8: alternatif minggu 9–12 bila runtime Python gagal) ditunda ke milestone kelayakan Python; AC tetap. UW-21 **tidak** memblokir penerimaan perencanaan konten W9–W12; eksekusi tetap NOT VERIFIED; bila runtime gagal setelah izin, kurikulum hanya diubah atas keputusan owner lalu divalidasi ulang ([PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §5.2, RM:RV-1–RV-6) |
 | Keputusan berikutnya | CU-6 (penilaian lab): [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) |

@@ -67,7 +67,7 @@ W16 (capstone memakai Python); W13–W14 → W16 bila capstone memakainya
 | Rencana test case | ID, input, keluaran, poin (aturan bobot: CU-6, OPEN), terlihat/tersembunyi |
 | Fixture | Data uji (mis. database latihan SQL terpisah, QG LB-6) |
 | Batas eksekusi | Mengacu ambang D-10 (rencana; NOT VERIFIED) |
-| Catatan runtime | Lab minggu 9–12 dan bagian Python capstone bergantung O-04 (NOT VERIFIED) |
+| Catatan runtime | Lab minggu 9–12 dan bagian Python capstone dapat diterima sebagai perencanaan sebelum eksekusi (RM:RV-1–RV-3); eksekusi runtime O-04 tetap NOT VERIFIED |
 
 ### 3.3 Mini-project / capstone
 
@@ -116,12 +116,15 @@ F = bentuk lab SQL/HTML/Git (CU-7), S = pembagian minggu 9/10 (CU-11).
 
 16 modul × 4 komponen = **64 komponen**, 0 selesai.
 
-Catatan R: konten lab dan spesifikasi test minggu 9–12 dapat ditulis
-sebagai dokumentasi; eksekusinya tetap NOT VERIFIED sampai uji kelayakan
-diizinkan (D-10). Alternatif bila runtime gagal ditunda ke milestone
-(UW-21, D-22).
+Catatan R: konten lab, fixture, dan rencana test minggu 9–12 (dan bagian
+Python capstone) ditulis lengkap dan **dapat diterima sebagai perencanaan**
+sebelum runtime dieksekusi (RM:RV-1–RV-3, [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §5.2).
+Eksekusi tetap NOT VERIFIED (D-10). UW-21 (D-22) tidak memblokir penerimaan
+itu (RM:RV-4). Bila runtime gagal setelah izin: implementasi terdampak
+dihentikan dan kurikulum hanya diubah atas keputusan eksplisit owner, lalu
+divalidasi ulang (RM:RV-5, RM:RV-6).
 
-## 5. Estimasi jam belajar (PROPOSED — alokasi per komponen OPEN, CU2-O3)
+## 5. Estimasi jam belajar (PROPOSED — menunggu persetujuan owner, CU2-O3 di UW-36)
 
 | Modul | Teori & bacaan | Latihan, kuis, ujian teori | Lab | Mini-project | Concept | Total |
 |---|---|---|---|---|---|---|
@@ -129,17 +132,18 @@ diizinkan (D-10). Alternatif bila runtime gagal ditunda ke milestone
 | W16 | 1,0 | 0,5 | 1,0 | 5,0 (capstone) | 0,5 | **8,0** |
 | **Program** | | | | | | **15 × 8 + 8 = 128** |
 
-Sesuai BL:15 dan D-01 M-03 (128 jam). Capstone berada di dalam 128 jam
-(D-13).
+Total 128 jam (BL:15, D-01 M-03) dan 16 modul × 4 komponen tetap wajib.
+Pembagian per bagian di atas hanya **usulan**; berlaku setelah owner
+memutuskan CU2-O3. Capstone berada di dalam 128 jam (D-13).
 
 ## 6. Batch produksi (PROPOSED)
 
 | Batch | Isi | Prasyarat keputusan |
 |---|---|---|
-| CB-0 | Finalisasi templat §2–§3 dan aturan konten (format markup/diagram, CU-3; jumlah varian, CU-5) | OP-4, CU-6, UW-27, CU-3, CU-5, CU2-O4 |
+| CB-0 | Finalisasi templat §2–§3 dan aturan konten (format markup/diagram, CU-3; jumlah varian, CU-5) | OP-4, CU-6, UW-27, CU-3, CU-5, CU2-O3, CU2-O4, OP-7, OP-8, OP-10 |
 | CB-1 | Modul W1–W4 (16 komponen) | CB-0 |
 | CB-2 | Modul W5–W8 (16 komponen) | CB-0 |
-| CB-3 | Modul W9–W12 (16 komponen) | CB-0, CU-11 |
+| CB-3 | Modul W9–W12 (16 komponen); diterima sebagai perencanaan, runtime NOT VERIFIED (RM:RV-1–RV-3) | CB-0, CU-11 |
 | CB-4 | Modul W13–W16 (16 komponen), termasuk rubrik capstone | CB-0, CU-7, CU-9 |
 | CB-R | Review dan acceptance seluruh 64 komponen oleh owner | CB-1–CB-4 |
 
@@ -172,4 +176,9 @@ hanya setelah checklist §7 lolos dan owner menerima.
 | CU2-O4 | Rubrik mini-project | Kolom Mini-project |
 | UW-27 (OP-5) | Format soal dan rumus durasi ujian | Kolom Theory |
 | CU-3, CU-5, CU-7, CU-11 | Format konten, jumlah varian, bentuk lab SQL/HTML/Git, pembagian W9/W10 | CB-0, CB-3, CB-4 |
-| UW-29, UW-30, UW-31 | Aturan submission, identitas XP, unlock rinci | Penandaan aktivitas dan XP di konten |
+| UW-29 (OP-7), UW-30 (OP-8), UW-31 (OP-9), UW-32 (OP-10) | Aturan pengumpulan, identitas XP, unlock rinci, komponen yang boleh diulang | Penandaan aktivitas, XP, prasyarat, materi remedial |
+| UW-25 (CU-10) | Risiko kunci jawaban diekstrak | Desain bank soal |
+| CU2-O3 (UW-36) | Alokasi jam per komponen | §5 |
+
+Peta lengkap ketergantungan: [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §5.3.
+Templat dan rencana ini bukan konten; status 64 sel tetap NOT STARTED.

@@ -39,7 +39,7 @@ di setiap PR batch.
 | #20 | Cleanup UW-45/22/44 (label B01, lembar presisi angka, rujukan ID) | Merged 2026-11-23 sebagai `6a805a1` (di-merge Claude atas persetujuan eksplisit owner) |
 | #21 | Persiapan keputusan UW-22, CU-2, UO-1/UO-2 | Merged 2026-11-24 sebagai `b789e9a` (di-merge Claude atas persetujuan eksplisit owner) |
 | #22 | Pencatatan D-12–D-15; lembar OD-1, OD-2, UW-43 | Merged 2026-11-24 sebagai `bcecdae` (di-merge Claude atas persetujuan eksplisit owner) |
-| PR D-16–D-22 | Pencatatan D-16–D-22; roadmap; lembar OP-4, CU-6; rencana produksi kurikulum | Terbuka, menunggu review; **tidak di-merge Claude** |
+| #23 | Pencatatan D-16–D-22; roadmap; lembar OP-4, CU-6; rencana produksi kurikulum; revisi F-01–F-06 | Terbuka, menunggu review; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -75,7 +75,11 @@ Dokumen baru: [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md),
 [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md),
 [CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md).
 Audit §16: 25 COMPLETE, 4 OPEN, 19 BLOCKED, 3 DEFERRED, 5 NOT VERIFIED
-(56). Jalur P: 25/43 butir. Status: PR terbuka, menunggu review.
+(56). Jalur P: 25/43 butir. Revisi review PR #23 (F-01–F-06): kurikulum
+W9–W12 dapat diterima sebagai perencanaan sebelum runtime (RM:RV-1–RV-6);
+OD-1 dipisah (sisa perencanaan OD-11–OD-14 di UW-33, verifikasi UW-15,
+syarat rilis RR-1–RR-8); lembar OP-4 dan CU-6 dipertegas; klasifikasi
+seluruh 56 butir. Status: PR #23 terbuka, menunggu review.
 
 ## Blocker
 
@@ -108,12 +112,12 @@ dipertahankan agar rujukan lama tetap valid.
 | B-8 | Host dokumentasi resmi diblokir (`chaquo.com`, `docs.python.org`, `pyodide.org`, `docs.gradle.org`, `github.com`, `dl.google.com`, `rfc-editor.org`, `csrc.nist.gov`, `www8.cao.go.jp`, `laws.e-gov.go.jp`); riset memakai `raw.githubusercontent.com`, `developer.android.com`, `kotlinlang.org`, Maven Central. | UW-53 |
 | B-6 | Android SDK tidak tersedia di container cloud. Tidak menghalangi (build di GitHub Actions). | UW-39 |
 
-Selesai: B-2 (PR #7); B-3 (D-01, PR #18); B-7 (D-02, PR #19); B-9 (D-05, PR #19); B-4 (D-18, berlaku saat PR D-16–D-22 di-merge).
+Selesai: B-2 (PR #7); B-3 (D-01, PR #18); B-7 (D-02, PR #19); B-9 (D-05, PR #19); B-4 (D-18, berlaku saat PR #23 di-merge).
 
 ## Langkah berikutnya (usulan, menunggu owner)
 
-1. Review PR D-16–D-22 (ChatGPT) → instruksi merge eksplisit bila PASS.
-2. Owner menjawab OP-4-Q1–Q4 dan CU-6-Q1–Q4
+1. Review PR #23 (ChatGPT) → instruksi merge eksplisit bila PASS.
+2. Owner menjawab OP-4-Q1–Q5, CU-6-Q1–Q6, dan RM-Q1
    ([OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md)).
 3. Batch perencanaan berikutnya: lembar keputusan UW-27, CU-9, CU2-O4,
    CU-3, CU-5, CU-7, CU-11; lalu CB-0 dan CB-1

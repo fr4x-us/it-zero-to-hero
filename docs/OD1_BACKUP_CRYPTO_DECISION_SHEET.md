@@ -173,3 +173,46 @@ Risiko residual: kekuatan backup tetap bergantung pada kekuatan kata sandi
 Yang masih harus diverifikasi (jalur V, setelah izin): review dependensi
 dan kompatibilitas Bouncy Castle di Android API 29+, pengukuran KDF,
 batas maksimum, CT-1–CT-12.
+
+## 11. Pemisahan perencanaan dan verifikasi (revisi review PR #23, F-02)
+
+Bagian ini tidak mengubah D-16. Rincian jalur:
+[PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §3.
+
+### 11.1 Sisa perencanaan (jalur P, dilacak di UW-33)
+
+| ID | Kebutuhan | Asal |
+|---|---|---|
+| OD-5 | Format payload P-A / P-B | BKP §5.2 |
+| OD-6 | Aturan kata sandi (panjang minimum, pemeriksaan, pesan) | BKP:T-01 |
+| OD-7 | Kebijakan batas sumber daya: jenis batas (ukuran file, memori/iterasi KDF yang dinyatakan header), titik pemeriksaan sebelum alokasi dan KDF (H-1–H-7), perilaku penolakan. **Nilai** angka = UW-15 | BKP:F-10, F-11 |
+| OD-8 | Retensi snapshot pra-restore dan log restore (D-17) | B01 M-15, D-17 |
+| OD-9 | Attempt `IN_PROGRESS` saat restore | BKP:I-06 |
+| OD-11 | Serialisasi envelope: tata letak byte, encoding field, aturan versi, perlakuan field tak dikenal | D-16 OD-1-Q4 (OPEN) |
+| OD-12 | Kebijakan kapan KDF cadangan (PBKDF2) dipakai untuk ekspor baru | D-16 OD-1-Q2, Q6 |
+| OD-13 | Rencana dan protokol pengukuran KDF (perangkat, prosedur, kriteria terima) untuk diizinkan owner | D-16 OD-1-Q3 |
+| OD-14 | Review dokumen dependensi Bouncy Castle (lisensi, versi, ukuran, dependensi transitif) | D-16 OD-1-Q2 |
+
+### 11.2 Verifikasi teknis (jalur V, UW-15)
+
+Kompatibilitas Bouncy Castle di Android API 29+; pengukuran KDF di perangkat
+yang diizinkan (protokol OD-13); nilai parameter final dan batas maksimum,
+disetujui owner setelah pengukuran; CT-1–CT-12 dengan bukti EV. Tidak ada
+pengukuran atau benchmark yang dijalankan.
+
+### 11.3 Syarat rilis restore produksi
+
+Restore produksi tetap **nonaktif** (D-16 Q3) sampai semua terpenuhi:
+
+| ID | Syarat |
+|---|---|
+| RR-1 | OD-5–OD-9 dan OD-11–OD-14 diputuskan (UW-33) |
+| RR-2 | Review dependensi Bouncy Castle diterima (OD-14) dan kompatibilitas API 29+ terverifikasi, atau owner menyetujui kebijakan cadangan (OD-12) |
+| RR-3 | Pengukuran KDF dijalankan setelah izin terpisah, sesuai OD-13 |
+| RR-4 | Parameter final dan batas maksimum disetujui owner berdasarkan RR-3 |
+| RR-5 | CT-1–CT-12 PASS dengan bukti EV |
+| RR-6 | Implementasi diizinkan (UW-02) |
+| RR-7 | Perilaku restore D-03 (M-2 default, M-1 eksplisit, snapshot pra-restore) dan log restore D-17 terverifikasi |
+| RR-8 | Owner menyetujui pengaktifan restore produksi secara eksplisit |
+
+Status: RR-1–RR-8 **belum terpenuhi**.
