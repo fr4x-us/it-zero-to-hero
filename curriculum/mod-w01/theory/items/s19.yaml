@@ -1,0 +1,102 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s19
+competency: comp-w01-spec-01
+format: TF-4
+difficulty: D3
+max_points: 4
+estimated_seconds: 150
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s19-a
+  variant_id: mod-w01.theory.s19.vA
+  item_version: '1.0'
+  stem: 'Semua rakitan pada tabel sudah kompatibel. Kebutuhan: minimal 6 core, RAM minimal 16 GB, **SSD**
+    minimal 512 GB, anggaran maksimal Rp 6.000.000. Rakitan mana yang memenuhi **semua** kebutuhan?'
+  stimulus_table:
+  - - Rakitan
+    - Core
+    - RAM
+    - Penyimpanan
+    - Total harga (Rp)
+  - - R1
+    - '6'
+    - 16 GB
+    - SSD 512 GB
+    - 5.900.000
+  - - R2
+    - '8'
+    - 16 GB
+    - HDD 1.000 GB
+    - 5.500.000
+  - - R3
+    - '6'
+    - 8 GB
+    - SSD 1.000 GB
+    - 5.200.000
+  - - R4
+    - '8'
+    - 32 GB
+    - SSD 1.000 GB
+    - 6.300.000
+  options:
+  - id: a
+    text: R1
+  - id: b
+    text: R2
+  - id: c
+    text: R3
+  - id: d
+    text: R4
+  key: a
+  distractor_rationale:
+    b: Penyimpanan HDD, bukan SSD
+    c: RAM 8 GB kurang dari 16 GB
+    d: Total 6.300.000 melebihi anggaran
+  explanation: Hanya R1 memenuhi core, RAM, SSD, dan anggaran.
+- item_id: item-w01-t-s19-b
+  variant_id: mod-w01.theory.s19.vB
+  item_version: '1.0'
+  stem: 'Semua rakitan pada tabel sudah kompatibel. Kebutuhan: minimal 4 core, RAM minimal 8 GB, **SSD**
+    minimal 256 GB, anggaran maksimal Rp 4.000.000. Rakitan mana yang memenuhi **semua** kebutuhan?'
+  stimulus_table:
+  - - Rakitan
+    - Core
+    - RAM
+    - Penyimpanan
+    - Total harga (Rp)
+  - - S1
+    - '4'
+    - 8 GB
+    - HDD 500 GB
+    - 3.500.000
+  - - S2
+    - '6'
+    - 16 GB
+    - SSD 512 GB
+    - 4.200.000
+  - - S3
+    - '4'
+    - 8 GB
+    - SSD 256 GB
+    - 3.900.000
+  - - S4
+    - '2'
+    - 8 GB
+    - SSD 512 GB
+    - 3.400.000
+  options:
+  - id: a
+    text: S1
+  - id: b
+    text: S2
+  - id: c
+    text: S3
+  - id: d
+    text: S4
+  key: c
+  distractor_rationale:
+    a: Penyimpanan HDD, bukan SSD
+    b: Total 4.200.000 melebihi anggaran
+    d: Hanya 2 core
+  explanation: Hanya S3 memenuhi core, RAM, SSD, dan anggaran.

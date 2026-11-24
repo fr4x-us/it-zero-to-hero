@@ -1,0 +1,64 @@
+# W1 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.concept.s02
+competency: comp-w01-cpu-01
+required_concepts:
+- core
+- pekerjaan yang dapat dibagi
+- GHz
+format: CE-S2
+max_points: 2
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w01-c-s02-a
+  variant_id: mod-w01.concept.s02.vA
+  item_version: '1.0'
+  stem: CPU 8 core dan CPU 4 core berasal dari generasi dan GHz yang sama. Pilih **semua** alasan CPU
+    8 core dapat membuat banyak aplikasi berjalan lebih lancar.
+  options:
+  - id: a
+    text: Pekerjaan dari banyak aplikasi dapat dikerjakan bersamaan di core yang berbeda
+  - id: b
+    text: Lebih banyak unit pengolah tersedia untuk pekerjaan yang dapat dibagi
+  - id: c
+    text: Core tambahan menambah kapasitas SSD
+  - id: d
+    text: Setiap program otomatis menjadi dua kali lebih cepat
+  key:
+  - a
+  - b
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini
+  distractor_rationale:
+    c: Core tidak memengaruhi penyimpanan
+    d: Program yang tidak dapat membagi pekerjaannya tidak menjadi lebih cepat
+  feedback: Core tambahan membantu pekerjaan yang dapat dibagi, seperti banyak aplikasi yang terbuka bersamaan.
+- item_id: item-w01-c-s02-b
+  variant_id: mod-w01.concept.s02.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang kecepatan clock (GHz).
+  options:
+  - id: a
+    text: 1 GHz berarti 1 miliar siklus per detik
+  - id: b
+    text: Dua CPU berbeda generasi tidak cukup dibandingkan dari GHz saja
+  - id: c
+    text: GHz menunjukkan kapasitas RAM
+  - id: d
+    text: GHz tertinggi selalu tercepat untuk semua tugas
+  key:
+  - a
+  - b
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini
+  distractor_rationale:
+    c: Kapasitas RAM diukur dalam GB
+    d: Core, generasi, RAM, dan penyimpanan juga berpengaruh
+  feedback: GHz adalah siklus per detik; kinerja juga dipengaruhi generasi dan komponen lain.

@@ -1,0 +1,32 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s10
+competency: comp-w01-unit-01
+format: TF-3
+difficulty: D1
+max_points: 2
+estimated_seconds: 60
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s10-a
+  variant_id: mod-w01.theory.s10.vA
+  item_version: '1.0'
+  stem: 1 byte = … bit.
+  accepted_answers:
+  - '8'
+  - 8 bit
+  normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
+    atau tidak; satuan boleh ditulis atau tidak hanya bila tercantum di accepted_answers
+  explanation: 1 byte terdiri dari 8 bit.
+- item_id: item-w01-t-s10-b
+  variant_id: mod-w01.theory.s10.vB
+  item_version: '1.0'
+  stem: Dengan aturan desimal modul ini, 1 GB = … MB.
+  accepted_answers:
+  - '1000'
+  - '1.000'
+  - 1000 MB
+  - 1.000 MB
+  normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
+    atau tidak; satuan boleh ditulis atau tidak hanya bila tercantum di accepted_answers
+  explanation: 'Aturan desimal: 1 GB = 1.000 MB.'

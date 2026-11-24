@@ -1,6 +1,6 @@
 # IT ZERO → HERO — Decision Sheets Rubrik Mini-project (CU2-O4) dan Capstone (CU-9)
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode
+Status: **DIPUTUSKAN OWNER — D-33 (2026-11-24)**, lihat §D · dokumentasi saja · tanpa kode
 atau prototipe. Tanggal: **2026-11-24** (direvisi setelah review PR #24, F-07, F-08). Basis: `main` = `928e278`. Kode
 rujukan: `RB:`. Terkait UW-36 (CU-9, CU2-O4 — D-25).
 
@@ -224,4 +224,19 @@ subjektif.
 | CU-9-Q3 | Gerbang capstone CG-B (attempt ≥ 75 dengan semua MC terpenuhi), terpisah dari kelulusan modul 16? | CG-B |
 | CU-9-Q4 | CP-6: attempt capstone tetap tersedia setelah W16 `PASSED` selama gerbang belum terpenuhi? | Ya |
 
-Status: **AWAITING OWNER**.
+~~Status: **AWAITING OWNER**.~~ *(Historis — dijawab owner 2026-11-24; lihat bagian keputusan di bawah.)*
+
+## D. Keputusan owner — D-33 (2026-11-24)
+
+Pernyataan owner: "Saya menyetujui rekomendasi D-26, D-27, D-28, D-29, D-30, D-31, D-32, D-33, D-34, D-35."
+
+| Pertanyaan | Disetujui |
+|---|---|
+| CU2-O4-Q1, Q2 | MR-A (60/20/10/10), MR-1–MR-8, pemetaan A.2a; brief W1–W15 sebagai arah |
+| CU-9-Q1–Q4 | Tema "Pencatat Sesi Belajar", deliverable CD-1–CD-5, skema SQL B.1a, CR-1–CR-6, MC-1–MC-4, CG-B, CP-1–CP-6 |
+
+Gerbang capstone: **setidaknya satu attempt capstone selesai** dengan skor
+≥ 75 **dan** MC-1–MC-4 terpenuhi **pada attempt yang sama**; kriteria wajib
+tidak digabung lintas attempt. Kelulusan modul W16 tetap memakai aturan
+biasa. Attempt capstone tetap tersedia setelah W16 `PASSED` selama gerbang
+belum terpenuhi (CP-6). Capstone tetap mini-project W16 di dalam 128 jam.

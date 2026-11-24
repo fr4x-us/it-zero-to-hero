@@ -1,0 +1,165 @@
+# W1 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w01.lab.act-02
+name: Alur IPOS dan lapisan software
+competencies:
+- comp-w01-ipos-01
+- comp-w01-sw-01
+max_points: 30
+estimated_minutes: 30
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w01.lab (D-28 XI-2)
+answer_validation: Jawaban kosong → 0 poin untuk pemeriksaan itu; ID kategori/opsi tidak dikenal atau
+  ganda → 0 poin untuk pemeriksaan itu (tidak membatalkan pemeriksaan lain); kegagalan infrastruktur/konten
+  → EVALUATION_ERROR, evaluasi diulang tanpa attempt baru (D-24 IE-2)
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. Aturan umum umpan
+  balik test tersembunyi menunggu CU-6-Q13; W1 tidak memiliki test kode tersembunyi'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban terstruktur
+variants:
+- variant_id: mod-w01.lab.act-02.vA
+  fixture:
+    events:
+    - id: A
+      text: Kamu mengetik nama dan nilai tiga mata pelajaran dengan keyboard
+    - id: B
+      text: Aplikasi lembar kerja menghitung rata-rata nilai
+    - id: C
+      text: Rata-rata nilai tampil di monitor
+    - id: D
+      text: Setelah memeriksa rata-rata di layar, kamu menyimpan berkas ke SSD
+    display_order:
+    - C
+    - A
+    - D
+    - B
+    label_choices:
+    - id: I
+      label: Input
+    - id: P
+      label: Proses
+    - id: O
+      label: Output
+    - id: S
+      label: Penyimpanan
+    layer_question: Keyboard baru dicolokkan ke port USB. Software apa yang membuat sistem operasi dapat
+      memakainya?
+    layer_options:
+    - id: a
+      text: Aplikasi lembar kerja
+    - id: b
+      text: Driver keyboard
+    - id: c
+      text: Firmware monitor
+    - id: d
+      text: PSU
+  visible_example:
+    note: 'Contoh terlihat (0 poin): "Menekan tombol volume" → Input'
+  checks:
+  - check_id: mod-w01.lab.act-02.vA.c01
+    name: Urutan kejadian
+    expected_sequence:
+    - A
+    - B
+    - C
+    - D
+    points: 12
+    rule: 3 poin per pasangan berurutan yang benar (adjacency, maks. 3 pasangan); ID asing/ganda → 0 untuk
+      pemeriksaan ini
+  - check_id: mod-w01.lab.act-02.vA.c02
+    name: Tahap kejadian A
+    event: A
+    expected: I
+    points: 3
+  - check_id: mod-w01.lab.act-02.vA.c03
+    name: Tahap kejadian B
+    event: B
+    expected: P
+    points: 3
+  - check_id: mod-w01.lab.act-02.vA.c04
+    name: Tahap kejadian C
+    event: C
+    expected: O
+    points: 3
+  - check_id: mod-w01.lab.act-02.vA.c05
+    name: Tahap kejadian D
+    event: D
+    expected: S
+    points: 3
+  - check_id: mod-w01.lab.act-02.vA.c06
+    name: Lapisan software
+    expected: b
+    points: 6
+    feedback: Driver membantu sistem operasi berkomunikasi dengan perangkat tertentu; banyak driver umum
+      sudah tersedia di sistem operasi.
+- variant_id: mod-w01.lab.act-02.vB
+  fixture:
+    events:
+    - id: A
+      text: Sensor kamera ponsel menangkap gambar
+    - id: B
+      text: Prosesor ponsel memperbaiki kecerahan foto
+    - id: C
+      text: Foto tampil di layar untuk kamu periksa
+    - id: D
+      text: Setelah puas, kamu menyimpan foto ke penyimpanan internal
+    display_order:
+    - B
+    - D
+    - A
+    - C
+    label_choices:
+    - id: I
+      label: Input
+    - id: P
+      label: Proses
+    - id: O
+      label: Output
+    - id: S
+      label: Penyimpanan
+    layer_question: Software apa yang membantu sistem operasi ponsel memakai sensor kamera?
+    layer_options:
+    - id: a
+      text: Aplikasi galeri
+    - id: b
+      text: Driver kamera
+    - id: c
+      text: Firmware pengisi daya
+    - id: d
+      text: Baterai
+  visible_example:
+    note: 'Contoh terlihat (0 poin): "Menekan tombol volume" → Input'
+  checks:
+  - check_id: mod-w01.lab.act-02.vB.c01
+    name: Urutan kejadian
+    expected_sequence:
+    - A
+    - B
+    - C
+    - D
+    points: 12
+    rule: 3 poin per pasangan berurutan yang benar (adjacency, maks. 3 pasangan); ID asing/ganda → 0 untuk
+      pemeriksaan ini
+  - check_id: mod-w01.lab.act-02.vB.c02
+    name: Tahap kejadian A
+    event: A
+    expected: I
+    points: 3
+  - check_id: mod-w01.lab.act-02.vB.c03
+    name: Tahap kejadian B
+    event: B
+    expected: P
+    points: 3
+  - check_id: mod-w01.lab.act-02.vB.c04
+    name: Tahap kejadian C
+    event: C
+    expected: O
+    points: 3
+  - check_id: mod-w01.lab.act-02.vB.c05
+    name: Tahap kejadian D
+    event: D
+    expected: S
+    points: 3
+  - check_id: mod-w01.lab.act-02.vB.c06
+    name: Lapisan software
+    expected: b
+    points: 6
+    feedback: Driver kamera menjadi penghubung sistem operasi dengan sensor kamera.

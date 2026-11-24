@@ -1,0 +1,58 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s16
+competency: comp-w01-sw-01
+format: TF-2
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s16-a
+  variant_id: mod-w01.theory.s16.vA
+  item_version: '1.0'
+  stem: Pilih **semua** software aplikasi.
+  options:
+  - id: a
+    text: Pengolah kata
+  - id: b
+    text: Browser
+  - id: c
+    text: UEFI
+  - id: d
+    text: Driver kartu suara
+  - id: e
+    text: Aplikasi peta
+  key:
+  - a
+  - b
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    c: UEFI adalah firmware (software sistem)
+    d: Driver adalah software sistem
+  explanation: Pengolah kata, browser, dan aplikasi peta membantu tugas pengguna.
+- item_id: item-w01-t-s16-b
+  variant_id: mod-w01.theory.s16.vB
+  item_version: '1.0'
+  stem: Pilih **semua** software sistem.
+  options:
+  - id: a
+    text: Sistem operasi
+  - id: b
+    text: Driver printer
+  - id: c
+    text: Game balap
+  - id: d
+    text: Pembersih disk
+  - id: e
+    text: Aplikasi lembar kerja
+  key:
+  - a
+  - b
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    c: Game adalah aplikasi
+    e: Lembar kerja adalah aplikasi
+  explanation: Sistem operasi, driver, dan utilitas (pembersih disk) adalah software sistem.

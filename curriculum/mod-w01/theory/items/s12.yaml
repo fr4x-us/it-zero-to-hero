@@ -1,0 +1,34 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s12
+competency: comp-w01-unit-01
+format: TF-3
+difficulty: D3
+max_points: 4
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s12-a
+  variant_id: mod-w01.theory.s12.vA
+  item_version: '1.0'
+  stem: Kartu memori 64 GB dipakai untuk foto yang masing-masing berukuran 4 MB. Dengan aturan desimal
+    dan mengabaikan ruang untuk sistem, berapa foto **maksimum** yang muat?
+  accepted_answers:
+  - '16000'
+  - '16.000'
+  - 16000 foto
+  - 16.000 foto
+  normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
+    atau tidak; satuan boleh ditulis atau tidak hanya bila tercantum di accepted_answers
+  explanation: 64 GB = 64.000 MB; 64.000 ÷ 4 = 16.000 foto.
+- item_id: item-w01-t-s12-b
+  variant_id: mod-w01.theory.s12.vB
+  item_version: '1.0'
+  stem: SSD 500 GB dipakai untuk video yang masing-masing berukuran 2.000 MB. Dengan aturan desimal dan
+    mengabaikan ruang untuk sistem, berapa video **maksimum** yang muat?
+  accepted_answers:
+  - '250'
+  - 250 video
+  normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
+    atau tidak; satuan boleh ditulis atau tidak hanya bila tercantum di accepted_answers
+  explanation: 500 GB = 500.000 MB; 500.000 ÷ 2.000 = 250 video.

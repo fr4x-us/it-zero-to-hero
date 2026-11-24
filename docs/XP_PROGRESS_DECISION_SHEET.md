@@ -1,6 +1,6 @@
 # IT ZERO → HERO — Decision Sheet OP-8 dan CU-4: XP, Level, Streak, Identitas Aktivitas
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode
+Status: **DIPUTUSKAN OWNER — D-28, D-29 (2026-11-24)**, lihat §14; perluasan validasi §8.2a **AWAITING OWNER** · dokumentasi saja · tanpa kode
 atau skema. Tanggal: **2026-11-24** (direvisi setelah review PR #24, F-01,
 F-02). Basis: `main` = `928e278`. Kode rujukan: `XP:`. Terkait UW-30 (AC:
 **ASM:X-07 terisi**) dan UW-33 (validasi restore, OD-15).
@@ -213,4 +213,42 @@ identitas; nilai turunan dihitung ulang; validasi restore deterministik.
 | OP-8-Q7 | Milestone `mod-wNN.passed` (50) dan `program.capstone` (100) sebagai identitas terpisah? | Ya |
 | OD-15-Q1 | Validasi ledger XV-1–XV-6 saat restore dan perlakuan temuan RX-A (tolak) atau RX-B (pulihkan apa adanya dengan konfirmasi)? (UW-33) | RX-A |
 
-Status: **AWAITING OWNER**. UW-30 dan UW-33 tetap BLOCKED.
+~~Status: **AWAITING OWNER**. UW-30 dan UW-33 tetap BLOCKED.~~ *(Historis — dijawab owner 2026-11-24; lihat bagian keputusan di bawah.)*
+
+## 14. Keputusan owner — D-28, D-29 (2026-11-24)
+
+Pernyataan owner: "Saya menyetujui rekomendasi D-26, D-27, D-28, D-29, D-30, D-31, D-32, D-33, D-34, D-35."
+
+| Keputusan | Pertanyaan | Disetujui | AC terdampak |
+|---|---|---|---|
+| D-28 | OP-8-Q1 | XI-1–XI-9 (komponen sebagai identitas dinilai; pelajaran/latihan beridentitas sendiri; revisi dan identitas pensiun) | ASM:X-07 (identitas, revisi) |
+| D-28 | OP-8-Q2 | XE-B, XE-1–XE-6 (award pertama pada attempt remedial diperbolehkan; award ganda tidak) | X-07 (kelayakan) |
+| D-28 | OP-8-Q3 | UG-A | X-07 |
+| D-28 | OP-8-Q4 | Jumlah XP §5; level `L(n) = 50·n·(n−1)`; XL-1–XL-3 | X-07 (jumlah, level) |
+| D-28 | OP-8-Q5 | ST-C, SK-1–SK-6 (minggu JST setengah terbuka; minggu berjalan tidak memutus streak; tanpa penalti XP) | X-07 (streak) |
+| D-28 | OP-8-Q6 | XA-1–XA-3; tampilan penurunan pada restore M-1 | X-07 (achievement, mastery) |
+| D-28 | OP-8-Q7 | Milestone `mod-wNN.passed` (50) dan `program.capstone` (100) sebagai identitas terpisah | X-07 |
+| D-29 | OD-15-Q1 | XV-1–XV-6 dan RX-A (restore ditolak bila validasi menemukan kerusakan/inkonsistensi) | OD-15 (UW-33) |
+
+Kelulusan akademik dan program tetap tidak membaca XP. D-03 dan D-17 tidak
+berubah. Sisa perencanaan restore tetap di UW-33.
+
+### 14.1 Perluasan validasi kelayakan award (usulan baru, AWAITING OWNER — OD-15-Q2)
+
+Satu referensi attempt yang ada **tidak** membuktikan bahwa award sah.
+Usulan pemeriksaan tambahan saat pratinjau restore (perlakuan temuan tetap
+RX-A):
+
+| ID | Pemeriksaan |
+|---|---|
+| XV-7 | `xp_id` cocok dengan jenis identitas di katalog (pelajaran, latihan, komponen, milestone) |
+| XV-8 | Versi katalog yang tercatat ada dan jumlah XP sama dengan jumlah untuk versi itu |
+| XV-9 | Peristiwa pemicu ada dan berjenis benar: attempt komponen yang sama (identitas dinilai), peristiwa selesai pelajaran/latihan (identitas tidak dinilai), atau keadaan modul/gerbang (milestone) |
+| XV-10 | Attempt pemicu selesai (`GRADED`/LA-2) dan skornya memenuhi kriteria (`4·e ≥ 3·m`) menurut skor yang tercatat |
+| XV-11 | Attempt pemicu adalah attempt **pertama** yang memenuhi kriteria untuk identitas itu |
+| XV-12 | Prasyarat milestone terpenuhi: modul `PASSED` dihitung ulang dari attempt; gerbang capstone CG-B terpenuhi dalam satu attempt |
+| XV-13 | Identitas pensiun hanya sah bila ada di daftar pensiun dengan versi yang sesuai; selain itu XV-3 |
+| XV-14 | Award hilang diperiksa untuk identitas dinilai **dan** tidak dinilai (butuh catatan peristiwa selesai pelajaran/latihan di data) |
+
+Pertanyaan: **OD-15-Q2** — setujui XV-7–XV-14 sebagai bagian validasi
+OD-15 dengan perlakuan RX-A? Rekomendasi: Ya.

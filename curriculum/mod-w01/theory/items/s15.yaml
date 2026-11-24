@@ -1,0 +1,48 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s15
+competency: comp-w01-sw-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s15-a
+  variant_id: mod-w01.theory.s15.vA
+  item_version: '1.0'
+  stem: Android, Windows, dan Linux adalah contoh …
+  options:
+  - id: a
+    text: Software aplikasi
+  - id: b
+    text: Sistem operasi
+  - id: c
+    text: Driver
+  - id: d
+    text: Hardware
+  key: b
+  distractor_rationale:
+    a: Ketiganya mengelola perangkat dan menjalankan aplikasi, bukan aplikasi tugas tertentu
+    c: Driver melayani perangkat tertentu
+    d: Ketiganya software
+  explanation: Android, Windows, dan Linux adalah sistem operasi.
+- item_id: item-w01-t-s15-b
+  variant_id: mod-w01.theory.s15.vB
+  item_version: '1.0'
+  stem: Software yang membantu sistem operasi **berkomunikasi dengan printer** disebut …
+  options:
+  - id: a
+    text: Driver
+  - id: b
+    text: Firmware
+  - id: c
+    text: Browser
+  - id: d
+    text: PSU
+  key: a
+  distractor_rationale:
+    b: Firmware adalah program dasar di chip perangkat
+    c: Browser adalah aplikasi
+    d: PSU adalah hardware pemasok listrik
+  explanation: Driver printer menerjemahkan permintaan sistem operasi menjadi perintah untuk printer.

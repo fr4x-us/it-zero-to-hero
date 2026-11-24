@@ -1,0 +1,52 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s06
+competency: comp-w01-cpu-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s06-a
+  variant_id: mod-w01.theory.s06.vA
+  item_version: '1.0'
+  stem: Andi mengganti CPU 4 core dengan CPU 8 core (generasi dan GHz sama). Program penghitung lamanya
+    yang hanya memakai **satu** core tidak menjadi lebih cepat. Penjelasan paling tepat adalah …
+  options:
+  - id: a
+    text: CPU 8 core itu rusak
+  - id: b
+    text: Program tidak dapat membagi pekerjaannya ke core lain
+  - id: c
+    text: RAM berkurang karena core bertambah
+  - id: d
+    text: GHz turun setengah karena core menjadi dua kali lipat
+  key: b
+  distractor_rationale:
+    a: Tidak ada tanda kerusakan; perilaku ini normal
+    c: Jumlah core tidak mengubah kapasitas RAM
+    d: Soal menyatakan GHz sama
+  explanation: Core tambahan hanya membantu bila pekerjaan dapat dibagi; program satu-core tetap memakai
+    satu core.
+- item_id: item-w01-t-s06-b
+  variant_id: mod-w01.theory.s06.vB
+  item_version: '1.0'
+  stem: Budi membuka 10 aplikasi sekaligus. Setelah mengganti CPU 4 core dengan CPU 8 core (generasi dan
+    GHz sama), komputer terasa lebih lancar saat menjalankan banyak aplikasi bersamaan. Penjelasan paling
+    tepat adalah …
+  options:
+  - id: a
+    text: Pekerjaan banyak aplikasi dapat dibagi ke lebih banyak core
+  - id: b
+    text: CPU 8 core menambah kapasitas SSD
+  - id: c
+    text: Core tambahan membuat RAM menjadi non-volatil
+  - id: d
+    text: Semua program otomatis menjadi dua kali lebih cepat
+  key: a
+  distractor_rationale:
+    b: Core tidak memengaruhi kapasitas penyimpanan
+    c: Sifat volatil RAM tidak berubah
+    d: Hanya pekerjaan yang dapat dibagi yang terbantu
+  explanation: Banyak aplikasi menghasilkan banyak pekerjaan yang dapat dikerjakan bersamaan di core berbeda.

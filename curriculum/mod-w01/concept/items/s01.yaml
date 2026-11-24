@@ -1,0 +1,58 @@
+# W1 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.concept.s01
+competency: comp-w01-mem-01
+required_concepts:
+- RAM volatil
+- penyimpanan non-volatil
+format: CE-S1
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w01-c-s01-a
+  variant_id: mod-w01.concept.s01.vA
+  item_version: '1.0'
+  stem: Mengapa RAM disebut **volatil**?
+  options:
+  - id: a
+    text: Isinya hilang saat listrik mati
+  - id: b
+    text: Karena kapasitasnya kecil
+  - id: c
+    text: Karena letaknya di motherboard
+  - id: d
+    text: Karena lebih lambat daripada SSD
+  key: a
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  distractor_rationale:
+    b: Kapasitas tidak berkaitan dengan volatilitas
+    c: Letak tidak menentukan volatilitas
+    d: RAM justru jauh lebih cepat daripada SSD
+  feedback: Volatil berarti isi memori bergantung pada listrik; saat listrik mati, isi RAM hilang.
+- item_id: item-w01-c-s01-b
+  variant_id: mod-w01.concept.s01.vB
+  item_version: '1.0'
+  stem: Mengapa berkas di **SSD** masih ada setelah komputer dimatikan?
+  options:
+  - id: a
+    text: 'SSD non-volatil: data tetap tersimpan tanpa listrik'
+  - id: b
+    text: SSD menyalin berkas ke RAM saat komputer mati
+  - id: c
+    text: CPU menyimpan berkas saat komputer mati
+  - id: d
+    text: Berkas disimpan di monitor
+  key: a
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  distractor_rationale:
+    b: Isi RAM justru hilang saat mati
+    c: CPU tidak menyimpan berkas permanen
+    d: Monitor adalah perangkat output
+  feedback: SSD adalah penyimpanan non-volatil; data tetap ada tanpa listrik.

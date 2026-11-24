@@ -1,0 +1,80 @@
+# W1 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.concept.s03
+competency: comp-w01-sw-01
+required_concepts:
+- firmware bekerja sebelum OS
+- bootloader
+- OS dimuat ke RAM
+format: CE-S3
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w01-c-s03-a
+  variant_id: mod-w01.concept.s03.vA
+  item_version: '1.0'
+  stem: Urutkan langkah saat komputer dinyalakan sampai siap dipakai.
+  display_order:
+  - D
+  - A
+  - E
+  - C
+  - B
+  items:
+  - id: A
+    text: Tombol daya ditekan
+  - id: B
+    text: Firmware (BIOS/UEFI) menjalankan POST
+  - id: C
+    text: Firmware mencari perangkat boot
+  - id: D
+    text: Bootloader memuat sistem operasi ke RAM
+  - id: E
+    text: Sistem operasi siap dipakai
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+    - E
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: Firmware bekerja lebih dulu (POST, mencari perangkat boot), lalu bootloader memuat OS ke RAM.
+- item_id: item-w01-c-s03-b
+  variant_id: mod-w01.concept.s03.vB
+  item_version: '1.0'
+  stem: Urutkan langkah saat kamu membuka aplikasi yang tersimpan di SSD.
+  display_order:
+  - C
+  - E
+  - A
+  - D
+  - B
+  items:
+  - id: A
+    text: Kamu mengetuk ikon aplikasi
+  - id: B
+    text: Sistem operasi menemukan berkas program di SSD
+  - id: C
+    text: Program dimuat dari SSD ke RAM
+  - id: D
+    text: CPU menjalankan instruksi program dari RAM
+  - id: E
+    text: Jendela aplikasi tampil di layar
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+    - E
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: OS mencari program di penyimpanan, memuatnya ke RAM, lalu CPU menjalankan instruksinya dan
+    hasilnya tampil.

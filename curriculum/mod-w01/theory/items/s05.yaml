@@ -1,0 +1,78 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s05
+competency: comp-w01-cpu-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s05-a
+  variant_id: mod-w01.theory.s05.vA
+  item_version: '1.0'
+  stem: Ketiga CPU pada tabel berasal dari generasi yang sama. Pengguna membuka banyak aplikasi sekaligus
+    sehingga pekerjaan dapat dibagi ke banyak core. CPU mana yang **paling sesuai**?
+  stimulus_table:
+  - - CPU
+    - Core
+    - Clock
+  - - P1
+    - '4'
+    - 4,2 GHz
+  - - P2
+    - '8'
+    - 3,6 GHz
+  - - P3
+    - '6'
+    - 3,9 GHz
+  options:
+  - id: a
+    text: P1
+  - id: b
+    text: P2
+  - id: c
+    text: P3
+  - id: d
+    text: Ketiganya sama saja
+  key: b
+  distractor_rationale:
+    a: P1 punya clock tertinggi tetapi core paling sedikit; pekerjaan yang dapat dibagi lebih terbantu
+      oleh core
+    c: P3 punya 6 core, lebih sedikit dari P2
+    d: Jumlah core berbeda, jadi tidak sama
+  explanation: Pekerjaan yang dapat dibagi lebih terbantu oleh jumlah core; P2 punya 8 core.
+- item_id: item-w01-t-s05-b
+  variant_id: mod-w01.theory.s05.vB
+  item_version: '1.0'
+  stem: Ketiga CPU pada tabel berasal dari generasi yang sama. Sebuah program mengerjakan langkahnya **satu
+    per satu** dan tidak dapat dibagi ke core lain. CPU mana yang **kemungkinan paling cepat** menjalankannya?
+  stimulus_table:
+  - - CPU
+    - Core
+    - Clock
+  - - P1
+    - '4'
+    - 4,2 GHz
+  - - P2
+    - '8'
+    - 3,6 GHz
+  - - P3
+    - '6'
+    - 3,9 GHz
+  options:
+  - id: a
+    text: P1
+  - id: b
+    text: P2
+  - id: c
+    text: P3
+  - id: d
+    text: Ketiganya sama saja
+  key: a
+  distractor_rationale:
+    b: Core tambahan tidak membantu pekerjaan yang tidak dapat dibagi
+    c: Clock P3 lebih rendah dari P1
+    d: Clock berbeda, jadi kemungkinan tidak sama
+  explanation: Untuk pekerjaan yang tidak dapat dibagi dan generasi sama, clock lebih tinggi (P1, 4,2
+    GHz) kemungkinan lebih cepat.

@@ -1,0 +1,34 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s11
+competency: comp-w01-unit-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s11-a
+  variant_id: mod-w01.theory.s11.vA
+  item_version: '1.0'
+  stem: Dengan aturan desimal, berkas berukuran 3 GB sama dengan … MB.
+  accepted_answers:
+  - '3000'
+  - '3.000'
+  - 3000 MB
+  - 3.000 MB
+  normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
+    atau tidak; satuan boleh ditulis atau tidak hanya bila tercantum di accepted_answers
+  explanation: 3 × 1.000 = 3.000 MB.
+- item_id: item-w01-t-s11-b
+  variant_id: mod-w01.theory.s11.vB
+  item_version: '1.0'
+  stem: Dengan aturan desimal, flashdisk 16 GB sama dengan … MB.
+  accepted_answers:
+  - '16000'
+  - '16.000'
+  - 16000 MB
+  - 16.000 MB
+  normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
+    atau tidak; satuan boleh ditulis atau tidak hanya bila tercantum di accepted_answers
+  explanation: 16 × 1.000 = 16.000 MB.

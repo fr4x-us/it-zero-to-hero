@@ -800,3 +800,55 @@ PY:F-01–F-15: **NOT VERIFIED**. CT-1–CT-12: **NOT VERIFIED**.
 Jumlah status tidak berubah (§17.2): 25 / 4 / 19 / 3 / 5 = 56. Jalur P
 25/43. Kurikulum 0/64.
 
+## 18. Pembaruan status — D-26–D-35, CB-0, dan konten W1 (2026-11-24)
+
+Basis: `main` = `40ca205` (merge PR #24). Berlaku saat PR batch ini di-merge.
+Dihitung ulang dari bukti di repositori; keputusan yang disetujui tidak
+otomatis menutup butir.
+
+### 18.1 Perubahan per butir
+
+| ID | Sebelum | Sesudah | AC (§3) | Bukti / alasan |
+|---|---|---|---|---|
+| UW-25 | BLOCKED | **COMPLETE** | Keputusan tertulis | D-34 (CU-10, AK-A) |
+| UW-27 | BLOCKED | **COMPLETE** | ASM:D-08 terisi | D-26 (rumus durasi A.4, format TF-1–TF-5) |
+| UW-29 | BLOCKED | **COMPLETE** | ASM:L5 terisi | D-27 (SB-A, SB-1–SB-12) |
+| UW-30 | BLOCKED | **COMPLETE** | ASM:X-07 terisi | D-28 (identitas, kelayakan, jumlah, level, streak, achievement/mastery, revisi). Tanpa batas atas XP selain "sekali per identitas" |
+| UW-31 | BLOCKED | **COMPLETE** | ASM:C6 terisi | D-27 (UL-1–UL-10) |
+| UW-32 | BLOCKED | **COMPLETE** | OP-10, OP-11 terisi | D-27 (RE-A, PI-A, AS-B) |
+| UW-36 | BLOCKED | BLOCKED | CU-2, CU-3, CU-5–CU-7, CU-9, CU-11 (+ CU2-O3–O5) terisi | Semua diputuskan kecuali bagian CU-6 "kebijakan umpan balik test tersembunyi" (CUR §10) → **CU-6-Q13** |
+| UW-33 | BLOCKED | BLOCKED | OD-5–OD-9, OD-11–OD-14 (+ OD-15) terisi | OD-15-Q1 diputuskan (D-29); OD-15-Q2 diajukan; OD lain belum |
+| UW-26 | OPEN | OPEN | CUR:CC-08 (bank 16 modul) | Bank concept W1 diproduksi (12 soal), belum diterima; W2–W16 belum |
+| UW-37 | OPEN | OPEN | CUR:CC-01–CC-11 | W1 diproduksi (4/64 komponen), belum diterima owner |
+| UW-15 | NOT VERIFIED | NOT VERIFIED | Parameter + bukti | Tidak berubah; CT-1–CT-12 NOT VERIFIED |
+| UW-21, UW-38, UW-40 | DEFERRED | DEFERRED | — | D-22 |
+
+### 18.2 Jumlah per status (56 butir)
+
+| Status | §17 (sebelum) | §18 (sesudah) | Butir |
+|---|---|---|---|
+| COMPLETE | 25 | **31** | + UW-25, UW-27, UW-29, UW-30, UW-31, UW-32 |
+| OPEN | 4 | 4 | UW-12, UW-26, UW-37, UW-52 |
+| BLOCKED | 19 | **13** | UW-02, UW-10, UW-14, UW-23, UW-24, UW-28, UW-33, UW-34, UW-35, UW-36, UW-39, UW-41, UW-53 |
+| DEFERRED | 3 | 3 | UW-21, UW-38, UW-40 |
+| NOT VERIFIED | 5 | 5 | UW-13, UW-15, UW-54, UW-55, UW-56 |
+| **Total** | 56 | **56** | |
+
+Jalur: P 43 (31 COMPLETE, 12 belum: UW-14, UW-23, UW-24, UW-26, UW-28,
+UW-33, UW-34, UW-35, UW-36, UW-37, UW-41, UW-53) · M 3 · G 2 · V 8.
+
+### 18.3 Kemajuan (dilaporkan terpisah; jumlah butir, bukan kesiapan aplikasi)
+
+| Ukuran | Nilai |
+|---|---|
+| Register | 31/56 (55,4%) |
+| Jalur P | 31/43 (72,1%) |
+| Kurikulum diproduksi | 1/16 modul · 4/64 komponen · 8/128 jam · 40/620 soal teori · 12/192 soal concept · 6/96 spesifikasi lab · 1/16 mini-project |
+| Kurikulum direview (ChatGPT) | 0 |
+| Kurikulum diterima owner | 0 |
+| Runtime diverifikasi | Tidak ada (D-10, D-11) |
+| Keputusan owner | D-01–D-35 tercatat; terbuka: CU-6-Q13, OD-15-Q2, penerimaan W1; lembar belum disiapkan: OP-6, CO-1/2, O-09, OD-5–OD-9, OD-11–OD-14, CO-4–CO-6, UO-3–UO-9 |
+
+**PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
+prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
+PY:F-01–F-15: **NOT VERIFIED**. CT-1–CT-12: **NOT VERIFIED**.

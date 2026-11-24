@@ -233,3 +233,12 @@ Prosedur evaluasi per skill (PROPOSED, sama dengan PR #1):
 | Dokumentasi persiapan | Lengkap untuk urutan Batch 02 §4 |
 | Implementasi | **Belum diizinkan** |
 | Keputusan owner paling mendesak | B-3, O-04 (izin prototipe + batas uji), O-01 + minSdk, OD-3, O-07 |
+
+## 12. Catatan status terkini (ditambahkan 2026-11-24)
+
+Bagian §1–§11 adalah snapshot Batch 10 dan dipertahankan sebagai catatan
+historis. Status terkini ada di
+[BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) §18 dan
+[PLANNING_ROADMAP.md](PLANNING_ROADMAP.md): keputusan owner D-01–D-35
+tercatat; jalur P 31/43; kurikulum diproduksi 4/64 komponen (W1), diterima
+0/64. **PLANNING CLEAR: NO; IMPLEMENTATION VERIFIED: NO.**

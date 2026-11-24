@@ -1,0 +1,58 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s17
+competency: comp-w01-sw-01
+format: TF-5
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s17-a
+  variant_id: mod-w01.theory.s17.vA
+  item_version: '1.0'
+  stem: Kamu menekan "Cetak" di aplikasi pengolah kata. Urutkan lapisan yang dilalui permintaan itu, dari
+    pengguna sampai hardware.
+  items:
+  - id: A
+    text: Sistem operasi
+  - id: B
+    text: Aplikasi pengolah kata
+  - id: C
+    text: Driver printer
+  - id: D
+    text: Pengguna
+  - id: E
+    text: Printer
+  accepted_sequences:
+  - - D
+    - B
+    - A
+    - C
+    - E
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Pengguna → aplikasi → sistem operasi → driver → hardware (printer).
+- item_id: item-w01-t-s17-b
+  variant_id: mod-w01.theory.s17.vB
+  item_version: '1.0'
+  stem: Kamu menekan tombol putar di aplikasi musik dan lagu keluar dari speaker. Urutkan lapisan yang
+    dilalui permintaan itu, dari pengguna sampai hardware.
+  items:
+  - id: A
+    text: Driver audio
+  - id: B
+    text: Pengguna
+  - id: C
+    text: Speaker
+  - id: D
+    text: Aplikasi pemutar musik
+  - id: E
+    text: Sistem operasi
+  accepted_sequences:
+  - - B
+    - D
+    - E
+    - A
+    - C
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Pengguna → aplikasi → sistem operasi → driver → hardware (speaker).

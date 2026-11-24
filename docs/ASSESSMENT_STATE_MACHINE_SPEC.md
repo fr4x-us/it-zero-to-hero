@@ -337,3 +337,15 @@ dirinci sebagai DL-1–DL-9 dan skenario DG-1–DG-8
 §A.5b), memperjelas E-06 dan P-03 tanpa mengubahnya. Kelayakan XP diusulkan
 XE-B (satu award per identitas, sesuai X-01); validasi ledger saat restore
 diusulkan sebagai OD-15 (UW-33).
+
+## 14. Keputusan owner D-26–D-29 (2026-11-24)
+
+| Butir | Keputusan |
+|---|---|
+| OP-5 / ASM:D-08 | **D-26** — format, poin, rumus durasi, EX-1–EX-13 (termasuk T7, ASM:D-04, ASM:D-05 kini disetujui), TA-B, FB-A, DL-1–DL-9, SF-A ([ASSESSMENT_FLOW_DECISION_SHEETS.md](ASSESSMENT_FLOW_DECISION_SHEETS.md) §F) |
+| OP-7 / L5 | **D-27** — SB-A, SB-1–SB-12 |
+| OP-9 / C6 | **D-27** — UL-1–UL-10, PV-A, RV-A (`PASSED` tidak dicabut oleh revisi konten; menjawab OPEN §2.3) |
+| OP-10, OP-11 / P-03 | **D-27** — RE-A, PI-A, AS-B (P-03 berlaku untuk commit yang berhasil) |
+| OP-8 / X-07 | **D-28** — XI, XE-B, UG-A, jumlah XP, level, ST-C, XA, XL, milestone |
+| X-06 restore | **D-29** — XV-1–XV-6, RX-A |
+| Masih OPEN | OP-6 (UW-28); OD-15-Q2 |

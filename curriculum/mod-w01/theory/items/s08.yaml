@@ -1,0 +1,58 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s08
+competency: comp-w01-mem-01
+format: TF-2
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s08-a
+  variant_id: mod-w01.theory.s08.vA
+  item_version: '1.0'
+  stem: Pilih **semua** media penyimpanan non-volatil.
+  options:
+  - id: a
+    text: SSD
+  - id: b
+    text: HDD
+  - id: c
+    text: RAM
+  - id: d
+    text: Kartu memori
+  - id: e
+    text: Monitor
+  key:
+  - a
+  - b
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    c: RAM volatil
+    e: Monitor adalah output
+  explanation: SSD, HDD, dan kartu memori menyimpan data tanpa listrik.
+- item_id: item-w01-t-s08-b
+  variant_id: mod-w01.theory.s08.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang SSD dibanding HDD.
+  options:
+  - id: a
+    text: SSD tidak memiliki bagian yang bergerak
+  - id: b
+    text: SSD umumnya lebih cepat membuka program
+  - id: c
+    text: SSD kehilangan data saat listrik mati
+  - id: d
+    text: SSD lebih tahan guncangan
+  - id: e
+    text: SSD selalu lebih murah per GB
+  key:
+  - a
+  - b
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    c: SSD non-volatil
+    e: Umumnya SSD lebih mahal per GB
+  explanation: 'SSD memakai chip flash tanpa bagian mekanis: lebih cepat dan lebih tahan guncangan.'

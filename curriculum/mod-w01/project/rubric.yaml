@@ -1,0 +1,83 @@
+# W1 — rubrik mini-project (MR-A, D-33). Kunci K4 tidak ditampilkan sebelum dinilai.
+component: mod-w01.project
+content_version: "1.0"
+max_points: 100
+catalog_ref: "spec.md, bagian Katalog"
+power_rule: "kebutuhan daya = daya CPU + 100 W"
+dependency_rule: "MR-2: isian yang hilang → pemeriksaan yang bergantung padanya bernilai 0; pemeriksaan lain tetap dinilai"
+invalid_rule: "ID katalog tidak dikenal atau jenis salah (mis. ID RAM di F1) → isian dianggap tidak valid: K2 untuk isian itu 0 dan pemeriksaan K1 yang bergantung padanya 0"
+criteria:
+  K1:
+    name: Kebenaran fungsional
+    points: 60
+    checks:
+      - {id: mod-w01.project.K1.c01, rule: "soket(F1) = soket(F2)", depends_on: [F1, F2], points: 8}
+      - {id: mod-w01.project.K1.c02, rule: "jenis RAM(F3) = jenis RAM(F2)", depends_on: [F2, F3], points: 8}
+      - {id: mod-w01.project.K1.c03, rule: "core(F1) >= 6", depends_on: [F1], points: 6}
+      - {id: mod-w01.project.K1.c04, rule: "kapasitas per keping(F3) × jumlah keping(F3) >= 16", depends_on: [F3], points: 6}
+      - {id: mod-w01.project.K1.c05, rule: "jenis(F4) = SSD dan kapasitas(F4) >= 512", depends_on: [F4], points: 6}
+      - {id: mod-w01.project.K1.c06, rule: "daya(F5) >= daya(F1) + 100", depends_on: [F1, F5], points: 6}
+      - {id: mod-w01.project.K1.c07, rule: "harga(F1)+harga(F2)+harga(F3)×keping+harga(F4)+harga(F5) <= 6500000", depends_on: [F1, F2, F3, F4, F5], points: 8}
+      - {id: mod-w01.project.K1.c08, rule: "F6 = jumlah harga aktual komponen terpilih", depends_on: [F1, F2, F3, F4, F5, F6], points: 6}
+      - {id: mod-w01.project.K1.c09, rule: "F7 = daya(F1) + 100", depends_on: [F1, F7], points: 6}
+  K2:
+    name: Kelengkapan deliverable
+    points: 20
+    checks:
+      - {id: mod-w01.project.K2.c01, rule: "F1 berisi ID CPU yang ada di katalog", points: 3}
+      - {id: mod-w01.project.K2.c02, rule: "F2 berisi ID motherboard yang ada di katalog", points: 3}
+      - {id: mod-w01.project.K2.c03, rule: "F3 berisi ID RAM yang ada di katalog dan jumlah keping terisi", points: 3}
+      - {id: mod-w01.project.K2.c04, rule: "F4 berisi ID penyimpanan yang ada di katalog", points: 3}
+      - {id: mod-w01.project.K2.c05, rule: "F5 berisi ID PSU yang ada di katalog", points: 3}
+      - {id: mod-w01.project.K2.c06, rule: "F6 terisi", points: 2}
+      - {id: mod-w01.project.K2.c07, rule: "F7 terisi", points: 2}
+      - {id: mod-w01.project.K2.c08, rule: "F8 terisi", points: 1}
+  K3:
+    name: Struktur dan format
+    points: 10
+    checks:
+      - {id: mod-w01.project.K3.c01, rule: "F6 bilangan bulat tanpa titik, spasi, atau huruf", points: 3}
+      - {id: mod-w01.project.K3.c02, rule: "F7 dan F8 bilangan bulat tanpa satuan", points: 3}
+      - {id: mod-w01.project.K3.c03, rule: "jumlah keping RAM bilangan bulat 1–4 dan <= slot(F2)", depends_on: [F2, F3], points: 4}
+  K4:
+    name: Penjelasan proyek (komposisi K-A, 5 × CE-S1, P = 2)
+    points: 10
+    note: "Soal tentang tugas proyek ini; terpisah dari komponen Concept explanation W1 (D-33 A.2a)"
+    items:
+      - id: mod-w01.project.K4.q1
+        lo: comp-w01-ipos-01
+        stem: "Pada rakitan ini, komponen yang menjalankan tahap **proses** adalah …"
+        options: {a: CPU, b: SSD, c: PSU, d: RAM}
+        key: a
+        points: 2
+        feedback: "CPU menjalankan instruksi; SSD menyimpan; PSU memasok listrik; RAM menampung data sementara."
+      - id: mod-w01.project.K4.q2
+        lo: comp-w01-sw-01
+        stem: "Setelah rakitan selesai, software apa yang harus dipasang ke SSD agar komputer dapat dipakai sehari-hari?"
+        options: {a: Sistem operasi, b: Hanya driver printer, c: Game, d: Firmware PSU}
+        key: a
+        points: 2
+        feedback: "Sistem operasi mengelola hardware dan menjalankan aplikasi; firmware motherboard memuatnya saat boot."
+      - id: mod-w01.project.K4.q3
+        lo: comp-w01-mem-01
+        stem: "Mengapa kebutuhan meminta SSD, bukan HDD?"
+        options: {a: "SSD tanpa bagian bergerak sehingga program dan berkas terbuka lebih cepat", b: "SSD menyimpan data hanya saat listrik menyala", c: "SSD selalu lebih murah per GB", d: "SSD menambah jumlah core CPU"}
+        key: a
+        points: 2
+        feedback: "SSD memakai chip flash tanpa bagian mekanis; ia tetap non-volatil."
+      - id: mod-w01.project.K4.q4
+        lo: comp-w01-spec-01
+        stem: "Mengapa CPU dan motherboard harus memiliki soket yang sama?"
+        options: {a: "Agar CPU dapat dipasang dan bekerja di motherboard", b: "Agar harga keduanya sama", c: "Agar RAM menjadi lebih besar", d: "Agar PSU tidak diperlukan"}
+        key: a
+        points: 2
+        feedback: "Soket menentukan apakah CPU dapat dipasang dan berkomunikasi dengan motherboard."
+      - id: mod-w01.project.K4.q5
+        lo: comp-w01-cpu-01
+        stem: "Mengapa Rina butuh minimal 6 core saat membuka editor, browser, dan video sekaligus?"
+        options: {a: "Pekerjaan beberapa aplikasi dapat dibagi ke beberapa core", b: "Core menambah kapasitas SSD", c: "Core membuat RAM non-volatil", d: "Core menggantikan sistem operasi"}
+        key: a
+        points: 2
+        feedback: "Core tambahan membantu pekerjaan yang dapat dibagi, seperti beberapa aplikasi sekaligus."
+point_check: "60 + 20 + 10 + 10 = 100; K1 8+8+6+6+6+6+8+6+6 = 60; K2 3×5+2+2+1 = 20; K3 3+3+4 = 10; K4 5×2 = 10"
+objective_limits: "Pemeriksaan membuktikan isian memenuhi syarat dan perhitungan benar; tidak membuktikan pelajar memahami semua alasan pemilihan (lihat review §Batas penilaian objektif)"

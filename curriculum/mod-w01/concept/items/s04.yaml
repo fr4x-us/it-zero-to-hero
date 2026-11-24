@@ -1,0 +1,86 @@
+# W1 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.concept.s04
+competency: comp-w01-ipos-01
+required_concepts:
+- input
+- proses
+- output
+- penyimpanan
+- hardware vs software
+- data vs informasi
+format: CE-S4
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w01-c-s04-a
+  variant_id: mod-w01.concept.s04.vA
+  item_version: '1.0'
+  stem: Cocokkan setiap tahap dengan penjelasannya.
+  left:
+  - id: L1
+    text: Input
+  - id: L2
+    text: Proses
+  - id: L3
+    text: Output
+  - id: L4
+    text: Penyimpanan
+  right:
+  - id: R1
+    text: Data diolah mengikuti instruksi
+  - id: R2
+    text: Hasil disampaikan kepada pengguna
+  - id: R3
+    text: Data masuk ke komputer
+  - id: R4
+    text: Data disimpan agar dapat dipakai lagi
+  - id: R5
+    text: Komponen fisik yang dapat disentuh
+  key_mapping:
+    L1: R3
+    L2: R1
+    L3: R2
+    L4: R4
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: 'R5 adalah pengecoh: itu definisi hardware, bukan tahap IPOS.'
+- item_id: item-w01-c-s04-b
+  variant_id: mod-w01.concept.s04.vB
+  item_version: '1.0'
+  stem: Cocokkan setiap istilah dengan penjelasannya.
+  left:
+  - id: L1
+    text: Hardware
+  - id: L2
+    text: Software
+  - id: L3
+    text: Data
+  - id: L4
+    text: Informasi
+  right:
+  - id: R1
+    text: Fakta mentah seperti angka atau huruf
+  - id: R2
+    text: Instruksi dan data yang dijalankan komputer
+  - id: R3
+    text: Data yang sudah diolah sehingga bermakna
+  - id: R4
+    text: Komponen fisik yang dapat disentuh
+  - id: R5
+    text: Data masuk ke komputer
+  key_mapping:
+    L1: R4
+    L2: R2
+    L3: R1
+    L4: R3
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: 'R5 adalah pengecoh: itu definisi input.'

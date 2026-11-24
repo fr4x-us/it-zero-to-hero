@@ -1,0 +1,48 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s20
+competency: comp-w01-spec-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s20-a
+  variant_id: mod-w01.theory.s20.vA
+  item_version: '1.0'
+  stem: Fungsi utama **PSU** adalah …
+  options:
+  - id: a
+    text: Menjalankan instruksi program
+  - id: b
+    text: Memasok listrik yang sesuai ke komponen komputer
+  - id: c
+    text: Menyimpan data secara permanen
+  - id: d
+    text: Menampilkan gambar ke pengguna
+  key: b
+  distractor_rationale:
+    a: Itu fungsi CPU
+    c: Itu fungsi penyimpanan
+    d: Itu fungsi monitor
+  explanation: PSU mengubah listrik dari stopkontak menjadi listrik yang sesuai untuk komponen.
+- item_id: item-w01-t-s20-b
+  variant_id: mod-w01.theory.s20.vB
+  item_version: '1.0'
+  stem: Dua komponen disebut **kompatibel** bila …
+  options:
+  - id: a
+    text: Keduanya dapat dipasang dan bekerja bersama
+  - id: b
+    text: Harganya sama
+  - id: c
+    text: Buatan merek yang sama
+  - id: d
+    text: Warnanya sama
+  key: a
+  distractor_rationale:
+    b: Harga tidak menentukan kecocokan
+    c: Merek berbeda dapat kompatibel bila standarnya sama
+    d: Warna tidak berpengaruh
+  explanation: Kompatibel berarti dapat dipasang dan bekerja bersama (soket, jenis RAM, slot, daya).

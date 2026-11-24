@@ -188,7 +188,7 @@ attempt selesai per komponen; riwayat attempt lengkap; tanpa XP ganda.
 Kelayakan runtime tetap **NOT VERIFIED**. UW-36 **tidak** COMPLETE (CU-3,
 CU-5, CU-7, CU-9, CU-11, CU2-O3, CU2-O4 belum diputuskan).
 
-## 14. Klarifikasi lanjutan yang diminta D-24 (usulan, OPEN; direvisi setelah review PR #24, F-05)
+## 14. Klarifikasi lanjutan yang diminta D-24 (direvisi setelah review PR #24, F-05; **diputuskan D-35**, lihat §15)
 
 Ambang D-10 tidak berubah: 3 detik per latihan (PY:F-11), output ≤ 64 KB
 per eksekusi (PY:F-13), target memori 128 MB (PY:F-12, penegakan NOT
@@ -236,4 +236,35 @@ Pertanyaan owner (menggantikan CU-6-Q7–Q11 versi sebelumnya):
 | CU-6-Q10 | LX-5, LX-6: urutan test deterministik dan aturan isolasi state? | Ya |
 | CU-6-Q11 | LX-7: syarat dan prosedur review sebelum aktivasi TB-A? | Ya |
 | CU-6-Q12 | LX-8, LX-9: tanpa klaim kesetaraan; pencatatan mode/versi; attempt historis tidak dinilai ulang? | Ya |
+
+## 15. Keputusan owner — D-35 (2026-11-24)
+
+Pernyataan owner: "Saya menyetujui rekomendasi D-26, D-27, D-28, D-29, D-30, D-31, D-32, D-33, D-34, D-35."
+
+CU-6-Q7–Q12 dan LX-1–LX-9 disetujui. Dipertahankan: TB-B mode utama; TB-A
+cadangan bersyarat dengan otorisasi owner eksplisit sebelum aktivasi;
+anggaran kode pelajar 3.000 ms per latihan Python; output 64 KB per
+eksekusi; start interpreter diukur terpisah; urutan test deterministik;
+mode eksekusi dan versi konten dicatat; tanpa klaim kesetaraan TB-A/TB-B;
+attempt historis dipertahankan; semantik skor terbaik tetap. Kebijakan
+sumber daya agregat disetujui hanya sebatas LX-2; **nilai batas final tetap
+OPEN** (butuh pengukuran yang diizinkan, UW-12). Tidak ada eksekusi runtime,
+benchmark, atau pengukuran yang diizinkan.
+
+## 16. Pertanyaan terbuka: umpan balik test tersembunyi (CU-6-Q13, AWAITING OWNER)
+
+CUR §10 mendefinisikan CU-6 sebagai "batas eksekusi lab **dan kebijakan
+umpan balik test tersembunyi**". Bagian kedua belum pernah diputuskan
+(D-24/D-35 tidak memuatnya).
+
+| Opsi | Setelah evaluasi, untuk test tersembunyi ditampilkan | Kelebihan | Kekurangan |
+|---|---|---|---|
+| **HF-A** | Kode hasil (§5) dan **deskripsi kasus** yang ditulis penyusun (mis. "input kosong"), tanpa input/output mentah | Pelajar tahu jenis kasus yang gagal | Penyusun wajib menulis deskripsi |
+| HF-B | Hanya jumlah test lulus/gagal | Bank test terlindungi | Umpan balik lemah |
+| HF-C | Input, output diharapkan, dan output pelajar | Umpan balik terlengkap | Test tersembunyi menjadi terlihat untuk remedial berikutnya; varian lab (VR-B) membatasi dampaknya |
+
+Test **terlihat** selalu menampilkan input, output diharapkan, dan output
+pelajar. **CU-6-Q13:** pilih HF-A, HF-B, atau HF-C. Rekomendasi: **HF-A**
+(selaras FB-A untuk teori dan D-34: tidak mengklaim perlindungan, tetapi
+tidak membuang nilai remedial).
 
