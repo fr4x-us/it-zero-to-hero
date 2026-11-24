@@ -1,0 +1,77 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s19
+competency: comp-w02-perm-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s19-a
+  variant_id: mod-w02.theory.s19.vA
+  item_version: '1.0'
+  stem: Tabel izin berkas `anggaran-kelas.xlsx` milik akun `bendahara` (model W2). Pernyataan mana yang
+    benar?
+  stimulus_table:
+  - - Akun
+    - Baca
+    - Tulis
+  - - bendahara (pemilik)
+    - Ya
+    - Ya
+  - - ketua
+    - Ya
+    - Tidak
+  - - anggota
+    - Tidak
+    - Tidak
+  options:
+  - id: a
+    text: '`ketua` dapat mengubah angka anggaran'
+  - id: b
+    text: '`anggota` dapat membuka berkas untuk melihat isinya'
+  - id: c
+    text: '`ketua` dapat melihat isi berkas tetapi tidak dapat mengubahnya'
+  - id: d
+    text: '`bendahara` hanya dapat membaca berkas'
+  key: c
+  distractor_rationale:
+    a: ketua tidak punya izin tulis
+    b: anggota tidak punya izin baca
+    d: bendahara punya izin baca dan tulis
+  explanation: 'ketua punya izin baca saja: dapat melihat, tidak dapat mengubah.'
+- item_id: item-w02-t-s19-b
+  variant_id: mod-w02.theory.s19.vB
+  item_version: '1.0'
+  stem: Tabel izin berkas `daftar-hadir.txt` milik akun `sekretaris` (model W2). Pernyataan mana yang
+    benar?
+  stimulus_table:
+  - - Akun
+    - Baca
+    - Tulis
+  - - sekretaris (pemilik)
+    - Ya
+    - Ya
+  - - wali
+    - Ya
+    - Ya
+  - - tamu
+    - Ya
+    - Tidak
+  options:
+  - id: a
+    text: '`tamu` dapat menghapus berkas'
+  - id: b
+    text: '`tamu` tidak dapat membuka berkas'
+  - id: c
+    text: Hanya pemilik yang dapat mengubah berkas
+  - id: d
+    text: '`wali` dapat menambahkan nama ke daftar dan menyimpannya'
+  key: d
+  distractor_rationale:
+    a: 'Model W2: menghapus butuh izin tulis; tamu tidak punya (di sistem nyata penghapusan juga bergantung
+      pada izin folder)'
+    b: tamu punya izin baca
+    c: wali juga punya izin tulis
+  explanation: wali punya izin tulis sehingga dapat mengubah dan menyimpan berkas.

@@ -1,0 +1,75 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s07
+competency: comp-w04-threat-01
+format: TF-4
+difficulty: D3
+max_points: 4
+estimated_seconds: 150
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s07-a
+  variant_id: mod-w04.theory.s07.vA
+  item_version: '1.0'
+  stem: 'Pilih kategori **utama** dengan aturan berurutan Pelajaran 1 §2 (pakai aturan pertama yang cocok):
+    (1) mengunci + tebusan → ransomware; (2) menyamar sebagai program berguna → trojan; (3) memata-matai
+    tanpa disebut menyamar → spyware; (4) pesan/situs penyamar yang memancing data → phishing. Klasifikasikan
+    ketiga kejadian. Pilihan mana yang **seluruhnya** benar?'
+  stimulus_table:
+  - - Kode
+    - Kejadian
+  - - E1
+    - Aplikasi "pemutar musik gratis" dari situs tak resmi ternyata diam-diam mengirim daftar kontak
+  - - E2
+    - Email "hadiah" memintamu masuk lewat tautan ke situs tiruan
+  - - E3
+    - Berkas dienkripsi dan muncul pesan meminta tebusan
+  options:
+  - id: a
+    text: E1 phishing · E2 trojan · E3 ransomware
+  - id: b
+    text: E1 ransomware · E2 phishing · E3 spyware
+  - id: c
+    text: E1 trojan · E2 phishing · E3 ransomware
+  - id: d
+    text: E1 trojan · E2 ransomware · E3 phishing
+  key: c
+  distractor_rationale:
+    a: E1 dan E2 tertukar
+    b: E1 tidak mengunci berkas; E3 mengunci berkas
+    d: E2 dan E3 tertukar
+  explanation: E1 program tampak berguna yang jahat (trojan); E2 penyamaran untuk memancing login (phishing);
+    E3 tebusan (ransomware).
+- item_id: item-w04-t-s07-b
+  variant_id: mod-w04.theory.s07.vB
+  item_version: '1.0'
+  stem: 'Pilih kategori **utama** dengan aturan berurutan Pelajaran 1 §2 (pakai aturan pertama yang cocok):
+    (1) mengunci + tebusan → ransomware; (2) menyamar sebagai program berguna → trojan; (3) memata-matai
+    tanpa disebut menyamar → spyware; (4) pesan/situs penyamar yang memancing data → phishing. Klasifikasikan
+    ketiga kejadian. Pilihan mana yang **seluruhnya** benar?'
+  stimulus_table:
+  - - Kode
+    - Kejadian
+  - - E1
+    - SMS "kurir" memintamu membuka tautan dan memasukkan data kartu
+  - - E2
+    - Program tersembunyi yang tidak pernah sengaja kamu pasang merekam ketikanmu dan mengirimnya ke server
+      asing
+  - - E3
+    - Game bajakan yang kamu pasang ternyata juga memasang program jahat tersembunyi
+  options:
+  - id: a
+    text: E1 phishing · E2 spyware · E3 trojan
+  - id: b
+    text: E1 spyware · E2 phishing · E3 trojan
+  - id: c
+    text: E1 phishing · E2 ransomware · E3 trojan
+  - id: d
+    text: E1 trojan · E2 spyware · E3 phishing
+  key: a
+  distractor_rationale:
+    b: E1 dan E2 tertukar
+    c: E2 tidak mengunci berkas
+    d: E1 dan E3 tertukar
+  explanation: E1 penyamaran memancing data (phishing); E2 memata-matai ketikan (spyware); E3 tampak berguna
+    tetapi membawa program jahat (trojan).

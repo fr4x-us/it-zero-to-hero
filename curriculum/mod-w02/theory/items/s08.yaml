@@ -1,0 +1,30 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s08
+competency: comp-w02-fs-01
+format: TF-3
+difficulty: D1
+max_points: 2
+estimated_seconds: 60
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s08-a
+  variant_id: mod-w02.theory.s08.vA
+  item_version: '1.0'
+  stem: Tulis **ekstensi** berkas `data.siswa.2027.csv`.
+  accepted_answers:
+  - csv
+  - .csv
+  normalization: Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    salah satu accepted_answers (dengan atau tanpa titik di depan). Selain itu ditolak
+  explanation: 'Ekstensi dihitung dari titik terakhir: csv.'
+- item_id: item-w02-t-s08-b
+  variant_id: mod-w02.theory.s08.vB
+  item_version: '1.0'
+  stem: Tulis **ekstensi** berkas `tugas.akhir.final.docx`.
+  accepted_answers:
+  - docx
+  - .docx
+  normalization: Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    salah satu accepted_answers (dengan atau tanpa titik di depan). Selain itu ditolak
+  explanation: 'Ekstensi dihitung dari titik terakhir: docx.'

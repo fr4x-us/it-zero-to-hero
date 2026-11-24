@@ -1,0 +1,65 @@
+# W4 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.concept.s05
+competency: comp-w04-protect-01
+required_concepts:
+- 3 salinan, 2 media, 1 di luar lokasi
+- perangkat sama tidak dihitung
+- perlindungan tidak menjamin
+format: CE-S2
+max_points: 2
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w04-c-s05-a
+  variant_id: mod-w04.concept.s05.vA
+  item_version: '1.0'
+  stem: Pilih **semua** alasan yang benar mengapa salinan di folder lain pada laptop yang sama **tidak**
+    dihitung sebagai cadangan (model W4).
+  options:
+  - id: a
+    text: Bila laptop rusak atau hilang, data asli dan salinannya hilang bersama
+  - id: b
+    text: Folder lain membuat laptop lebih lambat
+  - id: c
+    text: Aturan 3-2-1 meminta salinan tersebar di jenis media berbeda dan di luar lokasi
+  - id: d
+    text: Salinan di folder lain otomatis terhapus
+  key:
+  - a
+  - c
+  distractor_rationale:
+    b: Tidak berkaitan
+    d: Salinan tidak terhapus otomatis
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Satu pernyataan benar adalah risikonya (hilang bersama), satu lagi aturannya (tersebar).
+- item_id: item-w04-c-s05-b
+  variant_id: mod-w04.concept.s05.vB
+  item_version: '1.0'
+  stem: Pilih **semua** alasan yang benar mengapa cadangan tetap diperlukan walaupun perangkat sudah diperbarui
+    dan memakai antimalware.
+  options:
+  - id: a
+    text: Pembaruan dan antimalware membuat perangkat kebal
+  - id: b
+    text: Perlindungan mengurangi risiko tetapi tidak menjamin bebas malware
+  - id: c
+    text: Cadangan memungkinkan pemulihan bila berkas terkunci atau perangkat rusak
+  - id: d
+    text: Cadangan membuat internet lebih cepat
+  key:
+  - b
+  - c
+  distractor_rationale:
+    a: Tidak ada perlindungan yang menjamin
+    d: Tidak berkaitan
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Satu pernyataan benar adalah batas perlindungan, satu lagi fungsi cadangan.

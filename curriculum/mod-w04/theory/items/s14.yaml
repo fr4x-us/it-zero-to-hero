@@ -1,0 +1,50 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s14
+competency: comp-w04-phish-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s14-a
+  variant_id: mod-w04.theory.s14.vA
+  item_version: '1.0'
+  stem: Model W4. Situs resmi perpustakaan kota adalah `perpustakaan.example`. Tautan mana yang **benar-benar**
+    menuju domain resmi?
+  options:
+  - id: a
+    text: '`https://perpustakaan.example.masuk-cepat.test/akun`'
+  - id: b
+    text: '`https://perpustakaan-example.test/akun`'
+  - id: c
+    text: '`https://akun.perpustakaan.example/masuk`'
+  - id: d
+    text: '`http://perpustakaan.exarnple/akun`'
+  key: c
+  distractor_rationale:
+    a: Domain terdaftar masuk-cepat.test
+    b: 'Tanda hubung: domain lain'
+    d: '"exarnple" (r-n) meniru "example"'
+  explanation: akun.perpustakaan.example memiliki domain terdaftar perpustakaan.example.
+- item_id: item-w04-t-s14-b
+  variant_id: mod-w04.theory.s14.vB
+  item_version: '1.0'
+  stem: Model W4. Situs resmi sekolah adalah `sekolah.example`. Tautan mana yang **benar-benar** menuju
+    domain resmi?
+  options:
+  - id: a
+    text: '`https://sekolah.example.login.test/nilai`'
+  - id: b
+    text: '`https://sekolah-example.test/nilai`'
+  - id: c
+    text: '`https://sekolahh.example/nilai`'
+  - id: d
+    text: '`https://www.sekolah.example/nilai`'
+  key: d
+  distractor_rationale:
+    a: Domain terdaftar login.test
+    b: 'Tanda hubung: domain lain'
+    c: 'Huruf tambahan: domain tiruan'
+  explanation: www.sekolah.example memiliki domain terdaftar sekolah.example.

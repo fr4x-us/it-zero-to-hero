@@ -1,0 +1,49 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s01
+competency: comp-w02-os-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s01-a
+  variant_id: mod-w02.theory.s01.vA
+  item_version: '1.0'
+  stem: Manakah yang merupakan **sistem operasi**?
+  options:
+  - id: a
+    text: Linux
+  - id: b
+    text: Aplikasi pengolah kata
+  - id: c
+    text: Aplikasi kalkulator bawaan
+  - id: d
+    text: Pemutar musik
+  key: a
+  distractor_rationale:
+    b: Pengolah kata adalah aplikasi
+    c: Aplikasi bawaan pabrik tetap aplikasi
+    d: Pemutar musik adalah aplikasi
+  explanation: Linux adalah sistem operasi; ketiga pilihan lain adalah aplikasi yang berjalan di atas
+    sistem operasi.
+- item_id: item-w02-t-s01-b
+  variant_id: mod-w02.theory.s01.vB
+  item_version: '1.0'
+  stem: Manakah yang merupakan **sistem operasi**?
+  options:
+  - id: a
+    text: Aplikasi peta
+  - id: b
+    text: Aplikasi kamera bawaan
+  - id: c
+    text: iOS
+  - id: d
+    text: Game teka-teki
+  key: c
+  distractor_rationale:
+    a: Aplikasi peta adalah aplikasi
+    b: Aplikasi bawaan pabrik tetap aplikasi
+    d: Game adalah aplikasi
+  explanation: iOS adalah sistem operasi ponsel; ketiga pilihan lain adalah aplikasi.

@@ -1,0 +1,36 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s19
+competency: comp-w03-rate-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s19-a
+  variant_id: mod-w03.theory.s19.vA
+  item_version: '1.0'
+  stem: Model ideal W3 (kecepatan tetap, tanpa tambahan informasi protokol). Berkas **400 MB** diunduh
+    pada **20 Mbps**. Berapa **detik**?
+  accepted_answers:
+  - '160'
+  - 160 detik
+  - 160detik
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
+    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
+  explanation: 400 × 8 = 3.200 Mb; 3.200 ÷ 20 = 160 detik.
+- item_id: item-w03-t-s19-b
+  variant_id: mod-w03.theory.s19.vB
+  item_version: '1.0'
+  stem: Model ideal W3 (kecepatan tetap, tanpa tambahan informasi protokol). Berkas **420 MB** diunduh
+    pada **30 Mbps**. Berapa **detik**?
+  accepted_answers:
+  - '112'
+  - 112 detik
+  - 112detik
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
+    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
+  explanation: 420 × 8 = 3.360 Mb; 3.360 ÷ 30 = 112 detik.

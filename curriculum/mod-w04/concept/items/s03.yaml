@@ -1,0 +1,87 @@
+# W4 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.concept.s03
+competency: comp-w04-auth-01
+required_concepts:
+- faktor berbeda jenis
+- OTP tidak dibagikan
+- kombinasi ×10 per digit
+- sandi unik
+format: CE-S5
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w04-c-s03-a
+  variant_id: mod-w04.concept.s03.vA
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan berikut. Satu baris salah. Temukan barisnya dan pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: MFA memakai dua faktor atau lebih dari jenis berbeda.
+  - id: '2'
+    text: OTP tidak boleh dibagikan kepada siapa pun.
+  - id: '3'
+    text: PIN 3 digit (angka 0–9, boleh diawali 0 dan berulang) memiliki 300 kombinasi.
+  - id: '4'
+    text: Kata sandi sebaiknya unik untuk setiap akun penting.
+  - id: '5'
+    text: Sidik jari termasuk faktor "yang melekat padamu".
+  error_line: '3'
+  correction_options:
+  - id: a
+    text: 1.000 kombinasi
+  - id: b
+    text: 30 kombinasi
+  - id: c
+    text: 999 kombinasi
+  - id: d
+    text: 3.000 kombinasi
+  correction_key: a
+  distractor_rationale:
+    b: 10 × 3, salah cara
+    c: Lupa menghitung 000
+    d: Bukan 10³
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: 'Setiap digit 10 kemungkinan: 10 × 10 × 10 = 1.000.'
+- item_id: item-w04-c-s03-b
+  variant_id: mod-w04.concept.s03.vB
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan berikut. Satu baris salah. Temukan barisnya dan pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: Setiap tambahan satu digit PIN membuat kombinasi 10 kali lipat.
+  - id: '2'
+    text: Kata sandi + PIN adalah MFA karena ada dua bukti.
+  - id: '3'
+    text: Kode dari aplikasi autentikator dipakai sebagai bukti faktor "yang dimiliki" (autentikator di
+      ponselmu), tetapi kode itu dapat dicuri atau diteruskan.
+  - id: '4'
+    text: Pengelola kata sandi membantu membuat sandi unik.
+  - id: '5'
+    text: Petugas resmi tidak pernah meminta OTP.
+  error_line: '2'
+  correction_options:
+  - id: a
+    text: Kata sandi + PIN adalah MFA karena PIN lebih pendek
+  - id: b
+    text: Kata sandi + PIN bukan MFA karena keduanya faktor "yang diketahui"
+  - id: c
+    text: Kata sandi + PIN adalah MFA bila diketik cepat
+  - id: d
+    text: Kata sandi + PIN bukan MFA karena PIN bukan faktor autentikasi
+  correction_key: b
+  distractor_rationale:
+    a: Panjang tidak menentukan jenis faktor
+    c: Kecepatan tidak berkaitan
+    d: PIN adalah faktor "yang diketahui"
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: MFA butuh faktor dari jenis berbeda; kata sandi dan PIN sama-sama "yang diketahui".

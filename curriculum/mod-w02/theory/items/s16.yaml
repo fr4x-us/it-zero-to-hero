@@ -1,0 +1,64 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s16
+competency: comp-w02-ops-01
+format: TF-5
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s16-a
+  variant_id: mod-w02.theory.s16.vA
+  item_version: '1.0'
+  stem: Kamu ingin membuat salinan `berita-1.pdf` di folder baru `/sekolah/kliping` dengan nama `kliping-01.pdf`,
+    lalu memeriksanya. Urutkan langkah agar setiap langkah dapat dikerjakan (model operasi W2).
+  items:
+  - id: A
+    text: Ganti nama `/sekolah/kliping/berita-1.pdf` menjadi `kliping-01.pdf`
+  - id: B
+    text: Buka `/sekolah/kliping/kliping-01.pdf` untuk memeriksa isinya
+  - id: C
+    text: Buat folder `/sekolah/kliping`
+  - id: D
+    text: Salin `/sekolah/berita-1.pdf` ke `/sekolah/kliping`
+  display_order:
+  - A
+  - B
+  - C
+  - D
+  accepted_sequences:
+  - - C
+    - D
+    - A
+    - B
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Folder harus ada sebelum berkas disalin ke dalamnya; salinan harus ada sebelum diganti
+    nama; berkas dengan nama baru hanya dapat dibuka setelah diganti nama.
+- item_id: item-w02-t-s16-b
+  variant_id: mod-w02.theory.s16.vB
+  item_version: '1.0'
+  stem: Kamu ingin memindahkan `rekaman1.mp3` ke folder baru `/musik/akustik` dengan nama `gitar-1.mp3`,
+    lalu memeriksanya. Urutkan langkah agar setiap langkah dapat dikerjakan (model operasi W2).
+  items:
+  - id: A
+    text: Buka `/musik/akustik/gitar-1.mp3` untuk memeriksa isinya
+  - id: B
+    text: Pindahkan `/musik/rekaman1.mp3` ke `/musik/akustik`
+  - id: C
+    text: Ganti nama `/musik/akustik/rekaman1.mp3` menjadi `gitar-1.mp3`
+  - id: D
+    text: Buat folder `/musik/akustik`
+  display_order:
+  - A
+  - B
+  - C
+  - D
+  accepted_sequences:
+  - - D
+    - B
+    - C
+    - A
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Folder harus ada sebelum berkas dipindah ke dalamnya; berkas harus ada di akustik sebelum
+    diganti nama; berkas dengan nama baru hanya dapat dibuka setelah diganti nama.

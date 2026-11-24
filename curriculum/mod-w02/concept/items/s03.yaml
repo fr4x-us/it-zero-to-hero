@@ -1,0 +1,73 @@
+# W2 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.concept.s03
+competency: comp-w02-fs-01
+required_concepts:
+- ekstensi dari titik terakhir
+- ekstensi memilih aplikasi pembuka
+- isi tidak berubah saat ekstensi diganti
+format: CE-S2
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w02-c-s03-a
+  variant_id: mod-w02.concept.s03.vA
+  item_version: '1.0'
+  stem: Rudi mengganti nama `foto-kelas.jpg` menjadi `foto-kelas.txt`. Pilih **semua** pernyataan yang
+    benar.
+  options:
+  - id: a
+    text: Isi berkas tetap data gambar
+  - id: b
+    text: Sistem operasi kemungkinan memilih aplikasi teks untuk membukanya
+  - id: c
+    text: Berkas berubah menjadi teks yang dapat dibaca
+  - id: d
+    text: Mengembalikan nama ke `.jpg` membuat OS kembali mengaitkannya dengan aplikasi gambar (bila aplikasi
+      seperti itu terpasang)
+  - id: e
+    text: Ukuran berkas menjadi 0 byte
+  key:
+  - a
+  - b
+  - d
+  distractor_rationale:
+    c: Ekstensi tidak mengubah isi
+    e: Mengganti nama tidak mengubah ukuran
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: 'Ada tiga hal berbeda: isi berkas (tetap data gambar), ekstensi (label di nama), dan pengaitan
+    aplikasi oleh OS (yang dapat berbeda di tiap perangkat dan bergantung aplikasi yang terpasang).'
+- item_id: item-w02-c-s03-b
+  variant_id: mod-w02.concept.s03.vB
+  item_version: '1.0'
+  stem: Rina melihat berkas tampil sebagai `jadwal.pdf` karena sistem operasinya menyembunyikan ekstensi.
+    Nama lengkapnya `jadwal.pdf.exe`. Pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: Berkas itu pasti dokumen PDF karena namanya memuat `.pdf`
+  - id: b
+    text: Ekstensi berkas itu sebenarnya `exe`
+  - id: c
+    text: Ekstensi dihitung dari titik terakhir nama berkas
+  - id: d
+    text: Menyembunyikan ekstensi mengubah isi berkas
+  - id: e
+    text: Ekstensi `exe` menandai berkas yang dirancang dijalankan sebagai program (Windows)
+  key:
+  - b
+  - c
+  - e
+  distractor_rationale:
+    a: 'Titik terakhir menentukan ekstensi: exe'
+    d: Menyembunyikan hanya mengubah tampilan nama
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Ekstensi dihitung dari titik terakhir; .exe menandai program, walaupun tampilan nama menyembunyikannya.

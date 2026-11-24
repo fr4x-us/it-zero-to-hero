@@ -1,0 +1,48 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s15
+competency: comp-w04-protect-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s15-a
+  variant_id: mod-w04.theory.s15.vA
+  item_version: '1.0'
+  stem: Mengapa pembaruan (*update*) sistem operasi dan aplikasi penting untuk keamanan?
+  options:
+  - id: a
+    text: Menutup celah keamanan yang sudah diketahui
+  - id: b
+    text: Menambah kapasitas SSD
+  - id: c
+    text: Membuat kata sandi tidak diperlukan lagi
+  - id: d
+    text: Menjamin perangkat bebas dari semua malware
+  key: a
+  distractor_rationale:
+    b: Pembaruan tidak menambah kapasitas
+    c: Kata sandi tetap diperlukan
+    d: Pembaruan mengurangi risiko, tidak menjamin
+  explanation: Pembaruan menutup celah keamanan yang sudah diketahui.
+- item_id: item-w04-t-s15-b
+  variant_id: mod-w04.theory.s15.vB
+  item_version: '1.0'
+  stem: Kunci layar (PIN/sidik jari) pada ponsel **terutama** melindungi dari …
+  options:
+  - id: a
+    text: Kerusakan baterai
+  - id: b
+    text: Semua jenis phishing
+  - id: c
+    text: Kehilangan sinyal
+  - id: d
+    text: Orang lain memakai ponsel yang tertinggal atau dipinjam tanpa izin
+  key: d
+  distractor_rationale:
+    a: Tidak berkaitan
+    b: Phishing menipu pemilik yang membuka sendiri ponselnya
+    c: Tidak berkaitan
+  explanation: Kunci layar mencegah orang lain membuka perangkat tanpa izin.

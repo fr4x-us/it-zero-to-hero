@@ -1,0 +1,50 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s18
+competency: comp-w04-incident-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s18-a
+  variant_id: mod-w04.theory.s18.vA
+  item_version: '1.0'
+  stem: Kamu baru sadar memasukkan kata sandi email ke situs palsu. Langkah **pertama** yang paling tepat
+    adalah …
+  options:
+  - id: a
+    text: Segera mengganti kata sandi email itu dari perangkat yang aman
+  - id: b
+    text: Menunggu sampai ada tanda akun disalahgunakan
+  - id: c
+    text: Membalas email penipu untuk memarahinya
+  - id: d
+    text: Menghapus aplikasi email dari ponsel
+  key: a
+  distractor_rationale:
+    b: Menunda memberi waktu penyerang
+    c: Tidak mengamankan akun
+    d: Akun tetap dapat dibuka penyerang
+  explanation: Amankan akun lebih dulu dengan mengganti sandi.
+- item_id: item-w04-t-s18-b
+  variant_id: mod-w04.theory.s18.vB
+  item_version: '1.0'
+  stem: Kamu tidak sengaja memberikan kode OTP aplikasi dompet digital kepada penelepon. Langkah **pertama**
+    yang paling tepat adalah …
+  options:
+  - id: a
+    text: Menunggu apakah saldo berkurang
+  - id: b
+    text: Menelepon balik nomor penipu untuk meminta kode dikembalikan
+  - id: c
+    text: Menceritakan kejadian di media sosial
+  - id: d
+    text: Segera menghubungi penyedia dompet digital lewat kanal resmi untuk mengamankan akun
+  key: d
+  distractor_rationale:
+    a: Menunda memberi waktu penyerang
+    b: Berbicara lagi dengan penipu berbahaya
+    c: Tidak mengamankan akun
+  explanation: Amankan akun lebih dulu lewat kanal resmi penyedia.

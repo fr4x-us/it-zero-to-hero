@@ -1,0 +1,48 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s12
+competency: comp-w04-phish-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s12-a
+  variant_id: mod-w04.theory.s12.vA
+  item_version: '1.0'
+  stem: Di antara ciri pesan berikut, mana tanda phishing yang **paling kuat**?
+  options:
+  - id: a
+    text: Pesan memintamu mengirim kode OTP yang baru masuk
+  - id: b
+    text: Pesan ditulis dalam bahasa Indonesia
+  - id: c
+    text: Pesan dikirim pada siang hari
+  - id: d
+    text: Pesan menyebut nama depanmu
+  key: a
+  distractor_rationale:
+    b: Bahasa tidak menunjukkan penipuan
+    c: Waktu kirim tidak menunjukkan penipuan
+    d: Penipu pun dapat mengetahui namamu; tidak membuktikan aman atau tidak
+  explanation: Permintaan OTP adalah tanda phishing yang sangat kuat.
+- item_id: item-w04-t-s12-b
+  variant_id: mod-w04.theory.s12.vB
+  item_version: '1.0'
+  stem: Di antara ciri pesan berikut, mana tanda phishing yang **paling kuat**?
+  options:
+  - id: a
+    text: Pesan berisi jadwal kelas yang sudah kamu ketahui
+  - id: b
+    text: Pesan dikirim pada hari kerja
+  - id: c
+    text: Pesan berisi ucapan terima kasih tanpa tautan atau permintaan apa pun
+  - id: d
+    text: '"Akun diblokir dalam 1 jam! Klik tautan dan masukkan kata sandimu"'
+  key: d
+  distractor_rationale:
+    a: Informasi yang sudah diketahui tanpa permintaan
+    b: Waktu kirim tidak menunjukkan penipuan
+    c: Tidak ada permintaan atau tautan
+  explanation: Mendesak dan meminta kata sandi lewat tautan adalah tanda phishing.

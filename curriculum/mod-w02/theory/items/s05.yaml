@@ -1,0 +1,105 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s05
+competency: comp-w02-proc-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s05-a
+  variant_id: mod-w02.theory.s05.vA
+  item_version: '1.0'
+  stem: Tabel manajer tugas (angka fiktif). Editor video macet. Bila **hanya** proses editor video yang
+    diakhiri, pernyataan mana yang benar?
+  stimulus_table:
+  - - Nama proses
+    - PID
+    - CPU
+    - Memori
+    - Status
+  - - Peta
+    - '3104'
+    - 3%
+    - 260 MB
+    - Berjalan
+  - - Kamus
+    - '3120'
+    - 0%
+    - 45 MB
+    - Berjalan
+  - - Editor video
+    - '3157'
+    - 0%
+    - 2.100 MB
+    - Tidak menanggapi
+  - - Pesan
+    - '3189'
+    - 1%
+    - 180 MB
+    - Berjalan
+  options:
+  - id: a
+    text: Sekitar 2.100 MB RAM dikembalikan ke sistem operasi dan proses lain tetap berjalan
+  - id: b
+    text: Semua proses di tabel ikut berhenti
+  - id: c
+    text: Berkas program editor video terhapus dari SSD
+  - id: d
+    text: Pesan yang sudah terkirim di aplikasi Pesan hilang
+  key: a
+  distractor_rationale:
+    b: Mengakhiri satu proses tidak menghentikan proses lain
+    c: Program (berkas) tetap ada; hanya prosesnya yang berhenti
+    d: Proses Pesan tidak diakhiri
+  explanation: Proses PID 3157 berhenti; RAM-nya (2.100 MB) dikembalikan; proses lain tetap berjalan.
+- item_id: item-w02-t-s05-b
+  variant_id: mod-w02.theory.s05.vB
+  item_version: '1.0'
+  stem: Tabel manajer tugas (angka fiktif). Lembar kerja macet dan perubahan terakhir di dalamnya **belum
+    disimpan**; aplikasi ini tidak punya simpan otomatis atau pemulihan. Bila **hanya** proses lembar
+    kerja yang diakhiri, pernyataan mana yang benar?
+  stimulus_table:
+  - - Nama proses
+    - PID
+    - CPU
+    - Memori
+    - Status
+  - - Musik
+    - '4011'
+    - 2%
+    - 150 MB
+    - Berjalan
+  - - Lembar kerja
+    - '4032'
+    - 0%
+    - 900 MB
+    - Tidak menanggapi
+  - - Browser
+    - '4058'
+    - 4%
+    - 1.200 MB
+    - Berjalan
+  - - Kalender
+    - '4075'
+    - 0%
+    - 60 MB
+    - Berjalan
+  options:
+  - id: a
+    text: Browser ikut berhenti karena memakai RAM paling besar
+  - id: b
+    text: Berkas program lembar kerja terhapus dari SSD
+  - id: c
+    text: Jadwal yang sudah tersimpan di Kalender hilang
+  - id: d
+    text: Perubahan yang belum disimpan di lembar kerja hilang, sekitar 900 MB RAM dikembalikan, dan proses
+      lain tetap berjalan
+  key: d
+  distractor_rationale:
+    a: Proses lain tidak ikut berhenti
+    b: Program (berkas) tetap ada
+    c: Proses Kalender tidak diakhiri dan jadwalnya tersimpan
+  explanation: Yang belum disimpan hanya ada di RAM proses itu dan hilang; RAM 900 MB dikembalikan; proses
+    lain tetap berjalan.

@@ -1,0 +1,53 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s17
+competency: comp-w03-layer-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s17-a
+  variant_id: mod-w03.theory.s17.vA
+  item_version: '1.0'
+  stem: Lampu port kabel LAN di laptop **mati**, dan laptop tidak dapat berkomunikasi dengan apa pun,
+    termasuk printer di LAN yang sama. Lapisan TCP/IP mana yang **paling mungkin** bermasalah lebih dulu?
+  options:
+  - id: a
+    text: Aplikasi
+  - id: b
+    text: Transport
+  - id: c
+    text: Internet
+  - id: d
+    text: Akses jaringan
+  key: d
+  distractor_rationale:
+    a: Masalahnya terjadi sebelum aplikasi terlibat
+    b: Port/TCP tidak berguna tanpa sambungan fisik
+    c: Alamat IP tidak berguna tanpa sambungan fisik
+  explanation: 'Lampu port mati dan tidak ada komunikasi di LAN menunjuk ke sambungan fisik: lapisan akses
+    jaringan.'
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w03-t-s17-b
+  variant_id: mod-w03.theory.s17.vB
+  item_version: '1.0'
+  stem: Laptop dapat mencetak ke printer di LAN dan dapat membuka situs. Namun satu aplikasi chat menolak
+    masuk karena alamat server di **pengaturan aplikasinya** salah ketik. Lapisan TCP/IP mana yang bermasalah?
+  options:
+  - id: a
+    text: Aplikasi
+  - id: b
+    text: Transport
+  - id: c
+    text: Internet
+  - id: d
+    text: Akses jaringan
+  key: a
+  distractor_rationale:
+    b: Lapisan transport bekerja (situs terbuka)
+    c: Pengalamatan bekerja (situs terbuka)
+    d: Sambungan fisik bekerja (dapat mencetak)
+  explanation: 'Lapisan bawah terbukti berjalan; kesalahan ada di pengaturan aplikasi: lapisan aplikasi.'
+  option_order: urutan alami (kategori/baris tabel), tetap

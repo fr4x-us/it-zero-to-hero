@@ -1,0 +1,51 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s14
+competency: comp-w03-proto-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s14-a
+  variant_id: mod-w03.theory.s14.vA
+  item_version: '1.0'
+  stem: Kamu membuka `https://bank-latihan.example`. Pernyataan paling tepat tentang port bawaan dan perlindungannya
+    adalah …
+  options:
+  - id: a
+    text: Port 80; data tidak dienkripsi
+  - id: b
+    text: Port 80; data dienkripsi selama perjalanan
+  - id: c
+    text: Port 443; situs pasti jujur dan aman
+  - id: d
+    text: Port 443; data dienkripsi selama perjalanan
+  key: d
+  distractor_rationale:
+    a: https memakai port 443 dan terenkripsi
+    b: Port 80 adalah HTTP tanpa enkripsi
+    c: HTTPS tidak menjamin situs jujur
+  explanation: HTTPS memakai port 443 dan mengenkripsi data selama perjalanan; tidak menjamin situsnya
+    jujur.
+- item_id: item-w03-t-s14-b
+  variant_id: mod-w03.theory.s14.vB
+  item_version: '1.0'
+  stem: Kamu membuka `http://jadwal-bus.example` (tanpa "s"). Pernyataan paling tepat tentang port bawaan
+    dan perlindungannya adalah …
+  options:
+  - id: a
+    text: Port 80; data tidak dienkripsi
+  - id: b
+    text: Port 80; data dienkripsi selama perjalanan
+  - id: c
+    text: Port 443; situs pasti jujur dan aman
+  - id: d
+    text: Port 443; data dienkripsi selama perjalanan
+  key: a
+  distractor_rationale:
+    b: HTTP tidak mengenkripsi
+    c: Itu HTTPS, dan HTTPS pun tidak menjamin situs jujur
+    d: Itu HTTPS, bukan HTTP
+  explanation: HTTP memakai port 80 dan tidak mengenkripsi data.

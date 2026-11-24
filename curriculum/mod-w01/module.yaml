@@ -9,7 +9,7 @@ content_version: "1.0"
 status:
   documentation: PRODUCED          # konten lengkap ditulis
   reviewed: CLAUDE_SELF_REVIEW     # review dokumentasi oleh penyusun; lihat review.md
-  owner_accepted: NO               # menunggu review ChatGPT dan otorisasi owner
+  owner_accepted: YES              # W01-ACC (2026-11-24), penerimaan terbatas; lihat review.md §11
   runtime_verified: NOT_APPLICABLE # W1 tidak memakai runtime Python; aplikasi belum ada
   learner_tested: NO               # estimasi durasi belum diuji dengan pelajar
 audience: "Pemula total tanpa pengalaman IT atau pemrograman"

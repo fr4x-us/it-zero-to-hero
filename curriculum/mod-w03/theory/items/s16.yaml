@@ -1,0 +1,82 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s16
+competency: comp-w03-layer-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s16-a
+  variant_id: mod-w03.theory.s16.vA
+  item_version: '1.0'
+  stem: Seorang siswa memetakan protokol/perangkat ke lapisan TCP/IP. Baris mana yang **salah**?
+  stimulus_table:
+  - - Baris
+    - Protokol/perangkat
+    - Lapisan
+  - - '1'
+    - HTTP
+    - Aplikasi
+  - - '2'
+    - Switch
+    - Akses jaringan
+  - - '3'
+    - DNS
+    - Transport
+  - - '4'
+    - Router
+    - Internet
+  options:
+  - id: a
+    text: Baris 1
+  - id: b
+    text: Baris 2
+  - id: c
+    text: Baris 3
+  - id: d
+    text: Baris 4
+  key: c
+  distractor_rationale:
+    a: HTTP memang lapisan aplikasi
+    b: Switch memang akses jaringan
+    d: Router memang lapisan internet
+  explanation: DNS adalah protokol lapisan aplikasi, bukan transport.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w03-t-s16-b
+  variant_id: mod-w03.theory.s16.vB
+  item_version: '1.0'
+  stem: Seorang siswa memetakan protokol/perangkat ke lapisan TCP/IP. Baris mana yang **salah**?
+  stimulus_table:
+  - - Baris
+    - Protokol/perangkat
+    - Lapisan
+  - - '1'
+    - UDP
+    - Transport
+  - - '2'
+    - IP
+    - Internet
+  - - '3'
+    - DHCP
+    - Aplikasi
+  - - '4'
+    - Access point
+    - Internet
+  options:
+  - id: a
+    text: Baris 1
+  - id: b
+    text: Baris 2
+  - id: c
+    text: Baris 3
+  - id: d
+    text: Baris 4
+  key: d
+  distractor_rationale:
+    a: UDP memang transport
+    b: IP memang lapisan internet
+    c: DHCP memang aplikasi
+  explanation: Access point bekerja di lapisan akses jaringan (Wi-Fi), bukan internet.
+  option_order: urutan alami (kategori/baris tabel), tetap

@@ -1,0 +1,159 @@
+# W3 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w03.lab.act-02
+name: Perhitungan jaringan /24
+competencies:
+- comp-w03-subnet-01
+max_points: 40
+estimated_minutes: 35
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w03.lab (D-28 XI-2)
+normalization: 'Alamat: buang spasi tepi; empat oktet desimal 0–255 tanpa nol di depan; cocok persis.
+  Ditolak: nol di depan, spasi di dalam, oktet ≠ 4, akhiran "/24" (jawaban lab meminta alamat saja; berbeda
+  dengan proyek W3 yang membaca "/24" tetapi memotong poin format, lihat rubrik proyek field_rules.ip_readable).
+  c05: bilangan bulat tanpa nol di depan, tanpa tanda/desimal/pemisah ribuan, boleh diikuti "alamat" dengan/tanpa
+  satu spasi (huruf besar/kecil bebas). c06–c08: "Ya" atau "Tidak" (huruf besar/kecil bebas)'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu; pemeriksaan lain tetap dinilai
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2)
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W3 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python atau jaringan nyata; pemeriksaan deterministik atas jawaban terstruktur
+network_assumptions: 'Model W3: IPv4 desimal; privat = RFC 1918 (10/8, 172.16–172.31, 192.168/16). Kategori
+  publik di lab ini = valid dan bukan privat UNTUK FIXTURE INI SAJA: semua alamat fixture dipilih di luar
+  rentang khusus lain (loopback 127/8, link-local 169.254/16, shared 100.64/10, multicast 224–239, dokumentasi
+  192.0.2/24, 198.51.100/24, 203.0.113/24, 0/8, 240/4); di luar fixture, alamat non-privat belum tentu
+  dapat dirutekan publik. Mask hanya 255.255.255.0 (/24); kecepatan ideal desimal'
+variants:
+- variant_id: mod-w03.lab.act-02.vA
+  fixture:
+    host: 192.168.20.57
+    mask: 255.255.255.0
+    dhcp_pool:
+    - 192.168.20.60
+    - 192.168.20.139
+  visible_example:
+    note: Contoh terlihat (0 poin) = contoh terbimbing Pelajaran 2 §5 (10.20.30.40)
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w03.lab.act-02.vA.c01
+    name: Alamat jaringan
+    accepted_answers:
+    - 192.168.20.0
+    points: 5
+  - check_id: mod-w03.lab.act-02.vA.c02
+    name: Alamat broadcast
+    accepted_answers:
+    - 192.168.20.255
+    points: 5
+  - check_id: mod-w03.lab.act-02.vA.c03
+    name: Host pertama
+    accepted_answers:
+    - 192.168.20.1
+    points: 5
+  - check_id: mod-w03.lab.act-02.vA.c04
+    name: Host terakhir
+    accepted_answers:
+    - 192.168.20.254
+    points: 5
+  - check_id: mod-w03.lab.act-02.vA.c05
+    name: Alamat host di luar rentang DHCP
+    accepted_answers:
+    - '174'
+    - 174 alamat
+    - 174alamat
+    points: 5
+    feedback: Rentang DHCP .60–.139 = 139 − 60 + 1 = 80 alamat; 254 − 80 = 174
+  - check_id: mod-w03.lab.act-02.vA.c06
+    name: 'Dapat menjadi alamat perangkat lain di jaringan yang sama: 192.168.20.200'
+    expected: Ya
+    points: 5
+    feedback: Tiga oktet pertama sama; host sah
+  - check_id: mod-w03.lab.act-02.vA.c07
+    name: 'Dapat menjadi alamat perangkat lain di jaringan yang sama: 192.168.21.57'
+    expected: Tidak
+    points: 5
+    feedback: Tiga oktet pertama berbeda (20 vs 21)
+  - check_id: mod-w03.lab.act-02.vA.c08
+    name: 'Dapat menjadi alamat perangkat lain di jaringan yang sama: 192.168.20.256'
+    expected: Tidak
+    points: 5
+    feedback: 'Tidak valid: 256 > 255'
+- variant_id: mod-w03.lab.act-02.vB
+  fixture:
+    host: 10.4.7.130
+    mask: 255.255.255.0
+    dhcp_pool:
+    - 10.4.7.10
+    - 10.4.7.59
+  visible_example:
+    note: Contoh terlihat (0 poin) = contoh terbimbing Pelajaran 2 §5 (10.20.30.40)
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w03.lab.act-02.vB.c01
+    name: Alamat jaringan
+    accepted_answers:
+    - 10.4.7.0
+    points: 5
+  - check_id: mod-w03.lab.act-02.vB.c02
+    name: Alamat broadcast
+    accepted_answers:
+    - 10.4.7.255
+    points: 5
+  - check_id: mod-w03.lab.act-02.vB.c03
+    name: Host pertama
+    accepted_answers:
+    - 10.4.7.1
+    points: 5
+  - check_id: mod-w03.lab.act-02.vB.c04
+    name: Host terakhir
+    accepted_answers:
+    - 10.4.7.254
+    points: 5
+  - check_id: mod-w03.lab.act-02.vB.c05
+    name: Alamat host di luar rentang DHCP
+    accepted_answers:
+    - '204'
+    - 204 alamat
+    - 204alamat
+    points: 5
+    feedback: Rentang DHCP .10–.59 = 59 − 10 + 1 = 50 alamat; 254 − 50 = 204
+  - check_id: mod-w03.lab.act-02.vB.c06
+    name: 'Dapat menjadi alamat perangkat lain di jaringan yang sama: 10.4.7.300'
+    expected: Tidak
+    points: 5
+    feedback: 'Tidak valid: 300 > 255'
+  - check_id: mod-w03.lab.act-02.vB.c07
+    name: 'Dapat menjadi alamat perangkat lain di jaringan yang sama: 10.4.8.130'
+    expected: Tidak
+    points: 5
+    feedback: Tiga oktet pertama berbeda (7 vs 8)
+  - check_id: mod-w03.lab.act-02.vB.c08
+    name: 'Dapat menjadi alamat perangkat lain di jaringan yang sama: 10.4.7.9'
+    expected: Ya
+    points: 5
+    feedback: Tiga oktet pertama sama; host sah
+normalization_examples:
+  c05 (kunci 174, vA):
+    diterima:
+    - '174'
+    - ' 174 '
+    - 174 alamat
+    - 174alamat
+    - 174 Alamat
+    ditolak (0 poin):
+    - '0174'
+    - '+174'
+    - 174,0
+    - 174 host
+    - seratus tujuh puluh empat
+  c01 (kunci 192.168.20.0, vA):
+    diterima:
+    - 192.168.20.0
+    - ' 192.168.20.0 '
+    ditolak (0 poin):
+    - 192.168.020.0
+    - 192.168.20.0/24
+    - 192.168.20
+    - 192.168.20. 0

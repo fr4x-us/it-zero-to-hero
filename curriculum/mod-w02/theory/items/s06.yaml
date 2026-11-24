@@ -1,0 +1,54 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s06
+competency: comp-w02-proc-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s06-a
+  variant_id: mod-w02.theory.s06.vA
+  item_version: '1.0'
+  stem: 'Model sederhana W2: anggap satu core menjalankan satu proses pada satu waktu (tanpa *hyper-threading*).
+    Laptop dengan CPU **1 core** memutar musik sambil kamu mengetik pesan. Keduanya terlihat berjalan
+    bersamaan tanpa terputus. Penjelasan paling tepat adalah …'
+  options:
+  - id: a
+    text: Sistem operasi bergiliran memberi waktu CPU yang sangat singkat ke setiap proses
+  - id: b
+    text: Pemutar musik berjalan di SSD sehingga tidak memakai CPU
+  - id: c
+    text: Satu core menjalankan instruksi dua proses pada saat yang persis sama
+  - id: d
+    text: Mengetik pesan tidak memerlukan CPU sama sekali
+  key: a
+  distractor_rationale:
+    b: Proses berjalan di RAM dan memakai CPU, bukan di SSD
+    c: Satu core bergiliran; tidak benar-benar bersamaan
+    d: Setiap aplikasi yang berjalan memakai CPU
+  explanation: Pada satu core, OS membagi waktu CPU menjadi potongan singkat secara bergiliran sehingga
+    terlihat bersamaan.
+- item_id: item-w02-t-s06-b
+  variant_id: mod-w02.theory.s06.vB
+  item_version: '1.0'
+  stem: 'Model sederhana W2: anggap satu core menjalankan satu proses pada satu waktu (tanpa *hyper-threading*).
+    Komputer dengan CPU **4 core** menjalankan 4 proses konversi video yang masing-masing dapat memakai
+    satu core. Pernyataan paling tepat adalah …'
+  options:
+  - id: a
+    text: Keempat proses harus antre sehingga hanya satu yang berjalan pada satu waktu
+  - id: b
+    text: Proses konversi berjalan di RAM tanpa memakai CPU
+  - id: c
+    text: Sistem operasi menggabungkan keempat proses menjadi satu program
+  - id: d
+    text: Keempat proses dapat benar-benar berjalan pada saat yang sama, masing-masing di satu core
+  key: d
+  distractor_rationale:
+    a: Dengan 4 core, empat proses dapat berjalan bersamaan
+    b: Proses memakai CPU untuk menjalankan instruksi
+    c: Proses tetap terpisah, masing-masing dengan PID
+  explanation: Pada CPU banyak core, beberapa proses dapat benar-benar berjalan bersamaan, satu di setiap
+    core.

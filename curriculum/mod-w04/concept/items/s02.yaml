@@ -1,0 +1,70 @@
+# W4 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.concept.s02
+competency: comp-w04-threat-01
+required_concepts:
+- phishing sebagai rekayasa sosial
+- trojan menyamar
+- tanda bukan bukti pasti
+format: CE-S2
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w04-c-s02-a
+  variant_id: mod-w04.concept.s02.vA
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang ancaman.
+  options:
+  - id: a
+    text: Phishing adalah salah satu bentuk rekayasa sosial
+  - id: b
+    text: Pesan phishing selalu ditulis dengan bahasa yang buruk
+  - id: c
+    text: Trojan sulit dikenali karena tampak seperti program berguna
+  - id: d
+    text: Ponsel tidak dapat terkena malware
+  - id: e
+    text: Perangkat lambat tidak selalu berarti terkena malware
+  key:
+  - a
+  - c
+  - e
+  distractor_rationale:
+    b: Banyak phishing ditulis rapi
+    d: Ponsel juga dapat terkena malware
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Phishing memanipulasi orang; trojan menyamar; tanda adalah alasan curiga, bukan bukti pasti.
+- item_id: item-w04-c-s02-b
+  variant_id: mod-w04.concept.s02.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang ancaman.
+  options:
+  - id: a
+    text: Ransomware hanya menyerang perusahaan besar
+  - id: b
+    text: Rekayasa sosial memanipulasi orang agar menyerahkan akses atau informasi
+  - id: c
+    text: Aplikasi "gratis" dari sumber tak resmi dapat berupa trojan
+  - id: d
+    text: Spyware selalu menampilkan pemberitahuan saat bekerja
+  - id: e
+    text: Satu tanda phishing sudah cukup alasan untuk berhati-hati
+  key:
+  - b
+  - c
+  - e
+  distractor_rationale:
+    a: Serangan sering dikirim massal ke siapa saja
+    d: Spyware bekerja diam-diam
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Rekayasa sosial menyasar orang; trojan menyamar sebagai aplikasi berguna; satu tanda cukup
+    untuk waspada.

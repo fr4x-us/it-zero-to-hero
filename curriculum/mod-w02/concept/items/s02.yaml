@@ -1,0 +1,64 @@
+# W2 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.concept.s02
+competency: comp-w02-proc-01
+required_concepts:
+- proses memakai RAM sendiri
+- mengakhiri proses mengembalikan RAM
+- yang belum disimpan hilang
+- proses lain tetap berjalan
+format: CE-S1
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w02-c-s02-a
+  variant_id: mod-w02.concept.s02.vA
+  item_version: '1.0'
+  stem: Pengolah kata ini **tidak** punya simpan otomatis atau fitur pemulihan. Mengapa tulisan yang **belum
+    disimpan** hilang saat prosesnya diakhiri lewat manajer tugas?
+  options:
+  - id: a
+    text: Berkas program pengolah kata ikut terhapus dari SSD
+  - id: b
+    text: Tulisan itu hanya ada di RAM milik proses tersebut, dan RAM itu dikembalikan ke sistem operasi
+  - id: c
+    text: Sistem operasi mengosongkan seluruh SSD
+  - id: d
+    text: CPU memindahkan tulisan ke proses lain
+  key: b
+  distractor_rationale:
+    a: Program (berkas) tetap ada
+    c: SSD tidak dikosongkan
+    d: Isi RAM satu proses tidak dipindahkan ke proses lain
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: Proses menyimpan pekerjaan sementara di RAM miliknya; saat diakhiri, RAM itu dikembalikan
+    sehingga isinya hilang.
+- item_id: item-w02-c-s02-b
+  variant_id: mod-w02.concept.s02.vB
+  item_version: '1.0'
+  stem: Mengapa aplikasi musik **tetap berjalan** setelah kamu mengakhiri proses game yang macet?
+  options:
+  - id: a
+    text: Aplikasi musik tidak memakai CPU
+  - id: b
+    text: Mengakhiri proses selalu menghapus program musik lebih dulu
+  - id: c
+    text: Game menyimpan lagu ke SSD sebelum diakhiri
+  - id: d
+    text: Game dan aplikasi musik adalah dua proses terpisah dengan RAM sendiri, jadi mengakhiri satu
+      tidak menghentikan yang lain
+  key: d
+  distractor_rationale:
+    a: Semua proses yang berjalan memakai CPU
+    b: Mengakhiri proses tidak menghapus program
+    c: Tidak berkaitan dengan musik yang tetap berjalan
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: Setiap proses berdiri sendiri dengan PID dan RAM-nya; mengakhiri satu proses tidak menghentikan
+    proses lain.

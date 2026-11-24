@@ -79,7 +79,7 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-23 | BLOCKED | P | Keputusan owner CO-1/CO-2 |
 | UW-24 | BLOCKED | P | Keputusan owner O-09 (pilihan runner); menjalankan runner adalah V |
 | UW-25 | COMPLETE | P | Keputusan D-34 (AC: keputusan tertulis) |
-| UW-26 | OPEN | P | OP-4 diputuskan (D-23); bank concept W1 diproduksi (12/192 soal), 15 modul belum; belum diterima owner |
+| UW-26 | OPEN | P | OP-4 diputuskan (D-23); bank concept W1–W4 diproduksi (48/192 soal; W1 diterima owner, W2–W4 belum direview/diterima), 12 modul belum |
 | UW-27 | COMPLETE | P | D-26 (ASM:D-08 terisi) |
 | UW-28 | BLOCKED | P | Keputusan OP-6 |
 | UW-29 | COMPLETE | P | D-27 (ASM:L5 terisi) |
@@ -90,7 +90,7 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-34 | BLOCKED | P | Keputusan CO-4–CO-6 |
 | UW-35 | BLOCKED | P | Keputusan UO-3–UO-9 |
 | UW-36 | COMPLETE | P | Semua kebijakan CU diputuskan (D-13, D-24, D-30–D-36); angka batas agregat LX-2 = keluaran verifikasi UW-12 (D-38) |
-| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); W1 diproduksi dan diterima owner (W01-ACC; 4/64) |
+| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); diproduksi 16/64 (W1–W4); diterima owner 4/64 (W01-ACC); W2–W4 dikoreksi (F-28–F-72, dua putaran, PR #27), menunggu re-review independen dan penerimaan owner |
 | UW-38 | DEFERRED | M | D-22 |
 | UW-39 | BLOCKED | V | Lingkungan SDK opsional untuk verifikasi build; tidak punya AC perencanaan |
 | UW-40 | DEFERRED | M | D-22 |
@@ -282,3 +282,36 @@ dapat dinilai lengkap? Rekomendasi: Ya.
 - W01-ACC diterima; UW-26/UW-37 tetap OPEN (W2–W16 belum diproduksi).
 - CB-0.5 (alur kerja agen) **tidak** dihitung di register UW; lihat
   [AGENT_SKILL_REGISTRY.md](AGENT_SKILL_REGISTRY.md).
+
+## 13. Pembaruan CB-1 — produksi W2–W4 (2026-11-24)
+
+- PR #26 di-merge (`ab0103e`); owner menerima CB-0.5; V03 PASS di sesi baru
+  ([CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md) §4).
+- W2, W3, W4 **diproduksi** (12 komponen; `curriculum/mod-w02/`–`mod-w04/`),
+  review mandiri penyusun; **belum** direview ChatGPT dan **belum** diterima
+  owner. Produksi kurikulum 16/64 komponen; diterima owner tetap 4/64.
+- UW-26 dan UW-37 tetap **OPEN** (AC menuntut konten lengkap 16 modul dan
+  penerimaan); jumlah register tidak berubah: COMPLETE 32 · OPEN 4 ·
+  BLOCKED 12 · DEFERRED 3 · NOT VERIFIED 5 = 56; jalur P 32/43.
+
+## 14. Koreksi konsolidasi CB-1 (PR #27, 2026-11-24)
+
+- Review PR #27 = REQUEST CHANGES (F-28–F-70); koreksi diterapkan pada PR
+  yang sama. Disposisi per temuan di `curriculum/mod-w0N/review.md`.
+- F-55, F-56, F-57, F-59: **BLOCKED** — rincian temuan asli tidak tersedia.
+- W2–W4: diproduksi dan dikoreksi; menunggu re-review independen dan
+  penerimaan owner. W5–W16: NOT STARTED / NOT AUTHORIZED.
+- Register tidak berubah (32/4/12/3/5 = 56; P 32/43); UW-26, UW-37 OPEN.
+  PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10 NOT AUTHORIZED ·
+  D-11 DEFERRED.
+
+## 15. Koreksi terarah putaran 2 (PR #27, 2026-11-24)
+
+- Delta review PR #27 = REQUEST CHANGES; register diperluas menjadi F-28–F-72
+  (45 ID). Deskripsi F-55, F-56, F-57, F-59 dipulihkan owner dan ditangani;
+  catatan BLOCKED di §14 kini historis.
+- F-51 (satuan bit/byte peka huruf, W3), F-71 (W2) dan F-72 (W4)
+  (dependensi rubrik eksplisit) diperbaiki; fixture W4 E19–E20 ditambahkan.
+- Status tidak berubah: W2–W4 menunggu re-review independen dan penerimaan
+  owner; W5–W16 NOT STARTED / NOT AUTHORIZED; register 32/4/12/3/5 = 56;
+  P 32/43; PLANNING CLEAR NO; IMPLEMENTATION VERIFIED NO.

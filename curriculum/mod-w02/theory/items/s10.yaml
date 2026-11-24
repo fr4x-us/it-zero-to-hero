@@ -1,0 +1,88 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s10
+competency: comp-w02-fs-01
+format: TF-3
+difficulty: D3
+max_points: 4
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s10-a
+  variant_id: mod-w02.theory.s10.vA
+  item_version: '1.0'
+  stem: 'Perhatikan pohon folder berikut. Di pohon ini semua berkas memiliki ekstensi; nama tanpa ekstensi
+    adalah folder. Berapa jumlah **berkas** (bukan folder) di dalam `/arsip`, termasuk semua subfoldernya?
+
+
+    ```
+
+    /arsip
+
+    ├── 2025
+
+    │   ├── jan.csv
+
+    │   ├── feb.csv
+
+    │   └── catatan
+
+    │       └── ringkas.txt
+
+    ├── 2026
+
+    │   └── mar.csv
+
+    └── info.txt
+
+    ```'
+  accepted_answers:
+  - '5'
+  - 5 berkas
+  - 5berkas
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Selain itu ditolak:
+    nol di depan (mis. 05), tanda +/−, desimal, spasi di dalam angka, kata, satuan lain'
+  explanation: 'Berkas: jan.csv, feb.csv, ringkas.txt, mar.csv, info.txt = 5. Folder 2025, catatan, dan
+    2026 tidak dihitung.'
+- item_id: item-w02-t-s10-b
+  variant_id: mod-w02.theory.s10.vB
+  item_version: '1.0'
+  stem: 'Perhatikan pohon folder berikut. Di pohon ini semua berkas memiliki ekstensi; nama tanpa ekstensi
+    adalah folder. Berapa jumlah **berkas** (bukan folder) di dalam `/proyek`, termasuk semua subfoldernya?
+
+
+    ```
+
+    /proyek
+
+    ├── kode
+
+    │   ├── utama.txt
+
+    │   └── uji
+
+    │       ├── uji-1.txt
+
+    │       └── uji-2.txt
+
+    ├── gambar
+
+    │   ├── logo.png
+
+    │   └── ikon
+
+    │       └── ikon-kecil.png
+
+    └── baca.txt
+
+    ```'
+  accepted_answers:
+  - '6'
+  - 6 berkas
+  - 6berkas
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Selain itu ditolak:
+    nol di depan (mis. 05), tanda +/−, desimal, spasi di dalam angka, kata, satuan lain'
+  explanation: 'Berkas: utama.txt, uji-1.txt, uji-2.txt, logo.png, ikon-kecil.png, baca.txt = 6. Folder
+    kode, uji, gambar, dan ikon tidak dihitung.'

@@ -1,0 +1,84 @@
+# W3 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.concept.s04
+competency: comp-w03-proto-01
+required_concepts:
+- DHCP
+- DNS
+- HTTP/HTTPS
+- TCP vs UDP
+format: CE-S4
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w03-c-s04-a
+  variant_id: mod-w03.concept.s04.vA
+  item_version: '1.0'
+  stem: Cocokkan setiap protokol dengan fungsinya.
+  left:
+  - id: L1
+    text: DHCP
+  - id: L2
+    text: DNS
+  - id: L3
+    text: HTTPS
+  - id: L4
+    text: UDP
+  right:
+  - id: R1
+    text: Menerjemahkan nama domain menjadi alamat IP
+  - id: R2
+    text: Mengirim data ringan tanpa memastikan data sampai
+  - id: R3
+    text: Memberi alamat IP secara otomatis
+  - id: R4
+    text: Mengirim halaman web secara terenkripsi
+  - id: R5
+    text: Mengirim ulang data yang hilang dan menyusunnya berurutan selama sambungan berjalan
+  key_mapping:
+    L1: R3
+    L2: R1
+    L3: R4
+    L4: R2
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: 'R5 adalah pengecoh: itu fungsi TCP, yang tidak ada di kolom kiri.'
+- item_id: item-w03-c-s04-b
+  variant_id: mod-w03.concept.s04.vB
+  item_version: '1.0'
+  stem: Cocokkan setiap protokol dengan fungsinya.
+  left:
+  - id: L1
+    text: TCP
+  - id: L2
+    text: HTTP
+  - id: L3
+    text: DNS
+  - id: L4
+    text: DHCP
+  right:
+  - id: R1
+    text: Memberi alamat IP secara otomatis
+  - id: R2
+    text: Mengirim ulang data yang hilang dan menyusunnya berurutan selama sambungan berjalan
+  - id: R3
+    text: Mengirim halaman web tanpa enkripsi
+  - id: R4
+    text: Menerjemahkan nama domain menjadi alamat IP
+  - id: R5
+    text: Mengirim data ringan tanpa memastikan data sampai
+  key_mapping:
+    L1: R2
+    L2: R3
+    L3: R4
+    L4: R1
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: 'R5 adalah pengecoh: itu fungsi UDP, yang tidak ada di kolom kiri.'

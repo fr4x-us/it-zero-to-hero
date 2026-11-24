@@ -1,0 +1,72 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s02
+competency: comp-w04-cia-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s02-a
+  variant_id: mod-w04.theory.s02.vA
+  item_version: '1.0'
+  stem: Kejadian mana yang **terutama** mengganggu **ketersediaan**?
+  stimulus_table:
+  - - Kode
+    - Kejadian
+  - - K1
+    - Isi grup chat kelas dibaca orang luar tanpa izin
+  - - K2
+    - Server aplikasi absensi mati sehingga tidak ada yang dapat mengisi absen seharian
+  - - K3
+    - Daftar hadir di lembar kerja diubah tanpa izin
+  - - K4
+    - Foto pribadi tersebar ke orang yang tidak berhak
+  options:
+  - id: a
+    text: K1
+  - id: b
+    text: K2
+  - id: c
+    text: K3
+  - id: d
+    text: K4
+  key: b
+  distractor_rationale:
+    a: Kerahasiaan
+    c: Integritas
+    d: Kerahasiaan
+  explanation: 'Layanan tidak dapat dipakai saat dibutuhkan: ketersediaan.'
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w04-t-s02-b
+  variant_id: mod-w04.theory.s02.vB
+  item_version: '1.0'
+  stem: Kejadian mana yang **terutama** mengganggu **integritas**?
+  stimulus_table:
+  - - Kode
+    - Kejadian
+  - - K1
+    - Situs perpustakaan tidak dapat dibuka sepanjang hari karena dibanjiri permintaan palsu
+  - - K2
+    - Kata sandi akun bocor dan dibaca orang yang tidak berhak
+  - - K3
+    - Jumlah pada tagihan diubah diam-diam oleh orang yang tidak berhak sebelum dikirim
+  - - K4
+    - Dokumen rahasia klub dibaca orang luar tanpa izin
+  options:
+  - id: a
+    text: K1
+  - id: b
+    text: K2
+  - id: c
+    text: K3
+  - id: d
+    text: K4
+  key: c
+  distractor_rationale:
+    a: Ketersediaan
+    b: Kerahasiaan
+    d: Kerahasiaan
+  explanation: 'Data diubah tanpa izin: integritas.'
+  option_order: urutan alami (kategori/baris tabel), tetap

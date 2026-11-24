@@ -1,0 +1,63 @@
+# W3 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.concept.s06
+competency: comp-w03-rate-01
+required_concepts:
+- bit vs byte (× 8)
+- model ideal vs nyata
+format: CE-S2
+max_points: 2
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w03-c-s06-a
+  variant_id: mod-w03.concept.s06.vA
+  item_version: '1.0'
+  stem: Paket internet rumah tertulis **50 Mbps**. Pilih **semua** pernyataan yang benar (aturan desimal).
+  options:
+  - id: a
+    text: 50 Mbps sama dengan 6,25 MB/s
+  - id: b
+    text: Berkas 50 MB pasti selesai diunduh dalam 1 detik
+  - id: c
+    text: Unduhan nyata biasanya lebih lambat daripada hitungan ideal
+  - id: d
+    text: '"b" kecil dan "B" besar artinya sama'
+  key:
+  - a
+  - c
+  distractor_rationale:
+    b: 50 MB = 400 Mb → 8 detik ideal
+    d: b = bit, B = byte
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Satu pernyataan benar adalah konversinya (÷ 8), satu lagi batas model ideal.
+- item_id: item-w03-c-s06-b
+  variant_id: mod-w03.concept.s06.vB
+  item_version: '1.0'
+  stem: Aplikasi unduhan menampilkan **3 MB/s**. Pilih **semua** pernyataan yang benar (aturan desimal).
+  options:
+  - id: a
+    text: Itu sama dengan 3 Mbps
+  - id: b
+    text: Itu sama dengan 24 Mbps
+  - id: c
+    text: Hitungan ideal mengabaikan tambahan informasi protokol, sehingga kecepatan nyata dapat lebih
+      rendah
+  - id: d
+    text: 1 MB/s sama dengan 1.024 Mbps
+  key:
+  - b
+  - c
+  distractor_rationale:
+    a: MB/s ke Mbps dikali 8
+    d: 1 MB/s = 8 Mbps (desimal)
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Satu pernyataan benar adalah konversinya (× 8), satu lagi batas model ideal.

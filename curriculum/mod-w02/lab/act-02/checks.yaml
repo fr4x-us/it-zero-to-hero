@@ -1,0 +1,118 @@
+# W2 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w02.lab.act-02
+name: Path absolut dan relatif
+competencies:
+- comp-w02-path-01
+max_points: 30
+estimated_minutes: 30
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w02.lab (D-28 XI-2)
+normalization: 'Buang spasi/tab di awal dan akhir; huruf besar/kecil DIBEDAKAN (model path W2); cocokkan
+  persis dengan accepted_answers (path relatif: dengan atau tanpa awalan "./"). Ditolak: "\", spasi di
+  dalam path, "/" di akhir (kecuali root), langkah memutar, path yang tidak terpendek'
+answer_validation: Kosong atau bentuk yang ditolak normalisasi → 0 untuk pemeriksaan itu; pemeriksaan
+  lain tetap dinilai
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2)
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W2 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban terstruktur
+variants:
+- variant_id: mod-w02.lab.act-02.vA
+  fixture:
+    tree_files:
+    - /home/nadia/Sekolah/Kimia/laporan-kimia.docx
+    - /home/nadia/Sekolah/jadwal-ujian.pdf
+    - /home/nadia/Gambar/Kucing/milo.jpg
+    - /home/nadia/Musik/angklung.mp3
+    note: Pohon ditampilkan di spec.md; daftar ini = semua berkas pohon (folder tersirat)
+  visible_example:
+    note: 'Contoh terlihat (0 poin): dari /contoh/a ke /contoh/b/c.txt → ../b/c.txt'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w02.lab.act-02.vA.c01
+    name: Path absolut berkas laporan-kimia.docx
+    accepted_answers:
+    - /home/nadia/Sekolah/Kimia/laporan-kimia.docx
+    points: 5
+  - check_id: mod-w02.lab.act-02.vA.c02
+    name: Path absolut folder Kucing
+    accepted_answers:
+    - /home/nadia/Gambar/Kucing
+    points: 5
+  - check_id: mod-w02.lab.act-02.vA.c03
+    name: Path absolut berkas angklung.mp3
+    accepted_answers:
+    - /home/nadia/Musik/angklung.mp3
+    points: 5
+  - check_id: mod-w02.lab.act-02.vA.c04
+    name: Path relatif ke laporan-kimia.docx
+    working_directory: /home/nadia/Sekolah
+    accepted_answers:
+    - Kimia/laporan-kimia.docx
+    - ./Kimia/laporan-kimia.docx
+    points: 5
+  - check_id: mod-w02.lab.act-02.vA.c05
+    name: Path relatif ke jadwal-ujian.pdf
+    working_directory: /home/nadia/Sekolah/Kimia
+    accepted_answers:
+    - ../jadwal-ujian.pdf
+    - ./../jadwal-ujian.pdf
+    points: 5
+  - check_id: mod-w02.lab.act-02.vA.c06
+    name: Path relatif ke milo.jpg
+    working_directory: /home/nadia/Sekolah/Kimia
+    accepted_answers:
+    - ../../Gambar/Kucing/milo.jpg
+    - ./../../Gambar/Kucing/milo.jpg
+    points: 5
+- variant_id: mod-w02.lab.act-02.vB
+  fixture:
+    tree_files:
+    - /home/yusuf/Kerja/Proposal/proposal-akhir.docx
+    - /home/yusuf/Kerja/kontak-klien.csv
+    - /home/yusuf/Video/Liburan/danau.mp4
+    - /home/yusuf/Buku/novel-ringkas.pdf
+    note: Pohon ditampilkan di spec.md; daftar ini = semua berkas pohon (folder tersirat)
+  visible_example:
+    note: 'Contoh terlihat (0 poin): dari /contoh/a ke /contoh/b/c.txt → ../b/c.txt'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w02.lab.act-02.vB.c01
+    name: Path absolut berkas proposal-akhir.docx
+    accepted_answers:
+    - /home/yusuf/Kerja/Proposal/proposal-akhir.docx
+    points: 5
+  - check_id: mod-w02.lab.act-02.vB.c02
+    name: Path absolut folder Liburan
+    accepted_answers:
+    - /home/yusuf/Video/Liburan
+    points: 5
+  - check_id: mod-w02.lab.act-02.vB.c03
+    name: Path absolut berkas novel-ringkas.pdf
+    accepted_answers:
+    - /home/yusuf/Buku/novel-ringkas.pdf
+    points: 5
+  - check_id: mod-w02.lab.act-02.vB.c04
+    name: Path relatif ke proposal-akhir.docx
+    working_directory: /home/yusuf/Kerja
+    accepted_answers:
+    - Proposal/proposal-akhir.docx
+    - ./Proposal/proposal-akhir.docx
+    points: 5
+  - check_id: mod-w02.lab.act-02.vB.c05
+    name: Path relatif ke kontak-klien.csv
+    working_directory: /home/yusuf/Kerja/Proposal
+    accepted_answers:
+    - ../kontak-klien.csv
+    - ./../kontak-klien.csv
+    points: 5
+  - check_id: mod-w02.lab.act-02.vB.c06
+    name: Path relatif ke danau.mp4
+    working_directory: /home/yusuf/Kerja/Proposal
+    accepted_answers:
+    - ../../Video/Liburan/danau.mp4
+    - ./../../Video/Liburan/danau.mp4
+    points: 5

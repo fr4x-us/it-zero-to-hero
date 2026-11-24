@@ -1,0 +1,52 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s03
+competency: comp-w02-os-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s03-a
+  variant_id: mod-w02.theory.s03.vA
+  item_version: '1.0'
+  stem: Kamu mencolokkan kamera web (*webcam*) USB baru. Sistem operasi memakai driver agar kamera itu
+    dapat dipakai aplikasi. Fungsi sistem operasi apa yang **paling** terlihat?
+  options:
+  - id: a
+    text: Manajemen proses
+  - id: b
+    text: Manajemen memori
+  - id: c
+    text: Manajemen file
+  - id: d
+    text: Manajemen perangkat
+  key: d
+  distractor_rationale:
+    a: Belum ada program yang dijalankan pada langkah ini
+    b: Pembagian RAM bukan inti kejadian ini
+    c: Tidak ada berkas yang disimpan atau ditata
+  explanation: Mengatur hardware lewat driver adalah manajemen perangkat.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w02-t-s03-b
+  variant_id: mod-w02.theory.s03.vB
+  item_version: '1.0'
+  stem: Kamu menyimpan catatan belanja dan memberinya nama `belanja-minggu.txt` di folder Dokumen. Fungsi
+    sistem operasi apa yang **paling** terlihat?
+  options:
+  - id: a
+    text: Manajemen proses
+  - id: b
+    text: Manajemen memori
+  - id: c
+    text: Manajemen file
+  - id: d
+    text: Manajemen perangkat
+  key: c
+  distractor_rationale:
+    a: Menjalankan program bukan inti kejadian ini
+    b: Pembagian RAM bukan inti kejadian ini
+    d: Tidak ada perangkat baru yang diatur
+  explanation: Menyimpan dan menamai berkas di penyimpanan adalah manajemen file.
+  option_order: urutan alami (kategori/baris tabel), tetap

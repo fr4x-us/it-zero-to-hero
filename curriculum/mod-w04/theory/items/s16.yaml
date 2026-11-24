@@ -1,0 +1,54 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s16
+competency: comp-w04-protect-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s16-a
+  variant_id: mod-w04.theory.s16.vA
+  item_version: '1.0'
+  stem: Menurut aturan cadangan 3-2-1 model W4 (CB-1–CB-4), rencana mana yang **memenuhi**?
+  options:
+  - id: a
+    text: Berkas asli di laptop + salinan di folder lain laptop yang sama
+  - id: b
+    text: Hanya satu salinan di flashdisk
+  - id: c
+    text: Berkas asli di laptop + dua salinan di dua folder lain laptop yang sama
+  - id: d
+    text: Berkas asli di laptop + salinan di harddisk eksternal di rumah + salinan di layanan awan
+  key: d
+  distractor_rationale:
+    a: Salinan di perangkat sama tidak dihitung (CB-4)
+    b: Kurang dari 3 salinan
+    c: Salinan di perangkat sama tidak dihitung (CB-4)
+  explanation: 'Jenis media model W4 (CB-2): penyimpanan internal perangkat · harddisk/SSD eksternal ·
+    flashdisk · kartu memori · layanan awan. Rencana d: 3 salinan pada 3 jenis media (internal laptop,
+    harddisk eksternal, awan); awan di luar lokasi. Folder lain di perangkat yang sama bukan salinan terhitung
+    dan bukan jenis media baru.'
+- item_id: item-w04-t-s16-b
+  variant_id: mod-w04.theory.s16.vB
+  item_version: '1.0'
+  stem: Menurut aturan cadangan 3-2-1 model W4 (CB-1–CB-4), rencana mana yang **tidak memenuhi**?
+  options:
+  - id: a
+    text: PC (asli) + harddisk eksternal di rumah + layanan awan
+  - id: b
+    text: Laptop (asli) + flashdisk di rumah + harddisk eksternal di rumah nenek
+  - id: c
+    text: Laptop (asli) + dua salinan di dua folder lain laptop yang sama
+  - id: d
+    text: PC (asli) + kartu memori di rumah + layanan awan
+  key: c
+  distractor_rationale:
+    a: Memenuhi
+    b: 'Memenuhi: rumah nenek di luar lokasi'
+    d: Memenuhi
+  explanation: 'Jenis media model W4 (CB-2): penyimpanan internal perangkat · harddisk/SSD eksternal ·
+    flashdisk · kartu memori · layanan awan. Rencana c: folder lain di laptop yang sama tidak dihitung
+    (CB-4) dan tetap media internal yang sama; hanya 1 salinan terhitung, 1 jenis media, tidak ada di
+    luar lokasi. Rencana a, b, d masing-masing 3 salinan pada 3 jenis media dengan 1 di luar lokasi.'

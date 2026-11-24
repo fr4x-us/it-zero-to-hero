@@ -1,0 +1,69 @@
+# W3 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.concept.s02
+competency: comp-w03-ip-01
+required_concepts:
+- rentang privat
+- alamat publik dari ISP
+- NAT berbagi alamat publik
+format: CE-S2
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w03-c-s02-a
+  variant_id: mod-w03.concept.s02.vA
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang alamat IP.
+  options:
+  - id: a
+    text: Rentang `192.168.x.x` termasuk alamat privat
+  - id: b
+    text: Alamat privat unik di seluruh internet
+  - id: c
+    text: Banyak rumah dapat memakai `192.168.1.10` di LAN masing-masing tanpa saling bentrok
+  - id: d
+    text: '`172.32.1.1` termasuk alamat privat'
+  - id: e
+    text: Router dapat membuat banyak perangkat beralamat privat berbagi satu alamat publik
+  key:
+  - a
+  - c
+  - e
+  distractor_rationale:
+    b: Alamat privat dipakai ulang di banyak LAN
+    d: Privat hanya 172.16–172.31
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Privat bermakna di LAN dan dapat dipakai ulang; router (NAT) memakai satu alamat publik.
+- item_id: item-w03-c-s02-b
+  variant_id: mod-w03.concept.s02.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang alamat IP.
+  options:
+  - id: a
+    text: Rentang `10.x.x.x` termasuk alamat privat
+  - id: b
+    text: Alamat privat dapat dihubungi langsung dari mana saja di internet
+  - id: c
+    text: Alamat publik router rumah biasanya diberikan ISP
+  - id: d
+    text: Rentang `172.16.x.x` sampai `172.31.x.x` termasuk alamat privat
+  - id: e
+    text: '`192.168.300.1` adalah alamat privat yang valid'
+  key:
+  - a
+  - c
+  - d
+  distractor_rationale:
+    b: Alamat privat tidak diteruskan langsung di internet
+    e: 300 > 255, tidak valid
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Rentang privat 10.x dan 172.16–31; alamat publik dari ISP.

@@ -1,0 +1,88 @@
+# W3 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.concept.s03
+competency: comp-w03-subnet-01
+required_concepts:
+- alamat jaringan
+- broadcast
+- 254 host
+- satu jaringan = tiga oktet pertama sama
+format: CE-S5
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w03-c-s03-a
+  variant_id: mod-w03.concept.s03.vA
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan tentang jaringan `192.168.12.0/24`. Satu baris salah. Temukan barisnya
+    dan pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: Alamat jaringannya `192.168.12.0`.
+  - id: '2'
+    text: Alamat broadcast-nya `192.168.12.255`.
+  - id: '3'
+    text: Jumlah alamat yang dapat dipakai perangkat adalah 256.
+  - id: '4'
+    text: '`192.168.12.77` dan `192.168.12.200` berada di jaringan yang sama.'
+  - id: '5'
+    text: Gateway `192.168.12.1` sah untuk perangkat `192.168.12.50`.
+  error_line: '3'
+  correction_options:
+  - id: a
+    text: '254'
+  - id: b
+    text: '255'
+  - id: c
+    text: '24'
+  - id: d
+    text: '128'
+  correction_key: a
+  distractor_rationale:
+    b: 255 masih menghitung salah satu alamat khusus
+    c: 24 adalah panjang prefiks, bukan jumlah host
+    d: 128 bukan hasil /24
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: 256 alamat dikurangi alamat jaringan dan broadcast = 254.
+- item_id: item-w03-c-s03-b
+  variant_id: mod-w03.concept.s03.vB
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan tentang jaringan `10.77.5.0/24`. Satu baris salah. Temukan barisnya
+    dan pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: Host pertama `10.77.5.1`.
+  - id: '2'
+    text: Host terakhir `10.77.5.254`.
+  - id: '3'
+    text: Alamat broadcast `10.77.5.255`.
+  - id: '4'
+    text: '`10.77.5.9` dan `10.77.6.9` berada di jaringan yang sama karena oktet terakhirnya sama.'
+  - id: '5'
+    text: Ada 254 alamat yang dapat dipakai perangkat.
+  error_line: '4'
+  correction_options:
+  - id: a
+    text: Satu jaringan karena oktet pertamanya sama
+  - id: b
+    text: Berbeda jaringan karena tiga oktet pertamanya berbeda
+  - id: c
+    text: Satu jaringan karena mask-nya sama
+  - id: d
+    text: Berbeda jaringan karena oktet terakhirnya ganjil
+  correction_key: b
+  distractor_rationale:
+    a: Pada /24 yang dibandingkan tiga oktet pertama
+    c: Mask sama tidak membuat jaringan sama
+    d: Ganjil/genap tidak menentukan jaringan
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: 'Pada /24, dua alamat satu jaringan bila tiga oktet pertamanya sama: 10.77.5 ≠ 10.77.6.'

@@ -48,6 +48,7 @@ sumber ada di §2. Path diperiksa terhadap `git ls-files` (CB-0.5, 2026-11-24).
 | [`CURRICULUM_CONTENT_DECISION_SHEETS.md`](CURRICULUM_CONTENT_DECISION_SHEETS.md) | CU-3, CU-5, CU-7, CU2-O3, CU-11 (D-30–D-32) |
 | [`CURRICULUM_TEMPLATES_CB0.md`](CURRICULUM_TEMPLATES_CB0.md) | Standar produksi CB-0: TPL-01–TPL-20, §1a visibilitas, §3a field, §3b QC-01–QC-12 |
 | [`CURRICULUM_PRODUCTION_PLAN.md`](CURRICULUM_PRODUCTION_PLAN.md) | Matriks 64 komponen, kemajuan produksi |
+| `curriculum/mod-w02/`, `mod-w03/`, `mod-w04/` | W2 OS & berkas, W3 jaringan, W4 keamanan siber (CB-1; diproduksi, **belum** direview/diterima). Struktur sama dengan W1, tanpa `project/evidence/` (enumerasi dicatat di `rubric.yaml` → `solution_analysis`) |
 | `curriculum/mod-w01/` | Modul acuan W1 (W01-ACC): `module.yaml`, `lessons/les-01..04.md`, `theory/blueprint.yaml` + `theory/items/s01..s20.yaml`, `concept/items/s01..s06.yaml`, `lab/act-01..03/{spec.md,checks.yaml}`, `project/{spec.md,rubric.yaml,evidence/catalog_enumeration.csv}`, `remedial/remedial.md`, `review.md` |
 
 ## 5. Spesifikasi penilaian

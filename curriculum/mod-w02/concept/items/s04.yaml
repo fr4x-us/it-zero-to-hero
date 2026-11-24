@@ -1,0 +1,89 @@
+# W2 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.concept.s04
+competency: comp-w02-path-01
+required_concepts:
+- path absolut diawali /
+- .. naik satu tingkat
+- path relatif dari folder kerja
+- huruf besar/kecil dibedakan
+format: CE-S5
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w02-c-s04-a
+  variant_id: mod-w02.concept.s04.vA
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan berikut (model path W2). Satu baris salah. Temukan barisnya dan
+    pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: Path absolut selalu diawali `/`.
+  - id: '2'
+    text: '`..` berarti naik satu tingkat ke folder induk.'
+  - id: '3'
+    text: Dari `/home/tia/Sekolah`, path relatif terpendek ke `/home/tia/Sekolah/biologi.pdf` adalah `biologi.pdf`.
+  - id: '4'
+    text: Dari `/home/tia/Sekolah`, path relatif **terpendek** ke folder `/home/tia/Musik` adalah `/Musik`.
+  - id: '5'
+    text: Di model W2, `Musik` dan `musik` adalah nama yang berbeda.
+  error_line: '4'
+  correction_options:
+  - id: a
+    text: '`../Musik`'
+  - id: b
+    text: '`Musik`'
+  - id: c
+    text: '`../../Musik`'
+  - id: d
+    text: '`./Musik`'
+  correction_key: a
+  distractor_rationale:
+    b: Musik tidak berada di dalam Sekolah
+    c: Naik dua tingkat sampai /home, terlalu jauh
+    d: Sama dengan Musik di dalam Sekolah
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: 'Path relatif tidak diawali /. Dari Sekolah naik satu tingkat ke /home/tia, lalu turun ke
+    Musik: ../Musik.'
+- item_id: item-w02-c-s04-b
+  variant_id: mod-w02.concept.s04.vB
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan berikut (model path W2). Satu baris salah. Temukan barisnya dan
+    pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: Path relatif tidak diawali `/`.
+  - id: '2'
+    text: '`.` berarti folder saat ini.'
+  - id: '3'
+    text: Dari `/data/foto/2026`, path relatif **terpendek** ke `/data/foto/sampul.png` adalah `../../sampul.png`.
+  - id: '4'
+    text: Path absolut `/data/foto/sampul.png` sama dari folder kerja mana pun.
+  - id: '5'
+    text: Di model W2, path ke folder tidak diakhiri `/`.
+  error_line: '3'
+  correction_options:
+  - id: a
+    text: '`sampul.png`'
+  - id: b
+    text: '`/sampul.png`'
+  - id: c
+    text: '`../sampul.png`'
+  - id: d
+    text: '`../../foto/sampul.png`'
+  correction_key: c
+  distractor_rationale:
+    a: sampul.png tidak berada di dalam 2026
+    b: Itu path absolut ke root, salah tempat
+    d: Menunjuk berkas yang benar tetapi memutar; baris itu meminta jalur terpendek
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: 'Dari /data/foto/2026 cukup naik satu tingkat ke /data/foto: ../sampul.png.'

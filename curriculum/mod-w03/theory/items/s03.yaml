@@ -1,0 +1,52 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s03
+competency: comp-w03-net-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s03-a
+  variant_id: mod-w03.theory.s03.vA
+  item_version: '1.0'
+  stem: Browser di laptopmu **meminta** halaman dari komputer penyedia situs. Dalam pertukaran itu, laptopmu
+    berperan sebagai …
+  options:
+  - id: a
+    text: Klien
+  - id: b
+    text: Server
+  - id: c
+    text: Switch
+  - id: d
+    text: Modem
+  key: a
+  distractor_rationale:
+    b: Server menyediakan, bukan meminta
+    c: Switch adalah perangkat jaringan, bukan peran layanan
+    d: Modem adalah perangkat jaringan, bukan peran layanan
+  explanation: Pihak yang meminta layanan adalah klien.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w03-t-s03-b
+  variant_id: mod-w03.theory.s03.vB
+  item_version: '1.0'
+  stem: Komputer perpustakaan **menyimpan katalog buku dan mengirimkannya** ke ponsel pengunjung yang
+    meminta. Komputer itu berperan sebagai …
+  options:
+  - id: a
+    text: Klien
+  - id: b
+    text: Server
+  - id: c
+    text: Switch
+  - id: d
+    text: Modem
+  key: b
+  distractor_rationale:
+    a: Klien adalah pihak yang meminta
+    c: Switch adalah perangkat jaringan, bukan peran layanan
+    d: Modem adalah perangkat jaringan, bukan peran layanan
+  explanation: Pihak yang menyediakan layanan adalah server.
+  option_order: urutan alami (kategori/baris tabel), tetap

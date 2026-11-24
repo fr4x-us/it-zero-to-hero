@@ -1,0 +1,30 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s10
+competency: comp-w03-subnet-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s10-a
+  variant_id: mod-w03.theory.s10.vA
+  item_version: '1.0'
+  stem: Perangkat memakai `192.168.73.9` dengan mask `255.255.255.0`. Tulis **alamat broadcast** jaringannya.
+  accepted_answers:
+  - 192.168.73.255
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan accepted_answers (empat oktet
+    desimal tanpa nol di depan). Ditolak: nol di depan oktet, spasi di dalam, oktet kurang/lebih dari
+    4, akhiran seperti "/24"'
+  explanation: Tiga oktet pertama + .255 = 192.168.73.255.
+- item_id: item-w03-t-s10-b
+  variant_id: mod-w03.theory.s10.vB
+  item_version: '1.0'
+  stem: Perangkat memakai `172.30.2.201` dengan mask `255.255.255.0`. Tulis **alamat broadcast** jaringannya.
+  accepted_answers:
+  - 172.30.2.255
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan accepted_answers (empat oktet
+    desimal tanpa nol di depan). Ditolak: nol di depan oktet, spasi di dalam, oktet kurang/lebih dari
+    4, akhiran seperti "/24"'
+  explanation: Tiga oktet pertama + .255 = 172.30.2.255.

@@ -315,5 +315,5 @@ menunjuk dokumen yang menjabarkan kriteria, **bukan** menutup gap.
 | CU-9, CU2-O4 | **D-33** |
 | CU-10 | **D-34** |
 | CU-6 (LX) | **D-35**; kebijakan umpan balik test tersembunyi → CU-6-Q13 (OPEN) |
-| K-13 konten | W1 diproduksi: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml) (belum diterima owner); W2–W16 belum ditulis |
+| K-13 konten | *Historis (saat ditulis):* W1 diproduksi, belum diterima; W2–W16 belum ditulis. **Status aktif (2026-11-24):** W1 diterima (W01-ACC); W2–W4 diproduksi dan dikoreksi (PR #27), menunggu re-review dan penerimaan owner; W5–W16 belum dimulai — lihat [CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md) §4 |
 | CC-07 lab non-kode | Diterapkan sebagai contoh terlihat bernilai 0 + pemeriksaan bernilai yang disembunyikan sampai evaluasi (TPL-10) |
