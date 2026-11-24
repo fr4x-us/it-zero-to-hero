@@ -26,12 +26,14 @@ Notes:
 
 | Skill | Source | Commit | License |
 |---|---|---|---|
-| planning-with-files | https://github.com/OthmanAdi/planning-with-files `skills/planning-with-files` | aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228 | MIT (`planning-with-files/LICENSE`) |
+| planning-with-files | https://github.com/OthmanAdi/planning-with-files `skills/planning-with-files` | aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228 — **modified local variant** | MIT (`planning-with-files/LICENSE`) |
 | verification-before-completion | https://github.com/obra/superpowers `skills/verification-before-completion` | 22f0b463e7a5e579904dd6211a520321035526f7 (v7.0.2) | MIT (`<skill>/LICENSE`) |
 | systematic-debugging | idem `skills/systematic-debugging` | idem | idem |
 | receiving-code-review | idem `skills/receiving-code-review` | idem | idem |
 
-Copied verbatim (byte-compared with `cmp`); subset of files only. Scripts and
-hooks of planning-with-files are intentionally not installed. Full audit,
+The three Superpowers skills are copied verbatim (byte-compared with `cmp`;
+subset of files). planning-with-files is a **modified** instruction-only
+variant (hooks, allowed-tools, scripts, templates removed; upstream SKILL.md
+SHA-256 b99281fc…19d58, 41,938 B → local 9ae86193…74b7, 3,241 B). Full audit,
 status and rollback: `docs/AGENT_SKILL_REGISTRY.md`.
 

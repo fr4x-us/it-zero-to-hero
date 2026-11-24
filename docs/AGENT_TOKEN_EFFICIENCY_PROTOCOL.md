@@ -28,7 +28,7 @@ ini tidak mengklaim angka penghematan.
 
 | Skill | Muat saat | Jangan muat saat |
 |---|---|---|
-| planning-with-files | Tugas multi-tahap, perencanaan persisten, checkpoint, pemulihan sesi | Pertanyaan sederhana, edit satu berkas |
+| planning-with-files (varian lokal, instruksi saja) | Tugas multi-tahap, perencanaan persisten, checkpoint, pemulihan sesi | Pertanyaan sederhana, edit satu berkas |
 | systematic-debugging | Validasi gagal, inkonsistensi skor/maksimum, kegagalan berulang, analisis akar masalah | Tidak ada kegagalan |
 | verification-before-completion | Klaim selesai/PASS, penandaan COMPLETE di audit, pembuatan PR, handoff | Eksplorasi awal |
 | receiving-code-review | Temuan review independen, revisi, temuan yang disanggah, cek regresi | Tidak ada umpan balik review |
@@ -42,7 +42,7 @@ peta, dan checkpoint ada di dokumen ini, [PROJECT_MAP.md](PROJECT_MAP.md), dan
 Checkpoint disimpan di [HANDOFF_STATE.md](HANDOFF_STATE.md) §Checkpoint aktif
 (berkas yang di-commit; bertahan setelah sesi berakhir dan pemadatan konteks).
 Tanggung jawab `task_plan.md` / `findings.md` / `progress.md` dari Planning
-with Files dipetakan ke dokumen yang ada; berkas itu **tidak** dibuat di root
+with Files upstream dipetakan ke dokumen yang ada (varian lokal mengikuti pemetaan ini); berkas itu **tidak** dibuat di root
 repositori:
 
 | Berkas Planning with Files | Dipetakan ke |
@@ -52,7 +52,9 @@ repositori:
 | `progress.md` (log sesi) | Riwayat PR + "Tugas terakhir" di HANDOFF_STATE; bagian audit bertanggal |
 
 Field wajib: tugas aktif dan lingkup otorisasi · fase · selesai · sisa ·
-berkas relevan · branch dan commit · keputusan · blocker · pendekatan gagal ·
+berkas relevan · versi kerja (branch, SHA basis, dan rujukan ke head PR atau
+commit checkpoint yang sudah ada — bukan SHA commit yang sedang ditulis) ·
+keputusan · blocker · pendekatan gagal ·
 bukti verifikasi · aksi berikutnya yang diizinkan · kondisi berhenti.
 
 Dilarang di checkpoint: kredensial, rahasia, email pribadi, jejak penalaran
@@ -64,9 +66,7 @@ dipakai sementara, tetapi bukan sumber otoritatif dan tidak di-commit.
 
 | Instruksi skill | Aturan yang berlaku |
 |---|---|
-| Planning with Files: jalankan `scripts/init-session.sh`, hook otomatis | Skrip dan hook tidak dipasang (registry §3.1); pakai checkpoint §3 secara manual |
-| Planning with Files: buat `task_plan.md` dulu, "2-Action Rule" | Checkpoint di HANDOFF_STATE diperbarui per TE-07; tidak menulis setiap dua aksi |
-| Planning with Files: `session-catchup.py --replay` | Tidak dipasang; jangan membaca transkrip sesi lokal |
+| Planning with Files (upstream): skrip, hook, `allowed-tools`, `task_plan.md`, "2-Action Rule", `session-catchup.py` | Sudah dihapus dari varian lokal (registry §3.1); varian lokal memakai checkpoint §3 dan TE-07 |
 | systematic-debugging: tulis test gagal (`superpowers:test-driven-development`) | Skill TDD ON HOLD; untuk dokumentasi, reproduksi = skrip validasi di scratchpad. Test aplikasi dilarang (tidak ada implementasi) |
 | receiving-code-review: balas thread via `gh api` | Komentar GitHub hanya bila owner meminta; `gh` hanya untuk pencarian |
 | receiving-code-review: "human partner" | = owner; ChatGPT = reviewer eksternal; persetujuan merge hanya kalimat owner (GITHUB_BRIDGE §5) |

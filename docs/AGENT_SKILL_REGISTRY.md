@@ -11,91 +11,121 @@ Keberadaan berkas saja **bukan** bukti aktivasi.
 
 ## 1. Ringkasan
 
-| Skill | Path | Status | Ringkasnya |
+| Skill | Path | Status | Isi |
 |---|---|---|---|
-| planning-with-files | `.claude/skills/planning-with-files/` | **PARTIALLY_COMPATIBLE** | Terdeteksi dan dimuat; mode instruksi saja. Skrip, hook, perintah, dan `session-catchup.py` sengaja tidak dipasang |
-| verification-before-completion | `.claude/skills/verification-before-completion/` | **VERIFIED_ACTIVE** | Terdeteksi dan dimuat |
-| systematic-debugging | `.claude/skills/systematic-debugging/` | **VERIFIED_ACTIVE** | Terdeteksi dan dimuat; contoh `.ts` dan skrip `find-polluter.sh` tidak dipasang |
-| receiving-code-review | `.claude/skills/receiving-code-review/` | **VERIFIED_ACTIVE** | Terdeteksi dan dimuat; aturan balasan GitHub dikalahkan aturan proyek |
+| planning-with-files | `.claude/skills/planning-with-files/` | **VERIFIED_ACTIVE** (sesi ini; varian lokal **dimodifikasi**) | Varian instruksi saja; tanpa hook, `allowed-tools`, skrip, templat |
+| verification-before-completion | `.claude/skills/verification-before-completion/` | **VERIFIED_ACTIVE** (sesi ini) | Identik upstream |
+| systematic-debugging | `.claude/skills/systematic-debugging/` | **VERIFIED_ACTIVE** (sesi ini) | Identik upstream (subset berkas) |
+| receiving-code-review | `.claude/skills/receiving-code-review/` | **VERIFIED_ACTIVE** (sesi ini) | Identik upstream |
 
-"VERIFIED_ACTIVE" berarti: di sesi Claude Code Cloud ini, skill muncul di
-daftar skill sesi dan berhasil dimuat dengan alat `Skill`. Belum diamati di
-sesi baru yang dimulai setelah merge (lihat §5).
+"VERIFIED_ACTIVE (sesi ini)" = terdeteksi di daftar skill sesi Claude Code
+Cloud ini **dan** berhasil dimuat dengan alat `Skill`. Aktivasi di sesi baru
+**NOT VERIFIED** untuk keempatnya (§5).
 
 ## 2. Asal dan versi (diamati 2026-11-24)
 
 | | Planning with Files | Superpowers (3 skill) |
 |---|---|---|
 | Repositori resmi | https://github.com/OthmanAdi/planning-with-files | https://github.com/obra/superpowers |
-| Bintang GitHub (diamati 2026-11-24 via GitHub search API) | 28.213 | 325.518 |
-| Push terakhir | 2026-11-23 | 2026-11-03 |
-| Diarsipkan | Tidak | Tidak |
-| Rilis | Tag terbaru `v3.29.1`; commit pin = 1 commit setelah tag (`v3.29.1-1-gaaa38bc`); `metadata.version` 3.29.1 | Tag `v7.0.2` = commit pin; plugin version 7.0.2 |
-| Commit pin | `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228` (2026-11-23) | `22f0b463e7a5e579904dd6211a520321035526f7` (2026-11-03) |
-| Lisensi | MIT, © 2026 Ahmad Adi — disalin sebagai `LICENSE` di folder skill | MIT, © 2025 Jesse Vincent — disalin sebagai `LICENSE` di tiap folder skill |
-| Kewajiban atribusi | Sertakan pemberitahuan hak cipta + izin MIT (terpenuhi) | Idem (terpenuhi) |
-| Pemeliharaan | Aktif (655 commit; SECURITY.md dengan pelaporan privat) | Aktif (687 commit) |
+| Bintang GitHub (GitHub search API, 2026-11-24) | 28.213 | 325.518 |
+| Push terakhir / diarsipkan | 2026-11-23 / tidak | 2026-11-03 / tidak |
+| Rilis | Tag `v3.29.1`; commit pin = 1 commit setelah tag | Tag `v7.0.2` = commit pin |
+| Commit pin | `aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228` | `22f0b463e7a5e579904dd6211a520321035526f7` |
+| Lisensi / atribusi | MIT, © 2026 Ahmad Adi — `LICENSE` disalin; atribusi di `SKILL.md` lokal | MIT, © 2025 Jesse Vincent — `LICENSE` di tiap folder |
+| Pemeliharaan | Aktif (655 commit; SECURITY.md) | Aktif (687 commit) |
 
-## 3. Berkas yang dipasang (byte-identik dengan upstream; diperiksa `cmp`)
+## 3. Berkas terpasang
 
-| Skill | Berkas dipasang | SHA-256 `SKILL.md` | Ukuran `SKILL.md` |
+### 3.1 planning-with-files — varian lokal (dimodifikasi, F-24–F-26)
+
+| | Upstream (`skills/planning-with-files/SKILL.md` @ `aaa38bc`) | Lokal |
+|---|---|---|
+| SHA-256 `SKILL.md` | `b99281fc78316b7bcc0a9bbbcf1ca245bf514813380f9edbbccb40ec12e19d58` | `9ae86193abd4528557dd0e7dfe734f57aa0c89272ec7925bc7955047975674b7` |
+| Ukuran `SKILL.md` | 41.938 B (534 baris) | 3.241 B |
+| Berkas di folder | (PR #26 awal) `SKILL.md`, `reference.md` 8.455 B, `examples.md` 4.518 B, `templates/` 4.965 B, `LICENSE` — total `.md` 59.876 B | `SKILL.md`, `LICENSE` |
+| Frontmatter | `name`, `description`, `user-invocable`, `allowed-tools`, `hooks` (5 event), `metadata` | `name`, `description` saja |
+
+Ringkasan modifikasi:
+
+- **Dihapus**: deklarasi `hooks` (UserPromptSubmit, PreToolUse, PostToolUse,
+  Stop, PreCompact) dan `allowed-tools` (F-24, F-25); instruksi skrip
+  (`init-session`, `check-complete`, `resolve-plan-dir`, `attest-plan`,
+  `plan-doctor`, `set-active-plan`, ledger), `session-catchup.py`,
+  `/plan-goal`, `/plan-loop`, `loop.md`, mode autonomous/gated, instalasi
+  global; tautan `templates/`, `plan-inventory.md`, `reference.md`,
+  `examples.md`.
+- **Diadaptasi**: berkas perencanaan → HANDOFF_STATE §Checkpoint aktif dan
+  dokumen bukti; "3-strike" → TE-05 protokol (tidak diduplikasi).
+- **Dipertahankan**: prinsip memori di disk, pulihkan sebelum mulai, baca
+  sebelum memutuskan, perbarui setelah bertindak, catat kegagalan, jangan
+  ulangi kegagalan, simpan bukti, reboot test, aturan keamanan data.
+- Sumber upstream yang tidak tersedia disebut eksplisit di `SKILL.md` lokal
+  dengan larangan menjalankan/memasangnya.
+
+### 3.2 Tiga skill Superpowers (byte-identik; `cmp` terhadap commit pin)
+
+| Skill | Berkas | SHA-256 `SKILL.md` | Ukuran |
 |---|---|---|---|
-| planning-with-files | `SKILL.md`, `reference.md`, `examples.md`, `templates/{task_plan,findings,progress}.md`, `LICENSE` (dari `skills/planning-with-files/` + root `LICENSE`) | `b99281fc…19d58` | 41.938 B |
 | verification-before-completion | `SKILL.md`, `LICENSE` | `2befe7fc…20b3` | 3.646 B |
 | systematic-debugging | `SKILL.md`, `root-cause-tracing.md`, `defense-in-depth.md`, `condition-based-waiting.md`, `LICENSE` | `51c6435d…f202` | 9.530 B |
 | receiving-code-review | `SKILL.md`, `LICENSE` | `091df162…2438` | 6.203 B |
 
-Tidak ada berkas upstream yang diubah. Integrasi proyek ditulis terpisah di
-[AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTOCOL.md) dan `CLAUDE.md`.
+Frontmatter ketiganya hanya `name` dan `description` (tanpa `hooks`,
+`allowed-tools`, atau deklarasi perluasan izin lain) — diperiksa F-25.
 
-### 3.1 Sengaja tidak dipasang
+### 3.3 Sengaja tidak dipasang
 
 | Berkas upstream | Alasan |
 |---|---|
-| PwF `scripts/` (skill-hook, init-session, check-complete, gate-stop, session-catchup.py, attest, ledger, dll.) | Hook otomatis menyuntikkan isi rencana pada setiap panggilan alat (overhead konteks), mode gated dapat memblokir Stop, `session-catchup.py` dapat membaca transkrip sesi lokal. Tidak dibutuhkan untuk mode instruksi |
-| PwF `hooks/`, `commands/`, `.claude-plugin/`, folder IDE lain, `templates/loop.md`, template analytics/autonomous, `evals/`, `plan-inventory.md`, i18n | Di luar lingkup; plugin/perintah tidak diotorisasi |
-| systematic-debugging `find-polluter.sh`, `condition-based-waiting-example.ts` | Menjalankan suite test aplikasi / kode TypeScript; tidak ada aplikasi (implementasi dilarang) |
-| Superpowers lain (`using-superpowers`, `test-driven-development`, dll.), hook `session-start`, `package.json`, `index.js` | Tidak diotorisasi (ON HOLD) |
+| PwF `scripts/`, `hooks/`, `commands/`, `.claude-plugin/`, folder IDE lain, `templates/`, `reference.md`, `examples.md`, `plan-inventory.md`, `evals/`, i18n | Varian instruksi saja; templat akan memicu berkas perencanaan tandingan |
+| systematic-debugging `find-polluter.sh`, `condition-based-waiting-example.ts` | Untuk suite test aplikasi; implementasi dilarang |
+| Superpowers lain, hook `session-start`, `package.json`, `index.js` | Tidak diotorisasi (ON HOLD) |
 
 ## 4. Temuan keamanan dan kompatibilitas
 
-| ID | Skill | Temuan | Tingkat | Mitigasi |
+| ID | Skill | Temuan | Status | Mitigasi dan bukti |
 |---|---|---|---|---|
-| SK-01 | PwF | Frontmatter mendaftarkan hook UserPromptSubmit, PreToolUse, PostToolUse, Stop, PreCompact yang menjalankan `scripts/skill-hook.sh` setelah skill dimuat | Sedang | Skrip tidak dipasang. Perintah hook mencari skrip di folder skill lalu di `$HOME/.claude/skills/planning-with-files/` dan `$HOME/.claude/plugins/marketplaces/planning-with-files/`; ketiganya tidak ada → hook keluar 0 tanpa keluaran. **Jangan** memasang PwF tingkat pengguna (akan mengaktifkan hook) |
-| SK-02 | PwF | `allowed-tools: "Read Write Edit Bash Glob Grep"` memberi izin alat tanpa prompt saat skill aktif | Sedang | Aturan proyek tetap berlaku (tidak ada implementasi, tidak ada merge otomatis). Tidak diubah agar berkas tetap identik upstream; dicatat sebagai risiko yang diterima dalam lingkup otorisasi |
-| SK-03 | PwF | `session-catchup.py --replay` dapat membaca transkrip sesi lokal | Sedang | Skrip tidak dipasang; protokol §4 melarang |
-| SK-04 | PwF | Instruksi merujuk skrip yang tidak ada (init-session, check-complete) | Rendah | Mode manual; checkpoint di HANDOFF_STATE (protokol §3) |
-| SK-05 | PwF | Overhead konteks: `SKILL.md` 41.938 B dimuat penuh saat skill dipanggil | Rendah | Muat hanya untuk tugas multi-tahap (TE-06) |
-| SK-06 | systematic-debugging | Merujuk `superpowers:test-driven-development` (tidak dipasang) dan `find-polluter.sh` (tidak dipasang) | Rendah | Protokol §4: reproduksi dengan skrip validasi di scratchpad |
-| SK-07 | receiving-code-review | Menyarankan balasan thread via `gh api` | Rendah | Komentar GitHub hanya atas permintaan owner; `gh` hanya untuk pencarian |
-| SK-09 | PwF | `SKILL.md` menautkan `plan-inventory.md` yang tidak dipasang (hanya mendokumentasikan `set-active-plan.sh`, yang juga tidak dipasang) → satu tautan relatif menggantung di berkas upstream | Rendah | Dibiarkan agar `SKILL.md` tetap identik upstream; fitur yang dirujuk memang tidak tersedia |
-| SK-08 | Semua | Pemindaian: tanpa symlink, tanpa karakter Unicode tersembunyi (kategori Cf/Co/Cs), tanpa perintah jaringan (`curl`/`wget`) atau eksekusi jarak jauh di berkas yang dipasang; hanya tiga tautan dokumentasi (code.claude.com, github.com, manus.im) di teks Markdown | — | Diperiksa 2026-11-24 |
-
-Tidak ada temuan eksfiltrasi data, kredensial, skrip jarak jauh, loop tak
-terkendali, dependensi baru, atau penghindaran gerbang persetujuan pada
-berkas yang dipasang. Tidak ada perintah curl-to-shell yang dijalankan.
+| SK-01 | PwF | Upstream mendeklarasikan 5 hook lifecycle yang menjalankan `skill-hook.sh`, dengan fallback ke `$HOME/.claude/skills/…` dan `$HOME/.claude/plugins/…` | **Ditutup (F-24)** | Deklarasi `hooks` dihapus dari frontmatter lokal. Bukti: pencarian `^hooks:` dan `type: command` di keempat folder skill = 0 hasil; frontmatter lokal hanya `name`, `description`. Tidak bergantung pada skrip yang hilang |
+| SK-02 | PwF | `allowed-tools: "Read Write Edit Bash Glob Grep"` memperluas izin saat skill aktif | **Ditutup (F-25)** | Dihapus; izin memakai mekanisme izin Claude Code biasa. Pencarian `allowed-tools` di frontmatter keempat skill = 0 hasil. Pengaturan izin global tidak diubah |
+| SK-03 | PwF | `session-catchup.py` dapat membaca transkrip sesi lokal | Ditutup | Skrip tidak dipasang; instruksi dihapus; `SKILL.md` lokal melarang membaca transkrip |
+| SK-04 | PwF | Instruksi merujuk skrip yang tidak ada | Ditutup (F-26) | Instruksi dihapus; sumber yang tidak tersedia disebut tanpa perintah menjalankan |
+| SK-05 | PwF | Overhead konteks 41.938 B | Ditutup | Varian lokal 3.241 B |
+| SK-06 | systematic-debugging | Merujuk `superpowers:test-driven-development` dan `find-polluter.sh` (tidak dipasang) | Diterima | Protokol §4: reproduksi dengan skrip validasi di scratchpad; berkas tidak diubah (bukan masalah keamanan) |
+| SK-07 | receiving-code-review | Menyarankan balasan thread via `gh api` | Diterima | Aturan proyek menang (komentar GitHub hanya atas permintaan owner) |
+| SK-08 | Semua | Tanpa symlink, tanpa Unicode tersembunyi (Cf/Co/Cs), tanpa perintah jaringan atau eksekusi jarak jauh | — | Diperiksa ulang setelah modifikasi |
+| SK-09 | PwF | Tautan menggantung ke `plan-inventory.md` | **Ditutup (F-26)** | Tautan dihapus di varian lokal; 0 tautan rusak di repositori |
+| SK-10 | PwF | Hook dari pemuatan varian **upstream** sebelumnya mungkin masih terdaftar dalam sesi yang sama sampai sesi berakhir (perilaku host tidak dapat diamati) | Sisa, terbatas sesi ini | Tidak ada keluaran hook yang teramati; skrip tidak ada; sesi baru memuat varian lokal tanpa hook |
 
 ## 5. Aktivasi
 
-| Bukti | Hasil |
-|---|---|
-| Panggilan `Skill` segera setelah berkas disalin | "Unknown skill" (daftar skill sesi belum diperbarui) |
-| Daftar skill sesi setelah pembaruan lingkungan | Keempat skill muncul dengan deskripsi upstream |
-| Panggilan `Skill` (verification-before-completion, receiving-code-review, systematic-debugging, planning-with-files) | Keempatnya dimuat ("Launching skill") dengan isi `SKILL.md` |
-| Hook PwF setelah dimuat | Tidak ada keluaran hook yang teramati pada panggilan alat berikutnya. Apakah hook terdaftar tidak dapat diamati langsung (NOT VERIFIED); efeknya nol karena skrip tidak ada |
-| Sesi baru setelah merge | **NOT VERIFIED** — langkah verifikasi tersisa: di sesi baru, pastikan keempat skill ada di daftar skill |
+| Tingkat bukti | planning-with-files (lokal) | 3 skill Superpowers |
+|---|---|---|
+| Berkas terpasang | Ya | Ya |
+| Ditemukan (daftar skill sesi) | Ya — deskripsi baru varian lokal muncul setelah modifikasi | Ya |
+| Dimuat (`Skill`) | Ya — isi varian lokal dimuat setelah modifikasi | Ya (sebelum modifikasi PwF; berkas tidak berubah sejak itu) |
+| Kompatibilitas mode instruksi | Ya (inspeksi: tidak ada instruksi yang membutuhkan alat yang tidak tersedia) | Ya, dengan SK-06/SK-07 |
+| Perilaku alur kerja nyata | Sebagian: checkpoint HANDOFF dipakai dan diperbarui di revisi ini | verification-before-completion dipakai sebelum klaim; lainnya disimulasikan (V07, V09) |
+| Aktivasi di sesi baru | **NOT VERIFIED** | **NOT VERIFIED** |
 
-Pemasangan tingkat repositori; tidak ada perubahan pengaturan akun global
-atau `settings.json`.
+Langkah verifikasi tersisa: di sesi baru setelah merge, pastikan keempat
+skill ada di daftar skill dan `planning-with-files` memuat varian lokal.
+
+Pemasangan tingkat repositori; tidak ada perubahan pengaturan akun global,
+`settings.json`, plugin, atau hook.
 
 ## 6. Pembaruan dan rollback
 
-**Pembaruan** (butuh otorisasi owner): klon upstream, pin commit baru,
-audit ulang (§4), salin berkas yang sama, `cmp` terhadap upstream, perbarui
-§2–§3, uji pemuatan, PR terpisah.
+**Pembaruan Superpowers** (butuh otorisasi owner): klon upstream, pin commit
+baru, audit ulang (§4), salin berkas yang sama, `cmp`, perbarui §2–§3, uji
+pemuatan, PR terpisah.
 
-**Rollback** satu skill: `git rm -r .claude/skills/<nama>/` lalu hapus baris
-di registry ini, routing di protokol §2, dan rujukan di `CLAUDE.md`; PR.
-Rollback penuh CB-0.5: `git revert` commit CB-0.5 (setelah merge: revert
-merge commit dengan `-m 1`). Proyek tetap dapat dinavigasi tanpa skill
-(protokol §2). Tidak ada keadaan di luar repositori yang perlu dibersihkan.
+**Pembaruan planning-with-files**: baca diff upstream antara `aaa38bc` dan
+commit baru; nilai apakah prinsip yang dipertahankan (§3.1) berubah; terapkan
+perubahan secara manual ke varian lokal **tanpa** memasukkan kembali `hooks`,
+`allowed-tools`, skrip, atau akses transkrip; perbarui commit pin, kedua
+hash, dan ukuran di §3.1; uji pemuatan; PR terpisah.
+
+**Rollback** satu skill: `git rm -r .claude/skills/<nama>/`, lalu hapus baris
+di registry ini, routing di protokol §2, rujukan di `CLAUDE.md` dan
+`SOURCES.md`; PR. Rollback penuh CB-0.5: `git revert` (setelah merge: revert
+merge commit dengan `-m 1`). Proyek tetap dapat dinavigasi tanpa skill.

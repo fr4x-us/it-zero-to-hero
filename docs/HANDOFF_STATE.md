@@ -42,7 +42,7 @@ di setiap PR batch.
 | #23 | Pencatatan D-16–D-22; roadmap; lembar OP-4, CU-6; rencana produksi kurikulum; revisi F-01–F-06 | Merged 2026-11-24 sebagai `928e278` (di-merge Claude atas persetujuan eksplisit owner) |
 | #24 | Pencatatan D-23–D-25; lembar keputusan kurikulum; templat CB-0; tinjauan konsistensi | Merged 2026-11-24 sebagai `40ca205` (di-merge Claude atas persetujuan eksplisit owner) |
 | #25 | Pencatatan D-26–D-37; CB-0; konten W1; revisi kualitas W1 (F-01–F-23) | Merged 2026-11-24 sebagai `df76c5f` (head `f4cb173`; di-merge Claude atas otorisasi eksplisit owner) |
-| (baru) | CB-0.5: D-38, W01-ACC, empat skill agen, PROJECT_MAP, protokol efisiensi token | Terbuka, menunggu review; **tidak di-merge Claude** |
+| #26 | CB-0.5: D-38, W01-ACC, empat skill agen, PROJECT_MAP, protokol efisiensi token; revisi F-24–F-27 (hardening keamanan) | Terbuka, menunggu review ulang; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -83,7 +83,9 @@ CB-0.5: empat skill dipasang di `.claude/skills/`
 integrasi `CLAUDE.md`, validasi V01–V18
 ([CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md)). Audit §19: 32
 COMPLETE, 4 OPEN, 12 BLOCKED, 3 DEFERRED, 5 NOT VERIFIED. Jalur P 32/43.
-Kurikulum diproduksi 4/64, diterima 4/64. Status: PR CB-0.5 terbuka.
+Kurikulum diproduksi 4/64, diterima 4/64. Revisi F-24–F-27: hook dan
+`allowed-tools` PwF dihapus; varian lokal instruksi saja. Status: PR #26
+terbuka.
 
 ## Checkpoint aktif (persisten; dibaca pertama saat memulai ulang sesi)
 
@@ -92,17 +94,17 @@ Kontrak field: [AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTO
 | Field | Nilai |
 |---|---|
 | Tugas aktif dan lingkup | CB-0.5 — Agent Workflow & Token Optimization (otorisasi owner 2026-11-24). Dokumentasi + pemasangan empat skill saja |
-| Fase | Selesai; PR CB-0.5 dibuka; menunggu review ChatGPT |
-| Selesai | Merge PR #25; D-38, W01-ACC dicatat; UW-36 COMPLETE; empat skill dipasang dan dimuat; PROJECT_MAP; protokol TE-01–TE-14; CLAUDE.md; V01–V18 |
-| Sisa | Review independen PR CB-0.5; otorisasi merge owner |
+| Fase | Revisi PR #26 (F-24–F-27) selesai; menunggu review ulang ChatGPT |
+| Selesai | Merge PR #25; D-38, W01-ACC dicatat; UW-36 COMPLETE; empat skill dipasang; PROJECT_MAP; protokol TE-01–TE-14; CLAUDE.md; F-24 hook dihapus; F-25 `allowed-tools` dihapus; F-26 varian lokal PwF; F-27 validasi dikoreksi |
+| Sisa | Review independen PR #26; otorisasi merge owner; verifikasi aktivasi di sesi baru (setelah merge) |
 | Berkas relevan | `.claude/skills/{planning-with-files,verification-before-completion,systematic-debugging,receiving-code-review}/`, `docs/AGENT_SKILL_REGISTRY.md`, `docs/PROJECT_MAP.md`, `docs/AGENT_TOKEN_EFFICIENCY_PROTOCOL.md`, `docs/CB05_VALIDATION_REPORT.md`, `CLAUDE.md` |
-| Branch / commit | `planning/cb-0-5-agent-workflow`, basis `main` = `df76c5f` |
+| Versi kerja | Branch `planning/cb-0-5-agent-workflow`; basis `main` = `df76c5fbf946e6e8d2ca9e8e87505454041623a3` (merge PR #25); versi terkini = head PR #26 di GitHub (lihat `git log origin/planning/cb-0-5-agent-workflow -1`); revisi sebelumnya yang direview: `102b7a4` |
 | Keputusan | D-38; W01-ACC; CB-0.5 diotorisasi |
-| Blocker | Lihat §Blocker. Skrip/hook Planning with Files sengaja tidak dipasang |
-| Pendekatan gagal | `Skill` memanggil skill sesaat setelah disalin → "Unknown skill"; skill baru terdeteksi setelah daftar skill sesi diperbarui (tanpa mengulang langkah yang sama) |
+| Blocker | Lihat §Blocker. Aktivasi skill di sesi baru NOT VERIFIED |
+| Pendekatan gagal | (1) `Skill` sesaat setelah salin → "Unknown skill"; diulang hanya setelah skill muncul di daftar. (2) Mengandalkan skrip yang hilang untuk menonaktifkan hook PwF — ditolak review (F-24); diganti dengan menghapus deklarasi hook |
 | Bukti verifikasi | [CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md) |
-| Aksi berikutnya yang diizinkan | Tidak ada sampai owner mengirim otorisasi merge eksplisit untuk PR CB-0.5 atau instruksi revisi |
-| Kondisi berhenti | PR CB-0.5 dibuka → STOP. Jangan merge, jangan mulai W2, jangan implementasi |
+| Aksi berikutnya yang diizinkan | Tidak ada sampai owner mengirim otorisasi merge eksplisit untuk PR #26 atau instruksi revisi |
+| Kondisi berhenti | PR #26 diperbarui → STOP. Jangan merge, jangan mulai W2, jangan implementasi |
 
 ## Blocker
 

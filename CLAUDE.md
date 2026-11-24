@@ -50,7 +50,8 @@ Use Indonesian for explanations and progress reports.
 - Token protocol TE-01–TE-14: docs/AGENT_TOKEN_EFFICIENCY_PROTOCOL.md.
 - Skills (load only when relevant; see protocol §2 and
   docs/AGENT_SKILL_REGISTRY.md): planning-with-files (multi-stage work,
-  checkpoints; instruction mode only, no scripts/hooks), systematic-debugging
+  checkpoints; modified local instruction-only variant: no hooks,
+  allowed-tools, or scripts), systematic-debugging
   (failed validation, repeated failures), verification-before-completion
   (before any completion/PASS claim, audit COMPLETE, PR, handoff),
   receiving-code-review (review findings and revisions).
