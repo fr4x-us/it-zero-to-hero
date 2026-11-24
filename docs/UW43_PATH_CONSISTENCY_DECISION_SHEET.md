@@ -9,7 +9,7 @@ Status: **BLOCKED — menunggu keputusan owner** · dokumentasi saja · file
 |---|---|
 | Lokasi file sebenarnya | `PLANNING_COMPLETION_BATCH.md` (root repo) |
 | Rujukan ke `docs/PLANNING_COMPLETION_BATCH.md` di dokumen owner verbatim | **Hanya TD:5** (`TECHNICAL_DECISIONS_BATCH_02.md` baris 5) |
-| **Koreksi:** catatan lama menyebut "TD:5 **dan TD:68**" | Salah. TD:68 merujuk `docs/TECHNICAL_DECISIONS_BATCH_02.md`, bukan Batch 01. Catatan di DECISIONS_LOG K-2 dan audit diperbaiki di PR ini |
+| **Koreksi:** catatan lama menyebut "TD:5 **dan TD:68**" | Salah. TD:68 merujuk `docs/TECHNICAL_DECISIONS_BATCH_02.md`, bukan Batch 01. Dikoreksi di DECISIONS_LOG K-2 dan dicatat di audit §15.1; baris historis audit (§1, §4) dibiarkan sebagai catatan masa lalu |
 | Rujukan path lain yang menyebut `docs/PLANNING_COMPLETION_BATCH.md` | Hanya di dokumen audit/log yang **mendeskripsikan** masalah ini (DECISIONS_LOG K-2, audit, FINAL REVIEW) |
 | Tautan Markdown ke file di root | 13 tautan di 12 file (`README.md` dan 11 dokumen di `docs/`), semuanya valid |
 | Tautan keluar dari dalam file Batch 01 | Satu tautan Markdown ke `docs/OWNER_DECISION_CHECKLIST.md` di §7, ditulis relatif dari root (akan rusak bila file dipindah tanpa penyesuaian) |
