@@ -41,7 +41,7 @@ di setiap PR batch.
 | #22 | Pencatatan D-12–D-15; lembar OD-1, OD-2, UW-43 | Merged 2026-11-24 sebagai `bcecdae` (di-merge Claude atas persetujuan eksplisit owner) |
 | #23 | Pencatatan D-16–D-22; roadmap; lembar OP-4, CU-6; rencana produksi kurikulum; revisi F-01–F-06 | Merged 2026-11-24 sebagai `928e278` (di-merge Claude atas persetujuan eksplisit owner) |
 | #24 | Pencatatan D-23–D-25; lembar keputusan kurikulum; templat CB-0; tinjauan konsistensi | Merged 2026-11-24 sebagai `40ca205` (di-merge Claude atas persetujuan eksplisit owner) |
-| PR D-26–D-35 | Pencatatan D-26–D-35; CB-0 final; konten W1 | Terbuka, menunggu review; **tidak di-merge Claude** |
+| #25 | Pencatatan D-26–D-35; CB-0 final; konten W1 | Terbuka, menunggu review; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 

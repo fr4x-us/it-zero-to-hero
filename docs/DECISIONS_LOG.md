@@ -102,8 +102,8 @@ blueprint atau Batch 02.
 | CU-3, CU-5, CU-7, CU2-O3, CU-11 | [CURRICULUM_CONTENT_DECISION_SHEETS.md](CURRICULUM_CONTENT_DECISION_SHEETS.md) | #24 | UW-36 — diputuskan D-30–D-32 |
 | CU2-O4, CU-9 | [PROJECT_RUBRIC_DECISION_SHEETS.md](PROJECT_RUBRIC_DECISION_SHEETS.md) | #24 | UW-36 — diputuskan D-33 |
 | CU-10 | [CU10_ANSWER_KEY_RISK_DECISION_SHEET.md](CU10_ANSWER_KEY_RISK_DECISION_SHEET.md) | #24 | UW-25 — diputuskan D-34 |
-| Templat CB-0 | [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md) | #24, PR D-26–D-35 | UW-37 — CB-0 FINAL (1 field terbuka: CU-6-Q13); bukan konten |
-| Konten W1 | [curriculum/mod-w01/module.yaml](../curriculum/mod-w01/module.yaml) | PR D-26–D-35 | UW-37, UW-26 — W1 diproduksi, belum diterima owner |
+| Templat CB-0 | [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md) | #24, #25 | UW-37 — CB-0 FINAL (1 field terbuka: CU-6-Q13); bukan konten |
+| Konten W1 | [curriculum/mod-w01/module.yaml](../curriculum/mod-w01/module.yaml) | #25 | UW-37, UW-26 — W1 diproduksi, belum diterima owner |
 | Konsistensi | [CROSS_SPEC_CONSISTENCY_REVIEW.md](CROSS_SPEC_CONSISTENCY_REVIEW.md) | #24 | Pemeriksaan usulan terhadap D-01–D-25 |
 
 ## Aturan rujukan lintas dokumen (editorial, UW-44)
