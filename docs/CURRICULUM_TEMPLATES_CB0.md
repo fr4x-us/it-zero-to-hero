@@ -156,7 +156,7 @@ remedial (MPV-A, salinan submission sebelumnya), durasi. W16 = capstone
 
 MR-A: K1 60 · K2 20 · K3 10 · K4 10 (D-33). Setiap pemeriksaan: `id`,
 `rule` yang dapat diperiksa, `depends_on`, `points` integer; jumlah tepat
-sama dengan anggaran (MR-8). K4 dengan komposisi A.2a (jumlah `max_soal`
+sama dengan anggaran (MR-8) **dan dapat dicapai bersamaan** (QC-01). K4 dengan komposisi A.2a (jumlah `max_soal`
 tepat 10, tanpa penskalaan). Capstone: CR-1–CR-6, MC-1–MC-4, CG-B, CP-1–CP-6.
 Pernyataan pelajar = 0 poin (MR-6).
 
@@ -205,7 +205,7 @@ remedial, review opsional).
 
 ### TPL-19 Checklist penerimaan konten (`review.md`)
 
-CQ-01–CQ-20: kebenaran teknis, ramah pemula, LO terukur, prasyarat, cakupan,
+CQ-01–CQ-20 dan QC-01–QC-10 (§3b): kebenaran teknis, ramah pemula, LO terukur, prasyarat, cakupan,
 tidak menilai yang belum diajarkan, kelengkapan, kesetaraan varian, kunci,
 aritmetika, fixture deterministik, rubrik objektif, concept, XP unik,
 aksesibilitas, versi, 480 menit, offline, konsistensi D-01–D-35, kunci tidak
@@ -216,6 +216,47 @@ tampil sebelum tahap umpan balik.
 Tabel status terpisah (diproduksi / direview / diterima owner / runtime /
 diuji pelajar), inventaris yang dihitung dari berkas, aritmetika, temuan
 yang diperbaiki, batas penilaian objektif, reviewer dan tanggal.
+
+## 3a. Field metadata kanonik (revisi review PR #25, F-16)
+
+| Field | Dipakai untuk | Catatan |
+|---|---|---|
+| `key` | Kunci soal pilihan (teori, concept, K4) | Satu ID atau daftar ID (pilihan ganda) |
+| `accepted_answers` | Jawaban singkat teori dan pemeriksaan lab berbentuk teks/angka | Daftar lengkap bentuk yang diterima, huruf kecil |
+| `normalization` | Aturan pencocokan `accepted_answers` | Satu nama di teori dan lab (dulu lab memakai `answer_normalization`) |
+| `accepted_sequences` | Urutan yang diterima (TF-5, CE-S3, lab urutan) | Dulu lab memakai `expected_sequence` |
+| `display_order` | Urutan tampil item urutan | Tidak boleh sama dengan urutan diterima |
+| `expected` | Hasil yang diharapkan satu pemeriksaan lab | — |
+| `rule` | Aturan pemeriksaan rubrik/lab | Harus deterministik |
+| `depends_on` | Isian yang dibutuhkan pemeriksaan rubrik | **Satu-satunya** nama; dulu W1 memakai `needs` |
+| `points` / `max_points` | Poin pemeriksaan / maksimum butir atau komponen | Bilangan bulat |
+| `reachable_values` | Nilai poin yang dapat dicapai pemeriksaan berkredit parsial | Wajib untuk aturan per pasangan/per butir |
+
+Aturan angka (dokumentasi, bukan parser): spasi tepi dibuang; spasi di
+dalam angka ditolak; bilangan bulat tanpa nol di depan atau berkelompok
+titik tepat tiap 3 digit; tanpa tanda dan desimal; awalan/satuan hanya
+yang diizinkan per isian. Contoh diterima/ditolak:
+[`curriculum/mod-w01/project/rubric.yaml`](../curriculum/mod-w01/project/rubric.yaml)
+`field_rules.number_fields`.
+
+## 3b. Kriteria kualitas dokumentasi (wajib setiap modul; dari review W1)
+
+| ID | Kriteria | Bukti yang diminta di `review.md` |
+|---|---|---|
+| QC-01 | Setiap maksimum yang dinyatakan **dapat dicapai**, bukan hanya jumlah field poin | Contoh jawaban yang mencapai maksimum untuk setiap pemeriksaan berkredit parsial dan setiap komponen |
+| QC-02 | Setiap contoh skor cocok dengan aturan skor yang berlaku | Contoh dihitung ulang dari aturan |
+| QC-03 | Setiap rumus konversi satuan benar ke dua arah | Contoh besar → kecil, kecil → besar, dan dua tingkat |
+| QC-04 | Varian setara menilai konsep wajib yang setara | Matriks kesetaraan dengan bukti isi kedua varian |
+| QC-05 | Model teknis yang disederhanakan diberi label | Daftar model sederhana vs kenyataan |
+| QC-06 | Contoh pengajaran tidak memuat jawaban lengkap tugas bernilai | Tabel tumpang-tindih pelajaran/latihan/remedial vs butir bernilai |
+| QC-07 | Instruksi pelajar dan metadata penilai sesuai | Perbandingan spec.md vs YAML |
+| QC-08 | Aturan normalisasi dan ketergantungan deterministik | Contoh diterima/ditolak |
+| QC-09 | Semua nama field mengikuti §3a | Pemeriksaan nama field |
+| QC-10 | Fixture batas mencakup batas yang dapat dicapai (atau dinyatakan tidak dapat dicapai) | Contoh batas dari fixture nyata |
+
+Kriteria ini adalah persyaratan kualitas dokumentasi, **bukan** izin
+implementasi. TPL-19 (checklist penerimaan) mencakup CQ-01–CQ-20 **dan**
+QC-01–QC-10.
 
 ## 4. Batas penilaian objektif (berlaku untuk semua modul)
 
@@ -231,7 +272,7 @@ yang diperbaiki, batas penilaian objektif, reviewer dan tanggal.
 |---|---|---|---|
 | CB0-AC-01 | 20 templat wajib ada | §3 TPL-01–TPL-20 | Lulus |
 | CB0-AC-02 | Setiap field dapat dilacak ke keputusan | Kolom/teks "Dasar" | Lulus |
-| CB0-AC-03 | Konvensi penamaan konsisten | §2; diterapkan di W1 (212 ID unik) | Lulus |
+| CB0-AC-03 | Konvensi penamaan dan field kanonik konsisten | §2, §3a; diterapkan di W1 (213 ID unik; `depends_on`, `normalization`, `accepted_sequences` seragam) | Lulus |
 | CB0-AC-04 | Sumber, kunci, dan tampilan dipisahkan | §1 | Lulus |
 | CB0-AC-05 | Semua field wajib terdefinisi oleh keputusan yang disetujui | TPL-10 `hidden_test_feedback` menunggu CU-6-Q13 (ditandai) | **Belum terpenuhi** untuk lab kode; terpenuhi untuk W1–W8 |
 | CB0-AC-06 | Diterapkan pada satu modul lengkap | `curriculum/mod-w01/` | Diproduksi; W1 belum lolos review dan belum diterima |

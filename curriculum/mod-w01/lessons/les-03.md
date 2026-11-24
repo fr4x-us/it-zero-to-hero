@@ -113,7 +113,14 @@ hardware.
 | 5 | Printer mencetak di kertas | Hardware (output) |
 
 Bila driver tidak terpasang, langkah 3–4 gagal dan printer tidak dapat
-dipakai walaupun kabel tersambung dengan benar.
+dipakai walaupun kabel tersambung dengan benar. Tetapi printer yang "tidak
+terdeteksi" dapat punya **banyak penyebab** (printer mati, kabel/port
+bermasalah, pengaturan, driver); driver adalah salah satu kemungkinan, bukan
+diagnosis pasti.
+
+*Diagram lapisan dan urutan boot di pelajaran ini adalah **model sederhana
+W1**. Sistem nyata memiliki lebih banyak lapisan dan langkah, dan perilaku
+firmware berbeda antarperangkat.*
 
 ## 3. Proses boot (menyalakan komputer)
 
@@ -132,7 +139,7 @@ dipakai walaupun kabel tersambung dengan benar.
 5. **Sistem operasi siap dipakai** — layar masuk atau desktop muncul.
 
 Mengapa OS harus dimuat ke RAM? Karena CPU bekerja dengan data di RAM
-(Pelajaran 2), sedangkan OS tersimpan permanen di penyimpanan.
+(Pelajaran 2), sedangkan OS tersimpan di penyimpanan non-volatil.
 
 ## 4. Miskonsepsi umum
 
@@ -147,8 +154,9 @@ Mengapa OS harus dimuat ke RAM? Karena CPU bekerja dengan data di RAM
 
 1. Kelompokkan: iOS, aplikasi kalender, driver kartu grafis, aplikasi
    presentasi, firmware router, aplikasi pencadangan (*backup*).
-2. Printer baru tersambung dengan kabel USB yang benar, tetapi tidak muncul
-   di daftar printer. Lapisan mana yang paling mungkin bermasalah?
+2. Printer baru sudah menyala dan tersambung dengan kabel USB yang benar,
+   tetapi tidak muncul di daftar printer. Menurut model lapisan W1, lapisan
+   software mana yang perlu diperiksa?
 3. Urutkan lapisan saat kamu memutar video dan gambar tampil di layar:
    sistem operasi; layar; pengguna; driver grafis; aplikasi pemutar video.
 
@@ -161,7 +169,9 @@ Mengapa OS harus dimuat ke RAM? Karena CPU bekerja dengan data di RAM
 
 1. Software sistem: iOS (OS), driver kartu grafis, firmware router,
    aplikasi pencadangan (utilitas). Software aplikasi: kalender, presentasi.
-2. Driver printer (software) belum terpasang atau tidak sesuai.
+2. Driver printer (software) — kemungkinan belum terpasang atau tidak
+   sesuai. Penyebab lain tetap mungkin (port, pengaturan), jadi ini
+   pemeriksaan pertama, bukan diagnosis pasti.
 3. Pengguna → aplikasi pemutar video → sistem operasi → driver grafis →
    layar.
 

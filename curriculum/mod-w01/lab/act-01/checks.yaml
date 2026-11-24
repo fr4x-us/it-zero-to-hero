@@ -7,6 +7,10 @@ max_points: 30
 estimated_minutes: 30
 content_version: '1.0'
 xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w01.lab (D-28 XI-2)
+normalization: 'Buang spasi/tab di awal dan akhir; ubah ke huruf kecil; cocokkan persis dengan salah satu
+  accepted_answers (sudah memuat bentuk dengan/tanpa titik ribuan berpola 1.234 dan dengan/tanpa satuan
+  yang diizinkan). Ditolak: tanda +/−, desimal, pengelompokan titik salah (mis. 7.00.0), spasi di dalam
+  angka, satuan lain'
 answer_validation: Jawaban kosong → 0 poin untuk pemeriksaan itu; ID kategori/opsi tidak dikenal atau
   ganda → 0 poin untuk pemeriksaan itu (tidak membatalkan pemeriksaan lain); kegagalan infrastruktur/konten
   → EVALUATION_ERROR, evaluasi diulang tanpa attempt baru (D-24 IE-2)
@@ -29,13 +33,13 @@ variants:
       label: Pemrosesan
     devices:
     - id: d01
-      name: Keyboard
+      name: Stylus (pena digital)
     - id: d02
       name: Monitor
     - id: d03
       name: Printer (hanya mencetak)
     - id: d04
-      name: Mouse
+      name: Pemindai sidik jari
     - id: d05
       name: Layar sentuh
     - id: d06
@@ -45,9 +49,9 @@ variants:
     - id: d08
       name: Mikrofon
     - id: d09
-      name: Speaker
+      name: Speaker tanpa mikrofon
     - id: d10
-      name: Flashdisk USB
+      name: Keping DVD (cakram)
   visible_example:
     device: Joystick
     answer: I
@@ -58,7 +62,7 @@ variants:
     device: d01
     expected: I
     points: 3
-    feedback: Keyboard memasukkan huruf dan angka
+    feedback: Stylus memasukkan gerakan dan sentuhan pena
   - check_id: mod-w01.lab.act-01.vA.c02
     device: d02
     expected: O
@@ -73,7 +77,7 @@ variants:
     device: d04
     expected: I
     points: 3
-    feedback: Mouse memasukkan gerakan dan klik
+    feedback: Membaca sidik jari dan memasukkannya sebagai data
   - check_id: mod-w01.lab.act-01.vA.c05
     device: d05
     expected: IO
@@ -98,12 +102,12 @@ variants:
     device: d09
     expected: O
     points: 3
-    feedback: Mengeluarkan suara
+    feedback: Mengeluarkan suara saja
   - check_id: mod-w01.lab.act-01.vA.c10
     device: d10
     expected: S
     points: 3
-    feedback: Menyimpan data non-volatil
+    feedback: Menyimpan data pada cakram; dibaca dengan pemutar DVD
 - variant_id: mod-w01.lab.act-01.vB
   fixture:
     categories:
@@ -129,11 +133,11 @@ variants:
     - id: d05
       name: HDD
     - id: d06
-      name: GPU
+      name: GPU (prosesor grafis)
     - id: d07
-      name: Touchpad
+      name: Kamera CCTV
     - id: d08
-      name: Earphone
+      name: Earphone tanpa mikrofon
     - id: d09
       name: Kartu memori SD
     - id: d10
@@ -178,12 +182,12 @@ variants:
     device: d07
     expected: I
     points: 3
-    feedback: Memasukkan gerakan jari
+    feedback: Menangkap gambar video
   - check_id: mod-w01.lab.act-01.vB.c08
     device: d08
     expected: O
     points: 3
-    feedback: Mengeluarkan suara
+    feedback: Mengeluarkan suara saja
   - check_id: mod-w01.lab.act-01.vB.c09
     device: d09
     expected: S

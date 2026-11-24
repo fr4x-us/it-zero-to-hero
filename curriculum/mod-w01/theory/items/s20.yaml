@@ -16,7 +16,7 @@ variants:
   - id: a
     text: Menjalankan instruksi program
   - id: b
-    text: Menyimpan data secara permanen
+    text: Menyimpan data tanpa listrik (non-volatil)
   - id: c
     text: Memasok listrik yang sesuai ke komponen komputer
   - id: d
@@ -35,7 +35,7 @@ variants:
   - id: a
     text: Memasok listrik dari stopkontak
   - id: b
-    text: Menyimpan berkas secara permanen
+    text: Menyimpan berkas tanpa listrik (non-volatil)
   - id: c
     text: Menampilkan gambar ke pengguna
   - id: d

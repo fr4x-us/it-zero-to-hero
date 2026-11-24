@@ -8,6 +8,10 @@ max_points: 30
 estimated_minutes: 30
 content_version: '1.0'
 xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w01.lab (D-28 XI-2)
+normalization: 'Buang spasi/tab di awal dan akhir; ubah ke huruf kecil; cocokkan persis dengan salah satu
+  accepted_answers (sudah memuat bentuk dengan/tanpa titik ribuan berpola 1.234 dan dengan/tanpa satuan
+  yang diizinkan). Ditolak: tanda +/−, desimal, pengelompokan titik salah (mis. 7.00.0), spasi di dalam
+  angka, satuan lain'
 answer_validation: Jawaban kosong → 0 poin untuk pemeriksaan itu; ID kategori/opsi tidak dikenal atau
   ganda → 0 poin untuk pemeriksaan itu (tidak membatalkan pemeriksaan lain); kegagalan infrastruktur/konten
   → EVALUATION_ERROR, evaluasi diulang tanpa attempt baru (D-24 IE-2)
@@ -55,14 +59,20 @@ variants:
   checks:
   - check_id: mod-w01.lab.act-02.vA.c01
     name: Urutan kejadian
-    expected_sequence:
-    - A
-    - B
-    - C
-    - D
+    accepted_sequences:
+    - - A
+      - B
+      - C
+      - D
     points: 12
-    rule: 3 poin per pasangan berurutan yang benar (adjacency, maks. 3 pasangan); ID asing/ganda → 0 untuk
-      pemeriksaan ini
+    rule: 4 poin per pasangan berurutan yang benar (adjacency) terhadap urutan diterima; maks. 3 pasangan
+      → 0/4/8/12 poin. Barisan harus memuat ID A–D tanpa ID asing atau ganda; bila tidak → 0 untuk pemeriksaan
+      ini (pemeriksaan lain tetap dinilai)
+    reachable_values:
+    - 0
+    - 4
+    - 8
+    - 12
   - check_id: mod-w01.lab.act-02.vA.c02
     name: Tahap kejadian A
     event: A
@@ -129,14 +139,20 @@ variants:
   checks:
   - check_id: mod-w01.lab.act-02.vB.c01
     name: Urutan kejadian
-    expected_sequence:
-    - A
-    - B
-    - C
-    - D
+    accepted_sequences:
+    - - A
+      - B
+      - C
+      - D
     points: 12
-    rule: 3 poin per pasangan berurutan yang benar (adjacency, maks. 3 pasangan); ID asing/ganda → 0 untuk
-      pemeriksaan ini
+    rule: 4 poin per pasangan berurutan yang benar (adjacency) terhadap urutan diterima; maks. 3 pasangan
+      → 0/4/8/12 poin. Barisan harus memuat ID A–D tanpa ID asing atau ganda; bila tidak → 0 untuk pemeriksaan
+      ini (pemeriksaan lain tetap dinilai)
+    reachable_values:
+    - 0
+    - 4
+    - 8
+    - 12
   - check_id: mod-w01.lab.act-02.vB.c02
     name: Tahap kejadian A
     event: A

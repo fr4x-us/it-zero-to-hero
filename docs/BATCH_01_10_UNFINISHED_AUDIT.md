@@ -874,3 +874,18 @@ Jumlah per status **tidak berubah**: 31 / 4 / 13 / 3 / 5 = 56; jalur P
 diterima owner. CB-0: dapat dipakai W1–W8; finalisasi global menunggu
 CU-6-Q13.
 
+### 18.5 Revisi kualitas W1 putaran 2 (review PR #25, F-09–F-18)
+
+Perbaikan konten W1: maksimum lab act-02 kini dapat dicapai (4 poin per
+pasangan; komponen lab 100, sebelumnya hanya 97 yang dapat dicapai); arah
+konversi satuan remedial diperbaiki; presisi soal teori s03/s05/s07/s09/s17;
+kesetaraan concept s02/s03/s06; contoh pelajaran 1 tidak lagi sama dengan
+lab; penyederhanaan teknis diberi label; field kanonik dan aturan angka
+deterministik; label perangkat tidak ambigu; CB-0 ditambah QC-01–QC-10.
+Rincian: [curriculum/mod-w01/review.md](../curriculum/mod-w01/review.md).
+
+Jumlah status **tidak berubah**: 31 / 4 / 13 / 3 / 5 = 56; jalur P 31/43.
+Kurikulum: diproduksi 4/64, lolos review ChatGPT 0/64, diterima owner 0/64.
+CU-6-Q13 (calon D-36) dan OD-15-Q2 (calon D-37) tetap AWAITING OWNER;
+W01-ACC tertunda.
+

@@ -184,6 +184,7 @@ setelah review dan otorisasi owner.
 | 6 | Validasi YAML konsisten (ID unik, kunci di opsi, poin) efektif menemukan galat | Jalankan pemeriksa dokumen yang sama untuk setiap modul (dokumentasi, bukan prototipe) |
 | 7 | Review PR #25: kunci menumpuk di posisi a/b, beberapa varian tidak setara, contoh proyek membocorkan jawaban, F8 tanpa pemeriksaan kebenaran | Cek posisi kunci, isi matriks kesetaraan, dan pastikan contoh untuk pelajar tidak memuat jawaban **sebelum** PR; setiap isian angka punya pemeriksaan kebenaran |
 | 8 | Latihan dan contoh terbimbing sempat sama dengan butir bernilai | Cocokkan silang skenario/angka latihan dengan bank soal sebelum PR |
+| 9 | Review PR #25 putaran 2: maksimum yang dinyatakan tidak dapat dicapai (act-02), arah konversi terbalik di remedial, asumsi model tidak tertulis, nama field tidak seragam | Terapkan QC-01–QC-10 (CB-0 §3b) pada setiap modul sebelum PR |
 
 **Perkiraan volume per modul (dari W1):** 4 pelajaran (≈ 750 baris
 Markdown), 40 soal teori, 12 soal concept, 6 spesifikasi lab, 1

@@ -21,7 +21,7 @@ variants:
 - item_id: item-w01-c-s03-a
   variant_id: mod-w01.concept.s03.vA
   item_version: '1.0'
-  stem: Urutkan langkah saat komputer dinyalakan sampai sistem operasi siap dipakai.
+  stem: Model boot sederhana W1. Urutkan langkah saat komputer dinyalakan sampai sistem operasi siap dipakai.
   display_order:
   - D
   - A
@@ -52,8 +52,9 @@ variants:
 - item_id: item-w01-c-s03-b
   variant_id: mod-w01.concept.s03.vB
   item_version: '1.0'
-  stem: Laptop dinyalakan dengan flashdisk instalasi sistem operasi terpasang. Urutkan langkah sampai
-    layar program instalasi tampil.
+  stem: Model boot sederhana W1. Flashdisk instalasi sistem operasi sudah dicolokkan **dan sudah dipilih
+    sebagai perangkat boot** di pengaturan firmware (firmware tidak selalu memilih flashdisk secara otomatis).
+    Urutkan langkah sampai layar program instalasi tampil.
   display_order:
   - C
   - E
@@ -66,7 +67,7 @@ variants:
   - id: B
     text: Firmware UEFI menjalankan POST
   - id: C
-    text: Firmware menemukan flashdisk instalasi sebagai perangkat boot
+    text: Firmware memakai flashdisk instalasi, yang sudah dipilih sebagai perangkat boot, untuk memulai
   - id: D
     text: Bootloader di flashdisk memuat program instalasi sistem operasi ke RAM
   - id: E

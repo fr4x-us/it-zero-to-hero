@@ -499,7 +499,7 @@ Semua **AWAITING OWNER**. Rekomendasi hanya saran.
 
 | ID | Pertanyaan | Rekomendasi | Trade-off | Lembar | Keputusan final |
 |---|---|---|---|---|---|
-| CU-6-Q13 | Umpan balik test tersembunyi lab kode setelah evaluasi | HF-A (kode hasil + deskripsi kasus) | Umpan balik bermakna vs penyusun menulis deskripsi | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) §16 | |
-| OD-15-Q2 | Perluasan validasi kelayakan award XV-7–XV-14 dengan RX-A | Ya | Ledger terbukti sah vs butuh catatan peristiwa pelajaran/latihan | [XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) §14.1 | |
+| CU-6-Q13 (→ D-36 bila disetujui) | Umpan balik test tersembunyi lab kode setelah evaluasi | HF-A (kode hasil + deskripsi kasus) | Umpan balik bermakna vs penyusun menulis deskripsi | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) §16 | |
+| OD-15-Q2 (→ D-37 bila disetujui) | Perluasan validasi kelayakan award XV-7–XV-14 dengan RX-A | Ya | Ledger terbukti sah vs butuh catatan peristiwa pelajaran/latihan | [XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) §14.1 | |
 | W01-ACC | Penerimaan konten modul W1 sebagai modul acuan | Review PR lalu terima bila tidak ada temuan | Standar untuk W2–W16 vs revisi lebih awal | [curriculum/mod-w01/review.md](../curriculum/mod-w01/review.md) | |
 

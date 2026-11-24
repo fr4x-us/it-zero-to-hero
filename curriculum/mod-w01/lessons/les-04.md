@@ -45,8 +45,16 @@ DDR4 dan DDR5 memiliki bentuk dan takik berbeda sehingga tidak dapat saling
 menggantikan. Nama soket nyata contohnya AM5 atau LGA1700; di modul ini
 dipakai nama umum **Soket A** dan **Soket B**.
 
-**Aturan belajar W1 untuk daya** (penyederhanaan untuk latihan, bukan
-standar teknik):
+**Model kompatibilitas W1 vs kenyataan.** Di modul ini, komponen dianggap
+kompatibel bila soket sama, jenis RAM sama, jumlah keping ≤ slot, dan daya
+PSU cukup — aturan untuk **katalog fiktif** latihan. Pada perangkat keras
+nyata, soket yang sama **belum menjamin** kecocokan: chipset motherboard,
+versi firmware (BIOS/UEFI) yang mendukung CPU tersebut, dan daftar
+kompatibilitas dari produsen juga menentukan. Hal itu tidak dinilai di W1.
+
+**Aturan belajar W1 untuk daya** (model latihan, **bukan** standar teknik
+atau panduan membeli PSU; kebutuhan nyata dihitung dari semua komponen dan
+cadangan):
 
 ```
 kebutuhan daya (W) = daya CPU (W) + 100 W untuk komponen lain

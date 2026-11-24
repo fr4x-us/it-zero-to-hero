@@ -35,14 +35,14 @@ variants:
   - id: a
     text: Headset dengan mikrofon
   - id: b
-    text: Speaker
+    text: Speaker tanpa mikrofon
   - id: c
     text: Webcam
   - id: d
     text: Flashdisk
   key: a
   distractor_rationale:
-    b: Speaker hanya output
+    b: Speaker tanpa mikrofon hanya output
     c: Webcam hanya input
     d: Flashdisk adalah penyimpanan
   explanation: Headset bermikrofon mengeluarkan suara (output) dan menangkap suara (input).

@@ -11,8 +11,10 @@ variants:
 - item_id: item-w01-t-s05-a
   variant_id: mod-w01.theory.s05.vA
   item_version: '1.0'
-  stem: Ketiga CPU pada tabel berasal dari generasi yang sama. Pengguna membuka banyak aplikasi sekaligus
-    sehingga pekerjaan dapat dibagi ke banyak core. CPU mana yang **paling sesuai**?
+  stem: 'Model sederhana W1: anggap ketiga CPU berasal dari generasi dan arsitektur yang sama, dan komponen
+    lain (RAM, penyimpanan) sama, sehingga hanya core dan clock yang berbeda. Dalam kenyataan, core dan
+    clock saja tidak menentukan peringkat kinerja. Pengguna membuka banyak aplikasi sekaligus sehingga
+    pekerjaan dapat dibagi ke banyak core. CPU mana yang **paling sesuai**?'
   stimulus_table:
   - - CPU
     - Core
@@ -41,13 +43,16 @@ variants:
     b: P2 punya clock tertinggi tetapi core paling sedikit; pekerjaan yang dapat dibagi lebih terbantu
       oleh core
     d: Jumlah core berbeda, jadi tidak sama
-  explanation: Pekerjaan yang dapat dibagi lebih terbantu oleh jumlah core; P3 punya 8 core.
+  explanation: Dengan asumsi model, pekerjaan yang dapat dibagi lebih terbantu oleh jumlah core; P3 punya
+    8 core.
   option_order: urutan alami (kategori/baris tabel), tetap
 - item_id: item-w01-t-s05-b
   variant_id: mod-w01.theory.s05.vB
   item_version: '1.0'
-  stem: Ketiga CPU pada tabel berasal dari generasi yang sama. Sebuah program mengerjakan langkahnya **satu
-    per satu** dan tidak dapat dibagi ke core lain. CPU mana yang **kemungkinan paling cepat** menjalankannya?
+  stem: 'Model sederhana W1: anggap ketiga CPU berasal dari generasi dan arsitektur yang sama, dan komponen
+    lain (RAM, penyimpanan) sama, sehingga hanya core dan clock yang berbeda. Dalam kenyataan, core dan
+    clock saja tidak menentukan peringkat kinerja. Sebuah program mengerjakan langkahnya **satu per satu**
+    dan tidak dapat dibagi ke core lain. CPU mana yang **kemungkinan paling cepat** menjalankannya?'
   stimulus_table:
   - - CPU
     - Core
@@ -75,6 +80,7 @@ variants:
     a: Clock P1 lebih rendah dari P2
     c: Core tambahan tidak membantu pekerjaan yang tidak dapat dibagi
     d: Clock berbeda, jadi kemungkinan tidak sama
-  explanation: 'Untuk pekerjaan yang tidak dapat dibagi dan generasi sama, clock lebih tinggi (P2, 4,2
-    GHz) kemungkinan lebih cepat. Ini penyederhanaan: kecepatan nyata juga dipengaruhi faktor lain.'
+  explanation: Dengan asumsi model (generasi, arsitektur, dan komponen lain sama), pekerjaan yang tidak
+    dapat dibagi lebih bergantung pada kecepatan satu core, sehingga clock tertinggi (P2, 4,2 GHz) kemungkinan
+    lebih cepat. Di luar asumsi itu, kinerja juga ditentukan arsitektur, cache, RAM, dan penyimpanan.
   option_order: urutan alami (kategori/baris tabel), tetap

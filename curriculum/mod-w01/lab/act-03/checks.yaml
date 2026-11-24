@@ -9,6 +9,10 @@ max_points: 40
 estimated_minutes: 30
 content_version: '1.0'
 xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w01.lab (D-28 XI-2)
+normalization: 'Buang spasi/tab di awal dan akhir; ubah ke huruf kecil; cocokkan persis dengan salah satu
+  accepted_answers (sudah memuat bentuk dengan/tanpa titik ribuan berpola 1.234 dan dengan/tanpa satuan
+  yang diizinkan). Ditolak: tanda +/−, desimal, pengelompokan titik salah (mis. 7.00.0), spasi di dalam
+  angka, satuan lain'
 answer_validation: Jawaban kosong → 0 poin untuk pemeriksaan itu; ID kategori/opsi tidak dikenal atau
   ganda → 0 poin untuk pemeriksaan itu (tidak membatalkan pemeriksaan lain); kegagalan infrastruktur/konten
   → EVALUATION_ERROR, evaluasi diulang tanpa attempt baru (D-24 IE-2)
@@ -21,7 +25,7 @@ variants:
     cpus:
     - id: L-CPU1
       socket: Soket A
-      watt: 65
+      watt: 95
     - id: L-CPU2
       socket: Soket B
       watt: 125
@@ -34,8 +38,9 @@ variants:
       socket: Soket B
       ram: DDR5
       slots: 4
-  units_rule: 'Aturan desimal: 1 GB = 1.000 MB; 1 MB = 1.000 KB'
-  power_rule: kebutuhan daya = daya CPU + 100 W
+  units_rule: 'Aturan desimal: 1 GB = 1.000 MB; 1 MB = 1.000 KB. Dari satuan besar ke satuan kecil: kalikan
+    1.000 per tingkat; dari satuan kecil ke satuan besar: bagi 1.000 per tingkat'
+  power_rule: kebutuhan daya = daya CPU + 100 W (model belajar W1, bukan standar pembelian)
   visible_example:
     note: 'Contoh terlihat (0 poin): 2 GB = 2.000 MB'
   checks:
@@ -48,8 +53,10 @@ variants:
     accepted_answers:
     - '7000'
     - '7.000'
-    - 7000 MB
-    - 7.000 MB
+    - 7000 mb
+    - 7.000 mb
+    - 7000mb
+    - 7.000mb
   - check_id: mod-w01.lab.act-03.vA.c02
     name: Kapasitas
     question: SSD 256 GB untuk video 800 MB per video. Berapa video maksimum? (abaikan ruang sistem)
@@ -94,28 +101,29 @@ variants:
   - check_id: mod-w01.lab.act-03.vA.c07
     name: Kebutuhan daya
     question: Tuliskan kebutuhan daya (W) bila memakai L-CPU1
-    expected: '165'
+    expected: '195'
     points: 5
-    feedback: 65 + 100 = 165 W
+    feedback: 95 + 100 = 195 W
     accepted_answers:
-    - '165'
-    - 165 W
-    - 165w
+    - '195'
+    - 195 w
+    - 195w
   - check_id: mod-w01.lab.act-03.vA.c08
     name: Total RAM
-    question: 2 keping RAM masing-masing 8 GB. Total RAM = … GB
-    expected: '16'
+    question: 3 keping RAM masing-masing 4 GB. Total RAM = … GB
+    expected: '12'
     points: 5
-    feedback: 2 × 8 = 16 GB
+    feedback: 3 × 4 = 12 GB
     accepted_answers:
-    - '16'
-    - 16 GB
+    - '12'
+    - 12 gb
+    - 12gb
 - variant_id: mod-w01.lab.act-03.vB
   fixture:
     cpus:
     - id: L-CPU1
       socket: Soket A
-      watt: 65
+      watt: 95
     - id: L-CPU2
       socket: Soket B
       watt: 125
@@ -128,8 +136,9 @@ variants:
       socket: Soket B
       ram: DDR5
       slots: 4
-  units_rule: 'Aturan desimal: 1 GB = 1.000 MB; 1 MB = 1.000 KB'
-  power_rule: kebutuhan daya = daya CPU + 100 W
+  units_rule: 'Aturan desimal: 1 GB = 1.000 MB; 1 MB = 1.000 KB. Dari satuan besar ke satuan kecil: kalikan
+    1.000 per tingkat; dari satuan kecil ke satuan besar: bagi 1.000 per tingkat'
+  power_rule: kebutuhan daya = daya CPU + 100 W (model belajar W1, bukan standar pembelian)
   visible_example:
     note: 'Contoh terlihat (0 poin): 2 GB = 2.000 MB'
   checks:
@@ -142,8 +151,10 @@ variants:
     accepted_answers:
     - '12000'
     - '12.000'
-    - 12000 MB
-    - 12.000 MB
+    - 12000 mb
+    - 12.000 mb
+    - 12000mb
+    - 12.000mb
   - check_id: mod-w01.lab.act-03.vB.c02
     name: Kapasitas
     question: Kartu memori 32 GB untuk lagu 5 MB per lagu. Berapa lagu maksimum? (abaikan ruang sistem)
@@ -195,14 +206,15 @@ variants:
     feedback: 125 + 100 = 225 W
     accepted_answers:
     - '225'
-    - 225 W
+    - 225 w
     - 225w
   - check_id: mod-w01.lab.act-03.vB.c08
     name: Total RAM
-    question: 4 keping RAM masing-masing 4 GB. Total RAM = … GB
-    expected: '16'
+    question: 2 keping RAM masing-masing 16 GB. Total RAM = … GB
+    expected: '32'
     points: 5
-    feedback: 4 × 4 = 16 GB
+    feedback: 2 × 16 = 32 GB
     accepted_answers:
-    - '16'
-    - 16 GB
+    - '32'
+    - 32 gb
+    - 32gb

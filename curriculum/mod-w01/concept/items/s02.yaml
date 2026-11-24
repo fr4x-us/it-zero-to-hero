@@ -29,7 +29,7 @@ variants:
   - id: c
     text: Setiap program otomatis menjadi dua kali lebih cepat
   - id: d
-    text: Lebih banyak unit pengolah tersedia untuk pekerjaan yang dapat dibagi
+    text: Manfaat core tambahan bergantung pada apakah pekerjaannya dapat dibagi
   key:
   - b
   - d
@@ -38,7 +38,8 @@ variants:
   distractor_rationale:
     a: Core tidak memengaruhi penyimpanan
     c: Program yang tidak dapat membagi pekerjaannya tidak menjadi lebih cepat
-  feedback: Core tambahan membantu pekerjaan yang dapat dibagi, seperti banyak aplikasi yang terbuka bersamaan.
+  feedback: Satu pernyataan benar menjelaskan mekanisme (pekerjaan banyak aplikasi dikerjakan bersamaan
+    di core berbeda), satu lagi syaratnya (manfaat bergantung pada pekerjaan yang dapat dibagi).
 - item_id: item-w01-c-s02-b
   variant_id: mod-w01.concept.s02.vB
   item_version: '1.0'
@@ -61,4 +62,5 @@ variants:
   distractor_rationale:
     b: Pekerjaan berurutan tidak terbagi ke core lain
     d: Core tidak memengaruhi RAM
-  feedback: Pekerjaan berurutan tetap memakai satu core; core tambahan tidak mempercepatnya.
+  feedback: Satu pernyataan benar menjelaskan akibat (program berurutan tidak otomatis lebih cepat), satu
+    lagi syaratnya (core hanya membantu pekerjaan yang dapat dibagi).

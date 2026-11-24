@@ -11,7 +11,8 @@ variants:
 - item_id: item-w01-t-s03-a
   variant_id: mod-w01.theory.s03.vA
   item_version: '1.0'
-  stem: Kamu menarik uang di mesin ATM. Urutkan kejadian berikut sesuai alur kerja komputer.
+  stem: Gunakan model IPOS sederhana W1 (input → proses → output → penyimpanan). Kamu menarik uang di
+    mesin ATM. Urutkan kejadian berikut sesuai model itu.
   items:
   - id: A
     text: Sisa saldo tampil di layar dan struk dicetak
@@ -37,7 +38,8 @@ variants:
 - item_id: item-w01-t-s03-b
   variant_id: mod-w01.theory.s03.vB
   item_version: '1.0'
-  stem: Kamu membuat catatan suara di ponsel. Urutkan kejadian berikut sesuai alur kerja komputer.
+  stem: Gunakan model IPOS sederhana W1 (input → proses → output → penyimpanan). Kamu membuat catatan
+    suara di ponsel. Urutkan kejadian berikut sesuai model itu.
   items:
   - id: A
     text: Ponsel mengubah suara menjadi teks

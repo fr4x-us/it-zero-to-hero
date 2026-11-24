@@ -11,9 +11,9 @@ variants:
 - item_id: item-w01-t-s09-a
   variant_id: mod-w01.theory.s09.vA
   item_version: '1.0'
-  stem: Sinta mengetik laporan selama 2 jam tanpa menyimpan. Listrik padam dan laptop mati. Setelah menyala,
-    laporan itu hilang, tetapi berkas yang disimpan kemarin masih ada. Penjelasan paling tepat adalah
-    …
+  stem: Sinta mengetik laporan selama 2 jam dan **tidak pernah** menekan Simpan; aplikasinya juga tidak
+    memiliki simpan otomatis atau pemulihan. Listrik padam dan laptop mati. Setelah menyala, laporan itu
+    hilang, tetapi berkas yang disimpan kemarin masih ada. Penjelasan paling tepat adalah …
   options:
   - id: a
     text: Laporan baru hanya ada di RAM yang volatil; berkas kemarin sudah ada di penyimpanan non-volatil
@@ -32,9 +32,10 @@ variants:
 - item_id: item-w01-t-s09-b
   variant_id: mod-w01.theory.s09.vB
   item_version: '1.0'
-  stem: Budi memasang aplikasi baru, lalu menyalakan ulang laptop (fitur pemulihan tab browser dimatikan).
-    Setelah menyala, aplikasi baru masih ada, tetapi tab browser yang tadi terbuka hilang. Penjelasan
-    paling tepat adalah …
+  stem: Budi memasang aplikasi baru ke SSD, lalu menyalakan ulang laptop. Anggap browser Budi **hanya
+    menyimpan daftar tab yang terbuka di RAM** selama berjalan dan tidak pernah menuliskannya ke penyimpanan.
+    Setelah menyala, aplikasi baru masih ada, tetapi tab yang tadi terbuka hilang. Penjelasan paling tepat
+    adalah …
   options:
   - id: a
     text: Restart menghapus semua isi SSD kecuali aplikasi

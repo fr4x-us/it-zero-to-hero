@@ -44,16 +44,20 @@ laboratorium.
 
 | Varian A (`vA`) | Varian B (`vB`, remedial setara) |
 |---|---|
-| d01 Keyboard | d01 Scanner |
+| d01 Stylus (pena digital) | d01 Scanner |
 | d02 Monitor | d02 Proyektor |
 | d03 Printer (hanya mencetak) | d03 Webcam |
-| d04 Mouse | d04 Headset dengan mikrofon |
+| d04 Pemindai sidik jari | d04 Headset dengan mikrofon |
 | d05 Layar sentuh | d05 HDD |
-| d06 SSD | d06 GPU |
-| d07 CPU | d07 Touchpad |
-| d08 Mikrofon | d08 Earphone |
-| d09 Speaker | d09 Kartu memori SD |
-| d10 Flashdisk USB | d10 Printer (hanya mencetak) |
+| d06 SSD | d06 GPU (prosesor grafis) |
+| d07 CPU | d07 Kamera CCTV |
+| d08 Mikrofon | d08 Earphone tanpa mikrofon |
+| d09 Speaker tanpa mikrofon | d09 Kartu memori SD |
+| d10 Keping DVD (cakram) | d10 Printer (hanya mencetak) |
+
+Sebagian perangkat tidak tercantum di tabel Pelajaran 2; tentukan kelompoknya
+dengan menerapkan pertanyaan IPOS (data masuk? hasil keluar? disimpan?
+diolah?).
 
 Kelompok: `I` Input · `O` Output · `IO` Input dan output · `S`
 Penyimpanan · `P` Pemrosesan.

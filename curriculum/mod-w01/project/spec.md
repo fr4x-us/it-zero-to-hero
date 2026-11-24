@@ -97,10 +97,17 @@ proyek, sehingga tidak memberi jawaban.
 
 | Isian | Contoh bentuk yang benar |
 |---|---|
-| F1–F5 | `X-CPU1`, `X-MB1`, `X-RAM1` dengan jumlah keping `2`, `X-SSD1`, `X-PSU1` |
-| F6 | `4580000` (angka saja, tanpa "Rp", titik, atau spasi) |
-| F7 | `165` (angka saja, tanpa "W") |
-| F8 | `16` (= 8 GB per keping × 2 keping; angka saja, tanpa "GB") |
+| F1–F5 | `X-CPU2`, `X-MB2`, `X-RAM2` dengan jumlah keping `4`, `X-SSD1`, `X-PSU1` |
+| F6 | `8360000` (= 3600000 + 2000000 + 4 × 440000 + 640000 + 360000) |
+| F7 | `205` (= 105 + 100) |
+| F8 | `32` (= 8 GB per keping × 4 keping) |
+
+**Aturan menulis angka.** Bentuk terbaik: angka saja, tanpa titik, spasi,
+"Rp", atau satuan (mendapat poin format). Bentuk `5.400.000`,
+`Rp 5.400.000`, `165 W`, atau `16 GB` tetap dibaca untuk pemeriksaan
+perhitungan, tetapi kehilangan poin format. Tidak dapat dibaca sama sekali:
+titik di tempat salah (`5.40.000`), spasi di dalam angka (`5 400 000`),
+koma/desimal (`16,5`), tanda `+`/`−`, satuan lain (`16 MB`), atau kata.
 
 ## Kesalahan umum yang membuat poin hilang
 
@@ -112,7 +119,8 @@ proyek, sehingga tidak memberi jawaban.
 | Jumlah keping bukan bilangan bulat 1–4 (mis. `0`, `2,5`) | Pemeriksaan yang memakai jumlah keping gagal |
 | Kebutuhan tidak terpenuhi (core, RAM, SSD, daya) atau total melebihi anggaran | Pemeriksaan syarat itu gagal |
 | F6, F7, atau F8 tidak sama dengan hasil hitung dari pilihanmu | Pemeriksaan perhitungan itu gagal |
-| Menulis `Rp 5.000.000` atau `16 GB` | Poin format hilang (perhitungan tetap diperiksa bila angkanya dapat dibaca) |
+| Menulis `Rp 5.000.000` atau `16 GB` | Poin format hilang; perhitungan tetap diperiksa |
+| Menulis `5.00.000`, `16,5`, atau `16 MB` | Angka tidak dapat dibaca: pemeriksaan perhitungan dan format gagal |
 | ID salah tulis atau tidak ada di katalog | Isian itu tidak sah; pemeriksaan yang membutuhkannya gagal, yang lain tetap dinilai |
 | Centang "sudah saya periksa" tanpa isian | 0 poin (MR-6) |
 

@@ -93,13 +93,16 @@ dengan panah dua arah karena data dapat disimpan dan dibaca kembali.
 Satu perangkat dapat menjalankan lebih dari satu tahap. **Layar sentuh**
 menampilkan gambar (output) **dan** menerima sentuhan (input).
 
-## 4. Contoh nyata: memotret dengan ponsel
+## 4. Contoh nyata: jam tangan pintar menghitung langkah
 
-1. Sensor kamera menangkap cahaya → **input**.
-2. Prosesor ponsel mengolah cahaya menjadi foto dan memperbaiki kecerahan →
-   **proses**.
-3. Foto tampil di layar → **output**.
-4. Foto disimpan di memori penyimpanan ponsel → **penyimpanan**.
+1. Sensor gerak di jam mendeteksi ayunan tangan saat berjalan → **input**.
+2. Prosesor jam menghitung jumlah langkah dari gerakan itu → **proses**.
+3. Angka langkah tampil di layar jam → **output**.
+4. Jumlah langkah hari itu disimpan untuk riwayat mingguan →
+   **penyimpanan**.
+
+*Ini model IPOS sederhana W1; perangkat nyata sering menjalankan beberapa
+tahap bersamaan dan berulang.*
 
 ## 5. Contoh terbimbing
 

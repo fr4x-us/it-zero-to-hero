@@ -35,7 +35,7 @@ variants:
   - id: a
     text: RAM
   - id: b
-    text: Memori kerja sementara yang dipakai CPU
+    text: PSU
   - id: c
     text: CPU
   - id: d
@@ -43,6 +43,6 @@ variants:
   key: d
   distractor_rationale:
     a: RAM volatil
-    b: Itu RAM, yang volatil
-    c: CPU menjalankan instruksi, bukan penyimpanan permanen
+    b: PSU memasok listrik; PSU tidak menyimpan data
+    c: CPU menjalankan instruksi, bukan penyimpanan
   explanation: SSD adalah penyimpanan non-volatil.

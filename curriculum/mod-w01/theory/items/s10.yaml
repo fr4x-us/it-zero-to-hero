@@ -15,8 +15,11 @@ variants:
   accepted_answers:
   - '8'
   - 8 bit
-  normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
-    atau tidak; satuan hanya boleh ditulis bila tercantum di accepted_answers
+  - 8bit
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
+    salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
+    ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
+    pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
   explanation: 1 byte terdiri dari 8 bit.
 - item_id: item-w01-t-s10-b
   variant_id: mod-w01.theory.s10.vB
@@ -25,8 +28,12 @@ variants:
   accepted_answers:
   - '1000'
   - '1.000'
-  - 1000 MB
-  - 1.000 MB
-  normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
-    atau tidak; satuan hanya boleh ditulis bila tercantum di accepted_answers
+  - 1000 mb
+  - 1000mb
+  - 1.000 mb
+  - 1.000mb
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
+    salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
+    ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
+    pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
   explanation: 'Aturan desimal: 1 GB = 1.000 MB.'

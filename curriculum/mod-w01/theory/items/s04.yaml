@@ -24,7 +24,7 @@ variants:
   key: a
   distractor_rationale:
     b: RAM menampung data yang sedang dipakai, tidak menjalankan instruksi
-    c: SSD menyimpan data permanen
+    c: SSD menyimpan data non-volatil
     d: PSU memasok listrik
   explanation: CPU (prosesor) menjalankan instruksi program.
 - item_id: item-w01-t-s04-b
@@ -44,6 +44,6 @@ variants:
   key: d
   distractor_rationale:
     a: RAM menampung angka yang sedang dipakai, tetapi tidak menghitung
-    b: SSD menyimpan aplikasi secara permanen
+    b: SSD menyimpan aplikasi tanpa listrik (non-volatil)
     c: Monitor menampilkan hasil
   explanation: CPU menjalankan instruksi program, termasuk perhitungan.

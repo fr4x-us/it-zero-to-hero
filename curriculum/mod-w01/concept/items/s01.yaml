@@ -55,5 +55,5 @@ variants:
   distractor_rationale:
     a: Isi RAM justru hilang saat mati
     b: Itu HDD, dan putaran tidak menyimpan data
-    c: CPU tidak menyimpan berkas permanen
+    c: CPU tidak menyimpan berkas
   feedback: SSD adalah penyimpanan non-volatil; data tetap ada tanpa listrik.

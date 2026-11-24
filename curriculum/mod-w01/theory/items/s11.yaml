@@ -15,10 +15,14 @@ variants:
   accepted_answers:
   - '6000'
   - '6.000'
-  - 6000 MB
-  - 6.000 MB
-  normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
-    atau tidak; satuan hanya boleh ditulis bila tercantum di accepted_answers
+  - 6000 mb
+  - 6000mb
+  - 6.000 mb
+  - 6.000mb
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
+    salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
+    ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
+    pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
   explanation: 6 × 1.000 = 6.000 MB.
 - item_id: item-w01-t-s11-b
   variant_id: mod-w01.theory.s11.vB
@@ -27,8 +31,12 @@ variants:
   accepted_answers:
   - '16000'
   - '16.000'
-  - 16000 MB
-  - 16.000 MB
-  normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
-    atau tidak; satuan hanya boleh ditulis bila tercantum di accepted_answers
+  - 16000 mb
+  - 16000mb
+  - 16.000 mb
+  - 16.000mb
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
+    salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
+    ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
+    pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
   explanation: 16 × 1.000 = 16.000 MB.

@@ -19,9 +19,17 @@ field_rules:
     valid: "Bilangan bulat positif 1–4 (rentang fixture: slot terbanyak di katalog = 4), ditulis angka saja"
     fits: "valid DAN F2 valid DAN jumlah keping ≤ slot(F2)"
     invalid_examples: ["0", "5", "2,5", "-1", "dua", "kosong"]
-  number_fields:
-    k1_parse: "Untuk pemeriksaan kebenaran K1: buang spasi, awalan 'Rp', pemisah ribuan titik (pola 1.234.567), dan satuan 'W' (F7) / 'GB' (F8); hasil harus bilangan bulat, selain itu tidak dapat diurai"
-    k3_strict: "Untuk K3: hanya digit 0–9, tanpa titik, spasi, huruf, atau satuan"
+  number_fields:   # aturan deterministik (revisi F-16); dokumentasi, bukan implementasi parser
+    outer_whitespace: "Spasi/tab di awal dan akhir dibuang; spasi di dalam angka tidak diizinkan"
+    integer_syntax: "Digit 0–9 tanpa nol di depan (kecuali '0'), ATAU pengelompokan ribuan dengan titik tepat setiap 3 digit dari kanan (pola 1.234 / 12.345.678). Tanpa tanda +/−, tanpa koma/desimal"
+    allowed_prefix_suffix:
+      F6: "Awalan opsional 'Rp' (huruf besar/kecil bebas), boleh diikuti tepat satu spasi; tanpa satuan di belakang"
+      F7: "Satuan opsional 'W' (besar/kecil), boleh didahului tepat satu spasi"
+      F8: "Satuan opsional 'GB' (besar/kecil), boleh didahului tepat satu spasi"
+    accepted_examples: {F6: ["5400000", " 5400000 ", "5.400.000", "Rp5400000", "Rp 5.400.000", "rp 5400000"], F7: ["165", "165 W", "165w"], F8: ["16", "16 GB", "16gb"]}
+    rejected_examples: {F6: ["5.40.000 (pengelompokan salah)", "5 400 000 (spasi di dalam)", "5400000,0 (desimal)", "-5400000 (tanda)", "Rp. 5.400.000 (titik setelah Rp)", "05400000 (nol di depan)"], F7: ["+165 (tanda)", "165 kW (satuan lain)"], F8: ["16 MB (satuan lain)", "16,5 (desimal)", "enam belas (kata)"]}
+    k1_use: "K1.c08–c10 memakai nilai hasil aturan di atas; isian yang ditolak = tidak dapat diurai → pemeriksaan itu 0"
+    k3_strict: "K3 hanya menerima bentuk paling ketat: digit tanpa nol di depan, tanpa titik, awalan, satuan, atau spasi"
   dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya tidak valid; pemeriksaan lain tetap dinilai. Tidak ada gerbang nol untuk seluruh rubrik"
   impossible_configuration: "Jumlah keping > slot(F2) adalah rakitan yang tidak mungkin dipasang: pemeriksaan fungsional yang menilai rakitan (K1.c04, K1.c07) dan K3.c03 bernilai 0; pemeriksaan aritmetika yang tidak menilai kelayakan rakitan (K1.c08, K1.c10) tetap dinilai"
 
@@ -30,16 +38,16 @@ criteria:
     name: Kebenaran fungsional
     points: 60
     checks:
-      - {id: mod-w01.project.K1.c01, rule: "soket(F1) = soket(F2)", needs: [F1 valid, F2 valid], points: 7}
-      - {id: mod-w01.project.K1.c02, rule: "jenis RAM(F3) = jenis RAM(F2)", needs: [F2 valid, F3 valid], points: 7}
-      - {id: mod-w01.project.K1.c03, rule: "core(F1) ≥ 6", needs: [F1 valid], points: 6}
-      - {id: mod-w01.project.K1.c04, rule: "kapasitas per keping(F3) × jumlah keping ≥ 16 GB", needs: [F3 valid, jumlah keping fits], points: 6}
-      - {id: mod-w01.project.K1.c05, rule: "jenis(F4) = SSD dan kapasitas(F4) ≥ 512 GB", needs: [F4 valid], points: 6}
-      - {id: mod-w01.project.K1.c06, rule: "daya(F5) ≥ daya(F1) + 100", needs: [F1 valid, F5 valid], points: 6}
-      - {id: mod-w01.project.K1.c07, rule: "harga(F1)+harga(F2)+harga(F3)×keping+harga(F4)+harga(F5) ≤ 6500000", needs: [F1–F5 valid, jumlah keping fits], points: 7}
-      - {id: mod-w01.project.K1.c08, rule: "F6 (diurai) = jumlah harga aktual komponen terpilih", needs: [F1–F5 valid, jumlah keping valid, F6 dapat diurai], points: 5}
-      - {id: mod-w01.project.K1.c09, rule: "F7 (diurai) = daya(F1) + 100", needs: [F1 valid, F7 dapat diurai], points: 5}
-      - {id: mod-w01.project.K1.c10, rule: "F8 (diurai) = kapasitas per keping(F3) × jumlah keping", needs: [F3 valid, jumlah keping valid, F8 dapat diurai], points: 5}
+      - {id: mod-w01.project.K1.c01, rule: "soket(F1) = soket(F2)", depends_on: [F1 valid, F2 valid], points: 7}
+      - {id: mod-w01.project.K1.c02, rule: "jenis RAM(F3) = jenis RAM(F2)", depends_on: [F2 valid, F3 valid], points: 7}
+      - {id: mod-w01.project.K1.c03, rule: "core(F1) ≥ 6", depends_on: [F1 valid], points: 6}
+      - {id: mod-w01.project.K1.c04, rule: "kapasitas per keping(F3) × jumlah keping ≥ 16 GB", depends_on: [F3 valid, jumlah keping fits], points: 6}
+      - {id: mod-w01.project.K1.c05, rule: "jenis(F4) = SSD dan kapasitas(F4) ≥ 512 GB", depends_on: [F4 valid], points: 6}
+      - {id: mod-w01.project.K1.c06, rule: "daya(F5) ≥ daya(F1) + 100", depends_on: [F1 valid, F5 valid], points: 6}
+      - {id: mod-w01.project.K1.c07, rule: "harga(F1)+harga(F2)+harga(F3)×keping+harga(F4)+harga(F5) ≤ 6500000", depends_on: [F1–F5 valid, jumlah keping fits], points: 7}
+      - {id: mod-w01.project.K1.c08, rule: "F6 (diurai) = jumlah harga aktual komponen terpilih", depends_on: [F1–F5 valid, jumlah keping valid, F6 dapat diurai], points: 5}
+      - {id: mod-w01.project.K1.c09, rule: "F7 (diurai) = daya(F1) + 100", depends_on: [F1 valid, F7 dapat diurai], points: 5}
+      - {id: mod-w01.project.K1.c10, rule: "F8 (diurai) = kapasitas per keping(F3) × jumlah keping", depends_on: [F3 valid, jumlah keping valid, F8 dapat diurai], points: 5}
   K2:
     name: Kelengkapan deliverable
     points: 20
@@ -102,14 +110,71 @@ criteria:
 
 point_check: "K1 7+7+6+6+6+6+7+5+5+5 = 60; K2 3×5+2+2+1 = 20; K3 3+3+4 = 10; K4 5×2 = 10; total 100"
 
-catalog_analysis:   # dihitung dengan enumerasi lengkap 5 × 4 × 4 × 4 × 4 × 3 = 3.840 kombinasi (dokumentasi)
+catalog_analysis:   # enumerasi lengkap (dokumentasi; skrip pemeriksa di luar repositori)
+  search_space: "CPU 5 × motherboard 4 × RAM 4 × jumlah keping 4 (1–4) × penyimpanan 4 × PSU 3 = 3.840 kombinasi"
+  funnel:
+    - {filter: "Semua kombinasi", count: 3840}
+    - {filter: "Jumlah keping ≤ slot motherboard", count: 2880}
+    - {filter: "Soket CPU = soket motherboard DAN jenis RAM = jenis motherboard", count: 720}
+    - {filter: "Core ≥ 6, RAM total ≥ 16 GB, SSD ≥ 512 GB, PSU ≥ daya CPU + 100", count: 240}
+    - {filter: "Total harga ≤ 6.500.000", count: 46}
   valid_builds: 46
-  valid_cpus: [CPU-2, CPU-4]
-  cheapest_valid: 5350000    # CPU-2, MB-1, RAM-2 × 1, STO-3, PSU-1
+  by_cpu_motherboard: {"CPU-4 + MB-3": 21, "CPU-2 + MB-1": 16, "CPU-4 + MB-4": 6, "CPU-2 + MB-2": 3}
+  by_ram_configuration: {"RAM-1 × 2": 12, "RAM-2 × 1": 12, "RAM-2 × 2": 6, "RAM-4 × 1": 6, "RAM-1 × 3": 5, "RAM-3 × 2": 3, "RAM-1 × 4": 2}
+  by_storage: {STO-3: 30, STO-4: 16}
+  by_psu: {PSU-1: 19, PSU-2: 16, PSU-3: 11}
+  cheapest_valid: 5350000
   most_expensive_valid: 6450000
-  exact_budget_6500000: "Tidak dapat dicapai oleh rakitan yang memenuhi semua syarat; 11 rakitan kompatibel bernilai tepat 6500000, semuanya gagal syarat lain (mis. CPU-2, MB-2, RAM-3 × 2, STO-1, PSU-2 gagal N3 karena HDD)"
-  smallest_over_budget_otherwise_valid: 6550000   # +50000, mis. CPU-2, MB-2, RAM-3 × 2, STO-3, PSU-2
-  traps: "CPU-1 (4 core); CPU-3 dan CPU-5 selalu melebihi anggaran bila semua syarat lain dipenuhi; STO-1 HDD; STO-2 256 GB; pasangan soket/DDR yang tidak cocok"
+  exact_budget_6500000: "Tidak dapat dicapai oleh rakitan yang memenuhi semua syarat; 11 rakitan kompatibel bernilai tepat 6500000, semuanya gagal syarat lain (mis. E02)"
+  smallest_over_budget_otherwise_valid: 6550000
+  traps: "CPU-1 (4 core); CPU-3 dan CPU-5 selalu melebihi anggaran bila syarat lain dipenuhi; STO-1 HDD; STO-2 256 GB; pasangan soket/DDR tidak cocok"
+  valid_list:
+    - "CPU-2, MB-1, RAM-2 × 1, STO-3, PSU-1 — 5350000"
+    - "CPU-2, MB-1, RAM-1 × 2, STO-3, PSU-1 — 5400000"
+    - "CPU-4, MB-3, RAM-2 × 1, STO-3, PSU-1 — 5450000"
+    - "CPU-2, MB-1, RAM-2 × 1, STO-3, PSU-2 — 5500000"
+    - "CPU-4, MB-3, RAM-1 × 2, STO-3, PSU-1 — 5500000"
+    - "CPU-2, MB-1, RAM-1 × 2, STO-3, PSU-2 — 5550000"
+    - "CPU-4, MB-3, RAM-2 × 1, STO-3, PSU-2 — 5600000"
+    - "CPU-4, MB-3, RAM-1 × 2, STO-3, PSU-2 — 5650000"
+    - "CPU-2, MB-1, RAM-2 × 1, STO-3, PSU-3 — 5800000"
+    - "CPU-2, MB-1, RAM-2 × 1, STO-4, PSU-1 — 5800000"
+    - "CPU-2, MB-1, RAM-1 × 2, STO-3, PSU-3 — 5850000"
+    - "CPU-2, MB-1, RAM-1 × 2, STO-4, PSU-1 — 5850000"
+    - "CPU-4, MB-3, RAM-1 × 3, STO-3, PSU-1 — 5850000"
+    - "CPU-4, MB-3, RAM-2 × 1, STO-3, PSU-3 — 5900000"
+    - "CPU-4, MB-3, RAM-2 × 1, STO-4, PSU-1 — 5900000"
+    - "CPU-2, MB-1, RAM-2 × 1, STO-4, PSU-2 — 5950000"
+    - "CPU-4, MB-3, RAM-1 × 2, STO-3, PSU-3 — 5950000"
+    - "CPU-4, MB-3, RAM-1 × 2, STO-4, PSU-1 — 5950000"
+    - "CPU-2, MB-1, RAM-1 × 2, STO-4, PSU-2 — 6000000"
+    - "CPU-2, MB-1, RAM-2 × 2, STO-3, PSU-1 — 6000000"
+    - "CPU-4, MB-3, RAM-1 × 3, STO-3, PSU-2 — 6000000"
+    - "CPU-4, MB-4, RAM-4 × 1, STO-3, PSU-1 — 6000000"
+    - "CPU-4, MB-3, RAM-2 × 1, STO-4, PSU-2 — 6050000"
+    - "CPU-4, MB-3, RAM-1 × 2, STO-4, PSU-2 — 6100000"
+    - "CPU-4, MB-3, RAM-2 × 2, STO-3, PSU-1 — 6100000"
+    - "CPU-4, MB-4, RAM-3 × 2, STO-3, PSU-1 — 6100000"
+    - "CPU-2, MB-1, RAM-2 × 2, STO-3, PSU-2 — 6150000"
+    - "CPU-4, MB-4, RAM-4 × 1, STO-3, PSU-2 — 6150000"
+    - "CPU-4, MB-3, RAM-1 × 4, STO-3, PSU-1 — 6200000"
+    - "CPU-2, MB-1, RAM-2 × 1, STO-4, PSU-3 — 6250000"
+    - "CPU-4, MB-3, RAM-2 × 2, STO-3, PSU-2 — 6250000"
+    - "CPU-4, MB-4, RAM-3 × 2, STO-3, PSU-2 — 6250000"
+    - "CPU-2, MB-1, RAM-1 × 2, STO-4, PSU-3 — 6300000"
+    - "CPU-2, MB-2, RAM-4 × 1, STO-3, PSU-1 — 6300000"
+    - "CPU-4, MB-3, RAM-1 × 3, STO-3, PSU-3 — 6300000"
+    - "CPU-4, MB-3, RAM-1 × 3, STO-4, PSU-1 — 6300000"
+    - "CPU-4, MB-3, RAM-1 × 4, STO-3, PSU-2 — 6350000"
+    - "CPU-4, MB-3, RAM-2 × 1, STO-4, PSU-3 — 6350000"
+    - "CPU-2, MB-2, RAM-3 × 2, STO-3, PSU-1 — 6400000"
+    - "CPU-4, MB-3, RAM-1 × 2, STO-4, PSU-3 — 6400000"
+    - "CPU-2, MB-1, RAM-2 × 2, STO-3, PSU-3 — 6450000"
+    - "CPU-2, MB-1, RAM-2 × 2, STO-4, PSU-1 — 6450000"
+    - "CPU-2, MB-2, RAM-4 × 1, STO-3, PSU-2 — 6450000"
+    - "CPU-4, MB-3, RAM-1 × 3, STO-4, PSU-2 — 6450000"
+    - "CPU-4, MB-4, RAM-4 × 1, STO-3, PSU-3 — 6450000"
+    - "CPU-4, MB-4, RAM-4 × 1, STO-4, PSU-1 — 6450000"
 
 reviewer_examples:   # skor dihitung dengan aturan di atas; K4 diasumsikan 10
   - {id: E01, case: "Acuan: RAM tepat 16 GB, keping = slot (2/2)", input: "CPU-2, MB-1, RAM-1 × 2, STO-3, PSU-1, F6 5400000, F7 165, F8 16", K1: 60, K2: 20, K3: 10, total: 100}
@@ -127,6 +192,9 @@ reviewer_examples:   # skor dihitung dengan aturan di atas; K4 diasumsikan 10
   - {id: E13, case: "Jumlah keping tidak valid ('2,5' atau '0')", input: "E01 dengan keping '2,5'", K1: 37, K2: 20, K3: 6, total: 73, zero: [K1.c04, K1.c07, K1.c08, K1.c10, K3.c03]}
   - {id: E14, case: "Angka salah format tetapi dapat diurai", input: "E01 dengan F6 'Rp 5.400.000', F8 '16 GB'", K1: 60, K2: 20, K3: 4, total: 94, zero: [K3.c01, K3.c02]}
   - {id: E15, case: "F8 tidak dapat diurai", input: "E01 dengan F8 'enam belas'", K1: 55, K2: 20, K3: 7, total: 92, zero: [K1.c10, K3.c02]}
+  - {id: E17, case: "Pengelompokan titik salah", input: "E01 dengan F6 '5.40.000'", K1: 55, K2: 20, K3: 7, total: 92, zero: [K1.c08, K3.c01]}
+  - {id: E18, case: "Spasi di dalam angka", input: "E01 dengan F6 '5 400 000'", K1: 55, K2: 20, K3: 7, total: 92, zero: [K1.c08, K3.c01]}
+  - {id: E19, case: "Satuan lain", input: "E01 dengan F8 '16 MB'", K1: 55, K2: 20, K3: 7, total: 92, zero: [K1.c10, K3.c02]}
   - {id: E16, case: "Centang 'sudah selesai' tanpa isian", input: "Semua isian kosong", total: "0 untuk K1–K3; K4 sesuai jawaban", note: "MR-6"}
 
 objective_limits: "Pemeriksaan membuktikan isian memenuhi syarat dan perhitungan benar; tidak membuktikan pelajar memahami semua alasan pemilihan dan tidak mensertifikasi kompetensi (D-17, D-34)"

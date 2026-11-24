@@ -68,14 +68,23 @@ Urutan empat ID, empat label tahap, satu pilihan lapisan.
 
 | Pemeriksaan | Aturan | Poin |
 |---|---|---|
-| c01 Urutan | 3 poin per pasangan berurutan yang benar terhadap urutan diterima A → B → C → D (maks. 3 pasangan) | 12 |
+| c01 Urutan | 4 poin per pasangan berurutan yang benar terhadap urutan diterima A → B → C → D (maks. 3 pasangan): 0, 4, 8, atau 12 poin | 12 |
 | c02–c05 Label tahap | 3 poin per label benar | 12 |
 | c06 Lapisan software | Pilihan tunggal | 6 |
 | **Maksimum aktivitas** | | **30** |
 
-Contoh hitung urutan: jawaban `A, B, D, C` → pasangan A→B benar, B→D salah,
-D→C salah → 1 pasangan → 3 poin. Jawaban `A, B, C, D` → 3 pasangan → 12
-poin. Urutan yang memuat ID ganda atau tidak dikenal → 0 poin untuk c01.
+Contoh hitung urutan (urutan diterima A → B → C → D):
+
+| Jawaban | Pasangan benar | Poin c01 |
+|---|---|---|
+| `D, C, B, A` | — (0) | 0 |
+| `A, B, D, C` | A→B (1) | 4 |
+| `C, D, A, B` | C→D, A→B (2) | 8 |
+| `A, B, C, D` | A→B, B→C, C→D (3) | 12 |
+| `A, B, B, D` atau `A, B, C, X` | ID ganda/asing | 0 (`INVALID_ANSWER`) |
+
+Maksimum 12 dapat dicapai (urutan benar), sehingga maksimum aktivitas 30 dan
+maksimum komponen lab 100 dapat dicapai.
 
 ## Kasus gagal
 

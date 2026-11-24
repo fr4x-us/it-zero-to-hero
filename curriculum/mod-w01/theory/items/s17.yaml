@@ -11,8 +11,9 @@ variants:
 - item_id: item-w01-t-s17-a
   variant_id: mod-w01.theory.s17.vA
   item_version: '1.0'
-  stem: Kamu menekan "Pindai" di aplikasi pemindai dan scanner mulai memindai dokumen. Urutkan lapisan
-    yang dilalui permintaan itu, dari pengguna sampai hardware.
+  stem: Gunakan model lapisan sederhana W1 (pengguna → aplikasi → sistem operasi → driver → hardware).
+    Kamu menekan "Pindai" di aplikasi pemindai dan scanner mulai memindai dokumen. Urutkan lapisan yang
+    dilalui permintaan itu.
   items:
   - id: A
     text: Sistem operasi
@@ -41,8 +42,9 @@ variants:
 - item_id: item-w01-t-s17-b
   variant_id: mod-w01.theory.s17.vB
   item_version: '1.0'
-  stem: Kamu menekan tombol putar di aplikasi musik dan lagu keluar dari speaker. Urutkan lapisan yang
-    dilalui permintaan itu, dari pengguna sampai hardware.
+  stem: Gunakan model lapisan sederhana W1 (pengguna → aplikasi → sistem operasi → driver → hardware).
+    Kamu menekan tombol putar di aplikasi musik dan lagu keluar dari speaker. Urutkan lapisan yang dilalui
+    permintaan itu.
   items:
   - id: A
     text: Driver audio

@@ -72,7 +72,7 @@ program: menghitung, membandingkan, dan memindahkan data.
 | Spesifikasi | Arti | Contoh |
 |---|---|---|
 | **Core** | Unit pengolah di dalam CPU. CPU 6 core dapat mengerjakan beberapa tugas secara bersamaan | 4 core, 6 core, 8 core |
-| **Kecepatan clock** | Jumlah siklus kerja per detik. 1 GHz = 1 miliar siklus per detik | 3,6 GHz |
+| **Kecepatan clock** | Jumlah siklus kerja per detik. 1 GHz = 1 miliar siklus per detik. Clock **bukan** jumlah instruksi per detik: berapa instruksi selesai per siklus bergantung rancangan CPU | 3,6 GHz |
 
 **Analogi:** core seperti **juru masak** di dapur. Empat juru masak dapat
 menyiapkan empat hidangan bersamaan, tetapi **satu** hidangan yang harus
@@ -101,10 +101,12 @@ Berkas diambil dari lemari ke meja agar mudah dikerjakan. Meja yang lebih
 luas memungkinkan lebih banyak pekerjaan terbuka. Saat pulang (listrik
 mati), meja dibersihkan — yang tidak dikembalikan ke lemari akan hilang.
 
-## 4. Penyimpanan — lemari arsip permanen
+## 4. Penyimpanan — lemari arsip (non-volatil)
 
 Penyimpanan (*storage*) bersifat **non-volatil**: data tetap ada walau
-listrik mati.
+listrik mati. Non-volatil **tidak** berarti kebal: data tetap dapat rusak
+atau hilang karena kerusakan media, terhapus tidak sengaja, atau program
+jahat — karena itu berkas penting perlu dicadangkan (*backup*).
 
 | | SSD (*Solid State Drive*) | HDD (*Hard Disk Drive*) |
 |---|---|---|
@@ -145,6 +147,15 @@ satuannya.
 
 *Deskripsi tabel tbl-units:* setiap satuan bernilai 1.000 kali satuan di
 bawahnya, kecuali 1 byte = 8 bit.
+
+**Arah konversi:**
+
+| Dari → ke | Operasi | Contoh |
+|---|---|---|
+| Satuan besar → satuan kecil (mis. GB → MB) | × 1.000 per tingkat | 2 GB = 2 × 1.000 = 2.000 MB |
+| Satuan kecil → satuan besar (mis. MB → GB) | ÷ 1.000 per tingkat | 5.000 MB = 5.000 ÷ 1.000 = 5 GB |
+| Dua tingkat (TB → MB) | × 1.000 × 1.000 | 1 TB = 1 × 1.000 × 1.000 = 1.000.000 MB |
+| Dua tingkat (KB → GB) | ÷ 1.000 ÷ 1.000 | 3.000.000 KB = 3.000.000 ÷ 1.000 ÷ 1.000 = 3 GB |
 
 **Catatan penting:** produsen penyimpanan memakai aturan desimal di atas.
 Sebagian sistem operasi menghitung dengan kelipatan **1.024** dan menamainya
@@ -220,7 +231,9 @@ berbeda. **Semua latihan dan soal W1 memakai aturan desimal.**
   berputar.
 - Motherboard menghubungkan komponen; PSU memberi listrik (watt); GPU
   mengolah gambar.
-- 1 byte = 8 bit; KB → MB → GB → TB masing-masing × 1.000 (aturan modul ini).
+- 1 byte = 8 bit; 1 KB = 1.000 byte, 1 MB = 1.000 KB, 1 GB = 1.000 MB,
+  1 TB = 1.000 GB (aturan modul ini). Dari satuan besar ke kecil kalikan
+  1.000 per tingkat; dari satuan kecil ke besar bagi 1.000 per tingkat.
 
 ## Glosarium
 
@@ -231,7 +244,7 @@ berbeda. **Semua latihan dan soal W1 memakai aturan desimal.**
 | Kecepatan clock | clock speed | Jumlah siklus per detik (GHz) |
 | Memori akses acak | RAM | Memori kerja sementara yang volatil |
 | Volatil | volatile | Isi hilang saat listrik mati |
-| Penyimpanan | storage | Media penyimpan data permanen |
+| Penyimpanan | storage | Media yang menyimpan data tanpa listrik (non-volatil) |
 | Papan induk | motherboard | Papan sirkuit utama |
 | Catu daya | PSU, *Power Supply Unit* | Pemasok listrik komponen |
 | Prosesor grafis | GPU | Pengolah gambar dan tampilan |

@@ -41,7 +41,7 @@ sekaligus, (b) satu program lama yang hanya memakai satu core?
 ## R-MEM — RAM dan penyimpanan (LO3)
 
 **Ingat kembali:** RAM = meja kerja (cepat, volatil); SSD/HDD = lemari
-(permanen). "Simpan" memindahkan pekerjaan dari meja ke lemari.
+(non-volatil). "Simpan" menyalin pekerjaan dari meja ke lemari.
 
 **Latihan tambahan:** benar atau salah — (1) menambah RAM menambah ruang
 untuk menyimpan foto; (2) SSD tetap menyimpan data saat listrik mati.
@@ -49,20 +49,30 @@ untuk menyimpan foto; (2) SSD tetap menyimpan data saat listrik mati.
 
 ## R-UNIT — Satuan data (LO4)
 
-**Ingat kembali:** naik satu tingkat (KB → MB → GB → TB) = × 1.000; turun
-satu tingkat = ÷ 1.000. Untuk menghitung jumlah berkas: samakan satuan dulu,
-baru bagi.
+**Ingat kembali (arah konversi):**
 
-**Latihan tambahan:** (1) 9 GB = … MB; (2) kartu 128 GB untuk foto 4 MB →
-… foto. *Jawaban:* 9.000 MB; 128.000 ÷ 4 = 32.000 foto.
+- Dari **satuan besar ke satuan kecil** (TB → GB → MB → KB): **kalikan**
+  1.000 untuk setiap tingkat. Contoh: 9 GB → MB = 9 × 1.000 = 9.000 MB.
+- Dari **satuan kecil ke satuan besar** (KB → MB → GB → TB): **bagi** 1.000
+  untuk setiap tingkat. Contoh: 4.000 MB → GB = 4.000 ÷ 1.000 = 4 GB.
+- Dua tingkat: 2 TB → MB = 2 × 1.000 × 1.000 = 2.000.000 MB;
+  5.000.000 KB → GB = 5.000.000 ÷ 1.000 ÷ 1.000 = 5 GB.
+- Untuk menghitung jumlah berkas: ubah kapasitas ke satuan ukuran berkas
+  dulu, baru bagi.
+
+**Latihan tambahan:** (1) 9 GB = … MB; (2) 7.000 MB = … GB; (3) kartu
+128 GB untuk foto 4 MB → … foto. *Jawaban:* 9.000 MB; 7 GB;
+128 × 1.000 = 128.000 MB, 128.000 ÷ 4 = 32.000 foto.
 
 ## R-SW — Software dan boot (LO5)
 
 **Ingat kembali:** pengguna → aplikasi → sistem operasi → driver → hardware.
 Saat menyala: daya → POST → cari perangkat boot → bootloader → OS siap.
 
-**Latihan tambahan:** printer tersambung tetapi tidak dikenali — lapisan
-mana yang diperiksa pertama? *Jawaban:* driver printer.
+**Latihan tambahan:** printer menyala dan tersambung tetapi tidak dikenali
+— menurut model lapisan W1, lapisan software mana yang diperiksa? *Jawaban:*
+driver printer — salah satu kemungkinan penyebab; port, kabel, dan
+pengaturan juga dapat menjadi penyebab.
 
 ## R-SPEC — Kompatibilitas dan kebutuhan (LO6)
 
@@ -70,6 +80,6 @@ mana yang diperiksa pertama? *Jawaban:* driver printer.
 soket ✔ · jenis RAM ✔ · keping ≤ slot ✔ · daya PSU ✔ · setiap kebutuhan ✔ ·
 anggaran ✔. Satu saja gagal → kombinasi tidak memenuhi.
 
-**Latihan tambahan:** CPU Soket B 65 W, motherboard Soket B DDR4 2 slot,
-RAM DDR4 8 GB × 2, PSU 150 W. Apa yang salah? *Jawaban:* kebutuhan daya
-65 + 100 = 165 W > 150 W.
+**Latihan tambahan (model katalog W1):** CPU Soket B 65 W, motherboard
+Soket B DDR4 2 slot, RAM DDR4 8 GB × 2, PSU 150 W. Apa yang salah?
+*Jawaban:* kebutuhan daya (model belajar) 65 + 100 = 165 W > 150 W.
