@@ -255,9 +255,9 @@ Semua butir di bawah **AWAITING OWNER**. Rekomendasi hanya saran.
 | CU-2-Q1 | Keempat komponen di setiap modul | Opsi A | [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) §7 | |
 | CU-2-Q2 | Capstone vs modul 16 | Tidak ada rekomendasi; keputusan produk | idem | |
 | CU-2-Q3 | Beberapa aktivitas dalam satu komponen | Poin dijumlah (sejalan NP-4) | idem | |
-| UO-1-Q1 | Teks gelap di atas isian warna merek | Ya | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) §8 | |
+| UO-1-Q1 | Teks kecil `#000000` di atas ungu; `#000000` atau `#1C1B1F` di atas biru, hijau, kuning, merah muda (hanya pasangan ≥ 4,5:1; `#1C1B1F` di atas ungu 4,03 gagal) | Ya | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) §8 | |
 | UO-1-Q2 | Varian turunan untuk teks berwarna kecil | Ya (warna merek tetap) | idem | |
-| UO-1-Q3 | Teks putih pada ungu hanya untuk teks besar/tebal | Ya | idem | |
+| UO-1-Q3 | Teks putih pada ungu (4,25) hanya untuk teks besar (≥ 18sp, atau tebal ≥ 14sp); teks tebal < 14sp tetap `#000000` | Ya | idem | |
 | UO-2-Q1 | Dark mode | DM-1 (terang saja, Force Dark nonaktif) untuk V1 | idem | |
 | UO-2-Q2 | Material 3 tanpa dynamic color | Ya | idem | |
 

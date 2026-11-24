@@ -12,7 +12,7 @@ Lima warna merek **tidak diganti**. Rekomendasi di §6 adalah saran teknis,
 |---|---|---|---|
 | AC-B1 | Colorful Academy, tema terang (*bright/light theme*) | APPROVED | BL:12, BL:67 |
 | AC-B2 | Palet: ungu `#7565F5`, biru `#3B82F6`, hijau `#22C55E`, kuning `#FFB020`, merah muda `#FF6B91`; aksesibilitas/kontras wajib diperhatikan | OWNER APPROVED WITH CONDITIONS (D-01 M-17) | B01 M-17 |
-| AC-B3 | Kontras teks ≥ 4,5:1 (teks < 18sp, atau tebal < 14sp); ≥ 3:1 untuk teks lain | VERIFIED (dokumentasi resmi) | developer.android.com/guide/topics/ui/accessibility/apps (Last updated 2026-11-10) |
+| AC-B3 | Kontras teks ≥ 4,5:1 untuk teks < 18sp, atau teks tebal < 14sp; ≥ 3:1 untuk teks lain, yaitu **teks besar** = teks ≥ 18sp, atau teks tebal ≥ 14sp. Teks tebal < 14sp tetap wajib 4,5:1 | VERIFIED (dokumentasi resmi) | developer.android.com/guide/topics/ui/accessibility/apps (Last updated 2026-11-10) |
 | AC-B4 | Force Dark (Android 10): aplikasi ikut bila tema mengatur `android:forceDarkAllowed="true"`; atribut ini **sudah diset** pada semua tema terang bawaan sistem dan AndroidX (mis. `Theme.Material.Light`) | VERIFIED (dokumentasi resmi) | developer.android.com/develop/ui/views/theming/darktheme (Last updated 2026-10-28) |
 | AC-B5 | Dynamic color tersedia di Android 12+; bila dipakai, skema warna diturunkan dari wallpaper | VERIFIED (dokumentasi resmi) | developer.android.com/develop/ui/compose/designsystems/material3 (Last updated 2026-11-10) |
 | AC-B6 | Accessibility Scanner dan UI Check Mode Android Studio mendeteksi kontras rendah | VERIFIED (dokumentasi resmi) | developer.android.com/guide/topics/ui/accessibility/testing (Last updated 2026-10-23) |
@@ -63,13 +63,26 @@ asli; kecocokan visual dengan identitas merek perlu penilaian owner.
 | Pemakaian | Latar | Teks/ikon | Kontras | Memenuhi |
 |---|---|---|---|---|
 | Tombol utama | Ungu `#7565F5` | Hitam `#000000` | 4,94 | 4,5:1 |
-| Tombol utama (alternatif teks besar/tebal saja) | Ungu `#7565F5` | Putih | 4,25 | 3:1 saja |
+| Tombol utama — alternatif **hanya untuk teks besar** (≥ 18sp, atau tebal ≥ 14sp) | Ungu `#7565F5` | Putih | 4,25 | 3:1 saja; **gagal** untuk teks < 18sp dan teks tebal < 14sp |
 | Chip/label status lulus | Hijau `#22C55E` | Hitam | 9,22 | 4,5:1 |
 | Peringatan / XP | Kuning `#FFB020` | Hitam | 11,48 | 4,5:1 |
 | Galat / belum lulus | Merah muda `#FF6B91` | Hitam | 7,76 | 4,5:1 |
 | Informasi | Biru `#3B82F6` | Hitam | 5,71 | 4,5:1 |
 | Teks isi pada permukaan | Putih | `#1C1B1F` | 17,13 | 4,5:1 |
 | Tautan/teks berwarna kecil pada putih | Putih | Varian ≥ 4,5:1 (§3) | ≥ 4,50 | 4,5:1 |
+
+Teks gelap yang diusulkan per warna merek (dari tabel §2):
+
+| Isian warna merek | `#000000` | `#1C1B1F` | Teks gelap yang diusulkan untuk teks kecil |
+|---|---|---|---|
+| Ungu `#7565F5` | 4,94 ✓ | **4,03 ✗** | **`#000000` saja** |
+| Biru `#3B82F6` | 5,71 ✓ | 4,66 ✓ | `#000000` atau `#1C1B1F` |
+| Hijau `#22C55E` | 9,22 ✓ | 7,52 ✓ | `#000000` atau `#1C1B1F` |
+| Kuning `#FFB020` | 11,48 ✓ | 9,37 ✓ | `#000000` atau `#1C1B1F` |
+| Merah muda `#FF6B91` | 7,76 ✓ | 6,33 ✓ | `#000000` atau `#1C1B1F` |
+
+✓ = memenuhi 4,5:1; ✗ = gagal untuk teks kecil. `#1C1B1F` hanya boleh
+dipakai pada pasangan yang memenuhi ambang.
 
 Status tidak boleh disampaikan hanya lewat warna (UI:A-08).
 
@@ -93,9 +106,15 @@ Implikasi Material 3 (PROPOSED):
 
 ## 6. Rekomendasi (saran, bukan keputusan)
 
-1. **UO-1:** UI:KC-1 + UI:KC-2 terbatas — teks gelap (hitam / `#1C1B1F`) di atas
-   isian warna merek; varian turunan §3 hanya untuk teks berwarna kecil di
-   atas putih. Lima warna merek tetap tidak berubah.
+1. **UO-1:** UI:KC-1 + UI:KC-2 terbatas:
+   - Teks kecil di atas isian **ungu** memakai **`#000000`** (4,94). `#1C1B1F`
+     di atas ungu (4,03) gagal untuk teks kecil dan tidak diusulkan.
+   - Teks kecil di atas biru, hijau, kuning, dan merah muda memakai
+     `#000000` atau `#1C1B1F` (keduanya ≥ 4,5:1, tabel §4).
+   - Teks putih di atas ungu (4,25) hanya untuk **teks besar** (≥ 18sp, atau
+     tebal ≥ 14sp), bukan untuk semua teks tebal.
+   - Varian turunan §3 hanya untuk teks berwarna kecil di atas putih.
+   - Lima warna merek tetap tidak berubah.
 2. **UO-2:** DM-1 untuk V1, karena paling sesuai BL:12. DM-2 dapat
    dipertimbangkan kemudian sebagai keputusan owner terpisah.
 
@@ -112,9 +131,9 @@ Implikasi Material 3 (PROPOSED):
 
 ## 8. Pertanyaan untuk owner
 
-1. **UO-1-Q1:** Setujui teks gelap (hitam / `#1C1B1F`) di atas isian kelima warna merek?
+1. **UO-1-Q1:** Setujui teks kecil `#000000` di atas isian ungu, dan `#000000` atau `#1C1B1F` di atas isian biru, hijau, kuning, dan merah muda (hanya pasangan yang ≥ 4,5:1)?
 2. **UO-1-Q2:** Setujui penambahan varian turunan §3 khusus untuk teks berwarna kecil di atas putih (warna merek tetap)?
-3. **UO-1-Q3:** Bila tombol utama ungu harus berteks putih, batasi hanya pada teks besar/tebal (3:1)?
+3. **UO-1-Q3:** Bila tombol utama ungu harus berteks putih (4,25:1), batasi hanya pada **teks besar** — ≥ 18sp, atau tebal ≥ 14sp — sehingga teks < 18sp dan teks tebal < 14sp tetap memakai `#000000`?
 4. **UO-2-Q1:** Setujui DM-1 (tema terang saja, Force Dark dinonaktifkan) untuk V1?
 5. **UO-2-Q2:** Setujui Material 3 tanpa dynamic color?
 
