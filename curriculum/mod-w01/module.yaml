@@ -40,7 +40,7 @@ objective_mapping:   # setiap LO diajarkan, dilatih, dan dinilai
   LO1: {lessons: [les-01, les-02], practice: [prac-01, prac-02], theory_slots: [s01, s02, s03, s13, s14], lab: [act-01, act-02], project: [K4.q1], concept_slots: [s04]}
   LO2: {lessons: [les-02, les-04], practice: [prac-02], theory_slots: [s04, s05, s06], lab: [], project: [K1.c03, K1.c06, K1.c09, K4.q5], concept_slots: [s02]}
   LO3: {lessons: [les-02], practice: [prac-02], theory_slots: [s07, s08, s09], lab: [act-03.c08], project: [K1.c04, K1.c05, K4.q3], concept_slots: [s01]}
-  LO4: {lessons: [les-02, les-04], practice: [prac-02, prac-04], theory_slots: [s10, s11, s12], lab: [act-03.c01, act-03.c02, act-03.c03], project: [K1.c04, K3.c02], concept_slots: [s05]}
+  LO4: {lessons: [les-02, les-04], practice: [prac-02, prac-04], theory_slots: [s10, s11, s12], lab: [act-03.c01, act-03.c02, act-03.c03], project: [K1.c04, K1.c10, K3.c02], concept_slots: [s05]}
   LO5: {lessons: [les-03], practice: [prac-03], theory_slots: [s15, s16, s17], lab: [act-02.c06], project: [K4.q2], concept_slots: [s03]}
   LO6: {lessons: [les-04], practice: [prac-04], theory_slots: [s18, s19, s20], lab: [act-03.c04, act-03.c05, act-03.c06, act-03.c07], project: [K1.c01, K1.c02, K1.c07, K1.c08, K3.c03, K4.q4], concept_slots: [s06]}
 

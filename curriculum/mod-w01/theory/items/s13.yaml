@@ -27,6 +27,7 @@ variants:
     c: Scanner tidak menyimpan data permanen
     d: Scanner tidak menjalankan instruksi program
   explanation: 'Scanner memasukkan gambar dokumen ke komputer: input.'
+  option_order: urutan alami (kategori/baris tabel), tetap
 - item_id: item-w01-t-s13-b
   variant_id: mod-w01.theory.s13.vB
   item_version: '1.0'
@@ -46,3 +47,4 @@ variants:
     c: Proyektor tidak menyimpan data
     d: Proyektor tidak menjalankan instruksi program
   explanation: 'Proyektor menampilkan gambar kepada pengguna: output.'
+  option_order: urutan alami (kategori/baris tabel), tetap

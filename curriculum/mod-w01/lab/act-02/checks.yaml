@@ -19,13 +19,13 @@ variants:
   fixture:
     events:
     - id: A
-      text: Kamu mengetik nama dan nilai tiga mata pelajaran dengan keyboard
+      text: Kamu mengetik kota tujuan dan tanggal di aplikasi tiket kereta
     - id: B
-      text: Aplikasi lembar kerja menghitung rata-rata nilai
+      text: Aplikasi mencari jadwal kereta yang cocok
     - id: C
-      text: Rata-rata nilai tampil di monitor
+      text: Daftar jadwal tampil di layar
     - id: D
-      text: Setelah memeriksa rata-rata di layar, kamu menyimpan berkas ke SSD
+      text: Setelah memilih jadwal di layar, tiket disimpan di penyimpanan ponsel
     display_order:
     - C
     - A
@@ -40,17 +40,16 @@ variants:
       label: Output
     - id: S
       label: Penyimpanan
-    layer_question: Keyboard baru dicolokkan ke port USB. Software apa yang membuat sistem operasi dapat
-      memakainya?
+    layer_question: Software apa yang membantu sistem operasi ponsel membaca sentuhan jarimu pada layar?
     layer_options:
     - id: a
-      text: Aplikasi lembar kerja
+      text: Aplikasi tiket kereta
     - id: b
-      text: Driver keyboard
+      text: Firmware pengisi daya
     - id: c
-      text: Firmware monitor
+      text: Baterai
     - id: d
-      text: PSU
+      text: Driver layar sentuh
   visible_example:
     note: 'Contoh terlihat (0 poin): "Menekan tombol volume" → Input'
   checks:
@@ -86,10 +85,10 @@ variants:
     points: 3
   - check_id: mod-w01.lab.act-02.vA.c06
     name: Lapisan software
-    expected: b
+    expected: d
     points: 6
-    feedback: Driver membantu sistem operasi berkomunikasi dengan perangkat tertentu; banyak driver umum
-      sudah tersedia di sistem operasi.
+    feedback: Driver layar sentuh menjadi penghubung sistem operasi dengan sensor sentuh; aplikasi memakai
+      hasilnya lewat sistem operasi.
 - variant_id: mod-w01.lab.act-02.vB
   fixture:
     events:
@@ -120,11 +119,11 @@ variants:
     - id: a
       text: Aplikasi galeri
     - id: b
-      text: Driver kamera
-    - id: c
-      text: Firmware pengisi daya
-    - id: d
       text: Baterai
+    - id: c
+      text: Driver kamera
+    - id: d
+      text: Firmware pengisi daya
   visible_example:
     note: 'Contoh terlihat (0 poin): "Menekan tombol volume" → Input'
   checks:
@@ -160,6 +159,6 @@ variants:
     points: 3
   - check_id: mod-w01.lab.act-02.vB.c06
     name: Lapisan software
-    expected: b
+    expected: c
     points: 6
     feedback: Driver kamera menjadi penghubung sistem operasi dengan sensor kamera.

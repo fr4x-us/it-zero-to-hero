@@ -18,14 +18,49 @@ variants:
     - Core
     - Clock
   - - P1
-    - '4'
-    - 4,2 GHz
-  - - P2
-    - '8'
-    - 3,6 GHz
-  - - P3
     - '6'
     - 3,9 GHz
+  - - P2
+    - '4'
+    - 4,2 GHz
+  - - P3
+    - '8'
+    - 3,6 GHz
+  options:
+  - id: a
+    text: P1
+  - id: b
+    text: P2
+  - id: c
+    text: P3
+  - id: d
+    text: Ketiganya sama saja
+  key: c
+  distractor_rationale:
+    a: P1 punya 6 core, lebih sedikit dari P3
+    b: P2 punya clock tertinggi tetapi core paling sedikit; pekerjaan yang dapat dibagi lebih terbantu
+      oleh core
+    d: Jumlah core berbeda, jadi tidak sama
+  explanation: Pekerjaan yang dapat dibagi lebih terbantu oleh jumlah core; P3 punya 8 core.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w01-t-s05-b
+  variant_id: mod-w01.theory.s05.vB
+  item_version: '1.0'
+  stem: Ketiga CPU pada tabel berasal dari generasi yang sama. Sebuah program mengerjakan langkahnya **satu
+    per satu** dan tidak dapat dibagi ke core lain. CPU mana yang **kemungkinan paling cepat** menjalankannya?
+  stimulus_table:
+  - - CPU
+    - Core
+    - Clock
+  - - P1
+    - '6'
+    - 3,9 GHz
+  - - P2
+    - '4'
+    - 4,2 GHz
+  - - P3
+    - '8'
+    - 3,6 GHz
   options:
   - id: a
     text: P1
@@ -37,42 +72,9 @@ variants:
     text: Ketiganya sama saja
   key: b
   distractor_rationale:
-    a: P1 punya clock tertinggi tetapi core paling sedikit; pekerjaan yang dapat dibagi lebih terbantu
-      oleh core
-    c: P3 punya 6 core, lebih sedikit dari P2
-    d: Jumlah core berbeda, jadi tidak sama
-  explanation: Pekerjaan yang dapat dibagi lebih terbantu oleh jumlah core; P2 punya 8 core.
-- item_id: item-w01-t-s05-b
-  variant_id: mod-w01.theory.s05.vB
-  item_version: '1.0'
-  stem: Ketiga CPU pada tabel berasal dari generasi yang sama. Sebuah program mengerjakan langkahnya **satu
-    per satu** dan tidak dapat dibagi ke core lain. CPU mana yang **kemungkinan paling cepat** menjalankannya?
-  stimulus_table:
-  - - CPU
-    - Core
-    - Clock
-  - - P1
-    - '4'
-    - 4,2 GHz
-  - - P2
-    - '8'
-    - 3,6 GHz
-  - - P3
-    - '6'
-    - 3,9 GHz
-  options:
-  - id: a
-    text: P1
-  - id: b
-    text: P2
-  - id: c
-    text: P3
-  - id: d
-    text: Ketiganya sama saja
-  key: a
-  distractor_rationale:
-    b: Core tambahan tidak membantu pekerjaan yang tidak dapat dibagi
-    c: Clock P3 lebih rendah dari P1
+    a: Clock P1 lebih rendah dari P2
+    c: Core tambahan tidak membantu pekerjaan yang tidak dapat dibagi
     d: Clock berbeda, jadi kemungkinan tidak sama
-  explanation: Untuk pekerjaan yang tidak dapat dibagi dan generasi sama, clock lebih tinggi (P1, 4,2
-    GHz) kemungkinan lebih cepat.
+  explanation: 'Untuk pekerjaan yang tidak dapat dibagi dan generasi sama, clock lebih tinggi (P2, 4,2
+    GHz) kemungkinan lebih cepat. Ini penyederhanaan: kecepatan nyata juga dipengaruhi faktor lain.'
+  option_order: urutan alami (kategori/baris tabel), tetap

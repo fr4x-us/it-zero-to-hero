@@ -11,25 +11,29 @@ variants:
 - item_id: item-w01-t-s03-a
   variant_id: mod-w01.theory.s03.vA
   item_version: '1.0'
-  stem: Kamu memakai aplikasi lembar kerja untuk menghitung total belanja. Urutkan kejadian berikut sesuai
-    alur kerja komputer.
+  stem: Kamu menarik uang di mesin ATM. Urutkan kejadian berikut sesuai alur kerja komputer.
   items:
   - id: A
-    text: Total belanja muncul di layar
+    text: Sisa saldo tampil di layar dan struk dicetak
   - id: B
-    text: Kamu mengetik harga setiap barang
+    text: Kamu mengetik jumlah penarikan di layar ATM
   - id: C
-    text: Kamu menyimpan berkas setelah memeriksa total di layar
+    text: Catatan transaksi disimpan setelah struk dicetak
   - id: D
-    text: Aplikasi menjumlahkan harga
+    text: ATM menghitung sisa saldo
+  display_order:
+  - A
+  - B
+  - C
+  - D
   accepted_sequences:
   - - B
     - D
     - A
     - C
   scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
-  explanation: Input (mengetik harga) → proses (menjumlahkan) → output (total di layar) → penyimpanan
-    (menyimpan setelah memeriksa).
+  explanation: Input (mengetik jumlah) → proses (menghitung saldo) → output (saldo dan struk) → penyimpanan
+    (catatan transaksi).
 - item_id: item-w01-t-s03-b
   variant_id: mod-w01.theory.s03.vB
   item_version: '1.0'
@@ -43,6 +47,11 @@ variants:
     text: Kamu berbicara ke mikrofon ponsel
   - id: D
     text: Teks muncul di layar
+  display_order:
+  - A
+  - B
+  - C
+  - D
   accepted_sequences:
   - - C
     - A

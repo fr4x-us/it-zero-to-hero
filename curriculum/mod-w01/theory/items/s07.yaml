@@ -14,17 +14,17 @@ variants:
   stem: Memori yang **isinya hilang saat listrik mati** adalah …
   options:
   - id: a
-    text: RAM
-  - id: b
     text: SSD
-  - id: c
+  - id: b
     text: HDD
+  - id: c
+    text: RAM
   - id: d
     text: Flashdisk
-  key: a
+  key: c
   distractor_rationale:
-    b: SSD non-volatil
-    c: HDD non-volatil
+    a: SSD non-volatil
+    b: HDD non-volatil
     d: Flashdisk non-volatil
   explanation: 'RAM bersifat volatil: isinya hilang saat listrik mati.'
 - item_id: item-w01-t-s07-b
@@ -35,14 +35,14 @@ variants:
   - id: a
     text: RAM
   - id: b
-    text: SSD
+    text: Memori kerja sementara yang dipakai CPU
   - id: c
-    text: Monitor
-  - id: d
     text: CPU
-  key: b
+  - id: d
+    text: SSD
+  key: d
   distractor_rationale:
     a: RAM volatil
-    c: Monitor adalah perangkat output, bukan penyimpanan
-    d: CPU menjalankan instruksi, bukan penyimpanan permanen
+    b: Itu RAM, yang volatil
+    c: CPU menjalankan instruksi, bukan penyimpanan permanen
   explanation: SSD adalah penyimpanan non-volatil.

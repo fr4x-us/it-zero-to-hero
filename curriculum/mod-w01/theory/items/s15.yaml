@@ -11,7 +11,7 @@ variants:
 - item_id: item-w01-t-s15-a
   variant_id: mod-w01.theory.s15.vA
   item_version: '1.0'
-  stem: Android, Windows, dan Linux adalah contoh …
+  stem: Software sistem utama yang **mengelola hardware dan menjalankan aplikasi** disebut …
   options:
   - id: a
     text: Software aplikasi
@@ -20,29 +20,29 @@ variants:
   - id: c
     text: Driver
   - id: d
-    text: Hardware
+    text: Firmware
   key: b
   distractor_rationale:
-    a: Ketiganya mengelola perangkat dan menjalankan aplikasi, bukan aplikasi tugas tertentu
-    c: Driver melayani perangkat tertentu
-    d: Ketiganya software
-  explanation: Android, Windows, dan Linux adalah sistem operasi.
+    a: Aplikasi membantu tugas tertentu, tidak mengelola hardware
+    c: Driver melayani satu perangkat tertentu
+    d: Firmware adalah program dasar di chip perangkat
+  explanation: Sistem operasi (mis. Windows, Android) mengelola hardware dan menjalankan aplikasi.
 - item_id: item-w01-t-s15-b
   variant_id: mod-w01.theory.s15.vB
   item_version: '1.0'
-  stem: Software yang membantu sistem operasi **berkomunikasi dengan printer** disebut …
+  stem: Software yang **membantu sistem operasi berkomunikasi dengan printer** disebut …
   options:
   - id: a
-    text: Driver
-  - id: b
     text: Firmware
-  - id: c
+  - id: b
     text: Browser
+  - id: c
+    text: Driver
   - id: d
-    text: PSU
-  key: a
+    text: Sistem operasi
+  key: c
   distractor_rationale:
-    b: Firmware adalah program dasar di chip perangkat
-    c: Browser adalah aplikasi
-    d: PSU adalah hardware pemasok listrik
+    a: Firmware adalah program dasar di chip perangkat
+    b: Browser adalah aplikasi
+    d: Sistem operasi memakai driver untuk berbicara dengan printer
   explanation: Driver printer menerjemahkan permintaan sistem operasi menjadi perintah untuk printer.

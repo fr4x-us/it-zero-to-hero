@@ -4,6 +4,7 @@ competency: comp-w01-mem-01
 required_concepts:
 - RAM volatil
 - penyimpanan non-volatil
+- akibat listrik mati
 format: CE-S1
 max_points: 4
 content_version: '1.0'
@@ -22,18 +23,18 @@ variants:
   stem: Mengapa RAM disebut **volatil**?
   options:
   - id: a
-    text: Isinya hilang saat listrik mati
+    text: Karena kapasitasnya lebih kecil daripada SSD
   - id: b
-    text: Karena kapasitasnya kecil
+    text: Isinya hilang saat listrik mati
   - id: c
-    text: Karena letaknya di motherboard
+    text: Karena isinya dapat diubah oleh program
   - id: d
     text: Karena lebih lambat daripada SSD
-  key: a
+  key: b
   credit_rule: 4 bila pilihan = kunci; selain itu 0
   distractor_rationale:
-    b: Kapasitas tidak berkaitan dengan volatilitas
-    c: Letak tidak menentukan volatilitas
+    a: Kapasitas tidak berkaitan dengan volatilitas
+    c: Isi SSD juga dapat diubah; itu bukan arti volatil
     d: RAM justru jauh lebih cepat daripada SSD
   feedback: Volatil berarti isi memori bergantung pada listrik; saat listrik mati, isi RAM hilang.
 - item_id: item-w01-c-s01-b
@@ -42,17 +43,17 @@ variants:
   stem: Mengapa berkas di **SSD** masih ada setelah komputer dimatikan?
   options:
   - id: a
-    text: 'SSD non-volatil: data tetap tersimpan tanpa listrik'
+    text: Sistem operasi menyalin berkas ke RAM sebelum mati
   - id: b
-    text: SSD menyalin berkas ke RAM saat komputer mati
+    text: SSD memakai piringan yang terus berputar
   - id: c
     text: CPU menyimpan berkas saat komputer mati
   - id: d
-    text: Berkas disimpan di monitor
-  key: a
+    text: 'SSD non-volatil: data tetap tersimpan tanpa listrik'
+  key: d
   credit_rule: 4 bila pilihan = kunci; selain itu 0
   distractor_rationale:
-    b: Isi RAM justru hilang saat mati
+    a: Isi RAM justru hilang saat mati
+    b: Itu HDD, dan putaran tidak menyimpan data
     c: CPU tidak menyimpan berkas permanen
-    d: Monitor adalah perangkat output
   feedback: SSD adalah penyimpanan non-volatil; data tetap ada tanpa listrik.

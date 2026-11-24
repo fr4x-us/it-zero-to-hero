@@ -73,7 +73,8 @@ keras tertentu**, misalnya driver printer atau driver kartu grafis.
 ### Utilitas (*utility*)
 
 Software sistem untuk merawat komputer: pembersih disk, pencadangan,
-antivirus.
+antivirus. *(Pengelompokan umum di modul ini; sebagian buku menyebut
+utilitas sebagai kelompok tersendiri di samping sistem operasi dan driver.)*
 
 ## 2. Lapisan dari pengguna sampai hardware
 
@@ -144,12 +145,12 @@ Mengapa OS harus dimuat ke RAM? Karena CPU bekerja dengan data di RAM
 
 ## 5. Latihan terbimbing (`mod-w01.prac-03`, tidak dinilai)
 
-1. Kelompokkan: Android, aplikasi kamera, driver kartu suara, aplikasi
-   pengolah kata, UEFI, pembersih disk.
+1. Kelompokkan: iOS, aplikasi kalender, driver kartu grafis, aplikasi
+   presentasi, firmware router, aplikasi pencadangan (*backup*).
 2. Printer baru tersambung dengan kabel USB yang benar, tetapi tidak muncul
    di daftar printer. Lapisan mana yang paling mungkin bermasalah?
-3. Urutkan: OS siap dipakai; POST; tombol daya ditekan; bootloader memuat
-   OS; firmware mencari perangkat boot.
+3. Urutkan lapisan saat kamu memutar video dan gambar tampil di layar:
+   sistem operasi; layar; pengguna; driver grafis; aplikasi pemutar video.
 
 ## 6. Cek pemahaman (tidak dinilai)
 
@@ -158,12 +159,11 @@ Mengapa OS harus dimuat ke RAM? Karena CPU bekerja dengan data di RAM
 
 ## Pembahasan latihan (ditampilkan setelah pelajar mencoba)
 
-1. Software sistem: Android (OS), driver kartu suara, UEFI (firmware),
-   pembersih disk (utilitas). Software aplikasi: aplikasi kamera, pengolah
-   kata.
+1. Software sistem: iOS (OS), driver kartu grafis, firmware router,
+   aplikasi pencadangan (utilitas). Software aplikasi: kalender, presentasi.
 2. Driver printer (software) belum terpasang atau tidak sesuai.
-3. Tombol daya ditekan → POST → firmware mencari perangkat boot →
-   bootloader memuat OS → OS siap dipakai.
+3. Pengguna → aplikasi pemutar video → sistem operasi → driver grafis →
+   layar.
 
 ## Ringkasan
 

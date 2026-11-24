@@ -1,9 +1,13 @@
 # IT ZERO → HERO — Standar Produksi Kurikulum (CB-0)
 
-Status: **FINAL (dokumentasi), satu field terbuka** — TPL-10 field
-`hidden_test_feedback` untuk lab kode menunggu **CU-6-Q13**; tidak memblokir
-W1–W8 (tanpa test kode tersembunyi), memblokir finalisasi lab kode W9–W16.
-**Belum diterima owner** (menunggu review PR). Templat **bukan** konten dan
+Status (dibedakan, revisi review PR #25 F-06):
+
+| Aspek | Status |
+|---|---|
+| Dokumentasi dapat dipakai untuk W1–W8 (tanpa lab kode) | **YA** |
+| Finalisasi global CB-0 | **BELUM** — kriteria CB0-AC-05 belum terpenuhi: field TPL-10 `hidden_test_feedback` untuk lab kode (W9–W12, W16) menunggu **CU-6-Q13** (usulan HF-A, AWAITING OWNER) |
+| Review ChatGPT | Belum lolos (menunggu review ulang PR #25) |
+| Penerimaan owner | **Belum** | Templat **bukan** konten dan
 tidak dihitung sebagai komponen selesai. Tanggal: **2026-11-24**. Basis:
 `main` = `40ca205` (merge PR #24). Kode rujukan: `TPL:`.
 
@@ -229,7 +233,14 @@ yang diperbaiki, batas penilaian objektif, reviewer dan tanggal.
 | CB0-AC-02 | Setiap field dapat dilacak ke keputusan | Kolom/teks "Dasar" | Lulus |
 | CB0-AC-03 | Konvensi penamaan konsisten | §2; diterapkan di W1 (212 ID unik) | Lulus |
 | CB0-AC-04 | Sumber, kunci, dan tampilan dipisahkan | §1 | Lulus |
-| CB0-AC-05 | Tidak ada field yang bergantung keputusan OPEN tanpa ditandai | TPL-10 `hidden_test_feedback` (CU-6-Q13) ditandai | Lulus dengan 1 field terbuka |
-| CB0-AC-06 | Diterapkan pada satu modul lengkap | `curriculum/mod-w01/` | Lulus (W1 menunggu review) |
+| CB0-AC-05 | Semua field wajib terdefinisi oleh keputusan yang disetujui | TPL-10 `hidden_test_feedback` menunggu CU-6-Q13 (ditandai) | **Belum terpenuhi** untuk lab kode; terpenuhi untuk W1–W8 |
+| CB0-AC-06 | Diterapkan pada satu modul lengkap | `curriculum/mod-w01/` | Diproduksi; W1 belum lolos review dan belum diterima |
 | CB0-AC-07 | Tidak ada parser, skema database, atau kode aplikasi | Hanya Markdown/YAML konten | Lulus |
 | CB0-AC-08 | Diterima owner | — | **Belum** |
+
+Kesimpulan: CB-0 **belum COMPLETE secara global**. Tambahan dari review PR #25:
+TPL-07/TPL-08/TPL-13 kini mensyaratkan **posisi kunci seimbang** dengan
+urutan opsi tetap (tanpa pengacakan); TPL-14 mensyaratkan **matriks
+kesetaraan varian** (kompetensi, konsep wajib, tuntutan kognitif, format,
+poin, waktu); TPL-11 mensyaratkan contoh untuk pelajar **tidak** memuat
+jawaban tugas bernilai (contoh nyata hanya di berkas penilai).

@@ -16,16 +16,16 @@ variants:
   - id: a
     text: Aplikasi kalkulator
   - id: b
-    text: Keyboard
-  - id: c
     text: Sistem operasi
-  - id: d
+  - id: c
     text: Driver printer
-  key: b
+  - id: d
+    text: Keyboard
+  key: d
   distractor_rationale:
     a: Aplikasi adalah software
-    c: Sistem operasi adalah software sistem
-    d: Driver adalah software
+    b: Sistem operasi adalah software sistem
+    c: Driver adalah software
   explanation: Keyboard adalah benda fisik yang dapat disentuh, jadi hardware.
 - item_id: item-w01-t-s01-b
   variant_id: mod-w01.theory.s01.vB
@@ -35,14 +35,14 @@ variants:
   - id: a
     text: Monitor
   - id: b
-    text: Kabel USB
-  - id: c
     text: Browser
+  - id: c
+    text: Kabel USB
   - id: d
     text: Mouse
-  key: c
+  key: b
   distractor_rationale:
     a: Monitor adalah benda fisik (hardware)
-    b: Kabel adalah hardware
+    c: Kabel adalah hardware
     d: Mouse adalah hardware
   explanation: Browser adalah kumpulan instruksi yang dijalankan komputer, jadi software.

@@ -2,12 +2,8 @@
 slot_id: mod-w01.concept.s04
 competency: comp-w01-ipos-01
 required_concepts:
-- input
-- proses
-- output
-- penyimpanan
-- hardware vs software
-- data vs informasi
+- dua tahap IPOS
+- dua istilah dasar (hardware/software atau data/informasi)
 format: CE-S4
 max_points: 4
 content_version: '1.0'
@@ -23,64 +19,64 @@ variants:
 - item_id: item-w01-c-s04-a
   variant_id: mod-w01.concept.s04.vA
   item_version: '1.0'
-  stem: Cocokkan setiap tahap dengan penjelasannya.
+  stem: Cocokkan setiap istilah dengan penjelasannya.
   left:
   - id: L1
     text: Input
   - id: L2
     text: Proses
   - id: L3
-    text: Output
+    text: Hardware
   - id: L4
-    text: Penyimpanan
+    text: Informasi
   right:
   - id: R1
-    text: Data diolah mengikuti instruksi
-  - id: R2
-    text: Hasil disampaikan kepada pengguna
-  - id: R3
-    text: Data masuk ke komputer
-  - id: R4
-    text: Data disimpan agar dapat dipakai lagi
-  - id: R5
     text: Komponen fisik yang dapat disentuh
+  - id: R2
+    text: Data masuk ke komputer
+  - id: R3
+    text: Data yang sudah diolah sehingga bermakna
+  - id: R4
+    text: Data diolah mengikuti instruksi
+  - id: R5
+    text: Fakta mentah seperti angka atau huruf
   key_mapping:
-    L1: R3
-    L2: R1
-    L3: R2
-    L4: R4
+    L1: R2
+    L2: R4
+    L3: R1
+    L4: R3
   credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
     dua kali → INVALID_ANSWER (CE-V3)
-  feedback: 'R5 adalah pengecoh: itu definisi hardware, bukan tahap IPOS.'
+  feedback: 'R5 adalah pengecoh: itu definisi data, bukan informasi.'
 - item_id: item-w01-c-s04-b
   variant_id: mod-w01.concept.s04.vB
   item_version: '1.0'
   stem: Cocokkan setiap istilah dengan penjelasannya.
   left:
   - id: L1
-    text: Hardware
+    text: Output
   - id: L2
-    text: Software
+    text: Penyimpanan
   - id: L3
-    text: Data
+    text: Software
   - id: L4
-    text: Informasi
+    text: Data
   right:
   - id: R1
     text: Fakta mentah seperti angka atau huruf
   - id: R2
-    text: Instruksi dan data yang dijalankan komputer
+    text: Data disimpan agar dapat dipakai lagi
   - id: R3
-    text: Data yang sudah diolah sehingga bermakna
+    text: Instruksi dan data yang dijalankan komputer
   - id: R4
-    text: Komponen fisik yang dapat disentuh
+    text: Hasil disampaikan kepada pengguna
   - id: R5
-    text: Data masuk ke komputer
+    text: Data yang sudah diolah sehingga bermakna
   key_mapping:
     L1: R4
     L2: R2
-    L3: R1
-    L4: R3
+    L3: R3
+    L4: R1
   credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
     dua kali → INVALID_ANSWER (CE-V3)
-  feedback: 'R5 adalah pengecoh: itu definisi input.'
+  feedback: 'R5 adalah pengecoh: itu definisi informasi, bukan data.'

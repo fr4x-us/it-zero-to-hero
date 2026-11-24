@@ -32,7 +32,9 @@ laboratorium.
 2. Untuk setiap perangkat pilih **tepat satu** kelompok dari daftar
    kelompok.
 3. Bila sebuah perangkat menjalankan input **dan** output, pilih kelompok
-   "Input dan output", bukan salah satunya.
+   "Input dan output", bukan salah satunya. Kelompok mengikuti fungsi
+   perangkat seperti yang tertulis (mis. "Printer (hanya mencetak)"; printer
+   multifungsi yang juga memindai adalah input dan output).
 4. Periksa kembali, lalu tekan **Serahkan** (aktivitas akan dikunci dan
    dievaluasi).
 
@@ -44,14 +46,14 @@ laboratorium.
 |---|---|
 | d01 Keyboard | d01 Scanner |
 | d02 Monitor | d02 Proyektor |
-| d03 Printer | d03 Webcam |
+| d03 Printer (hanya mencetak) | d03 Webcam |
 | d04 Mouse | d04 Headset dengan mikrofon |
 | d05 Layar sentuh | d05 HDD |
 | d06 SSD | d06 GPU |
 | d07 CPU | d07 Touchpad |
 | d08 Mikrofon | d08 Earphone |
 | d09 Speaker | d09 Kartu memori SD |
-| d10 Flashdisk USB | d10 Printer |
+| d10 Flashdisk USB | d10 Printer (hanya mencetak) |
 
 Kelompok: `I` Input · `O` Output · `IO` Input dan output · `S`
 Penyimpanan · `P` Pemrosesan.

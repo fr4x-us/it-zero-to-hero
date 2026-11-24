@@ -34,18 +34,18 @@ Pelajaran 1 dan Pelajaran 3.
 
 ## Data (fixture)
 
-**Varian A — menghitung rata-rata nilai** (ditampilkan urutan C, A, D, B)
+**Varian A — memesan tiket kereta** (ditampilkan urutan C, A, D, B)
 
 | ID | Kejadian |
 |---|---|
-| A | Kamu mengetik nama dan nilai tiga mata pelajaran dengan keyboard |
-| B | Aplikasi lembar kerja menghitung rata-rata nilai |
-| C | Rata-rata nilai tampil di monitor |
-| D | Setelah memeriksa rata-rata di layar, kamu menyimpan berkas ke SSD |
+| A | Kamu mengetik kota tujuan dan tanggal di aplikasi tiket kereta |
+| B | Aplikasi mencari jadwal kereta yang cocok |
+| C | Daftar jadwal tampil di layar |
+| D | Setelah memilih jadwal di layar, tiket disimpan di penyimpanan ponsel |
 
-Pertanyaan lapisan: *Keyboard baru dicolokkan ke port USB. Software apa yang
-membuat sistem operasi dapat memakainya?* (a) aplikasi lembar kerja,
-(b) driver keyboard, (c) firmware monitor, (d) PSU.
+Pertanyaan lapisan: *Software apa yang membantu sistem operasi ponsel membaca
+sentuhan jarimu pada layar?* (a) aplikasi tiket kereta, (b) firmware
+pengisi daya, (c) baterai, (d) driver layar sentuh.
 
 **Varian B — memotret** (ditampilkan urutan B, D, A, C)
 
@@ -57,8 +57,8 @@ membuat sistem operasi dapat memakainya?* (a) aplikasi lembar kerja,
 | D | Setelah puas, kamu menyimpan foto ke penyimpanan internal |
 
 Pertanyaan lapisan: *Software apa yang membantu sistem operasi ponsel memakai
-sensor kamera?* (a) aplikasi galeri, (b) driver kamera, (c) firmware pengisi
-daya, (d) baterai.
+sensor kamera?* (a) aplikasi galeri, (b) baterai, (c) driver kamera,
+(d) firmware pengisi daya.
 
 ## Yang diserahkan
 

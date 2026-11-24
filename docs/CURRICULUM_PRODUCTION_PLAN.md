@@ -3,7 +3,7 @@
 Status: **RENCANA** · dokumentasi saja · **belum ada konten yang
 diproduksi** kecuali W1. UW-37 tetap **OPEN** (1/16 modul diproduksi, 0 diterima). Tanggal: **2026-11-24**
 (diperbarui batch D-26–D-35). Basis: `main` = `40ca205` (merge PR #24).
-Standar produksi CB-0 (FINAL, dokumentasi): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md). Modul acuan: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml).
+Standar produksi CB-0 (dapat dipakai W1–W8; finalisasi global menunggu CU-6-Q13): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md). Modul acuan: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml).
 
 Dasar: D-21 (kurikulum lengkap wajib sebelum PLANNING CLEAR, 64 komponen),
 D-13 (empat komponen per modul; capstone = mini-project modul 16), D-19,
@@ -159,8 +159,8 @@ Perpanjangan aksesibilitas, remedial, dan review opsional berada di luar
 
 | Batch | Isi | Status |
 |---|---|---|
-| CB-0 | Standar produksi ([CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md)) | **FINAL (dokumentasi)**, 1 field terbuka (CU-6-Q13, lab kode); belum diterima owner |
-| CB-1a | W1 modul acuan ([curriculum/mod-w01/](../curriculum/mod-w01/module.yaml)) | **PRODUCED**, menunggu review dan penerimaan owner |
+| CB-0 | Standar produksi ([CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md)) | Dapat dipakai untuk W1–W8; **finalisasi global belum** (CU-6-Q13); belum lolos review; belum diterima owner |
+| CB-1a | W1 modul acuan ([curriculum/mod-w01/](../curriculum/mod-w01/module.yaml)) | **PRODUCED**, direvisi setelah review PR #25; menunggu review ulang dan penerimaan owner |
 | CB-1b | W2–W4 (12 komponen) | NOT STARTED — mulai setelah W1 diterima |
 | CB-2 | W5–W8 (16 komponen) | NOT STARTED |
 | CB-3 | W9–W12 (16 komponen); diterima sebagai perencanaan, runtime NOT VERIFIED (RM:RV-1–RV-3) | NOT STARTED; lab kode butuh CU-6-Q13 |
@@ -182,6 +182,8 @@ setelah review dan otorisasi owner.
 | 4 | Pemeriksaan lab kecil (≤ 5 poin) memudahkan integer total | Pakai kelipatan 3 atau 5 per pemeriksaan agar jumlah tepat 30/30/40 |
 | 5 | Mini-project dengan banyak solusi valid butuh enumerasi | Verifikasi katalog/fixture dengan enumerasi lengkap dan catat jumlah solusi valid |
 | 6 | Validasi YAML konsisten (ID unik, kunci di opsi, poin) efektif menemukan galat | Jalankan pemeriksa dokumen yang sama untuk setiap modul (dokumentasi, bukan prototipe) |
+| 7 | Review PR #25: kunci menumpuk di posisi a/b, beberapa varian tidak setara, contoh proyek membocorkan jawaban, F8 tanpa pemeriksaan kebenaran | Cek posisi kunci, isi matriks kesetaraan, dan pastikan contoh untuk pelajar tidak memuat jawaban **sebelum** PR; setiap isian angka punya pemeriksaan kebenaran |
+| 8 | Latihan dan contoh terbimbing sempat sama dengan butir bernilai | Cocokkan silang skenario/angka latihan dengan bank soal sebelum PR |
 
 **Perkiraan volume per modul (dari W1):** 4 pelajaran (≈ 750 baris
 Markdown), 40 soal teori, 12 soal concept, 6 spesifikasi lab, 1

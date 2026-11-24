@@ -1,34 +1,54 @@
-# W1 — rubrik mini-project (MR-A, D-33). Kunci K4 tidak ditampilkan sebelum dinilai.
+# W1 — rubrik mini-project (MR-A, D-33). Kunci, contoh jawaban, dan contoh evaluasi
+# hanya untuk reviewer/penilai; tidak ditampilkan kepada pelajar sebelum dinilai.
+# Revisi setelah review PR #25 (F-01, F-02, F-03, F-05). Poin per pemeriksaan diatur
+# ulang di dalam anggaran MR-A yang disetujui (K1 60, K2 20, K3 10, K4 10; MR-8) —
+# tidak memerlukan keputusan owner baru.
 component: mod-w01.project
 content_version: "1.0"
 max_points: 100
 catalog_ref: "spec.md, bagian Katalog"
-power_rule: "kebutuhan daya = daya CPU + 100 W"
-dependency_rule: "MR-2: isian yang hilang → pemeriksaan yang bergantung padanya bernilai 0; pemeriksaan lain tetap dinilai"
-invalid_rule: "ID katalog tidak dikenal atau jenis salah (mis. ID RAM di F1) → isian dianggap tidak valid: K2 untuk isian itu 0 dan pemeriksaan K1 yang bergantung padanya 0"
+power_rule: "kebutuhan daya = daya CPU + 100 W (aturan belajar W1, bukan standar teknik)"
+
+field_rules:
+  id_fields: "F1 CPU, F2 motherboard, F3 RAM, F4 penyimpanan, F5 PSU"
+  id_normalization: "Buang spasi tepi, ubah ke huruf besar; harus sama persis dengan ID katalog berjenis benar (mis. 'cpu-2' → 'CPU-2' sah; 'CPU2', 'CPU-9', atau 'RAM-1' di F1 tidak sah)"
+  id_states:
+    valid: "ID ada di katalog dan jenisnya sesuai isian"
+    invalid: "Kosong, tidak dikenal, salah bentuk, atau jenis salah"
+  ram_quantity:
+    valid: "Bilangan bulat positif 1–4 (rentang fixture: slot terbanyak di katalog = 4), ditulis angka saja"
+    fits: "valid DAN F2 valid DAN jumlah keping ≤ slot(F2)"
+    invalid_examples: ["0", "5", "2,5", "-1", "dua", "kosong"]
+  number_fields:
+    k1_parse: "Untuk pemeriksaan kebenaran K1: buang spasi, awalan 'Rp', pemisah ribuan titik (pola 1.234.567), dan satuan 'W' (F7) / 'GB' (F8); hasil harus bilangan bulat, selain itu tidak dapat diurai"
+    k3_strict: "Untuk K3: hanya digit 0–9, tanpa titik, spasi, huruf, atau satuan"
+  dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya tidak valid; pemeriksaan lain tetap dinilai. Tidak ada gerbang nol untuk seluruh rubrik"
+  impossible_configuration: "Jumlah keping > slot(F2) adalah rakitan yang tidak mungkin dipasang: pemeriksaan fungsional yang menilai rakitan (K1.c04, K1.c07) dan K3.c03 bernilai 0; pemeriksaan aritmetika yang tidak menilai kelayakan rakitan (K1.c08, K1.c10) tetap dinilai"
+
 criteria:
   K1:
     name: Kebenaran fungsional
     points: 60
     checks:
-      - {id: mod-w01.project.K1.c01, rule: "soket(F1) = soket(F2)", depends_on: [F1, F2], points: 8}
-      - {id: mod-w01.project.K1.c02, rule: "jenis RAM(F3) = jenis RAM(F2)", depends_on: [F2, F3], points: 8}
-      - {id: mod-w01.project.K1.c03, rule: "core(F1) >= 6", depends_on: [F1], points: 6}
-      - {id: mod-w01.project.K1.c04, rule: "kapasitas per keping(F3) × jumlah keping(F3) >= 16", depends_on: [F3], points: 6}
-      - {id: mod-w01.project.K1.c05, rule: "jenis(F4) = SSD dan kapasitas(F4) >= 512", depends_on: [F4], points: 6}
-      - {id: mod-w01.project.K1.c06, rule: "daya(F5) >= daya(F1) + 100", depends_on: [F1, F5], points: 6}
-      - {id: mod-w01.project.K1.c07, rule: "harga(F1)+harga(F2)+harga(F3)×keping+harga(F4)+harga(F5) <= 6500000", depends_on: [F1, F2, F3, F4, F5], points: 8}
-      - {id: mod-w01.project.K1.c08, rule: "F6 = jumlah harga aktual komponen terpilih", depends_on: [F1, F2, F3, F4, F5, F6], points: 6}
-      - {id: mod-w01.project.K1.c09, rule: "F7 = daya(F1) + 100", depends_on: [F1, F7], points: 6}
+      - {id: mod-w01.project.K1.c01, rule: "soket(F1) = soket(F2)", needs: [F1 valid, F2 valid], points: 7}
+      - {id: mod-w01.project.K1.c02, rule: "jenis RAM(F3) = jenis RAM(F2)", needs: [F2 valid, F3 valid], points: 7}
+      - {id: mod-w01.project.K1.c03, rule: "core(F1) ≥ 6", needs: [F1 valid], points: 6}
+      - {id: mod-w01.project.K1.c04, rule: "kapasitas per keping(F3) × jumlah keping ≥ 16 GB", needs: [F3 valid, jumlah keping fits], points: 6}
+      - {id: mod-w01.project.K1.c05, rule: "jenis(F4) = SSD dan kapasitas(F4) ≥ 512 GB", needs: [F4 valid], points: 6}
+      - {id: mod-w01.project.K1.c06, rule: "daya(F5) ≥ daya(F1) + 100", needs: [F1 valid, F5 valid], points: 6}
+      - {id: mod-w01.project.K1.c07, rule: "harga(F1)+harga(F2)+harga(F3)×keping+harga(F4)+harga(F5) ≤ 6500000", needs: [F1–F5 valid, jumlah keping fits], points: 7}
+      - {id: mod-w01.project.K1.c08, rule: "F6 (diurai) = jumlah harga aktual komponen terpilih", needs: [F1–F5 valid, jumlah keping valid, F6 dapat diurai], points: 5}
+      - {id: mod-w01.project.K1.c09, rule: "F7 (diurai) = daya(F1) + 100", needs: [F1 valid, F7 dapat diurai], points: 5}
+      - {id: mod-w01.project.K1.c10, rule: "F8 (diurai) = kapasitas per keping(F3) × jumlah keping", needs: [F3 valid, jumlah keping valid, F8 dapat diurai], points: 5}
   K2:
     name: Kelengkapan deliverable
     points: 20
     checks:
-      - {id: mod-w01.project.K2.c01, rule: "F1 berisi ID CPU yang ada di katalog", points: 3}
-      - {id: mod-w01.project.K2.c02, rule: "F2 berisi ID motherboard yang ada di katalog", points: 3}
-      - {id: mod-w01.project.K2.c03, rule: "F3 berisi ID RAM yang ada di katalog dan jumlah keping terisi", points: 3}
-      - {id: mod-w01.project.K2.c04, rule: "F4 berisi ID penyimpanan yang ada di katalog", points: 3}
-      - {id: mod-w01.project.K2.c05, rule: "F5 berisi ID PSU yang ada di katalog", points: 3}
+      - {id: mod-w01.project.K2.c01, rule: "F1 berisi ID CPU yang sah", points: 3}
+      - {id: mod-w01.project.K2.c02, rule: "F2 berisi ID motherboard yang sah", points: 3}
+      - {id: mod-w01.project.K2.c03, rule: "F3 berisi ID RAM yang sah dan kolom jumlah keping terisi", points: 3}
+      - {id: mod-w01.project.K2.c04, rule: "F4 berisi ID penyimpanan yang sah", points: 3}
+      - {id: mod-w01.project.K2.c05, rule: "F5 berisi ID PSU yang sah", points: 3}
       - {id: mod-w01.project.K2.c06, rule: "F6 terisi", points: 2}
       - {id: mod-w01.project.K2.c07, rule: "F7 terisi", points: 2}
       - {id: mod-w01.project.K2.c08, rule: "F8 terisi", points: 1}
@@ -36,48 +56,77 @@ criteria:
     name: Struktur dan format
     points: 10
     checks:
-      - {id: mod-w01.project.K3.c01, rule: "F6 bilangan bulat tanpa titik, spasi, atau huruf", points: 3}
-      - {id: mod-w01.project.K3.c02, rule: "F7 dan F8 bilangan bulat tanpa satuan", points: 3}
-      - {id: mod-w01.project.K3.c03, rule: "jumlah keping RAM bilangan bulat 1–4 dan <= slot(F2)", depends_on: [F2, F3], points: 4}
+      - {id: mod-w01.project.K3.c01, rule: "F6 hanya digit (k3_strict)", points: 3}
+      - {id: mod-w01.project.K3.c02, rule: "F7 dan F8 hanya digit (k3_strict)", points: 3}
+      - {id: mod-w01.project.K3.c03, rule: "jumlah keping fits (bilangan bulat 1–4 dan ≤ slot(F2))", points: 4}
   K4:
     name: Penjelasan proyek (komposisi K-A, 5 × CE-S1, P = 2)
     points: 10
-    note: "Soal tentang tugas proyek ini; terpisah dari komponen Concept explanation W1 (D-33 A.2a)"
+    note: "Soal tentang tugas proyek ini; terpisah dari komponen Concept explanation W1 (D-33 A.2a). Urutan opsi tetap; posisi kunci disebar (c, a, d, b, c)"
     items:
       - id: mod-w01.project.K4.q1
         lo: comp-w01-ipos-01
         stem: "Pada rakitan ini, komponen yang menjalankan tahap **proses** adalah …"
-        options: {a: CPU, b: SSD, c: PSU, d: RAM}
-        key: a
+        options: {a: RAM, b: SSD, c: CPU, d: PSU}
+        key: c
         points: 2
-        feedback: "CPU menjalankan instruksi; SSD menyimpan; PSU memasok listrik; RAM menampung data sementara."
+        feedback: "CPU menjalankan instruksi; RAM menampung data sementara; SSD menyimpan; PSU memasok listrik."
       - id: mod-w01.project.K4.q2
         lo: comp-w01-sw-01
         stem: "Setelah rakitan selesai, software apa yang harus dipasang ke SSD agar komputer dapat dipakai sehari-hari?"
-        options: {a: Sistem operasi, b: Hanya driver printer, c: Game, d: Firmware PSU}
+        options: {a: Sistem operasi, b: Hanya driver printer, c: Firmware motherboard, d: Aplikasi pengolah kata saja}
         key: a
         points: 2
-        feedback: "Sistem operasi mengelola hardware dan menjalankan aplikasi; firmware motherboard memuatnya saat boot."
+        feedback: "Sistem operasi mengelola hardware dan menjalankan aplikasi. Firmware motherboard sudah ada di chip motherboard dan tidak dipasang ke SSD."
       - id: mod-w01.project.K4.q3
         lo: comp-w01-mem-01
         stem: "Mengapa kebutuhan meminta SSD, bukan HDD?"
-        options: {a: "SSD tanpa bagian bergerak sehingga program dan berkas terbuka lebih cepat", b: "SSD menyimpan data hanya saat listrik menyala", c: "SSD selalu lebih murah per GB", d: "SSD menambah jumlah core CPU"}
-        key: a
+        options: {a: "SSD menyimpan data hanya saat listrik menyala", b: "SSD selalu lebih murah per GB", c: "SSD menambah jumlah core CPU", d: "SSD tanpa bagian bergerak sehingga program dan berkas terbuka lebih cepat"}
+        key: d
         points: 2
-        feedback: "SSD memakai chip flash tanpa bagian mekanis; ia tetap non-volatil."
+        feedback: "SSD memakai chip flash tanpa bagian mekanis; SSD tetap non-volatil dan umumnya lebih mahal per GB."
       - id: mod-w01.project.K4.q4
         lo: comp-w01-spec-01
         stem: "Mengapa CPU dan motherboard harus memiliki soket yang sama?"
-        options: {a: "Agar CPU dapat dipasang dan bekerja di motherboard", b: "Agar harga keduanya sama", c: "Agar RAM menjadi lebih besar", d: "Agar PSU tidak diperlukan"}
-        key: a
+        options: {a: "Agar RAM yang dipasang menjadi lebih besar", b: "Agar CPU dapat dipasang dan bekerja di motherboard", c: "Agar kebutuhan daya PSU menjadi nol", d: "Agar CPU dan motherboard dapat dibeli dari toko yang sama"}
+        key: b
         points: 2
         feedback: "Soket menentukan apakah CPU dapat dipasang dan berkomunikasi dengan motherboard."
       - id: mod-w01.project.K4.q5
         lo: comp-w01-cpu-01
         stem: "Mengapa Rina butuh minimal 6 core saat membuka editor, browser, dan video sekaligus?"
-        options: {a: "Pekerjaan beberapa aplikasi dapat dibagi ke beberapa core", b: "Core menambah kapasitas SSD", c: "Core membuat RAM non-volatil", d: "Core menggantikan sistem operasi"}
-        key: a
+        options: {a: "Core menambah kapasitas RAM", b: "Core membuat data di RAM tidak hilang saat listrik mati", c: "Pekerjaan beberapa aplikasi dapat dibagi ke beberapa core", d: "Core menggantikan kebutuhan SSD"}
+        key: c
         points: 2
         feedback: "Core tambahan membantu pekerjaan yang dapat dibagi, seperti beberapa aplikasi sekaligus."
-point_check: "60 + 20 + 10 + 10 = 100; K1 8+8+6+6+6+6+8+6+6 = 60; K2 3×5+2+2+1 = 20; K3 3+3+4 = 10; K4 5×2 = 10"
-objective_limits: "Pemeriksaan membuktikan isian memenuhi syarat dan perhitungan benar; tidak membuktikan pelajar memahami semua alasan pemilihan (lihat review §Batas penilaian objektif)"
+
+point_check: "K1 7+7+6+6+6+6+7+5+5+5 = 60; K2 3×5+2+2+1 = 20; K3 3+3+4 = 10; K4 5×2 = 10; total 100"
+
+catalog_analysis:   # dihitung dengan enumerasi lengkap 5 × 4 × 4 × 4 × 4 × 3 = 3.840 kombinasi (dokumentasi)
+  valid_builds: 46
+  valid_cpus: [CPU-2, CPU-4]
+  cheapest_valid: 5350000    # CPU-2, MB-1, RAM-2 × 1, STO-3, PSU-1
+  most_expensive_valid: 6450000
+  exact_budget_6500000: "Tidak dapat dicapai oleh rakitan yang memenuhi semua syarat; 11 rakitan kompatibel bernilai tepat 6500000, semuanya gagal syarat lain (mis. CPU-2, MB-2, RAM-3 × 2, STO-1, PSU-2 gagal N3 karena HDD)"
+  smallest_over_budget_otherwise_valid: 6550000   # +50000, mis. CPU-2, MB-2, RAM-3 × 2, STO-3, PSU-2
+  traps: "CPU-1 (4 core); CPU-3 dan CPU-5 selalu melebihi anggaran bila semua syarat lain dipenuhi; STO-1 HDD; STO-2 256 GB; pasangan soket/DDR yang tidak cocok"
+
+reviewer_examples:   # skor dihitung dengan aturan di atas; K4 diasumsikan 10
+  - {id: E01, case: "Acuan: RAM tepat 16 GB, keping = slot (2/2)", input: "CPU-2, MB-1, RAM-1 × 2, STO-3, PSU-1, F6 5400000, F7 165, F8 16", K1: 60, K2: 20, K3: 10, total: 100}
+  - {id: E02, case: "Total tepat 6500000 (batas anggaran tercapai, tetapi HDD)", input: "CPU-2, MB-2, RAM-3 × 2, STO-1, PSU-2, F6 6500000", K1: 54, K2: 20, K3: 10, total: 94, zero: [K1.c05]}
+  - {id: E03, case: "Melewati anggaran dengan selisih terkecil yang dapat dicapai (+50000)", input: "CPU-2, MB-2, RAM-3 × 2, STO-3, PSU-2, F6 6550000", K1: 53, K2: 20, K3: 10, total: 93, zero: [K1.c07]}
+  - {id: E04, case: "RAM di bawah 16 GB (1 × 8 GB)", input: "E01 dengan keping 1, F6 5050000, F8 8", K1: 54, K2: 20, K3: 10, total: 94, zero: [K1.c04]}
+  - {id: E05, case: "Keping melebihi slot (3 di MB-1, 2 slot)", input: "E01 dengan keping 3, F6 5750000, F8 24", K1: 47, K2: 20, K3: 6, total: 83, zero: [K1.c04, K1.c07, K3.c03], note: "Aritmetika F6/F8 tetap dinilai (c08, c10)"}
+  - {id: E06, case: "F8 salah", input: "E01 dengan F8 8", K1: 55, total: 95, zero: [K1.c10]}
+  - {id: E07, case: "F6 salah", input: "E01 dengan F6 5350000", K1: 55, total: 95, zero: [K1.c08]}
+  - {id: E08, case: "F7 salah", input: "E01 dengan F7 65", K1: 55, total: 95, zero: [K1.c09]}
+  - {id: E09, case: "ID tidak dikenal", input: "E01 dengan F1 CPU-9", K1: 24, K2: 17, K3: 10, total: 61, zero: [K1.c01, K1.c03, K1.c06, K1.c07, K1.c08, K1.c09, K2.c01]}
+  - {id: E10, case: "ID salah bentuk", input: "E01 dengan F1 'cpu2'", total: 61, note: "Sama dengan E09"}
+  - {id: E11, case: "Jenis komponen salah", input: "E01 dengan F1 RAM-1", total: 61, note: "Sama dengan E09"}
+  - {id: E12, case: "Isian F2 kosong (isian dependen hilang)", input: "E01 tanpa F2", K1: 28, K2: 17, K3: 6, total: 61, zero: [K1.c01, K1.c02, K1.c04, K1.c07, K1.c08, K2.c02, K3.c03]}
+  - {id: E13, case: "Jumlah keping tidak valid ('2,5' atau '0')", input: "E01 dengan keping '2,5'", K1: 37, K2: 20, K3: 6, total: 73, zero: [K1.c04, K1.c07, K1.c08, K1.c10, K3.c03]}
+  - {id: E14, case: "Angka salah format tetapi dapat diurai", input: "E01 dengan F6 'Rp 5.400.000', F8 '16 GB'", K1: 60, K2: 20, K3: 4, total: 94, zero: [K3.c01, K3.c02]}
+  - {id: E15, case: "F8 tidak dapat diurai", input: "E01 dengan F8 'enam belas'", K1: 55, K2: 20, K3: 7, total: 92, zero: [K1.c10, K3.c02]}
+  - {id: E16, case: "Centang 'sudah selesai' tanpa isian", input: "Semua isian kosong", total: "0 untuk K1–K3; K4 sesuai jawaban", note: "MR-6"}
+
+objective_limits: "Pemeriksaan membuktikan isian memenuhi syarat dan perhitungan benar; tidak membuktikan pelajar memahami semua alasan pemilihan dan tidak mensertifikasi kompetensi (D-17, D-34)"

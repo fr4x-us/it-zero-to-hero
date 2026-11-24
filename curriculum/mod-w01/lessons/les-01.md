@@ -129,9 +129,9 @@ lalu kamu menyimpan berkas. Tentukan tahap IPOS tiap langkah.
 
 1. Tulis apakah benda berikut hardware atau software: (a) printer,
    (b) aplikasi peta, (c) kabel USB, (d) aplikasi pemutar musik.
-2. Tentukan tahap IPOS: (a) kamu berbicara ke asisten suara ponsel,
-   (b) ponsel mengubah suara menjadi teks, (c) teks muncul di layar,
-   (d) catatan suara disimpan.
+2. Tentukan tahap IPOS: (a) kamu memindai kode QR dengan kamera ponsel,
+   (b) aplikasi membaca isi kode QR, (c) halaman pembayaran tampil di
+   layar, (d) riwayat pembayaran disimpan.
 3. Sebutkan satu perangkat yang menjalankan input **dan** output.
 
 ## 8. Cek pemahaman (tidak dinilai)

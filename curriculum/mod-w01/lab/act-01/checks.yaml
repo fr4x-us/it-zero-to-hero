@@ -33,7 +33,7 @@ variants:
     - id: d02
       name: Monitor
     - id: d03
-      name: Printer
+      name: Printer (hanya mencetak)
     - id: d04
       name: Mouse
     - id: d05
@@ -68,7 +68,7 @@ variants:
     device: d03
     expected: O
     points: 3
-    feedback: Printer mencetak hasil di kertas
+    feedback: Printer yang hanya mencetak menghasilkan keluaran di kertas
   - check_id: mod-w01.lab.act-01.vA.c04
     device: d04
     expected: I
@@ -137,7 +137,7 @@ variants:
     - id: d09
       name: Kartu memori SD
     - id: d10
-      name: Printer
+      name: Printer (hanya mencetak)
   visible_example:
     device: Joystick
     answer: I

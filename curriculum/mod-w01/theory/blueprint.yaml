@@ -28,6 +28,8 @@ duration:
   accessibility_TA_B_minutes: 50
   scheduled_feedback_review_minutes: 12
   U_allocation_minutes: 45
+option_order_policy: Urutan opsi ditulis tetap oleh penyusun (tanpa pengacakan); posisi kunci diseimbangkan
+  di seluruh bank; opsi kategori/baris tabel memakai urutan alami
 slots:
 - slot: s01
   competency: comp-w01-ipos-01

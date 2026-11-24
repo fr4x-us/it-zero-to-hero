@@ -14,35 +14,36 @@ variants:
   stem: Komponen yang **menjalankan instruksi program** adalah …
   options:
   - id: a
-    text: RAM
-  - id: b
     text: CPU
+  - id: b
+    text: RAM
   - id: c
     text: SSD
   - id: d
     text: PSU
-  key: b
+  key: a
   distractor_rationale:
-    a: RAM menampung data yang sedang dipakai, tidak menjalankan instruksi
+    b: RAM menampung data yang sedang dipakai, tidak menjalankan instruksi
     c: SSD menyimpan data permanen
     d: PSU memasok listrik
   explanation: CPU (prosesor) menjalankan instruksi program.
 - item_id: item-w01-t-s04-b
   variant_id: mod-w01.theory.s04.vB
   item_version: '1.0'
-  stem: Satuan yang umum dipakai untuk **kecepatan clock CPU** adalah …
+  stem: Saat kamu menekan tombol "=" di aplikasi kalkulator, komponen yang **menjalankan instruksi perhitungannya**
+    adalah …
   options:
   - id: a
-    text: GB
+    text: RAM
   - id: b
-    text: Watt
+    text: SSD
   - id: c
-    text: GHz
+    text: Monitor
   - id: d
-    text: Byte
-  key: c
+    text: CPU
+  key: d
   distractor_rationale:
-    a: GB adalah satuan kapasitas data
-    b: Watt adalah satuan daya listrik
-    d: Byte adalah satuan data
-  explanation: Kecepatan clock diukur dalam hertz; CPU modern dalam gigahertz (GHz).
+    a: RAM menampung angka yang sedang dipakai, tetapi tidak menghitung
+    b: SSD menyimpan aplikasi secara permanen
+    c: Monitor menampilkan hasil
+  explanation: CPU menjalankan instruksi program, termasuk perhitungan.

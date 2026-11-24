@@ -852,3 +852,25 @@ UW-33, UW-34, UW-35, UW-36, UW-37, UW-41, UW-53) · M 3 · G 2 · V 8.
 **PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
 prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
 PY:F-01–F-15: **NOT VERIFIED**. CT-1–CT-12: **NOT VERIFIED**.
+
+### 18.4 Rekonsiliasi setelah review PR #25 (F-08)
+
+AC asli §3 diperiksa ulang terhadap bukti:
+
+| ID | AC asli (§3) | Bukti | Tetap COMPLETE? |
+|---|---|---|---|
+| UW-25 | "Keputusan tertulis" (penerimaan risiko kunci jawaban, CU-10) | D-34 tercatat di DECISIONS_LOG, checklist, dan CU10 §7 | Ya |
+| UW-27 | "ASM:D-08 terisi" (rumus durasi, format soal) | D-26: rumus A.4 + TF-1–TF-5 tertulis dan disetujui; diterapkan pada W1 (33 menit dihitung dari komposisi) | Ya |
+| UW-29 | "L5 terisi" (aturan pengumpulan/interupsi) | D-27: SB-A, SB-1–SB-12 | Ya |
+| UW-30 | "ASM:X-07 terisi" (identitas, jumlah, batas, level, streak, achievement, mastery, revisi) | D-28: XI-1–XI-9, XE-B, jumlah §5, level §6, ST-C, XA-1–XA-3; "batas" = sekali per identitas, tanpa batas atas level (tertulis) | Ya |
+| UW-31 | "C6 terisi" (unlock rinci) | D-27: UL-1–UL-10, PV-A, RV-A | Ya |
+| UW-32 | "OP-10, OP-11 terisi" | D-27: RE-A, PI-A, AS-B | Ya |
+
+AC keenam butir adalah **keputusan tertulis**, bukan konten atau
+verifikasi; bukti terpenuhi. Kurikulum diproduksi (W1), review ChatGPT,
+penerimaan owner, dan verifikasi teknis tetap dilacak terpisah (§18.3).
+Jumlah per status **tidak berubah**: 31 / 4 / 13 / 3 / 5 = 56; jalur P
+31/43. W1: diproduksi dan direvisi; belum lolos review ChatGPT; **belum**
+diterima owner. CB-0: dapat dipakai W1–W8; finalisasi global menunggu
+CU-6-Q13.
+

@@ -16,16 +16,16 @@ variants:
   - id: a
     text: Keyboard
   - id: b
-    text: Layar sentuh
+    text: Printer (hanya mencetak)
   - id: c
-    text: Printer
-  - id: d
     text: SSD
-  key: b
+  - id: d
+    text: Layar sentuh
+  key: d
   distractor_rationale:
     a: Keyboard hanya input
-    c: Printer hanya output
-    d: SSD adalah penyimpanan
+    b: Printer yang hanya mencetak adalah output
+    c: SSD adalah penyimpanan
   explanation: Layar sentuh menampilkan gambar (output) dan menerima sentuhan (input).
 - item_id: item-w01-t-s14-b
   variant_id: mod-w01.theory.s14.vB

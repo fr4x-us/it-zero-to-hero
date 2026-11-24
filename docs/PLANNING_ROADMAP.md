@@ -191,7 +191,7 @@ dicabut.
 | Persistensi ujian di sekitar tenggat (OP-5-Q8) | UW-27 | **D-26** | AF §A.5b | Theory |
 
 Konsistensi terhadap D-01–D-35: [CROSS_SPEC_CONSISTENCY_REVIEW.md](CROSS_SPEC_CONSISTENCY_REVIEW.md).
-Templat provisional CB-0: [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md).
+Standar produksi CB-0 (dapat dipakai W1–W8; finalisasi global menunggu CU-6-Q13): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md).
 
 Templat dan rencana produksi ([CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md))
 **bukan** konten; matriks 64 komponen tetap 0/64.
@@ -230,10 +230,10 @@ prasyarat UW-15, bukan butir baru (D-25). Belum diberikan.
 ## 9. Jalur kritis menuju PLANNING CLEAR
 
 ```
-CB-0 FINAL (dokumentasi; 1 field terbuka CU-6-Q13)
+CB-0 dapat dipakai W1–W8 (finalisasi global menunggu CU-6-Q13)
         │
         ▼
-W1 PRODUCED ──► review ChatGPT ──► penerimaan owner (modul acuan)
+W1 PRODUCED (direvisi PR #25) ──► review ulang ChatGPT ──► penerimaan owner (modul acuan)
         │
         ▼
 W2 → W3 → W4 (CB-1b, satu PR per modul) → W5–W8 (CB-2)

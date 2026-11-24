@@ -91,8 +91,10 @@ dipakai** agar CPU dapat mengaksesnya dengan sangat cepat.
 
 - RAM bersifat **volatil** (*volatile*): isinya **hilang saat listrik
   mati**.
-- Bila RAM penuh, sistem memakai sebagian penyimpanan sebagai cadangan yang
-  jauh lebih lambat, sehingga komputer terasa lambat.
+- Pada laptop dan komputer meja, bila RAM penuh, sistem operasi memakai
+  sebagian penyimpanan sebagai cadangan yang jauh lebih lambat, sehingga
+  komputer terasa lambat. Ponsel biasanya menutup aplikasi di latar
+  belakang. *(Model sederhana; rinciannya bergantung sistem operasi.)*
 
 **Analogi:** RAM adalah **meja kerja**; penyimpanan adalah **lemari arsip**.
 Berkas diambil dari lemari ke meja agar mudah dikerjakan. Meja yang lebih
@@ -162,8 +164,8 @@ berbeda. **Semua latihan dan soal W1 memakai aturan desimal.**
 | Kelompok | Contoh |
 |---|---|
 | Input | Keyboard, mouse, touchpad, mikrofon, webcam, scanner |
-| Output | Monitor, speaker, earphone, printer, proyektor |
-| Input dan output | Layar sentuh, headset dengan mikrofon |
+| Output | Monitor, speaker, earphone, printer yang hanya mencetak, proyektor |
+| Input dan output | Layar sentuh, headset dengan mikrofon, printer multifungsi yang juga memindai |
 | Penyimpanan | SSD, HDD, flashdisk, kartu memori |
 | Pemrosesan | CPU, GPU |
 
@@ -189,7 +191,9 @@ berbeda. **Semua latihan dan soal W1 memakai aturan desimal.**
 1. Mengapa membuka banyak tab browser terasa lambat pada laptop dengan RAM
    kecil?
 2. Hitung: 3 GB = … MB; 500 GB ÷ video 2.000 MB = … video.
-3. Kelompokkan: proyektor, webcam, kartu memori, GPU, headset bermikrofon.
+3. Kelompokkan: pemindai kode batang (*barcode scanner*), plotter (printer
+   gambar teknik), harddisk eksternal, prosesor ponsel, kacamata VR yang
+   menampilkan gambar dan membaca gerakan kepala.
 4. Port apa yang dipakai untuk menyambungkan laptop ke proyektor?
 
 ## 10. Cek pemahaman (tidak dinilai)
@@ -200,11 +204,12 @@ berbeda. **Semua latihan dan soal W1 memakai aturan desimal.**
 
 ## Pembahasan latihan (ditampilkan setelah pelajar mencoba)
 
-1. Setiap tab memakai RAM; bila RAM penuh, sistem memakai penyimpanan
-   sebagai cadangan yang jauh lebih lambat.
+1. Setiap tab memakai RAM; pada laptop, bila RAM penuh, sistem operasi
+   memakai penyimpanan sebagai cadangan yang jauh lebih lambat.
 2. 3.000 MB; 500 GB = 500.000 MB, 500.000 ÷ 2.000 = 250 video.
-3. Proyektor → output; webcam → input; kartu memori → penyimpanan; GPU →
-   pemrosesan; headset bermikrofon → input dan output.
+3. Pemindai kode batang → input; plotter → output; harddisk eksternal →
+   penyimpanan; prosesor ponsel → pemrosesan; kacamata VR → input dan
+   output.
 4. HDMI (atau port video lain yang tersedia).
 
 ## Ringkasan

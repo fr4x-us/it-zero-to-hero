@@ -11,15 +11,15 @@ variants:
 - item_id: item-w01-t-s11-a
   variant_id: mod-w01.theory.s11.vA
   item_version: '1.0'
-  stem: Dengan aturan desimal, berkas berukuran 3 GB sama dengan … MB.
+  stem: Dengan aturan desimal, berkas berukuran 6 GB sama dengan … MB.
   accepted_answers:
-  - '3000'
-  - '3.000'
-  - 3000 MB
-  - 3.000 MB
+  - '6000'
+  - '6.000'
+  - 6000 MB
+  - 6.000 MB
   normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
-    atau tidak; satuan boleh ditulis atau tidak hanya bila tercantum di accepted_answers
-  explanation: 3 × 1.000 = 3.000 MB.
+    atau tidak; satuan hanya boleh ditulis bila tercantum di accepted_answers
+  explanation: 6 × 1.000 = 6.000 MB.
 - item_id: item-w01-t-s11-b
   variant_id: mod-w01.theory.s11.vB
   item_version: '1.0'
@@ -30,5 +30,5 @@ variants:
   - 16000 MB
   - 16.000 MB
   normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
-    atau tidak; satuan boleh ditulis atau tidak hanya bila tercantum di accepted_answers
+    atau tidak; satuan hanya boleh ditulis bila tercantum di accepted_answers
   explanation: 16 × 1.000 = 16.000 MB.

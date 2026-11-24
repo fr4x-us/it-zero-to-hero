@@ -51,9 +51,12 @@ Pelajaran 2 §6 dan Pelajaran 4.
 | c07 | Kebutuhan daya dengan L-CPU1 (W) | Kebutuhan daya dengan L-CPU2 (W) |
 | c08 | 2 keping × 8 GB = … GB | 4 keping × 4 GB = … GB |
 
-Pilihan c03: (a) sistem operasi menghitung dengan kelipatan 1.024 (GiB),
-produsen dengan kelipatan 1.000 (GB); (b) media rusak; (c) RAM memakai
-sebagian penyimpanan secara permanen; (d) kapasitas hilang karena listrik.
+Pilihan c03 varian A: (a) SSD rusak; (b) sistem operasi menghitung dengan
+kelipatan 1.024 (GiB), produsen dengan kelipatan 1.000 (GB); (c) RAM
+memakai sebagian SSD secara permanen; (d) produsen salah mencetak label.
+Varian B: (a) flashdisk rusak; (b) RAM memakai sebagian flashdisk secara
+permanen; (c) sistem operasi menghitung dengan kelipatan 1.024 (GiB),
+produsen dengan kelipatan 1.000 (GB); (d) produsen salah mencetak label.
 
 ## Yang diserahkan
 

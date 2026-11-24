@@ -41,7 +41,7 @@ di setiap PR batch.
 | #22 | Pencatatan D-12–D-15; lembar OD-1, OD-2, UW-43 | Merged 2026-11-24 sebagai `bcecdae` (di-merge Claude atas persetujuan eksplisit owner) |
 | #23 | Pencatatan D-16–D-22; roadmap; lembar OP-4, CU-6; rencana produksi kurikulum; revisi F-01–F-06 | Merged 2026-11-24 sebagai `928e278` (di-merge Claude atas persetujuan eksplisit owner) |
 | #24 | Pencatatan D-23–D-25; lembar keputusan kurikulum; templat CB-0; tinjauan konsistensi | Merged 2026-11-24 sebagai `40ca205` (di-merge Claude atas persetujuan eksplisit owner) |
-| #25 | Pencatatan D-26–D-35; CB-0 final; konten W1 | Terbuka, menunggu review; **tidak di-merge Claude** |
+| #25 | Pencatatan D-26–D-35; CB-0; konten W1; revisi kualitas W1 (F-01–F-08) | Terbuka, menunggu review ulang; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -71,9 +71,12 @@ Rincian: [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md),
 
 ## Tugas terakhir
 
-Merge PR #24 (`40ca205`). Pencatatan D-26–D-35. CB-0 difinalkan
-([CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md); 1 field
-terbuka CU-6-Q13). Konten W1 lengkap diproduksi di
+Merge PR #24 (`40ca205`). Pencatatan D-26–D-35. CB-0
+([CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md)) dapat dipakai
+untuk W1–W8; finalisasi global menunggu CU-6-Q13. Revisi review PR #25:
+rubrik proyek (F8, jumlah keping, contoh E01–E16), posisi kunci seimbang,
+varian setara (matriks), contoh proyek tidak membocorkan jawaban, review per
+butir. Konten W1 lengkap diproduksi di
 [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml): 4 pelajaran, 40
 soal teori, 6 spesifikasi lab, 1 mini-project, 12 soal concept, remedial,
 review mandiri. Audit §18: 31 COMPLETE, 4 OPEN, 13 BLOCKED, 3 DEFERRED, 5

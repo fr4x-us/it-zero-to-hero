@@ -11,19 +11,25 @@ variants:
 - item_id: item-w01-t-s17-a
   variant_id: mod-w01.theory.s17.vA
   item_version: '1.0'
-  stem: Kamu menekan "Cetak" di aplikasi pengolah kata. Urutkan lapisan yang dilalui permintaan itu, dari
-    pengguna sampai hardware.
+  stem: Kamu menekan "Pindai" di aplikasi pemindai dan scanner mulai memindai dokumen. Urutkan lapisan
+    yang dilalui permintaan itu, dari pengguna sampai hardware.
   items:
   - id: A
     text: Sistem operasi
   - id: B
-    text: Aplikasi pengolah kata
+    text: Aplikasi pemindai
   - id: C
-    text: Driver printer
+    text: Driver scanner
   - id: D
     text: Pengguna
   - id: E
-    text: Printer
+    text: Scanner
+  display_order:
+  - A
+  - B
+  - C
+  - D
+  - E
   accepted_sequences:
   - - D
     - B
@@ -31,7 +37,7 @@ variants:
     - C
     - E
   scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
-  explanation: Pengguna → aplikasi → sistem operasi → driver → hardware (printer).
+  explanation: Pengguna → aplikasi → sistem operasi → driver → hardware (scanner).
 - item_id: item-w01-t-s17-b
   variant_id: mod-w01.theory.s17.vB
   item_version: '1.0'
@@ -48,6 +54,12 @@ variants:
     text: Aplikasi pemutar musik
   - id: E
     text: Sistem operasi
+  display_order:
+  - A
+  - B
+  - C
+  - D
+  - E
   accepted_sequences:
   - - B
     - D

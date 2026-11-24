@@ -32,21 +32,22 @@ variants:
 - item_id: item-w01-t-s09-b
   variant_id: mod-w01.theory.s09.vB
   item_version: '1.0'
-  stem: Laptop Rudi dengan RAM 4 GB terasa sangat lambat saat 15 tab browser terbuka. Setelah 10 tab ditutup,
-    laptop lancar kembali. Penjelasan paling tepat adalah …
+  stem: Budi memasang aplikasi baru, lalu menyalakan ulang laptop (fitur pemulihan tab browser dimatikan).
+    Setelah menyala, aplikasi baru masih ada, tetapi tab browser yang tadi terbuka hilang. Penjelasan
+    paling tepat adalah …
   options:
   - id: a
-    text: RAM penuh sehingga sistem memakai penyimpanan sebagai cadangan yang jauh lebih lambat
+    text: Restart menghapus semua isi SSD kecuali aplikasi
   - id: b
-    text: SSD berubah menjadi volatil
+    text: Daftar tab hanya ada di RAM yang volatil; aplikasi terpasang di penyimpanan non-volatil
   - id: c
-    text: Tab browser menurunkan kecepatan clock CPU secara permanen
+    text: Aplikasi tersimpan di RAM sehingga tetap ada
   - id: d
-    text: Monitor tidak kuat menampilkan banyak tab
-  key: a
+    text: CPU menghapus tab karena core bertambah
+  key: b
   distractor_rationale:
-    b: Sifat SSD tidak berubah
-    c: Penurunan tidak permanen; laptop lancar kembali
-    d: Monitor hanya menampilkan gambar
-  explanation: Setiap tab memakai RAM; saat RAM penuh, sistem memakai penyimpanan yang jauh lebih lambat
-    sebagai cadangan.
+    a: Restart tidak menghapus isi penyimpanan
+    c: Isi RAM hilang saat komputer mati
+    d: Core tidak berkaitan dengan tab yang hilang
+  explanation: Yang hanya ada di RAM hilang saat komputer dimatikan; yang tersimpan di penyimpanan tetap
+    ada.

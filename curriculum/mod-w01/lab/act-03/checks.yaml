@@ -61,10 +61,10 @@ variants:
     - 320 video
   - check_id: mod-w01.lab.act-03.vA.c03
     name: Penjelasan kapasitas
-    question: 'SSD berlabel 512 GB tampil sekitar 477 GiB di sistem operasi. Pilih penjelasan: (a) sistem
-      operasi menghitung kelipatan 1.024 (GiB), produsen kelipatan 1.000 (GB); (b) SSD rusak; (c) RAM
-      memakai sebagian SSD secara permanen; (d) kapasitas hilang karena listrik'
-    expected: a
+    question: 'SSD berlabel 512 GB tampil sekitar 477 GiB di sistem operasi. Pilih penjelasan: (a) SSD
+      rusak; (b) sistem operasi menghitung kelipatan 1.024 (GiB), produsen kelipatan 1.000 (GB); (c) RAM
+      memakai sebagian SSD secara permanen; (d) produsen salah mencetak label'
+    expected: b
     points: 5
     feedback: 512.000.000.000 ÷ 1.073.741.824 ≈ 476,8 GiB; kapasitas tidak berkurang
   - check_id: mod-w01.lab.act-03.vA.c04
@@ -158,9 +158,9 @@ variants:
   - check_id: mod-w01.lab.act-03.vB.c03
     name: Penjelasan kapasitas
     question: 'Flashdisk berlabel 64 GB tampil sekitar 59,6 GiB di sistem operasi. Pilih penjelasan: (a)
-      sistem operasi menghitung kelipatan 1.024 (GiB), produsen kelipatan 1.000 (GB); (b) flashdisk rusak;
-      (c) RAM memakai sebagian flashdisk secara permanen; (d) kapasitas hilang karena listrik'
-    expected: a
+      flashdisk rusak; (b) RAM memakai sebagian flashdisk secara permanen; (c) sistem operasi menghitung
+      kelipatan 1.024 (GiB), produsen kelipatan 1.000 (GB); (d) produsen salah mencetak label'
+    expected: c
     points: 5
     feedback: 64.000.000.000 ÷ 1.073.741.824 ≈ 59,6 GiB; kapasitas tidak berkurang
   - check_id: mod-w01.lab.act-03.vB.c04

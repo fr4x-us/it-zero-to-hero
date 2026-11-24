@@ -27,6 +27,7 @@ variants:
     b: Proses = data diolah
     d: Penyimpanan = data disimpan untuk nanti
   explanation: Hasil yang disampaikan ke pengguna adalah output.
+  option_order: urutan alami (kategori/baris tabel), tetap
 - item_id: item-w01-t-s02-b
   variant_id: mod-w01.theory.s02.vB
   item_version: '1.0'
@@ -46,3 +47,4 @@ variants:
     c: Belum ada hasil yang disampaikan
     d: Data belum disimpan
   explanation: Data masuk ke komputer melalui keyboard, jadi input.
+  option_order: urutan alami (kategori/baris tabel), tetap

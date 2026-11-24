@@ -2,9 +2,10 @@
 slot_id: mod-w01.concept.s03
 competency: comp-w01-sw-01
 required_concepts:
-- firmware bekerja sebelum OS
-- bootloader
-- OS dimuat ke RAM
+- firmware bekerja sebelum sistem operasi
+- POST
+- perangkat boot
+- bootloader memuat ke RAM
 format: CE-S3
 max_points: 4
 content_version: '1.0'
@@ -20,7 +21,7 @@ variants:
 - item_id: item-w01-c-s03-a
   variant_id: mod-w01.concept.s03.vA
   item_version: '1.0'
-  stem: Urutkan langkah saat komputer dinyalakan sampai siap dipakai.
+  stem: Urutkan langkah saat komputer dinyalakan sampai sistem operasi siap dipakai.
   display_order:
   - D
   - A
@@ -46,11 +47,13 @@ variants:
     - E
   credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
     maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
-  feedback: Firmware bekerja lebih dulu (POST, mencari perangkat boot), lalu bootloader memuat OS ke RAM.
+  feedback: Firmware bekerja lebih dulu (POST, mencari perangkat boot), lalu bootloader memuat sistem
+    operasi ke RAM.
 - item_id: item-w01-c-s03-b
   variant_id: mod-w01.concept.s03.vB
   item_version: '1.0'
-  stem: Urutkan langkah saat kamu membuka aplikasi yang tersimpan di SSD.
+  stem: Laptop dinyalakan dengan flashdisk instalasi sistem operasi terpasang. Urutkan langkah sampai
+    layar program instalasi tampil.
   display_order:
   - C
   - E
@@ -59,15 +62,15 @@ variants:
   - B
   items:
   - id: A
-    text: Kamu mengetuk ikon aplikasi
+    text: Tombol daya laptop ditekan
   - id: B
-    text: Sistem operasi menemukan berkas program di SSD
+    text: Firmware UEFI menjalankan POST
   - id: C
-    text: Program dimuat dari SSD ke RAM
+    text: Firmware menemukan flashdisk instalasi sebagai perangkat boot
   - id: D
-    text: CPU menjalankan instruksi program dari RAM
+    text: Bootloader di flashdisk memuat program instalasi sistem operasi ke RAM
   - id: E
-    text: Jendela aplikasi tampil di layar
+    text: Layar program instalasi tampil
   accepted_sequences:
   - - A
     - B
@@ -76,5 +79,5 @@ variants:
     - E
   credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
     maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
-  feedback: OS mencari program di penyimpanan, memuatnya ke RAM, lalu CPU menjalankan instruksinya dan
-    hasilnya tampil.
+  feedback: 'Prosesnya sama dengan boot biasa: firmware (POST, mencari perangkat boot) lalu bootloader
+    memuat program dari perangkat boot ke RAM.'

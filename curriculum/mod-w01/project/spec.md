@@ -4,7 +4,7 @@ content_version: "1.0"
 competencies: [comp-w01-ipos-01, comp-w01-cpu-01, comp-w01-mem-01, comp-w01-unit-01, comp-w01-sw-01, comp-w01-spec-01]
 max_points: 100
 estimated_minutes: 90
-rubric_file: rubric.yaml       # pemeriksaan dan kunci K4; tidak ditampilkan sebelum dinilai
+rubric_file: rubric.yaml       # pemeriksaan, kunci K4, dan contoh evaluasi; tidak ditampilkan kepada pelajar sebelum dinilai
 rubric_model: MR-A (60/20/10/10, D-33)
 remedial: MPV-A — attempt baru dapat dimulai dari salinan submission sebelumnya (D-30)
 ---
@@ -74,7 +74,7 @@ spesifikasi, daya (khusus CPU), dan harga dalam rupiah tanpa titik.
 | F5 | ID PSU | Satu ID katalog |
 | F6 | Total harga (Rp) | Bilangan bulat tanpa titik/huruf |
 | F7 | Kebutuhan daya (W) | Bilangan bulat |
-| F8 | RAM total (GB) | Bilangan bulat |
+| F8 | RAM total (GB) = kapasitas per keping × jumlah keping | Bilangan bulat |
 | F9 | Lima soal penjelasan proyek | Pilihan tunggal (K4) |
 
 ## Instruksi
@@ -82,7 +82,7 @@ spesifikasi, daya (khusus CPU), dan harga dalam rupiah tanpa titik.
 1. Pilih CPU yang memenuhi N1.
 2. Pilih motherboard dengan **soket yang sama**.
 3. Pilih RAM dengan **jenis yang sama** dengan motherboard; tentukan jumlah
-   keping agar N2 terpenuhi dan jumlah keping ≤ slot.
+   keping (bilangan bulat 1–4) agar N2 terpenuhi dan jumlah keping ≤ slot.
 4. Pilih SSD yang memenuhi N3.
 5. Hitung kebutuhan daya (F7) dan pilih PSU yang memenuhi N5.
 6. Hitung total harga (F6) dan pastikan N6 terpenuhi. Bila tidak, ganti
@@ -90,44 +90,45 @@ spesifikasi, daya (khusus CPU), dan harga dalam rupiah tanpa titik.
 7. Isi RAM total (F8) dan jawab lima soal penjelasan (F9).
 8. Periksa semua isian, lalu tekan **Serahkan** (dengan konfirmasi).
 
-## Contoh keluaran yang dapat diterima
+## Contoh bentuk isian (bukan jawaban proyek)
 
-| Isian | Nilai |
+Contoh ini memakai **katalog latihan Pelajaran 4** (ID `X-…`), bukan katalog
+proyek, sehingga tidak memberi jawaban.
+
+| Isian | Contoh bentuk yang benar |
 |---|---|
-| F1–F5 | CPU-2, MB-1, RAM-1 × 2, STO-3, PSU-1 |
-| F6 | 5400000 (= 2400000 + 1300000 + 2 × 350000 + 650000 + 350000) |
-| F7 | 165 (= 65 + 100) |
-| F8 | 16 |
+| F1–F5 | `X-CPU1`, `X-MB1`, `X-RAM1` dengan jumlah keping `2`, `X-SSD1`, `X-PSU1` |
+| F6 | `4580000` (angka saja, tanpa "Rp", titik, atau spasi) |
+| F7 | `165` (angka saja, tanpa "W") |
+| F8 | `16` (= 8 GB per keping × 2 keping; angka saja, tanpa "GB") |
 
-Ini **bukan satu-satunya** jawaban benar: penilaian memeriksa syarat, bukan
-mencocokkan satu kombinasi. Contoh lain yang juga memenuhi: CPU-4, MB-3,
-RAM-2 × 1, STO-3, PSU-1 (total 5450000).
+## Kesalahan umum yang membuat poin hilang
 
-## Contoh keluaran yang tidak dapat diterima
-
-| Isian | Masalah |
+| Kesalahan | Akibat |
 |---|---|
-| CPU-4 + MB-1 | Soket B vs Soket A (N4 gagal) |
-| MB-1 + RAM-3 | DDR5 di motherboard DDR4 (N4 gagal) |
-| MB-1 + RAM-1 × 4 | 4 keping melebihi 2 slot (format K3 dan N4 gagal) |
-| CPU-1 | 4 core (N1 gagal) |
-| STO-1 | HDD, bukan SSD (N3 gagal) |
-| CPU-3 + MB-1 + RAM-2 × 1 + STO-3 + PSU-1 | Kompatibel, tetapi total 6850000 > 6500000 (N6 gagal) |
-| F6 ditulis "Rp 5.400.000" | Bukan bilangan bulat tanpa titik/huruf (K3) |
+| Soket CPU dan motherboard berbeda | Pemeriksaan soket gagal |
+| Jenis RAM (DDR4/DDR5) tidak sama dengan motherboard | Pemeriksaan jenis RAM gagal |
+| Jumlah keping RAM melebihi slot motherboard | Rakitan tidak mungkin dipasang: pemeriksaan RAM total dan anggaran gagal; format jumlah keping gagal |
+| Jumlah keping bukan bilangan bulat 1–4 (mis. `0`, `2,5`) | Pemeriksaan yang memakai jumlah keping gagal |
+| Kebutuhan tidak terpenuhi (core, RAM, SSD, daya) atau total melebihi anggaran | Pemeriksaan syarat itu gagal |
+| F6, F7, atau F8 tidak sama dengan hasil hitung dari pilihanmu | Pemeriksaan perhitungan itu gagal |
+| Menulis `Rp 5.000.000` atau `16 GB` | Poin format hilang (perhitungan tetap diperiksa bila angkanya dapat dibaca) |
+| ID salah tulis atau tidak ada di katalog | Isian itu tidak sah; pemeriksaan yang membutuhkannya gagal, yang lain tetap dinilai |
 | Centang "sudah saya periksa" tanpa isian | 0 poin (MR-6) |
 
 ## Penilaian (MR-A, rincian di `rubric.yaml`)
 
 | Kriteria | Poin | Isi |
 |---|---|---|
-| K1 Kebenaran fungsional | 60 | 9 pemeriksaan syarat dan perhitungan |
-| K2 Kelengkapan deliverable | 20 | F1–F8 terisi dengan bentuk valid |
-| K3 Struktur dan format | 10 | Uang dan kapasitas bilangan bulat; jumlah keping valid |
+| K1 Kebenaran fungsional | 60 | 10 pemeriksaan: soket, jenis RAM, core, RAM total, SSD, daya PSU, anggaran, kebenaran F6, F7, dan F8 |
+| K2 Kelengkapan deliverable | 20 | F1–F8 terisi dengan isian yang sah |
+| K3 Struktur dan format | 10 | Uang dan angka hanya digit; jumlah keping bilangan bulat 1–4 dan ≤ slot |
 | K4 Penjelasan proyek | 10 | 5 soal × 2 poin (komposisi K-A) |
 | **Total** | **100** | |
 
-Kredit parsial per pemeriksaan; isian yang hilang membuat pemeriksaan yang
-bergantung padanya bernilai 0 (MR-2).
+Kredit parsial per pemeriksaan. Isian yang tidak sah atau kosong membuat
+pemeriksaan yang membutuhkannya bernilai 0; pemeriksaan lain tetap dinilai
+(MR-2).
 
 ## Bukti yang dinilai
 

@@ -14,23 +14,23 @@ variants:
   stem: Pilih **semua** software aplikasi.
   options:
   - id: a
-    text: Pengolah kata
-  - id: b
-    text: Browser
-  - id: c
     text: UEFI
-  - id: d
+  - id: b
+    text: Pengolah kata
+  - id: c
     text: Driver kartu suara
+  - id: d
+    text: Browser
   - id: e
     text: Aplikasi peta
   key:
-  - a
   - b
+  - d
   - e
   scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
   distractor_rationale:
-    c: UEFI adalah firmware (software sistem)
-    d: Driver adalah software sistem
+    a: UEFI adalah firmware (software sistem)
+    c: Driver adalah software sistem
   explanation: Pengolah kata, browser, dan aplikasi peta membantu tugas pengguna.
 - item_id: item-w01-t-s16-b
   variant_id: mod-w01.theory.s16.vB
@@ -40,19 +40,19 @@ variants:
   - id: a
     text: Sistem operasi
   - id: b
-    text: Driver printer
-  - id: c
     text: Game balap
+  - id: c
+    text: Driver printer
   - id: d
     text: Pembersih disk
   - id: e
     text: Aplikasi lembar kerja
   key:
   - a
-  - b
+  - c
   - d
   scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
   distractor_rationale:
-    c: Game adalah aplikasi
+    b: Game adalah aplikasi
     e: Lembar kerja adalah aplikasi
   explanation: Sistem operasi, driver, dan utilitas (pembersih disk) adalah software sistem.

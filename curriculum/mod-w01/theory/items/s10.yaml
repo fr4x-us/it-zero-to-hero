@@ -16,7 +16,7 @@ variants:
   - '8'
   - 8 bit
   normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
-    atau tidak; satuan boleh ditulis atau tidak hanya bila tercantum di accepted_answers
+    atau tidak; satuan hanya boleh ditulis bila tercantum di accepted_answers
   explanation: 1 byte terdiri dari 8 bit.
 - item_id: item-w01-t-s10-b
   variant_id: mod-w01.theory.s10.vB
@@ -28,5 +28,5 @@ variants:
   - 1000 MB
   - 1.000 MB
   normalization: Buang spasi di awal/akhir; abaikan huruf besar/kecil; titik pemisah ribuan boleh ada
-    atau tidak; satuan boleh ditulis atau tidak hanya bila tercantum di accepted_answers
+    atau tidak; satuan hanya boleh ditulis bila tercantum di accepted_answers
   explanation: 'Aturan desimal: 1 GB = 1.000 MB.'

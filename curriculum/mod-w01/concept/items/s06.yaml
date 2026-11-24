@@ -21,50 +21,51 @@ variants:
 - item_id: item-w01-c-s06-a
   variant_id: mod-w01.concept.s06.vA
   item_version: '1.0'
-  stem: Pilih **semua** pernyataan yang benar tentang kompatibilitas.
+  stem: Pilih **semua** pernyataan yang benar.
   options:
   - id: a
     text: Soket CPU harus sama dengan soket motherboard
   - id: b
-    text: RAM DDR5 hanya dapat dipasang di motherboard yang mendukung DDR5
-  - id: c
-    text: Daya PSU harus lebih besar atau sama dengan kebutuhan daya
-  - id: d
     text: Komponen yang lebih mahal selalu kompatibel
-  - id: e
+  - id: c
+    text: RAM DDR5 hanya dapat dipasang di motherboard yang mendukung DDR5
+  - id: d
     text: Jumlah keping RAM boleh melebihi jumlah slot
+  - id: e
+    text: Kombinasi memenuhi kebutuhan hanya bila semua syarat dan anggaran terpenuhi
   key:
   - a
-  - b
   - c
+  - e
   credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
-    pengurangan hanya di soal ini
+    pengurangan hanya di soal ini, tidak pernah negatif
   distractor_rationale:
-    d: Harga tidak menentukan kecocokan
-    e: Setiap keping butuh satu slot
-  feedback: Kompatibilitas ditentukan soket, jenis RAM, jumlah slot, dan daya.
+    b: Harga tidak menentukan kecocokan
+    d: Setiap keping butuh satu slot
+  feedback: Kompatibilitas ditentukan soket dan jenis RAM; kebutuhan terpenuhi hanya bila semua syarat
+    dan anggaran terpenuhi.
 - item_id: item-w01-c-s06-b
   variant_id: mod-w01.concept.s06.vB
   item_version: '1.0'
-  stem: Pilih **semua** pernyataan yang benar tentang memilih komputer sesuai kebutuhan.
+  stem: Pilih **semua** pernyataan yang benar.
   options:
   - id: a
-    text: Kombinasi memenuhi kebutuhan hanya bila semua syarat dan anggaran terpenuhi
+    text: RAM DDR4 dapat dipasang di motherboard DDR5 asalkan kapasitasnya sama
   - id: b
-    text: SSD membantu program dan berkas terbuka lebih cepat
+    text: Daya PSU harus lebih besar atau sama dengan kebutuhan daya
   - id: c
-    text: RAM yang cukup membantu saat banyak aplikasi terbuka bersamaan
+    text: Jumlah keping RAM tidak boleh melebihi jumlah slot motherboard
   - id: d
-    text: GHz tertinggi selalu berarti komputer tercepat untuk semua tugas
+    text: Bila satu syarat tidak terpenuhi, kombinasi tidak memenuhi kebutuhan
   - id: e
-    text: Bila satu syarat tidak terpenuhi, kombinasi tetap memenuhi asalkan murah
+    text: Kombinasi tetap memenuhi kebutuhan asalkan harganya murah
   key:
-  - a
   - b
   - c
+  - d
   credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
-    pengurangan hanya di soal ini
+    pengurangan hanya di soal ini, tidak pernah negatif
   distractor_rationale:
-    d: Kinerja dipengaruhi banyak faktor
+    a: DDR4 dan DDR5 tidak dapat saling menggantikan
     e: Semua syarat wajib terpenuhi
-  feedback: Setiap syarat diperiksa satu per satu; satu syarat gagal berarti tidak memenuhi.
+  feedback: Daya, slot, dan setiap syarat wajib diperiksa; satu syarat gagal berarti tidak memenuhi.

@@ -11,48 +11,49 @@ variants:
 - item_id: item-w01-t-s08-a
   variant_id: mod-w01.theory.s08.vA
   item_version: '1.0'
-  stem: Pilih **semua** media penyimpanan non-volatil.
-  options:
-  - id: a
-    text: SSD
-  - id: b
-    text: HDD
-  - id: c
-    text: RAM
-  - id: d
-    text: Kartu memori
-  - id: e
-    text: Monitor
-  key:
-  - a
-  - b
-  - d
-  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
-  distractor_rationale:
-    c: RAM volatil
-    e: Monitor adalah output
-  explanation: SSD, HDD, dan kartu memori menyimpan data tanpa listrik.
-- item_id: item-w01-t-s08-b
-  variant_id: mod-w01.theory.s08.vB
-  item_version: '1.0'
-  stem: Pilih **semua** pernyataan yang benar tentang SSD dibanding HDD.
+  stem: Pilih **semua** pernyataan yang benar tentang **SSD** dibanding HDD.
   options:
   - id: a
     text: SSD tidak memiliki bagian yang bergerak
   - id: b
-    text: SSD umumnya lebih cepat membuka program
-  - id: c
     text: SSD kehilangan data saat listrik mati
+  - id: c
+    text: SSD umumnya lebih cepat membuka program
   - id: d
-    text: SSD lebih tahan guncangan
-  - id: e
     text: SSD selalu lebih murah per GB
+  - id: e
+    text: SSD lebih tahan guncangan
   key:
   - a
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: SSD non-volatil
+    d: Umumnya SSD lebih mahal per GB
+  explanation: 'SSD memakai chip flash tanpa bagian mekanis: lebih cepat dan lebih tahan guncangan.'
+- item_id: item-w01-t-s08-b
+  variant_id: mod-w01.theory.s08.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang **HDD** dibanding SSD.
+  options:
+  - id: a
+    text: HDD kehilangan data saat listrik mati
+  - id: b
+    text: HDD memakai piringan magnetis yang berputar
+  - id: c
+    text: HDD umumnya lebih murah per GB
+  - id: d
+    text: HDD lebih rentan terhadap guncangan
+  - id: e
+    text: HDD tidak memiliki bagian yang bergerak
+  key:
   - b
+  - c
   - d
   scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
   distractor_rationale:
-    c: SSD non-volatil
-    e: Umumnya SSD lebih mahal per GB
-  explanation: 'SSD memakai chip flash tanpa bagian mekanis: lebih cepat dan lebih tahan guncangan.'
+    a: HDD non-volatil
+    e: HDD justru memiliki piringan dan lengan yang bergerak
+  explanation: 'HDD memakai piringan berputar dan lengan baca: lebih murah per GB tetapi lebih lambat
+    dan rentan guncangan.'

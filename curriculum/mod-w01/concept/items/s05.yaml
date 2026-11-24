@@ -3,7 +3,7 @@ slot_id: mod-w01.concept.s05
 competency: comp-w01-unit-01
 required_concepts:
 - 1 byte = 8 bit
-- aturan desimal 1.000
+- aturan desimal ×1.000
 - konversi GB–MB
 format: CE-S5
 max_points: 4
@@ -35,16 +35,20 @@ variants:
   error_line: '3'
   correction_options:
   - id: a
-    text: 1 GB = 1.000 MB
-  - id: b
     text: 1 GB = 10 MB
-  - id: c
+  - id: b
     text: 1 GB = 8 MB
+  - id: c
+    text: 1 GB = 1.000 MB
   - id: d
     text: 1 GB = 1.000 TB
-  correction_key: a
+  correction_key: c
   credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
     baris salah/kosong
+  distractor_rationale:
+    a: Faktor yang benar 1.000
+    b: 8 adalah jumlah bit per byte, bukan faktor GB–MB
+    d: TB lebih besar daripada GB
   feedback: 'Dengan aturan desimal, setiap satuan bernilai 1.000 kali satuan di bawahnya: 1 GB = 1.000
     MB.'
 - item_id: item-w01-c-s05-b
@@ -57,22 +61,26 @@ variants:
   - id: '2'
     text: 3 GB = 3.000 MB.
   - id: '3'
-    text: Kartu 64 GB menampung 16.000 foto berukuran 4 MB (abaikan ruang sistem).
+    text: 1 MB = 1.000 KB.
   - id: '4'
     text: 500 GB = 50.000 MB.
   - id: '5'
-    text: 1 MB = 1.000 KB.
+    text: Kartu 64 GB menampung 16.000 berkas berukuran 4 MB (abaikan ruang sistem).
   error_line: '4'
   correction_options:
   - id: a
-    text: 500 GB = 500.000 MB
-  - id: b
     text: 500 GB = 5.000 MB
+  - id: b
+    text: 500 GB = 500.000 MB
   - id: c
     text: 500 GB = 5.000.000 MB
   - id: d
     text: 500 GB = 500 MB
-  correction_key: a
+  correction_key: b
   credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
     baris salah/kosong
+  distractor_rationale:
+    a: Faktor yang benar 1.000
+    c: Itu ×10.000
+    d: GB lebih besar daripada MB
   feedback: 500 × 1.000 = 500.000 MB.

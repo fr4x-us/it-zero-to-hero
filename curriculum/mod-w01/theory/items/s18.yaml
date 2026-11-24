@@ -44,11 +44,11 @@ variants:
     b: MB-Q memakai Soket B
     d: MB-R cocok
   explanation: MB-R memiliki Soket A dan mendukung DDR5.
+  option_order: urutan alami (kategori/baris tabel), tetap
 - item_id: item-w01-t-s18-b
   variant_id: mod-w01.theory.s18.vB
   item_version: '1.0'
-  stem: Kamu punya CPU **Soket B** dan **4 keping** RAM **DDR5**. Menurut tabel, motherboard mana yang
-    kompatibel?
+  stem: Kamu punya CPU **Soket B** dan RAM **DDR4**. Menurut tabel, motherboard mana yang kompatibel?
   stimulus_table:
   - - Motherboard
     - Soket
@@ -75,9 +75,10 @@ variants:
     text: MB-R
   - id: d
     text: Tidak ada
-  key: b
+  key: d
   distractor_rationale:
-    a: MB-P memakai Soket A dan DDR4
-    c: MB-R memakai Soket A dan hanya 2 slot
-    d: MB-Q cocok
-  explanation: MB-Q memiliki Soket B, DDR5, dan 4 slot.
+    a: MB-P memakai Soket A
+    b: MB-Q memakai DDR5
+    c: MB-R memakai Soket A dan DDR5
+  explanation: Satu-satunya motherboard Soket B (MB-Q) memakai DDR5, jadi tidak ada yang cocok.
+  option_order: urutan alami (kategori/baris tabel), tetap
