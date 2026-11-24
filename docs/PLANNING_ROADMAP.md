@@ -121,6 +121,7 @@ verifikasi aplikasinya dicatat terpisah di jalur V.
 | Disetujui (D-16) | AES-256-GCM, nonce acak 96-bit, tag 128-bit, header = AAD, salt CSPRNG per ekspor; Argon2id via Bouncy Castle (bersyarat) + cadangan PBKDF2-HMAC-SHA256 ≥ 600.000; minimum Argon2id 19 MiB/t=2/p=1; envelope OD1 §5 sebagai baseline; H-1–H-7, KV-1–KV-8; restore produksi nonaktif sampai terverifikasi | — (keputusan) | — |
 | Sisa perencanaan | OD-5 format payload; OD-6 aturan kata sandi; OD-7 **kebijakan** batas sumber daya (jenis batas, titik pemeriksaan sebelum alokasi/KDF, perilaku penolakan); OD-8 retensi snapshot + log restore (D-17); OD-9 attempt berjalan; **OD-11** serialisasi envelope (tata letak byte, encoding field, versi; OD-1-Q4 OPEN); **OD-12** kebijakan kapan KDF cadangan dipakai untuk ekspor baru (OD-1-Q6); **OD-13** rencana dan protokol pengukuran (perangkat, prosedur, kriteria terima) untuk diizinkan owner; **OD-14** review dokumen dependensi Bouncy Castle (lisensi, versi, ukuran, dependensi transitif) | UW-33 | P |
 | Verifikasi teknis | Kompatibilitas Bouncy Castle di Android API 29+; pengukuran KDF di perangkat yang diizinkan; **nilai** parameter final dan batas maksimum (disetujui owner setelah pengukuran); CT-1–CT-12 dengan bukti EV | UW-15 | V |
+| Usulan baru (butuh persetujuan, OD-15-Q1) | **OD-15** validasi ledger XP saat pratinjau restore dan perlakuan temuan ([XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) §8.2); diusulkan dilacak di UW-33 | UW-33 | P |
 | Syarat rilis restore produksi | RR-1–RR-8 di [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) §11 | UW-15 + UW-33 + UW-02 | — |
 
 OD-11–OD-14 adalah ID baru (keluarga OD sebelumnya berakhir di OD-10).
@@ -179,7 +180,7 @@ dicabut.
 |---|---|---|---|---|
 | Format soal, poin, durasi ujian (OP-5) | UW-27 | OPEN | [ASSESSMENT_FLOW_DECISION_SHEETS.md](ASSESSMENT_FLOW_DECISION_SHEETS.md) §A | Theory |
 | Aturan kredit penjelasan konsep (OP-4) | UW-26 | **D-23** | [OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md](OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md) | Concept |
-| Penilaian lab (CU-6) | UW-36 | **D-24**; LX-1–LX-5 OPEN | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) | Laboratory |
+| Penilaian lab (CU-6) | UW-36 | **D-24**; LX-1–LX-9 OPEN | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) | Laboratory |
 | Varian remedial (CU-5) | UW-36 | OPEN | [CURRICULUM_CONTENT_DECISION_SHEETS.md](CURRICULUM_CONTENT_DECISION_SHEETS.md) §B | Semua komponen |
 | Rubrik mini-project (CU2-O4) | UW-36 (D-25) | OPEN | [PROJECT_RUBRIC_DECISION_SHEETS.md](PROJECT_RUBRIC_DECISION_SHEETS.md) §A | Mini-project W1–W15 |
 | Rubrik capstone (CU-9) | UW-36 | OPEN | idem §B | W16 Mini-project |
@@ -192,6 +193,8 @@ dicabut.
 | Unlock rinci (OP-9) | UW-31 | OPEN | AF §C | Prasyarat |
 | Remedial dan autosave (OP-10, OP-11) | UW-32 | OPEN | AF §D | Materi remedial |
 | Risiko kunci jawaban (CU-10) | UW-25 | OPEN | [CU10_ANSWER_KEY_RISK_DECISION_SHEET.md](CU10_ANSWER_KEY_RISK_DECISION_SHEET.md) | Desain bank soal |
+| Asumsi struktur: 6 soal concept, 3 aktivitas lab per modul (CU2-O5) | UW-36 (usulan) | OPEN | CCD §B | Beban konten, durasi C dan L |
+| Persistensi ujian di sekitar tenggat (OP-5-Q8) | UW-27 | OPEN | AF §A.5b | Theory |
 
 Konsistensi usulan terhadap D-01–D-25: [CROSS_SPEC_CONSISTENCY_REVIEW.md](CROSS_SPEC_CONSISTENCY_REVIEW.md).
 Templat provisional CB-0: [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md).
@@ -234,10 +237,11 @@ prasyarat UW-15, bukan butir baru (D-25). Belum diberikan.
 
 ```
 Keputusan owner batch ini (lembar siap):
-  Gelombang 1 — CB-0: CU-3 (format), CU-5 (varian), OP-5 (ujian), CU2-O3 (jam),
-                      CU2-O4 (rubrik), OP-8/CU-4 (activity_id), OP-7, OP-10
+  Gelombang 1 — CB-0: CU-3 (format), CU-5 (varian), CU2-O5 (jumlah aktivitas),
+                      OP-5 (ujian), CU2-O3 (jam), CU2-O4 (rubrik),
+                      OP-8-Q1–Q3/CU-4 (xp_id), OP-7, OP-10
   Gelombang 2 — CB-3/CB-4: CU-11 (W9/W10), CU-7 (SQL/HTML/Git), CU-9 (capstone), CU-10
-  Paralel     — OP-9, OP-11, CU-6 LX-1–LX-5
+  Paralel     — OP-9, OP-11, CU-6 LX-1–LX-9
         │
         ▼
 CB-0  Templat final (TPL-01–TPL-12 tanpa field OPEN)
@@ -260,7 +264,8 @@ Tidak ada butir M, G, atau V di jalur kritis PLANNING CLEAR.
 ## 10. Batch perencanaan berikutnya yang direkomendasikan
 
 1. Owner menjawab pertanyaan gelombang 1 (CB-0) dan, bila memungkinkan,
-   gelombang 2 ([OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md)).
+   gelombang 2 — total 45 pertanyaan dalam matriks
+   [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md).
 2. Batch berikutnya: finalisasi CB-0 (templat tanpa field OPEN) + CB-1
    modul W1 sebagai **modul percontohan** lengkap (4 komponen) untuk
    direview sebelum W2–W4.

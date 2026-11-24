@@ -3,7 +3,7 @@
 Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa
 parser, mesin konten, mesin SQL, WebView, simulator Git, skema database, atau
 prototipe. Tanggal: **2026-11-24**. Basis: `main` = `928e278`. Kode
-rujukan: `CCD:`.
+rujukan: `CCD:`. Direvisi setelah review PR #24 (F-07–F-09).
 
 Rekomendasi adalah saran, **bukan** keputusan. Semua bagian terkait UW-36
 (CU-3, CU-5, CU-7, CU-11, CU2-O3 — D-25) dan menjadi prasyarat CB-0
@@ -83,7 +83,7 @@ contoh satu soal, satu test lab, dan satu rubrik ditulis dalam templat CB-0.
 
 ### B.1 Opsi jumlah minimum
 
-Asumsi beban (usulan dari OP-5 dan §D): slot ujian teori 15 × 20 + 10 =
+Asumsi beban — **asumsi struktur yang butuh persetujuan eksplisit (CU2-O5, §F)**: 6 soal concept explanation per modul dan 3 aktivitas lab per modul; jumlah pelajaran dan set latihan per modul belum diasumsikan. Usulan dari OP-5 dan §D: slot ujian teori 15 × 20 + 10 =
 **310**; concept explanation 6 soal × 16 = **96** slot; lab 3 aktivitas × 16
 = **48** aktivitas; mini-project 15 + capstone 1.
 
@@ -134,8 +134,8 @@ simulator Git) diputuskan saat implementasi dan **NOT VERIFIED**.
 | SQ-2 | Dataset fixture: satu skema latihan bertema toko (pelanggan, produk, pesanan, item_pesanan), ≤ 50 baris per tabel, sengaja memuat `NULL`, baris duplikat, dan relasi tanpa pasangan untuk latihan `LEFT JOIN` |
 | SQ-3 | Setiap lab punya fixture **terlihat** dan fixture **tersembunyi** berisi data berbeda dengan skema sama, agar query yang hanya mencetak nilai tetap gagal |
 | SQ-4 | Validasi hasil `SELECT`: jumlah kolom dan urutan kolom dibandingkan; nama kolom hanya dibandingkan bila soal meminta alias tertentu |
-| SQ-5 | Urutan baris: bila soal mewajibkan `ORDER BY`, perbandingan **berurutan**; bila tidak, perbandingan sebagai **multiset** (duplikat dihitung) |
-| SQ-6 | `NULL` dianggap sama dengan `NULL` dalam perbandingan hasil (bukan semantik SQL); kelas nilai dibandingkan (bilangan bulat ≠ teks "1"); bilangan real hanya dipakai bila soal menetapkan `ROUND(..., n)` |
+| SQ-5 | Urutan baris: bila soal mewajibkan urutan, soal **wajib** menulis `ORDER BY` yang menentukan urutan penuh (kunci pengurut + tie-break sampai unik) dan perbandingan dilakukan **berurutan**; bila soal tidak mewajibkan urutan, perbandingan sebagai **multiset** (duplikat dihitung). Soal dengan urutan wajib tetapi tie tanpa tie-break ditolak saat review konten |
+| SQ-6 | `NULL` dianggap sama dengan `NULL` dalam perbandingan hasil (bukan semantik SQL); kelas nilai dibandingkan (bilangan bulat ≠ teks "1"). Bilangan real: fixture dan soal diutamakan bilangan bulat; bila hasil real tidak terhindarkan (mis. `AVG`), soal menetapkan `ROUND(ekspresi, n)` dan nilai dibandingkan sebagai teks hasil pembulatan dengan tepat `n` desimal; perbandingan real mentah tidak dipakai |
 | SQ-7 | Query setara diterima karena penilaian berdasarkan hasil, bukan teks query |
 | SQ-8 | Soal DML dinilai dari keadaan tabel setelah eksekusi; database latihan terpisah dan di-reset per evaluasi (CUR:S-04, QG LB-6) |
 | SQ-9 | Pernyataan di luar cakupan (mis. `ATTACH`, `PRAGMA`, ekstensi) ditolak sebagai kesalahan pelajar; mekanisme isolasi NOT VERIFIED |
@@ -217,7 +217,7 @@ CCD-AC-08 — urutan modul tidak berubah.
 
 | Opsi | Isi | Kelebihan | Kekurangan |
 |---|---|---|---|
-| **PB-A** | W9: program pertama, `print`, komentar, ekspresi aritmetika, variabel sebagai nama nilai (penugasan dasar), `input()` sederhana, membaca pesan error; W10: tipe data formal (`int`, `float`, `str`, `bool`), `type()`, konversi, operasi string, f-string, list dan dict dasar | W9 sudah menghasilkan program bermakna; W10 memperdalam tanpa mengulang | Variabel muncul dua kali (perkenalan vs formal) — dibatasi oleh tujuan berbeda |
+| **PB-A** (direvisi F-08) | W9: program pertama, `print`, komentar, aritmetika, variabel (penugasan dasar), `input()` **dengan konversi angka dasar** `int()`/`float()` agar perhitungan dari input dapat dilakukan, membaca pesan error; W10: tipe data formal, `type()`, konversi lengkap dan kesalahan konversi (`ValueError` dibaca, tidak ditangani), operasi string, f-string, operasi list dan dict | W9 sudah menghasilkan program bermakna dari input; W10 memperdalam tanpa mengulang | Konversi muncul dua kali (dasar vs lengkap) — tujuan berbeda |
 | PB-B | W9 tanpa variabel sama sekali | Batas tegas | Program W9 sangat terbatas; lab sulit bermakna |
 | PB-C | List/dict dipindah ke W12 | W10 lebih ringan | W12 terlalu padat (loop, fungsi, debugging, struktur data) |
 
@@ -226,13 +226,22 @@ CCD-AC-08 — urutan modul tidak berubah.
 | Aspek | W9 Dasar Python | W10 Variabel dan tipe data |
 |---|---|---|
 | Tujuan | Menulis dan menjalankan program berurutan; membaca pesan error | Memilih tipe yang tepat; mengonversi input; mengolah teks dan koleksi sederhana |
-| Urutan topik | 1) apa itu program/interpreter; 2) `print` dan string literal; 3) komentar; 4) aritmetika `+ − * / // % **` dan prioritas; 5) variabel dan penugasan; 6) `input()` (hasil selalu teks); 7) `SyntaxError`/`NameError` dan cara membacanya | 1) tipe `int`, `float`, `str`, `bool`; 2) `type()`; 3) `int()`, `float()`, `str()` dan `ValueError`; 4) string: gabung, `len`, indeks, slicing, metode umum; 5) f-string; 6) list: buat, indeks, `append`, `len`; 7) dict: buat, ambil/ubah nilai lewat kunci |
+| Urutan topik | 1) apa itu program/interpreter; 2) `print` dan string literal; 3) komentar; 4) aritmetika `+ − * / // % **` dan prioritas; 5) variabel dan penugasan; 6) `input()` (hasil selalu teks) dan konversi dasar `int(input())`, `float(input())`; 7) `SyntaxError`/`NameError`/`ValueError` dan cara membacanya | 1) tipe `int`, `float`, `str`, `bool`; 2) `type()`; 3) konversi lengkap `int()`, `float()`, `str()`, `bool()` dan kapan konversi gagal (`ValueError` dibaca, **tanpa** `try`/`except`); 4) string: gabung, `len`, indeks, slicing, metode umum (`upper`, `strip`, `split`, `isdigit`); 5) f-string; 6) list: buat, indeks, slicing, `append`, `len`, `in`; 7) dict: buat, ambil/ubah nilai lewat kunci, `keys`/`values` |
 | Prasyarat | W5 (operasi, modulo), W8 (algoritma berurutan) | W9; W6 (nilai Boolean) |
-| Progresi latihan | Cetak → hitung → simpan dalam variabel → baca input → perbaiki error | Konversi input angka → format output → olah string → kumpulkan data di list/dict |
-| Kompetensi akhir | Program 5–15 baris berurutan yang menghitung dari input | Program yang memvalidasi tipe dan mengolah teks/list/dict tanpa loop |
+| Progresi latihan | Cetak → hitung → simpan dalam variabel → baca input dan konversi → hitung dari input → perbaiki error | Pilih tipe → konversi dan jelaskan kegagalan → format output → olah string → kumpulkan data di list/dict (jumlah elemen tetap) |
+| Kompetensi akhir | Program 5–15 baris berurutan yang membaca angka, menghitung, dan mencetak hasil | Program berurutan yang mengonversi input dan mengolah teks/list/dict **tanpa** percabangan, perulangan, atau penanganan exception |
 | Dipakai di W11 | Ekspresi, variabel | `bool`, perbandingan nilai bertipe, konversi input |
 | Dipakai di W12 | Membaca error | List/dict untuk iterasi; string untuk fungsi |
 | Dipakai di W16 | Struktur program dasar | Pengolahan data teks, list, dict |
+
+Pemeriksaan prasyarat proyek (F-08): W9 "kalkulator konversi satuan" =
+input + `float()` + aritmetika + `print` (semua W9). W10 "pengolah profil
+teks" = jumlah field tetap, metode string, list/dict, f-string (W9–W10,
+tanpa percabangan). W11 "penentu kategori" = kondisi (W11) + konversi (W10).
+W12 "rekap nilai" = perulangan dan fungsi (W12) atas list/dict (W10).
+Capstone = W9–W12 + SQL W13 + Git W15; validasi baris memakai `isdigit`/
+`split`/`len` (W10) dan kondisi (W11), **tanpa** `try`/`except`. Tidak ada
+proyek yang memakai konsep sebelum diajarkan.
 
 Operator perbandingan dan logika diajarkan di W11 (kondisi) dengan tipe
 `bool` dari W10. Penerimaan perencanaan W9/W10 tidak bergantung pada hasil
@@ -252,11 +261,12 @@ topik yang dipakai sebelum diajarkan.
 | CU-3-Q2 | Struktur folder A.3 dan pembaruan konten hanya lewat APK (UP-A) untuk V1? | Ya |
 | CU-5-Q1 | Jumlah varian VR-B (teori 2, concept 2, lab 2) dan MPV-A untuk mini-project/capstone? | VR-B + MPV-A |
 | CU-5-Q2 | Aturan kesetaraan dan pemilihan deterministik VA-1–VA-6? | Ya |
+| CU2-O5-Q1 | Asumsi struktur: 6 soal concept explanation per modul dan 3 aktivitas lab per modul (dasar perhitungan beban §B dan durasi C = 0,5 jam), disetujui sebelum produksi konten final? | Ya |
 | CU-7-Q1 | SQL: SQ-1–SQ-9 (SQLite, SQL dasar, perbandingan multiset/berurutan, NULL)? | Ya |
 | CU-7-Q2 | HTML/CSS: HV-A, pratinjau tidak dinilai (HT-1–HT-5)? | HV-A |
 | CU-7-Q3 | Git: GS-A simulasi keadaan; GitHub nyata opsional dan tidak dinilai (GT-1–GT-4)? | GS-A |
 | CU2-O3-Q1 | Alokasi jam tabel §D (M/U/L/P/C/R) dan remedial tambahan di luar 128 jam nominal? | Ya |
-| CU-11-Q1 | Pembagian PB-A W9/W10? | PB-A |
+| CU-11-Q1 | Pembagian PB-A (revisi F-08) W9/W10? | PB-A |
 
 Status: **AWAITING OWNER**. UW-36 tetap BLOCKED (CU-3, CU-5, CU-7, CU-9,
 CU-11, CU2-O3, CU2-O4 belum diputuskan).

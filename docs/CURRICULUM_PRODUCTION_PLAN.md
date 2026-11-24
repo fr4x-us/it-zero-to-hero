@@ -26,7 +26,9 @@ Ketergantungan konsep utama (PROPOSED): W6 → W8 (logika untuk algoritma);
 W8 → W9–W12 (algoritma ke kode); W2 → W15 (file/folder ke Git); W9–W12 →
 W16 (capstone memakai Python); W13 dan W15 → W16 (usulan capstone memakai
 SQL dan Git, [PROJECT_RUBRIC_DECISION_SHEETS.md](PROJECT_RUBRIC_DECISION_SHEETS.md) §B;
-topik capstone menunggu CU-9). Pembagian W9/W10: usulan PB-A
+topik capstone menunggu CU-9). Pembagian W9/W10: usulan PB-A revisi (konversi
+angka dasar di W9; W10 tanpa percabangan/exception; tidak ada `try`/`except`
+di W9–W12 maupun capstone)
 ([CURRICULUM_CONTENT_DECISION_SHEETS.md](CURRICULUM_CONTENT_DECISION_SHEETS.md) §E).
 
 ## 2. Templat dokumen modul (wajib untuk setiap modul)
@@ -100,10 +102,11 @@ X = rubrik capstone CU-9; K = format konten CU-3; V = jumlah varian CU-5;
 M = varian/remedial mini-project (CU-5 MPV); F = bentuk lab SQL/HTML/Git
 CU-7; S = pembagian W9/W10 CU-11; R = runtime Python (O-04, NOT VERIFIED —
 **tidak** memblokir penerimaan perencanaan, RM:RV-1). Semua sel juga
-bergantung pada CU2-O3 (jam), OP-7 (pengumpulan), OP-8 (identitas XP).
+bergantung pada CU2-O5 (asumsi 6 soal concept dan 3 aktivitas lab per modul),
+CU2-O3 (jam), OP-7 (pengumpulan), dan OP-8 (identitas XP).
 
 Sudah diputuskan (tidak lagi memblokir): Concept explanation → D-23;
-Laboratory → D-24 (klarifikasi LX-1–LX-5 masih OPEN, tidak memblokir
+Laboratory → D-24 (klarifikasi LX-1–LX-9 masih OPEN, tidak memblokir
 penulisan konten karena konten menulis `tᵢ` per test).
 
 | Modul | Theory 30% | Laboratory 40% | Mini-project 20% | Concept 10% |
@@ -180,7 +183,7 @@ hanya setelah checklist §7 lolos dan owner menerima.
 | ID | Keputusan | Status | Memblokir |
 |---|---|---|---|
 | OP-4 | Aturan kredit penjelasan konsep | **Diputuskan D-23** | — |
-| CU-6 | Penilaian lab | **Diputuskan D-24**; LX-1–LX-5 OPEN | — (konten); LX untuk implementasi |
+| CU-6 | Penilaian lab | **Diputuskan D-24**; LX-1–LX-9 OPEN | — (konten); LX untuk implementasi |
 | OP-5 (UW-27) | Format soal, poin, durasi ujian | OPEN — [ASSESSMENT_FLOW_DECISION_SHEETS.md](ASSESSMENT_FLOW_DECISION_SHEETS.md) §A | Kolom Theory |
 | CU2-O4 (UW-36) | Rubrik mini-project W1–W15 | OPEN — [PROJECT_RUBRIC_DECISION_SHEETS.md](PROJECT_RUBRIC_DECISION_SHEETS.md) §A | Kolom Mini-project |
 | CU-9 (UW-36) | Rubrik capstone | OPEN — idem §B | W16 Mini-project |
@@ -194,6 +197,7 @@ hanya setelah checklist §7 lolos dan owner menerima.
 | OP-9 (UW-31) | Unlock rinci | OPEN — AF §C | Prasyarat modul |
 | OP-10, OP-11 (UW-32) | Remedial dan autosave | OPEN — AF §D | Materi remedial |
 | CU-10 (UW-25) | Risiko kunci jawaban | OPEN — [CU10_ANSWER_KEY_RISK_DECISION_SHEET.md](CU10_ANSWER_KEY_RISK_DECISION_SHEET.md) | Desain bank soal |
+| CU2-O5 (UW-36, usulan) | Jumlah soal concept dan aktivitas lab per modul | OPEN — CCD §B | Semua kolom Lab dan Concept |
 
 Peta lengkap: [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §5.3. Templat dan
 rencana ini bukan konten; status 64 sel tetap NOT STARTED.

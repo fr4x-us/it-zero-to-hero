@@ -79,8 +79,10 @@ Merge PR #23 (`928e278`). Pencatatan D-23 (OP-4), D-24 (CU-6), D-25
 templat [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md); tinjauan
 [CROSS_SPEC_CONSISTENCY_REVIEW.md](CROSS_SPEC_CONSISTENCY_REVIEW.md).
 Audit §17: 25 COMPLETE, 4 OPEN, 19 BLOCKED, 3 DEFERRED, 5 NOT VERIFIED
-(tidak berubah). Jalur P 25/43; kurikulum 0/64. Status: PR terbuka,
-menunggu review.
+(tidak berubah). Jalur P 25/43; kurikulum 0/64. Revisi review PR #24
+(F-01–F-09): XE-B, validasi restore XP (OD-15), persistensi tenggat
+(DL-1–DL-9), aksesibilitas ujian, LX-1–LX-9, rubrik deterministik, PB-A
+revisi, matriks 45 pertanyaan. Status: PR #24 terbuka, menunggu review.
 
 ## Blocker
 
@@ -118,7 +120,7 @@ Selesai: B-2 (PR #7); B-3 (D-01, PR #18); B-7 (D-02, PR #19); B-9 (D-05, PR #19)
 ## Langkah berikutnya (usulan, menunggu owner)
 
 1. Review PR #24 (ChatGPT) → instruksi merge eksplisit bila PASS.
-2. Owner menjawab 38 pertanyaan (7 grup) di
+2. Owner menjawab 45 pertanyaan (matriks 7 grup) di
    [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md); prioritas
    gelombang 1 untuk CB-0.
 3. Batch berikutnya: finalisasi CB-0 + modul percontohan W1

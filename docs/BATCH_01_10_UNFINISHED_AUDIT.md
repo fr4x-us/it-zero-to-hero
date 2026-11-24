@@ -776,10 +776,27 @@ Jalur (D-20, D-25): P 43 (25 COMPLETE, 18 belum) · M 3 · G 2 · V 8.
 | 1 | Register keseluruhan | 25/56 COMPLETE (44,6%) |
 | 2 | Jalur P wajib | 25/43 (58,1%) |
 | 3 | Komponen kurikulum | 0/64 (templat tidak dihitung) |
-| 4 | Keputusan owner | D-01–D-25 tercatat; 38 pertanyaan baru AWAITING OWNER (OP-5, OP-7, OP-8/CU-4, OP-9, OP-10, OP-11, CU-3, CU-5, CU-7, CU-9, CU-10, CU-11, CU2-O3, CU2-O4, LX CU-6) |
-| 5 | Ketergantungan kritis | Gelombang 1 untuk CB-0: CU-3, CU-5, OP-5, CU2-O3, CU2-O4, OP-8/CU-4, OP-7, OP-10; lalu CB-1–CB-4 (UW-37, UW-26) |
+| 4 | Keputusan owner | D-01–D-25 tercatat; **45** pertanyaan baru AWAITING OWNER setelah revisi §17.4 (OP-5, OP-7, OP-8/CU-4, OP-9, OP-10, OP-11, OD-15, CU-3, CU-5, CU-7, CU-9, CU-10, CU-11, CU2-O3, CU2-O4, CU2-O5, LX CU-6) |
+| 5 | Ketergantungan kritis | Gelombang 1 untuk CB-0: CU-3, CU-5, CU2-O5, OP-5, CU2-O3, CU2-O4, OP-8-Q1–Q3/CU-4, OP-7, OP-10; lalu CB-1–CB-4 (UW-37, UW-26) |
 
 **PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
 prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
 PY:F-01–F-15: **NOT VERIFIED**. CT-1–CT-12: **NOT VERIFIED**.
+
+### 17.4 Revisi setelah review PR #24 (F-01–F-09)
+
+| Temuan | Perbaikan |
+|---|---|
+| F-01 | Klaim bahwa XE-C (dua slot) otomatis sesuai aturan satu-award dicabut; rekomendasi diganti XE-B (satu award per `xp_id` saat pertama ≥ 75); identitas komponen vs aktivitas lab, aktivitas tidak dinilai, milestone terpisah; contoh dihitung ulang (4.660 XP → level 10; tanpa milestone 3.760 → level 9) |
+| F-02 | Restore M-1 dapat menurunkan XP/level/streak (penggantian snapshot, bukan penalti); M-2 tidak membuktikan ledger lengkap; validasi XV-1–XV-6; identitas pensiun vs rusak; tanpa perbaikan diam-diam; perlakuan → OD-15 di UW-33 (usulan); minggu JST setengah terbuka (SK-1–SK-6) |
+| F-03 | Batas 45 menit = durasi standar; TA-B pengecualian eksplisit, maks. 68 menit; dicatat sebelum mulai; tenggat aktif tidak diubah; di luar 128 jam |
+| F-04 | Ujian memakai tulis segera DL-1–DL-9; urutan transaksi tulis vs penguncian; `PERSISTENCE_FAILURE` vs input belum tersimpan; tanpa jaminan durabilitas tanpa syarat; skenario DG-1–DG-8 |
+| F-05 | LX-1–LX-9: per eksekusi vs agregat (nilai OPEN), urutan deterministik, isolasi state, tanpa klaim kesetaraan, pencatatan mode/versi, review sebelum aktivasi TB-A |
+| F-06 | Contoh A.4 dihitung ulang langkah demi langkah dari komposisi (hasil sama: 33, 18, 10, ditolak); ujian + review muat di U; OP-5-Q5 kini mencakup EX-1–EX-13 |
+| F-07 | Poin Git integer (CR-5 3/3/2/2; W15 K1 6 × 10); pemetaan CE-S ke anggaran 10 lewat komposisi; validasi berkas final vs commit; klaim tanda tangan fungsi dicabut; skema SQL dengan tabel `modul`; tie-break Q3; aturan real dan `ORDER BY`; CP-6 capstone tetap dapat diulang |
+| F-08 | PB-A direvisi: konversi dasar di W9; W10 tanpa percabangan/exception; prasyarat tiap proyek diperiksa |
+| F-09 | Matriks 45 pertanyaan dengan ID unik yang cocok dengan lembar; asumsi 6 soal concept dan 3 aktivitas lab diajukan (CU2-O5-Q1); CB-0 tetap provisional; 64 komponen NOT STARTED |
+
+Jumlah status tidak berubah (§17.2): 25 / 4 / 19 / 3 / 5 = 56. Jalur P
+25/43. Kurikulum 0/64.
 

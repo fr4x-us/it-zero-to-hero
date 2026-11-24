@@ -78,14 +78,30 @@ durasi   = max(10, durasi)                                   [batas bawah]
 syarat   : durasi ≤ 45, bila tidak blueprint ditolak saat review konten (bukan dipotong)
 ```
 
-Contoh (diperiksa dengan aritmetika bilangan bulat 2026-11-24):
+Contoh — dihitung ulang secara independen dari komposisi soal (revisi
+review PR #24, F-06; aritmetika bilangan bulat, hasil sama dengan versi
+sebelumnya, tidak ditemukan inkonsistensi):
 
-| Blueprint | Komposisi | S | S_buffer | Durasi |
+| Langkah | Standar W1–W15 | W16 | 5 × TF-1 D1 | 30 × TF-4 D3 |
 |---|---|---|---|---|
-| Standar W1–W15 (20 soal, 8/8/4) | TF-1: 5×D1, 4×D2, 1×D3; TF-2: 1×D1, 1×D2, 1×D3; TF-3: 2×D1, 1×D2, 1×D3; TF-4: 1×D2, 1×D3; TF-5: 1×D2 | 1.650 | 1.815 | ⌈30,25⌉ + 2 = **33 menit** |
-| W16 (10 soal, 4/4/2) | TF-1: 3×D1, 2×D2; TF-3: 1×D1, 1×D2; TF-4: 1×D2, 1×D3; TF-2: 1×D3 | 840 | 924 | ⌈15,4⌉ + 2 = **18 menit** |
-| 5 soal TF-1 D1 | — | 225 | 248 | 7 → batas bawah **10 menit** |
-| 30 soal TF-4 D3 | — | 4.500 | 4.950 | 85 > 45 → **blueprint ditolak** |
+| Komposisi | TF-1: 5×D1, 4×D2, 1×D3 · TF-2: 1×D1, 1×D2, 1×D3 · TF-3: 2×D1, 1×D2, 1×D3 · TF-4: 1×D2, 1×D3 · TF-5: 1×D2 | TF-1: 3×D1, 2×D2 · TF-2: 1×D3 · TF-3: 1×D1, 1×D2 · TF-4: 1×D2, 1×D3 | TF-1: 5×D1 | TF-4: 30×D3 |
+| Jumlah soal | 10 + 3 + 4 + 2 + 1 = **20** | 5 + 1 + 2 + 2 = **10** | 5 | 30 |
+| Distribusi D1/D2/D3 | (5+1+2) / (4+1+1+1+1) / (1+1+1+1) = **8/8/4** | (3+1) / (2+1+1) / (1+1) = **4/4/2** | 5/0/0 | 0/0/30 |
+| Waktu dasar | 10·45 + 3·75 + 4·60 + 2·90 + 1·75 = 450 + 225 + 240 + 180 + 75 = **1.170** | 5·45 + 1·75 + 2·60 + 2·90 = 225 + 75 + 120 + 180 = **600** | 5·45 = **225** | 30·90 = **2.700** |
+| Tambahan kesulitan | 8·30 + 4·60 = 240 + 240 = **480** | 4·30 + 2·60 = 120 + 120 = **240** | 0 | 30·60 = **1.800** |
+| `S` | **1.650** | **840** | **225** | **4.500** |
+| `S_buffer = ⌈S·11/10⌉` | ⌈1.815⌉ = **1.815** | ⌈924⌉ = **924** | ⌈247,5⌉ = **248** | ⌈4.950⌉ = **4.950** |
+| `⌈S_buffer/60⌉` | ⌈30,25⌉ = 31 | ⌈15,4⌉ = 16 | ⌈4,13…⌉ = 5 | ⌈82,5⌉ = 83 |
+| `+ 2` menit | 33 | 18 | 7 | 85 |
+| Batas | 10 ≤ 33 ≤ 45 | 10 ≤ 18 ≤ 45 | 7 < 10 → **10** | 85 > 45 → **blueprint ditolak** |
+| **Durasi** | **33 menit** | **18 menit** | **10 menit** | — |
+| Maks. poin (TP-B) | 8·2 + 8·3 + 4·4 = **56** | 4·2 + 4·3 + 2·4 = **28** | 10 | — |
+
+Kecocokan dengan alokasi jam (CU2-O3, usulan): U W1–W15 = 0,75 jam = 45
+menit = ujian 33 menit + review umpan balik terencana 12 menit; U W16 = 0,5
+jam = 30 menit = ujian 18 menit + review 12 menit. Blueprint modul lain yang
+menghasilkan durasi berbeda (≤ 45) tetap harus muat dalam U modulnya bersama
+review; bila tidak, alokasi diubah lewat keputusan owner, tidak diam-diam.
 
 Opsi lain: TD-B durasi tetap per modul (tidak memenuhi M-07 "bukan timer
 global tunggal"); TD-C durasi = jumlah soal × 90 detik (mengabaikan jenis
@@ -107,11 +123,68 @@ dan kompleksitas). Keduanya tidak direkomendasikan.
 | EX-10 | Manipulasi jam dan toleransi NTP mengikuti keputusan OP-6 (UW-28), tidak diputuskan di sini | ASM:E-01–E-04 |
 | EX-11 | Jam tenang hanya mengatur notifikasi; tidak menghentikan timer | ASM:E-08, BL:57 |
 
-Opsi aksesibilitas (baru, butuh keputusan): **TA-A** tanpa perpanjangan;
-**TA-B** pengaturan aksesibilitas "waktu ujian ×1,5" yang dipilih sebelum
-attempt dimulai dan dicatat pada attempt (durasi = `⌈durasi × 3 / 2⌉`).
-TA-B mendukung BL:71 (UI aksesibel); risikonya hanya terhadap catatan
-belajar pribadi (D-17).
+### A.5a Aksesibilitas waktu ujian (revisi F-03)
+
+Batas **45 menit** berlaku untuk **durasi standar** hasil rumus A.4
+(syarat review blueprint). Perpanjangan aksesibilitas, bila disetujui, adalah
+**pengecualian eksplisit** terhadap durasi standar, bukan perubahan rumus.
+
+| Opsi | Isi | Durasi maksimum | Kelebihan | Kekurangan |
+|---|---|---|---|---|
+| TA-A | Tanpa perpanjangan | 45 menit | Paling sederhana | Pelajar dengan kebutuhan aksesibilitas tidak terakomodasi |
+| **TA-B** | Pengaturan aksesibilitas "waktu ujian ×1,5": durasi diperpanjang = `⌈durasi_standar × 3 / 2⌉` | `⌈45 × 3 / 2⌉` = **68 menit** | Proporsional terhadap panjang ujian | Ujian standar 33 menit menjadi `⌈49,5⌉` = 50 menit |
+| TA-C | Tambahan tetap +15 menit | 60 menit | Mudah dipahami | Tidak proporsional (ujian 10 menit mendapat +150%) |
+
+Aturan bersama TA-B/TA-C (usulan):
+
+| ID | Aturan |
+|---|---|
+| TA-1 | Pengaturan dipilih **sebelum** attempt dimulai; durasi standar, faktor/tambahan, dan durasi diperpanjang dicatat pada attempt dalam transaksi EX-1 |
+| TA-2 | Tenggat attempt yang sedang berjalan **tidak pernah** diubah, termasuk bila pengaturan diubah di tengah ujian; perubahan berlaku untuk attempt berikutnya |
+| TA-3 | Waktu tambahan berada **di luar** 128 jam nominal (sama seperti remedial); tidak mengurangi alokasi materi, lab, atau aktivitas lain |
+| TA-4 | Riwayat attempt menampilkan bahwa perpanjangan dipakai (catatan belajar pribadi, D-17); tidak mengubah skor |
+
+Hubungan dengan 128 jam: durasi ujian standar + review umpan balik ≤ U
+modul (A.4). Waktu remedial dan perpanjangan aksesibilitas bergantung pada
+pelajar dan berada di luar nominal.
+
+### A.5b Persistensi jawaban di sekitar tenggat (revisi F-04)
+
+Ujian teori **tidak** memakai debounce AS-B. Jawaban ujian pendek (pilihan,
+urutan, jawaban singkat), sehingga setiap perubahan ditulis segera (AS-A
+untuk ujian).
+
+| ID | Aturan (usulan) |
+|---|---|
+| DL-1 | Setiap perubahan jawaban ujian menjadi satu permintaan tulis yang masuk antrean tulis tunggal per attempt (urutan FIFO) |
+| DL-2 | Transaksi tulis jawaban membaca tenggat dan waktu commit di dalam transaksi; jawaban dengan waktu commit **≥ tenggat** ditolak (tenggat tidak termasuk, interval `[startedAt, tenggat)`) |
+| DL-3 | UI menonaktifkan input saat sisa waktu tampilan mencapai 0; ini hanya kenyamanan. Penentu sah tetap DL-2 |
+| DL-4 | Serahkan manual: (1) input dikunci, (2) permintaan tulis yang sudah antre diselesaikan (flush), (3) transaksi penguncian `SUBMITTED` dijalankan setelah antrean kosong; tulis yang datang sesudah penguncian ditolak |
+| DL-5 | Tenggat tercapai saat aplikasi terbuka: penguncian dijalankan di antrean yang sama; tulis yang belum commit sebelum tenggat tidak dihitung (DL-2) |
+| DL-6 | Input yang diketik tetapi belum ter-commit saat tenggat, process death, atau restart = **input belum tersimpan**: tidak dihitung, dan status UI saat itu tidak pernah menampilkan "Tersimpan" untuknya |
+| DL-7 | Status autosave jujur: "Menyimpan…" saat permintaan antre, "Tersimpan" hanya setelah commit berhasil, "Gagal menyimpan" bila tulis gagal (dengan percobaan ulang otomatis selama sebelum tenggat) |
+| DL-8 | **Kegagalan penyimpanan** (tulis ditolak sistem berkas/database, bukan karena tenggat) dicatat pada attempt sebagai `PERSISTENCE_FAILURE` beserta waktu kejadian; ini kegagalan infrastruktur, bukan input pelajar yang belum tersimpan |
+| DL-9 | Tidak ada jaminan durabilitas tanpa syarat: jaminan "jawaban yang ditandai Tersimpan tidak hilang" hanya berlaku untuk commit yang berhasil; bila penyimpanan gagal atau tertunda, jaminan tidak berlaku dan DL-8 berlaku |
+
+Perlakuan attempt dengan `PERSISTENCE_FAILURE` (butuh keputusan):
+
+| Opsi | Isi | Kelebihan | Kekurangan |
+|---|---|---|---|
+| **SF-A** | Dinilai dengan jawaban yang tersimpan; ditandai; tetap dihitung | Riwayat utuh; skor terbaik tidak pernah turun, sehingga attempt rendah tidak merugikan; remedial tanpa batas | Attempt itu mungkin tidak mencerminkan kemampuan |
+| SF-B | Disimpan tetapi **tidak dihitung** untuk skor terbaik (seperti `EVALUATION_ERROR`) | Paling netral terhadap kegagalan sistem | Attempt dengan skor sah ikut hilang dari perhitungan; menambah state |
+
+Skenario (Given–When–Then; dokumentasi, bukan test yang dijalankan):
+
+| ID | Given | When | Then |
+|---|---|---|---|
+| DG-1 | Tenggat 10:00:00; jawaban soal 5 diubah 09:59:59,8; commit 09:59:59,9 | Tenggat tercapai | Jawaban soal 5 dihitung |
+| DG-2 | Tenggat 10:00:00; jawaban diubah 09:59:59,9; commit tercatat 10:00:00,1 | Transaksi tulis berjalan | Ditolak (DL-2); nilai sebelumnya yang tersimpan dipakai |
+| DG-3 | Pelajar menekan "Kumpulkan" 09:58; dua tulis masih antre | Penguncian | Dua tulis selesai lebih dulu, lalu `SUBMITTED` (DL-4) |
+| DG-4 | Ujian berjalan; 3 jawaban berstatus "Tersimpan" | Process death, dibuka 09:59 | 3 jawaban kembali; sisa waktu dihitung dari tenggat |
+| DG-5 | Ujian berjalan; jawaban terakhir berstatus "Menyimpan…" | Process death sebelum commit | Jawaban terakhir tidak ada (DL-6); tidak pernah ditampilkan "Tersimpan" |
+| DG-6 | Ujian berjalan | Restart perangkat, dibuka setelah tenggat | Attempt dikunci dan dinilai dengan jawaban tersimpan (EX-6, bila disetujui) |
+| DG-7 | Penyimpanan penuh; tulis gagal 09:50 | Percobaan ulang gagal sampai tenggat | Status "Gagal menyimpan"; attempt ditandai `PERSISTENCE_FAILURE`; perlakuan SF-A/SF-B |
+| DG-8 | Tulis gagal 09:50, berhasil pada percobaan ulang 09:51 | Tenggat tercapai | Jawaban dihitung; kejadian kegagalan tetap tercatat |
 
 ### A.6 Varian remedial dan umpan balik
 
@@ -128,15 +201,16 @@ belajar pribadi (D-17).
 
 ### A.7 Rekomendasi OP-5 dan alasan
 
-**TQ-B + TF-1–TF-5 + TP-B + 40/40/20 + rumus A.4 + EX-1–EX-13 + TA-B +
-FB-A.** Alasan pendidikan: blueprint kompetensi menjamin cakupan; poin per
+**TQ-B + TF-1–TF-5 + TP-B + 40/40/20 + rumus A.4 + EX-1–EX-13 + TA-B
+(TA-1–TA-4) + DL-1–DL-9 + SF-A + FB-A.** Alasan pendidikan: blueprint kompetensi menjamin cakupan; poin per
 kesulitan menghargai penalaran; pembahasan langsung adalah umpan balik
 formatif terpenting untuk pelajar mandiri. Implikasi teknis: blueprint dan
 durasi dihitung saat review konten (deterministik, tanpa runtime); attempt
 menyimpan durasi, tenggat, opsi TA, varian, dan versi soal.
 
 Ketergantungan: CU-5 (varian), OP-6 (UW-28, jam), CU-3 (format konten),
-CU2-O3 (alokasi jam; ujian 33 menit muat dalam 0,75 jam penilaian teori).
+CU2-O3 (alokasi jam; ujian 33 menit + review 12 menit = 0,75 jam
+penilaian teori; W16: 18 + 12 menit = 0,5 jam).
 
 ### A.8 Acceptance criteria OP-5
 
@@ -146,7 +220,8 @@ CU2-O3 (alokasi jam; ujian 33 menit muat dalam 0,75 jam penilaian teori).
 | AF-AC-02 | Setiap blueprint modul memenuhi `durasi ≤ 45` menit dan setiap kompetensi ≥ 2 soal |
 | AF-AC-03 | Maks. poin teori per attempt ≤ 10.000 dan bilangan bulat |
 | AF-AC-04 | Aturan EX-1–EX-13 tidak bertentangan dengan ASM §3.1, §5 |
-| AF-AC-05 | Keputusan owner OP-5-Q1–Q7 tercatat → ASM:D-08 terisi (AC UW-27) |
+| AF-AC-05 | Keputusan owner OP-5-Q1–Q8 tercatat → ASM:D-08 terisi (AC UW-27) |
+| AF-AC-05a | Skenario DG-1–DG-8 tertulis dan konsisten dengan DL-1–DL-9 |
 
 ---
 
@@ -252,7 +327,7 @@ setelah crash" hanya dapat dijamin untuk data yang sudah ditulis ke database.
 | Opsi | Isi | Kelebihan | Kekurangan |
 |---|---|---|---|
 | AS-A Setiap perubahan | Tulis transaksi pada setiap ketukan/perubahan | Kehilangan minimum | Penulisan sangat sering saat mengetik kode |
-| **AS-B Bertingkat** | (1) Perubahan diskret (pilih opsi, urutan, pemetaan) disimpan **segera**; (2) teks/kode disimpan setelah jeda ketik **500 ms**, maksimum **5 detik** saat mengetik terus-menerus; (3) flush segera saat `onPause`/`onStop`, sebelum "Jalankan"/"Serahkan", dan saat berpindah aktivitas; (4) indikator "Tersimpan" hanya tampil setelah penulisan berhasil | Seimbang; indikator jujur | Jendela kehilangan ≤ 5 detik pengetikan hanya pada crash/kill tanpa callback |
+| **AS-B Bertingkat** | (1) Perubahan diskret (pilih opsi, urutan, pemetaan) disimpan **segera**; (2) teks/kode lab, mini-project, dan concept disimpan setelah jeda ketik **500 ms**, maksimum **5 detik** saat mengetik terus-menerus; (3) flush segera saat `onPause`/`onStop`, sebelum "Jalankan"/"Serahkan", dan saat berpindah aktivitas; (4) status DL-7. **Ujian teori memakai DL-1–DL-9 (tanpa debounce)** | Seimbang; indikator jujur | Saat penyimpanan sehat, input yang belum ter-commit pada crash/kill tanpa callback ≤ 5 detik pengetikan. **Bukan jaminan tanpa syarat**: bila tulis gagal atau tertunda, berlaku DL-8/DL-9 |
 | AS-C Periodik 30 detik | Simpan berkala | Sederhana | Jendela kehilangan besar |
 
 State kritis yang selalu ditulis segera dan transaksional (tanpa debounce):
@@ -265,8 +340,12 @@ process death". AS-B memenuhi ini untuk pekerjaan yang **ditampilkan sebagai
 tersimpan** (M-07: status autosave terlihat), bukan untuk ketikan dalam
 jendela debounce saat crash. AS-A memenuhi lebih ketat dengan biaya penulisan.
 
+Kegagalan penyimpanan di lab/mini-project/concept: status "Gagal
+menyimpan", percobaan ulang, dan pencatatan kejadian seperti DL-7–DL-8;
+tidak ada batas waktu sesi sehingga tidak ada kehilangan karena tenggat.
+
 Rekomendasi: **RE-A + PI-A + AS-B** (P-03 ditafsirkan sebagai "pekerjaan
-yang ditandai tersimpan tidak pernah hilang"). Alasan pendidikan: pelajar
+yang ditandai tersimpan setelah commit berhasil tidak hilang"). Alasan pendidikan: pelajar
 dapat memperbaiki komponen mana pun untuk mencapai W ≥ 80. Implikasi teknis:
 tidak ada skema yang ditetapkan; pengukuran beban tulis termasuk verifikasi
 setelah implementasi diizinkan (NOT VERIFIED).
@@ -285,13 +364,14 @@ disetujui owner; AF-AC-13 — daftar state kritis tertulis.
 | OP-5-Q2 | Format soal TF-1–TF-5 tanpa esai? | Ya |
 | OP-5-Q3 | Poin: TP-B (D1/D2/D3 = 2/3/4, semua-atau-tidak) dan distribusi 40/40/20? | TP-B |
 | OP-5-Q4 | Rumus durasi A.4 (batas bawah 10 menit; blueprint > 45 menit ditolak)? | Ya |
-| OP-5-Q5 | EX-1–EX-11, termasuk menyetujui ASM:T7/ASM:D-04/ASM:D-05 (dibuka setelah tenggat → dinilai dengan jawaban tersimpan)? | Ya |
-| OP-5-Q6 | Perpanjangan waktu aksesibilitas TA-B (×1,5, dipilih sebelum mulai)? | TA-B |
+| OP-5-Q5 | EX-1–EX-13 (termasuk EX-12 varian per slot dan EX-13 tenggat baru untuk remedial), serta menyetujui ASM:T7/ASM:D-04/ASM:D-05 (dibuka setelah tenggat → dinilai dengan jawaban tersimpan)? | Ya |
+| OP-5-Q6 | Aksesibilitas: TA-A / TA-B (×1,5, maks. 68 menit) / TA-C (+15 menit), dengan TA-1–TA-4 (dicatat sebelum mulai, tenggat aktif tidak diubah, di luar 128 jam)? | TA-B |
 | OP-5-Q7 | Umpan balik FB-A (kunci dan pembahasan setelah dinilai)? | FB-A |
+| OP-5-Q8 | Persistensi di sekitar tenggat DL-1–DL-9 dan perlakuan `PERSISTENCE_FAILURE` (SF-A/SF-B)? | DL-1–DL-9 + SF-A |
 | OP-7-Q1 | SB-A (serah per aktivitas dalam attempt RA-1) dan SB-1–SB-12? | Ya |
 | OP-9-Q1 | UL-1–UL-10 dengan PV-A dan RV-A (`PASSED` tidak dicabut oleh revisi konten)? | Ya |
 | OP-10-Q1 | RE-A (semua komponen boleh diulang saat `NOT_PASSED`)? | RE-A |
 | OP-10-Q2 | PI-A (perbaikan setelah lulus, tanpa XP baru, status tidak turun)? | PI-A |
-| OP-11-Q1 | AS-B (500 ms / maks. 5 detik / flush siklus hidup) dan tafsiran P-03 untuk pekerjaan yang ditandai tersimpan? | AS-B |
+| OP-11-Q1 | AS-B untuk lab/mini-project/concept (500 ms / maks. 5 detik saat penyimpanan sehat / flush siklus hidup / status jujur), ujian memakai DL-1–DL-9, dan tafsiran P-03 untuk commit yang berhasil? | AS-B |
 
 Status: **AWAITING OWNER**. UW-27, UW-29, UW-31, UW-32 tetap BLOCKED.

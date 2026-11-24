@@ -330,3 +330,10 @@ Dicatat dari [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md).
 
 Tidak ada aturan di §1–§12 yang diubah. T7, D-04, D-05 tetap PROPOSED
 sampai OP-5-Q5 dijawab.
+
+Revisi review PR #24 (usulan, OPEN): interaksi autosave dan tenggat ujian
+dirinci sebagai DL-1–DL-9 dan skenario DG-1–DG-8
+([ASSESSMENT_FLOW_DECISION_SHEETS.md](ASSESSMENT_FLOW_DECISION_SHEETS.md)
+§A.5b), memperjelas E-06 dan P-03 tanpa mengubahnya. Kelayakan XP diusulkan
+XE-B (satu award per identitas, sesuai X-01); validasi ledger saat restore
+diusulkan sebagai OD-15 (UW-33).

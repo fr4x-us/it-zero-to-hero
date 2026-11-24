@@ -52,7 +52,7 @@ tabel ini menunjukkan keputusan owner yang lebih baru.
 | D-21 | OWNER APPROVED (2026-11-24) | Kurikulum lengkap (64 komponen) wajib sebelum PLANNING CLEAR | PL-Q2 | UW-37 |
 | D-22 | OWNER APPROVED (2026-11-24) | UW-21, UW-38, UW-40 ditunda ke milestone; AC tetap; bukan penyelesaian | PL-Q3 | Ketiga butir |
 | D-23 | OWNER APPROVED (2026-11-24) | OP-4: CE-B; CE-S1–CE-S5, CE-S3a–S3c; CE-C ditolak; CE-D refleksi tanpa skor; CE-K1–CE-K4; CE-V1–CE-V6; malformed ≠ kegagalan infrastruktur/konten (CE-V7) | OP-4 (OP-4-Q1–Q5) | UW-26 tetap OPEN sampai bank soal 16 modul ada |
-| D-24 | OWNER APPROVED (2026-11-24) | CU-6: LW-B, LR-A, RA-1, TB-B (TB-A cadangan bersyarat), EB-1–EB-5, LA-1–LA-4, IE-1–IE-5; 3.000 ms kode pelajar per latihan; D-10 tetap | CU-6 (CU-6-Q1–Q6) | Klarifikasi LX-1–LX-5 (CU-6-Q7–Q11); runtime NOT VERIFIED; UW-36 tetap BLOCKED |
+| D-24 | OWNER APPROVED (2026-11-24) | CU-6: LW-B, LR-A, RA-1, TB-B (TB-A cadangan bersyarat), EB-1–EB-5, LA-1–LA-4, IE-1–IE-5; 3.000 ms kode pelajar per latihan; D-10 tetap | CU-6 (CU-6-Q1–Q6) | Klarifikasi LX-1–LX-9 (CU-6-Q7–Q12); runtime NOT VERIFIED; UW-36 tetap BLOCKED |
 | D-25 | OWNER APPROVED (2026-11-24) | RM-Q1(a–d): UW-15 di jalur V (AC tetap); OD-11–OD-14 di UW-33 bersama OD-5–OD-9; CU2-O3 dan CU2-O4 di UW-36; izin pengukuran kripto = prasyarat UW-15 | RM-Q1 | Tidak ada pengukuran/benchmark/prototipe/implementasi yang diizinkan |
 
 Status Batch 02 "Tetap OPEN" yang terdampak: O-01 → provisional (D-06);

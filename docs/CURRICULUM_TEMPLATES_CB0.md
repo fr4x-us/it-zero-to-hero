@@ -11,7 +11,7 @@ keputusannya.
 
 Legenda "Bergantung": **—** = tidak bergantung keputusan terbuka;
 `OP-5`, `OP-7`, `OP-8`, `OP-9`, `OP-10`, `CU-3`, `CU-5`, `CU-7`, `CU-9`,
-`CU-11`, `CU2-O3`, `CU2-O4`, `CU-10` = keputusan yang masih OPEN.
+`CU-11`, `CU2-O3`, `CU2-O4`, `CU2-O5`, `CU-10`, `OD-15` = keputusan yang masih OPEN.
 
 ## TPL-01 Ikhtisar modul
 
@@ -69,7 +69,7 @@ Legenda "Bergantung": **—** = tidak bergantung keputusan terbuka;
 | `activity_id` | `mod-wNN.lab.act-nn` | OP-8 (identitas XP) |
 | Jenis lab | Python, SQL, HTML/CSS, Git, biner/Boolean, flowchart, klasifikasi | CU-7 (SQL/HTML/Git) |
 | Instruksi + kode/skema awal | — | — |
-| Test (ID, input, output diharapkan, poin integer, `tᵢ` ms, terlihat/tersembunyi) | LW-B, LR-A, TB-B (`Σ tᵢ ≤ 3.000` ms) | — (D-24); LX-1–LX-5 OPEN |
+| Test (ID, input, output diharapkan, poin integer, `tᵢ` ms, terlihat/tersembunyi) | LW-B, LR-A, TB-B (`Σ tᵢ ≤ 3.000` ms) | — (D-24); LX-1–LX-9 OPEN |
 | Kode hasil dan kasus khusus | §5–§6 CU-6 | — (D-24) |
 | Varian | Data/fixture berbeda | CU-5 |
 | Penyerahan | Per aktivitas dalam attempt RA-1 | OP-7 |

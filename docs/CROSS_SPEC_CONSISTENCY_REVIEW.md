@@ -2,7 +2,7 @@
 
 Status: dokumentasi · tinjauan atas **usulan** batch ini terhadap keputusan
 yang berlaku. Tanggal: **2026-11-24**. Basis: `main` = `928e278`. Kode
-rujukan: `XS:`. Konflik dicatat eksplisit, **tidak** diselesaikan dengan
+rujukan: `XS:`. Direvisi setelah review PR #24 (F-09). Konflik dicatat eksplisit, **tidak** diselesaikan dengan
 keputusan baru atas nama owner.
 
 Dokumen yang ditinjau:
@@ -32,7 +32,7 @@ Dokumen yang ditinjau:
 | XS-12 | minSdk 29 (D-05) | — | — | SQ-1 membatasi fitur SQL karena versi SQLite bervariasi (NOT VERIFIED) | — | — | — | Konsisten; verifikasi saat implementasi |
 | XS-13 | Asia/Tokyo, 00:00 JST (CAL:Z-01–Z-03) | EX-1 instant UTC | ST-C minggu JST | — | — | — | — | Konsisten |
 | XS-14 | Aksesibilitas (BL:71, CC-10) | TA-B (usulan baru) | — | A.2, TPL-11 | — | — | — | Konsisten; TA-B butuh keputusan |
-| XS-15 | XP sekali per identitas, tanpa penalti (BL:35, TD:22) | PI-A tanpa XP baru | XE-C dua slot (lihat XS-C6) | VA-5 | — | — | — | Konsisten dengan catatan |
+| XS-15 | XP sekali per identitas, satu entri per identitas (BL:35, TD:22, TD:38, ASM:X-01–X-03, LA-4) | PI-A tanpa XP baru | XE-B: satu award per `xp_id`; XE-C tidak direkomendasikan | VA-5 | — | — | — | Konsisten (setelah revisi F-01) |
 | XS-16 | Lab/proyek tanpa batas waktu (BL:37) | SB-8 | — | — | — | — | Timeout per test hanya batas eksekusi kode, bukan batas sesi | Konsisten |
 | XS-17 | Unlock linear, pratinjau modul berikutnya (D-01 M-04) | UL-1–UL-10, PV-A | XP tidak membuka modul | — | — | — | — | Konsisten |
 | XS-18 | Konten Python diterima sebagai perencanaan sebelum runtime (RM:RV-1–RV-6) | — | — | CU-11 | CP-4 | — | — | Konsisten |
@@ -46,18 +46,25 @@ Dokumen yang ditinjau:
 | XS-C3 | Teori TP-B semua-atau-tidak vs kredit parsial D-23 untuk concept explanation | Dua aturan berbeda untuk format serupa | Disengaja (komponen berbeda); TP-C tersedia bila owner ingin satu aturan | OP-5-Q3 |
 | XS-C4 | ASM:T7, ASM:D-04, ASM:D-05 masih PROPOSED (RECOVERED), tidak tercakup D-01 M-07 | Perilaku dibuka-setelah-tenggat belum disetujui | Diajukan eksplisit | OP-5-Q5 |
 | XS-C5 | ST-A (streak harian) bertentangan dengan D-01 M-03 (tanpa tenggat kalender wajib, jadwal akhir pekan/shift) | Streak putus secara normal → terasa sebagai hukuman | ST-C mingguan | OP-8-Q4 |
-| XS-C6 | XE-C memberi XP `mastery` pada remedial pertama yang mencapai 75 | Dapat dibaca sebagai "remedial memberi XP"; sebenarnya slot berbeda yang diberikan sekali | Butuh persetujuan eksplisit; XE-A/XE-B tersedia | OP-8-Q2 |
+| XS-C6 | Versi awal batch ini menyebut XE-C (dua slot per aktivitas) otomatis sesuai aturan satu-award — **klaim dicabut** | XE-C bertentangan dengan ASM:X-01 tanpa tafsiran ulang | Rekomendasi diganti XE-B; award pertama pada attempt remedial dijelaskan sebagai award pertama (XE-2), butuh konfirmasi | OP-8-Q2 |
 | XS-C7 | CPP §5 versi lama (2,5/1,5/2,5/1,0/0,5) vs CU2-O3 §D | Dua usulan jam berbeda | CPP §5 diganti rujukan ke CU2-O3 (keduanya PROPOSED) | CU2-O3-Q1 |
 | XS-C8 | HTML pratinjau butuh WebView (BL:45 "runtime compatibility requires validation") | Pratinjau mungkin tidak tersedia | Pratinjau tidak dinilai (HT-5) | CU-7-Q2 |
-| XS-C9 | TB-A sebagai cadangan dapat memberi hasil berbeda dari TB-B pada timeout kode pelajar | Kesetaraan skor tidak sempurna | LX-5: satu mode per versi konten, dicatat pada attempt, butuh keputusan owner | CU-6-Q10, Q11 |
+| XS-C9 | TB-A dan TB-B dapat memberi hasil berbeda (timeout bersama, crash, output 64 KB bersama, state terbawa) | **Tidak ada klaim kesetaraan** | LX-5–LX-9: urutan deterministik, isolasi, review sebelum aktivasi, pencatatan mode/versi, attempt historis tidak dinilai ulang | CU-6-Q10–Q12 |
 | XS-C10 | Rubrik capstone memiliki CR-6 (penjelasan) dan modul W16 juga memiliki komponen Concept 10% | Risiko dianggap penghitungan ganda | Dipisah eksplisit: CR-6 bagian skor Mini-project W16; komponen Concept W16 dinilai sendiri | CU-9-Q2 |
 | XS-C11 | CUR §5 "Skor: persentase bobot test case" vs D-12 poin mentah | Bahasa lama | D-12/D-24 berlaku; CUR §5 historis | Tidak |
 | XS-C12 | ASM §2.3 OPEN: apakah `PASSED` dapat berubah karena revisi konten | — | UL-9/RV-A: tidak dicabut | OP-9-Q1 |
-| XS-C13 | TA-B (perpanjangan waktu aksesibilitas) adalah fitur baru di luar D-01 M-07 | Menambah aturan ujian | Diajukan sebagai opsi; tidak diasumsikan | OP-5-Q6 |
+| XS-C13 | TA-B (perpanjangan waktu aksesibilitas) adalah fitur baru di luar D-01 M-07 | Menambah aturan ujian | Pengecualian eksplisit; maks. 68 menit; dicatat sebelum mulai; di luar 128 jam (TA-1–TA-4) | OP-5-Q6 |
+| XS-C14 | Restore M-1 dari snapshot lama dapat menurunkan XP/level/streak vs "tanpa penalti XP" (BL:35) | Bukan penalti progres, tetapi penggantian data yang dipilih pengguna | Dibedakan eksplisit; pratinjau menampilkan perubahan (XP §8.1) | OP-8-Q6 |
+| XS-C15 | Pelestarian attempt M-2 tidak membuktikan ledger XP lengkap | Ledger rusak dapat masuk | Validasi XV-1–XV-6; perlakuan RX-A/RX-B dilacak sebagai OD-15 di UW-33 (perluasan pelacakan, butuh persetujuan) | OD-15-Q1 |
+| XS-C16 | AS-B (debounce) vs EX-5 (tenggat) | Jawaban di jendela debounce dapat hilang di tenggat | Ujian memakai tulis segera DL-1–DL-9; tidak ada jaminan durabilitas tanpa syarat | OP-5-Q8, OP-11-Q1 |
+| XS-C17 | Klaim awal "tanda tangan fungsi tetap memaksa kondisi dan loop" | Klaim tidak benar | Dicabut; CR-2 hanya menguji perilaku | CU-9-Q2 |
+| XS-C18 | Versi awal W9 tanpa konversi angka padahal proyek W9 menghitung dari input | Prasyarat hilang | PB-A direvisi: konversi dasar di W9; W10 tanpa percabangan/exception | CU-11-Q1 |
+| XS-C19 | Asumsi 6 soal concept dan 3 aktivitas lab per modul dipakai dalam perhitungan beban | Belum disetujui | Diajukan eksplisit | CU2-O5-Q1 |
 
 ## 3. Kesimpulan
 
 Tidak ditemukan usulan yang mengubah blueprint, bobot, ambang, D-01–D-25,
-atau semantik skor yang disetujui. Tiga belas ketegangan (XS-C1–XS-C13)
-dicatat dan dipetakan ke pertanyaan owner. Semua klaim runtime tetap
+atau semantik skor yang disetujui. Sembilan belas ketegangan (XS-C1–XS-C19)
+dicatat dan dipetakan ke pertanyaan owner; tidak ada keputusan baru yang
+dicatat sebagai disetujui. Semua klaim runtime tetap
 **NOT VERIFIED**.
