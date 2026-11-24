@@ -10,7 +10,9 @@ purpose: "Penjelasan ulang dan latihan tambahan per kompetensi untuk persiapan r
 Gunakan bagian yang sesuai dengan kompetensi yang belum dikuasai (umpan
 balik ujian menampilkan rincian per kompetensi, FB-A). Latihan di sini tidak
 dinilai dan tidak memberi XP. Attempt remedial memakai **varian setara**
-yang dipilih bergiliran (VA-2); remedial tidak dibatasi jumlahnya. Semua
+yang dipilih menurut VA-1–VA-6: varian dengan pemakaian paling sedikit,
+bila seri bukan varian attempt sebelumnya, bila masih seri indeks terkecil
+(VA-2; pemakaian ulang VA-3); remedial tidak dibatasi jumlahnya. Semua
 contoh fiktif.
 
 ## R-CIA — Tujuan keamanan (LO1)
@@ -35,8 +37,9 @@ memasang program tersembunyi. *Jawaban:* trojan.
 
 ## R-AUTH — Autentikasi dan kata sandi (LO3)
 
-**Ingat kembali:** MFA = dua faktor dari jenis **berbeda**; OTP tidak
-dibagikan; kombinasi PIN = 10 dikalikan sebanyak jumlah digit.
+**Ingat kembali:** MFA = **dua faktor atau lebih** dari jenis **berbeda**;
+OTP tidak dibagikan; jumlah PIN berbeda = 10 dikalikan sebanyak jumlah digit
+(digit boleh diawali 0 dan berulang).
 
 **Latihan tambahan:** (1) PIN 2 digit → kombinasi? (2) Apakah sidik jari
 + wajah termasuk MFA? *Jawaban:* (1) 100; (2) bukan — keduanya "yang
@@ -45,8 +48,9 @@ melekat padamu".
 ## R-PHISH — Alamat situs (LO4)
 
 **Ingat kembali:** nama host = setelah `://` sampai `/` pertama; domain
-terdaftar = dua bagian terakhir (model W4); subdomain dan path dapat
-menipu; HTTPS bukan bukti kejujuran.
+terdaftar = dua bagian terakhir (model W4, hanya untuk bentuk alamat W4);
+subdomain dan path dapat menipu; HTTPS = sambungan terenkripsi ke nama
+domain itu, bukan bukti identitas organisasi atau kejujuran.
 
 **Latihan tambahan:** domain terdaftar `https://kantin.example.pesan-cepat.test/menu`?
 *Jawaban:* `pesan-cepat.test` — bukan milik `kantin.example`.
@@ -62,10 +66,11 @@ antimalware — mengurangi risiko. Cadangan 3-2-1: 3 salinan, 2 jenis media,
 
 ## R-INCIDENT — Respons insiden dan etika (LO6)
 
-**Ingat kembali:** hentikan → amankan → pulihkan → laporkan; pakai kanal
-resmi; libatkan orang dewasa/pengelola IT; jangan mengakses milik orang
-lain tanpa izin.
+**Ingat kembali:** hentikan → amankan → pulihkan; laporkan sedini mungkin
+(boleh bersamaan); pakai kanal resmi; libatkan orang dewasa/pengelola IT;
+jangan mengakses milik orang lain tanpa izin.
 
-**Latihan tambahan:** akun game dipakai orang lain. Urutkan: aktifkan
-MFA · ganti sandi dari perangkat aman · laporkan ke layanan game.
-*Jawaban:* ganti sandi → aktifkan MFA → laporkan.
+**Latihan tambahan:** akun game dipakai orang lain. Urutkan dua langkah:
+aktifkan MFA · ganti sandi dari perangkat aman. *Jawaban:* ganti sandi
+dulu (MFA diatur setelah masuk dengan sandi baru). Melapor ke layanan game
+dapat dilakukan kapan saja, sebaiknya sedini mungkin.

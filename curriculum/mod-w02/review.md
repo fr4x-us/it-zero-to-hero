@@ -2,7 +2,7 @@
 module_id: mod-w02
 content_version: "1.0"
 template: TPL-19, TPL-20
-review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1. Belum direview ChatGPT; belum diterima owner"
+review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1 + koreksi konsolidasi F-28–F-70. Review independen PR #27: REQUEST CHANGES → dikoreksi; re-review BELUM; belum diterima owner"
 ---
 
 # W2 — Review Kualitas, Kesetaraan Varian, dan Bukti
@@ -13,7 +13,7 @@ review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1. Belum
 |---|---|
 | Dokumentasi diproduksi | **YA** (CB-1) |
 | Review mandiri penyusun | **YA** (dokumen ini) |
-| Review ChatGPT | **BELUM** |
+| Review independen (ChatGPT) | PR #27: **REQUEST CHANGES** (F-28–F-70) → dikoreksi; **re-review BELUM** |
 | Diterima owner | **BELUM** |
 | Runtime diverifikasi | Tidak berlaku / tidak diklaim (W2 tanpa runtime; aplikasi belum ada) |
 | Durasi diuji dengan pelajar | **TIDAK** |
@@ -114,9 +114,9 @@ jebakan PDF bukan-proyek dan pemeriksaan salin-vs-pindah (E03, E04).
 
 Tepat **1** keadaan akhir memenuhi semua pemeriksaan K1 dan K3 (nama folder
 tetap; lokasi setiap berkas ditentukan N2/N3; tanpa folder/berkas
-tambahan); urutan operasi bebas. Contoh E01–E16 di `project/rubric.yaml`
+tambahan); urutan operasi bebas. Contoh E01–E21 di `project/rubric.yaml`
 dihitung ulang dengan evaluator dokumentasi (aturan `field_rules` dan
-`criteria`): **16/16 cocok** (K1, K2, K3, total).
+`criteria`): **22/22 cocok** setelah koreksi (K1, K2, K3, total; termasuk E05b dan E16–E21).
 
 | Contoh | K1 | K2 | K3 | Total (K4 = 10) |
 |---|---|---|---|---|
@@ -235,7 +235,7 @@ remedial, `spec.md` lab dan proyek).
 | QC | Hasil | Bukti |
 |---|---|---|
 | QC-01 maksimum dapat dicapai | PASS | §4.1, §4.4 |
-| QC-02 contoh skor cocok aturan | PASS | §4.1 (CE-S3), §4.4 (16/16), §4.5 |
+| QC-02 contoh skor cocok aturan | PASS | §4.1 (CE-S3), §4.4 (22/22), §4.5 |
 | QC-03 konversi satuan | NOT APPLICABLE (tidak ada konversi satuan di W2; MB pada tabel proses hanya dibaca) | — |
 | QC-04 kesetaraan varian | PASS | §6 |
 | QC-05 model sederhana dilabeli | PASS | §7; asumsi tertulis di stem s06, s10, s16, s17 |
@@ -289,7 +289,7 @@ mekanismenya di aplikasi belum ada (tidak ada klaim implementasi).
 | Reviewer | Claude (penyusun), review mandiri |
 | Tanggal | 2026-11-24 |
 | Basis | `main` = `ab0103e` |
-| Temuan terbuka | Tidak ada yang diketahui. Butuh review ChatGPT dan penerimaan owner |
+| Temuan terbuka | F-55, F-56, F-57, F-59 BLOCKED (rincian asli tidak tersedia); butuh re-review independen dan penerimaan owner. Register: bagian koreksi konsolidasi di akhir dokumen |
 
 Metrik W2 (dihitung dari transkrip sesi; perkiraan ±2 untuk hitungan
 panggilan): panggilan alat ≈ 40 untuk produksi + validasi W2; berkas unik
@@ -301,3 +301,173 @@ kegagalan identik berulang 0; aktivasi skill 0 tambahan (planning-with-files
 dan verification-before-completion sudah dimuat di Fase B); pembaruan
 checkpoint 1; operasi validasi 10 (pemeriksa struktur 5, simulasi 3,
 pemindai V-L 2); pemulihan sesi 0. TOKEN USAGE: **NOT MEASURABLE**.
+
+## 13. Koreksi konsolidasi CB-1 (PR #27, F-28–F-70; 2026-11-24)
+
+Review PR #27 = **REQUEST CHANGES**. Sebelum mengedit diverifikasi: head
+`a9241d33c2cf32e177ca92618df458b78dd6cb98`, base
+`ab0103e4954ead4ded6343d105d73a2729916cd6` (cocok). Koreksi diterapkan pada
+PR #27 yang sama. Status modul: **diproduksi dan dikoreksi; menunggu re-review
+independen dan penerimaan owner** — belum diterima.
+
+### 13.1 Register F-28–F-70 (43 ID, disposisi per ID)
+
+| ID | Lingkup | Disposisi | Bukti |
+|---|---|---|---|
+| F-28 | W3 | CONFIRMED — FIXED | `project/rubric.yaml` K1.c02–c06 membandingkan dengan konstanta `192.168.50.1` (bukan isian F1) + `f1_dependency`; F1 salah tidak lagi menjatuhkan pemeriksaan lain; fixture E18–E21 |
+| F-29 | W4 | CONFIRMED — FIXED | `lab/act-02` `verdict_rule`: A = tidak ada indikator dalam model W4, **bukan** jaminan aman; spesifikasi diselaraskan |
+| F-30 | W4 | CONFIRMED — FIXED | act-01 vA S6 + halaman yang meminta sandi email (bukti perilaku fiktif); label `WIF` = bukti perilaku; les-01: nama mirip saja bukan bukti; proyek S4 diperkuat |
+| F-31 | W3 | NOT REPRODUCED | Blueprint W3: TF-3 tepat 7 slot (s05, s08, s09, s10, s18, s19, s20; dihitung dari `theory/items`); `mod-w03/review.md` komposisi mencantumkan 7 |
+| F-32 | W2 ◀ | CONFIRMED — FIXED | theory s05 vB dan concept s02 vA menyatakan "tidak punya simpan otomatis/pemulihan"; les-02 menjelaskan pengecualian simpan otomatis |
+| F-33 | W2 ◀ | CONFIRMED — FIXED | theory s09 vA opsi a; concept s03 vA opsi d + umpan balik isi/ekstensi/pengaitan; les-03 membedakan isi, ekstensi, pengaitan aplikasi |
+| F-34 | W3 | CONFIRMED — FIXED | theory s01 vA/vB dan act-03 c01: "Model peran W3 … **fungsi**" + rasional kotak router Wi-Fi; les-01 fungsi vs kotak |
+| F-35 | W3 | CONFIRMED — FIXED | concept s04 (R5/R2): TCP mengirim ulang data hilang dan menyusun berurutan **selama sambungan berjalan**; les-03 diselaraskan |
+| F-36 | W4 | CONFIRMED — FIXED | concept s04 opsi/umpan balik: HTTPS = sambungan terenkripsi ke nama domain, bukan bukti organisasi/kejujuran; les-03 tabel empat pertanyaan; remedial R-PHISH |
+| F-37 | W4 | CONFIRMED — FIXED | concept s06 vA ditulis ulang: model "hentikan → amankan" dinyatakan di stem; A prasyarat B; 2 urutan diterima (ABCD, ABDC) — setara dengan vB (2 urutan); petunjuk "Setelah …" yang membocorkan urutan dihapus |
+| F-38 | W4 | CONFIRMED — FIXED | s09/s11, act-03 c03, concept s03, les-02, remedial: digit 0–9, boleh diawali 0 dan berulang, yang dihitung jumlah PIN berbeda; jawaban diverifikasi `10**n` |
+| F-39 | W4 | CONFIRMED — FIXED | `collection_validity` (kode tak dikenal/ganda → koleksi INVALID, pemeriksaan yang bergantung 0, lainnya tetap); fixture E14–E17 |
+| F-40 | W2 ◀ | CONFIRMED — FIXED | `tree_valid` (6 syarat); pohon rusak → pemeriksaan bergantung F1 = 0, K2.c02–c05 tetap; gangguan aplikasi → EVALUATION_ERROR; fixture E17–E20 |
+| F-41 | W2 ◀ | CONFIRMED — FIXED | act-01: "jenis isi yang **diharapkan** dari ekstensi"; umpan balik "→ diharapkan …"; les-03: ekstensi bukan bukti isi |
+| F-42 | W2–W4 ◀ | CONFIRMED — FIXED | Aturan normalisasi eksplisit di setiap TF-3 dan lab (nol di depan ditolak; pemisah ribuan hanya bila diizinkan, pola `1.234`); `normalization_examples` di checks lab; diperiksa konsisten otomatis |
+| F-43 | W3 | CONFIRMED — FIXED | act-01 `network_assumptions` menyebut rentang khusus (loopback, link-local, dll.) di luar model; les-02: publik "umumnya unik"; status publik hanya dari fixture |
+| F-44 | W4 | CONFIRMED — FIXED | les-02: pembatasan percobaan PIN menurunkan risiko, **tidak** membuat tebakan mustahil; MFA "jauh lebih sulit", bukan mustahil |
+| F-45 | W2 ◀ | CONFIRMED — DOCUMENTATION CLARIFIED | `final_state_only`: hanya keadaan akhir pohon dinilai; spesifikasi N4; fixture E21 (dihapus lalu dipulihkan → 100) |
+| F-46 | W3 | CONFIRMED — DOCUMENTATION CLARIFIED | `suffix_24_rule` dan catatan IPN (lab vs proyek); fixture E20 (F1 `/24`) |
+| F-47 | W4 | CONFIRMED — DOCUMENTATION CLARIFIED | T1 diberi catatan "aturan simulasi"; les-02: panjang saja tidak cukup (sandi umum/bocor tetap lemah) |
+| F-48 | W2 ◀ | CONFIRMED — DOCUMENTATION CLARIFIED | s19 vB rasional = model W2; les-04 membedakan model tulis/hapus W2 dari izin folder nyata |
+| F-49 | W3 | CONFIRMED — DOCUMENTATION CLARIFIED | les-02: alamat IP milik **antarmuka**, bukan perangkat |
+| F-50 | W3 | CONFIRMED — DOCUMENTATION CLARIFIED | les-03 cek pemahaman: DNS/IP "kadang" (cache, alamat langsung) — tidak dinyatakan selalu |
+| F-51 | W3 | CONFIRMED — DOCUMENTATION CLARIFIED | les-04: reservasi DHCP sebagai alternatif alamat statis di luar rentang; aturan RA tidak berubah |
+| F-52 | W4 | CONFIRMED — FIXED | Aturan **kategori utama** (s07 stem, act-01 `primary_classification_rule`, proyek Bagian A, les-01); s07 vB E2 diperjelas |
+| F-53 | W4 | CONFIRMED — FIXED | s08 vB: kode = bukti memegang ponsel; concept s03 baris autentikator; les-02: autentikasi = pembuktian, OTP = faktor "yang dimiliki" |
+| F-54 | W4 | CONFIRMED — DOCUMENTATION CLARIFIED | les-04 CB-1 "salinan terpisah"; model W4 menganggap salinan utuh, dunia nyata perlu uji pemulihan; aturan 3-2-1 dan penilaian tidak berubah |
+| F-55 | — | BLOCKED — ORIGINAL FINDING DETAILS REQUIRED | Rincian asli tidak ada di komentar/review PR #27 maupun repositori; tidak dikarang |
+| F-56 | — | BLOCKED — ORIGINAL FINDING DETAILS REQUIRED | Idem F-55 |
+| F-57 | — | BLOCKED — ORIGINAL FINDING DETAILS REQUIRED | Idem F-55 |
+| F-58 | W4 | CONFIRMED — FIXED | s05 stem: gejala = **tanda peringatan**, bukan bukti pasti; klasifikasi unik hanya dengan bukti perilaku fiktif (act-01, les-01) |
+| F-59 | — | BLOCKED — ORIGINAL FINDING DETAILS REQUIRED | Deskripsi/status asli dari register review sebelumnya tidak tersedia; tidak diganti cacat karangan |
+| F-60 | W2 ◀ | CONFIRMED — FIXED | les-01: "aplikasi biasa" berjalan di atas OS + catatan perangkat tanpa OS (bare-metal) |
+| F-61 | W2 ◀ | CONFIRMED — FIXED | les-02 latihan 1c: satu aplikasi dapat punya dua proses (dua PID) + pembahasan; jendela ≠ proses |
+| F-62 | W3 | CONFIRMED — FIXED | les-01: modem vs ONT/ONU (fiber) |
+| F-63 | W3 | CONFIRMED — FIXED | les-03: contoh TCP/UDP sebagai "pemakaian umum" + catatan QUIC (HTTP/3 di atas UDP) |
+| F-64 | W3 | CONFIRMED — FIXED | les-04: RA-5 (gateway) berlaku untuk klien LAN |
+| F-65 | W4 | CONFIRMED — FIXED | les-03: UR-1 hanya untuk bentuk alamat W4 (tanpa port, userinfo, alamat IP) |
+| F-66 | W4 | CONFIRMED — FIXED | les-04 dan concept s06: laporkan sedini mungkin (boleh bersamaan); tidak harus menunggu langkah terakhir |
+| F-67 | W2–W4 ◀ | CONFIRMED — FIXED | Remedial W2–W4: VA-1–VA-6 (pemakaian paling sedikit → bukan varian sebelumnya → indeks terkecil; VA-3) |
+| F-68 | W4 | CONFIRMED — FIXED | Remedial R-AUTH: MFA = **dua faktor atau lebih** dari jenis berbeda |
+| F-69 | docs | CONFIRMED — FIXED | `CURRICULUM_PRODUCTION_PLAN.md` header/legenda/§4/§6.1 (historis)/§8; `CURRICULUM_OFFLINE_LAB_SPEC.md` K-13 historis + status aktif |
+| F-70 | docs | CONFIRMED — FIXED | Baris CB-0: semua kebijakan terputuskan, tanpa penerimaan terpisah, review independen terbatas, **bukan** final global; CB-1a ACCEPTED (W01-ACC); `mod-w01/module.yaml` `owner_accepted: YES` (sebelumnya NO, usang) |
+
+Ringkasan (43 ID): FIXED 30 · NOT REPRODUCED 1 · DOCUMENTATION CLARIFIED 8 · BLOCKED — ORIGINAL FINDING DETAILS REQUIRED 4. ◀ = berlaku untuk modul ini.
+
+### 13.2 Matriks bukti per butir
+
+Kolom 1–10 = kriteria re-audit: 1 kompetensi/LO · 2 akurasi akademik ·
+3 asumsi model eksplisit · 4 kunci benar dan tunggal · 5 pengecoh sah ·
+6 skor deterministik · 7 maksimum tercapai · 8 kesetaraan varian ·
+9 umpan balik · 10 visibilitas. **A** = diperiksa otomatis (pemeriksa
+struktur: ID unik, kunci di opsi, rasional per pengecoh, poin, kompetensi;
+pemindai V-L); **S** = jawaban dihitung ulang independen (simulasi, mis.
+`ipaddress`, `urlsplit`, `10**n`); **M** = dibaca manual oleh penyusun;
+— = tidak berlaku. Semua sel lolos pada putaran ini; kolom "Koreksi" =
+temuan yang menyentuh butir itu. Ini review mandiri, bukan review independen.
+
+| Butir | Komp. | Format · D | Kunci vA / vB | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Koreksi |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| T-s01 | os-01 | TF-1 · D1 · 2 | `a` / `c` | A | M | M | A | A+M | A | A | M | A | A |  |
+| T-s02 | os-01 | TF-2 · D2 · 3 | `a,c,d` / `a,c,e` | A | M | M | A | A+M | A | A | M | A | A |  |
+| T-s03 | os-01 | TF-1 · D1 · 2 | `d` / `c` | A | M | M | A | A+M | A | A | M | A | A |  |
+| T-s04 | proc-01 | TF-1 · D1 · 2 | `d` / `c` | A | M | M | A | A+M | A | A | M | A | A |  |
+| T-s05 | proc-01 | TF-4 · D2 · 3 | `a` / `d` | A | M | M | A | A+M | A | A | M | A | A | F-32 |
+| T-s06 | proc-01 | TF-1 · D3 · 4 | `a` / `d` | A | M | M | A | A+M | A | A | M | A | A |  |
+| T-s07 | fs-01 | TF-1 · D1 · 2 | `b` / `c` | A | M | M | A | A+M | A | A | M | A | A |  |
+| T-s08 | fs-01 | TF-3 · D1 · 2 | `csv,.csv` / `docx,.docx` | A | M | M | A+S | — | A | A | M | A | A |  |
+| T-s09 | fs-01 | TF-2 · D2 · 3 | `a,c,e` / `b,c,d` | A | M | M | A | A+M | A | A | M | A | A | F-33 |
+| T-s10 | fs-01 | TF-3 · D3 · 4 | `5,5 berkas,5berkas` / `6,6 berkas,6berkas` | A | M | M | A+S | — | A | A | M | A | A | F-42 |
+| T-s11 | path-01 | TF-1 · D1 · 2 | `b` / `d` | A | M | M | A | A+M | A | A | M | A | A |  |
+| T-s12 | path-01 | TF-3 · D2 · 3 | `/home/raka/Kuliah/Fisika` / `/home/lina/Hobi/Resep/so` | A | M | M | A+S | — | A | A | M | A | A |  |
+| T-s13 | path-01 | TF-3 · D2 · 3 | `../jadwal.pdf,./../jadwa` / `../ringkasan.txt,./../ri` | A | M | M | A+S | — | A | A | M | A | A |  |
+| T-s14 | path-01 | TF-3 · D3 · 4 | `../../Musik/Gamelan/gend` / `../../Proyek/Robot/ranca` | A | M | M | A+S | — | A | A | M | A | A |  |
+| T-s15 | ops-01 | TF-1 · D1 · 2 | `c` / `a` | A | M | M | A | A+M | A | A | M | A | A |  |
+| T-s16 | ops-01 | TF-5 · D2 · 3 | `C,D,A,B` / `D,B,C,A` | A | M | M | A+S | — | A | A | M | A | A |  |
+| T-s17 | ops-01 | TF-4 · D3 · 4 | `a` / `b` | A | M | M | A | A+M | A | A | M | A | A |  |
+| T-s18 | perm-01 | TF-1 · D1 · 2 | `b` / `c` | A | M | M | A | A+M | A | A | M | A | A |  |
+| T-s19 | perm-01 | TF-4 · D2 · 3 | `c` / `d` | A | M | M | A | A+M | A | A | M | A | A | F-48 |
+| T-s20 | perm-01 | TF-1 · D2 · 3 | `d` / `a` | A | M | M | A | A+M | A | A | M | A | A |  |
+| C-s01 | os-01 | CE-S4 · 4 | `YAML` / `YAML` | A | M | M | A+M | M | A | A | M | A | A |  |
+| C-s02 | proc-01 | CE-S1 · 4 | `b` / `d` | A | M | M | A+M | M | A | A | M | A | A | F-32 |
+| C-s03 | fs-01 | CE-S2 · 3 | `a,b,d` / `b,c,e` | A | M | M | A+M | M | A | A | M | A | A | F-33 |
+| C-s04 | path-01 | CE-S5 · 4 | `YAML` / `YAML` | A | M | M | A+M | M | A | A | M | A | A | CE-S5 (audit) |
+| C-s05 | ops-01 | CE-S3 · 3 | `A,B,C,D` / `A,B,C,D` | A | M | M | A+M | M | A | A | M | A | A |  |
+| C-s06 | perm-01 | CE-S2 · 2 | `a,c` / `b,d` | A | M | M | A+M | M | A | A | M | A | A |  |
+| L-act-01.vA | fs-01 | 10 pemeriksaan | Σ 30 | A | M | M | A+S | — | A | A | M | A | A | F-41 |
+| L-act-01.vB | fs-01 | 10 pemeriksaan | Σ 30 | A | M | M | A+S | — | A | A | M | A | A | F-41 |
+| L-act-02.vA | path-01 | 6 pemeriksaan | Σ 30 | A | M | M | A+S | — | A | A | M | A | A |  |
+| L-act-02.vB | path-01 | 6 pemeriksaan | Σ 30 | A | M | M | A+S | — | A | A | M | A | A |  |
+| L-act-03.vA | ops-01, perm-01, proc-01 | 8 pemeriksaan | Σ 40 | A | M | M | A+S | — | A | A | M | A | A | F-42 |
+| L-act-03.vB | ops-01, perm-01, proc-01 | 8 pemeriksaan | Σ 40 | A | M | M | A+S | — | A | A | M | A | A | F-42 |
+| P (spec+rubrik) | semua LO | MR-A | contoh 22 | A | M | M | S | — | A+S | A+S | — | A | A | F-40, F-45 |
+| les-01 + latihan | LO | Pelajaran | — | M | M | M | M | — | — | — | — | M | A | F-60 |
+| les-02 + latihan | LO | Pelajaran | — | M | M | M | M | — | — | — | — | M | A | F-32, F-61 |
+| les-03 + latihan | LO | Pelajaran | — | M | M | M | M | — | — | — | — | M | A | F-33, F-41 |
+| les-04 + latihan | LO | Pelajaran | — | M | M | M | M | — | — | — | — | M | A | F-48 |
+| remedial | semua LO | TPL-14 | — | M | M | M | M | — | — | — | — | M | A | F-67, F-32, F-33, F-48 |
+
+CE-S5 (s04): baris salah kini menuntut "path relatif **terpendek**", sehingga koreksi alternatif yang sah tetapi lebih panjang tidak lagi menjadi jawaban benar kedua; rasional opsi d vB disesuaikan. CE-S3 (s05): vA 2 urutan diterima, vB 1; skor = pasangan berurutan dalam **satu** urutan diterima (tanpa penggabungan); urutan tampilan bukan urutan jawaban (vA D,B,A,C; vB C,A,D,B).
+
+### 13.3 Fixture evaluator baru (dokumentasi, bukan evaluator produksi)
+
+| Fixture | Input | Diharapkan | K1/K2/K3 · total | Alasan |
+|---|---|---|---|---|
+| E17 | Folder `dokumen` ada tanpa induk `ProyekSains`; F2–F5 acuan | F1 INVALID_ANSWER | 0/16/0 · 26 | `tree_valid` (2); bentuk F2–F5 tetap dinilai (kredit independen) |
+| E18 | `sains-catatan.txt` dua kali di folder yang sama | F1 INVALID_ANSWER | 0/16/0 · 26 | `tree_valid` (3); salinan di folder **berbeda** tetap sah (E03) |
+| E19 | Folder di bawah berkas (`lagu-favorit.mp3/x`) | F1 INVALID_ANSWER | 0/16/0 · 26 | `tree_valid` (5) |
+| E20 | Folder `Proyek Sains` (spasi) | F1 INVALID_ANSWER | 0/16/0 · 26 | `tree_valid` (1)/(6) |
+| E21 | Berkas dihapus lalu dipulihkan; keadaan akhir = acuan | Dinilai penuh | 60/20/10 · 100 | `final_state_only` (F-45) |
+
+Gangguan aplikasi saat membaca pohon → EVALUATION_ERROR (D-24 IE-2), bukan 0 poin. Contoh rubrik: **22/22** (E01–E21 + E05b) cocok dengan evaluator dokumentasi; E16 (MR-6) kini juga diperiksa otomatis. Jumlah keadaan akhir bernilai penuh tetap **1** (ruang solusi tidak berubah).
+
+### 13.4 Regresi skor dan durasi
+
+W2: teori 56 (D1 8×2 = 16, D2 8×3 = 24, D3 4×4 = 16; TP-B 40/40/20); S = 1.680 → S_buffer 1.848 → timer **33**, review 12, TA-B 50; lab 30 + 30 + 40 = 100; concept 20; proyek 100. Tidak ada perubahan maksimum, durasi, atau XP (305 XP/modul; 915 untuk
+W2–W4). Aturan lulus tetap: 4·e ≥ 3·m per komponen (skor terbaik) dan
+Σ bobot·e/m ≥ 80% eksak; pembulatan hanya untuk tampilan.
+
+### 13.5 Visibilitas dan keamanan (QC-06, QC-11, VC-1–VC-5)
+
+Pemindai V-L dijalankan ulang: semua temuan termasuk kategori yang sudah
+diterima di bagian visibilitas di atas (fakta yang diajarkan dan diuji
+sebagai ingatan; data input fixture yang tampil di spesifikasi; positif palsu
+substring). Tidak ada judul pembuka jawaban, urutan tampilan CE-S3 = urutan
+jawaban, rasional pengecoh sebelum dinilai, atau contoh rubrik yang membuka
+jawaban proyek. D-34 dipertahankan (tanpa enkripsi/proteksi kunci palsu).
+Semua skenario fiktif dan defensif; tidak ada kredensial nyata, kode
+berbahaya, sistem tanpa izin, atau latihan ofensif.
+
+### 13.6 Pedagogi
+
+Penjelasan mendahului penilaian; koreksi putaran ini menambah koreksi
+miskonsepsi pada pelajaran yang tersentuh (kolom "Koreksi" di §13.2) tanpa
+menambah menit (anggaran 480 menit tetap). Latihan terbimbing berbeda dari
+butir bernilai (dicek silang). Tidak ada ketergantungan pada W5–W16. Tidak
+diklaim setara universitas atau efektivitas belajar tervalidasi.
+
+### 13.7 Regresi F-01–F-27
+
+F-01–F-23 (kebenaran rubrik dan kredit independen, distribusi kunci,
+kesetaraan varian, enumerasi solusi sah, asumsi akademik, field kanonik,
+maksimum tercapai, normalisasi, visibilitas, satuan desimal/biner, kualitas
+bukti): diperiksa ulang lewat pemeriksa struktur, simulasi, dan pemindai yang
+sama — lolos. F-24–F-27 (pengerasan alur kerja) dipertahankan: tidak ada
+perubahan pada `.claude/`, izin, hooks, allowed-tools, asal skill, atau
+kontrak alur kerja. V03 tetap verifikasi sesi baru yang dilaporkan
+sebelumnya; **tidak** dijalankan ulang di putaran ini.
+
+### 13.8 Batas dan metrik putaran koreksi
+
+Temuan F-55, F-56, F-57, F-59 **BLOCKED** — penutupan penuh register tidak
+diklaim. Metrik (perkiraan dari transkrip, ±10%): satu putaran koreksi untuk
+W2–W4 bersama; aksi gagal yang tercatat: patch multi-pasangan yang gagal
+total (dijalankan ulang per pasangan) dan beberapa total fixture hitungan
+tangan yang salah (dikoreksi dari evaluator dokumentasi); pemulihan sesi 1
+(konteks diringkas). TOKEN USAGE: **NOT MEASURABLE**.

@@ -66,10 +66,14 @@ berbeda, dan satu salinan di luar lokasi.
 
 | ID | Aturan model W4 |
 |---|---|
-| CB-1 | Minimal **3 salinan** data, **termasuk** data asli |
+| CB-1 | Minimal **3 salinan terpisah** data, **termasuk** data asli (salinan yang rusak/hilang sendiri-sendiri, bukan nama lain untuk berkas yang sama) |
 | CB-2 | Salinan berada di minimal **2 jenis media** berbeda. Jenis media W4: penyimpanan internal perangkat · harddisk/SSD eksternal · flashdisk · kartu memori · layanan penyimpanan awan |
 | CB-3 | Minimal **1 salinan di luar lokasi** (rumah/sekolah tempat data asli), mis. layanan awan atau rumah kerabat |
 | CB-4 | Salinan di folder lain pada **perangkat yang sama** dengan data asli **tidak dihitung** sebagai salinan cadangan (rusak atau hilang bersama) |
+
+*Model W4:* setiap salinan dianggap utuh dan dapat dipulihkan. Di dunia
+nyata cadangan perlu **diuji** sesekali (coba pulihkan satu berkas), karena
+cadangan yang rusak atau tidak lengkap baru ketahuan saat dibutuhkan.
 
 **Contoh memenuhi:** tugas di PC rumah (asli) + SSD eksternal di rumah +
 layanan awan → 3 salinan, 3 jenis media (internal, eksternal, awan), 1 di
@@ -86,12 +90,15 @@ layanan awan membantu pemulihan.
 ## 3. Respons insiden pribadi
 
 **Insiden** adalah kejadian keamanan yang sedang atau sudah terjadi. Pola
-umum: **hentikan → amankan → pulihkan → laporkan**.
+umum: **hentikan → amankan → pulihkan**, dan **laporkan** — melapor tidak
+harus menunggu akhir: sering lebih baik melapor sejak awal atau
+bersamaan (mis. ke orang dewasa, pengelola IT, atau penyedia layanan), agar
+mereka dapat membantu menghentikan kerusakan.
 
-| Insiden | Langkah (urut) |
+| Insiden | Langkah yang dianjurkan (urutan umum; pelaporan dapat dilakukan lebih awal) |
 |---|---|
-| Kata sandi dimasukkan ke situs palsu | (1) Ganti sandi akun itu dari perangkat aman · (2) Aktifkan MFA · (3) Periksa aktivitas login dan keluarkan sesi asing · (4) Ganti sandi akun lain yang memakai sandi sama · (5) Laporkan |
-| Perangkat terkena ransomware | (1) Putuskan dari jaringan · (2) Minta bantuan orang dewasa/pengelola IT; jangan membayar tebusan (tidak menjamin berkas kembali) · (3) Bersihkan/pasang ulang sistem · (4) Pulihkan dari cadangan · (5) Laporkan |
+| Kata sandi dimasukkan ke situs palsu | (1) Ganti sandi akun itu dari perangkat aman · (2) Aktifkan MFA · (3) Periksa aktivitas login dan keluarkan sesi asing · (4) Ganti sandi akun lain yang memakai sandi sama · Laporkan ke penyedia/pengelola (kapan saja, sedini mungkin) |
+| Perangkat terkena ransomware | (1) Putuskan dari jaringan · (2) Minta bantuan orang dewasa/pengelola IT; jangan membayar tebusan (tidak menjamin berkas kembali) · (3) Bersihkan/pasang ulang sistem · (4) Pulihkan dari cadangan · Laporkan (dapat bersamaan dengan langkah 2) |
 | OTP terlanjur diberikan | Segera hubungi penyedia layanan lewat **kanal resmi** untuk mengamankan akun, lalu ganti sandi |
 
 Untuk pemula: libatkan **orang dewasa tepercaya**, guru, atau pengelola IT;
@@ -158,7 +165,8 @@ memenuhi 3-2-1? Apa perbaikan paling sederhana?
   tidak menjamin.
 - Cadangan **3-2-1** (model W4): 3 salinan, 2 jenis media, 1 di luar
   lokasi; folder lain di perangkat yang sama tidak dihitung.
-- Respons insiden: hentikan → amankan → pulihkan → laporkan; bertindak etis.
+- Respons insiden: hentikan → amankan → pulihkan; laporkan sedini mungkin;
+  bertindak etis.
 
 ## Glosarium
 

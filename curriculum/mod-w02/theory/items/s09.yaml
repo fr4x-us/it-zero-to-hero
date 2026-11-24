@@ -14,7 +14,7 @@ variants:
   stem: Pilih **semua** pernyataan yang benar.
   options:
   - id: a
-    text: Ekstensi membantu sistem operasi memilih aplikasi pembuka
+    text: Sistem operasi memakai ekstensi untuk memilih aplikasi pembuka yang dikaitkan dengannya
   - id: b
     text: Mengganti ekstensi `.jpg` menjadi `.txt` mengubah isi gambar menjadi teks
   - id: c

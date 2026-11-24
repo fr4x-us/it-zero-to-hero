@@ -11,22 +11,22 @@ variants:
 - item_id: item-w04-t-s11-a
   variant_id: mod-w04.theory.s11.vA
   item_version: '1.0'
-  stem: Model W4 (setiap PIN sama mungkin, angka 0–9). Jumlah kombinasi PIN **6 digit** berapa **kali
-    lipat** jumlah kombinasi PIN **4 digit**?
+  stem: Model W4 (angka 0–9; digit boleh diawali 0 dan boleh berulang; yang dihitung jumlah PIN berbeda).
+    Jumlah kombinasi PIN **6 digit** berapa **kali lipat** jumlah kombinasi PIN **4 digit**?
   accepted_answers:
   - '100'
   - 100 kali
   - 100kali
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
     salah satu accepted_answers (dengan/tanpa titik ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan).
-    Ditolak: tanda +/−, desimal, pangkat (10^4), pengelompokan titik yang salah, spasi di dalam angka,
-    kata'
+    Ditolak: nol di depan, tanda +/−, desimal, pangkat (10^4), pengelompokan titik yang salah, spasi di
+    dalam angka, kata'
   explanation: '1.000.000 ÷ 10.000 = 100 kali (dua digit tambahan: 10 × 10).'
 - item_id: item-w04-t-s11-b
   variant_id: mod-w04.theory.s11.vB
   item_version: '1.0'
-  stem: Model W4 (setiap PIN sama mungkin, angka 0–9). Jumlah kombinasi PIN **8 digit** berapa **kali
-    lipat** jumlah kombinasi PIN **5 digit**?
+  stem: Model W4 (angka 0–9; digit boleh diawali 0 dan boleh berulang; yang dihitung jumlah PIN berbeda).
+    Jumlah kombinasi PIN **8 digit** berapa **kali lipat** jumlah kombinasi PIN **5 digit**?
   accepted_answers:
   - '1000'
   - '1.000'
@@ -36,6 +36,6 @@ variants:
   - 1.000kali
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
     salah satu accepted_answers (dengan/tanpa titik ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan).
-    Ditolak: tanda +/−, desimal, pangkat (10^4), pengelompokan titik yang salah, spasi di dalam angka,
-    kata'
+    Ditolak: nol di depan, tanda +/−, desimal, pangkat (10^4), pengelompokan titik yang salah, spasi di
+    dalam angka, kata'
   explanation: '100.000.000 ÷ 100.000 = 1.000 kali (tiga digit tambahan: 10 × 10 × 10).'

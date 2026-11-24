@@ -33,7 +33,7 @@ Kecepatan ideal: tetap, tanpa tambahan informasi protokol; aturan desimal
 
 | No. | Varian A | Varian B |
 |---|---|---|
-| 1 | Perangkat yang menghubungkan LAN rumah dengan internet dan meneruskan paket antarjaringan: (a) switch, (b) router, (c) access point, (d) modem | Perangkat yang memancarkan Wi-Fi agar ponsel dapat bergabung ke LAN: (a) switch, (b) router, (c) access point, (d) modem |
+| 1 | **Fungsi** (model peran W3, fungsi dinilai terpisah) yang menghubungkan LAN rumah dengan internet dan meneruskan paket antarjaringan: (a) switch, (b) router, (c) access point, (d) modem | **Fungsi** (model peran W3, fungsi dinilai terpisah walaupun router Wi-Fi rumah menggabungkannya) yang memancarkan Wi-Fi agar ponsel dapat bergabung ke LAN: (a) switch, (b) router, (c) access point, (d) modem |
 | 2 | Laptop baru bergabung ke Wi-Fi dan otomatis mendapat alamat IP, mask, dan gateway. Tulis nama protokolnya | Browser perlu mengetahui alamat IP dari nama `perpustakaan.example`. Tulis nama protokolnya |
 | 3 | Situs dibuka dengan `https://`. Tulis nomor port bawaan di server | Situs dibuka dengan `http://` (tanpa s). Tulis nomor port bawaan di server |
 | 4 | Kabel LAN laptop tercabut sehingga lampu port mati. Lapisan TCP/IP yang bermasalah: (a) aplikasi, (b) transport, (c) internet, (d) akses jaringan | Kabel dan alamat IP benar dan situs lain terbuka, tetapi aplikasi email gagal karena alamat server di pengaturan aplikasinya salah ketik. Lapisan yang bermasalah: (a) aplikasi, (b) transport, (c) internet, (d) akses jaringan |

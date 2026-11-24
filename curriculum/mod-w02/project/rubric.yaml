@@ -22,6 +22,7 @@ constants:
   other_files: [lagu-favorit.mp3, undangan-ulang-tahun.pdf, pemasang-game.exe]   # tetap di /home/bima/Unduhan (N3)
 
 field_rules:
+  tree_valid: "F1 sah bila SEMUA terpenuhi: (1) setiap folder ditulis sebagai path absolut sah (path_form.absolute_valid); (2) induk setiap folder baru ada di F1 (folder dasar /home/bima dan /home/bima/Unduhan selalu ada); (3) tidak ada dua simpul (folder/berkas) bernama sama persis di folder yang sama; (4) setiap berkas berada di folder yang ada di F1; (5) tidak ada folder atau berkas di bawah sebuah BERKAS (berkas tidak dapat menjadi induk); (6) nama tanpa spasi atau '/' (aturan nama Pelajaran 3 §3). Simulator dirancang mencegah pelanggaran ini; aturan ini adalah pertahanan dokumentasi untuk submission yang rusak atau dimodifikasi. F1 tidak sah → INVALID_ANSWER untuk F1: semua pemeriksaan yang depends_on F1 bernilai 0; pemeriksaan yang tidak bergantung pada F1 (K2.c02–c05: bentuk F2–F5) tetap dinilai (MR-2). Gangguan simulator/aplikasi saat menyusun F1 → EVALUATION_ERROR (D-24 IE-2), bukan 0"
   location_of: "lokasi(X) = folder tempat berkas bernama X berada di F1 (di luar Tempat Sampah). Terdefinisi hanya bila TEPAT SATU berkas bernama X ada di luar Tempat Sampah; selain itu (0 atau ≥ 2 salinan) tidak terdefinisi"
   tree_changed: "pohon_diubah = F1 memuat ≥ 1 folder yang tidak ada di keadaan awal DAN ≥ 1 berkas proyek berada di dalam /home/bima/ProyekSains (subfolder mana pun)"
   path_form:   # bentuk (K2); dokumentasi, bukan implementasi parser
@@ -32,7 +33,8 @@ field_rules:
     rejected_examples: {absolute: ["\\home\\contoh\\a.txt (garis miring terbalik)", "/home/contoh/ (diakhiri /)", "/home//contoh (komponen kosong)", "/home/con toh (spasi di dalam)"], relative: ["/kue/bolu.txt (diawali /)", "..\\kue\\bolu.txt", "../kue/ (diakhiri /)"]}
   path_correct: "Benar bila sama persis (huruf besar/kecil dibedakan) dengan path yang dihitung. Path relatif yang dihitung = '../' diulang u kali + sisa path sasaran, dengan u = jumlah komponen folder kerja setelah awalan bersama terpanjang dengan folder sasaran (jalur terpendek); diterima dengan atau tanpa awalan './'"
   number_rule_F5: "Bilangan bulat tanpa tanda/desimal/spasi di dalam, tanpa nol di depan (kecuali '0'); spasi tepi dibuang; boleh diikuti tepat satu spasi atau tanpa spasi lalu kata 'berkas' (huruf besar/kecil bebas). Contoh diterima: '3', ' 3 ', '3 berkas', '3berkas'. Ditolak: 'tiga', '3,0', '+3', '03', '3 file'"
-  dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian/keadaan yang dibutuhkannya tidak valid; pemeriksaan lain tetap dinilai. Tidak ada gerbang nol untuk seluruh rubrik"
+  dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian/keadaan yang dibutuhkannya tidak valid; pemeriksaan lain tetap dinilai. Tidak ada gerbang nol untuk seluruh rubrik. Setiap depends_on [F1] berarti F1 ada DAN tree_valid"
+  final_state_only: "Rubrik menilai KEADAAN AKHIR F1 saja. Riwayat operasi tidak dilacak; pemeriksaan N4 (K3.c03, K3.c04) membuktikan bahwa keadaan akhir tidak memuat folder tambahan, berkas hilang/berganti nama, atau salinan ganda — bukan bahwa tidak pernah ada langkah sementara (mis. dihapus lalu dipulihkan)"
 
 criteria:
   K1:
@@ -143,5 +145,10 @@ reviewer_examples:   # skor dihitung dengan aturan di atas; K4 diasumsikan 10
   - {id: E14, case: "F4 dengan awalan './'", input: "F4 = ./../ProyekSains/data/sains-pengukuran.csv", K1: 60, K2: 20, K3: 10, total: 100}
   - {id: E15, case: "F2 huruf kecil semua pada pohon acuan", input: "F2 = /home/bima/proyeksains/dokumen/sains-laporan.docx", K1: 54, K2: 20, K3: 10, total: 94, zero: [K1.c11]}
   - {id: E16, case: "Centang 'sudah selesai' tanpa menata pohon dan tanpa isian", total: "0 untuk K1–K3; K4 sesuai jawaban", note: "MR-6"}
+  - {id: E17, case: "F1 rusak: folder /home/bima/ProyekSains/dokumen ada tetapi induknya /home/bima/ProyekSains tidak ada; F2–F5 = jawaban acuan", K1: 0, K2: 16, K3: 0, total: 26, zero: [K1.c01–c14, K2.c01, K3.c01–c04], note: "tree_valid (2) gagal; bentuk F2–F5 tetap dinilai (kredit independen)"}
+  - {id: E18, case: "F1 rusak: sains-catatan.txt tercantum dua kali di folder dokumen yang sama; F2–F5 acuan", K1: 0, K2: 16, K3: 0, total: 26, note: "tree_valid (3) gagal. Berbeda dari E03: salinan di folder BERBEDA adalah pohon sah"}
+  - {id: E19, case: "F1 rusak: folder di bawah berkas (/home/bima/Unduhan/lagu-favorit.mp3/x); F2–F5 acuan", K1: 0, K2: 16, K3: 0, total: 26, note: "tree_valid (5) gagal"}
+  - {id: E20, case: "F1 rusak: folder bernama 'Proyek Sains' (spasi); F2–F5 acuan", K1: 0, K2: 16, K3: 0, total: 26, note: "tree_valid (1)/(6) gagal"}
+  - {id: E21, case: "Berkas dihapus lalu dipulihkan sebelum diserahkan; keadaan akhir = acuan", K1: 60, K2: 20, K3: 10, total: 100, note: "final_state_only: langkah sementara tidak terlihat"}
 
 objective_limits: "Pemeriksaan membuktikan keadaan pohon dan path sesuai aturan; tidak membuktikan pelajar memahami semua alasan penataan dan tidak mensertifikasi kompetensi (D-17, D-34)"

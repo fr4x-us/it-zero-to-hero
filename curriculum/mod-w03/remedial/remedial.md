@@ -10,7 +10,9 @@ purpose: "Penjelasan ulang dan latihan tambahan per kompetensi untuk persiapan r
 Gunakan bagian yang sesuai dengan kompetensi yang belum dikuasai (umpan
 balik ujian menampilkan rincian per kompetensi, FB-A). Latihan di sini tidak
 dinilai dan tidak memberi XP. Attempt remedial memakai **varian setara**
-yang dipilih bergiliran (VA-2); remedial tidak dibatasi jumlahnya.
+yang dipilih menurut VA-1–VA-6: varian dengan pemakaian paling sedikit,
+bila seri bukan varian attempt sebelumnya, bila masih seri indeks terkecil
+(VA-2; pemakaian ulang VA-3); remedial tidak dibatasi jumlahnya.
 
 ## R-NET — Jaringan dan perangkat (LO1)
 
@@ -27,7 +29,8 @@ folder itu).
 
 **Ingat kembali:** valid = 4 oktet 0–255, tanpa nol di depan. Privat =
 `10.x`, `172.16`–`172.31`, `192.168.x`. Periksa **oktet kedua** untuk
-alamat `172.…`.
+alamat `172.…`. "Publik" di soal W3 = valid dan bukan privat, karena alamat
+soal dipilih di luar rentang khusus lain (model W3).
 
 **Latihan tambahan:** klasifikasikan: (1) `172.24.0.3`, (2) `172.10.0.3`,
 (3) `10.1.256.1`, (4) `192.168.44.4`. *Jawaban:* (1) privat; (2) publik;
@@ -46,8 +49,8 @@ alamat? *Jawaban:* `172.27.8.0`; `172.27.8.255`; tidak; 79 − 30 + 1 = 50.
 ## R-PROTO — Protokol (LO4)
 
 **Ingat kembali:** DHCP = alamat otomatis; DNS = nama → IP; HTTP port 80;
-HTTPS port 443 (terenkripsi, tetapi tidak menjamin situs jujur); TCP andal,
-UDP ringan.
+HTTPS port 443 (terenkripsi, tetapi tidak menjamin situs jujur); TCP
+mengirim ulang dan menyusun urutan selama sambungan berjalan, UDP ringan.
 
 **Latihan tambahan:** ponsel mendapat alamat, situs dapat dibuka dengan
 alamat IP, tetapi tidak dengan nama. Protokol yang diperiksa? *Jawaban:*

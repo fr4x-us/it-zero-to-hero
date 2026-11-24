@@ -27,16 +27,17 @@ respons insiden (LO6).
 
 ## Bagian A — Kejadian yang dialami Lina
 
-Klasifikasikan setiap kejadian dengan kode: `PHI` phishing · `SOS`
-rekayasa sosial langsung (telepon/tatap muka) · `TRO` trojan · `RAN`
-ransomware · `SPY` spyware · `WIF` Wi-Fi palsu.
+Klasifikasikan setiap kejadian dengan **kategori utama** (Pelajaran 1
+§2): `PHI` phishing · `SOS` rekayasa sosial langsung (telepon/tatap muka)
+· `TRO` trojan · `RAN` ransomware · `SPY` spyware · `WIF` Wi-Fi
+palsu/mencurigakan.
 
 | ID | Kejadian |
 |---|---|
-| S1 | Email bernama tampilan "Admin Sekolah" meminta Lina memasukkan kata sandi lewat tautan yang domain terdaftarnya bukan milik sekolah |
+| S1 | Email bernama tampilan "Admin Sekolah" meminta Lina memasukkan kata sandi lewat tautan yang domain terdaftarnya bukan domain resmi sekolah |
 | S2 | Penelepon mengaku petugas dompet digital dan meminta kode OTP yang baru masuk |
 | S3 | Aplikasi "pengubah suara gratis" dari tautan chat diam-diam memasang program jahat |
-| S4 | Wi-Fi "Perpus_Kota_Free" tanpa sandi muncul di samping Wi-Fi resmi "PerpusKota" yang sandinya tertera di meja layanan |
+| S4 | Wi-Fi "Perpus_Kota_Free" tanpa sandi muncul di samping Wi-Fi resmi "PerpusKota" yang sandinya tertera di meja layanan; setelah tersambung ke "Perpus_Kota_Free", muncul halaman yang meminta kata sandi akun media sosial Lina untuk "aktivasi internet" |
 | S5 | Berkas di laptop adik Lina terkunci dan muncul permintaan tebusan |
 | S6 | SMS "hadiah pulsa" meminta data kartu di situs tiruan |
 
@@ -53,7 +54,7 @@ Daftar tindakan:
 
 | Kode | Tindakan |
 |---|---|
-| T1 | Kata sandi unik dan panjang (≥ 12 karakter atau frasa sandi) |
+| T1 | Kata sandi unik dan panjang (≥ 12 karakter atau frasa sandi). *Aturan simulasi: panjang saja tidak menjamin kuat di dunia nyata — sandi panjang yang umum atau pernah bocor tetap lemah* |
 | T2 | Aktifkan MFA |
 | T3 | Simpan sandi di pengelola kata sandi |
 | T4 | Pakai sandi yang sama dengan akun lain agar mudah diingat |
@@ -94,8 +95,8 @@ Gunakan aturan CB-1–CB-4 (Pelajaran 4 §2).
 | ID | Isian | Bentuk |
 |---|---|---|
 | F1 | Kode untuk S1–S6 | Pilihan dari daftar kode |
-| F2 | Tindakan untuk akun E, M, D, G | Centang dari T1–T10 per akun |
-| F3 | Lokasi cadangan tambahan | Centang dari L2–L6 |
+| F2 | Tindakan untuk akun E, M, D, G | Centang dari T1–T10 per akun (setiap kode paling banyak sekali) |
+| F3 | Lokasi cadangan tambahan | Centang dari L2–L6 (setiap kode paling banyak sekali) |
 | F4 | Jumlah salinan foto yang **dihitung** (CB-1–CB-4), termasuk asli, menurut pilihan F3 | Bilangan bulat |
 | F5 | Jumlah **jenis media** berbeda yang dipakai (termasuk laptop) menurut pilihan F3 | Bilangan bulat |
 | F6 | Lima soal penjelasan proyek | Pilihan tunggal (K4) |

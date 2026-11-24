@@ -24,8 +24,11 @@ Pelajaran 2 §1–§2.
 
 - Valid: tepat 4 oktet desimal 0–255, tanpa nol di depan.
 - Privat: `10.x.x.x`, `172.16.x.x`–`172.31.x.x`, `192.168.x.x`.
-- Publik: alamat valid lain (bukan `127.x.x.x`). Soal ini tidak memakai
-  rentang khusus lain.
+- Publik (**hanya untuk alamat di aktivitas ini**): alamat valid lain
+  (bukan `127.x.x.x`). Semua alamat di sini sengaja dipilih di luar rentang
+  khusus lain (link-local, shared ISP, multicast, dokumentasi,
+  dicadangkan); di luar aktivitas ini, alamat bukan-privat belum tentu
+  alamat publik biasa (Pelajaran 2 §2).
 - Alamat hanya diklasifikasi; tidak ada perangkat yang perlu dihubungi.
 
 ## Instruksi

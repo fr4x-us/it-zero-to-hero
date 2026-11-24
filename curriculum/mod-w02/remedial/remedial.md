@@ -10,7 +10,9 @@ purpose: "Penjelasan ulang dan latihan tambahan per kompetensi untuk persiapan r
 Gunakan bagian yang sesuai dengan kompetensi yang belum dikuasai (umpan
 balik ujian menampilkan rincian per kompetensi, FB-A). Latihan di sini tidak
 dinilai dan tidak memberi XP. Attempt remedial memakai **varian setara**
-yang dipilih bergiliran (VA-2); remedial tidak dibatasi jumlahnya.
+yang dipilih menurut VA-1–VA-6: varian dengan pemakaian paling sedikit,
+bila seri bukan varian attempt sebelumnya, bila masih seri indeks terkecil
+(VA-2; pemakaian ulang VA-3); remedial tidak dibatasi jumlahnya.
 
 ## R-OS — Fungsi sistem operasi (LO1)
 
@@ -32,18 +34,19 @@ pengguna (CLI); (3) manajemen file.
 
 **Ingat kembali:** program = resep di buku (berkas di penyimpanan);
 proses = kegiatan memasak sekarang (di RAM, punya PID). Mengakhiri proses:
-RAM-nya dikembalikan, yang belum disimpan hilang, proses lain tetap
-berjalan.
+RAM-nya dikembalikan, yang belum disimpan hilang (bila aplikasi tanpa
+simpan otomatis/pemulihan), proses lain tetap berjalan.
 
 **Latihan tambahan (angka fiktif):** proses "Pengedit audio" (PID 8810,
-640 MB, tidak menanggapi) dan "Catatan" (PID 8823, 30 MB, berjalan, ada
-tulisan belum disimpan). Apa urutan tindakan yang aman? *Jawaban:* simpan
+640 MB, tidak menanggapi, tanpa simpan otomatis) dan "Catatan" (PID 8823,
+30 MB, berjalan, ada tulisan belum disimpan). Apa urutan tindakan yang aman? *Jawaban:* simpan
 tulisan di Catatan, lalu akhiri PID 8810; sekitar 640 MB RAM dikembalikan.
 
 ## R-FS — Berkas, ekstensi, dan pohon folder (LO3)
 
 **Ingat kembali:** ekstensi = bagian setelah **titik terakhir**; ekstensi
-memilih aplikasi pembuka, **tidak** mengubah isi. Nama harus unik di dalam
+menunjukkan jenis isi yang diharapkan dan dipakai OS untuk memilih
+aplikasi; ekstensi **tidak** mengubah atau membuktikan isi. Nama harus unik di dalam
 satu folder.
 
 **Latihan tambahan:** (1) ekstensi `rekap.bulan.juni.xlsx`? (2) jenis
@@ -82,7 +85,8 @@ Hasil `/p` 1, `/q` 0.
 
 ## R-PERM — Akun dan izin (LO6)
 
-**Ingat kembali:** baca = lihat; tulis = ubah/simpan/hapus; jalankan =
+**Ingat kembali:** baca = lihat; tulis = ubah/simpan (dan, di model W2,
+hapus; di sistem nyata hapus juga bergantung izin folder); jalankan =
 jalankan program. Hak minimum: beri izin sekecil mungkin yang cukup; pakai
 akun biasa sehari-hari.
 

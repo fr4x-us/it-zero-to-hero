@@ -9,13 +9,14 @@ estimated_minutes: 25
 checks_file: checks.yaml
 ---
 
-# Lab W2 · Aktivitas 1 — Jenis Berkas dari Ekstensi
+# Lab W2 · Aktivitas 1 — Jenis Isi yang Diharapkan dari Ekstensi
 
 ## Tujuan
 
 1. Menemukan ekstensi berkas dari **titik terakhir** namanya.
-2. Menentukan jenis isi berkas dari ekstensinya, walaupun nama dasar
-   memuat kata yang menyesatkan.
+2. Menentukan jenis isi yang **diharapkan** dari ekstensinya, walaupun
+   nama dasar memuat kata yang menyesatkan. Ekstensi tidak membuktikan isi
+   sebenarnya; aktivitas ini menilai pembacaan ekstensi.
 
 ## Prasyarat
 
@@ -24,7 +25,8 @@ Pelajaran 3 §1.
 ## Instruksi
 
 1. Baca sepuluh nama berkas.
-2. Untuk setiap berkas, pilih satu kode kategori:
+2. Untuk setiap berkas, pilih kategori isi yang **diharapkan** dari
+   ekstensinya:
 
    | Kode | Kategori |
    |---|---|

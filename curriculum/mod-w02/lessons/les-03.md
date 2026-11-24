@@ -68,10 +68,16 @@ dan ekstensinya `pdf` (bagian setelah titik terakhir).
 
 Hal penting tentang ekstensi:
 
-- Ekstensi membantu OS memilih **aplikasi pembuka**. Ekstensi **tidak**
-  mengubah isi berkas: mengganti `foto.jpg` menjadi `foto.txt` tidak
-  mengubah gambar menjadi teks; berkas itu hanya dibuka dengan aplikasi
-  yang salah.
+- Bedakan tiga hal: **isi** berkas (data sebenarnya), **ekstensi** (label
+  di nama), dan **pengaitan aplikasi** (pengaturan OS yang menentukan
+  aplikasi pembuka untuk tiap ekstensi). Ekstensi **tidak** mengubah isi:
+  mengganti `foto.jpg` menjadi `foto.txt` tidak mengubah gambar menjadi
+  teks; OS hanya memilih aplikasi lain untuk membukanya.
+- Ekstensi menunjukkan jenis isi yang **diharapkan**, bukan bukti isi
+  sebenarnya: berkas bernama `.pdf` bisa saja rusak atau berisi data lain.
+- Pengaitan aplikasi dapat berbeda di tiap perangkat. Mengembalikan
+  ekstensi yang benar tidak menjamin berkas terbuka bila aplikasi yang
+  sesuai tidak terpasang.
 - Sebagian OS **menyembunyikan ekstensi** secara bawaan. Berkas
   `hadiah.jpg.exe` dapat tampil sebagai `hadiah.jpg`, padahal sebenarnya
   program. Kita bahas bahayanya di W4.
@@ -181,7 +187,7 @@ memang perlu naik dua tingkat sampai `sari`.
 
 | Miskonsepsi | Yang benar |
 |---|---|
-| "Ekstensi menentukan isi berkas." | Ekstensi hanya label untuk memilih aplikasi; isi tidak berubah saat ekstensi diganti |
+| "Ekstensi menentukan isi berkas." | Ekstensi hanya label: menunjukkan jenis yang diharapkan dan dipakai OS untuk memilih aplikasi; isi tidak berubah saat ekstensi diganti |
 | "Path relatif selalu dimulai dari root." | Path relatif dimulai dari folder kerja; yang dimulai dari root adalah path absolut |
 | "`..` berarti kembali ke root." | `..` hanya naik **satu** tingkat |
 | "`Foto` dan `foto` sama." | Di model W2 (dan Linux/Android) keduanya berbeda |

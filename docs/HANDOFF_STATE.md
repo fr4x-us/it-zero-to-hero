@@ -93,18 +93,18 @@ Kontrak field: [AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTO
 
 | Field | Nilai |
 |---|---|
-| Tugas aktif dan lingkup | CB-1 — produksi modul W2, W3, W4 (otorisasi owner, master prompt 2026-11-24). Konten kurikulum + validasi dokumentasi saja; satu PR baru; tanpa merge |
-| Fase | CB-1 selesai; PR CB-1 dibuka; **menunggu review ChatGPT dan otorisasi owner** |
-| Selesai | Fase A (PR #26 merged `ab0103e`, diverifikasi ulang); Fase B (V03 PASS); **W2** `curriculum/mod-w02/` (0 galat; 16/16 contoh rubrik); **W3** `curriculum/mod-w03/` (0 galat; alamat diverifikasi `ipaddress`; 17/17 contoh rubrik); **W4** `curriculum/mod-w04/` (0 galat; domain diverifikasi; 13/13 contoh rubrik; pemeriksaan keamanan konten) |
-| Sisa | Review independen PR CB-1; revisi bila ada temuan; otorisasi merge owner; penerimaan W2–W4 terpisah |
-| Berkas relevan | `docs/CURRICULUM_TEMPLATES_CB0.md`, `docs/CURRICULUM_PRODUCTION_PLAN.md`, `docs/PROJECT_RUBRIC_DECISION_SHEETS.md` A.3, `docs/ASSESSMENT_FLOW_DECISION_SHEETS.md` A.4, `curriculum/mod-w01/` (acuan), `curriculum/mod-w02/`–`mod-w04/` (keluaran) |
-| Versi kerja | Branch `planning/cb1-w02-w04`; basis `main` = `ab0103e4954ead4ded6343d105d73a2729916cd6`; versi terkini = head PR CB-1 di GitHub (`git log origin/planning/cb1-w02-w04 -1`) |
-| Keputusan | Owner menerima CB-0.5; CB-1 diotorisasi. LO rinci W2–W4 diturunkan penyusun dari topik CUR §2 (sama dengan praktik W1; tujuan rinci per minggu tetap PROPOSED, CU-1) |
-| Blocker | Tidak ada untuk W2–W4 (lab non-kode; CU-6-Q13 tidak relevan) |
-| Pendekatan gagal | W2: pemindai kebocoran memakai `lstrip('./')` → positif palsu; diganti pencocokan path utuh. W3: worker dimulai ulang di tengah pelajaran; dilanjutkan dari berkas di branch (tidak ada pekerjaan diulang) |
-| Bukti verifikasi | [CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md) §4 (V03); `curriculum/mod-w0N/review.md` per modul |
-| Aksi berikutnya yang diizinkan | Tidak ada sampai owner mengirim instruksi revisi atau kalimat otorisasi merge untuk PR CB-1 |
-| Kondisi berhenti | PR CB-1 dibuka → STOP. Jangan merge, jangan mulai W5, jangan implementasi. Butuh keputusan owner baru → simpan checkpoint dan STOP |
+| Tugas aktif dan lingkup | CB-1 CONSOLIDATED CORRECTION — koreksi PR #27 (REQUEST CHANGES, F-28–F-70) pada PR yang sama; konten W2–W4 + dokumen status; tanpa PR baru, tanpa merge |
+| Fase | Koreksi selesai dan di-push ke PR #27; **menunggu re-review independen dan otorisasi owner** |
+| Selesai | CB-1 produksi W2–W4 (PR #27); koreksi konsolidasi: 39 temuan diselesaikan (FIXED/CLARIFIED/NOT REPRODUCED), F-55–F-57 dan F-59 BLOCKED; fixture rubrik baru (W2 21, W3 21, W4 18; semuanya cocok dengan evaluator dokumentasi); dokumen status direkonsiliasi (F-69/F-70) |
+| Sisa | Rincian asli F-55, F-56, F-57, F-59 dari reviewer; re-review independen PR #27; otorisasi merge owner; penerimaan W2–W4 terpisah |
+| Berkas relevan | `curriculum/mod-w02/`–`mod-w04/` (`review.md` § register koreksi), `docs/CURRICULUM_PRODUCTION_PLAN.md`, `docs/BATCH_01_10_UNFINISHED_AUDIT.md` §21 |
+| Versi kerja | Branch `planning/cb1-w02-w04`; basis `main` = `ab0103e4954ead4ded6343d105d73a2729916cd6`; head pra-koreksi `a9241d33c2cf32e177ca92618df458b78dd6cb98`; versi terkini = head PR #27 di GitHub |
+| Keputusan | Owner: REQUEST CHANGES PR #27; perbaiki pada PR yang sama. Tidak ada perubahan keputusan terkunci, skor maksimum, durasi, atau XP |
+| Blocker | F-55, F-56, F-57, F-59: rincian temuan asli tidak tersedia (BLOCKED — ORIGINAL FINDING DETAILS REQUIRED) |
+| Pendekatan gagal | Patch multi-pasangan gagal total bila satu pasangan tidak cocok → dijalankan ulang per pasangan; beberapa total fixture yang dihitung tangan salah → dikoreksi dari evaluator dokumentasi |
+| Bukti verifikasi | `curriculum/mod-w0N/review.md` (register koreksi, matriks bukti item, fixture); [CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md) §4 (V03 dari sesi sebelumnya; tidak diklaim ulang) |
+| Aksi berikutnya yang diizinkan | Tidak ada sampai owner mengirim rincian F-55–F-57/F-59, instruksi revisi, atau kalimat otorisasi merge untuk PR #27 |
+| Kondisi berhenti | PR #27 diperbarui → STOP. Jangan merge, jangan mulai W5, jangan implementasi |
 
 ## Blocker
 
@@ -118,7 +118,7 @@ dipertahankan agar rujukan lama tetap valid.
 | B-10 | Penilaian: kebijakan diputuskan (D-04, D-12, D-13, D-23–D-38); sisa: rubrik concept W2–W16 (UW-26), OP-6 jam (UW-28). | UW-26, UW-28 |
 | B-11 | Backup: D-03, D-07, D-16, D-17 **diputuskan**; sisa OD-5–OD-9 dan retensi log restore (UW-33); verifikasi kripto (UW-15, jalur V). | UW-33 |
 | B-13 | UI: palet (D-01 M-17), kontras (D-14), tema (D-15) **diputuskan**; sisa: tipografi/aset/breakpoint/alat screenshot (UO-3–UO-9). | UW-35 |
-| B-14 | Kurikulum: kebijakan CU lengkap (UW-36 COMPLETE, D-38); W1 diterima (W01-ACC); W2–W4 diproduksi (CB-1), menunggu review/penerimaan; W5–W16 belum diproduksi; lab minggu 9–12 bergantung O-04. | UW-21, UW-37 |
+| B-14 | Kurikulum: kebijakan CU lengkap (UW-36 COMPLETE, D-38); W1 diterima (W01-ACC); W2–W4 diproduksi dan dikoreksi (CB-1, PR #27), menunggu re-review/penerimaan; W5–W16 NOT STARTED; lab minggu 9–12 bergantung O-04. | UW-21, UW-37 |
 | B-5 | O-04, O-06, O-08, O-09, O-10, O-11 masih OPEN (O-01, O-02, O-07, O-16 diputuskan D-06, D-08, D-07, D-09). | UW-15, UW-24, UW-38, UW-39 |
 
 ### Izin

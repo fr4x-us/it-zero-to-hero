@@ -26,6 +26,7 @@ field_rules:
   rule_321: "copies_counted ≥ 3 DAN media_types ≥ 2 DAN ≥ 1 lokasi terpilih di luar lokasi (L5 atau L6)"
   number_rule: "Bilangan bulat tanpa tanda/desimal/spasi di dalam, tanpa nol di depan; spasi tepi dibuang; boleh diikuti (dengan/tanpa satu spasi) kata 'salinan' untuk F4 atau 'jenis' untuk F5 (huruf besar/kecil bebas). Diterima: '3', '3 salinan', '3jenis'. Ditolak: 'tiga', '3,0', '+3', '03'"
   k3_strict: "F4 dan F5 hanya digit"
+  collection_validity: "F-39 (penerapan pola yang sudah ada: CE-V2/CE-V3 dan answer_validation lab D-24 — ID tidak dikenal/ganda → INVALID_ANSWER untuk isian itu saja; bukan kebijakan global baru). F1: kode per kejadian harus salah satu dari {PHI, SOS, TRO, RAN, SPY, WIF}; kode lain/kosong → kejadian itu tidak sah (K1 kejadian itu 0) dan K2.c01 = 0; kejadian lain tetap dinilai. F2: per akun, daftar tindakan sah bila setiap ID ada di T1–T10 dan tidak ada ID ganda; daftar tidak sah → pemeriksaan wajib, larangan (K1) dan kelengkapan (K2) akun itu 0; akun lain tetap dinilai. Akun yang tidak dikenal (selain E, M, D, G) diabaikan. F3: sah bila setiap ID ada di L2–L6 dan tidak ada ID ganda; F3 tidak sah → K1.c15–c17, K2.c06, K3.c01 (bagian C), K3.c02, K3.c03 bernilai 0; F4/F5 tetap dinilai bentuknya di K2.c07–c08. Struktur submission rusak (bukan daftar) → isian itu tidak sah; kegagalan aplikasi/konten → EVALUATION_ERROR (IE-2)"
   dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya kosong atau tidak sah; pemeriksaan larangan akun dan pemeriksaan angka membutuhkan isian terkait tidak kosong (mencegah poin tanpa pekerjaan)"
 
 criteria:
@@ -92,7 +93,7 @@ criteria:
       - id: mod-w04.project.K4.q3
         lo: comp-w04-phish-01
         stem: "Pada kejadian S1, tanda phishing yang **paling** kuat adalah …"
-        options: {a: "Nama tampilan pengirim \"Admin Sekolah\"", b: "Email dikirim pada pagi hari", c: "Email ditulis dalam bahasa Indonesia", d: "Permintaan kata sandi lewat tautan ke domain terdaftar yang bukan milik sekolah"}
+        options: {a: "Nama tampilan pengirim \"Admin Sekolah\"", b: "Email dikirim pada pagi hari", c: "Email ditulis dalam bahasa Indonesia", d: "Permintaan kata sandi lewat tautan ke domain terdaftar yang bukan domain resmi sekolah"}
         key: d
         points: 2
         feedback: "Nama tampilan mudah dipalsukan; domain terdaftar dan permintaan kata sandi adalah tanda kuat."
@@ -133,6 +134,11 @@ reviewer_examples:   # skor dihitung dengan aturan di atas; K4 diasumsikan 10
   - {id: E10, case: "F5 = 'tiga'", K1: 58, K2: 18, K3: 7, total: 93, zero: [K1.c17, K2.c08, K3.c03]}
   - {id: E11, case: "Akun M tanpa tindakan", K1: 52, K2: 18, K3: 10, total: 90, zero: [K1.c09, K1.c10, K2.c03]}
   - {id: E12, case: "Hanya F4 = 3 dan F5 = 3 diisi; bagian lain kosong", K1: 0, K2: 4, K3: 0, total: "4 + K4", note: "Pemeriksaan angka bergantung pada F3 tidak kosong"}
+  - {id: E14, case: "F2.G memuat ID tidak dikenal T11 (selain itu acuan)", K1: 52, K2: 18, K3: 10, total: 90, zero: [K1.c13, K1.c14, K2.c05], note: "collection_validity: daftar G tidak sah; akun lain tetap dinilai"}
+  - {id: E15, case: "F2.E memuat T1 dua kali (selain itu acuan)", K1: 52, K2: 18, K3: 10, total: 90, zero: [K1.c07, K1.c08, K2.c02]}
+  - {id: E16, case: "F3 = {L3, L5, L5} (ID ganda); F4 = 3; F5 = 3", K1: 50, K2: 18, K3: 0, total: 78, zero: [K1.c15, K1.c16, K1.c17, K2.c06, K3.c01, K3.c02, K3.c03], note: "Bentuk F4/F5 tetap mendapat K2.c07–c08 (kredit independen)"}
+  - {id: E17, case: "F3 = {L1, L5} (L1 bukan pilihan; asli tidak dicentang)", K1: 50, K2: 18, K3: 0, total: 78, note: "Sama dengan E16: F3 tidak sah"}
+  - {id: E18, case: "F1.S4 = 'WIFI' (kode tidak dikenal); lainnya acuan", K1: 57, K2: 14, K3: 10, total: 91, zero: [K1.c04, K2.c01]}
   - {id: E13, case: "Semua kosong / centang 'sudah aman' saja", K1: 0, K2: 0, K3: 0, total: "0 untuk K1–K3; K4 sesuai jawaban", note: "MR-6"}
 
 objective_limits: "Pemeriksaan membuktikan rencana memenuhi aturan W4 pada skenario fiktif; tidak membuktikan akun nyata pelajar aman dan tidak mensertifikasi kompetensi (D-17, D-34)"

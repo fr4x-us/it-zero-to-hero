@@ -58,7 +58,8 @@ variants:
   variant_id: mod-w02.theory.s05.vB
   item_version: '1.0'
   stem: Tabel manajer tugas (angka fiktif). Lembar kerja macet dan perubahan terakhir di dalamnya **belum
-    disimpan**. Bila **hanya** proses lembar kerja yang diakhiri, pernyataan mana yang benar?
+    disimpan**; aplikasi ini tidak punya simpan otomatis atau pemulihan. Bila **hanya** proses lembar
+    kerja yang diakhiri, pernyataan mana yang benar?
   stimulus_table:
   - - Nama proses
     - PID

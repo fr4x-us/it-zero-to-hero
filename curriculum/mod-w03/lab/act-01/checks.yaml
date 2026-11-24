@@ -15,8 +15,11 @@ infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi di
 feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W3 tidak memiliki
   test kode tersembunyi (D-36 HF-A tidak berlaku)'
 runtime: Tidak memerlukan runtime Python atau jaringan nyata; pemeriksaan deterministik atas jawaban terstruktur
-network_assumptions: 'Model W3: IPv4 desimal; privat = RFC 1918 (10/8, 172.16–172.31, 192.168/16); alamat
-  valid lain (bukan 127.x) = publik; mask hanya 255.255.255.0 (/24); kecepatan ideal desimal'
+network_assumptions: 'Model W3: IPv4 desimal; privat = RFC 1918 (10/8, 172.16–172.31, 192.168/16). Kategori
+  publik di lab ini = valid dan bukan privat UNTUK FIXTURE INI SAJA: semua alamat fixture dipilih di luar
+  rentang khusus lain (loopback 127/8, link-local 169.254/16, shared 100.64/10, multicast 224–239, dokumentasi
+  192.0.2/24, 198.51.100/24, 203.0.113/24, 0/8, 240/4); di luar fixture, alamat non-privat belum tentu
+  dapat dirutekan publik. Mask hanya 255.255.255.0 (/24); kecepatan ideal desimal'
 variants:
 - variant_id: mod-w03.lab.act-01.vA
   fixture:

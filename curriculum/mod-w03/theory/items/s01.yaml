@@ -11,7 +11,9 @@ variants:
 - item_id: item-w03-t-s01-a
   variant_id: mod-w03.theory.s01.vA
   item_version: '1.0'
-  stem: Perangkat yang **memancarkan Wi-Fi** agar ponsel dapat bergabung ke LAN adalah …
+  stem: Model peran W3 (setiap **fungsi** dinilai terpisah, walaupun di rumah beberapa fungsi sering berada
+    dalam satu kotak router Wi-Fi). **Fungsi** yang memancarkan Wi-Fi agar ponsel dapat bergabung ke LAN
+    adalah …
   options:
   - id: a
     text: Switch
@@ -24,15 +26,18 @@ variants:
   key: b
   distractor_rationale:
     a: Switch menghubungkan perangkat lewat kabel di dalam LAN
-    c: Router menghubungkan jaringan yang berbeda
+    c: Fungsi router adalah menghubungkan jaringan yang berbeda; kotak "router Wi-Fi" memancarkan Wi-Fi
+      karena juga berisi fungsi access point
     d: Modem mengubah sinyal ke saluran ISP
-  explanation: Access point memancarkan Wi-Fi sebagai pintu masuk nirkabel ke LAN.
+  explanation: Fungsi access point memancarkan Wi-Fi sebagai pintu masuk nirkabel ke LAN; router Wi-Fi
+    rumah memancarkan Wi-Fi karena berisi fungsi itu.
   option_order: urutan alami (kategori/baris tabel), tetap
 - item_id: item-w03-t-s01-b
   variant_id: mod-w03.theory.s01.vB
   item_version: '1.0'
-  stem: Perangkat yang **menghubungkan LAN rumah dengan jaringan lain** (internet) dan memilih jalur paket
-    antarjaringan adalah …
+  stem: Model peran W3 (setiap **fungsi** dinilai terpisah, walaupun di rumah beberapa fungsi sering berada
+    dalam satu kotak router Wi-Fi). **Fungsi** yang menghubungkan LAN rumah dengan jaringan lain (internet)
+    dan memilih jalur paket antarjaringan adalah …
   options:
   - id: a
     text: Switch

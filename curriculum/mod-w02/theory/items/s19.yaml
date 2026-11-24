@@ -70,7 +70,8 @@ variants:
     text: '`wali` dapat menambahkan nama ke daftar dan menyimpannya'
   key: d
   distractor_rationale:
-    a: Menghapus butuh izin tulis; tamu tidak punya
+    a: 'Model W2: menghapus butuh izin tulis; tamu tidak punya (di sistem nyata penghapusan juga bergantung
+      pada izin folder)'
     b: tamu punya izin baca
     c: wali juga punya izin tulis
   explanation: wali punya izin tulis sehingga dapat mengubah dan menyimpan berkas.

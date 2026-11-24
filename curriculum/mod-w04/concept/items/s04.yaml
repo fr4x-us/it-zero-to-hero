@@ -2,9 +2,9 @@
 slot_id: mod-w04.concept.s04
 competency: comp-w04-phish-01
 required_concepts:
-- domain terdaftar menentukan pemilik
+- domain terdaftar menunjukkan pengendali nama
 - subdomain/path dapat menipu
-- HTTPS tidak menjamin jujur
+- HTTPS = sambungan terenkripsi ke nama domain, bukan bukti identitas organisasi atau kejujuran
 format: CE-S1
 max_points: 4
 content_version: '1.0'
@@ -26,8 +26,8 @@ variants:
   - id: a
     text: Karena alamat yang memakai HTTPS selalu palsu
   - id: b
-    text: Karena domain terdaftarnya `promo-hemat.test`; `tokobuku.example` hanya subdomain milik pemilik
-      domain itu
+    text: Karena domain terdaftarnya `promo-hemat.test`; `tokobuku.example` hanya subdomain di bawah domain
+      yang dikendalikan pihak lain
   - id: c
     text: Karena alamat itu tidak memiliki path
   - id: d
@@ -38,7 +38,9 @@ variants:
     c: Path tidak menentukan pemilik
     d: Huruf besar/kecil nama host tidak dibedakan
   credit_rule: 4 bila pilihan = kunci; selain itu 0
-  feedback: Pemilik ditunjukkan dua bagian terakhir nama host; HTTPS hanya mengenkripsi sambungan.
+  feedback: 'Domain terdaftar (model W4: dua bagian terakhir nama host) menunjukkan siapa yang mengendalikan
+    nama itu; HTTPS mengenkripsi sambungan ke server untuk nama itu. Keduanya tidak membuktikan organisasi
+    di baliknya resmi atau jujur.'
 - item_id: item-w04-c-s04-b
   variant_id: mod-w04.concept.s04.vB
   item_version: '1.0'
@@ -46,8 +48,8 @@ variants:
     penyedia dompet digital resmi `dompetku.example`?
   options:
   - id: a
-    text: Karena HTTPS hanya mengenkripsi sambungan ke domain itu; pemiliknya ditentukan domain terdaftar
-      `akun-dompet.test`, bukan `dompetku.example`
+    text: Karena HTTPS mengenkripsi sambungan dan memastikan kamu tersambung ke server untuk nama `akun-dompet.test`
+      — bukan `dompetku.example`; HTTPS tidak membuktikan organisasi di balik nama itu resmi atau jujur
   - id: b
     text: Karena gembok hanya muncul di situs resmi
   - id: c
@@ -60,4 +62,5 @@ variants:
     c: Path tidak menentukan pemilik
     d: HTTPS memakai port 443
   credit_rule: 4 bila pilihan = kunci; selain itu 0
-  feedback: HTTPS tidak membuktikan kejujuran pemilik; periksa domain terdaftar.
+  feedback: 'Bedakan: enkripsi sambungan (HTTPS), nama domain yang benar-benar dituju (domain terdaftar),
+    identitas organisasi, dan kejujuran situs. Gembok hanya menjawab dua hal pertama.'

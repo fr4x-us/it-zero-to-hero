@@ -22,7 +22,8 @@ Pelajaran 1 §1, Pelajaran 2, Pelajaran 4.
 
 ## Asumsi (model W4)
 
-Setiap PIN sama mungkin (angka 0–9). Cadangan memakai aturan CB-1–CB-4
+PIN memakai angka 0–9; digit boleh diawali 0 dan boleh berulang; yang
+dihitung jumlah PIN berbeda, bukan peluang PIN dipilih orang. Cadangan memakai aturan CB-1–CB-4
 (Pelajaran 4 §2). Semua skenario fiktif.
 
 **Contoh terlihat (tidak dinilai):** kombinasi PIN 1 digit = 10.
@@ -33,15 +34,16 @@ Setiap PIN sama mungkin (angka 0–9). Cadangan memakai aturan CB-1–CB-4
 |---|---|---|
 | 1 | Jadwal piket di grup kelas diubah oleh orang yang tidak berhak. Tujuan yang terutama terganggu: (a) kerahasiaan, (b) integritas, (c) ketersediaan, (d) autentikasi | Aplikasi absensi sekolah tidak dapat dibuka seharian karena servernya mati. Tujuan yang terutama terganggu: (a) kerahasiaan, (b) integritas, (c) ketersediaan, (d) autentikasi |
 | 2 | Pasangan mana yang merupakan MFA? (a) kata sandi + PIN, (b) kata sandi + kode aplikasi autentikator, (c) dua kata sandi berbeda, (d) PIN + jawaban pertanyaan rahasia | Pasangan mana yang merupakan MFA? (a) kata sandi + sidik jari, (b) kata sandi + PIN, (c) PIN + tanggal lahir, (d) dua kata sandi berbeda |
-| 3 | Berapa kombinasi PIN 7 digit? | Berapa kombinasi PIN 8 digit? |
+| 3 | Berapa jumlah PIN 7 digit yang berbeda? | Berapa jumlah PIN 8 digit yang berbeda? |
 | 4 | Rencana: laptop (asli) + flashdisk di rumah + kartu memori di rumah + folder lain di laptop yang sama. Berapa salinan yang dihitung (CB-1–CB-4), termasuk asli? | Rencana: PC (asli) + dua folder lain di PC yang sama + layanan awan. Berapa salinan yang dihitung (CB-1–CB-4), termasuk asli? |
 | 5 | Aplikasi kamus luring meminta izin kontak, lokasi, dan mikrofon; fungsinya hanya mencari arti kata yang diketik. Pilihan sesuai hak minimum: (a) izinkan semua, (b) izinkan kontak saja, (c) izinkan lokasi sepanjang waktu, (d) tolak ketiganya | Aplikasi pemindai dokumen meminta izin kamera dan kontak; fungsinya memotret dokumen. Pilihan sesuai hak minimum: (a) izinkan kamera saat aplikasi digunakan, tolak kontak, (b) izinkan keduanya sepanjang waktu, (c) izinkan kontak saja, (d) tolak kamera walaupun aplikasi harus memotret |
 | 6 | Laptop menampilkan pesan tebusan ransomware. Langkah pertama yang paling tepat: (a) membayar tebusan, (b) menyambungkan harddisk cadangan, (c) mengunggah tangkapan layar ke media sosial, (d) memutuskan laptop dari jaringan | Temanmu menemukan sandi Wi-Fi sekolah tertulis di meja guru dan mengajakmu memakainya diam-diam untuk mengunduh game. Tindakan yang tepat: (a) memakainya sebentar saja, (b) memotret sandinya untuk nanti, (c) menolak dan memberi tahu guru agar sandinya diamankan, (d) membagikannya ke grup kelas |
 
 ## Yang diserahkan
 
-Huruf opsi (1, 2, 5, 6); bilangan bulat (3, 4) — boleh dengan titik ribuan
-berpola `1.234` dan diikuti satuan yang diminta (`kombinasi`, `salinan`).
+Huruf opsi (1, 2, 5, 6); bilangan bulat (3, 4) — tanpa nol di depan, tanpa
+tanda atau desimal; boleh dengan titik ribuan berpola tepat `1.234` dan
+diikuti satuan yang diminta (`kombinasi`, `salinan`).
 
 ## Penilaian
 

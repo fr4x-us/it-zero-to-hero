@@ -18,8 +18,8 @@ variants:
   - 4 menit
   - 4menit
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
-    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
-    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
+    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
   explanation: 1,2 GB = 1.200 MB; × 8 = 9.600 Mb; ÷ 40 = 240 detik = 4 menit.
 - item_id: item-w03-t-s20-b
   variant_id: mod-w03.theory.s20.vB
@@ -31,6 +31,6 @@ variants:
   - 2 menit
   - 2menit
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
-    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
-    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
+    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
   explanation: 2,4 GB = 2.400 MB; × 8 = 19.200 Mb; ÷ 160 = 120 detik = 2 menit.

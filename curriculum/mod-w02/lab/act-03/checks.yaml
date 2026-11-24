@@ -9,10 +9,11 @@ max_points: 40
 estimated_minutes: 35
 content_version: '1.0'
 xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w02.lab (D-28 XI-2)
-normalization: 'c01, c05: aturan path (huruf besar/kecil dibedakan; spasi tepi dibuang). c02: bilangan
-  bulat (boleh diikuti "berkas"). c03: satu bilangan bulat 1–6. c04: nama berkas persis (huruf besar/kecil
-  dibedakan). c06: satu nama akun dari pilihan. c07: satu huruf opsi {a, b, c, d}. c08: PID berupa bilangan
-  bulat'
+normalization: 'c01, c05: aturan path (huruf besar/kecil dibedakan; spasi tepi dibuang). c02, c03, c08:
+  spasi tepi dibuang, lalu cocok persis dengan accepted_answers (digit tanpa nol di depan, tanpa tanda,
+  tanpa desimal/pemisah ribuan; c02 boleh diikuti "berkas" dengan/tanpa satu spasi, huruf besar/kecil
+  bebas). c04: nama berkas persis (huruf besar/kecil dibedakan). c06: satu nama akun dari pilihan. c07:
+  satu huruf opsi {a, b, c, d}'
 answer_validation: Kosong, bentuk ditolak, atau di luar pilihan → 0 untuk pemeriksaan itu; pemeriksaan
   lain tetap dinilai
 infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
@@ -257,3 +258,35 @@ variants:
     accepted_answers:
     - '7131'
     points: 5
+normalization_examples:
+  c02 (kunci 1, vA):
+    diterima:
+    - '1'
+    - ' 1 '
+    - 1 berkas
+    - 1Berkas
+    ditolak (0 poin):
+    - '01'
+    - '+1'
+    - 1,0
+    - 1 file
+    - satu
+    - 1  berkas (dua spasi)
+  c03 (kunci 4, vA):
+    diterima:
+    - '4'
+    - ' 4 '
+    ditolak (0 poin):
+    - '04'
+    - langkah 4
+    - '4.'
+    - '-4'
+  c08 (kunci 6027, vA):
+    diterima:
+    - '6027'
+    - ' 6027 '
+    ditolak (0 poin):
+    - '06027'
+    - '6.027'
+    - PID 6027
+    - 6 027

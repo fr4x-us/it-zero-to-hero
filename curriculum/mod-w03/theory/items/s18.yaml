@@ -17,8 +17,8 @@ variants:
   - 3 MB/s
   - 3MB/s
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
-    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
-    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
+    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
   explanation: 24 ÷ 8 = 3 MB/s.
 - item_id: item-w03-t-s18-b
   variant_id: mod-w03.theory.s18.vB
@@ -29,6 +29,6 @@ variants:
   - 56 Mbps
   - 56Mbps
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
-    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
-    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
+    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
   explanation: 7 × 8 = 56 Mbps.

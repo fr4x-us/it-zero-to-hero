@@ -42,7 +42,7 @@ variants:
   - 5berkas
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
     salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Selain itu ditolak:
-    tanda +/−, desimal, spasi di dalam angka, kata, satuan lain'
+    nol di depan (mis. 05), tanda +/−, desimal, spasi di dalam angka, kata, satuan lain'
   explanation: 'Berkas: jan.csv, feb.csv, ringkas.txt, mar.csv, info.txt = 5. Folder 2025, catatan, dan
     2026 tidak dihitung.'
 - item_id: item-w02-t-s10-b
@@ -83,6 +83,6 @@ variants:
   - 6berkas
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
     salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Selain itu ditolak:
-    tanda +/−, desimal, spasi di dalam angka, kata, satuan lain'
+    nol di depan (mis. 05), tanda +/−, desimal, spasi di dalam angka, kata, satuan lain'
   explanation: 'Berkas: utama.txt, uji-1.txt, uji-2.txt, logo.png, ikon-kecil.png, baca.txt = 6. Folder
     kode, uji, gambar, dan ikon tidak dihitung.'

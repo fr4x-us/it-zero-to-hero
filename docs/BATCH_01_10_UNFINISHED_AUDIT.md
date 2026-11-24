@@ -1008,3 +1008,38 @@ penyusun saja ([`curriculum/mod-w02/review.md`](../curriculum/mod-w02/review.md)
 
 PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
 D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.
+
+## 21. Pembaruan status — koreksi konsolidasi CB-1 (PR #27, F-28–F-70) (2026-11-24)
+
+Review PR #27 (head `a9241d33c2cf32e177ca92618df458b78dd6cb98`, base
+`ab0103e4954ead4ded6343d105d73a2729916cd6`) = **REQUEST CHANGES**. Koreksi
+diterapkan pada PR #27 yang sama; tidak ada PR baru, tidak ada merge.
+Register disposisi per temuan: `review.md` W2/W3/W4 (§ register koreksi).
+F-55, F-56, F-57, F-59: **BLOCKED — ORIGINAL FINDING DETAILS REQUIRED**.
+
+### 21.1 Perubahan per butir
+
+Tidak ada perubahan status butir. UW-26 **OPEN**, UW-37 **OPEN**: koreksi
+konten tidak menambah modul yang diterima.
+
+### 21.2 Jumlah per status (56 butir; sama dengan §20.2)
+
+COMPLETE 32 · OPEN 4 · BLOCKED 12 · DEFERRED 3 · NOT VERIFIED 5 = **56**.
+Jalur P 32/43.
+
+### 21.3 Kurikulum
+
+| Ukuran | Diproduksi | Diterima owner |
+|---|---|---|
+| Modul | 4/16 (W1–W4) | 1/16 (W1) |
+| Komponen penilaian | 16/64 | 4/64 |
+| Soal teori / concept | 160/620 · 48/192 | 40 · 12 |
+| Spesifikasi lab / mini-project | 24/96 · 4/16 | 6 · 1 |
+| Jam nominal | 32/128 | 8/128 |
+
+W2–W4: diproduksi dan dikoreksi; menunggu re-review independen dan
+penerimaan owner. W5–W16: NOT STARTED / NOT AUTHORIZED. Skor maksimum,
+durasi, dan XP tidak berubah (305 XP/modul; 915 untuk W2–W4).
+
+PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
+D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.

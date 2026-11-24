@@ -21,8 +21,8 @@ variants:
 - item_id: item-w02-c-s02-a
   variant_id: mod-w02.concept.s02.vA
   item_version: '1.0'
-  stem: Mengapa tulisan yang **belum disimpan** hilang saat proses pengolah kata diakhiri lewat manajer
-    tugas?
+  stem: Pengolah kata ini **tidak** punya simpan otomatis atau fitur pemulihan. Mengapa tulisan yang **belum
+    disimpan** hilang saat prosesnya diakhiri lewat manajer tugas?
   options:
   - id: a
     text: Berkas program pengolah kata ikut terhapus dari SSD

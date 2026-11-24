@@ -80,11 +80,20 @@ dan stem menjelaskan kejadiannya dengan cukup jelas.
 | **Trojan** | Program yang **tampak berguna** tetapi menyembunyikan fungsi jahat | Aplikasi "gratis" dari sumber tak resmi meminta izin berlebihan |
 | **Ransomware** | Mengunci/mengenkripsi berkas lalu **meminta tebusan** | Berkas tidak dapat dibuka, ekstensi berubah, muncul pesan tebusan |
 | **Spyware** | Diam-diam **memata-matai** dan mengirim aktivitasmu | Kuota data cepat habis, aplikasi tak dikenal, izin aksesibilitas yang tidak kamu berikan |
-| **Wi-Fi palsu** | Jaringan Wi-Fi tiruan untuk **menyadap** atau mengarahkan ke situs palsu | Nama mirip Wi-Fi resmi, tanpa kata sandi, meminta login aneh |
+| **Wi-Fi palsu** | Jaringan Wi-Fi tiruan untuk **menyadap** atau mengarahkan ke situs palsu | Nama mirip Wi-Fi resmi **saja belum membuktikan** apa pun (bisa jaringan lain yang sah). Tanda lebih kuat: meminta kata sandi akun yang tidak berkaitan (email, media sosial) atau mengarahkan ke halaman login tiruan |
 
-Tanda-tanda di atas bukan bukti pasti; perangkat juga dapat lambat karena
-alasan biasa. Yang penting: kenali pola yang patut dicurigai, lalu ambil
-tindakan aman (Pelajaran 4).
+Tanda-tanda di atas adalah **tanda peringatan**, bukan bukti pasti;
+perangkat juga dapat lambat karena alasan biasa. Yang penting: kenali pola
+yang patut dicurigai, lalu ambil tindakan aman (Pelajaran 4).
+
+**Kategori utama.** Satu kejadian nyata dapat cocok dengan beberapa
+kategori (mis. aplikasi palsu yang juga memata-matai). Di soal W4, setiap
+skenario memuat bukti perilaku, dan kamu memilih kategori **utama**
+menurut ciri yang paling menonjol: menyamar sebagai program berguna →
+trojan; memata-matai tanpa disebut menyamar → spyware; mengunci + tebusan
+→ ransomware; pesan/situs/formulir penyamar yang memancing data →
+phishing; manipulasi langsung (telepon, tatap muka) tanpa tautan →
+rekayasa sosial; jaringan dengan perilaku mencurigakan → Wi-Fi palsu.
 
 ## 3. Contoh terbimbing
 

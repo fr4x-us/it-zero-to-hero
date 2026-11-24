@@ -101,11 +101,17 @@ untuk belajar. Buku lain dapat membaginya sedikit berbeda (mis. memisahkan
 |---|---|---|---|
 | Tujuan | Mengelola hardware dan melayani aplikasi | Membantu pengguna menyelesaikan tugas tertentu | Menjalankan perangkat sebelum OS aktif, atau mengendalikan perangkat sederhana |
 | Contoh | Android, Windows | Peta, pengolah kata, game | BIOS/UEFI di motherboard |
-| Bila tidak ada | Aplikasi tidak dapat berjalan | Komputer tetap menyala, tetapi tugas itu tidak dapat dikerjakan | Komputer tidak dapat memulai OS |
+| Bila tidak ada | Aplikasi biasa tidak dapat berjalan | Komputer tetap menyala, tetapi tugas itu tidak dapat dikerjakan | Komputer tidak dapat memulai OS |
 
-Aplikasi **meminta** sistem operasi untuk menyimpan berkas, memakai
-kamera, atau menampilkan jendela. Aplikasi tidak mengatur hardware secara
-langsung.
+Aplikasi biasa **meminta** sistem operasi untuk menyimpan berkas, memakai
+kamera, atau menampilkan jendela; aplikasi biasa tidak mengatur hardware
+secara langsung.
+
+*Model W2:* pernyataan "aplikasi butuh OS" dan "akses hardware lewat OS"
+berlaku untuk **aplikasi biasa** di komputer dan ponsel yang kita pakai.
+Pengecualian: program khusus yang berjalan langsung di atas hardware tanpa
+OS (*bare-metal*), mis. firmware atau program di mesin cuci dan mainan
+elektronik sederhana.
 
 ## 4. Contoh terbimbing
 

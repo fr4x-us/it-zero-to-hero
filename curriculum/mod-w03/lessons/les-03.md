@@ -69,9 +69,13 @@ dicadangkan untuk contoh dan tidak dipakai situs nyata.
 
 | | **TCP** | **UDP** |
 |---|---|---|
-| Cara kerja | Membuat sambungan, memastikan data **sampai lengkap dan berurutan**; data yang hilang dikirim ulang | Mengirim tanpa memastikan sampai |
+| Cara kerja | Membuat sambungan; **selama sambungan berjalan**, data yang hilang dikirim ulang dan disusun **berurutan**. Bila sambungan putus total, TCP memberi tahu aplikasi bahwa pengiriman gagal — TCP tidak dapat memaksa data sampai | Mengirim tanpa memastikan sampai dan tanpa menyusun urutan |
 | Kelebihan | Andal | Ringan dan cepat |
-| Cocok untuk | Halaman web, email, unduhan berkas | Panggilan suara/video langsung, game daring (data yang terlambat tidak berguna lagi) |
+| Pemakaian **umum** (model W3) | Halaman web, email, unduhan berkas | Panggilan suara/video langsung, game daring (data yang terlambat tidak berguna lagi) |
+
+*Catatan:* ini pemakaian yang umum, bukan aturan mutlak. Sebagian layanan
+video langsung memakai TCP, dan protokol modern seperti QUIC (dipakai
+sebagian browser) berjalan di atas UDP tetapi tetap mengirim ulang data.
 
 ## 3. Model lapisan TCP/IP
 
@@ -139,13 +143,16 @@ lapisan apa?
 
 1. Protokol apa: (a) menerjemahkan `kantin.example` menjadi alamat IP,
    (b) memberi alamat IP otomatis kepada laptop tamu.
-2. TCP atau UDP: (a) mengunduh dokumen PDF, (b) siaran suara langsung.
+2. Menurut pemakaian **umum** di model W3, TCP atau UDP: (a) mengunduh
+   dokumen PDF lewat browser biasa, (b) panggilan suara langsung di aplikasi
+   telepon internet.
 3. Lapisan apa: (a) switch, (b) TCP, (c) HTTP.
 
 ## 7. Cek pemahaman (tidak dinilai)
 
-- Mengapa browser masih dapat membuka situs dengan alamat IP walaupun DNS
-  bermasalah?
+- Bila DNS bermasalah, mengapa membuka situs dengan alamat IP **kadang**
+  masih berhasil? (Tidak selalu: banyak server menampung beberapa situs
+  dan memerlukan nama domainnya, dan HTTPS memeriksa nama domain.)
 - Mengapa data dibungkus lapis demi lapis?
 
 ## Pembahasan latihan (ditampilkan setelah pelajar mencoba)
@@ -158,7 +165,8 @@ lapisan apa?
 
 - **DHCP** memberi alamat otomatis; **DNS** nama → alamat IP; **HTTP**
   (port 80) dan **HTTPS** (port 443, terenkripsi) untuk halaman web.
-- **TCP** andal dan berurutan; **UDP** ringan dan cepat.
+- **TCP** mengirim ulang dan menyusun berurutan selama sambungan berjalan;
+  **UDP** ringan dan cepat tanpa jaminan itu.
 - TCP/IP: **Aplikasi → Transport → Internet → Akses jaringan**; kirim =
   membungkus (data → segmen → paket → frame), terima = membuka bungkus.
 
@@ -172,7 +180,7 @@ lapisan apa?
 | Nama domain | domain name | Nama situs yang mudah diingat |
 | HTTP / HTTPS | HyperText Transfer Protocol (Secure) | Aturan halaman web; HTTPS terenkripsi |
 | Port | port | Nomor layanan di perangkat |
-| TCP / UDP | Transmission Control Protocol / User Datagram Protocol | Protokol transport andal / ringan |
+| TCP / UDP | Transmission Control Protocol / User Datagram Protocol | Protokol transport yang mengirim ulang dan menyusun urutan / yang ringan tanpa jaminan |
 | Lapisan | layer | Tingkat tugas dalam model jaringan |
 | Pembungkusan | encapsulation | Menambahkan informasi setiap lapisan saat mengirim |
 | Segmen, paket, frame | segment, packet, frame | Nama data di lapisan transport, internet, akses jaringan |

@@ -41,7 +41,7 @@ variants:
   - id: R4
     text: Mengirim halaman web secara terenkripsi
   - id: R5
-    text: Memastikan data sampai lengkap dan berurutan
+    text: Mengirim ulang data yang hilang dan menyusunnya berurutan selama sambungan berjalan
   key_mapping:
     L1: R3
     L2: R1
@@ -67,7 +67,7 @@ variants:
   - id: R1
     text: Memberi alamat IP secara otomatis
   - id: R2
-    text: Memastikan data sampai lengkap dan berurutan
+    text: Mengirim ulang data yang hilang dan menyusunnya berurutan selama sambungan berjalan
   - id: R3
     text: Mengirim halaman web tanpa enkripsi
   - id: R4

@@ -108,7 +108,9 @@ berstatus "Tidak menanggapi".
 
 - RAM milik proses itu dikembalikan ke sistem operasi.
 - Pekerjaan yang **belum disimpan** di proses itu hilang (isinya hanya di
-  RAM — W1).
+  RAM — W1), **kecuali** aplikasi punya simpan otomatis atau fitur
+  pemulihan. Di soal W2, bila jawabannya "hilang", soal selalu menyatakan
+  bahwa aplikasi tidak punya fitur itu.
 - Proses lain **tidak** ikut berhenti.
 
 Langkah yang aman saat aplikasi macet: tunggu sebentar → simpan pekerjaan
@@ -117,7 +119,7 @@ di aplikasi **lain** yang masih berjalan → baru akhiri proses yang macet.
 ## 4. Contoh terbimbing
 
 **Soal (memakai tabel §3):** Kamu sedang menulis di pengolah kata dan
-belum menyimpan. Editor foto macet. Proses mana yang diakhiri, dan apa
+belum menyimpan; editor foto tidak punya simpan otomatis. Editor foto macet. Proses mana yang diakhiri, dan apa
 akibatnya bagi tulisanmu?
 
 | Langkah berpikir | Jawaban |
@@ -140,7 +142,8 @@ akibatnya bagi tulisanmu?
 
 1. Tulis **program** atau **proses**: (a) berkas pemasang aplikasi yang
    baru diunduh dan belum dibuka, (b) aplikasi peta yang sedang menunjukkan
-   arah, (c) dua jendela aplikasi catatan yang terbuka bersamaan.
+   arah, (c) dua jendela aplikasi catatan yang terbuka bersamaan dan tampil di
+   manajer tugas dengan dua PID berbeda.
 2. Memakai tabel §3: proses mana yang memakai RAM paling sedikit?
 3. Apa yang terjadi pada RAM setelah sebuah proses diakhiri?
 
@@ -151,7 +154,9 @@ akibatnya bagi tulisanmu?
 
 ## Pembahasan latihan (ditampilkan setelah pelajar mencoba)
 
-1. (a) program, (b) proses, (c) dua proses dari satu program.
+1. (a) program, (b) proses, (c) dua proses dari satu program (dua PID
+   berbeda). Tanpa melihat PID, dua jendela belum tentu dua proses: satu
+   proses dapat membuka banyak jendela.
 2. Kalkulator (25 MB).
 3. RAM milik proses itu dikembalikan ke sistem operasi dan dapat dipakai
    proses lain.

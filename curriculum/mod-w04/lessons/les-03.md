@@ -69,8 +69,8 @@ Aturan **model W4**:
 
 | ID | Aturan |
 |---|---|
-| UR-1 | **Nama host** = bagian setelah `://` sampai garis miring `/` pertama berikutnya (atau sampai akhir) |
-| UR-2 | **Domain terdaftar** = **dua bagian terakhir** nama host (dipisah titik). Inilah yang menunjukkan **pemilik** situs |
+| UR-1 | **Nama host** = bagian setelah `://` sampai garis miring `/` pertama berikutnya (atau sampai akhir). Aturan ini **hanya** untuk bentuk alamat di W4 (`https://nama-host/path`), yang sengaja tidak memuat `@`, nomor port (`:8080`), tanda tanya (`?`), atau tanda pagar (`#`). Ini bukan cara umum mengurai semua URL |
+| UR-2 | **Domain terdaftar** = **dua bagian terakhir** nama host (dipisah titik). Inilah yang menunjukkan **siapa yang mengendalikan nama itu**. Bila sama dengan domain resmi yang kamu ketahui dari sumber tepercaya (kartu, aplikasi resmi), itu tanda yang kuat — tetapi nama domain saja tidak membuktikan identitas organisasi atau kejujuran isi situs, dan situs resmi pun dapat disusupi |
 | UR-3 | Bagian di **kiri** domain terdaftar adalah subdomain — pemilik domain bebas menamainya, termasuk meniru nama lain |
 | UR-4 | Teks di **path** (setelah `/`) tidak menunjukkan pemilik |
 | UR-5 | Huruf besar/kecil pada nama host tidak dibedakan |
@@ -92,9 +92,16 @@ dua bagian terakhir. Di dunia nyata ada akhiran dua tingkat seperti
 trik lain (mis. huruf yang mirip). Alamat W4 juga tidak memuat `@` atau
 nomor port.
 
-**HTTPS tidak cukup:** gembok HTTPS (W3) hanya berarti sambungan
-terenkripsi ke domain itu. Situs phishing pun dapat memakai HTTPS. Yang
-menentukan pemilik adalah **domain terdaftar**.
+**HTTPS tidak cukup:** bedakan empat hal.
+
+| Pertanyaan | Dijawab oleh |
+|---|---|
+| Apakah data dienkripsi selama perjalanan? | HTTPS |
+| Apakah aku tersambung ke server untuk **nama domain** di alamat ini? | HTTPS (sertifikat diperiksa browser) |
+| Apakah nama domain itu milik **organisasi** yang kumaksud? | Bukan HTTPS: cocokkan dengan domain resmi dari sumber tepercaya |
+| Apakah situs itu **jujur** dan aman? | Tidak dapat dibuktikan gembok atau nama domain |
+
+Situs phishing pun dapat memakai HTTPS untuk domain miliknya sendiri.
 
 ## 3. Respons aman
 

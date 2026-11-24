@@ -140,5 +140,7 @@ variants:
     name: Penilaian M4
     expected: C
     points: 5
-verdict_rule: C bila domain terdaftar tautan bukan domain resmi pengirim yang tercantum di fixture ATAU
-  pesan meminta kata sandi/PIN/OTP/data kartu; selain itu A
+verdict_rule: 'C (mencurigakan) bila domain terdaftar tautan bukan domain resmi pengirim yang tercantum
+  di fixture ATAU pesan meminta kata sandi/PIN/OTP/data kartu; selain itu A. A berarti TIDAK ADA indikator
+  mencurigakan menurut aturan simulasi ini — bukan jaminan aman di dunia nyata: domain resmi dan layanan
+  sah pun dapat disusupi, dan nama tampilan pengirim dapat dipalsukan'

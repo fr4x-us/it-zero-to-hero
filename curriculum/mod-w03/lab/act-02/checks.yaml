@@ -8,16 +8,21 @@ estimated_minutes: 35
 content_version: '1.0'
 xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w03.lab (D-28 XI-2)
 normalization: 'Alamat: buang spasi tepi; empat oktet desimal 0–255 tanpa nol di depan; cocok persis.
-  Ditolak: nol di depan, spasi di dalam, oktet ≠ 4, akhiran "/24". c05: bilangan bulat (boleh diikuti
-  "alamat"). c06–c08: "Ya" atau "Tidak" (huruf besar/kecil bebas)'
+  Ditolak: nol di depan, spasi di dalam, oktet ≠ 4, akhiran "/24" (jawaban lab meminta alamat saja; berbeda
+  dengan proyek W3 yang membaca "/24" tetapi memotong poin format, lihat rubrik proyek field_rules.ip_readable).
+  c05: bilangan bulat tanpa nol di depan, tanpa tanda/desimal/pemisah ribuan, boleh diikuti "alamat" dengan/tanpa
+  satu spasi (huruf besar/kecil bebas). c06–c08: "Ya" atau "Tidak" (huruf besar/kecil bebas)'
 answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu; pemeriksaan lain tetap dinilai
 infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
   sama tanpa attempt baru (D-24 IE-2)
 feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W3 tidak memiliki
   test kode tersembunyi (D-36 HF-A tidak berlaku)'
 runtime: Tidak memerlukan runtime Python atau jaringan nyata; pemeriksaan deterministik atas jawaban terstruktur
-network_assumptions: 'Model W3: IPv4 desimal; privat = RFC 1918 (10/8, 172.16–172.31, 192.168/16); alamat
-  valid lain (bukan 127.x) = publik; mask hanya 255.255.255.0 (/24); kecepatan ideal desimal'
+network_assumptions: 'Model W3: IPv4 desimal; privat = RFC 1918 (10/8, 172.16–172.31, 192.168/16). Kategori
+  publik di lab ini = valid dan bukan privat UNTUK FIXTURE INI SAJA: semua alamat fixture dipilih di luar
+  rentang khusus lain (loopback 127/8, link-local 169.254/16, shared 100.64/10, multicast 224–239, dokumentasi
+  192.0.2/24, 198.51.100/24, 203.0.113/24, 0/8, 240/4); di luar fixture, alamat non-privat belum tentu
+  dapat dirutekan publik. Mask hanya 255.255.255.0 (/24); kecepatan ideal desimal'
 variants:
 - variant_id: mod-w03.lab.act-02.vA
   fixture:
@@ -129,3 +134,26 @@ variants:
     expected: Ya
     points: 5
     feedback: Tiga oktet pertama sama; host sah
+normalization_examples:
+  c05 (kunci 174, vA):
+    diterima:
+    - '174'
+    - ' 174 '
+    - 174 alamat
+    - 174alamat
+    - 174 Alamat
+    ditolak (0 poin):
+    - '0174'
+    - '+174'
+    - 174,0
+    - 174 host
+    - seratus tujuh puluh empat
+  c01 (kunci 192.168.20.0, vA):
+    diterima:
+    - 192.168.20.0
+    - ' 192.168.20.0 '
+    ditolak (0 poin):
+    - 192.168.020.0
+    - 192.168.20.0/24
+    - 192.168.20
+    - 192.168.20. 0

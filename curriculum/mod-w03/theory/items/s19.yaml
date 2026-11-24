@@ -18,8 +18,8 @@ variants:
   - 160 detik
   - 160detik
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
-    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
-    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
+    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
   explanation: 400 × 8 = 3.200 Mb; 3.200 ÷ 20 = 160 detik.
 - item_id: item-w03-t-s19-b
   variant_id: mod-w03.theory.s19.vB
@@ -31,6 +31,6 @@ variants:
   - 112 detik
   - 112detik
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
-    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
-    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
+    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
   explanation: 420 × 8 = 3.360 Mb; 3.360 ÷ 30 = 112 detik.

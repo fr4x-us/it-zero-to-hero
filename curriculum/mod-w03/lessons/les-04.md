@@ -82,6 +82,11 @@ diberi alamat **statis** (ditulis manual) agar tidak berubah — misalnya
 printer atau kamera keamanan, supaya perangkat lain selalu dapat
 menemukannya.
 
+*Model W3:* alamat statis ditulis manual dan berada di luar rentang DHCP.
+Ini salah satu cara yang sederhana dan aman, bukan satu-satunya: banyak
+router juga menyediakan **reservasi DHCP** (DHCP selalu memberi alamat yang
+sama kepada perangkat tertentu).
+
 Contoh rencana untuk jaringan `172.20.9.0/24`:
 
 ```
@@ -109,7 +114,7 @@ Aturan rencana yang baik:
 | RA-2 | Bukan alamat jaringan (`.0`) atau broadcast (`.255`) |
 | RA-3 | Setiap alamat **unik** (tidak ada dua perangkat memakai alamat yang sama) |
 | RA-4 | Alamat statis **di luar** rentang DHCP, agar DHCP tidak memberikannya ke perangkat lain (konflik) |
-| RA-5 | Setiap perangkat memakai mask yang sama dan gateway = alamat router |
+| RA-5 | Setiap **perangkat klien di LAN** memakai mask yang sama dan gateway = alamat LAN router. Router sendiri tidak memakai alamat LAN-nya sebagai gateway; gateway router mengarah ke ISP dan diatur terpisah (di luar model W3) |
 
 **Menghitung alamat tersisa:** jaringan /24 punya 254 alamat host. Pada
 contoh di atas, rentang DHCP `.50`–`.149` berisi 149 − 50 + 1 = **100**

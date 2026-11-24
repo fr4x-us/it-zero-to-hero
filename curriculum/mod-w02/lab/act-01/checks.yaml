@@ -1,6 +1,6 @@
 # W2 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
 activity_id: mod-w02.lab.act-01
-name: Jenis berkas dari ekstensi
+name: Jenis isi yang diharapkan dari ekstensi
 competencies:
 - comp-w02-fs-01
 max_points: 30
@@ -76,13 +76,13 @@ variants:
     file: F1
     expected: VID
     points: 3
-    feedback: Titik terakhir → mp4 = video
+    feedback: Titik terakhir → mp4 → diharapkan video
   - check_id: mod-w02.lab.act-01.vA.c02
     name: Kategori F2
     file: F2
     expected: DOK
     points: 3
-    feedback: txt = teks polos
+    feedback: txt → diharapkan teks polos
   - check_id: mod-w02.lab.act-01.vA.c03
     name: Kategori F3
     file: F3
@@ -94,19 +94,19 @@ variants:
     file: F4
     expected: TAB
     points: 3
-    feedback: csv = tabel/data
+    feedback: csv → diharapkan tabel/data
   - check_id: mod-w02.lab.act-01.vA.c05
     name: Kategori F5
     file: F5
     expected: AUD
     points: 3
-    feedback: mp3 = audio
+    feedback: mp3 → diharapkan audio
   - check_id: mod-w02.lab.act-01.vA.c06
     name: Kategori F6
     file: F6
     expected: GBR
     points: 3
-    feedback: png = gambar
+    feedback: png → diharapkan gambar
   - check_id: mod-w02.lab.act-01.vA.c07
     name: Kategori F7
     file: F7
@@ -118,19 +118,19 @@ variants:
     file: F8
     expected: DOK
     points: 3
-    feedback: pdf = dokumen
+    feedback: pdf → diharapkan dokumen
   - check_id: mod-w02.lab.act-01.vA.c09
     name: Kategori F9
     file: F9
     expected: PRG
     points: 3
-    feedback: apk = pemasang aplikasi Android
+    feedback: apk → diharapkan pemasang aplikasi Android
   - check_id: mod-w02.lab.act-01.vA.c10
     name: Kategori F10
     file: F10
     expected: GBR
     points: 3
-    feedback: jpg = gambar
+    feedback: jpg → diharapkan gambar
 - variant_id: mod-w02.lab.act-01.vB
   fixture:
     files:
@@ -176,13 +176,13 @@ variants:
     file: F1
     expected: DOK
     points: 3
-    feedback: Titik terakhir → pdf = dokumen
+    feedback: Titik terakhir → pdf → diharapkan dokumen
   - check_id: mod-w02.lab.act-01.vB.c02
     name: Kategori F2
     file: F2
     expected: TAB
     points: 3
-    feedback: xlsx = tabel/data
+    feedback: xlsx → diharapkan tabel/data
   - check_id: mod-w02.lab.act-01.vB.c03
     name: Kategori F3
     file: F3
@@ -194,13 +194,13 @@ variants:
     file: F4
     expected: AUD
     points: 3
-    feedback: Titik terakhir → mp3 = audio
+    feedback: Titik terakhir → mp3 → diharapkan audio
   - check_id: mod-w02.lab.act-01.vB.c05
     name: Kategori F5
     file: F5
     expected: GBR
     points: 3
-    feedback: png = gambar
+    feedback: png → diharapkan gambar
   - check_id: mod-w02.lab.act-01.vB.c06
     name: Kategori F6
     file: F6
@@ -212,7 +212,7 @@ variants:
     file: F7
     expected: DOK
     points: 3
-    feedback: docx = dokumen
+    feedback: docx → diharapkan dokumen
   - check_id: mod-w02.lab.act-01.vB.c08
     name: Kategori F8
     file: F8
@@ -224,10 +224,10 @@ variants:
     file: F9
     expected: PRG
     points: 3
-    feedback: exe = program
+    feedback: exe → diharapkan program
   - check_id: mod-w02.lab.act-01.vB.c10
     name: Kategori F10
     file: F10
     expected: GBR
     points: 3
-    feedback: jpg = gambar
+    feedback: jpg → diharapkan gambar

@@ -54,7 +54,7 @@ Folder `/home/bima/Unduhan` berisi 12 berkas:
 | N1 | Buat folder `/home/bima/ProyekSains` dengan tiga subfolder bernama persis `dokumen`, `gambar`, dan `data` (huruf kecil) |
 | N2 | **Berkas proyek** adalah berkas yang namanya diawali `sains-`. Setiap berkas proyek **dipindah** (bukan disalin) ke subfolder sesuai ekstensinya: `.docx`, `.pdf`, `.txt` → `dokumen`; `.jpg`, `.png` → `gambar`; `.csv`, `.xlsx` → `data` |
 | N3 | Berkas yang **bukan** berkas proyek tetap di `/home/bima/Unduhan` |
-| N4 | Jangan membuat folder lain, jangan menghapus, dan jangan mengganti nama berkas |
+| N4 | Jangan membuat folder lain, jangan menghapus, dan jangan mengganti nama berkas. *Yang dinilai hanya **keadaan akhir** pohon (folder tambahan, berkas hilang/berganti nama, salinan ganda). Langkah sementara yang sudah dibatalkan sebelum diserahkan (mis. dihapus lalu dipulihkan) tidak terlihat dan tidak dinilai* |
 
 ## Deliverable (di aplikasi)
 

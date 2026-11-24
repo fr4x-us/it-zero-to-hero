@@ -28,7 +28,7 @@ variants:
   - id: '2'
     text: OTP tidak boleh dibagikan kepada siapa pun.
   - id: '3'
-    text: PIN 3 digit (angka 0–9) memiliki 300 kombinasi.
+    text: PIN 3 digit (angka 0–9, boleh diawali 0 dan berulang) memiliki 300 kombinasi.
   - id: '4'
     text: Kata sandi sebaiknya unik untuk setiap akun penting.
   - id: '5'
@@ -61,7 +61,8 @@ variants:
   - id: '2'
     text: Kata sandi + PIN adalah MFA karena ada dua bukti.
   - id: '3'
-    text: Kode dari aplikasi autentikator adalah faktor "yang kamu miliki".
+    text: Kode dari aplikasi autentikator membuktikan faktor "yang kamu miliki" (ponsel tempat aplikasinya
+      terpasang).
   - id: '4'
     text: Pengelola kata sandi membantu membuat sandi unik.
   - id: '5'

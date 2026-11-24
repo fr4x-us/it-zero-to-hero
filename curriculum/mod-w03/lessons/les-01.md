@@ -79,11 +79,13 @@ internet. Perangkat dan router berada di dalam LAN.
 | **Switch** | Menghubungkan banyak perangkat **di dalam satu LAN** lewat kabel dan meneruskan data ke perangkat tujuan di LAN itu | Meja resepsionis yang meneruskan surat ke ruangan di gedung yang sama |
 | **Access point** (AP) | Memancarkan **Wi-Fi** agar perangkat nirkabel bergabung ke LAN | Pintu masuk tanpa kabel ke gedung |
 | **Router** | Menghubungkan **jaringan yang berbeda** (mis. LAN rumah dengan internet) dan memilih jalur paket antarjaringan | Kantor pos yang mengirim surat ke kota lain |
-| **Modem** | Mengubah sinyal agar cocok dengan saluran ISP (kabel serat optik, kabel tembaga, seluler) | Penerjemah antara rumah dan jalur ISP |
+| **Modem** | Mengubah sinyal agar cocok dengan saluran ISP (kabel tembaga, kabel TV, seluler). Pada internet **serat optik**, perannya dijalankan perangkat bernama **ONT/ONU** yang mengubah sinyal cahaya menjadi sinyal listrik; orang sering tetap menyebutnya "modem" | Penerjemah antara rumah dan jalur ISP |
 
 Di rumah, satu kotak "router Wi-Fi" sering berisi **router + switch +
-access point** sekaligus, kadang juga modem. Fungsinya tetap dapat
-dibedakan walaupun bendanya satu.
+access point** sekaligus, kadang juga modem/ONT. Fungsinya tetap dapat
+dibedakan walaupun bendanya satu. Karena itu soal W3 menanyakan
+**fungsi** (mis. "fungsi yang memancarkan Wi-Fi" = access point), bukan
+nama kotak yang dibeli di toko.
 
 *Model sederhana W3:* peran di atas adalah peran utama untuk belajar.
 Perangkat nyata dapat menjalankan peran tambahan (mis. switch tertentu juga

@@ -15,8 +15,8 @@ variants:
   accepted_answers:
   - '255'
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
-    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
-    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
+    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
   explanation: Setiap oktet bernilai 0–255.
 - item_id: item-w03-t-s05-b
   variant_id: mod-w03.theory.s05.vB
@@ -27,6 +27,6 @@ variants:
   - 4 oktet
   - 4oktet
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
-    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
-    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
+    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
   explanation: IPv4 ditulis sebagai 4 oktet dipisahkan titik.

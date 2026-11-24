@@ -29,9 +29,9 @@ variants:
   - id: '2'
     text: '`..` berarti naik satu tingkat ke folder induk.'
   - id: '3'
-    text: Dari `/home/tia/Sekolah`, path relatif ke `/home/tia/Sekolah/biologi.pdf` adalah `biologi.pdf`.
+    text: Dari `/home/tia/Sekolah`, path relatif terpendek ke `/home/tia/Sekolah/biologi.pdf` adalah `biologi.pdf`.
   - id: '4'
-    text: Dari `/home/tia/Sekolah`, path relatif ke folder `/home/tia/Musik` adalah `/Musik`.
+    text: Dari `/home/tia/Sekolah`, path relatif **terpendek** ke folder `/home/tia/Musik` adalah `/Musik`.
   - id: '5'
     text: Di model W2, `Musik` dan `musik` adalah nama yang berbeda.
   error_line: '4'
@@ -64,7 +64,7 @@ variants:
   - id: '2'
     text: '`.` berarti folder saat ini.'
   - id: '3'
-    text: Dari `/data/foto/2026`, path relatif ke `/data/foto/sampul.png` adalah `../../sampul.png`.
+    text: Dari `/data/foto/2026`, path relatif **terpendek** ke `/data/foto/sampul.png` adalah `../../sampul.png`.
   - id: '4'
     text: Path absolut `/data/foto/sampul.png` sama dari folder kerja mana pun.
   - id: '5'
@@ -83,7 +83,7 @@ variants:
   distractor_rationale:
     a: sampul.png tidak berada di dalam 2026
     b: Itu path absolut ke root, salah tempat
-    d: Naik-turun memutar; bukan jalur terpendek
+    d: Menunjuk berkas yang benar tetapi memutar; baris itu meminta jalur terpendek
   credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
     baris salah/kosong
   feedback: 'Dari /data/foto/2026 cukup naik satu tingkat ke /data/foto: ../sampul.png.'

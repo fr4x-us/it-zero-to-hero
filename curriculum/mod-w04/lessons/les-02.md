@@ -41,7 +41,10 @@ kebocoran membuka banyak akun sekaligus.
 
 ## 1. Autentikasi dan faktornya
 
-**Autentikasi** adalah membuktikan bahwa kamu memang pemilik akun.
+**Autentikasi** adalah menunjukkan bukti yang sudah terdaftar untuk sebuah
+akun (mis. kata sandi atau ponsel tertentu) sehingga sistem mengizinkan
+masuk. Sistem hanya memeriksa **bukti**, bukan siapa orangnya: siapa pun
+yang mencuri bukti itu dapat masuk. Karena itu bukti harus dijaga.
 
 | Faktor | Contoh |
 |---|---|
@@ -57,9 +60,15 @@ MFA memakai dua faktor atau lebih dari kotak yang **berbeda**.
 aplikasi autentikator. Bila kata sandi bocor, penyerang masih butuh faktor
 kedua.
 
-**OTP** (*one-time password*) adalah kode sekali pakai. OTP adalah bukti
-"sesuatu yang kamu miliki"; **jangan pernah membagikannya** kepada siapa
-pun, termasuk yang mengaku petugas. Petugas resmi tidak pernah meminta OTP.
+**OTP** (*one-time password*) adalah kode sekali pakai. Faktornya adalah
+**perangkat atau nomor** yang kamu miliki; kodenya hanya bukti sesaat bahwa
+kamu memegangnya. Siapa pun yang mendapat kode itu dapat memakainya, jadi
+**jangan pernah membagikannya** kepada siapa pun, termasuk yang mengaku
+petugas. Petugas resmi tidak pernah meminta OTP.
+
+*Batas MFA:* MFA membuat pengambilalihan akun **jauh lebih sulit**, tetapi tidak
+mustahil — misalnya bila korban tertipu menyerahkan OTP atau mengisi kode
+di situs palsu.
 
 *Catatan:* dua kata sandi berbeda bukan MFA — keduanya faktor jenis yang
 sama ("yang diketahui").
@@ -80,16 +89,21 @@ Setiap **tambahan satu digit** membuat kombinasi **10 kali lipat**.
 Contoh perbandingan: PIN 3 digit dibanding 2 digit → 1.000 ÷ 100 =
 **10 kali lipat** (satu digit tambahan).
 
-*Model sederhana W4:* hitungan ini menganggap setiap PIN sama mungkin
-dipilih. Kenyataannya orang sering memilih PIN mudah (tanggal lahir,
-`123456`) yang ditebak lebih dulu; dan banyak sistem mengunci akun setelah
-beberapa kali salah, sehingga menebak semua kombinasi tidak mungkin.
+*Asumsi hitungan (model W4):* digit boleh **diawali 0** dan boleh
+**berulang** (mis. `0070`), jadi setiap posisi punya 10 pilihan. Hitungan
+ini menghasilkan **jumlah PIN berbeda yang mungkin**, bukan peluang
+sebuah PIN dipilih orang: kenyataannya orang sering memilih PIN mudah
+(tanggal lahir, `123456`) yang ditebak lebih dulu. Banyak sistem juga
+**membatasi** percobaan (mengunci akun atau memberi jeda setelah beberapa
+kali salah); ini membuat menebak semua kombinasi jauh lebih lama dan sulit,
+tetapi tidak menjamin mustahil (mis. bila pembatasannya lemah atau data
+PIN bocor dari tempat lain).
 
 ## 3. Kata sandi yang kuat
 
 | Kebiasaan baik | Mengapa |
 |---|---|
-| **Panjang** — mis. frasa sandi dari beberapa kata acak (≥ 12 karakter) | Makin panjang, makin banyak kemungkinan; lebih mudah diingat daripada simbol acak pendek |
+| **Panjang** — mis. frasa sandi dari beberapa kata acak (≥ 12 karakter) | Makin panjang, makin banyak kemungkinan; lebih mudah diingat daripada simbol acak pendek. Panjang saja **tidak cukup**: kalimat terkenal, lirik lagu, atau sandi yang pernah bocor tetap mudah ditebak |
 | **Unik** untuk setiap akun penting | Bila satu situs bocor, penyerang sering mencoba sandi yang sama di situs lain (*credential stuffing*) |
 | Pakai **pengelola kata sandi** (*password manager*) | Menyimpan dan membuat sandi unik; kamu cukup mengingat satu sandi utama yang kuat |
 | Aktifkan **MFA** | Sandi bocor saja tidak cukup untuk masuk |

@@ -11,7 +11,8 @@ variants:
 - item_id: item-w04-t-s05-a
   variant_id: mod-w04.theory.s05.vA
   item_version: '1.0'
-  stem: Pilih **semua** tanda yang patut dicurigai sebagai malware pada laptop.
+  stem: Pilih **semua** tanda peringatan yang patut dicurigai sebagai malware pada laptop (tanda peringatan,
+    bukan bukti pasti).
   options:
   - id: a
     text: Jendela iklan aneh terus muncul walaupun browser ditutup
@@ -35,7 +36,8 @@ variants:
 - item_id: item-w04-t-s05-b
   variant_id: mod-w04.theory.s05.vB
   item_version: '1.0'
-  stem: Pilih **semua** tanda yang patut dicurigai sebagai malware pada ponsel.
+  stem: Pilih **semua** tanda peringatan yang patut dicurigai sebagai malware pada ponsel (tanda peringatan,
+    bukan bukti pasti).
   options:
   - id: a
     text: Ponsel bergetar saat pesan masuk

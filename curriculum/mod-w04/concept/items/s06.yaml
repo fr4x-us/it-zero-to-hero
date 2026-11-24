@@ -2,8 +2,9 @@
 slot_id: mod-w04.concept.s06
 competency: comp-w04-incident-01
 required_concepts:
-- hentikan → amankan → pulihkan → laporkan
+- hentikan → amankan (pelaporan dapat dilakukan lebih awal atau bersamaan)
 - kanal resmi
+- prasyarat antarlangkah
 format: CE-S3
 max_points: 3
 content_version: '1.0'
@@ -19,16 +20,18 @@ variants:
 - item_id: item-w04-c-s06-a
   variant_id: mod-w04.concept.s06.vA
   item_version: '1.0'
-  stem: Ponselmu hilang di angkutan umum. Urutkan langkah tanggapannya.
+  stem: Ponselmu hilang di angkutan umum. Kamu sudah menelepon operator lewat kanal resmi untuk memblokir
+    kartu SIM (langkah itu boleh dilakukan kapan saja dan tidak diurutkan di sini). Dengan urutan respons
+    Pelajaran 4 (hentikan → amankan), urutkan langkah berikut.
   items:
   - id: A
-    text: Masuk ke layanan "temukan perangkat" dari perangkat lain
+    text: Dari laptop di rumah, masuk ke layanan "temukan perangkat" untuk ponsel itu
   - id: B
-    text: Kunci ponsel dari jarak jauh dan tampilkan pesan kontak
+    text: Lewat layanan itu, kunci ponsel dari jarak jauh dan tampilkan pesan kontak
   - id: C
     text: Ganti kata sandi akun penting yang masuk di ponsel itu
   - id: D
-    text: Hubungi operator lewat kanal resmi untuk memblokir kartu SIM
+    text: Keluarkan ponsel yang hilang dari daftar perangkat yang masuk di akun-akun itu
   display_order:
   - C
   - A
@@ -45,13 +48,14 @@ variants:
     - C
   credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
     maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
-  feedback: Kunci perangkat dulu lewat layanan temukan perangkat; mengganti sandi dan memblokir SIM boleh
-    berurutan mana saja (dua urutan diterima).
+  feedback: 'Layanan harus dibuka (A) sebelum ponsel dapat dikunci lewat layanan itu (B) — ini langkah
+    menghentikan. Lalu amankan akun: ganti sandi dan keluarkan perangkat boleh berurutan mana saja (dua
+    urutan diterima). Pemblokiran SIM dan pelaporan dapat dilakukan lebih awal atau bersamaan.'
 - item_id: item-w04-c-s06-b
   variant_id: mod-w04.concept.s06.vB
   item_version: '1.0'
-  stem: Kamu mengeklik tautan phishing di laptop dan sempat mengisi kata sandi akun kursus daring. Urutkan
-    langkah tanggapannya.
+  stem: Kamu mengeklik tautan phishing di laptop dan sempat mengisi kata sandi akun kursus daring. Dengan
+    urutan respons Pelajaran 4 (hentikan → amankan), urutkan langkah tanggapannya.
   items:
   - id: A
     text: Tutup halaman palsu itu

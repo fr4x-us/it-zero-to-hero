@@ -30,7 +30,8 @@ variants:
   - id: c
     text: Berkas berubah menjadi teks yang dapat dibaca
   - id: d
-    text: Mengembalikan nama ke `.jpg` membuat berkas kembali dibuka sebagai gambar
+    text: Mengembalikan nama ke `.jpg` membuat OS kembali mengaitkannya dengan aplikasi gambar (bila aplikasi
+      seperti itu terpasang)
   - id: e
     text: Ukuran berkas menjadi 0 byte
   key:
@@ -42,7 +43,8 @@ variants:
     e: Mengganti nama tidak mengubah ukuran
   credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
     pengurangan hanya di soal ini, tidak pernah negatif
-  feedback: Ekstensi hanya label untuk memilih aplikasi pembuka; isinya tetap gambar.
+  feedback: 'Ada tiga hal berbeda: isi berkas (tetap data gambar), ekstensi (label di nama), dan pengaitan
+    aplikasi oleh OS (yang dapat berbeda di tiap perangkat dan bergantung aplikasi yang terpasang).'
 - item_id: item-w02-c-s03-b
   variant_id: mod-w02.concept.s03.vB
   item_version: '1.0'

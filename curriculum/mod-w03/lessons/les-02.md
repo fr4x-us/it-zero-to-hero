@@ -43,8 +43,12 @@ salah.
 
 ## 1. Alamat IPv4
 
-**Alamat IP** (*Internet Protocol*) adalah nomor yang menandai sebuah
-perangkat di jaringan. Versi yang dipelajari di sini adalah **IPv4**:
+**Alamat IP** (*Internet Protocol*) adalah nomor yang menandai **antarmuka
+jaringan** sebuah perangkat (mis. kartu Wi-Fi atau port kabel LAN-nya).
+Di model W3, setiap perangkat punya satu antarmuka dan satu alamat, jadi
+kita sering menyebutnya "alamat perangkat". Di dunia nyata satu perangkat
+dapat punya beberapa alamat (mis. Wi-Fi dan kabel sekaligus, atau IPv4 dan
+IPv6), dan alamatnya dapat berubah saat pindah jaringan. Versi yang dipelajari di sini adalah **IPv4**:
 empat bilangan desimal dipisahkan titik, mis. `192.168.5.42`. Setiap
 bilangan disebut **oktet**.
 
@@ -78,17 +82,23 @@ panjang, mis. `2001:db8::1`); W3 hanya membahas IPv4.
 *Deskripsi tabel:* tiga rentang. Perhatikan rentang kedua: oktet kedua
 harus 16 sampai 31; `172.15.…` dan `172.32.…` **bukan** privat.
 
-**Alamat publik** dipakai di internet dan unik di seluruh dunia; biasanya
-diberikan ISP ke router rumahmu. Router memakai teknik bernama **NAT** agar
+**Alamat publik** dipakai di internet dan pada umumnya dialokasikan unik
+secara global; biasanya diberikan ISP ke router rumahmu (sebagian ISP juga
+membagi satu alamat publik ke banyak pelanggan). Router memakai teknik bernama **NAT** agar
 banyak perangkat beralamat privat dapat berbagi satu alamat publik.
 
 Alamat khusus: `127.0.0.1` (*loopback*) berarti "perangkat ini sendiri";
 tidak dipakai sebagai alamat perangkat di jaringan.
 
-*Model sederhana W3:* alamat valid yang **tidak** termasuk tiga rentang
-privat dan bukan `127.x.x.x` kita sebut **publik**. Kenyataannya ada
-rentang khusus lain (mis. `169.254.x.x` saat DHCP gagal, `100.64.x.x`
-untuk ISP, rentang dokumentasi) yang tidak dipakai di soal W3.
+*Model sederhana W3 (hanya untuk alamat di soal W3):* alamat valid yang
+**tidak** termasuk tiga rentang privat dan bukan `127.x.x.x` kita sebut
+**publik**. Aturan ini **tidak** berlaku umum: ada rentang khusus lain yang
+bukan privat tetapi juga bukan alamat publik biasa, misalnya
+`169.254.x.x` (*link-local*, muncul saat DHCP gagal), `100.64.0.0`–
+`100.127.255.255` (dipakai bersama oleh ISP), `224.x`–`239.x`
+(*multicast*), `192.0.2.x`, `198.51.100.x`, `203.0.113.x` (dokumentasi),
+dan `0.x`, `240.x` ke atas (dicadangkan). Semua alamat di soal W3 sengaja
+dipilih **di luar** rentang khusus itu, dan kamu tidak perlu menghafalnya.
 
 ## 3. Mask 255.255.255.0 (/24): jaringan dan host
 

@@ -10,8 +10,10 @@ max_points: 30
 estimated_minutes: 30
 content_version: '1.0'
 xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w04.lab (D-28 XI-2)
-normalization: Huruf opsi {a, b, c, d} untuk c01, c02, c05, c06; bilangan bulat (dengan/tanpa titik ribuan
-  berpola 1.234, boleh diikuti satuan yang diminta) untuk c03, c04
+normalization: 'Huruf opsi {a, b, c, d} untuk c01, c02, c05, c06. c03, c04: spasi tepi dibuang; bilangan
+  bulat tanpa nol di depan, tanpa tanda/desimal/pangkat; boleh dengan titik ribuan berpola tepat 1.234;
+  boleh diikuti satuan yang diminta (kombinasi, salinan) dengan/tanpa satu spasi, huruf besar/kecil bebas;
+  cocok persis dengan accepted_answers'
 answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu; pemeriksaan lain tetap dinilai
 infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
   sama tanpa attempt baru (D-24 IE-2)
@@ -59,7 +61,7 @@ variants:
     points: 5
   - check_id: mod-w04.lab.act-03.vA.c03
     name: Kombinasi PIN
-    question: Berapa kombinasi PIN 7 digit (angka 0–9)?
+    question: Berapa jumlah PIN 7 digit yang berbeda (angka 0–9; boleh diawali 0 dan berulang)?
     accepted_answers:
     - '10000000'
     - 10.000.000
@@ -137,7 +139,7 @@ variants:
     points: 5
   - check_id: mod-w04.lab.act-03.vB.c03
     name: Kombinasi PIN
-    question: Berapa kombinasi PIN 8 digit (angka 0–9)?
+    question: Berapa jumlah PIN 8 digit yang berbeda (angka 0–9; boleh diawali 0 dan berulang)?
     accepted_answers:
     - '100000000'
     - 100.000.000
@@ -185,3 +187,27 @@ variants:
       text: Membagikannya ke grup kelas
     expected: c
     points: 5
+normalization_examples:
+  c03 (kunci 10000000, vA):
+    diterima:
+    - '10000000'
+    - 10.000.000
+    - 10000000 kombinasi
+    - 10.000.000kombinasi
+    ditolak (0 poin):
+    - '010000000'
+    - 10^7
+    - 1e7
+    - '10.000000'
+    - 10,000,000
+    - 10 000 000
+  c04 (kunci 3, vA):
+    diterima:
+    - '3'
+    - 3 salinan
+    - 3salinan
+    ditolak (0 poin):
+    - '03'
+    - tiga
+    - 3 copy
+    - '+3'

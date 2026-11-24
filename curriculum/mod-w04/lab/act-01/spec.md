@@ -37,8 +37,13 @@ konfirmasi).
 | `TRO` | Trojan |
 | `RAN` | Ransomware |
 | `SPY` | Spyware |
-| `WIF` | Wi-Fi palsu |
+| `WIF` | Wi-Fi palsu/mencurigakan (skenario memberi bukti perilaku, bukan hanya nama mirip) |
 | `AMN` | Bukan ancaman (tindakan aman) |
+
+Bila ciri tumpang-tindih, pilih kategori **utama** (Pelajaran 1 §2):
+menyamar sebagai program berguna → `TRO`; memata-matai tanpa disebut
+menyamar → `SPY`; mengunci + tebusan → `RAN`; pesan/situs/formulir penyamar
+yang memancing data → `PHI`; manipulasi langsung tanpa tautan → `SOS`.
 
 **Contoh terlihat (tidak dinilai):** "Kamu mengunci layar ponsel dengan
 PIN sebelum meninggalkannya di meja" → `AMN`.
@@ -54,7 +59,7 @@ PIN sebelum meninggalkannya di meja" → `AMN`.
 | S3 | Orang tak dikenal di kantin meminjam ponselmu "untuk menelepon", lalu memintamu membacakan kode yang baru masuk. |
 | S4 | Aplikasi yang tampak seperti "kalkulator gratis" dari situs unduhan tak resmi ternyata diam-diam memasang program jahat yang membuka akses dari jarak jauh. |
 | S5 | Semua berkas di flashdisk klub berganti ekstensi menjadi `.kunci`, dan ada berkas berisi permintaan tebusan. |
-| S6 | Di kafe muncul Wi-Fi terbuka "Kafe_Gratis_Free", padahal kasir menyebut Wi-Fi resmi bernama "KafeSenja" dengan sandi tertulis di struk. |
+| S6 | Di kafe muncul Wi-Fi terbuka "Kafe_Gratis_Free", padahal kasir menyebut Wi-Fi resmi bernama "KafeSenja" dengan sandi tertulis di struk. Setelah tersambung ke "Kafe_Gratis_Free", muncul halaman yang meminta kata sandi akun emailmu agar internet aktif. |
 | S7 | Email "tim keamanan" berkata akunmu diblokir dalam 2 jam; tautannya menuju domain yang bukan milik penyedia akun. |
 | S8 | Kamu membuka aplikasi bank resmi dari ikon aplikasi yang dipasang dari toko aplikasi resmi, lalu masuk dengan MFA. |
 | S9 | Program tersembunyi di laptop bersama merekam setiap ketikan dan mengirimkannya ke server asing. |

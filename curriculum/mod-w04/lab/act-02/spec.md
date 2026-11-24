@@ -29,7 +29,12 @@ tautan; cukup membaca teksnya.
 
 Tulis `C` (mencurigakan) bila **domain terdaftar** tautan **bukan** domain
 resmi pengirim yang tercantum di daftar, **atau** pesan meminta kata sandi,
-PIN, OTP, atau data kartu. Selain itu tulis `A` (aman).
+PIN, OTP, atau data kartu. Selain itu tulis `A` (**tidak ada tanda
+mencurigakan** menurut aturan ini).
+
+`A` **bukan** jaminan aman di dunia nyata: nama pengirim dapat dipalsukan,
+dan situs atau akun resmi pun dapat disusupi. Bila ragu, tetap buka layanan
+lewat aplikasi atau alamat resmi yang kamu ketik sendiri.
 
 **Contoh terlihat (tidak dinilai):** contoh terbimbing Pelajaran 3 §4
 (`kurir-cepat.example`).
@@ -67,7 +72,7 @@ Untuk setiap pesan: (1) domain terdaftar tautannya; (2) `A` atau `C`.
 | Pemeriksaan | Aturan | Poin |
 |---|---|---|
 | c01, c03, c05, c07 | Domain terdaftar benar (huruf besar/kecil bebas; tanpa `https://` atau path) | 4 × 5 = 20 |
-| c02, c04, c06, c08 | Penilaian `A`/`C` benar | 4 × 5 = 20 |
+| c02, c04, c06, c08 | Penilaian `A`/`C` sesuai aturan di atas | 4 × 5 = 20 |
 | **Maksimum aktivitas** | | **40** |
 
 ## Kasus gagal

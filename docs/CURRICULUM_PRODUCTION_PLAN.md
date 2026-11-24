@@ -1,9 +1,9 @@
 # IT ZERO → HERO — Rencana Produksi Kurikulum (UW-37)
 
 Status: **RENCANA** · dokumentasi saja · **belum ada konten yang
-diproduksi** kecuali W1–W4. UW-37 tetap **OPEN** (4/16 modul diproduksi; 1/16 diterima owner — W1; W2–W4 menunggu review dan penerimaan, CB-1 2026-11-24). Tanggal: **2026-11-24**
-(diperbarui batch D-26–D-35). Basis: `main` = `40ca205` (merge PR #24).
-Standar produksi CB-0 (kebijakan lengkap setelah D-36; menunggu review independen dan penerimaan owner): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md). Modul acuan: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml).
+diproduksi** kecuali W1–W4. UW-37 tetap **OPEN** (4/16 modul diproduksi; 1/16 diterima owner — W1, W01-ACC; W2–W4 diproduksi dan dikoreksi (koreksi konsolidasi CB-1, F-28–F-70), menunggu re-review independen dan penerimaan owner; W5–W16 NOT STARTED / NOT AUTHORIZED). Tanggal: **2026-11-24**
+(status aktif diperbarui pada koreksi CB-1, PR #27). Basis: `main` = `ab0103e` (merge PR #26).
+Standar produksi CB-0 (semua kebijakan terputuskan setelah D-36; tidak ada keputusan penerimaan owner terpisah untuk CB-0; review independen terbatas; **bukan** final global): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md). Modul acuan: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml).
 
 Dasar: D-21 (kurikulum lengkap wajib sebelum PLANNING CLEAR, 64 komponen),
 D-13 (empat komponen per modul; capstone = mini-project modul 16), D-19,
@@ -96,13 +96,14 @@ di W9–W12 maupun capstone)
 ## 4. Matriks cakupan 64 komponen
 
 Status: **PRODUCED** = konten lengkap ditulis dan lolos review mandiri
-penyusun (TPL-19), **belum** direview ChatGPT dan **belum** diterima owner;
+penyusun (TPL-19); W1 **diterima** owner (W01-ACC, §4.2); W2–W4 **belum** diterima
+(dikoreksi, menunggu re-review independen dan penerimaan owner);
 **NOT STARTED** = belum ada konten. Templat tidak dihitung.
 
-Ketergantungan yang masih terbuka: **Q** = CU-6-Q13 (umpan balik test
-tersembunyi lab kode); **R** = runtime Python (O-04, NOT VERIFIED — tidak
+Ketergantungan: **Q** = CU-6-Q13 (umpan balik test tersembunyi lab kode) —
+**sudah diputuskan D-36** (HF-A); tersisa verifikasi implementasi; **R** = runtime Python (O-04, NOT VERIFIED — tidak
 memblokir penerimaan perencanaan, RM:RV-1). Semua keputusan produksi lain
-sudah diputuskan (D-23–D-35).
+sudah diputuskan (D-23–D-36).
 
 | Modul | Theory 30% | Laboratory 40% | Mini-project 20% | Concept 10% |
 |---|---|---|---|---|
@@ -159,18 +160,22 @@ Perpanjangan aksesibilitas, remedial, dan review opsional berada di luar
 
 | Batch | Isi | Status |
 |---|---|---|
-| CB-0 | Standar produksi ([CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md)) | Dapat dipakai untuk W1–W8; **finalisasi global belum** (CU-6-Q13); belum lolos review; belum diterima owner |
-| CB-1a | W1 modul acuan ([curriculum/mod-w01/](../curriculum/mod-w01/module.yaml)) | **PRODUCED**, direvisi setelah review PR #25; menunggu review ulang dan penerimaan owner |
-| CB-1b | W2–W4 (12 komponen) | **PRODUCED** (CB-1, 2026-11-24; satu PR atas instruksi owner); menunggu review ChatGPT dan penerimaan owner |
+| CB-0 | Standar produksi ([CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md)) | Dipakai untuk W1–W4; semua kebijakan terputuskan (D-36); tidak ada keputusan penerimaan owner terpisah; review independen terbatas — **tidak** dinyatakan final global |
+| CB-1a | W1 modul acuan ([curriculum/mod-w01/](../curriculum/mod-w01/module.yaml)) | **ACCEPTED** (W01-ACC, 2026-11-24; penerimaan terbatas, §4.2) |
+| CB-1b | W2–W4 (12 komponen) | **PRODUCED — dikoreksi** (CB-1, PR #27; review REQUEST CHANGES → koreksi konsolidasi F-28–F-70); menunggu re-review independen dan penerimaan owner |
 | CB-2 | W5–W8 (16 komponen) | NOT STARTED |
-| CB-3 | W9–W12 (16 komponen); diterima sebagai perencanaan, runtime NOT VERIFIED (RM:RV-1–RV-3) | NOT STARTED; lab kode butuh CU-6-Q13 |
-| CB-4 | W13–W16 (16 komponen), termasuk capstone | NOT STARTED; lab kode W16 butuh CU-6-Q13 |
+| CB-3 | W9–W12 (16 komponen); diterima sebagai perencanaan, runtime NOT VERIFIED (RM:RV-1–RV-3) | NOT STARTED / NOT AUTHORIZED; umpan balik test tersembunyi mengikuti D-36 |
+| CB-4 | W13–W16 (16 komponen), termasuk capstone | NOT STARTED / NOT AUTHORIZED; lab kode W16 mengikuti D-36 |
 | CB-R | Review dan penerimaan seluruh 64 komponen oleh owner | NOT STARTED |
 
 Setiap batch = satu PR dokumentasi; status sel §4 menjadi "diterima" hanya
 setelah review dan otorisasi owner.
 
-### 6.1 Rencana CB-1b (W2–W4) — disiapkan, belum diproduksi
+### 6.1 Rencana CB-1b (W2–W4) — catatan historis (pra-produksi)
+
+*Historis: bagian ini ditulis sebelum CB-1. W2–W4 sekarang diproduksi dan
+dikoreksi (§4.3); pernyataan "belum diproduksi" dan "CU-6-Q13" di bawah
+mencerminkan keadaan saat itu (CU-6-Q13 kini D-36).*
 
 **Pelajaran dari produksi W1:**
 
@@ -226,11 +231,12 @@ PR → review → (d) W4 PR → review → (e) perbarui matriks §4.
 
 Semua keputusan produksi diputuskan: OP-4 (D-23), CU-6 (D-24, D-35), OP-5
 (D-26), OP-7/OP-9/OP-10/OP-11 (D-27), OP-8/CU-4 (D-28), CU-3/CU-5/CU2-O5
-(D-30), CU-7 (D-31), CU2-O3/CU-11 (D-32), CU2-O4/CU-9 (D-33), CU-10 (D-34).
+(D-30), CU-7 (D-31), CU2-O3/CU-11 (D-32), CU2-O4/CU-9 (D-33), CU-10 (D-34),
+CU-6-Q13 (D-36).
 
 | Masih terbuka | Dampak |
 |---|---|
-| CU-6-Q13 umpan balik test tersembunyi | Field TPL-10 untuk lab kode W9–W12, W16 |
+| Verifikasi implementasi D-36 (umpan balik test tersembunyi) | Field TPL-10 untuk lab kode W9–W12, W16; kebijakan sudah diputuskan |
 | Runtime Python (O-04, UW-12, NOT VERIFIED) | Tidak memblokir penerimaan perencanaan (RM:RV-1) |
 
 Peta lengkap: [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §5.3.
@@ -239,7 +245,8 @@ Peta lengkap: [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §5.3.
 
 "Terbatas" = lolos review akhir PR #25 dengan batas review independen yang
 diungkapkan owner (lihat [review.md](../curriculum/mod-w01/review.md) §11).
-W1 diterima sebagai modul acuan (W01-ACC). W2–W16 belum dimulai.
+W1 diterima sebagai modul acuan (W01-ACC). *Historis (saat W01-ACC):* W2–W16
+belum dimulai. Status aktif: W2–W4 diproduksi (§4.3), W5–W16 NOT STARTED.
 
 ### 4.3 Catatan produksi CB-1 (W2–W4, 2026-11-24)
 
@@ -256,3 +263,9 @@ aritmetika dengan pustaka independen (mis. `ipaddress`) menemukan satu
 salah tulis; (3) posisi kunci perlu diseimbangkan ulang setiap modul;
 (4) W3 dibatasi mask /24 agar tidak bergantung pada W6 — modul jaringan
 lanjutan (bila ada) memerlukan biner.
+
+**Koreksi konsolidasi CB-1 (PR #27, 2026-11-24).** Review PR #27 = REQUEST
+CHANGES (F-28–F-70). Disposisi per temuan ada di `review.md` masing-masing
+modul (§ register koreksi). Skor maksimum, durasi, dan XP tidak berubah
+(tabel di atas tetap). F-55–F-57 dan F-59 **BLOCKED** — rincian temuan asli
+tidak tersedia. Status: diproduksi dan dikoreksi; **belum diterima**.

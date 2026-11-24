@@ -125,7 +125,7 @@ pakai akun admin hanya saat memang perlu.
 | Izin | Untuk berkas berarti | Contoh |
 |---|---|---|
 | **Baca** (*read*) | Boleh membuka dan melihat isi | Membaca jadwal piket |
-| **Tulis** (*write*) | Boleh mengubah, menyimpan perubahan, atau menghapus | Mengedit jadwal piket |
+| **Tulis** (*write*) | Boleh mengubah dan menyimpan perubahan; di model W2 juga menghapus | Mengedit jadwal piket |
 | **Jalankan** (*execute*) | Boleh menjalankan berkas sebagai program | Menjalankan pemasang aplikasi |
 
 Contoh tabel izin (model W2; berkas `jadwal-piket.xlsx` milik akun `guru`):
@@ -142,7 +142,10 @@ Artinya: siswa dapat **melihat** jadwal tetapi tidak dapat **mengubahnya**.
 
 *Model sederhana W2:* sistem nyata punya aturan lebih rinci (grup,
 izin folder, daftar kontrol akses). Di W2 kita hanya memakai tabel
-akun × izin seperti di atas.
+akun × izin seperti di atas, dan menganggap **izin tulis pada berkas**
+cukup untuk mengubah **dan** menghapusnya. Di sistem nyata (mis. Linux),
+boleh-tidaknya **menghapus** berkas sering ditentukan izin **folder
+induknya**, bukan izin berkas itu sendiri.
 
 ## 5. Prinsip hak minimum dan izin aplikasi
 
@@ -191,7 +194,8 @@ daripada "Izinkan sepanjang waktu".
 ## Pembahasan latihan (ditampilkan setelah pelajar mencoba)
 
 1. Satu di `/kerja/A` (dipulihkan) dan satu di `/kerja/B` (salinan).
-2. Tidak; menghapus butuh izin tulis.
+2. Tidak; di model W2 menghapus butuh izin tulis (di sistem nyata juga
+   bergantung pada izin folder).
 3. Tolak izin lokasi; resep tidak membutuhkan lokasi. (Bila ada fitur
    yang benar-benar butuh lokasi, izinkan hanya saat aplikasi digunakan.)
 

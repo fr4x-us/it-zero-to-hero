@@ -7,7 +7,8 @@ max_points: 30
 estimated_minutes: 30
 content_version: '1.0'
 xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w04.lab (D-28 XI-2)
-normalization: Satu kode dari {PHI, SOS, TRO, RAN, SPY, WIF, AMN}; buang spasi tepi; ubah ke huruf besar
+normalization: Satu kode dari {PHI, SOS, TRO, RAN, SPY, WIF, AMN}; buang spasi tepi; ubah ke huruf besar.
+  Kunci = kategori UTAMA menurut ciri paling menonjol (lihat primary_classification_rule)
 answer_validation: Kosong atau kode di luar himpunan → 0 untuk pemeriksaan itu; pemeriksaan lain tetap
   dinilai
 infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
@@ -37,7 +38,8 @@ variants:
         tebusan.
     - id: S6
       text: Di kafe muncul Wi-Fi terbuka "Kafe_Gratis_Free", padahal kasir menyebut Wi-Fi resmi bernama
-        "KafeSenja" dengan sandi tertulis di struk.
+        "KafeSenja" dengan sandi tertulis di struk. Setelah tersambung ke "Kafe_Gratis_Free", muncul halaman
+        yang meminta kata sandi akun emailmu agar internet aktif.
     - id: S7
       text: Email "tim keamanan" berkata akunmu diblokir dalam 2 jam; tautannya menuju domain yang bukan
         milik penyedia akun.
@@ -73,7 +75,8 @@ variants:
     - id: SPY
       label: Spyware
     - id: WIF
-      label: Wi-Fi palsu
+      label: Wi-Fi palsu/mencurigakan (skenario memberi bukti perilaku mencurigakan, bukan hanya nama
+        mirip)
     - id: AMN
       label: Bukan ancaman (tindakan aman)
   visible_example:
@@ -228,3 +231,8 @@ variants:
     scenario: S10
     expected: AMN
     points: 3
+primary_classification_rule: 'Bila ciri tumpang-tindih: menyamar sebagai program berguna → TRO; memata-matai
+  tanpa disebut menyamar → SPY; mengunci + tebusan → RAN; pesan/situs/formulir penyamar yang memancing
+  data → PHI; manipulasi langsung tanpa tautan/situs palsu → SOS; jaringan Wi-Fi dengan bukti perilaku
+  mencurigakan → WIF; tindakan lewat kanal resmi tanpa tanda mencurigakan → AMN. Setiap skenario memuat
+  bukti perilaku, bukan hanya gejala'

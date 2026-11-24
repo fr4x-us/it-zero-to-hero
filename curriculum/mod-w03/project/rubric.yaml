@@ -21,6 +21,8 @@ field_rules:
   number_F5: "Bilangan bulat tanpa tanda/desimal/spasi di dalam, tanpa nol di depan; boleh diikuti ' alamat' atau 'alamat' (huruf besar/kecil bebas). Contoh: '148', '148 alamat'. Ditolak: '148,0', 'seratus empat puluh delapan', '0148'"
   k3_strict: "Alamat tanpa akhiran '/24'; mask tepat '255.255.255.0'; F5 hanya digit"
   dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya tidak dapat dibaca; pemeriksaan lain tetap dinilai"
+  f1_dependency: "F-28: pemeriksaan perangkat (K1.c02–c06) membandingkan dengan alamat router yang DIWAJIBKAN (192.168.50.1, N1), bukan dengan isian F1, sehingga F1 yang kosong/tidak terbaca/salah tidak memberi atau menghapus kredit perangkat. Pemeriksaan yang memang membutuhkan F1 (K1.c01, c07, c09; K2.c01; K3.c01) bernilai 0 bila F1 kosong atau tidak terbaca. F1 terbaca tetapi bukan .1 → hanya K1.c01 = 0; c09 tetap menilai konsistensi gateway = F1 (E09)"
+  suffix_24_rule: "F-46: akhiran '/24' sengaja diperlakukan berbeda dari lab act-02. Lab meminta alamat saja sehingga '/24' ditolak (jawaban cocok persis). Proyek membaca '/24' sebagai notasi CIDR yang sah untuk kebenaran (K1/K2) karena maknanya tidak ambigu, tetapi bentuk ketat N5 memotong poin format (K3.c01). Keduanya deterministik dan tertulis di instruksi pelajar"
 
 criteria:
   K1:
@@ -28,11 +30,11 @@ criteria:
     points: 60
     checks:
       - {id: mod-w03.project.K1.c01, rule: "F1 (diurai) = 192.168.50.1 (N1)", depends_on: [F1 ip_readable], points: 6}
-      - {id: mod-w03.project.K1.c02, rule: "IP D1 host_ok DAN outside_pool DAN ≠ F1 (N2)", depends_on: [IP D1 ip_readable], points: 5}
-      - {id: mod-w03.project.K1.c03, rule: "IP D2 host_ok DAN outside_pool DAN ≠ F1", depends_on: [IP D2 ip_readable], points: 5}
-      - {id: mod-w03.project.K1.c04, rule: "IP D3 host_ok DAN outside_pool DAN ≠ F1", depends_on: [IP D3 ip_readable], points: 5}
-      - {id: mod-w03.project.K1.c05, rule: "IP D4 host_ok DAN outside_pool DAN ≠ F1", depends_on: [IP D4 ip_readable], points: 5}
-      - {id: mod-w03.project.K1.c06, rule: "IP D5 host_ok DAN outside_pool DAN ≠ F1", depends_on: [IP D5 ip_readable], points: 5}
+      - {id: mod-w03.project.K1.c02, rule: "IP D1 host_ok DAN outside_pool DAN ≠ 192.168.50.1 (alamat router menurut N1; tidak bergantung pada isian F1)", depends_on: [IP D1 ip_readable], points: 5}
+      - {id: mod-w03.project.K1.c03, rule: "IP D2 host_ok DAN outside_pool DAN ≠ 192.168.50.1", depends_on: [IP D2 ip_readable], points: 5}
+      - {id: mod-w03.project.K1.c04, rule: "IP D3 host_ok DAN outside_pool DAN ≠ 192.168.50.1", depends_on: [IP D3 ip_readable], points: 5}
+      - {id: mod-w03.project.K1.c05, rule: "IP D4 host_ok DAN outside_pool DAN ≠ 192.168.50.1", depends_on: [IP D4 ip_readable], points: 5}
+      - {id: mod-w03.project.K1.c06, rule: "IP D5 host_ok DAN outside_pool DAN ≠ 192.168.50.1", depends_on: [IP D5 ip_readable], points: 5}
       - {id: mod-w03.project.K1.c07, rule: "Keenam alamat F1, D1–D5 (diurai) berbeda satu sama lain (N3)", depends_on: [F1 dan IP D1–D5 ip_readable], points: 6}
       - {id: mod-w03.project.K1.c08, rule: "Kelima mask (diurai) = /24", depends_on: [mask D1–D5 mask_readable], points: 5}
       - {id: mod-w03.project.K1.c09, rule: "Kelima gateway (diurai) = F1 (diurai) DAN F1 host_ok (N4)", depends_on: [F1 dan gateway D1–D5 ip_readable], points: 6}
@@ -128,5 +130,9 @@ reviewer_examples:   # skor dihitung dengan aturan di atas; K4 diasumsikan 10
   - {id: E15, case: "F5 = '148 alamat'", K1: 60, K2: 20, K3: 7, total: 97, zero: [K3.c03]}
   - {id: E16, case: "F4 = 192.168.50.254 (tertukar dengan host terakhir)", K1: 56, K2: 20, K3: 10, total: 96, zero: [K1.c11]}
   - {id: E17, case: "Semua isian kosong", K1: 0, K2: 0, K3: 0, total: "0 untuk K1–K3; K4 sesuai jawaban", note: "MR-6"}
+  - {id: E18, case: "F1 kosong; perangkat, mask, gateway .1, F3–F5 acuan", K1: 42, K2: 18, K3: 6, total: 76, zero: [K1.c01, K1.c07, K1.c09, K2.c01, K3.c01], note: "Kredit perangkat K1.c02–c06 tetap (dibandingkan dengan .1 yang diwajibkan); keunikan dan gateway butuh F1"}
+  - {id: E19, case: "F1 tidak terbaca ('192.168.50.01'); lainnya acuan", K1: 42, K2: 18, K3: 6, total: 76, zero: [K1.c01, K1.c07, K1.c09, K2.c01, K3.c01], note: "Sama dengan E18"}
+  - {id: E20, case: "F1 = '192.168.50.1/24' (terbaca, tidak ketat); lainnya acuan", K1: 60, K2: 20, K3: 6, total: 96, zero: [K3.c01], note: "suffix_24_rule"}
+  - {id: E21, case: "F1 = '192.168.50.300' (oktet > 255) dan D1 = '192.168.50.1'", K1: 37, K2: 18, K3: 6, total: 71, zero: [K1.c01, K1.c02, K1.c07, K1.c09, K2.c01, K3.c01], note: "D1 = alamat router yang diwajibkan → c02 gagal walaupun F1 tidak terbaca (tanpa kredit yang tidak didukung)"}
 
 objective_limits: "Pemeriksaan membuktikan rencana memenuhi aturan model W3; tidak membuktikan konfigurasi perangkat nyata berhasil dan tidak mensertifikasi kompetensi (D-17, D-34)"
