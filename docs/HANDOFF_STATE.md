@@ -43,6 +43,7 @@ di setiap PR batch.
 | #24 | Pencatatan D-23–D-25; lembar keputusan kurikulum; templat CB-0; tinjauan konsistensi | Merged 2026-11-24 sebagai `40ca205` (di-merge Claude atas persetujuan eksplisit owner) |
 | #25 | Pencatatan D-26–D-37; CB-0; konten W1; revisi kualitas W1 (F-01–F-23) | Merged 2026-11-24 sebagai `df76c5f` (head `f4cb173`; di-merge Claude atas otorisasi eksplisit owner) |
 | #26 | CB-0.5: D-38, W01-ACC, empat skill agen, PROJECT_MAP, protokol efisiensi token; revisi F-24–F-27 (hardening keamanan) | Merged 2026-11-24 sebagai `ab0103e` (head `691ae87`; di-merge Claude atas otorisasi eksplisit owner, master prompt CB-1) |
+| (CB-1) | V03 PASS; kurikulum W2–W4 (12 komponen); pembaruan status | Terbuka (branch `planning/cb1-w02-w04`); **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -76,17 +77,15 @@ Rincian: [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md),
 
 ## Tugas terakhir
 
-Merge PR #25 (`df76c5f`). Pencatatan D-38 dan W01-ACC; UW-36 → COMPLETE.
-CB-0.5: empat skill dipasang di `.claude/skills/`
-([AGENT_SKILL_REGISTRY.md](AGENT_SKILL_REGISTRY.md)), peta proyek
-([PROJECT_MAP.md](PROJECT_MAP.md)), protokol efisiensi token
-([AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTOCOL.md)),
-integrasi `CLAUDE.md`, validasi V01–V18
-([CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md)). Audit §19: 32
-COMPLETE, 4 OPEN, 12 BLOCKED, 3 DEFERRED, 5 NOT VERIFIED. Jalur P 32/43.
-Kurikulum diproduksi 4/64, diterima 4/64. Revisi F-24–F-27: hook dan
-`allowed-tools` PwF dihapus; varian lokal instruksi saja. Status: PR #26
-terbuka.
+CB-1 (2026-11-24): Fase A — PR #26 di-merge (`ab0103e`, head `691ae87`),
+diverifikasi ulang di sesi baru. Fase B — V03 **PASS**: keempat skill
+ditemukan dan dimuat di sesi baru `session_011Df1V7VYFZ1Fdwc9jRg7nK`
+([CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md) §4). Fase D — W2
+(OS & berkas), W3 (jaringan), W4 (keamanan siber) diproduksi di
+`curriculum/mod-w02/`–`mod-w04/` dengan `review.md` masing-masing.
+Audit §20: 32 COMPLETE, 4 OPEN, 12 BLOCKED, 3 DEFERRED, 5 NOT VERIFIED;
+jalur P 32/43. Kurikulum diproduksi 16/64, diterima 4/64. Satu PR CB-1
+dibuka untuk review independen; tidak di-merge.
 
 ## Checkpoint aktif (persisten; dibaca pertama saat memulai ulang sesi)
 
@@ -95,16 +94,16 @@ Kontrak field: [AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTO
 | Field | Nilai |
 |---|---|
 | Tugas aktif dan lingkup | CB-1 — produksi modul W2, W3, W4 (otorisasi owner, master prompt 2026-11-24). Konten kurikulum + validasi dokumentasi saja; satu PR baru; tanpa merge |
-| Fase | Fase D: W2, W3, W4 selesai (diproduksi + divalidasi). Berikutnya: pembaruan dokumen status, verifikasi akhir, PR |
+| Fase | CB-1 selesai; PR CB-1 dibuka; **menunggu review ChatGPT dan otorisasi owner** |
 | Selesai | Fase A (PR #26 merged `ab0103e`, diverifikasi ulang); Fase B (V03 PASS); **W2** `curriculum/mod-w02/` (0 galat; 16/16 contoh rubrik); **W3** `curriculum/mod-w03/` (0 galat; alamat diverifikasi `ipaddress`; 17/17 contoh rubrik); **W4** `curriculum/mod-w04/` (0 galat; domain diverifikasi; 13/13 contoh rubrik; pemeriksaan keamanan konten) |
-| Sisa | pembaruan dokumen status; verifikasi akhir; satu PR; STOP |
+| Sisa | Review independen PR CB-1; revisi bila ada temuan; otorisasi merge owner; penerimaan W2–W4 terpisah |
 | Berkas relevan | `docs/CURRICULUM_TEMPLATES_CB0.md`, `docs/CURRICULUM_PRODUCTION_PLAN.md`, `docs/PROJECT_RUBRIC_DECISION_SHEETS.md` A.3, `docs/ASSESSMENT_FLOW_DECISION_SHEETS.md` A.4, `curriculum/mod-w01/` (acuan), `curriculum/mod-w02/`–`mod-w04/` (keluaran) |
-| Versi kerja | Branch `planning/cb1-w02-w04`; basis `main` = `ab0103e4954ead4ded6343d105d73a2729916cd6`; checkpoint terbaru = commit terakhir branch ini |
+| Versi kerja | Branch `planning/cb1-w02-w04`; basis `main` = `ab0103e4954ead4ded6343d105d73a2729916cd6`; versi terkini = head PR CB-1 di GitHub (`git log origin/planning/cb1-w02-w04 -1`) |
 | Keputusan | Owner menerima CB-0.5; CB-1 diotorisasi. LO rinci W2–W4 diturunkan penyusun dari topik CUR §2 (sama dengan praktik W1; tujuan rinci per minggu tetap PROPOSED, CU-1) |
 | Blocker | Tidak ada untuk W2–W4 (lab non-kode; CU-6-Q13 tidak relevan) |
 | Pendekatan gagal | W2: pemindai kebocoran memakai `lstrip('./')` → positif palsu; diganti pencocokan path utuh. W3: worker dimulai ulang di tengah pelajaran; dilanjutkan dari berkas di branch (tidak ada pekerjaan diulang) |
 | Bukti verifikasi | [CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md) §4 (V03); `curriculum/mod-w0N/review.md` per modul |
-| Aksi berikutnya yang diizinkan | Lanjutkan modul aktif dari berkas yang sudah ada di branch; jangan ulang modul yang sudah ber-`review.md` lengkap |
+| Aksi berikutnya yang diizinkan | Tidak ada sampai owner mengirim instruksi revisi atau kalimat otorisasi merge untuk PR CB-1 |
 | Kondisi berhenti | PR CB-1 dibuka → STOP. Jangan merge, jangan mulai W5, jangan implementasi. Butuh keputusan owner baru → simpan checkpoint dan STOP |
 
 ## Blocker
@@ -119,7 +118,7 @@ dipertahankan agar rujukan lama tetap valid.
 | B-10 | Penilaian: kebijakan diputuskan (D-04, D-12, D-13, D-23–D-38); sisa: rubrik concept W2–W16 (UW-26), OP-6 jam (UW-28). | UW-26, UW-28 |
 | B-11 | Backup: D-03, D-07, D-16, D-17 **diputuskan**; sisa OD-5–OD-9 dan retensi log restore (UW-33); verifikasi kripto (UW-15, jalur V). | UW-33 |
 | B-13 | UI: palet (D-01 M-17), kontras (D-14), tema (D-15) **diputuskan**; sisa: tipografi/aset/breakpoint/alat screenshot (UO-3–UO-9). | UW-35 |
-| B-14 | Kurikulum: kebijakan CU lengkap (UW-36 COMPLETE, D-38); W1 diterima (W01-ACC); W2–W16 belum diproduksi; lab minggu 9–12 bergantung O-04. | UW-21, UW-37 |
+| B-14 | Kurikulum: kebijakan CU lengkap (UW-36 COMPLETE, D-38); W1 diterima (W01-ACC); W2–W4 diproduksi (CB-1), menunggu review/penerimaan; W5–W16 belum diproduksi; lab minggu 9–12 bergantung O-04. | UW-21, UW-37 |
 | B-5 | O-04, O-06, O-08, O-09, O-10, O-11 masih OPEN (O-01, O-02, O-07, O-16 diputuskan D-06, D-08, D-07, D-09). | UW-15, UW-24, UW-38, UW-39 |
 
 ### Izin
@@ -142,8 +141,8 @@ Selesai: B-2 (PR #7); B-3 (D-01, PR #18); B-7 (D-02, PR #19); B-9 (D-05, PR #19)
 
 ## Langkah berikutnya (usulan, menunggu owner)
 
-1. Review independen PR CB-0.5 (ChatGPT) → otorisasi merge eksplisit bila PASS.
-2. Setelah merge: verifikasi aktivasi skill di sesi baru (registry §5) dan
-   catat baseline efisiensi pembanding saat produksi W2 diizinkan.
-3. Produksi W2–W16 belum dimulai; butuh otorisasi terpisah.
+1. Review independen PR CB-1 (ChatGPT) → revisi bila ada temuan →
+   otorisasi merge eksplisit bila PASS.
+2. Penerimaan owner W2–W4 (terpisah dari merge).
+3. Produksi W5–W16 belum diizinkan; butuh otorisasi terpisah.
 4. Implementasi, prototipe, pengukuran, dan benchmark tetap tidak diizinkan.

@@ -961,3 +961,50 @@ mana pun dan tidak mengubah jumlah di atas. Status dan bukti:
 
 PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
 D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.
+
+## 20. Pembaruan status — merge PR #26, CB-0.5 diterima, CB-1 (W2–W4) (2026-11-24)
+
+PR #26 di-merge pada head `691ae87ecc6507ea16a7051872729b4986345b4d`
+(merge commit `ab0103e4954ead4ded6343d105d73a2729916cd6`) atas otorisasi
+eksplisit owner. Owner menerima CB-0.5 (saat itu V03 NOT VERIFIED); V03
+kemudian PASS di sesi baru. Owner mengotorisasi CB-1 (W2–W4).
+
+### 20.1 Perubahan per butir
+
+| ID | Sebelum | Sesudah | AC | Bukti |
+|---|---|---|---|---|
+| UW-37 | OPEN | OPEN (tidak berubah) | CUR:CC-01–CC-11 untuk 64 komponen + penerimaan | Diproduksi 16/64 (W1–W4); W2–W4 belum direview independen dan belum diterima owner; W5–W16 belum diproduksi. **Tidak** COMPLETE |
+| UW-26 | OPEN | OPEN (tidak berubah) | Rubrik/bank concept per modul (16 modul) | Bank concept W1–W4 ada (4/16 modul, 48/192 soal); 12 modul belum |
+| Lainnya | — | Tidak berubah | — | CB-1 hanya konten kurikulum + dokumen status |
+
+### 20.2 Jumlah per status (56 butir; dihitung ulang dari §19.2 + §20.1)
+
+| Status | §19 | §20 | Butir |
+|---|---|---|---|
+| COMPLETE | 32 | 32 | — |
+| OPEN | 4 | 4 | UW-12, UW-26, UW-37, UW-52 |
+| BLOCKED | 12 | 12 | UW-02, UW-10, UW-14, UW-23, UW-24, UW-28, UW-33, UW-34, UW-35, UW-39, UW-41, UW-53 |
+| DEFERRED | 3 | 3 | UW-21, UW-38, UW-40 |
+| NOT VERIFIED | 5 | 5 | UW-13, UW-15, UW-54, UW-55, UW-56 |
+| **Total** | 56 | **56** | |
+
+Jalur P 32/43 (74,4%); register 32/56 (57,1%).
+
+### 20.3 Kurikulum (dilaporkan terpisah: produksi, review, penerimaan)
+
+| Ukuran | Diproduksi | Review independen | Diterima owner |
+|---|---|---|---|
+| Modul | 4/16 (W1–W4) | 1/16 (W1, terbatas) | 1/16 (W1) |
+| Komponen penilaian | **16/64** | 4/64 | **4/64** |
+| Soal teori | 160/620 | 40 | 40 |
+| Soal concept | 48/192 | 12 | 12 |
+| Spesifikasi lab | 24/96 | 6 | 6 |
+| Mini-project | 4/16 | 1 | 1 |
+| Jam nominal | 32/128 | 8 | 8 |
+
+Batas review independen W1 (§19.3) tetap berlaku. W2–W4: review mandiri
+penyusun saja ([`curriculum/mod-w02/review.md`](../curriculum/mod-w02/review.md),
+[`mod-w03`](../curriculum/mod-w03/review.md), [`mod-w04`](../curriculum/mod-w04/review.md)).
+
+PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
+D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.

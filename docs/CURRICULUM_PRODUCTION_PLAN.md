@@ -1,7 +1,7 @@
 # IT ZERO → HERO — Rencana Produksi Kurikulum (UW-37)
 
 Status: **RENCANA** · dokumentasi saja · **belum ada konten yang
-diproduksi** kecuali W1. UW-37 tetap **OPEN** (1/16 modul diproduksi, 0 diterima). Tanggal: **2026-11-24**
+diproduksi** kecuali W1–W4. UW-37 tetap **OPEN** (4/16 modul diproduksi; 1/16 diterima owner — W1; W2–W4 menunggu review dan penerimaan, CB-1 2026-11-24). Tanggal: **2026-11-24**
 (diperbarui batch D-26–D-35). Basis: `main` = `40ca205` (merge PR #24).
 Standar produksi CB-0 (kebijakan lengkap setelah D-36; menunggu review independen dan penerimaan owner): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md). Modul acuan: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml).
 
@@ -107,9 +107,9 @@ sudah diputuskan (D-23–D-35).
 | Modul | Theory 30% | Laboratory 40% | Mini-project 20% | Concept 10% |
 |---|---|---|---|---|
 | W1 Hardware/software | **PRODUCED** (40 soal) | **PRODUCED** (6 spesifikasi) | **PRODUCED** (1) | **PRODUCED** (12 soal) |
-| W2 OS & file | NOT STARTED | NOT STARTED | NOT STARTED | NOT STARTED |
-| W3 Jaringan | NOT STARTED | NOT STARTED | NOT STARTED | NOT STARTED |
-| W4 Keamanan siber | NOT STARTED | NOT STARTED | NOT STARTED | NOT STARTED |
+| W2 OS & file | **PRODUCED** (40 soal) | **PRODUCED** (6 spesifikasi) | **PRODUCED** (1) | **PRODUCED** (12 soal) |
+| W3 Jaringan | **PRODUCED** (40 soal) | **PRODUCED** (6 spesifikasi) | **PRODUCED** (1) | **PRODUCED** (12 soal) |
+| W4 Keamanan siber | **PRODUCED** (40 soal) | **PRODUCED** (6 spesifikasi) | **PRODUCED** (1) | **PRODUCED** (12 soal) |
 | W5 Dasar matematika | NOT STARTED | NOT STARTED | NOT STARTED | NOT STARTED |
 | W6 Biner & Boolean | NOT STARTED | NOT STARTED | NOT STARTED | NOT STARTED |
 | W7 Berpikir komputasional | NOT STARTED | NOT STARTED | NOT STARTED | NOT STARTED |
@@ -127,13 +127,13 @@ sudah diputuskan (D-23–D-35).
 
 | Ukuran | Diproduksi | Direview (ChatGPT) | Diterima owner | Runtime diverifikasi |
 |---|---|---|---|---|
-| Modul | 1/16 (W1) | 1/16 (terbatas) | 1/16 (W01-ACC) | Tidak berlaku untuk W1; 0 untuk modul kode |
-| Komponen penilaian | 4/64 | 4/64 (terbatas) | 4/64 | — |
-| Jam nominal tercakup | 8/128 | 8/128 (terbatas) | 8/128 | — |
-| Soal teori | 40/620 | 40 (terbatas) | 40 | — |
-| Soal concept | 12/192 | 12 (terbatas) | 12 | — |
-| Spesifikasi lab | 6/96 | 6 (terbatas) | 6 | — |
-| Spesifikasi mini-project | 1/16 | 1 (terbatas) | 1 | — |
+| Modul | 4/16 (W1–W4) | 1/16 (W1, terbatas) | 1/16 (W01-ACC) | Tidak berlaku untuk W1–W4; 0 untuk modul kode |
+| Komponen penilaian | 16/64 | 4/64 (terbatas) | 4/64 | — |
+| Jam nominal tercakup | 32/128 | 8/128 (terbatas) | 8/128 | — |
+| Soal teori | 160/620 | 40 (terbatas) | 40 | — |
+| Soal concept | 48/192 | 12 (terbatas) | 12 | — |
+| Spesifikasi lab | 24/96 | 6 (terbatas) | 6 | — |
+| Spesifikasi mini-project | 4/16 | 1 (terbatas) | 1 | — |
 
 Inventaris target D-30 (dua butir nyata per slot/aktivitas): teori
 (15 × 20 + 10) × 2 = 620; concept 16 × 6 × 2 = 192; lab 16 × 3 × 2 = 96;
@@ -161,7 +161,7 @@ Perpanjangan aksesibilitas, remedial, dan review opsional berada di luar
 |---|---|---|
 | CB-0 | Standar produksi ([CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md)) | Dapat dipakai untuk W1–W8; **finalisasi global belum** (CU-6-Q13); belum lolos review; belum diterima owner |
 | CB-1a | W1 modul acuan ([curriculum/mod-w01/](../curriculum/mod-w01/module.yaml)) | **PRODUCED**, direvisi setelah review PR #25; menunggu review ulang dan penerimaan owner |
-| CB-1b | W2–W4 (12 komponen) | NOT STARTED — mulai setelah W1 diterima |
+| CB-1b | W2–W4 (12 komponen) | **PRODUCED** (CB-1, 2026-11-24; satu PR atas instruksi owner); menunggu review ChatGPT dan penerimaan owner |
 | CB-2 | W5–W8 (16 komponen) | NOT STARTED |
 | CB-3 | W9–W12 (16 komponen); diterima sebagai perencanaan, runtime NOT VERIFIED (RM:RV-1–RV-3) | NOT STARTED; lab kode butuh CU-6-Q13 |
 | CB-4 | W13–W16 (16 komponen), termasuk capstone | NOT STARTED; lab kode W16 butuh CU-6-Q13 |
@@ -240,3 +240,19 @@ Peta lengkap: [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §5.3.
 "Terbatas" = lolos review akhir PR #25 dengan batas review independen yang
 diungkapkan owner (lihat [review.md](../curriculum/mod-w01/review.md) §11).
 W1 diterima sebagai modul acuan (W01-ACC). W2–W16 belum dimulai.
+
+### 4.3 Catatan produksi CB-1 (W2–W4, 2026-11-24)
+
+| Modul | Teori (timer / review / TA-B) | Lab (aktivitas) | Concept maks. | Proyek | Bukti |
+|---|---|---|---|---|---|
+| W2 | 56 poin; 33 / 12 / 50 menit (S = 1.680) | 30 + 30 + 40 | 20 | Menata folder proyek (1 keadaan bernilai penuh) | [`mod-w02/review.md`](../curriculum/mod-w02/review.md) |
+| W3 | 56 poin; 32 / 13 / 48 menit (S = 1.635) | 30 + 40 + 30 | 21 | Rencana alamat /24 (78.485.511.600 rencana bernilai penuh) | [`mod-w03/review.md`](../curriculum/mod-w03/review.md) |
+| W4 | 56 poin; 32 / 13 / 48 menit (S = 1.635) | 30 + 40 + 30 | 20 | Rencana keamanan akun (163.840 rencana bernilai penuh) | [`mod-w04/review.md`](../curriculum/mod-w04/review.md) |
+
+Pelajaran dari CB-1 untuk modul berikutnya: (1) pemindai kebocoran V-L
+otomatis menemukan kebocoran nyata di setiap modul (judul tabel, pertanyaan
+Ya/Tidak, contoh pelajaran) — jalankan sebelum PR; (2) verifikasi
+aritmetika dengan pustaka independen (mis. `ipaddress`) menemukan satu
+salah tulis; (3) posisi kunci perlu diseimbangkan ulang setiap modul;
+(4) W3 dibatasi mask /24 agar tidak bergantung pada W6 — modul jaringan
+lanjutan (bila ada) memerlukan biner.
