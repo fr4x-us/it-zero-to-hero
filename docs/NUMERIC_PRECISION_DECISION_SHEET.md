@@ -1,7 +1,8 @@
 # IT ZERO → HERO — Decision Sheet: Representasi Angka dan Presisi Penilaian (UW-22)
 
 Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode.
-Tanggal: **2026-11-23**. Basis: `main` = `2114ca8` (merge PR #19).
+Tanggal: **2026-11-23**. Basis awal: `main` = `2114ca8` (merge PR #19);
+§8 ditambahkan pada basis `6a805a1` (merge PR #20).
 
 Lembar ini menyiapkan keputusan OP-3 / UW-22. Rekomendasi di §5 adalah
 saran teknis, **bukan** keputusan. Aturan penilaian terkunci tidak
@@ -57,7 +58,7 @@ naif (semuanya bernilai tepat 80 secara eksak tetapi terhitung
 | Tanpa pembulatan sebelum lulus (N-R3) | **Melanggar** bila skor asli tidak di grid (7/9) — harus dibulatkan saat disimpan | **Melanggar** untuk pembagian tak berhingga kecuali disimpan sebagai pecahan | **Melanggar** secara inheren (representasi biner) | **Memenuhi** |
 | Persistensi Room | `INTEGER` | `TEXT` (string desimal) atau skala ke `INTEGER` | `REAL` | Dua kolom `INTEGER` per komponen per attempt |
 | Repeatability lintas perangkat | Ya | Ya, bila `MathContext` tetap | Umumnya ya, tetapi keputusan batas rapuh | Ya |
-| Risiko overflow | Rendah (`Long`) | Tidak ada | Tidak ada | Rendah bila poin maksimum dibatasi; perlu batas tertulis (mis. `Long` dengan poin ≤ 10⁶) |
+| Risiko overflow | Rendah (`Long`) | Tidak ada | Tidak ada | Rendah bila poin maksimum dibatasi. **Koreksi (verifikasi 2026-11-23):** contoh semula "poin ≤ 10⁶" salah — perbandingan silang empat komponen butuh hingga 100·M⁴, sehingga dengan `Long` batas aman M ≤ 17.426 poin per komponen; lihat §8 |
 | Kompleksitas | Rendah | Sedang | Rendah, tetapi pengaman batas sulit dibuktikan | Sedang (fungsi pembanding rasional + test) |
 | Tampilan | Bagi skala, bulatkan untuk UI | Format desimal | Format | Hitung desimal hanya untuk tampilan |
 
@@ -101,3 +102,37 @@ Kriteria ini **NOT VERIFIED** — belum ada implementasi.
 | NP-O3 | Aturan tie antar-attempt dengan skor sama (mis. attempt paling awal) |
 | NP-O4 | Presisi tampilan (berapa digit desimal) |
 | NP-O5 | Agregasi numerik tingkat program (D-04 menyatakan OPEN; tidak ada rata-rata baru) |
+
+## 8. Permintaan keputusan owner — UW-22 (2026-11-23)
+
+### 8.1 Verifikasi ulang (hitungan, bukan uji aplikasi)
+
+| Pemeriksaan | Hasil |
+|---|---|
+| Aturan NP-1: `W ≥ 80 ⇔ 30t + 40l + 20p + 10c ≥ 800000` untuk skor berskala 1/100 (`t = T × 100`) | Benar: `W = (30t + 40l + 20p + 10c) / 10000` |
+| Aturan NP-4 vs aritmetika pecahan eksak | 200.000 kombinasi acak (poin maksimum 1–50 per komponen): **0** perbedaan keputusan |
+| 19 kombinasi float naif di §3 | Semuanya bernilai eksak `30T+40L+20P+10C = 8000` (tepat 80) |
+| Batas overflow NP-4 dengan `Long` (2⁶³ − 1) | Ruas kiri terburuk = 100·M⁴; aman untuk M ≤ **17.426** poin maksimum per komponen. Contoh "≤ 10⁶" di §4 dikoreksi |
+
+### 8.2 Rincian NP-4 yang diusulkan (PROPOSED)
+
+| Aspek | Usulan |
+|---|---|
+| Representasi skor mentah | Setiap attempt per komponen menyimpan dua bilangan bulat: `earned` (0 ≤ earned ≤ max) dan `max` (> 0). Tidak menyimpan persen sebagai sumber kebenaran |
+| Ambang komponen | `komponen ≥ 75 ⇔ 4·earned ≥ 3·max` |
+| Ambang tertimbang | Dengan `D = m_T·m_L·m_P·m_C`: `30·e_T·(D/m_T) + 40·e_L·(D/m_L) + 20·e_P·(D/m_P) + 10·e_C·(D/m_C) ≥ 80·D` |
+| Pengaman overflow | (1) Batas tertulis `max ≤ 10.000` per komponen per attempt (di bawah 17.426, dengan margin); (2) perkalian memakai operasi yang gagal eksplisit bila overflow (mis. `Math.multiplyExact`), atau `BigInteger` sebagai cadangan. Pilihan teknis final saat implementasi |
+| Skor terbaik per komponen | Bandingkan `e₁·m₂` dengan `e₂·m₁` |
+| Tie (skor sama) | Usulan: pilih attempt **paling awal** yang mencapai skor terbaik, agar hasil stabil dan tidak berubah oleh remedial berskor sama. Keputusan owner (NP-O3) |
+| Presisi tampilan | Usulan: tampilkan 2 desimal **dibulatkan ke bawah** (mis. 79,991 → "79,99"; 74,999 → "74,99"; 80 → "80,00"), selalu disertai status teks lulus/belum lulus. Pembulatan ke bawah mencegah angka tampil memenuhi ambang padahal belum. Keputusan owner (NP-O4) |
+| Ketergantungan | OP-4 (cara nilai parsial penjelasan konsep) dan CU-6 / CUR §5 (bobot test case lab) menentukan nilai `earned`/`max`; agregasi beberapa aktivitas dalam satu komponen per modul belum diputuskan (lihat [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md)) |
+
+### 8.3 Pertanyaan untuk owner
+
+1. **UW-22-Q1:** Setujui NP-4 (integer rasional dari poin mentah) sebagai representasi skor? (Alternatif: NP-1 bila semua skor didefinisikan pada grid 0,01.)
+2. **UW-22-Q2:** Setujui batas `max ≤ 10.000` poin per komponen per attempt?
+3. **UW-22-Q3:** Tie skor sama: pilih attempt paling awal?
+4. **UW-22-Q4:** Tampilan: 2 desimal dibulatkan ke bawah + status teks?
+
+Status: **AWAITING OWNER**. UW-22 tetap **OPEN/BLOCKED** sampai dijawab.
+

@@ -531,3 +531,28 @@ Batch 02 yang verbatim → PC-8 tetap **PARTIAL**.
 **PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
 prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
 
+## 14. Pembaruan status — persiapan keputusan owner (2026-11-23)
+
+Basis: `main` = `6a805a1` (merge PR #20). Lembar keputusan disiapkan;
+**tidak ada** butir yang menjadi COMPLETE karena keputusan owner belum ada.
+
+| ID | Status | Catatan |
+|---|---|---|
+| UW-22 | **BLOCKED** (menunggu owner) | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) §8: verifikasi ulang matematika (0 perbedaan dari 200.000 uji acak NP-4 vs pecahan eksak); **koreksi** batas overflow (contoh semula "≤ 10⁶" salah, batas aman `Long` M ≤ 17.426; usulan `max ≤ 10.000`); usulan tie dan tampilan; pertanyaan UW-22-Q1–Q4 |
+| UW-36 (CU-2) | **BLOCKED** (menunggu owner) | [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md): Opsi A vs B; rekomendasi Opsi A; pertanyaan CU-2-Q1–Q3. Bagian lain UW-36 (CU-3, CU-5–CU-7, CU-9, CU-11) tetap OPEN |
+| UW-17 (UO-1) | **BLOCKED** (menunggu owner) | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md): tabel kontras, varian turunan, pasangan teks–latar; pertanyaan UO-1-Q1–Q3 |
+| UW-18 (UO-2) | **BLOCKED** (menunggu owner) | idem: DM-1/DM-2/DM-3, fakta Force Dark dan dynamic color dari dokumentasi resmi; pertanyaan UO-2-Q1–Q2 |
+
+### Jumlah per status (55 butir) — tidak berubah dari §13
+
+| Status | Jumlah |
+|---|---|
+| COMPLETE dengan bukti | 19 |
+| OPEN (NOT STARTED / PARTIAL) | 4 (UW-12, UW-26, UW-37, UW-52) |
+| BLOCKED | 29 |
+| NOT VERIFIED | 3 (UW-13, UW-54, UW-55) |
+
+**PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
+prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
+PY:F-01–F-15: **NOT VERIFIED**.
+

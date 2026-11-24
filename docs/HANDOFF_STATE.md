@@ -9,7 +9,7 @@ di setiap PR batch.
 | Item | Nilai | Sumber |
 |---|---|---|
 | Tahap | PERSIAPAN; implementasi **belum diizinkan** | [`CLAUDE.md`](../CLAUDE.md), [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) |
-| `main` saat checkpoint ditulis | `2114ca8` (merge PR #19) | `git log` |
+| `main` saat checkpoint ditulis | `6a805a1` (merge PR #20) | `git log` |
 | Kode aplikasi / proyek Gradle / workflow CI / APK | Tidak ada | isi repositori |
 | Build atau test Android pernah dijalankan | **Belum pernah** | [QUALITY_GATES.md](QUALITY_GATES.md) EV-1 |
 
@@ -36,7 +36,8 @@ di setiap PR batch.
 | #17 | Cleanup UW-44/46–51 + [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) | Merged 2026-11-23 sebagai `4eacaa0` (di-merge Claude atas persetujuan eksplisit owner) |
 | #18 | Pencatatan persetujuan owner Batch 01 (D-01, M-01–M-19) | Merged 2026-11-23 sebagai `777f5dc` (di-merge Claude atas otorisasi eksplisit owner) |
 | #19 | Pencatatan keputusan owner D-02–D-11 | Merged 2026-11-23 sebagai `2114ca8` (di-merge Claude atas persetujuan eksplisit owner) |
-| PR Cleanup UW-45/22/44 | Penyeragaman label B01, lembar presisi angka, rujukan ID | Terbuka, menunggu review; **tidak di-merge Claude** |
+| #20 | Cleanup UW-45/22/44 (label B01, lembar presisi angka, rujukan ID) | Merged 2026-11-23 sebagai `6a805a1` (di-merge Claude atas persetujuan eksplisit owner) |
+| PR Keputusan berikutnya | Persiapan keputusan UW-22, CU-2, UO-1/UO-2 | Terbuka, menunggu review; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -61,11 +62,11 @@ Rincian: [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md),
 
 ## Tugas terakhir
 
-Cleanup setelah PR #19: UW-45 (label sumber Batch 01 diseragamkan di
-dokumen Batch 05–09) dan UW-44 (rujukan ID lintas dokumen memakai kode
-dokumen) COMPLETE; UW-22 punya lembar keputusan
-[NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md)
-dan tetap menunggu owner. Status: PR terbuka, menunggu review.
+Persiapan keputusan owner: UW-22 (§8 lembar presisi angka, termasuk
+koreksi batas overflow), CU-2
+([CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md)),
+UO-1/UO-2 ([ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md)).
+Semua butir tetap AWAITING OWNER. Status: PR terbuka, menunggu review.
 
 ## Blocker
 
@@ -103,10 +104,10 @@ Selesai: B-2 (PR #7); B-3 (D-01, PR #18); B-7 (D-02, PR #19); B-9 (D-05, PR #19)
 
 ## Langkah berikutnya (usulan, menunggu owner)
 
-1. Review PR cleanup (ChatGPT) → instruksi merge eksplisit bila PASS.
-2. Keputusan owner berikutnya: UW-22 (representasi angka, rekomendasi NP-4),
-   CU-2 (empat komponen per modul), UO-1 (kontras), UO-2 (dark mode),
-   OD-1/OD-2 (kripto, risiko pemalsuan), UW-43 (lokasi file Batch 01).
-3. Tugas dokumentasi berikutnya yang direkomendasikan: lembar keputusan
-   untuk CU-2 dan UO-1/UO-2 (tanpa coding).
+1. Review PR keputusan berikutnya (ChatGPT) → instruksi merge eksplisit bila PASS.
+2. Owner menjawab antrean di
+   [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) §Antrean:
+   UW-22-Q1–Q4, CU-2-Q1–Q3, UO-1-Q1–Q3, UO-2-Q1–Q2.
+3. Setelah itu: lembar keputusan OD-1/OD-2 (kripto backup, risiko
+   pemalsuan) dan UW-43 (lokasi file Batch 01).
 4. Implementasi dan prototipe tetap tidak diizinkan (D-10, D-11).

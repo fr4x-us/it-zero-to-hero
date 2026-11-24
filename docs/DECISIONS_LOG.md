@@ -63,7 +63,9 @@ blueprint atau Batch 02.
 | 10 | [FINAL_PLANNING_READINESS_REVIEW.md](FINAL_PLANNING_READINESS_REVIEW.md) | #15 | Ringkasan kesiapan |
 | Audit | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) | #16 | UW-01–UW-54 |
 | Checklist | [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) | #17, #18, #19 | D-01–D-11 (lihat §Keputusan owner) |
-| UW-22 | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) | PR cleanup UW-22/44/45 | OP-3 / UW-22 — menunggu owner |
+| UW-22 | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) | #20, PR keputusan berikutnya (§8) | OP-3 / UW-22 — menunggu owner |
+| CU-2 | [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) | PR keputusan berikutnya | CU-2 / UW-36 — menunggu owner |
+| UO-1/UO-2 | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) | PR keputusan berikutnya | UO-1 / UW-17, UO-2 / UW-18 — menunggu owner |
 
 ## Aturan rujukan lintas dokumen (editorial, UW-44)
 
@@ -86,6 +88,8 @@ diganti. Saat merujuk ID lokal dari dokumen lain, tulis kode dokumennya:
 | `FIN:` | FINAL_PLANNING_READINESS_REVIEW (mis. `FIN:C-4`) |
 | `AUD:D-xx` | Pemeriksaan konsistensi audit §4 |
 | `NUM:` | NUMERIC_PRECISION_DECISION_SHEET |
+| `CU2:` | CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET |
+| `ACC:` | ACCESSIBILITY_COLOR_DECISION_SHEET |
 | `UW-nn` | Register audit (ID global, unik) |
 | `D-01`–`D-11` (tanpa kode) | Keputusan owner (global) — [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
 | `O-`, `OP-`, `OD-`, `CO-`, `UO-`, `CU-`, `KS-`, gate QG (`AB-`, `OF-`, `GR-`, `LB-`, `CL-`, `SC-`, `AP-`, `EV-`) | ID global unik, tanpa kode. Pengecualian: opsi Auto Backup `AB-1`–`AB-3` di BKP §7 bentrok dengan gate `AB-1`–`AB-8`, sehingga ditulis `BKP:AB-x` |

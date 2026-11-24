@@ -242,3 +242,22 @@ status menjadi APPROVED hanya setelah PR itu disetujui.
 | 5 | D-04: "16 modul lulus dan capstone selesai" — capstone juga merupakan minggu 16 di kerangka kurikulum. | Hubungan modul 16 dengan capstone dan rubriknya tetap OPEN (CU-9) |
 | 6 | D-10: batas memori 128 MB adalah target; kemampuan Android menegakkan batas memori per proses belum diverifikasi. | Tetap bagian PY:F-12 (NOT VERIFIED) |
 
+## Antrean keputusan berikutnya (bukan P0) — disiapkan 2026-11-23
+
+Semua butir di bawah **AWAITING OWNER**. Rekomendasi hanya saran.
+
+| ID | Pertanyaan | Rekomendasi teknis | Lembar keputusan | Keputusan final |
+|---|---|---|---|---|
+| UW-22-Q1 | Representasi skor | NP-4 (integer rasional dari poin mentah) | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) §8 | |
+| UW-22-Q2 | Batas poin maksimum per komponen per attempt | `max ≤ 10.000` | idem | |
+| UW-22-Q3 | Tie skor sama | Attempt paling awal | idem | |
+| UW-22-Q4 | Presisi tampilan | 2 desimal dibulatkan ke bawah + status teks | idem | |
+| CU-2-Q1 | Keempat komponen di setiap modul | Opsi A | [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) §7 | |
+| CU-2-Q2 | Capstone vs modul 16 | Tidak ada rekomendasi; keputusan produk | idem | |
+| CU-2-Q3 | Beberapa aktivitas dalam satu komponen | Poin dijumlah (sejalan NP-4) | idem | |
+| UO-1-Q1 | Teks kecil `#000000` di atas ungu; `#000000` atau `#1C1B1F` di atas biru, hijau, kuning, merah muda (hanya pasangan ≥ 4,5:1; `#1C1B1F` di atas ungu 4,03 gagal) | Ya | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) §8 | |
+| UO-1-Q2 | Varian turunan untuk teks berwarna kecil | Ya (warna merek tetap) | idem | |
+| UO-1-Q3 | Teks putih pada ungu (4,25) hanya untuk teks besar (≥ 18sp, atau tebal ≥ 14sp); teks tebal < 14sp tetap `#000000` | Ya | idem | |
+| UO-2-Q1 | Dark mode | DM-1 (terang saja, Force Dark nonaktif) untuk V1 | idem | |
+| UO-2-Q2 | Material 3 tanpa dynamic color | Ya | idem | |
+
