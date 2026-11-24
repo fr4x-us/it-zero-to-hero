@@ -236,3 +236,135 @@ kompetensi tersertifikasi (D-17, D-34).
 | Basis | `main` = `40ca205` |
 | Temuan terbuka yang diketahui | Tidak ada pada konten W1. Keputusan owner terbuka: CU-6-Q13 (D-36 bila disetujui), OD-15-Q2 (D-37 bila disetujui), W01-ACC |
 | Diterima owner | Belum |
+
+## 9. Bukti review akhir (review PR #25 putaran 3, F-19–F-21)
+
+### 9.1 Rubrik proyek: peran K1, K2, K3 (F-19)
+
+Dasar: definisi MR-A yang sudah disetujui (D-33, lembar RB §A.2): K2 =
+"setiap deliverable wajib ada **dan** valid secara bentuk". Versi
+sebelumnya tidak konsisten (F1–F5 dinilai sah/tidak, F6–F8 hanya "terisi").
+Kini: **K1** kebenaran nilai; **K2** ada dan valid secara bentuk (pilihan
+tertutup = salah satu ID katalog; angka = dapat dibaca menurut aturan angka;
+jumlah keping = bilangan bulat 1–4); **K3** bentuk ketat dan kecocokan slot.
+Ini penerapan definisi yang sudah disetujui, **bukan** kebijakan baru; alokasi
+60/20/10/10 dan kredit parsial tetap. Contoh yang berubah: E13 (73 → 70),
+E15 (92 → 91), E17/E18 (92 → 90), E19 (92 → 91); contoh baru E20–E23 (isian
+kosong). Matriks keadaan isian (kosong / salah bentuk / sah tetapi salah /
+benar): `project/rubric.yaml` → `field_rules.field_state_matrix`.
+
+### 9.2 Metadata lab (F-20)
+
+`normalization` dan `answer_validation` kini **per aktivitas**: act-01 =
+kode kategori {I, O, IO, S, P}; act-02 = barisan tepat 4 ID berbeda dari
+{A–D}, kode tahap {I, P, O, S}, huruf opsi {a–d}; act-03 = daftar jawaban
+angka, huruf opsi, ya/tidak. Aturan angka hanya ada di act-03. Kegagalan
+infrastruktur dicatat di field `infrastructure` (D-24 IE-2).
+
+### 9.3 Teori S09 — kedua varian
+
+| Aspek | vA (Sinta) | vB (Budi) |
+|---|---|---|
+| Asumsi eksplisit di stem | Tidak pernah menekan Simpan; aplikasi tanpa simpan otomatis/pemulihan | Browser **hanya menyimpan daftar tab di RAM** dan tidak pernah menuliskannya ke penyimpanan |
+| Kejadian | Listrik padam → laptop mati | Restart setelah memasang aplikasi ke SSD |
+| Yang hilang / tetap | Laporan hilang; berkas kemarin tetap | Tab hilang; aplikasi tetap |
+| Kunci | a — laporan hanya di RAM (volatil); berkas kemarin di penyimpanan non-volatil | b — daftar tab hanya di RAM; aplikasi di penyimpanan non-volatil |
+| Pengecoh dan alasannya | b SSD menghapus berkas terbaru (penyimpanan tidak menghapus karena listrik padam); c CPU menyimpan laporan (CPU bukan penyimpanan); d berkas kemarin di RAM (isi RAM hilang) | a restart menghapus isi SSD (tidak benar); c aplikasi di RAM (isi RAM hilang); d core menghapus tab (tidak berkaitan) |
+| Kebenaran teknis | Sah di bawah asumsi tertulis; tanpa asumsi itu, aplikasi nyata bisa memulihkan draf | Sah di bawah asumsi tertulis; browser nyata dapat menyimpan sesi ke disk |
+| Kesetaraan | Konsep, tuntutan (menganalisis skenario), format TF-1, D3, 4 poin, 120 detik | Sama |
+
+### 9.4 Pelajaran 2 — review per bagian
+
+| Bagian | Isi diperiksa | Temuan |
+|---|---|---|
+| Tujuan, mengapa penting | 4 tujuan terukur, terhubung ke LO2–LO4, LO1 | Lulus |
+| §1 Gambaran besar | Diagram + deskripsi teks | Lulus |
+| §2 CPU | Core, clock (siklus/detik, **bukan** instruksi/detik), analogi juru masak, batas core untuk pekerjaan berurutan | Lulus (diperjelas F-15) |
+| §3 RAM | Volatil; RAM penuh → cadangan penyimpanan (laptop/PC), ponsel menutup aplikasi — model sederhana | Lulus |
+| §4 Penyimpanan | Non-volatil, **tidak kebal** (kerusakan, terhapus, program jahat → cadangan); SSD vs HDD | Lulus (diperjelas F-15) |
+| §5 Motherboard, PSU, GPU | Peran, watt, GPU terpadu vs kartu | Lulus |
+| §6 Satuan | Tabel desimal; tabel arah konversi (besar→kecil ×, kecil→besar ÷, dua tingkat); GiB 931,32 | Lulus (diperbaiki F-10) |
+| §6 Contoh terbimbing | 2 GB = 2.000 MB; 64.000 ÷ 4 = 16.000; 3,6 GHz | Lulus; angka tidak sama dengan soal bernilai |
+| §7 Perangkat dan port | Kategori + printer multifungsi I/O; USB, HDMI, audio 3,5 mm | Lulus |
+| §8 Miskonsepsi | 4 baris; "RAM tidak menyimpan berkas setelah listrik mati" | Lulus (kata "permanen" dihapus) |
+| §9–§10 Latihan, cek pemahaman | Perangkat latihan di luar bank lab; angka di luar bank soal | Lulus |
+| Pembahasan latihan | 3.000; 250; klasifikasi; HDMI | Lulus |
+| Ringkasan | Konversi dua arah eksplisit | Lulus (diperbaiki F-10) |
+| Glosarium, aksesibilitas | Istilah Inggris; `alt` + deskripsi panjang diagram; deskripsi tabel | Lulus |
+
+### 9.5 Pelajaran 3 — review per bagian
+
+| Bagian | Isi diperiksa | Temuan |
+|---|---|---|
+| Tujuan, mengapa penting | 4 tujuan; terkait LO5 | Lulus |
+| §1 Kelompok software | OS (rincian W2), firmware BIOS/UEFI, driver = software, utilitas (konvensi modul ditandai) | Lulus |
+| §2 Lapisan | Diagram + deskripsi; analogi restoran; label **model sederhana W1** | Lulus |
+| §2 Contoh mencetak | 5 langkah; printer tidak terdeteksi punya **banyak penyebab** | Lulus (diperjelas F-15); berbeda dari teori s17 (scanner, speaker) |
+| §3 Boot | Daya → POST → cari perangkat boot **sesuai urutan boot di firmware** → bootloader → OS; alasan dimuat ke RAM | Lulus (diperjelas, selaras concept s03 vB) |
+| §4 Miskonsepsi | Driver bukan kabel; browser aplikasi; firmware software; firmware sebelum OS | Lulus |
+| §5 Latihan | Kelompok software (iOS, kalender, driver grafis, presentasi, firmware router, pencadangan); printer (model W1, bukan diagnosis pasti); urutan lapisan video | Lulus; tidak sama dengan teori s16/s17 atau concept s03 |
+| Pembahasan, ringkasan, glosarium | Konsisten dengan isi | Lulus |
+
+### 9.6 Enumerasi katalog (bukti lengkap)
+
+Berkas bukti: [`project/evidence/catalog_enumeration.csv`](project/evidence/catalog_enumeration.csv)
+— **3.840 baris** (satu per kombinasi), kolom: ID komponen, jumlah keping,
+total harga, 8 bendera syarat (`slot_ok`, `socket_ok`, `ram_type_ok`,
+`cores_ok`, `ram16_ok`, `ssd512_ok`, `psu_ok`, `budget_ok`), dan `valid`.
+Hitungan dari berkas: semua 3.840 → `slot_ok` 2.880 → + soket dan DDR 720 →
++ core, RAM, SSD, PSU 240 → + anggaran **46**. Daftar 46 rakitan beserta harga
+di `rubric.yaml` (`catalog_analysis.valid_list`) **identik** dengan baris
+`valid = 1` di CSV (himpunan dan total harga diperiksa sama). Rentang harga
+46 rakitan: 5.350.000–6.450.000.
+
+### 9.7 Maksimum yang dapat dicapai — bukti jawaban
+
+| Komponen | Maks. | Jawaban yang mencapainya |
+|---|---|---|
+| Teori (vA atau vB) | 56 | Semua 20 kunci (`key` / `accepted_answers` / `accepted_sequences`) di `theory/items` |
+| Lab | 100 | act-01: 10 kode `expected`; act-02: urutan A, B, C, D (12) + 4 label + opsi c06 (6); act-03: 8 jawaban `expected` |
+| Proyek | 100 | E01 (K1 60, K2 20, K3 10) + 5 kunci K4 (10) |
+| Concept (vA atau vB) | 21 | Kunci CE-S1, himpunan CE-S2, `accepted_sequences` CE-S3, `key_mapping` CE-S4, `error_line` + `correction_key` CE-S5 |
+
+### 9.8 Konsistensi instruksi pelajar vs metadata penilai
+
+| Pasangan | Diperiksa | Hasil |
+|---|---|---|
+| lab act-01 `spec.md` ↔ `checks.yaml` | 20 nama perangkat, kode kategori, 3 poin | Sama |
+| lab act-02 | Skenario, urutan tampil, opsi c06, aturan 4 poin/pasangan dan tabel contoh | Sama |
+| lab act-03 | Fixture (L-CPU1 95 W, L-CPU2 125 W), 16 soal, opsi c03, aturan angka | Sama |
+| proyek `spec.md` ↔ `rubric.yaml` | Kebutuhan N1–N6, katalog 20 baris, isian F1–F9, peran K1/K2/K3, aturan angka | Sama |
+| teori/concept | Stem dan kunci hanya di YAML; tidak ada instruksi pelajar terpisah | — |
+
+### 9.9 Pemeriksaan regresi F-01–F-18
+
+| Temuan | Pemeriksaan ulang | Status |
+|---|---|---|
+| F-01/F-02 | K1.c10 ada; aturan jumlah keping/ID/angka; tanpa gerbang nol (E09 = 61) | Tetap |
+| F-03 | Distribusi kunci tidak berubah (teori a6/b6/c7/d7) | Tetap |
+| F-04 | Matriks kesetaraan §5 | Tetap |
+| F-05 | 46 rakitan; E01–E23 dihitung dengan aturan terbaru | Tetap (contoh diperbarui F-19) |
+| F-06 | CB-0 W1–W8 vs global | Tetap |
+| F-07 | Spec proyek tanpa jawaban | Tetap |
+| F-08 | Audit §18.4 | Tetap |
+| F-09 | act-02 0/4/8/12 | Tetap |
+| F-10 | R-UNIT dua arah | Tetap |
+| F-11 | Asumsi di stem s03, s05, s09, s17; s07 vB PSU | Tetap |
+| F-12/F-13 | concept s02, s06, s03 vB | Tetap |
+| F-14 | Contoh pelajaran tidak sama dengan butir bernilai (§6.3) | Tetap |
+| F-15 | Label model sederhana (§6.2) | Tetap |
+| F-16 | Field kanonik; tidak ada `needs`, `answer_normalization`, `expected_sequence` | Tetap |
+| F-17 | Label perangkat tidak ambigu | Tetap |
+| F-18 | QC-01–QC-10 di CB-0 | Tetap |
+
+### 9.10 Checklist kualitas akhir W1
+
+| Kelompok | Hasil |
+|---|---|
+| CQ-01–CQ-20 (TPL-19) | Lulus; catatan CQ-09 (model sederhana di s05) kini tertulis di stem |
+| QC-01–QC-10 (CB-0 §3b) | Lulus (§6.4, §9.7, §9.8) |
+| Jumlah | 40 teori · 12 concept · 6 lab · 1 proyek · XP 305 · 480 menit |
+| Maksimum dapat dicapai | 56 · 100 · 100 · 21 |
+| Status | Diproduksi; belum lolos review ChatGPT; **belum diterima owner** |
+| Terbuka (owner) | CU-6-Q13 (calon D-36), OD-15-Q2 (calon D-37), W01-ACC |
+

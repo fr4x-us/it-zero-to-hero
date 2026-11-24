@@ -192,7 +192,7 @@ berbeda. **Semua latihan dan soal W1 memakai aturan desimal.**
 
 | Miskonsepsi | Yang benar |
 |---|---|
-| "RAM 16 GB berarti saya bisa menyimpan 16 GB berkas." | RAM bukan tempat menyimpan berkas permanen; kapasitas berkas ditentukan penyimpanan |
+| "RAM 16 GB berarti saya bisa menyimpan 16 GB berkas." | RAM tidak menyimpan berkas setelah listrik mati; kapasitas berkas ditentukan penyimpanan |
 | "GHz lebih tinggi pasti lebih cepat." | Generasi CPU, jumlah core, RAM, dan penyimpanan juga berpengaruh |
 | "SSD menyimpan data hanya selama listrik menyala." | SSD non-volatil; yang volatil adalah RAM |
 | "8 core selalu dua kali lebih cepat dari 4 core." | Hanya membantu bila pekerjaan dapat dibagi |

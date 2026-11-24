@@ -31,6 +31,20 @@ field_rules:
     k1_use: "K1.c08–c10 memakai nilai hasil aturan di atas; isian yang ditolak = tidak dapat diurai → pemeriksaan itu 0"
     k3_strict: "K3 hanya menerima bentuk paling ketat: digit tanpa nol di depan, tanpa titik, awalan, satuan, atau spasi"
   dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya tidak valid; pemeriksaan lain tetap dinilai. Tidak ada gerbang nol untuk seluruh rubrik"
+  field_state_matrix:   # satu isian, empat keadaan (K4 tidak terdampak)
+    - {field: F8, state: kosong, example: "", K2: "c08 = 0", K1: "c10 = 0", K3: "c02 = 0"}
+    - {field: F8, state: "salah bentuk", example: "16 MB / enam belas / 16,5", K2: "c08 = 0", K1: "c10 = 0", K3: "c02 = 0"}
+    - {field: F8, state: "bentuk sah tetapi salah", example: "8 (padahal pilihan 2 × 8 GB = 16)", K2: "c08 = 1", K1: "c10 = 0", K3: "c02 = 3 bila F7 juga ketat"}
+    - {field: F8, state: "benar, bentuk longgar", example: "16 GB", K2: "c08 = 1", K1: "c10 = 5", K3: "c02 = 0"}
+    - {field: F8, state: "benar, bentuk ketat", example: "16", K2: "c08 = 1", K1: "c10 = 5", K3: "c02 = 3 bila F7 juga ketat"}
+    - {field: F1, state: kosong, example: "", K2: "c01 = 0", K1: "c01, c03, c06, c07, c08, c09 = 0", K3: "tidak terdampak"}
+    - {field: F1, state: "salah bentuk / tidak dikenal / jenis salah", example: "CPU2, CPU-9, RAM-1", K2: "c01 = 0", K1: "sama dengan kosong", K3: "tidak terdampak"}
+    - {field: F1, state: "bentuk sah tetapi tidak memenuhi syarat", example: "CPU-1 (4 core)", K2: "c01 = 3", K1: "c03 = 0; pemeriksaan lain dinilai", K3: "tidak terdampak"}
+    - {field: F1, state: benar, example: "CPU-2", K2: "c01 = 3", K1: "sesuai syarat", K3: "tidak terdampak"}
+    - {field: "jumlah keping", state: kosong, example: "", K2: "c03 = 0", K1: "c04, c07, c08, c10 = 0", K3: "c03 = 0"}
+    - {field: "jumlah keping", state: "salah bentuk", example: "0, 5, 2,5, dua", K2: "c03 = 0", K1: "c04, c07, c08, c10 = 0", K3: "c03 = 0"}
+    - {field: "jumlah keping", state: "bentuk sah tetapi melebihi slot", example: "3 di MB-1", K2: "c03 = 3", K1: "c04, c07 = 0; c08, c10 dinilai", K3: "c03 = 0"}
+    - {field: "jumlah keping", state: benar, example: "2 di MB-1", K2: "c03 = 3", K1: "dinilai", K3: "c03 = 4"}
   impossible_configuration: "Jumlah keping > slot(F2) adalah rakitan yang tidak mungkin dipasang: pemeriksaan fungsional yang menilai rakitan (K1.c04, K1.c07) dan K3.c03 bernilai 0; pemeriksaan aritmetika yang tidak menilai kelayakan rakitan (K1.c08, K1.c10) tetap dinilai"
 
 criteria:
@@ -51,15 +65,16 @@ criteria:
   K2:
     name: Kelengkapan deliverable
     points: 20
+    definition: "MR-A (D-33): setiap deliverable ada DAN valid secara bentuk. Isian pilihan tertutup (F1–F5) sah bila memuat salah satu pilihan yang tersedia; isian angka (F6–F8, jumlah keping) sah bila dapat dibaca menurut number_fields / ram_quantity. K2 tidak menilai kebenaran nilai (K1) atau bentuk ketat dan kecocokan slot (K3)"
     checks:
-      - {id: mod-w01.project.K2.c01, rule: "F1 berisi ID CPU yang sah", points: 3}
-      - {id: mod-w01.project.K2.c02, rule: "F2 berisi ID motherboard yang sah", points: 3}
-      - {id: mod-w01.project.K2.c03, rule: "F3 berisi ID RAM yang sah dan kolom jumlah keping terisi", points: 3}
-      - {id: mod-w01.project.K2.c04, rule: "F4 berisi ID penyimpanan yang sah", points: 3}
-      - {id: mod-w01.project.K2.c05, rule: "F5 berisi ID PSU yang sah", points: 3}
-      - {id: mod-w01.project.K2.c06, rule: "F6 terisi", points: 2}
-      - {id: mod-w01.project.K2.c07, rule: "F7 terisi", points: 2}
-      - {id: mod-w01.project.K2.c08, rule: "F8 terisi", points: 1}
+      - {id: mod-w01.project.K2.c01, rule: "F1 terisi dengan bentuk sah: salah satu ID CPU di katalog (isian pilihan tertutup)", depends_on: [F1], points: 3}
+      - {id: mod-w01.project.K2.c02, rule: "F2 terisi dengan bentuk sah: salah satu ID motherboard di katalog", depends_on: [F2], points: 3}
+      - {id: mod-w01.project.K2.c03, rule: "F3 terisi dengan bentuk sah: salah satu ID RAM di katalog DAN jumlah keping bilangan bulat 1–4 (kecocokan dengan slot dinilai di K3.c03)", depends_on: [F3, jumlah keping], points: 3}
+      - {id: mod-w01.project.K2.c04, rule: "F4 terisi dengan bentuk sah: salah satu ID penyimpanan di katalog", depends_on: [F4], points: 3}
+      - {id: mod-w01.project.K2.c05, rule: "F5 terisi dengan bentuk sah: salah satu ID PSU di katalog", depends_on: [F5], points: 3}
+      - {id: mod-w01.project.K2.c06, rule: "F6 terisi dengan angka berbentuk sah menurut number_fields (bentuk longgar: titik ribuan, 'Rp' diizinkan); kebenaran nilainya dinilai di K1.c08", depends_on: [F6], points: 2}
+      - {id: mod-w01.project.K2.c07, rule: "F7 terisi dengan angka berbentuk sah menurut number_fields ('W' diizinkan); kebenaran di K1.c09", depends_on: [F7], points: 2}
+      - {id: mod-w01.project.K2.c08, rule: "F8 terisi dengan angka berbentuk sah menurut number_fields ('GB' diizinkan); kebenaran di K1.c10", depends_on: [F8], points: 1}
   K3:
     name: Struktur dan format
     points: 10
@@ -189,12 +204,16 @@ reviewer_examples:   # skor dihitung dengan aturan di atas; K4 diasumsikan 10
   - {id: E10, case: "ID salah bentuk", input: "E01 dengan F1 'cpu2'", total: 61, note: "Sama dengan E09"}
   - {id: E11, case: "Jenis komponen salah", input: "E01 dengan F1 RAM-1", total: 61, note: "Sama dengan E09"}
   - {id: E12, case: "Isian F2 kosong (isian dependen hilang)", input: "E01 tanpa F2", K1: 28, K2: 17, K3: 6, total: 61, zero: [K1.c01, K1.c02, K1.c04, K1.c07, K1.c08, K2.c02, K3.c03]}
-  - {id: E13, case: "Jumlah keping tidak valid ('2,5' atau '0')", input: "E01 dengan keping '2,5'", K1: 37, K2: 20, K3: 6, total: 73, zero: [K1.c04, K1.c07, K1.c08, K1.c10, K3.c03]}
+  - {id: E13, case: "Jumlah keping tidak valid ('2,5' atau '0')", input: "E01 dengan keping '2,5'", K1: 37, K2: 17, K3: 6, total: 70, zero: [K1.c04, K1.c07, K1.c08, K1.c10, K2.c03, K3.c03]}
   - {id: E14, case: "Angka salah format tetapi dapat diurai", input: "E01 dengan F6 'Rp 5.400.000', F8 '16 GB'", K1: 60, K2: 20, K3: 4, total: 94, zero: [K3.c01, K3.c02]}
-  - {id: E15, case: "F8 tidak dapat diurai", input: "E01 dengan F8 'enam belas'", K1: 55, K2: 20, K3: 7, total: 92, zero: [K1.c10, K3.c02]}
-  - {id: E17, case: "Pengelompokan titik salah", input: "E01 dengan F6 '5.40.000'", K1: 55, K2: 20, K3: 7, total: 92, zero: [K1.c08, K3.c01]}
-  - {id: E18, case: "Spasi di dalam angka", input: "E01 dengan F6 '5 400 000'", K1: 55, K2: 20, K3: 7, total: 92, zero: [K1.c08, K3.c01]}
-  - {id: E19, case: "Satuan lain", input: "E01 dengan F8 '16 MB'", K1: 55, K2: 20, K3: 7, total: 92, zero: [K1.c10, K3.c02]}
+  - {id: E15, case: "F8 tidak dapat diurai", input: "E01 dengan F8 'enam belas'", K1: 55, K2: 19, K3: 7, total: 91, zero: [K1.c10, K2.c08, K3.c02]}
+  - {id: E17, case: "Pengelompokan titik salah", input: "E01 dengan F6 '5.40.000'", K1: 55, K2: 18, K3: 7, total: 90, zero: [K1.c08, K2.c06, K3.c01]}
+  - {id: E18, case: "Spasi di dalam angka", input: "E01 dengan F6 '5 400 000'", K1: 55, K2: 18, K3: 7, total: 90, zero: [K1.c08, K2.c06, K3.c01]}
+  - {id: E19, case: "Satuan lain", input: "E01 dengan F8 '16 MB'", K1: 55, K2: 19, K3: 7, total: 91, zero: [K1.c10, K2.c08, K3.c02]}
+  - {id: E20, case: "F8 kosong", input: "E01 tanpa F8", K1: 55, K2: 19, K3: 7, total: 91, zero: [K1.c10, K2.c08, K3.c02]}
+  - {id: E21, case: "F6 kosong", input: "E01 tanpa F6", K1: 55, K2: 18, K3: 7, total: 90, zero: [K1.c08, K2.c06, K3.c01]}
+  - {id: E22, case: "Jumlah keping kosong", input: "E01 tanpa jumlah keping", K1: 37, K2: 17, K3: 6, total: 70, zero: [K1.c04, K1.c07, K1.c08, K1.c10, K2.c03, K3.c03]}
+  - {id: E23, case: "F7 kosong", input: "E01 tanpa F7", K1: 55, K2: 18, K3: 7, total: 90, zero: [K1.c09, K2.c07, K3.c02]}
   - {id: E16, case: "Centang 'sudah selesai' tanpa isian", input: "Semua isian kosong", total: "0 untuk K1–K3; K4 sesuai jawaban", note: "MR-6"}
 
 objective_limits: "Pemeriksaan membuktikan isian memenuhi syarat dan perhitungan benar; tidak membuktikan pelajar memahami semua alasan pemilihan dan tidak mensertifikasi kompetensi (D-17, D-34)"

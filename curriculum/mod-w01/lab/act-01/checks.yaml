@@ -7,13 +7,12 @@ max_points: 30
 estimated_minutes: 30
 content_version: '1.0'
 xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w01.lab (D-28 XI-2)
-normalization: 'Buang spasi/tab di awal dan akhir; ubah ke huruf kecil; cocokkan persis dengan salah satu
-  accepted_answers (sudah memuat bentuk dengan/tanpa titik ribuan berpola 1.234 dan dengan/tanpa satuan
-  yang diizinkan). Ditolak: tanda +/−, desimal, pengelompokan titik salah (mis. 7.00.0), spasi di dalam
-  angka, satuan lain'
-answer_validation: Jawaban kosong → 0 poin untuk pemeriksaan itu; ID kategori/opsi tidak dikenal atau
-  ganda → 0 poin untuk pemeriksaan itu (tidak membatalkan pemeriksaan lain); kegagalan infrastruktur/konten
-  → EVALUATION_ERROR, evaluasi diulang tanpa attempt baru (D-24 IE-2)
+normalization: Setiap jawaban adalah satu kode kategori dari daftar I, O, IO, S, P. Buang spasi/tab di
+  awal dan akhir; ubah ke huruf besar; cocokkan persis dengan satu kode. Tidak ada aturan angka
+answer_validation: 'Per perangkat: kosong → 0; kode di luar daftar, lebih dari satu kode, atau bentuk
+  lain → 0 (INVALID_ANSWER) untuk perangkat itu; perangkat lain tetap dinilai'
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2)
 feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. Aturan umum umpan
   balik test tersembunyi menunggu CU-6-Q13; W1 tidak memiliki test kode tersembunyi'
 runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban terstruktur

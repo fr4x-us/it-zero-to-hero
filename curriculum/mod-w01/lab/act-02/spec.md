@@ -81,7 +81,7 @@ Contoh hitung urutan (urutan diterima A → B → C → D):
 | `A, B, D, C` | A→B (1) | 4 |
 | `C, D, A, B` | C→D, A→B (2) | 8 |
 | `A, B, C, D` | A→B, B→C, C→D (3) | 12 |
-| `A, B, B, D` atau `A, B, C, X` | ID ganda/asing | 0 (`INVALID_ANSWER`) |
+| `A, B, B, D`, `A, B, C, X`, atau `A, B, C` | ID ganda, asing, atau tidak lengkap | 0 (`INVALID_ANSWER`) |
 
 Maksimum 12 dapat dicapai (urutan benar), sehingga maksimum aktivitas 30 dan
 maksimum komponen lab 100 dapat dicapai.

@@ -133,7 +133,8 @@ firmware berbeda antarperangkat.*
 1. **Tombol daya ditekan** — PSU mengalirkan listrik.
 2. **Firmware (BIOS/UEFI) menjalankan POST** (*Power-On Self-Test*):
    memeriksa hardware penting seperti RAM.
-3. **Firmware mencari perangkat boot** (biasanya SSD/HDD).
+3. **Firmware mencari perangkat boot** sesuai urutan boot yang diatur di
+   firmware (biasanya SSD/HDD; flashdisk hanya bila dipilih).
 4. **Bootloader** (program kecil di perangkat boot) **memuat sistem
    operasi** dari penyimpanan ke RAM.
 5. **Sistem operasi siap dipakai** — layar masuk atau desktop muncul.

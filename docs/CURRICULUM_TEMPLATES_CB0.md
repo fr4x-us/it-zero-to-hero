@@ -154,7 +154,7 @@ remedial (MPV-A, salinan submission sebelumnya), durasi. W16 = capstone
 
 ### TPL-12 Rubrik objektif (`project/rubric.yaml`)
 
-MR-A: K1 60 · K2 20 · K3 10 · K4 10 (D-33). Setiap pemeriksaan: `id`,
+MR-A: K1 60 · K2 20 · K3 10 · K4 10 (D-33). Pembagian peran: **K1** kebenaran nilai; **K2** isian ada dan valid secara bentuk (pilihan tertutup = salah satu pilihan tersedia; angka = dapat dibaca menurut aturan angka); **K3** bentuk ketat dan aturan struktur (mis. slot). Satu isian kosong atau salah bentuk dapat kehilangan poin di K1, K2, dan K3 sekaligus; ini konsekuensi definisi MR-A, bukan gerbang nol. Setiap pemeriksaan: `id`,
 `rule` yang dapat diperiksa, `depends_on`, `points` integer; jumlah tepat
 sama dengan anggaran (MR-8) **dan dapat dicapai bersamaan** (QC-01). K4 dengan komposisi A.2a (jumlah `max_soal`
 tepat 10, tanpa penskalaan). Capstone: CR-1–CR-6, MC-1–MC-4, CG-B, CP-1–CP-6.

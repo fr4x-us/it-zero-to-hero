@@ -889,3 +889,14 @@ Kurikulum: diproduksi 4/64, lolos review ChatGPT 0/64, diterima owner 0/64.
 CU-6-Q13 (calon D-36) dan OD-15-Q2 (calon D-37) tetap AWAITING OWNER;
 W01-ACC tertunda.
 
+### 18.6 Revisi kecil W1 putaran 3 (review PR #25, F-19–F-21)
+
+K2 rubrik proyek diselaraskan dengan definisi MR-A yang disetujui ("ada dan
+valid secara bentuk") tanpa kebijakan baru; metadata lab per aktivitas;
+bukti enumerasi lengkap 3.840 kombinasi
+(`curriculum/mod-w01/project/evidence/catalog_enumeration.csv`) dan review
+S09, Pelajaran 2–3, maksimum yang dapat dicapai, konsistensi instruksi, dan
+regresi F-01–F-18 (`curriculum/mod-w01/review.md` §9). Jumlah status tidak
+berubah: 31 / 4 / 13 / 3 / 5 = 56; jalur P 31/43; kurikulum diproduksi 4/64,
+diterima 0/64. CU-6-Q13, OD-15-Q2, W01-ACC tetap AWAITING OWNER.
+

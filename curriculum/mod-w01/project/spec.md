@@ -120,7 +120,8 @@ koma/desimal (`16,5`), tanda `+`/`−`, satuan lain (`16 MB`), atau kata.
 | Kebutuhan tidak terpenuhi (core, RAM, SSD, daya) atau total melebihi anggaran | Pemeriksaan syarat itu gagal |
 | F6, F7, atau F8 tidak sama dengan hasil hitung dari pilihanmu | Pemeriksaan perhitungan itu gagal |
 | Menulis `Rp 5.000.000` atau `16 GB` | Poin format hilang; perhitungan tetap diperiksa |
-| Menulis `5.00.000`, `16,5`, atau `16 MB` | Angka tidak dapat dibaca: pemeriksaan perhitungan dan format gagal |
+| Menulis `5.00.000`, `16,5`, atau `16 MB` | Angka tidak dapat dibaca: poin kelengkapan, perhitungan, dan format untuk isian itu hilang |
+| Mengosongkan F6, F7, F8, atau jumlah keping | Poin kelengkapan, perhitungan, dan format untuk isian itu hilang |
 | ID salah tulis atau tidak ada di katalog | Isian itu tidak sah; pemeriksaan yang membutuhkannya gagal, yang lain tetap dinilai |
 | Centang "sudah saya periksa" tanpa isian | 0 poin (MR-6) |
 
@@ -129,7 +130,7 @@ koma/desimal (`16,5`), tanda `+`/`−`, satuan lain (`16 MB`), atau kata.
 | Kriteria | Poin | Isi |
 |---|---|---|
 | K1 Kebenaran fungsional | 60 | 10 pemeriksaan: soket, jenis RAM, core, RAM total, SSD, daya PSU, anggaran, kebenaran F6, F7, dan F8 |
-| K2 Kelengkapan deliverable | 20 | F1–F8 terisi dengan isian yang sah |
+| K2 Kelengkapan deliverable | 20 | F1–F8 dan jumlah keping terisi **dengan bentuk yang sah** (ID dari katalog; angka yang dapat dibaca; jumlah keping 1–4). Kebenaran nilai dinilai di K1, bentuk paling ketat di K3 |
 | K3 Struktur dan format | 10 | Uang dan angka hanya digit; jumlah keping bilangan bulat 1–4 dan ≤ slot |
 | K4 Penjelasan proyek | 10 | 5 soal × 2 poin (komposisi K-A) |
 | **Total** | **100** | |
