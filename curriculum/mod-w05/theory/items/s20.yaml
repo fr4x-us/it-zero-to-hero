@@ -1,0 +1,74 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s20
+competency: comp-w05-round-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s20-a
+  variant_id: mod-w05.theory.s20.vA
+  item_version: '1.0'
+  stem: Tabel nilai Andi di bawah. Rata-rata keempat nilai, dibulatkan ke **satu** angka di belakang koma,
+    adalah …
+  stimulus_table:
+  - - Mata pelajaran
+    - Nilai
+  - - Matematika
+    - '78'
+  - - IPA
+    - '85'
+  - - Bahasa
+    - '90'
+  - - IPS
+    - '82'
+  options:
+  - id: a
+    text: 83,7
+  - id: b
+    text: 83,8
+  - id: c
+    text: 84,0
+  - id: d
+    text: '335'
+  key: b
+  distractor_rationale:
+    a: 83,75 dibulatkan ke bawah
+    c: Dibulatkan ke bilangan bulat lalu ditambah ,0
+    d: Jumlah, belum dibagi 4
+  explanation: 'Jumlah 335; 335 ÷ 4 = 83,75; angka setelah persepuluhan 5 → naik: 83,8.'
+  option_order: urutan alami (nilai/kategori), tetap
+- item_id: item-w05-t-s20-b
+  variant_id: mod-w05.theory.s20.vB
+  item_version: '1.0'
+  stem: Tabel nilai Mita di bawah. Rata-rata keempat nilai, dibulatkan ke **bilangan bulat** terdekat,
+    adalah …
+  stimulus_table:
+  - - Mata pelajaran
+    - Nilai
+  - - Matematika
+    - '70'
+  - - IPA
+    - '88'
+  - - Bahasa
+    - '79'
+  - - IPS
+    - '93'
+  options:
+  - id: a
+    text: '82'
+  - id: b
+    text: 82,5
+  - id: c
+    text: '83'
+  - id: d
+    text: '330'
+  key: c
+  distractor_rationale:
+    a: 82,5 dibulatkan ke bawah
+    b: Belum dibulatkan ke bilangan bulat
+    d: Jumlah, belum dibagi 4
+  explanation: 'Jumlah 330; 330 ÷ 4 = 82,5; angka setelah satuan 5 → naik: 83.'
+  option_order: urutan alami (nilai/kategori), tetap

@@ -1,0 +1,74 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s04
+competency: comp-w05-arith-01
+format: TF-4
+difficulty: D3
+max_points: 4
+estimated_seconds: 150
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s04-a
+  variant_id: mod-w05.theory.s04.vA
+  item_version: '1.0'
+  stem: Rani menghitung `18 − 6 ÷ 2 + 3 × 4` seperti tabel berikut. Langkah **pertama** yang salah adalah
+    …
+  stimulus_table:
+  - - Langkah
+    - Tulisan Rani
+  - - '1'
+    - 18 − 3 + 3 × 4
+  - - '2'
+    - 18 − 3 + 12
+  - - '3'
+    - 18 − 15
+  - - '4'
+    - 'Hasil: 3'
+  options:
+  - id: a
+    text: Langkah 1
+  - id: b
+    text: Langkah 2
+  - id: c
+    text: Langkah 3
+  - id: d
+    text: Tidak ada yang salah; hasil 3 benar
+  key: c
+  distractor_rationale:
+    a: '6 ÷ 2 = 3 dikerjakan lebih dulu: benar'
+    b: '3 × 4 = 12: benar'
+    d: Hasil yang benar 27, bukan 3
+  explanation: 'Setelah perkalian dan pembagian selesai, penjumlahan dan pengurangan dikerjakan dari kiri
+    ke kanan: 18 − 3 = 15, lalu 15 + 12 = 27. Rani menjumlahkan 3 + 12 lebih dulu.'
+  option_order: urutan alami (nilai/kategori), tetap
+- item_id: item-w05-t-s04-b
+  variant_id: mod-w05.theory.s04.vB
+  item_version: '1.0'
+  stem: Bayu menghitung `40 ÷ 4 × 2 − 5` seperti tabel berikut. Langkah **pertama** yang salah adalah
+    …
+  stimulus_table:
+  - - Langkah
+    - Tulisan Bayu
+  - - '1'
+    - 40 ÷ 8 − 5
+  - - '2'
+    - 5 − 5
+  - - '3'
+    - 'Hasil: 0'
+  options:
+  - id: a
+    text: Langkah 1
+  - id: b
+    text: Langkah 2
+  - id: c
+    text: Langkah 3
+  - id: d
+    text: Tidak ada yang salah; hasil 0 benar
+  key: a
+  distractor_rationale:
+    b: 40 ÷ 8 = 5 memang benar bila langkah 1 diterima; kesalahan sudah terjadi sebelumnya
+    c: Langkah 3 hanya meneruskan kesalahan langkah 1
+    d: Hasil yang benar 15, bukan 0
+  explanation: 'Perkalian dan pembagian setara, dikerjakan dari kiri ke kanan: 40 ÷ 4 = 10, lalu 10 ×
+    2 = 20, lalu 20 − 5 = 15. Bayu mengalikan 4 × 2 lebih dulu.'
+  option_order: urutan alami (nilai/kategori), tetap

@@ -1,0 +1,143 @@
+# W5 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w05.lab.act-01
+name: Urutan operasi, bilangan negatif, hasil bagi dan sisa
+competencies:
+- comp-w05-arith-01
+- comp-w05-expr-01
+- comp-w05-divmod-01
+max_points: 30
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w05.lab (D-28 XI-2)
+normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+  Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+  sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga digit
+  (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal boleh
+  ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah boleh diawali
+  `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan (`1/2`), kata,
+  satuan lain, angka desimal lebih/kurang dari yang diminta. c06: Nama hari bahasa Indonesia; buang spasi
+  tepi; abaikan huruf besar/kecil'
+answer_validation: Kosong atau bentuk ditolak (NB-5) → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk
+  tidak sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan langkah. W5 tidak
+  memiliki test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban angka/kata (evaluator
+  pasti, CUR §6)
+variants:
+- variant_id: mod-w05.lab.act-01.vA
+  visible_example:
+    note: 'Contoh terlihat (0 poin): `2 + 6 ÷ 2` = 5; 23 dibagi 5 → hasil bagi 4, sisa 3'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w05.lab.act-01.vA.c01
+    name: Urutan operasi
+    question: Hitung `12 + 18 ÷ 3 × 2`.
+    accepted_answers:
+    - '24'
+    points: 5
+    explanation: 18 ÷ 3 = 6; 6 × 2 = 12 (kiri ke kanan); 12 + 12 = 24
+  - check_id: mod-w05.lab.act-01.vA.c02
+    name: Kurung dan negatif
+    question: Hitung `(7 − 15) × 3 + 30`.
+    accepted_answers:
+    - '6'
+    points: 5
+    explanation: 7 − 15 = −8; −8 × 3 = −24; −24 + 30 = 6
+  - check_id: mod-w05.lab.act-01.vA.c03
+    name: Pangkat
+    question: Hitung `5² − 4 × (6 − 2)`.
+    accepted_answers:
+    - '9'
+    points: 5
+    explanation: 5² = 25; 6 − 2 = 4; 4 × 4 = 16; 25 − 16 = 9
+  - check_id: mod-w05.lab.act-01.vA.c04
+    name: Hasil bagi
+    question: '125 dibagi 9: berapa **hasil bagi** (bilangan bulat)?'
+    accepted_answers:
+    - '13'
+    points: 5
+    explanation: 9 × 13 = 117 ≤ 125 < 126 = 9 × 14
+  - check_id: mod-w05.lab.act-01.vA.c05
+    name: Sisa
+    question: '125 dibagi 9: berapa **sisa**?'
+    accepted_answers:
+    - '8'
+    points: 5
+    explanation: 125 − 117 = 8
+  - check_id: mod-w05.lab.act-01.vA.c06
+    name: Hari
+    question: Hari ini **Rabu**. Hari apa **60 hari** lagi?
+    accepted_answers:
+    - Minggu
+    points: 5
+    explanation: '60 = 7 × 8 + 4; maju 4 hari dari Rabu: Minggu'
+- variant_id: mod-w05.lab.act-01.vB
+  visible_example:
+    note: 'Contoh terlihat (0 poin): `2 + 6 ÷ 2` = 5; 23 dibagi 5 → hasil bagi 4, sisa 3'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w05.lab.act-01.vB.c01
+    name: Urutan operasi
+    question: Hitung `40 − 24 ÷ 6 × 3`.
+    accepted_answers:
+    - '28'
+    points: 5
+    explanation: 24 ÷ 6 = 4; 4 × 3 = 12 (kiri ke kanan); 40 − 12 = 28
+  - check_id: mod-w05.lab.act-01.vB.c02
+    name: Kurung dan negatif
+    question: Hitung `(4 − 13) × 2 + 25`.
+    accepted_answers:
+    - '7'
+    points: 5
+    explanation: 4 − 13 = −9; −9 × 2 = −18; −18 + 25 = 7
+  - check_id: mod-w05.lab.act-01.vB.c03
+    name: Pangkat
+    question: Hitung `3² + 2 × (10 − 7)`.
+    accepted_answers:
+    - '15'
+    points: 5
+    explanation: 3² = 9; 10 − 7 = 3; 2 × 3 = 6; 9 + 6 = 15
+  - check_id: mod-w05.lab.act-01.vB.c04
+    name: Hasil bagi
+    question: '143 dibagi 8: berapa **hasil bagi** (bilangan bulat)?'
+    accepted_answers:
+    - '17'
+    points: 5
+    explanation: 8 × 17 = 136 ≤ 143 < 144 = 8 × 18
+  - check_id: mod-w05.lab.act-01.vB.c05
+    name: Sisa
+    question: '143 dibagi 8: berapa **sisa**?'
+    accepted_answers:
+    - '7'
+    points: 5
+    explanation: 143 − 136 = 7
+  - check_id: mod-w05.lab.act-01.vB.c06
+    name: Hari
+    question: Hari ini **Kamis**. Hari apa **50 hari** lagi?
+    accepted_answers:
+    - Jumat
+    points: 5
+    explanation: '50 = 7 × 7 + 1; maju 1 hari dari Kamis: Jumat'
+normalization_examples:
+  c02 (kunci 6, vA):
+    diterima:
+    - '6'
+    - ' 6 '
+    ditolak (0 poin):
+    - '06'
+    - 6,0
+    - '+6'
+    - enam
+  c06 (kunci Minggu, vA):
+    diterima:
+    - Minggu
+    - minggu
+    - ' MINGGU '
+    ditolak (0 poin):
+    - Min
+    - Sunday
+    - '7'

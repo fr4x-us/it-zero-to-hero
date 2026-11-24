@@ -1,0 +1,59 @@
+# W5 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.concept.s04
+competency: comp-w05-unit-01
+required_concepts:
+- 1 jam = 60 menit (bukan 100)
+- konversi sebelum menulis desimal
+- satuan berbeda tidak dijumlahkan langsung
+format: CE-S1
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w05-c-s04-a
+  variant_id: mod-w05.concept.s04.vA
+  item_version: '1.0'
+  stem: Mengapa **2 jam 30 menit** tidak sama dengan **2,3 jam**?
+  options:
+  - id: a
+    text: Karena 2,3 jam lebih lama daripada 2 jam 30 menit
+  - id: b
+    text: Karena waktu tidak boleh ditulis dengan desimal
+  - id: c
+    text: Sebenarnya keduanya sama
+  - id: d
+    text: Karena 1 jam = 60 menit, sehingga 30 menit = 0,5 jam dan 2 jam 30 menit = 2,5 jam
+  key: d
+  distractor_rationale:
+    a: 2,3 jam = 2 jam 18 menit, lebih singkat
+    b: Waktu boleh desimal bila dikonversi benar
+    c: Menit bukan perseratus jam
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: Satu jam dibagi 60 menit, bukan 100. 30/60 = 0,5.
+- item_id: item-w05-c-s04-b
+  variant_id: mod-w05.concept.s04.vB
+  item_version: '1.0'
+  stem: Mengapa **1,5 kg** tidak sama dengan **1 kg 5 g**?
+  options:
+  - id: a
+    text: Karena kg tidak boleh ditulis dengan desimal
+  - id: b
+    text: Sebenarnya keduanya sama
+  - id: c
+    text: Karena 1 kg = 1.000 g, sehingga 1,5 kg = 1.500 g, sedangkan 1 kg 5 g = 1.005 g
+  - id: d
+    text: Karena gram lebih besar daripada kilogram
+  key: c
+  distractor_rationale:
+    a: kg boleh desimal
+    b: 0,5 kg = 500 g, bukan 5 g
+    d: 1 kg = 1.000 g
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: 'Angka setelah koma pada kg adalah bagian dari 1.000 g: 0,5 kg = 500 g.'

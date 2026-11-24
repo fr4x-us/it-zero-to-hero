@@ -1,0 +1,190 @@
+# W5 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w05.lab.act-03
+name: Satuan, rumus, dan pembelian dalam anggaran
+competencies:
+- comp-w05-unit-01
+- comp-w05-expr-01
+- comp-w05-divmod-01
+max_points: 30
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w05.lab (D-28 XI-2)
+normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+  Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+  sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga digit
+  (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal boleh
+  ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah boleh diawali
+  `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan (`1/2`), kata,
+  satuan lain, angka desimal lebih/kurang dari yang diminta'
+answer_validation: Kosong atau bentuk ditolak (NB-5) → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk
+  tidak sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan langkah. W5 tidak
+  memiliki test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban angka/kata (evaluator
+  pasti, CUR §6)
+variants:
+- variant_id: mod-w05.lab.act-03.vA
+  visible_example:
+    note: 'Contoh terlihat (0 poin): 1 jam 10 menit = 70 menit; 0,5 kg = 500 g'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w05.lab.act-03.vA.c01
+    name: Jam ke menit
+    question: '**4 jam 15 menit** = … menit'
+    accepted_answers:
+    - '255'
+    - 255 menit
+    - 255menit
+    points: 5
+    explanation: 4 × 60 + 15 = 255
+  - check_id: mod-w05.lab.act-03.vA.c02
+    name: Menit ke jam (hasil bagi)
+    question: '**390 menit** = berapa **jam penuh**?'
+    accepted_answers:
+    - '6'
+    - 6 jam
+    - 6jam
+    points: 5
+    explanation: 390 ÷ 60 = 6 sisa 30
+  - check_id: mod-w05.lab.act-03.vA.c03
+    name: Menit ke jam (sisa)
+    question: '**390 menit** diubah menjadi jam penuh dan sisa menit. Berapa **sisa menitnya**?'
+    accepted_answers:
+    - '30'
+    - 30 menit
+    - 30menit
+    points: 5
+    explanation: 390 − 6 × 60 = 30
+  - check_id: mod-w05.lab.act-03.vA.c04
+    name: Rumus biaya
+    question: Rumus `biaya = 2.500 × n + 3.000` (rupiah). Bila `n = 8`, berapa biaya?
+    accepted_answers:
+    - '23000'
+    - '23.000'
+    - Rp23000
+    - Rp 23000
+    - Rp23.000
+    - Rp 23.000
+    points: 5
+    explanation: 2.500 × 8 = 20.000; 20.000 + 3.000 = 23.000
+  - check_id: mod-w05.lab.act-03.vA.c05
+    name: Kilogram ke gram
+    question: '**2,4 kg** = … g (1 kg = 1.000 g)'
+    accepted_answers:
+    - '2400'
+    - '2.400'
+    - 2400 g
+    - 2400g
+    - 2.400 g
+    - 2.400g
+    - 2400 gram
+    - 2400gram
+    - 2.400 gram
+    - 2.400gram
+    points: 5
+    explanation: 2,4 × 1.000 = 2.400
+  - check_id: mod-w05.lab.act-03.vA.c06
+    name: Beli maksimal
+    question: Uang **Rp50.000**; harga buku **Rp7.500** per buku. Paling banyak berapa buku?
+    accepted_answers:
+    - '6'
+    - 6 buku
+    - 6buku
+    points: 5
+    explanation: 50.000 ÷ 7.500 = 6 sisa 5.000 → 6 buku (dibulatkan ke bawah)
+- variant_id: mod-w05.lab.act-03.vB
+  visible_example:
+    note: 'Contoh terlihat (0 poin): 1 jam 10 menit = 70 menit; 0,5 kg = 500 g'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w05.lab.act-03.vB.c01
+    name: Jam ke menit
+    question: '**3 jam 45 menit** = … menit'
+    accepted_answers:
+    - '225'
+    - 225 menit
+    - 225menit
+    points: 5
+    explanation: 3 × 60 + 45 = 225
+  - check_id: mod-w05.lab.act-03.vB.c02
+    name: Menit ke jam (hasil bagi)
+    question: '**500 menit** = berapa **jam penuh**?'
+    accepted_answers:
+    - '8'
+    - 8 jam
+    - 8jam
+    points: 5
+    explanation: 500 ÷ 60 = 8 sisa 20
+  - check_id: mod-w05.lab.act-03.vB.c03
+    name: Menit ke jam (sisa)
+    question: '**500 menit** diubah menjadi jam penuh dan sisa menit. Berapa **sisa menitnya**?'
+    accepted_answers:
+    - '20'
+    - 20 menit
+    - 20menit
+    points: 5
+    explanation: 500 − 8 × 60 = 20
+  - check_id: mod-w05.lab.act-03.vB.c04
+    name: Rumus biaya
+    question: Rumus `biaya = 4.000 × n + 2.000` (rupiah). Bila `n = 6`, berapa biaya?
+    accepted_answers:
+    - '26000'
+    - '26.000'
+    - Rp26000
+    - Rp 26000
+    - Rp26.000
+    - Rp 26.000
+    points: 5
+    explanation: 4.000 × 6 = 24.000; 24.000 + 2.000 = 26.000
+  - check_id: mod-w05.lab.act-03.vB.c05
+    name: Kilogram ke gram
+    question: '**3,75 kg** = … g (1 kg = 1.000 g)'
+    accepted_answers:
+    - '3750'
+    - '3.750'
+    - 3750 g
+    - 3750g
+    - 3.750 g
+    - 3.750g
+    - 3750 gram
+    - 3750gram
+    - 3.750 gram
+    - 3.750gram
+    points: 5
+    explanation: 3,75 × 1.000 = 3.750
+  - check_id: mod-w05.lab.act-03.vB.c06
+    name: Beli maksimal
+    question: Uang **Rp40.000**; harga buku **Rp6.500** per buku. Paling banyak berapa buku?
+    accepted_answers:
+    - '6'
+    - 6 buku
+    - 6buku
+    points: 5
+    explanation: 40.000 ÷ 6.500 = 6 sisa 1.000 → 6 buku (dibulatkan ke bawah)
+normalization_examples:
+  c04 (kunci 23000, vA):
+    diterima:
+    - '23000'
+    - '23.000'
+    - Rp23.000
+    - Rp 23000
+    ditolak (0 poin):
+    - 23,000
+    - '23.0000'
+    - 23rb
+    - '023000'
+  c05 (kunci 2400, vA):
+    diterima:
+    - '2400'
+    - '2.400'
+    - 2.400 g
+    - 2400gram
+    ditolak (0 poin):
+    - 2,4
+    - 2,4 kg
+    - 2400 kg
+    - '2.40'

@@ -1,0 +1,38 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s02
+competency: comp-w05-arith-01
+format: TF-3
+difficulty: D1
+max_points: 2
+estimated_seconds: 60
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s02-a
+  variant_id: mod-w05.theory.s02.vA
+  item_version: '1.0'
+  stem: Hitung `6 + 2 × (9 − 4)`.
+  accepted_answers:
+  - '16'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: 'Kurung dulu: 9 − 4 = 5; lalu kali: 2 × 5 = 10; lalu tambah: 6 + 10 = 16.'
+- item_id: item-w05-t-s02-b
+  variant_id: mod-w05.theory.s02.vB
+  item_version: '1.0'
+  stem: Hitung `30 − (3 + 5) × 2`.
+  accepted_answers:
+  - '14'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: 'Kurung dulu: 3 + 5 = 8; lalu kali: 8 × 2 = 16; lalu kurang: 30 − 16 = 14.'

@@ -1,0 +1,52 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s19
+competency: comp-w05-round-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s19-a
+  variant_id: mod-w05.theory.s19.vA
+  item_version: '1.0'
+  stem: '**45 siswa** pergi ke museum. Satu minibus memuat paling banyak **12 siswa**. Berapa minibus
+    **paling sedikit** yang diperlukan?'
+  options:
+  - id: a
+    text: '3'
+  - id: b
+    text: 3,75
+  - id: c
+    text: '4'
+  - id: d
+    text: '5'
+  key: c
+  distractor_rationale:
+    a: 3 minibus hanya memuat 36 siswa; 9 siswa tertinggal
+    b: Jumlah minibus harus bilangan bulat
+    d: 4 minibus sudah cukup (48 kursi)
+  explanation: '45 ÷ 12 = 3,75. Tiga minibus tidak cukup, jadi dibulatkan **ke atas**: 4 minibus.'
+  option_order: urutan alami (nilai/kategori), tetap
+- item_id: item-w05-t-s19-b
+  variant_id: mod-w05.theory.s19.vB
+  item_version: '1.0'
+  stem: Kamu membutuhkan **130 lembar** kertas. Satu pak berisi **50 lembar** dan tidak dijual eceran.
+    Berapa pak **paling sedikit** yang harus dibeli?
+  options:
+  - id: a
+    text: '3'
+  - id: b
+    text: '2'
+  - id: c
+    text: 2,6
+  - id: d
+    text: '4'
+  key: a
+  distractor_rationale:
+    b: 2 pak hanya 100 lembar; kurang 30
+    c: Pak tidak dapat dibeli pecahan
+    d: 3 pak sudah cukup (150 lembar)
+  explanation: '130 ÷ 50 = 2,6. Dua pak tidak cukup, jadi dibulatkan **ke atas**: 3 pak.'
+  option_order: urutan tetap penyusun

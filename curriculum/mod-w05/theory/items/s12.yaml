@@ -1,0 +1,51 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s12
+competency: comp-w05-unit-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s12-a
+  variant_id: mod-w05.theory.s12.vA
+  item_version: '1.0'
+  stem: 'Resep: **2 gelas** tepung untuk **3 porsi**. Dengan perbandingan tetap, berapa gelas tepung untuk
+    **9 porsi**?'
+  options:
+  - id: a
+    text: 5 gelas
+  - id: b
+    text: 6 gelas
+  - id: c
+    text: 8 gelas
+  - id: d
+    text: 18 gelas
+  key: b
+  distractor_rationale:
+    a: Menambah 3 (selisih porsi), bukan mengalikan
+    c: 'Tidak sesuai perbandingan 2 : 3'
+    d: 2 × 9; lupa membagi 3
+  explanation: 9 porsi = 3 kali 3 porsi, jadi tepung 3 × 2 = 6 gelas.
+  option_order: urutan alami (nilai/kategori), tetap
+- item_id: item-w05-t-s12-b
+  variant_id: mod-w05.theory.s12.vB
+  item_version: '1.0'
+  stem: '**3 buku tulis** seharga **Rp12.000** (harga setiap buku sama). Berapa harga **7 buku tulis**?'
+  options:
+  - id: a
+    text: Rp21.000
+  - id: b
+    text: Rp28.000
+  - id: c
+    text: Rp36.000
+  - id: d
+    text: Rp84.000
+  key: b
+  distractor_rationale:
+    a: 7 × 3.000 tetapi harga satuan 4.000
+    c: 12.000 × 3
+    d: 12.000 × 7; lupa membagi 3
+  explanation: Harga satu buku = 12.000 ÷ 3 = 4.000; 7 × 4.000 = 28.000.
+  option_order: urutan alami (nilai/kategori), tetap

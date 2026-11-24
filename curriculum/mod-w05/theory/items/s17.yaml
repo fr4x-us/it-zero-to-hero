@@ -1,0 +1,52 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s17
+competency: comp-w05-pct-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s17-a
+  variant_id: mod-w05.theory.s17.vA
+  item_version: '1.0'
+  stem: Harga **Rp100.000** naik **20%**. Kemudian harga **baru** itu turun **20%**. Harga akhirnya adalah
+    …
+  options:
+  - id: a
+    text: Rp100.000
+  - id: b
+    text: Rp104.000
+  - id: c
+    text: Rp80.000
+  - id: d
+    text: Rp96.000
+  key: d
+  distractor_rationale:
+    a: Naik 20% lalu turun 20% tidak saling meniadakan karena nilai dasarnya berbeda
+    b: Arah perubahan terbalik
+    c: Hanya penurunan dari 100.000
+  explanation: 'Naik: 100.000 × 1,2 = 120.000. Turun 20% dari 120.000 (nilai dasar baru): 120.000 × 0,8
+    = 96.000.'
+  option_order: urutan tetap penyusun
+- item_id: item-w05-t-s17-b
+  variant_id: mod-w05.theory.s17.vB
+  item_version: '1.0'
+  stem: Nilai **200** turun **50%**. Kemudian nilai **baru** itu naik **50%**. Nilai akhirnya adalah …
+  options:
+  - id: a
+    text: '200'
+  - id: b
+    text: '250'
+  - id: c
+    text: '150'
+  - id: d
+    text: '100'
+  key: c
+  distractor_rationale:
+    a: Turun 50% lalu naik 50% tidak saling meniadakan karena nilai dasarnya berbeda
+    b: Naik 50% dari 200 tanpa penurunan
+    d: Hanya penurunan
+  explanation: 'Turun: 200 × 0,5 = 100. Naik 50% dari 100 (nilai dasar baru): 100 × 1,5 = 150.'
+  option_order: urutan tetap penyusun

@@ -1,0 +1,51 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s01
+competency: comp-w05-arith-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s01-a
+  variant_id: mod-w05.theory.s01.vA
+  item_version: '1.0'
+  stem: Menurut urutan operasi, pada `8 + 4 × 3` bagian yang dihitung **lebih dulu** adalah …
+  options:
+  - id: a
+    text: '`8 + 4`'
+  - id: b
+    text: Bebas, hasilnya sama saja
+  - id: c
+    text: Tidak dapat dihitung tanpa kurung
+  - id: d
+    text: '`4 × 3`'
+  key: d
+  distractor_rationale:
+    a: Perkalian didahulukan sebelum penjumlahan
+    b: (8 + 4) × 3 = 36, sedangkan 8 + 12 = 20; urutan mengubah hasil
+    c: Urutan operasi membuat ekspresi tanpa kurung tetap jelas
+  explanation: 'Perkalian dan pembagian dikerjakan sebelum penjumlahan dan pengurangan: 4 × 3 = 12, lalu
+    8 + 12 = 20.'
+  option_order: urutan tetap penyusun
+- item_id: item-w05-t-s01-b
+  variant_id: mod-w05.theory.s01.vB
+  item_version: '1.0'
+  stem: Menurut urutan operasi, pada `20 − 12 ÷ 4` bagian yang dihitung **lebih dulu** adalah …
+  options:
+  - id: a
+    text: '`20 − 12`'
+  - id: b
+    text: Bebas, hasilnya sama saja
+  - id: c
+    text: '`12 ÷ 4`'
+  - id: d
+    text: Tidak dapat dihitung tanpa kurung
+  key: c
+  distractor_rationale:
+    a: Pembagian didahulukan sebelum pengurangan
+    b: (20 − 12) ÷ 4 = 2, sedangkan 20 − 3 = 17; urutan mengubah hasil
+    d: Urutan operasi membuat ekspresi tanpa kurung tetap jelas
+  explanation: 'Pembagian dikerjakan sebelum pengurangan: 12 ÷ 4 = 3, lalu 20 − 3 = 17.'
+  option_order: urutan alami (nilai/kategori), tetap

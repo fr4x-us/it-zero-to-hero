@@ -1,0 +1,44 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s08
+competency: comp-w05-divmod-01
+format: TF-3
+difficulty: D1
+max_points: 2
+estimated_seconds: 60
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s08-a
+  variant_id: mod-w05.theory.s08.vA
+  item_version: '1.0'
+  stem: 47 kelereng dibagi rata kepada 6 anak; setiap anak mendapat jumlah utuh yang sama, sebanyak mungkin.
+    Berapa kelereng yang **tersisa**?
+  accepted_answers:
+  - '5'
+  - 5 kelereng
+  - 5kelereng
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: 6 × 7 = 42 ≤ 47 dan 6 × 8 = 48 > 47, jadi hasil bagi 7 dan sisa 47 − 42 = 5.
+- item_id: item-w05-t-s08-b
+  variant_id: mod-w05.theory.s08.vB
+  item_version: '1.0'
+  stem: 52 buku disusun di rak; setiap rak penuh berisi 8 buku. Berapa buku di rak terakhir yang **tidak
+    penuh**?
+  accepted_answers:
+  - '4'
+  - 4 buku
+  - 4buku
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: 8 × 6 = 48 ≤ 52 dan 8 × 7 = 56 > 52, jadi 6 rak penuh dan sisa 52 − 48 = 4 buku.

@@ -95,14 +95,14 @@ Kontrak field: [AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTO
 | Field | Nilai |
 |---|---|
 | Tugas aktif dan lingkup | CB-2 — merge PR #27, catat W02-ACC–W04-ACC, produksi W5–W8 (16 komponen), satu PR baru; tanpa merge PR baru, tanpa W9–W16, tanpa implementasi |
-| Fase | Fase A (merge `846051f`) dan Fase B (penerimaan) selesai; Fase C produksi W5 dimulai |
-| Selesai | PR #27 merged (`846051f66ee4d1e36e9b34e0c9d1787fb713617b`); W02-ACC, W03-ACC, W04-ACC dicatat (DECISIONS_LOG, OWNER_DECISION_CHECKLIST, module.yaml, review.md) |
-| Sisa | W5 → W6 → W7 → W8 (satu per satu, validasi sebelum lanjut); sinkronisasi dokumen status; PR CB-2 |
+| Fase | Fase A dan B selesai; Fase C: **W5 selesai dan tervalidasi**; W6 berikutnya |
+| Selesai | PR #27 merged (`846051f66ee4d1e36e9b34e0c9d1787fb713617b`); W02-ACC, W03-ACC, W04-ACC dicatat (DECISIONS_LOG, OWNER_DECISION_CHECKLIST, module.yaml, review.md); **W5** `curriculum/mod-w05/` (42 berkas; validator NO ERRORS; 13/13 contoh proyek; NB-5 58 butir angka; kunci a6 b6 c7 d6) |
+| Sisa | W6 → W7 → W8 (satu per satu, validasi sebelum lanjut); sinkronisasi dokumen status; PR CB-2 |
 | Berkas relevan | `docs/CURRICULUM_TEMPLATES_CB0.md`, `docs/CURRICULUM_CONTENT_DECISION_SHEETS.md` §D (HA-A fase 2: M 150 · U 45 · L 120 · P 90 · C 30 · R 45), `docs/PROJECT_RUBRIC_DECISION_SHEETS.md` A.3, `docs/ASSESSMENT_FLOW_DECISION_SHEETS.md` A.4, `curriculum/mod-w01`–`mod-w04` (acuan) |
 | Versi kerja | Branch `planning/cb2-w05-w08` dari `main` = `846051f66ee4d1e36e9b34e0c9d1787fb713617b`; versi terkini = head branch di GitHub |
 | Keputusan | Owner: merge PR #27, W02-ACC–W04-ACC (batas review terarah diungkapkan), CB-2 diotorisasi. LO rinci W5–W8 disusun penyusun dari CUR §2 (CU-1 PROPOSED) |
 | Blocker | Format editor flowchart (M-10) dan bentuk entri ekspresi Boolean belum diputuskan → W6/W8 memakai bentuk jawaban terstruktur yang sudah ada (pilihan, isian eksak, tabel), tanpa editor graf; dicatat untuk owner |
-| Pendekatan gagal | — |
+| Pendekatan gagal | W5: asersi generator salah tulis (bukan kunci); regex pemeriksa NB-5 awalnya mengurai `18.8` sebagai 18 + satuan — diperbaiki sebelum dipakai sebagai bukti |
 | Bukti verifikasi | PR #27 `merged: true`, merge commit `846051f`; main lokal = remote, working tree bersih sebelum branch dibuat |
 | Aksi berikutnya yang diizinkan | Produksi W5, validasi, checkpoint; lanjut W6 hanya setelah W5 lolos |
 | Kondisi berhenti | PR CB-2 dibuka → STOP. Jangan merge, jangan mulai W9, jangan implementasi |

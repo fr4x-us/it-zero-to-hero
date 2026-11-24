@@ -1,0 +1,115 @@
+# W5 — ikhtisar modul (TPL-01, TPL-02, TPL-03, TPL-15, TPL-17, TPL-18). Dokumentasi konten; bukan kode aplikasi.
+module_id: mod-w05
+phase: phase-2
+week: 5
+title: "Dasar Matematika untuk IT"
+locked_scope: "W5 dasar matematika (B01 M-02, D-01 M-02; CUR §2 baris 5: operasi dan notasi yang dipakai di pemrograman; lab latihan numerik bernilai pasti)"
+language: id
+content_version: "1.0"
+status:
+  documentation: PRODUCED          # konten lengkap ditulis (CB-2)
+  reviewed: CLAUDE_SELF_REVIEW     # review dokumentasi oleh penyusun; lihat review.md
+  owner_accepted: NO               # menunggu review independen dan penerimaan owner
+  runtime_verified: NOT_APPLICABLE # W5 tidak memakai runtime Python; aplikasi belum ada
+  learner_tested: NO               # estimasi durasi belum diuji dengan pelajar
+audience: "Pemula total tanpa pengalaman IT atau pemrograman; telah menyelesaikan W1–W4"
+prerequisites: [mod-w04]
+nominal_minutes: 480
+objective_source: "Topik dan tujuan ringkas CUR §2 baris 5 (kerangka D-01 M-02). Rumusan LO rinci disusun penyusun mengikuti pola W1–W4 (CU-1 tetap PROPOSED) — bukan keputusan owner baru"
+number_rules: "NB-5 (Pelajaran 3 §1): koma desimal; titik hanya pemisah ribuan berkelompok tiga digit; tanpa nol di depan; minus untuk bilangan negatif; pembulatan setengah ke atas untuk bilangan positif. Dipakai sama di teori, lab, dan proyek W5"
+python_dependency: "Tidak ada. Notasi `×`, `÷`, `²` adalah notasi matematika, bukan sintaks Python (operator Python diajarkan mulai W9)"
+
+learning_objectives:
+  - id: LO1
+    competency: comp-w05-arith-01
+    text: "Menghitung ekspresi dengan urutan operasi yang benar (kurung, pangkat, kali/bagi kiri ke kanan, tambah/kurang kiri ke kanan), termasuk bilangan negatif"
+  - id: LO2
+    competency: comp-w05-expr-01
+    text: "Menjelaskan variabel, ekspresi, dan rumus; mensubstitusi nilai; menghitung pangkat dan rata-rata"
+  - id: LO3
+    competency: comp-w05-divmod-01
+    text: "Menentukan hasil bagi dan sisa pembagian bilangan bulat serta memakainya untuk keterbagian, siklus hari, dan pengelompokan"
+  - id: LO4
+    competency: comp-w05-unit-01
+    text: "Mengonversi satuan waktu, massa, dan volume, serta memakai perbandingan senilai"
+  - id: LO5
+    competency: comp-w05-pct-01
+    text: "Menghitung persentase dari nilai dasar yang benar, diskon, persen kenaikan/penurunan, dan nilai awal"
+  - id: LO6
+    competency: comp-w05-round-01
+    text: "Membulatkan bilangan desimal menurut aturan yang ditentukan dan memilih pembulatan ke atas atau ke bawah sesuai kebutuhan"
+
+objective_mapping:
+  LO1: {lessons: [les-01], practice: [prac-01], theory_slots: [s01, s02, s03, s04], lab: [act-01.c01–c03], project: [K1.c01 (diskon dalam rumus), K4.q4], concept_slots: [s01]}
+  LO2: {lessons: [les-01], practice: [prac-01], theory_slots: [s05, s06, s07], lab: [act-02.c07, act-03.c04], project: [K1.c01–c06, K4.q4], concept_slots: [s02]}
+  LO3: {lessons: [les-02], practice: [prac-02], theory_slots: [s08, s09, s10], lab: [act-01.c04–c06, act-03.c02, act-03.c03, act-03.c06], project: [K1.c14, K1.c15, K4.q3], concept_slots: [s03]}
+  LO4: {lessons: [les-02], practice: [prac-02], theory_slots: [s11, s12, s13], lab: [act-03.c01, act-03.c05], project: [K4.q5], concept_slots: [s04]}
+  LO5: {lessons: [les-03], practice: [prac-03], theory_slots: [s14, s15, s16, s17], lab: [act-02.c01–c04], project: [K1.c08–c13, K4.q1], concept_slots: [s05]}
+  LO6: {lessons: [les-04], practice: [prac-04], theory_slots: [s18, s19, s20], lab: [act-02.c05, act-02.c06, act-02.c08], project: [K1.c08–c13 (pembulatan), K3.c02, K4.q2], concept_slots: [s06]}
+
+lessons:
+  - {id: mod-w05.les-01, file: lessons/les-01.md, minutes: 40}
+  - {id: mod-w05.les-02, file: lessons/les-02.md, minutes: 35}
+  - {id: mod-w05.les-03, file: lessons/les-03.md, minutes: 40}
+  - {id: mod-w05.les-04, file: lessons/les-04.md, minutes: 35}
+practice_sets:
+  - {id: mod-w05.prac-01, lesson: mod-w05.les-01}
+  - {id: mod-w05.prac-02, lesson: mod-w05.les-02}
+  - {id: mod-w05.prac-03, lesson: mod-w05.les-03}
+  - {id: mod-w05.prac-04, lesson: mod-w05.les-04}
+
+components:
+  - {id: mod-w05.theory, weight_percent: 30, max_points: 56, blueprint: theory/blueprint.yaml, items_dir: theory/items, slots: 20, variants_per_slot: 2, items: 40}
+  - {id: mod-w05.lab, weight_percent: 40, max_points: 100, activities: [lab/act-01, lab/act-02, lab/act-03], activity_max_points: [30, 40, 30], variants_per_activity: 2, specifications: 6, attempt_scope: "RA-1 (seluruh komponen)"}
+  - {id: mod-w05.project, weight_percent: 20, max_points: 100, spec: project/spec.md, rubric: project/rubric.yaml, remedial: MPV-A}
+  - {id: mod-w05.concept, weight_percent: 10, max_points: 20, items_dir: concept/items, slots: 6, variants_per_slot: 2, items: 12, slot_max_points: {s01: 4, s02: 3, s03: 4, s04: 4, s05: 3, s06: 2}}
+pass_rule: "PASSED ⇔ 4·e ≥ 3·m untuk setiap komponen (skor terbaik) DAN Σ bobot·e/m ≥ 80% secara eksak (NP-4, D-04, D-12)"
+
+unscored_reflection:
+  id: mod-w05.reflection
+  prompt: "Tuliskan satu perhitungan sehari-hari (belanja, waktu, atau nilai) yang sekarang dapat kamu periksa sendiri, dan langkah yang kamu pakai."
+  scored: false
+  xp: none
+
+xp:
+  identities:
+    - {xp_id: mod-w05.les-01, amount: 5, eligibility: "Pelajaran dibuka sampai bagian akhir untuk pertama kali (XE-4)"}
+    - {xp_id: mod-w05.les-02, amount: 5, eligibility: "idem"}
+    - {xp_id: mod-w05.les-03, amount: 5, eligibility: "idem"}
+    - {xp_id: mod-w05.les-04, amount: 5, eligibility: "idem"}
+    - {xp_id: mod-w05.prac-01, amount: 10, eligibility: "Set latihan diselesaikan pertama kali, berapa pun hasilnya (XE-4)"}
+    - {xp_id: mod-w05.prac-02, amount: 10, eligibility: "idem"}
+    - {xp_id: mod-w05.prac-03, amount: 10, eligibility: "idem"}
+    - {xp_id: mod-w05.prac-04, amount: 10, eligibility: "idem"}
+    - {xp_id: mod-w05.theory, amount: 50, eligibility: "Attempt selesai pertama dengan 4·e ≥ 3·56 (e ≥ 42) (XE-B, XE-1)"}
+    - {xp_id: mod-w05.lab, amount: 70, eligibility: "Attempt komponen selesai pertama (LA-2) dengan 4·e ≥ 3·100 (e ≥ 75)"}
+    - {xp_id: mod-w05.project, amount: 50, eligibility: "Attempt selesai pertama dengan 4·e ≥ 3·100 (e ≥ 75)"}
+    - {xp_id: mod-w05.concept, amount: 25, eligibility: "Attempt selesai pertama dengan 4·e ≥ 3·20 (e ≥ 15)"}
+    - {xp_id: mod-w05.passed, amount: 50, eligibility: "Modul W5 pertama kali berstatus PASSED (XE-5)"}
+  total_obtainable: 305
+  not_identities: ["aktivitas lab individual (XI-2)", "varian soal (XI-5)", "Jalankan/latihan lab", "refleksi tanpa skor", "attempt remedial atau perbaikan setelah award"]
+
+schedule:             # HA-A fase 2 (D-32): M 150, U 45, L 120, P 90, C 30, R 45 = 480 menit
+  allocation_minutes: {material_and_practice: 150, theory_exam_and_review: 45, laboratory: 120, mini_project: 90, concept_explanation: 30, scheduled_review_and_remedial_preparation: 45}
+  total_minutes: 480
+  lab_activity_minutes: {act-01: 40, act-02: 40, act-03: 40}
+  theory_exam:
+    standard_minutes: 33                 # rumus A.4 dari blueprint W5: S = 1.665 → ⌈1.832/60⌉ + 2
+    scheduled_feedback_review_minutes: 12
+    accessibility_TA_B_minutes: 50      # ⌈33 × 3/2⌉; di luar 480 menit nominal (TA-3)
+    optional_additional_review: "Di luar nominal; bergantung pelajar"
+  suggested_sessions:
+    - {session: 1, minutes: 230, content: "les-01 (40) · les-02 (35) · les-03 (40) · les-04 (35) · lab act-01 (40) · lab act-02 (40)"}
+    - {session: 2, minutes: 250, content: "lab act-03 (40) · mini-project (90) · concept (30) · review terjadwal (45) · ujian teori (33) + review umpan balik (12)"}
+  outside_nominal: ["perpanjangan aksesibilitas", "attempt remedial", "review tambahan opsional"]
+
+versioning:
+  module: "1.0"
+  rule: "Perubahan typo/klarifikasi → minor (1.1); perubahan kunci, poin, atau isi soal → mayor (2.0); xp_id dan item_id tidak berubah bila tujuan belajar sama (XI-6)"
+counts:
+  lessons: 4
+  practice_sets: 4
+  theory_items: 40
+  lab_specifications: 6
+  mini_projects: 1
+  concept_items: 12
