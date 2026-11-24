@@ -1,0 +1,135 @@
+# W3 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w03.lab.act-03
+name: Perangkat, protokol, lapisan, dan kecepatan
+competencies:
+- comp-w03-net-01
+- comp-w03-proto-01
+- comp-w03-layer-01
+- comp-w03-rate-01
+max_points: 30
+estimated_minutes: 30
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w03.lab (D-28 XI-2)
+normalization: 'c01, c04: satu huruf opsi {a, b, c, d}. c02: nama protokol, abaikan huruf besar/kecil.
+  c03: bilangan bulat. c05, c06: bilangan bulat, boleh diikuti satuan yang diminta'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu; pemeriksaan lain tetap dinilai
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2)
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W3 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python atau jaringan nyata; pemeriksaan deterministik atas jawaban terstruktur
+network_assumptions: 'Model W3: IPv4 desimal; privat = RFC 1918 (10/8, 172.16–172.31, 192.168/16); alamat
+  valid lain (bukan 127.x) = publik; mask hanya 255.255.255.0 (/24); kecepatan ideal desimal'
+variants:
+- variant_id: mod-w03.lab.act-03.vA
+  fixture:
+    c01_options: &id001
+    - id: a
+      text: Switch
+    - id: b
+      text: Router
+    - id: c
+      text: Access point
+    - id: d
+      text: Modem
+    c04_options: &id002
+    - id: a
+      text: Aplikasi
+    - id: b
+      text: Transport
+    - id: c
+      text: Internet
+    - id: d
+      text: Akses jaringan
+  visible_example:
+    note: 'Contoh terlihat (0 poin): 32 Mbps = 4 MB/s'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w03.lab.act-03.vA.c01
+    name: Peran perangkat
+    question: Perangkat yang menghubungkan LAN rumah dengan internet dan meneruskan paket antarjaringan
+    expected: b
+    points: 5
+  - check_id: mod-w03.lab.act-03.vA.c02
+    name: Protokol alamat otomatis
+    question: Laptop baru bergabung ke Wi-Fi dan otomatis mendapat alamat IP, mask, dan gateway. Nama
+      protokolnya?
+    accepted_answers:
+    - dhcp
+    points: 5
+  - check_id: mod-w03.lab.act-03.vA.c03
+    name: Port bawaan
+    question: Situs dibuka dengan https://. Nomor port bawaan di server?
+    accepted_answers:
+    - '443'
+    points: 5
+  - check_id: mod-w03.lab.act-03.vA.c04
+    name: Lapisan bermasalah
+    question: Kabel LAN laptop tercabut sehingga lampu port mati. Lapisan TCP/IP yang bermasalah?
+    expected: d
+    points: 5
+  - check_id: mod-w03.lab.act-03.vA.c05
+    name: Konversi Mbps → MB/s
+    question: Kecepatan 96 Mbps = … MB/s
+    accepted_answers:
+    - '12'
+    - 12 MB/s
+    - 12MB/s
+    points: 5
+  - check_id: mod-w03.lab.act-03.vA.c06
+    name: Waktu unduh ideal
+    question: Berkas 750 MB diunduh pada 30 Mbps (ideal) = … detik
+    accepted_answers:
+    - '200'
+    - 200 detik
+    - 200detik
+    points: 5
+- variant_id: mod-w03.lab.act-03.vB
+  fixture:
+    c01_options: *id001
+    c04_options: *id002
+  visible_example:
+    note: 'Contoh terlihat (0 poin): 32 Mbps = 4 MB/s'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w03.lab.act-03.vB.c01
+    name: Peran perangkat
+    question: Perangkat yang memancarkan Wi-Fi agar ponsel dapat bergabung ke LAN
+    expected: c
+    points: 5
+  - check_id: mod-w03.lab.act-03.vB.c02
+    name: Protokol penerjemah nama
+    question: Browser perlu mengetahui alamat IP dari nama perpustakaan.example. Nama protokolnya?
+    accepted_answers:
+    - dns
+    points: 5
+  - check_id: mod-w03.lab.act-03.vB.c03
+    name: Port bawaan
+    question: Situs dibuka dengan http:// (tanpa s). Nomor port bawaan di server?
+    accepted_answers:
+    - '80'
+    points: 5
+  - check_id: mod-w03.lab.act-03.vB.c04
+    name: Lapisan bermasalah
+    question: Kabel dan alamat IP benar dan situs lain terbuka, tetapi aplikasi email gagal karena alamat
+      server di pengaturan aplikasinya salah ketik. Lapisan TCP/IP yang bermasalah?
+    expected: a
+    points: 5
+  - check_id: mod-w03.lab.act-03.vB.c05
+    name: Konversi MB/s → Mbps
+    question: Kecepatan 9 MB/s = … Mbps
+    accepted_answers:
+    - '72'
+    - 72 Mbps
+    - 72Mbps
+    points: 5
+  - check_id: mod-w03.lab.act-03.vB.c06
+    name: Waktu unduh ideal
+    question: Berkas 900 MB diunduh pada 40 Mbps (ideal) = … detik
+    accepted_answers:
+    - '180'
+    - 180 detik
+    - 180detik
+    points: 5

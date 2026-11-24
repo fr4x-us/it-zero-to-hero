@@ -1,0 +1,232 @@
+# W3 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w03.lab.act-01
+name: Klasifikasi alamat IPv4
+competencies:
+- comp-w03-ip-01
+max_points: 30
+estimated_minutes: 25
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w03.lab (D-28 XI-2)
+normalization: Satu kode dari {P, U, X}; buang spasi tepi; ubah ke huruf besar
+answer_validation: Kosong atau kode di luar himpunan → 0 untuk pemeriksaan itu; pemeriksaan lain tetap
+  dinilai
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2)
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W3 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python atau jaringan nyata; pemeriksaan deterministik atas jawaban terstruktur
+network_assumptions: 'Model W3: IPv4 desimal; privat = RFC 1918 (10/8, 172.16–172.31, 192.168/16); alamat
+  valid lain (bukan 127.x) = publik; mask hanya 255.255.255.0 (/24); kecepatan ideal desimal'
+variants:
+- variant_id: mod-w03.lab.act-01.vA
+  fixture:
+    addresses:
+    - id: A1
+      address: 192.168.1.15
+    - id: A2
+      address: 8.8.8.8
+    - id: A3
+      address: 172.16.40.2
+    - id: A4
+      address: 256.10.1.1
+    - id: A5
+      address: 10.200.3.4
+    - id: A6
+      address: 172.32.0.5
+    - id: A7
+      address: 192.168.1
+    - id: A8
+      address: 36.89.12.5
+    - id: A9
+      address: 192.168.200.9
+    - id: A10
+      address: 10.0.0.300
+    display_order:
+    - A1
+    - A2
+    - A3
+    - A4
+    - A5
+    - A6
+    - A7
+    - A8
+    - A9
+    - A10
+    codes:
+    - id: P
+      label: Privat (valid)
+    - id: U
+      label: Publik (valid)
+    - id: X
+      label: Tidak valid
+  visible_example:
+    note: 'Contoh terlihat (0 poin): 192.168.99.99 → P'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w03.lab.act-01.vA.c01
+    name: Kode A1
+    item: A1
+    expected: P
+    points: 3
+    feedback: Rentang 192.168
+  - check_id: mod-w03.lab.act-01.vA.c02
+    name: Kode A2
+    item: A2
+    expected: U
+    points: 3
+    feedback: Valid, bukan rentang privat
+  - check_id: mod-w03.lab.act-01.vA.c03
+    name: Kode A3
+    item: A3
+    expected: P
+    points: 3
+    feedback: Oktet kedua 16 (batas bawah 16–31)
+  - check_id: mod-w03.lab.act-01.vA.c04
+    name: Kode A4
+    item: A4
+    expected: X
+    points: 3
+    feedback: 256 > 255
+  - check_id: mod-w03.lab.act-01.vA.c05
+    name: Kode A5
+    item: A5
+    expected: P
+    points: 3
+    feedback: Rentang 10.x
+  - check_id: mod-w03.lab.act-01.vA.c06
+    name: Kode A6
+    item: A6
+    expected: U
+    points: 3
+    feedback: Oktet kedua 32 di luar 16–31
+  - check_id: mod-w03.lab.act-01.vA.c07
+    name: Kode A7
+    item: A7
+    expected: X
+    points: 3
+    feedback: Hanya 3 oktet
+  - check_id: mod-w03.lab.act-01.vA.c08
+    name: Kode A8
+    item: A8
+    expected: U
+    points: 3
+    feedback: Valid, bukan rentang privat
+  - check_id: mod-w03.lab.act-01.vA.c09
+    name: Kode A9
+    item: A9
+    expected: P
+    points: 3
+    feedback: Rentang 192.168
+  - check_id: mod-w03.lab.act-01.vA.c10
+    name: Kode A10
+    item: A10
+    expected: X
+    points: 3
+    feedback: 300 > 255
+- variant_id: mod-w03.lab.act-01.vB
+  fixture:
+    addresses:
+    - id: A1
+      address: 10.1.1.1
+    - id: A2
+      address: 172.15.9.9
+    - id: A3
+      address: 192.168.0.256
+    - id: A4
+      address: 172.31.255.10
+    - id: A5
+      address: 1.1.1.1
+    - id: A6
+      address: 192.168.10.20
+    - id: A7
+      address: 100.20.30
+    - id: A8
+      address: 52.14.8.200
+    - id: A9
+      address: 10.255.0.1
+    - id: A10
+      address: 12.300.4.5
+    display_order:
+    - A1
+    - A2
+    - A3
+    - A4
+    - A5
+    - A6
+    - A7
+    - A8
+    - A9
+    - A10
+    codes:
+    - id: P
+      label: Privat (valid)
+    - id: U
+      label: Publik (valid)
+    - id: X
+      label: Tidak valid
+  visible_example:
+    note: 'Contoh terlihat (0 poin): 192.168.99.99 → P'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w03.lab.act-01.vB.c01
+    name: Kode A1
+    item: A1
+    expected: P
+    points: 3
+    feedback: Rentang 10.x
+  - check_id: mod-w03.lab.act-01.vB.c02
+    name: Kode A2
+    item: A2
+    expected: U
+    points: 3
+    feedback: Oktet kedua 15 di luar 16–31
+  - check_id: mod-w03.lab.act-01.vB.c03
+    name: Kode A3
+    item: A3
+    expected: X
+    points: 3
+    feedback: 256 > 255
+  - check_id: mod-w03.lab.act-01.vB.c04
+    name: Kode A4
+    item: A4
+    expected: P
+    points: 3
+    feedback: Oktet kedua 31 (batas atas 16–31)
+  - check_id: mod-w03.lab.act-01.vB.c05
+    name: Kode A5
+    item: A5
+    expected: U
+    points: 3
+    feedback: Valid, bukan rentang privat
+  - check_id: mod-w03.lab.act-01.vB.c06
+    name: Kode A6
+    item: A6
+    expected: P
+    points: 3
+    feedback: Rentang 192.168
+  - check_id: mod-w03.lab.act-01.vB.c07
+    name: Kode A7
+    item: A7
+    expected: X
+    points: 3
+    feedback: Hanya 3 oktet
+  - check_id: mod-w03.lab.act-01.vB.c08
+    name: Kode A8
+    item: A8
+    expected: U
+    points: 3
+    feedback: Valid, bukan rentang privat
+  - check_id: mod-w03.lab.act-01.vB.c09
+    name: Kode A9
+    item: A9
+    expected: P
+    points: 3
+    feedback: Rentang 10.x
+  - check_id: mod-w03.lab.act-01.vB.c10
+    name: Kode A10
+    item: A10
+    expected: X
+    points: 3
+    feedback: 300 > 255

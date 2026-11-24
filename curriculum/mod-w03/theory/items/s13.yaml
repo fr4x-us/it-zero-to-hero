@@ -1,0 +1,50 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s13
+competency: comp-w03-proto-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s13-a
+  variant_id: mod-w03.theory.s13.vA
+  item_version: '1.0'
+  stem: Laptop **dapat** membuka situs bila alamat IP servernya diketik langsung, tetapi **gagal** bila
+    nama `rapor.example` yang diketik. Layanan mana yang paling mungkin bermasalah?
+  options:
+  - id: a
+    text: Kabel atau Wi-Fi terputus
+  - id: b
+    text: DNS
+  - id: c
+    text: HTTPS (port 443)
+  - id: d
+    text: DHCP
+  key: b
+  distractor_rationale:
+    a: Situs dapat dibuka dengan alamat IP, jadi sambungan berjalan
+    c: Halaman terbuka lewat alamat IP, jadi bukan HTTPS
+    d: Laptop sudah punya alamat dan dapat berkomunikasi
+  explanation: 'Yang gagal hanya penerjemahan nama ke alamat IP: tugas DNS.'
+- item_id: item-w03-t-s13-b
+  variant_id: mod-w03.theory.s13.vB
+  item_version: '1.0'
+  stem: Ponsel sudah tersambung ke Wi-Fi (sinyal penuh) dengan pengaturan alamat **otomatis**, tetapi
+    tidak mendapat alamat IP sama sekali. Layanan mana yang paling mungkin bermasalah?
+  options:
+  - id: a
+    text: Kabel atau Wi-Fi terputus
+  - id: b
+    text: DNS
+  - id: c
+    text: HTTPS (port 443)
+  - id: d
+    text: DHCP
+  key: d
+  distractor_rationale:
+    a: Wi-Fi tersambung dengan sinyal penuh
+    b: DNS dipakai setelah perangkat punya alamat
+    c: HTTPS dipakai setelah perangkat dapat berkomunikasi
+  explanation: Alamat otomatis diberikan DHCP; bila tidak ada alamat, DHCP yang paling mungkin bermasalah.

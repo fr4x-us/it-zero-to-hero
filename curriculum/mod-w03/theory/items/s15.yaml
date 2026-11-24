@@ -1,0 +1,50 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s15
+competency: comp-w03-layer-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s15-a
+  variant_id: mod-w03.theory.s15.vA
+  item_version: '1.0'
+  stem: Protokol **IP** dan **router** bekerja di lapisan TCP/IP …
+  options:
+  - id: a
+    text: Aplikasi
+  - id: b
+    text: Transport
+  - id: c
+    text: Internet
+  - id: d
+    text: Akses jaringan
+  key: c
+  distractor_rationale:
+    a: 'Aplikasi: HTTP, DNS, DHCP'
+    b: 'Transport: TCP, UDP'
+    d: 'Akses jaringan: Ethernet, Wi-Fi, switch'
+  explanation: Pengalamatan dan penerusan antarjaringan ada di lapisan internet.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w03-t-s15-b
+  variant_id: mod-w03.theory.s15.vB
+  item_version: '1.0'
+  stem: '**TCP** dan **UDP** bekerja di lapisan TCP/IP …'
+  options:
+  - id: a
+    text: Aplikasi
+  - id: b
+    text: Transport
+  - id: c
+    text: Internet
+  - id: d
+    text: Akses jaringan
+  key: b
+  distractor_rationale:
+    a: 'Aplikasi: HTTP, DNS, DHCP'
+    c: 'Internet: IP, router'
+    d: 'Akses jaringan: Ethernet, Wi-Fi, switch'
+  explanation: 'TCP dan UDP mengantar data ke aplikasi lewat port: lapisan transport.'
+  option_order: urutan alami (kategori/baris tabel), tetap

@@ -1,0 +1,36 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s20
+competency: comp-w03-rate-01
+format: TF-3
+difficulty: D3
+max_points: 4
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s20-a
+  variant_id: mod-w03.theory.s20.vA
+  item_version: '1.0'
+  stem: Model ideal W3, aturan desimal (1 GB = 1.000 MB). Berkas **1,2 GB** diunduh pada **40 Mbps**.
+    Berapa **menit**?
+  accepted_answers:
+  - '4'
+  - 4 menit
+  - 4menit
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
+    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+  explanation: 1,2 GB = 1.200 MB; × 8 = 9.600 Mb; ÷ 40 = 240 detik = 4 menit.
+- item_id: item-w03-t-s20-b
+  variant_id: mod-w03.theory.s20.vB
+  item_version: '1.0'
+  stem: Model ideal W3, aturan desimal (1 GB = 1.000 MB). Berkas **2,4 GB** diunduh pada **160 Mbps**.
+    Berapa **menit**?
+  accepted_answers:
+  - '2'
+  - 2 menit
+  - 2menit
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
+    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+  explanation: 2,4 GB = 2.400 MB; × 8 = 19.200 Mb; ÷ 160 = 120 detik = 2 menit.

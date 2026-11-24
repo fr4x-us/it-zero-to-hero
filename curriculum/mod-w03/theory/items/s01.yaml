@@ -1,0 +1,51 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s01
+competency: comp-w03-net-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s01-a
+  variant_id: mod-w03.theory.s01.vA
+  item_version: '1.0'
+  stem: Perangkat yang **memancarkan Wi-Fi** agar ponsel dapat bergabung ke LAN adalah …
+  options:
+  - id: a
+    text: Switch
+  - id: b
+    text: Access point
+  - id: c
+    text: Router
+  - id: d
+    text: Modem
+  key: b
+  distractor_rationale:
+    a: Switch menghubungkan perangkat lewat kabel di dalam LAN
+    c: Router menghubungkan jaringan yang berbeda
+    d: Modem mengubah sinyal ke saluran ISP
+  explanation: Access point memancarkan Wi-Fi sebagai pintu masuk nirkabel ke LAN.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w03-t-s01-b
+  variant_id: mod-w03.theory.s01.vB
+  item_version: '1.0'
+  stem: Perangkat yang **menghubungkan LAN rumah dengan jaringan lain** (internet) dan memilih jalur paket
+    antarjaringan adalah …
+  options:
+  - id: a
+    text: Switch
+  - id: b
+    text: Access point
+  - id: c
+    text: Router
+  - id: d
+    text: Modem
+  key: c
+  distractor_rationale:
+    a: Switch bekerja di dalam satu LAN
+    b: Access point memancarkan Wi-Fi ke LAN
+    d: Modem mengubah sinyal, bukan memilih jalur antarjaringan
+  explanation: Router menghubungkan jaringan yang berbeda.
+  option_order: urutan alami (kategori/baris tabel), tetap

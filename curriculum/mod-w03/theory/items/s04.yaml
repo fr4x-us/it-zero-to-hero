@@ -1,0 +1,48 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s04
+competency: comp-w03-ip-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s04-a
+  variant_id: mod-w03.theory.s04.vA
+  item_version: '1.0'
+  stem: Menurut model W3, alamat IPv4 mana yang **valid**?
+  options:
+  - id: a
+    text: '`192.168.10`'
+  - id: b
+    text: '`10.0.0.256`'
+  - id: c
+    text: '`172.16.8.4`'
+  - id: d
+    text: '`192.168.1.1.5`'
+  key: c
+  distractor_rationale:
+    a: Hanya 3 oktet
+    b: 256 lebih dari 255
+    d: 5 oktet
+  explanation: 172.16.8.4 punya 4 oktet, masing-masing 0–255.
+- item_id: item-w03-t-s04-b
+  variant_id: mod-w03.theory.s04.vB
+  item_version: '1.0'
+  stem: Menurut model W3, alamat IPv4 mana yang **tidak valid**?
+  options:
+  - id: a
+    text: '`10.9.8.7`'
+  - id: b
+    text: '`8.8.4.4`'
+  - id: c
+    text: '`172.16.0.1`'
+  - id: d
+    text: '`192.168.300.1`'
+  key: d
+  distractor_rationale:
+    a: 'Valid: 4 oktet 0–255'
+    b: 'Valid: 4 oktet 0–255'
+    c: 'Valid: 4 oktet 0–255'
+  explanation: 300 lebih dari 255, jadi 192.168.300.1 tidak valid.

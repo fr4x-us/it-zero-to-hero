@@ -1,0 +1,59 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s02
+competency: comp-w03-net-01
+format: TF-2
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s02-a
+  variant_id: mod-w03.theory.s02.vA
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: LAN mencakup satu lokasi, seperti rumah atau kelas
+  - id: b
+    text: Internet dimiliki dan dijalankan oleh satu perusahaan
+  - id: c
+    text: Internet adalah jaringan dari banyak jaringan yang saling terhubung
+  - id: d
+    text: Printer di LAN rumah tetap dapat dipakai dari laptop di LAN itu walaupun sambungan internet
+      putus
+  - id: e
+    text: WAN selalu mencakup wilayah yang lebih kecil daripada LAN
+  key:
+  - a
+  - c
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: Internet terdiri dari jaringan milik banyak pihak
+    e: WAN mencakup wilayah luas
+  explanation: LAN satu lokasi; internet jaringan dari jaringan-jaringan; LAN tetap berjalan tanpa internet.
+- item_id: item-w03-t-s02-b
+  variant_id: mod-w03.theory.s02.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: Wi-Fi sama artinya dengan internet
+  - id: b
+    text: WAN dapat menghubungkan kantor-kantor di beberapa kota
+  - id: c
+    text: Rumah tersambung ke internet lewat penyedia layanan internet (ISP)
+  - id: d
+    text: LAN hanya dapat memakai kabel, tidak pernah nirkabel
+  - id: e
+    text: LAN biasanya dikelola pemilik lokasinya
+  key:
+  - b
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    a: Wi-Fi adalah cara bergabung ke LAN tanpa kabel
+    d: Wi-Fi adalah LAN nirkabel
+  explanation: WAN wilayah luas; ISP menyambungkan rumah ke internet; LAN dikelola pemilik lokasi.

@@ -1,0 +1,34 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s18
+competency: comp-w03-rate-01
+format: TF-3
+difficulty: D1
+max_points: 2
+estimated_seconds: 60
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s18-a
+  variant_id: mod-w03.theory.s18.vA
+  item_version: '1.0'
+  stem: Kecepatan **24 Mbps** sama dengan berapa **MB/s** (aturan desimal, 1 byte = 8 bit)?
+  accepted_answers:
+  - '3'
+  - 3 MB/s
+  - 3MB/s
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
+    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+  explanation: 24 ÷ 8 = 3 MB/s.
+- item_id: item-w03-t-s18-b
+  variant_id: mod-w03.theory.s18.vB
+  item_version: '1.0'
+  stem: Kecepatan **7 MB/s** sama dengan berapa **Mbps** (aturan desimal, 1 byte = 8 bit)?
+  accepted_answers:
+  - '56'
+  - 56 Mbps
+  - 56Mbps
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: tanda
+    +/−, desimal, spasi di dalam angka, kata, satuan lain'
+  explanation: 7 × 8 = 56 Mbps.

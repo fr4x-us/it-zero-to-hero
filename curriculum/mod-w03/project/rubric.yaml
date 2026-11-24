@@ -1,0 +1,132 @@
+# W3 — rubrik mini-project (MR-A, D-33). Kunci, contoh jawaban, dan contoh evaluasi
+# hanya untuk reviewer/penilai; tidak ditampilkan kepada pelajar sebelum dinilai.
+component: mod-w03.project
+content_version: "1.0"
+max_points: 100
+network_assumptions: "Model W3: IPv4 desimal; mask hanya 255.255.255.0; jaringan 192.168.50.0/24; rentang DHCP .100–.199 termasuk kedua ujung (100 alamat); rencana di atas kertas, tanpa jaringan nyata"
+
+constants:
+  network: 192.168.50.0
+  broadcast: 192.168.50.255
+  router_required: 192.168.50.1
+  dhcp_pool: [192.168.50.100, 192.168.50.199]
+  static_allowed_last_octet: "2–99 dan 200–254 (98 + 55 = 153 alamat)"
+  F5_expected: 148      # 254 − 100 (DHCP) − 1 (router) − 5 (perangkat)
+
+field_rules:
+  ip_readable: "Spasi/tab tepi dibuang; tepat 4 oktet dipisah titik; setiap oktet '0' atau digit 1–9 diikuti ≤ 2 digit, bernilai ≤ 255 (tanpa nol di depan, karena sebagian sistem membaca '010' sebagai oktal); boleh diakhiri tepat '/24'. Contoh dapat dibaca: '192.168.50.10', ' 192.168.50.10 ', '192.168.50.10/24'. Tidak dapat dibaca: '192.168.050.10', '192.168.50', '192.168.50.256', '192.168.50.10/16', '192.168. 50.10'"
+  mask_readable: "'255.255.255.0' atau '/24' (spasi tepi dibuang). Lainnya tidak dapat dibaca"
+  host_ok: "ip_readable DAN tiga oktet pertama = 192.168.50 DAN oktet terakhir 1–254"
+  outside_pool: "oktet terakhir < 100 atau > 199"
+  number_F5: "Bilangan bulat tanpa tanda/desimal/spasi di dalam, tanpa nol di depan; boleh diikuti ' alamat' atau 'alamat' (huruf besar/kecil bebas). Contoh: '148', '148 alamat'. Ditolak: '148,0', 'seratus empat puluh delapan', '0148'"
+  k3_strict: "Alamat tanpa akhiran '/24'; mask tepat '255.255.255.0'; F5 hanya digit"
+  dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya tidak dapat dibaca; pemeriksaan lain tetap dinilai"
+
+criteria:
+  K1:
+    name: Kebenaran fungsional
+    points: 60
+    checks:
+      - {id: mod-w03.project.K1.c01, rule: "F1 (diurai) = 192.168.50.1 (N1)", depends_on: [F1 ip_readable], points: 6}
+      - {id: mod-w03.project.K1.c02, rule: "IP D1 host_ok DAN outside_pool DAN ≠ F1 (N2)", depends_on: [IP D1 ip_readable], points: 5}
+      - {id: mod-w03.project.K1.c03, rule: "IP D2 host_ok DAN outside_pool DAN ≠ F1", depends_on: [IP D2 ip_readable], points: 5}
+      - {id: mod-w03.project.K1.c04, rule: "IP D3 host_ok DAN outside_pool DAN ≠ F1", depends_on: [IP D3 ip_readable], points: 5}
+      - {id: mod-w03.project.K1.c05, rule: "IP D4 host_ok DAN outside_pool DAN ≠ F1", depends_on: [IP D4 ip_readable], points: 5}
+      - {id: mod-w03.project.K1.c06, rule: "IP D5 host_ok DAN outside_pool DAN ≠ F1", depends_on: [IP D5 ip_readable], points: 5}
+      - {id: mod-w03.project.K1.c07, rule: "Keenam alamat F1, D1–D5 (diurai) berbeda satu sama lain (N3)", depends_on: [F1 dan IP D1–D5 ip_readable], points: 6}
+      - {id: mod-w03.project.K1.c08, rule: "Kelima mask (diurai) = /24", depends_on: [mask D1–D5 mask_readable], points: 5}
+      - {id: mod-w03.project.K1.c09, rule: "Kelima gateway (diurai) = F1 (diurai) DAN F1 host_ok (N4)", depends_on: [F1 dan gateway D1–D5 ip_readable], points: 6}
+      - {id: mod-w03.project.K1.c10, rule: "F3 (diurai) = 192.168.50.0", depends_on: [F3 ip_readable], points: 4}
+      - {id: mod-w03.project.K1.c11, rule: "F4 (diurai) = 192.168.50.255", depends_on: [F4 ip_readable], points: 4}
+      - {id: mod-w03.project.K1.c12, rule: "F5 (diurai) = 148", depends_on: [F5 number_F5], points: 4}
+  K2:
+    name: Kelengkapan deliverable
+    points: 20
+    definition: "MR-A (D-33): deliverable ada DAN dapat dibaca. Kebenaran nilai di K1; bentuk ketat di K3"
+    checks:
+      - {id: mod-w03.project.K2.c01, rule: "F1 ip_readable", depends_on: [F1], points: 2}
+      - {id: mod-w03.project.K2.c02, rule: "IP D1 ip_readable", depends_on: [IP D1], points: 2}
+      - {id: mod-w03.project.K2.c03, rule: "IP D2 ip_readable", depends_on: [IP D2], points: 2}
+      - {id: mod-w03.project.K2.c04, rule: "IP D3 ip_readable", depends_on: [IP D3], points: 2}
+      - {id: mod-w03.project.K2.c05, rule: "IP D4 ip_readable", depends_on: [IP D4], points: 2}
+      - {id: mod-w03.project.K2.c06, rule: "IP D5 ip_readable", depends_on: [IP D5], points: 2}
+      - {id: mod-w03.project.K2.c07, rule: "Kelima mask mask_readable", depends_on: [mask D1–D5], points: 2}
+      - {id: mod-w03.project.K2.c08, rule: "Kelima gateway ip_readable", depends_on: [gateway D1–D5], points: 2}
+      - {id: mod-w03.project.K2.c09, rule: "F3 dan F4 ip_readable", depends_on: [F3, F4], points: 2}
+      - {id: mod-w03.project.K2.c10, rule: "F5 number_F5", depends_on: [F5], points: 2}
+  K3:
+    name: Struktur dan format
+    points: 10
+    checks:
+      - {id: mod-w03.project.K3.c01, rule: "F1, IP D1–D5, gateway D1–D5, F3, F4 semuanya ip_readable DAN tanpa akhiran '/24'", depends_on: [isian alamat itu], points: 4}
+      - {id: mod-w03.project.K3.c02, rule: "Kelima mask tepat '255.255.255.0'", depends_on: [mask D1–D5], points: 3}
+      - {id: mod-w03.project.K3.c03, rule: "F5 hanya digit (number_F5 tanpa kata)", depends_on: [F5], points: 3}
+  K4:
+    name: Penjelasan proyek (komposisi K-A, 5 × CE-S1, P = 2)
+    points: 10
+    note: "Soal tentang tugas proyek ini; terpisah dari komponen Concept explanation W3 (D-33 A.2a). Posisi kunci: a, b, c, d, c"
+    items:
+      - id: mod-w03.project.K4.q1
+        lo: comp-w03-net-01
+        stem: "Mengapa printer (D2) tetap dapat menerima cetakan dari komputer kerja (D1) walaupun internet dari ISP putus?"
+        options: {a: "Keduanya berada di LAN yang sama dan terhubung lewat router Wi-Fi rumah (bagian switch/access point-nya), tanpa melewati internet", b: "Printer memakai alamat publik", c: "DNS menyimpan dokumen cetakan", d: "Modem mencetak dokumen"}
+        key: a
+        points: 2
+        feedback: "Komunikasi di dalam satu LAN tidak membutuhkan internet."
+      - id: mod-w03.project.K4.q2
+        lo: comp-w03-ip-01
+        stem: "Mengapa rencana memakai alamat `192.168.50.x`, bukan alamat publik?"
+        options: {a: "Alamat publik tidak valid", b: "Alamat privat dipakai di dalam LAN; router memakai alamat publik dari ISP untuk internet", c: "192.168 lebih cepat daripada alamat publik", d: "Alamat privat dapat dihubungi langsung dari internet"}
+        key: b
+        points: 2
+        feedback: "Alamat privat untuk LAN; satu alamat publik dipakai bersama lewat router."
+      - id: mod-w03.project.K4.q3
+        lo: comp-w03-subnet-01
+        stem: "Mengapa `192.168.50.255` tidak boleh diberikan ke kamera CCTV?"
+        options: {a: "Angka 255 terlalu besar untuk oktet", b: "Itu alamat router", c: "Itu alamat broadcast jaringan /24", d: "Itu berada di rentang DHCP"}
+        key: c
+        points: 2
+        feedback: ".255 pada /24 adalah alamat broadcast, bukan alamat perangkat."
+      - id: mod-w03.project.K4.q4
+        lo: comp-w03-proto-01
+        stem: "Mengapa alamat statis harus di luar `192.168.50.100`–`192.168.50.199`?"
+        options: {a: "Agar DNS dapat menerjemahkan nama perangkat", b: "Agar HTTPS memakai port 443", c: "Agar kecepatan Wi-Fi naik", d: "Agar DHCP tidak memberikan alamat yang sama ke perangkat lain sehingga terjadi konflik"}
+        key: d
+        points: 2
+        feedback: "DHCP membagikan alamat di rentangnya; alamat statis di dalamnya dapat bentrok."
+      - id: mod-w03.project.K4.q5
+        lo: comp-w03-layer-01
+        stem: "Router meneruskan data dari LAN ke internet berdasarkan alamat IP. Di lapisan TCP/IP mana tugas ini?"
+        options: {a: "Aplikasi", b: "Transport", c: "Internet", d: "Akses jaringan"}
+        key: c
+        points: 2
+        feedback: "Pengalamatan dan penerusan antarjaringan berada di lapisan internet."
+
+point_check: "K1 6 + 5×5 + 6 + 5 + 6 + 4 + 4 + 4 = 60; K2 10×2 = 20; K3 4+3+3 = 10; K4 5×2 = 10; total 100"
+
+solution_analysis:
+  full_score_plans: "Router tetap .1; D1–D5 = 5 alamat berbeda dari 153 alamat yang diizinkan (.2–.99, .200–.254), diberikan berurutan ke 5 perangkat: P(153, 5) = 153 × 152 × 151 × 150 × 149 = 78.485.511.600 rencana bernilai penuh"
+  reference_plan: {F1: 192.168.50.1, D1: 192.168.50.10, D2: 192.168.50.11, D3: 192.168.50.12, D4: 192.168.50.13, D5: 192.168.50.14, mask: 255.255.255.0, gateway: 192.168.50.1, F3: 192.168.50.0, F4: 192.168.50.255, F5: "148"}
+  boundaries: ".99 dan .200 sah (tepat di luar DHCP); .100 dan .199 tidak sah (ujung DHCP termasuk); .254 sah; .255 dan .0 tidak sah"
+  F5_derivation: "254 host − 100 (DHCP: 199 − 100 + 1) − 1 (router) − 5 (D1–D5) = 148"
+
+reviewer_examples:   # skor dihitung dengan aturan di atas; K4 diasumsikan 10
+  - {id: E01, case: "Rencana acuan", K1: 60, K2: 20, K3: 10, total: 100}
+  - {id: E02, case: "Batas sah: D1 = .99, D2 = .200, D5 = .254", K1: 60, K2: 20, K3: 10, total: 100}
+  - {id: E03, case: "Printer D2 = .150 (di dalam DHCP)", K1: 55, K2: 20, K3: 10, total: 95, zero: [K1.c03]}
+  - {id: E04, case: "Batas tidak sah: D2 = .100 (ujung DHCP)", K1: 55, K2: 20, K3: 10, total: 95, zero: [K1.c03]}
+  - {id: E05, case: "D1 dan D2 sama-sama .10", K1: 54, K2: 20, K3: 10, total: 94, zero: [K1.c07]}
+  - {id: E06, case: "Kamera D3 = .255 (broadcast)", K1: 55, K2: 20, K3: 10, total: 95, zero: [K1.c04]}
+  - {id: E07, case: "TV D4 = 192.168.51.13 (jaringan lain)", K1: 55, K2: 20, K3: 10, total: 95, zero: [K1.c05]}
+  - {id: E08, case: "Satu gateway = 192.168.50.254", K1: 54, K2: 20, K3: 10, total: 94, zero: [K1.c09]}
+  - {id: E09, case: "Router .254 (bukan host pertama), gateway semua .254", K1: 54, K2: 20, K3: 10, total: 94, zero: [K1.c01], note: "Gateway konsisten dengan F1 sehingga c09 tetap lulus"}
+  - {id: E10, case: "D5 = .1 (sama dengan router)", K1: 49, K2: 20, K3: 10, total: 89, zero: [K1.c06, K1.c07]}
+  - {id: E11, case: "Kelima mask ditulis /24", K1: 60, K2: 20, K3: 7, total: 97, zero: [K3.c02]}
+  - {id: E12, case: "D1 ditulis 192.168.50.10/24", K1: 60, K2: 20, K3: 6, total: 96, zero: [K3.c01]}
+  - {id: E13, case: "D1 ditulis 192.168.050.010 (nol di depan)", K1: 49, K2: 18, K3: 6, total: 83, zero: [K1.c02, K1.c07, K2.c02, K3.c01]}
+  - {id: E14, case: "F5 = 149 (lupa router)", K1: 56, K2: 20, K3: 10, total: 96, zero: [K1.c12]}
+  - {id: E15, case: "F5 = '148 alamat'", K1: 60, K2: 20, K3: 7, total: 97, zero: [K3.c03]}
+  - {id: E16, case: "F4 = 192.168.50.254 (tertukar dengan host terakhir)", K1: 56, K2: 20, K3: 10, total: 96, zero: [K1.c11]}
+  - {id: E17, case: "Semua isian kosong", K1: 0, K2: 0, K3: 0, total: "0 untuk K1–K3; K4 sesuai jawaban", note: "MR-6"}
+
+objective_limits: "Pemeriksaan membuktikan rencana memenuhi aturan model W3; tidak membuktikan konfigurasi perangkat nyata berhasil dan tidak mensertifikasi kompetensi (D-17, D-34)"

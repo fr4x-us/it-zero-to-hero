@@ -1,0 +1,60 @@
+# W3 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.concept.s01
+competency: comp-w03-net-01
+required_concepts:
+- LAN vs internet
+- peran router
+- peran switch
+format: CE-S1
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w03-c-s01-a
+  variant_id: mod-w03.concept.s01.vA
+  item_version: '1.0'
+  stem: Mengapa laptop masih dapat mencetak ke printer di LAN rumah saat sambungan internet dari ISP **putus**?
+  options:
+  - id: a
+    text: Printer memakai sambungan internet cadangan
+  - id: b
+    text: Laptop dan printer berada di LAN yang sama; data di antara keduanya tidak perlu melewati internet
+  - id: c
+    text: Printer menyimpan sambungan internet di RAM-nya
+  - id: d
+    text: Modem yang mencetak dokumen
+  key: b
+  distractor_rationale:
+    a: Tidak ada sambungan cadangan dalam skenario
+    c: RAM tidak menyimpan sambungan internet
+    d: Modem mengubah sinyal ke ISP
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: Perangkat di LAN yang sama berkomunikasi lewat switch/access point di LAN itu, tanpa internet.
+- item_id: item-w03-c-s01-b
+  variant_id: mod-w03.concept.s01.vB
+  item_version: '1.0'
+  stem: Mengapa rumah memerlukan **router**, bukan hanya switch, agar perangkat dapat membuka situs di
+    internet?
+  options:
+  - id: a
+    text: Switch tidak dapat dipasangi kabel
+  - id: b
+    text: Router menyimpan salinan semua situs
+  - id: c
+    text: Switch membuat Wi-Fi menjadi lambat
+  - id: d
+    text: Situs berada di jaringan lain; router yang menghubungkan LAN dengan jaringan lain
+  key: d
+  distractor_rationale:
+    a: Switch justru menghubungkan perangkat lewat kabel
+    b: Router meneruskan paket, tidak menyimpan situs
+    c: Tidak berkaitan dengan peran antarjaringan
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: Switch bekerja di dalam satu LAN; menuju jaringan lain butuh router.

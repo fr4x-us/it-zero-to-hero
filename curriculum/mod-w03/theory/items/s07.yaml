@@ -1,0 +1,51 @@
+# W3 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w03.theory.s07
+competency: comp-w03-ip-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w03-t-s07-a
+  variant_id: mod-w03.theory.s07.vA
+  item_version: '1.0'
+  stem: Laptop di rumahmu memakai alamat `192.168.1.23`. Temanmu di kota lain mencoba menghubungi alamat
+    itu langsung lewat internet, tetapi tidak sampai ke laptopmu. Penjelasan paling tepat adalah …
+  options:
+  - id: a
+    text: Alamat itu privat dan hanya bermakna di dalam LAN; di internet, rumahmu memakai alamat publik
+      router dari ISP
+  - id: b
+    text: Alamat itu tidak valid
+  - id: c
+    text: Alamat 192.168.x.x hanya boleh dipakai printer
+  - id: d
+    text: Laptop seharusnya memakai 127.0.0.1 agar dapat dihubungi dari internet
+  key: a
+  distractor_rationale:
+    b: Alamatnya valid (4 oktet 0–255)
+    c: Tidak ada aturan seperti itu
+    d: 127.0.0.1 berarti perangkat itu sendiri
+  explanation: Alamat privat tidak diteruskan langsung di internet; router memakai alamat publik (NAT).
+- item_id: item-w03-t-s07-b
+  variant_id: mod-w03.theory.s07.vB
+  item_version: '1.0'
+  stem: Router rumah mendapat alamat `36.89.12.5` dari ISP, sedangkan ponsel di rumah memakai `192.168.1.40`.
+    Pernyataan paling tepat adalah …
+  options:
+  - id: a
+    text: Ponsel memakai alamat publik
+  - id: b
+    text: '`36.89.12.5` tidak valid'
+  - id: c
+    text: '`36.89.12.5` alamat publik untuk internet; `192.168.1.40` alamat privat di LAN'
+  - id: d
+    text: Keduanya alamat privat
+  key: c
+  distractor_rationale:
+    a: 192.168.x.x adalah privat
+    b: 'Valid: 4 oktet 0–255'
+    d: 36.x bukan rentang privat
+  explanation: Router punya alamat publik dari ISP; perangkat di LAN memakai alamat privat.
