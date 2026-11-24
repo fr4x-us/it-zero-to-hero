@@ -1,0 +1,52 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s17
+competency: comp-w08-correct-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s17-a
+  variant_id: mod-w08.theory.s17.vA
+  item_version: '1.0'
+  stem: Algoritma **menjumlahkan** semua nilai daftar dimulai dengan `total ← ?`. Nilai awal yang benar
+    adalah …
+  options:
+  - id: a
+    text: '0'
+  - id: b
+    text: '1'
+  - id: c
+    text: Nilai pertama dikali 2
+  - id: d
+    text: Tidak perlu nilai awal
+  key: a
+  distractor_rationale:
+    b: Menambah 1 yang tidak ada di daftar
+    c: Nilai pertama terhitung dua kali
+    d: total harus punya nilai sebelum ditambah
+  explanation: 0 adalah nilai netral penjumlahan.
+  option_order: urutan tetap penyusun
+- item_id: item-w08-t-s17-b
+  variant_id: mod-w08.theory.s17.vB
+  item_version: '1.0'
+  stem: Algoritma **mengalikan** semua nilai daftar dimulai dengan `hasil ← ?`. Nilai awal yang benar
+    adalah …
+  options:
+  - id: a
+    text: '0'
+  - id: b
+    text: Tidak perlu nilai awal
+  - id: c
+    text: Nilai terakhir
+  - id: d
+    text: '1'
+  key: d
+  distractor_rationale:
+    a: Hasil selalu 0
+    b: hasil harus punya nilai sebelum dikalikan
+    c: Nilai terakhir terhitung dua kali
+  explanation: 1 adalah nilai netral perkalian.
+  option_order: urutan tetap penyusun

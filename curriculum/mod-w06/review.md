@@ -72,7 +72,7 @@ NO ERRORS
 ## 5. Verifikasi independen
 
 Kunci dihitung ulang dengan tiga cara terpisah: (1) asersi di generator
-(`gen_w06.py` 22 pernyataan assert/67 perbandingan; `gen_w06_lab.py` 9/19;
+(`gen_w06.py` 22 pernyataan assert/64 perbandingan `==`; `gen_w06_lab.py` 9/18;
 `gen_w06_proj.py` 1/4), memakai `int(x, 2)`, `format(n, '0Nb')`, dan
 evaluator BX yang mengenumerasi semua kombinasi; (2) `bin_check.py`
 mengurai angka **dari teks soal** lalu menghitung ulang biner/desimal dan

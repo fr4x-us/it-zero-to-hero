@@ -1,0 +1,278 @@
+# W8 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w08.lab.act-01
+name: Percabangan pada flowchart
+competencies:
+- comp-w08-symbol-01
+- comp-w08-branch-01
+- comp-w08-algo-01
+max_points: 30
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w08.lab (D-28 XI-2)
+normalization: 'c01–c04: Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+  Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+  sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga digit
+  (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal boleh
+  ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah boleh diawali
+  `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan (`1/2`), kata,
+  satuan lain, angka desimal lebih/kurang dari yang diminta. Jawaban bilangan bulat (tanda minus untuk
+  negatif) (boleh diawali Rp). c05, c06: Pilihan: satu huruf a–d, huruf besar/kecil bebas'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk tidak
+  sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W8 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python; pemeriksa deterministik per jenis (EB-4, D-24) atas angka dan
+  pilihan; Flowchart ditulis sebagai tabel blok bernomor (bentuk, isi, blok berikutnya); tidak ada editor
+  graf. Format editor flowchart di aplikasi belum diputuskan (CUR §6, M-10)
+variants:
+- variant_id: mod-w08.lab.act-01.vA
+  fixture:
+    title: Biaya parkir
+    domain: j = lama parkir dalam jam, bilangan bulat ≥ 1
+    blocks:
+    - - B1
+      - Oval
+      - Mulai
+      - B2
+    - - B2
+      - Jajar genjang
+      - Input j
+      - B3
+    - - B3
+      - Belah ketupat
+      - j ≤ 2?
+      - Ya → B4; Tidak → B5
+    - - B4
+      - Persegi panjang
+      - biaya ← 5000
+      - B8
+    - - B5
+      - Belah ketupat
+      - j ≤ 5?
+      - Ya → B6; Tidak → B7
+    - - B6
+      - Persegi panjang
+      - biaya ← 5000 + (j − 2) × 3000
+      - B8
+    - - B7
+      - Persegi panjang
+      - biaya ← 15000
+      - B8
+    - - B8
+      - Jajar genjang
+      - Output biaya
+      - B9
+    - - B9
+      - Oval
+      - Selesai
+      - —
+  visible_example:
+    note: 'Contoh terlihat (0 poin): flowchart lain "jika x > 0 output x, selain itu output 0": input
+      −2 → 0'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w08.lab.act-01.vA.c01
+    name: Output j = 1
+    question: Output untuk input **j = 1**?
+    accepted_answers:
+    - '5000'
+    - '5.000'
+    - Rp5000
+    - Rp 5000
+    - Rp5.000
+    - Rp 5.000
+    points: 5
+    explanation: 'B3: 1 ≤ 2 Ya → B4'
+  - check_id: mod-w08.lab.act-01.vA.c02
+    name: Output j = 2 (batas)
+    question: Output untuk input **j = 2**?
+    accepted_answers:
+    - '5000'
+    - '5.000'
+    - Rp5000
+    - Rp 5000
+    - Rp5.000
+    - Rp 5.000
+    points: 5
+    explanation: 'B3: 2 ≤ 2 Ya → B4 (sama dengan termasuk)'
+  - check_id: mod-w08.lab.act-01.vA.c03
+    name: Output j = 5 (batas)
+    question: Output untuk input **j = 5**?
+    accepted_answers:
+    - '14000'
+    - '14.000'
+    - Rp14000
+    - Rp 14000
+    - Rp14.000
+    - Rp 14.000
+    points: 5
+    explanation: 'B3 Tidak; B5: 5 ≤ 5 Ya → 5000 + 3 × 3000'
+  - check_id: mod-w08.lab.act-01.vA.c04
+    name: Output j = 6
+    question: Output untuk input **j = 6**?
+    accepted_answers:
+    - '15000'
+    - '15.000'
+    - Rp15000
+    - Rp 15000
+    - Rp15.000
+    - Rp 15.000
+    points: 5
+    explanation: B3 Tidak; B5 Tidak → B7
+  - check_id: mod-w08.lab.act-01.vA.c05
+    name: Jalur
+    question: Untuk input j = 4, blok mana saja yang dilewati, berurutan?
+    options:
+    - id: a
+      text: B1 B2 B3 B4 B8 B9
+    - id: b
+      text: B1 B2 B3 B5 B6 B8 B9
+    - id: c
+      text: B1 B2 B3 B5 B7 B8 B9
+    - id: d
+      text: B1 B2 B5 B6 B8 B9
+    expected: b
+    points: 5
+    explanation: 4 ≤ 2 Tidak; 4 ≤ 5 Ya
+  - check_id: mod-w08.lab.act-01.vA.c06
+    name: Domain input
+    question: Input j = 0 (di luar domain). Pernyataan yang benar?
+    options:
+    - id: a
+      text: Flowchart pasti memberi biaya yang benar
+    - id: b
+      text: Hasilnya tidak dijamin bermakna karena domain menyatakan j ≥ 1; input seperti ini harus ditolak
+        atau ditangani terpisah
+    - id: c
+      text: Biaya pasti 0
+    - id: d
+      text: Flowchart tidak berhenti
+    expected: b
+    points: 5
+    explanation: Asumsi domain bagian dari algoritma
+- variant_id: mod-w08.lab.act-01.vB
+  fixture:
+    title: Harga tiket museum
+    domain: u = usia dalam tahun, bilangan bulat ≥ 0
+    blocks:
+    - - B1
+      - Oval
+      - Mulai
+      - B2
+    - - B2
+      - Jajar genjang
+      - Input u
+      - B3
+    - - B3
+      - Belah ketupat
+      - u < 5?
+      - Ya → B4; Tidak → B5
+    - - B4
+      - Persegi panjang
+      - harga ← 0
+      - B8
+    - - B5
+      - Belah ketupat
+      - u ≤ 17?
+      - Ya → B6; Tidak → B7
+    - - B6
+      - Persegi panjang
+      - harga ← 10000
+      - B8
+    - - B7
+      - Persegi panjang
+      - harga ← 25000
+      - B8
+    - - B8
+      - Jajar genjang
+      - Output harga
+      - B9
+    - - B9
+      - Oval
+      - Selesai
+      - —
+  visible_example:
+    note: 'Contoh terlihat (0 poin): flowchart lain "jika x > 0 output x, selain itu output 0": input
+      −2 → 0'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w08.lab.act-01.vB.c01
+    name: Output u = 4
+    question: Output untuk input **u = 4**?
+    accepted_answers:
+    - '0'
+    - Rp0
+    - Rp 0
+    points: 5
+    explanation: 'B3: 4 < 5 Ya → B4'
+  - check_id: mod-w08.lab.act-01.vB.c02
+    name: Output u = 5 (batas)
+    question: Output untuk input **u = 5**?
+    accepted_answers:
+    - '10000'
+    - '10.000'
+    - Rp10000
+    - Rp 10000
+    - Rp10.000
+    - Rp 10.000
+    points: 5
+    explanation: 'B3: 5 < 5 Tidak; B5: 5 ≤ 17 Ya → B6'
+  - check_id: mod-w08.lab.act-01.vB.c03
+    name: Output u = 17 (batas)
+    question: Output untuk input **u = 17**?
+    accepted_answers:
+    - '10000'
+    - '10.000'
+    - Rp10000
+    - Rp 10000
+    - Rp10.000
+    - Rp 10.000
+    points: 5
+    explanation: 'B5: 17 ≤ 17 Ya → B6'
+  - check_id: mod-w08.lab.act-01.vB.c04
+    name: Output u = 18
+    question: Output untuk input **u = 18**?
+    accepted_answers:
+    - '25000'
+    - '25.000'
+    - Rp25000
+    - Rp 25000
+    - Rp25.000
+    - Rp 25.000
+    points: 5
+    explanation: 'B5: 18 ≤ 17 Tidak → B7'
+  - check_id: mod-w08.lab.act-01.vB.c05
+    name: Jalur
+    question: Untuk input u = 30, blok mana saja yang dilewati, berurutan?
+    options:
+    - id: a
+      text: B1 B2 B3 B4 B8 B9
+    - id: b
+      text: B1 B2 B3 B5 B6 B8 B9
+    - id: c
+      text: B1 B2 B5 B7 B8 B9
+    - id: d
+      text: B1 B2 B3 B5 B7 B8 B9
+    expected: d
+    points: 5
+    explanation: 30 < 5 Tidak; 30 ≤ 17 Tidak
+  - check_id: mod-w08.lab.act-01.vB.c06
+    name: Domain input
+    question: Input u = −3 (di luar domain). Pernyataan yang benar?
+    options:
+    - id: a
+      text: Hasilnya tidak dijamin bermakna karena domain menyatakan u ≥ 0; input seperti ini harus ditolak
+        atau ditangani terpisah
+    - id: b
+      text: Harga pasti 0 dan itu benar
+    - id: c
+      text: Flowchart tidak berhenti
+    - id: d
+      text: Harga pasti 25000
+    expected: a
+    points: 5
+    explanation: Asumsi domain bagian dari algoritma

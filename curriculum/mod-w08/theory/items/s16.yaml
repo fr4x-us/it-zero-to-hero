@@ -1,0 +1,68 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s16
+competency: comp-w08-symbol-01
+format: TF-5
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s16-a
+  variant_id: mod-w08.theory.s16.vA
+  item_version: '1.0'
+  stem: Urutkan blok flowchart "hitung luas persegi panjang" dari awal sampai akhir.
+  items:
+  - id: A
+    text: 'Oval: Mulai'
+  - id: B
+    text: 'Jajar genjang: Input p dan l'
+  - id: C
+    text: 'Persegi panjang: luas ← p × l'
+  - id: D
+    text: 'Jajar genjang: Output luas'
+  - id: E
+    text: 'Oval: Selesai'
+  display_order:
+  - C
+  - E
+  - A
+  - D
+  - B
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+    - E
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Mulai → input → proses → output → selesai.
+- item_id: item-w08-t-s16-b
+  variant_id: mod-w08.theory.s16.vB
+  item_version: '1.0'
+  stem: Urutkan blok flowchart "hitung rata-rata dua nilai" dari awal sampai akhir.
+  items:
+  - id: A
+    text: 'Oval: Mulai'
+  - id: B
+    text: 'Jajar genjang: Input a dan b'
+  - id: C
+    text: 'Persegi panjang: r ← (a + b) ÷ 2'
+  - id: D
+    text: 'Jajar genjang: Output r'
+  - id: E
+    text: 'Oval: Selesai'
+  display_order:
+  - D
+  - A
+  - E
+  - C
+  - B
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+    - E
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Mulai → input → proses → output → selesai.

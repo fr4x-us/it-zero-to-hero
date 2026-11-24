@@ -1,0 +1,58 @@
+# W8 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.concept.s04
+competency: comp-w08-loop-01
+required_concepts:
+- variabel pengendali berubah
+- syarat berhenti
+format: CE-S1
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w08-c-s04-a
+  variant_id: mod-w08.concept.s04.vA
+  item_version: '1.0'
+  stem: 'Mengapa perulangan `i ← 1`; selama `i ≤ 5`: tulis i (tanpa `i ← i + 1`) **tidak pernah berhenti**?'
+  options:
+  - id: a
+    text: Karena 5 terlalu besar
+  - id: b
+    text: Karena i tidak pernah berubah, sehingga syarat i ≤ 5 selalu benar
+  - id: c
+    text: Karena tulis i memakan waktu
+  - id: d
+    text: Karena perulangan selalu berhenti sendiri
+  key: b
+  distractor_rationale:
+    a: Batas berapa pun tidak tercapai bila i tetap
+    c: Waktu menulis tidak mengubah syarat
+    d: Perulangan berhenti hanya bila syaratnya menjadi salah
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: Variabel pengendali harus berubah menuju syarat berhenti.
+- item_id: item-w08-c-s04-b
+  variant_id: mod-w08.concept.s04.vB
+  item_version: '1.0'
+  stem: Mengapa `i ← i + 1` diletakkan **di dalam** perulangan "selama i ≤ 10"?
+  options:
+  - id: a
+    text: Agar i tetap 1
+  - id: b
+    text: Agar output lebih panjang
+  - id: c
+    text: Agar perulangan dimulai dari 10
+  - id: d
+    text: Agar syarat i ≤ 10 suatu saat menjadi salah sehingga perulangan berhenti
+  key: d
+  distractor_rationale:
+    a: Justru mengubah i
+    b: Bukan tujuannya
+    c: Nilai awal diatur sebelum perulangan
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: Perubahan variabel pengendali menjamin perulangan berakhir.

@@ -1,0 +1,241 @@
+# W8 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w08.lab.act-03
+name: 'Kebenaran algoritma: nilai awal, nilai sama, nilai negatif'
+competencies:
+- comp-w08-correct-01
+- comp-w08-trace-01
+max_points: 30
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w08.lab (D-28 XI-2)
+normalization: 'c01–c04, c06: Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+  Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+  sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga digit
+  (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal boleh
+  ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah boleh diawali
+  `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan (`1/2`), kata,
+  satuan lain, angka desimal lebih/kurang dari yang diminta. Jawaban bilangan bulat (tanda minus untuk
+  negatif) (c02, c03, c06 boleh diikuti kata `kali`). c05: Pilihan: satu huruf a–d, huruf besar/kecil
+  bebas'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk tidak
+  sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W8 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python; pemeriksa deterministik per jenis (EB-4, D-24) atas angka dan
+  pilihan; Flowchart ditulis sebagai tabel blok bernomor (bentuk, isi, blok berikutnya); tidak ada editor
+  graf. Format editor flowchart di aplikasi belum diputuskan (CUR §6, M-10)
+variants:
+- variant_id: mod-w08.lab.act-03.vA
+  fixture:
+    title: Nilai terkecil
+    domain: daftar A berisi n ≥ 1 bilangan bulat (boleh negatif, boleh sama)
+    list: '[4, −6, 2, −6, 9]'
+    blocks:
+    - - B1
+      - Oval
+      - Mulai
+      - B2
+    - - B2
+      - Jajar genjang
+      - Input daftar A (n nilai)
+      - B3
+    - - B3
+      - Persegi panjang
+      - kecil ← A[1]; i ← 2
+      - B4
+    - - B4
+      - Belah ketupat
+      - i ≤ n?
+      - Ya → B5; Tidak → B8
+    - - B5
+      - Belah ketupat
+      - A[i] < kecil?
+      - Ya → B6; Tidak → B7
+    - - B6
+      - Persegi panjang
+      - kecil ← A[i]
+      - B7
+    - - B7
+      - Persegi panjang
+      - i ← i + 1
+      - B4
+    - - B8
+      - Jajar genjang
+      - Output kecil
+      - B9
+    - - B9
+      - Oval
+      - Selesai
+      - —
+  visible_example:
+    note: 'Contoh terlihat (0 poin): daftar [2] (satu nilai) → output 2; perulangan tidak berjalan karena
+      2 ≤ 1 salah'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w08.lab.act-03.vA.c01
+    name: Output
+    question: Output untuk daftar fixture?
+    accepted_answers:
+    - '-6'
+    - −6
+    points: 5
+    explanation: Nilai terkecil −6
+  - check_id: mod-w08.lab.act-03.vA.c02
+    name: Banyak B6
+    question: Berapa kali blok B6 dikerjakan untuk daftar fixture?
+    accepted_answers:
+    - '1'
+    - 1 kali
+    - 1kali
+    points: 5
+    explanation: Hanya i = 2; −6 < −6 salah di i = 4
+  - check_id: mod-w08.lab.act-03.vA.c03
+    name: Ganti ≤
+    question: Bila B5 diganti `A[i] ≤ kecil?`, berapa kali B6 dikerjakan untuk daftar fixture?
+    accepted_answers:
+    - '2'
+    - 2 kali
+    - 2kali
+    points: 5
+    explanation: i = 2 dan i = 4 (nilai sama)
+  - check_id: mod-w08.lab.act-03.vA.c04
+    name: Nilai awal salah
+    question: Bila B3 diganti `kecil ← 0` dan perbandingan dimulai dari A[1], output untuk daftar [3,
+      8, 5]?
+    accepted_answers:
+    - '0'
+    points: 5
+    explanation: Tidak ada nilai < 0; output 0 padahal terkecil 3
+  - check_id: mod-w08.lab.act-03.vA.c05
+    name: Kasus uji pengungkap
+    question: Daftar mana yang mengungkap kesalahan nilai awal `kecil ← 0`?
+    options:
+    - id: a
+      text: '[−2, 5, 1]'
+    - id: b
+      text: '[0, 3, 7]'
+    - id: c
+      text: '[6, 9, 4]'
+    - id: d
+      text: '[−8, −1, −3]'
+    expected: c
+    points: 5
+    explanation: 'Semua positif: output 0 salah'
+  - check_id: mod-w08.lab.act-03.vA.c06
+    name: Banyak pemeriksaan B4
+    question: Untuk daftar fixture (5 nilai), berapa kali keputusan B4 diperiksa?
+    accepted_answers:
+    - '5'
+    - 5 kali
+    - 5kali
+    points: 5
+    explanation: i = 2, 3, 4, 5 → Ya (4 kali); i = 6 → Tidak (1 kali)
+- variant_id: mod-w08.lab.act-03.vB
+  fixture:
+    title: Nilai terkecil
+    domain: daftar A berisi n ≥ 1 bilangan bulat (boleh negatif, boleh sama)
+    list: '[7, 3, 9, 3, −1]'
+    blocks:
+    - - B1
+      - Oval
+      - Mulai
+      - B2
+    - - B2
+      - Jajar genjang
+      - Input daftar A (n nilai)
+      - B3
+    - - B3
+      - Persegi panjang
+      - kecil ← A[1]; i ← 2
+      - B4
+    - - B4
+      - Belah ketupat
+      - i ≤ n?
+      - Ya → B5; Tidak → B8
+    - - B5
+      - Belah ketupat
+      - A[i] < kecil?
+      - Ya → B6; Tidak → B7
+    - - B6
+      - Persegi panjang
+      - kecil ← A[i]
+      - B7
+    - - B7
+      - Persegi panjang
+      - i ← i + 1
+      - B4
+    - - B8
+      - Jajar genjang
+      - Output kecil
+      - B9
+    - - B9
+      - Oval
+      - Selesai
+      - —
+  visible_example:
+    note: 'Contoh terlihat (0 poin): daftar [2] (satu nilai) → output 2; perulangan tidak berjalan karena
+      2 ≤ 1 salah'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w08.lab.act-03.vB.c01
+    name: Output
+    question: Output untuk daftar fixture?
+    accepted_answers:
+    - '-1'
+    - −1
+    points: 5
+    explanation: Nilai terkecil −1
+  - check_id: mod-w08.lab.act-03.vB.c02
+    name: Banyak B6
+    question: Berapa kali blok B6 dikerjakan untuk daftar fixture?
+    accepted_answers:
+    - '2'
+    - 2 kali
+    - 2kali
+    points: 5
+    explanation: i = 2 (3 < 7) dan i = 5 (−1 < 3)
+  - check_id: mod-w08.lab.act-03.vB.c03
+    name: Ganti ≤
+    question: Bila B5 diganti `A[i] ≤ kecil?`, berapa kali B6 dikerjakan untuk daftar fixture?
+    accepted_answers:
+    - '3'
+    - 3 kali
+    - 3kali
+    points: 5
+    explanation: Ditambah i = 4 (3 ≤ 3)
+  - check_id: mod-w08.lab.act-03.vB.c04
+    name: Nilai awal salah
+    question: Bila B3 diganti `kecil ← 0` dan perbandingan dimulai dari A[1], output untuk daftar [6,
+      4, 10]?
+    accepted_answers:
+    - '0'
+    points: 5
+    explanation: Tidak ada nilai < 0; output 0 padahal terkecil 4
+  - check_id: mod-w08.lab.act-03.vB.c05
+    name: Kasus uji pengungkap
+    question: Daftar mana yang mengungkap kesalahan nilai awal `kecil ← 0`?
+    options:
+    - id: a
+      text: '[11, 5, 8]'
+    - id: b
+      text: '[−4, 2, 0]'
+    - id: c
+      text: '[0, 1, 2]'
+    - id: d
+      text: '[−3, −9, −2]'
+    expected: a
+    points: 5
+    explanation: 'Semua positif: output 0 salah'
+  - check_id: mod-w08.lab.act-03.vB.c06
+    name: Banyak pemeriksaan B4
+    question: Untuk daftar fixture (5 nilai), berapa kali keputusan B4 diperiksa?
+    accepted_answers:
+    - '5'
+    - 5 kali
+    - 5kali
+    points: 5
+    explanation: i = 2, 3, 4, 5 → Ya (4 kali); i = 6 → Tidak (1 kali)

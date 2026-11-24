@@ -1,0 +1,50 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s01
+competency: comp-w08-algo-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s01-a
+  variant_id: mod-w08.theory.s01.vA
+  item_version: '1.0'
+  stem: Pada algoritma "hitung luas persegi panjang", **panjang dan lebar** adalah …
+  options:
+  - id: a
+    text: Input
+  - id: b
+    text: Proses
+  - id: c
+    text: Output
+  - id: d
+    text: Keputusan
+  key: a
+  distractor_rationale:
+    b: Proses = perhitungan p × l
+    c: Output = luas
+    d: Tidak ada pertanyaan Ya/Tidak
+  explanation: Data yang diberikan kepada algoritma adalah input.
+  option_order: urutan alami, tetap
+- item_id: item-w08-t-s01-b
+  variant_id: mod-w08.theory.s01.vB
+  item_version: '1.0'
+  stem: Pada algoritma "ubah menit ke jam", **menampilkan hasil jam** adalah …
+  options:
+  - id: a
+    text: Input
+  - id: b
+    text: Proses
+  - id: c
+    text: Output
+  - id: d
+    text: Keputusan
+  key: c
+  distractor_rationale:
+    a: Input = banyak menit
+    b: Proses = pembagian dengan 60
+    d: Tidak ada pertanyaan Ya/Tidak
+  explanation: Hasil yang diberikan algoritma adalah output.
+  option_order: urutan alami, tetap

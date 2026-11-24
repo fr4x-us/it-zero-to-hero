@@ -1,0 +1,65 @@
+# W8 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.concept.s06
+competency: comp-w08-correct-01
+required_concepts:
+- nilai awal
+- nilai negatif
+- nilai sama
+- satu tes lolos bukan bukti
+format: CE-S2
+max_points: 2
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w08-c-s06-a
+  variant_id: mod-w08.concept.s06.vA
+  item_version: '1.0'
+  stem: 'Algoritma "nilai **terkecil**": `kecil ← A[1]`, lalu bandingkan A[2] … A[n] dengan `<`. Pilih
+    **semua** pernyataan yang benar.'
+  options:
+  - id: a
+    text: Nilai awal `kecil ← A[1]` tetap benar untuk daftar berisi bilangan negatif
+  - id: b
+    text: Nilai awal `kecil ← 0` selalu benar
+  - id: c
+    text: Kasus uji dengan dua nilai terkecil yang sama membantu memeriksa pilihan < atau ≤
+  - id: d
+    text: Satu kasus uji yang lolos membuktikan algoritma benar
+  key:
+  - a
+  - c
+  distractor_rationale:
+    b: Salah untuk daftar yang semua nilainya positif
+    d: Satu kelulusan tidak membuktikan benar
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Nilai awal dari daftar sendiri aman; uji nilai sama dan negatif.
+- item_id: item-w08-c-s06-b
+  variant_id: mod-w08.concept.s06.vB
+  item_version: '1.0'
+  stem: Algoritma **menjumlahkan** daftar nilai. Pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: '`total ← 1` benar untuk menjumlah'
+  - id: b
+    text: Daftar kosong harus dikecualikan lewat asumsi input atau ditangani tersendiri
+  - id: c
+    text: Kasus uji berisi bilangan negatif memeriksa bahwa nilai negatif ikut dijumlah
+  - id: d
+    text: Daftar berisi angka 0 selalu membuat algoritma salah
+  key:
+  - b
+  - c
+  distractor_rationale:
+    a: Nilai awal penjumlahan 0
+    d: 0 dijumlah tanpa masalah
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Nyatakan domain; uji nilai negatif.

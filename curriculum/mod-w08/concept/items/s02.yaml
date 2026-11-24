@@ -1,0 +1,84 @@
+# W8 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.concept.s02
+competency: comp-w08-symbol-01
+required_concepts:
+- oval
+- jajar genjang
+- persegi panjang
+- belah ketupat
+format: CE-S4
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w08-c-s02-a
+  variant_id: mod-w08.concept.s02.vA
+  item_version: '1.0'
+  stem: Cocokkan setiap bentuk dengan kegunaannya.
+  left:
+  - id: L1
+    text: Oval
+  - id: L2
+    text: Jajar genjang
+  - id: L3
+    text: Persegi panjang
+  - id: L4
+    text: Belah ketupat
+  right:
+  - id: R1
+    text: Mulai atau Selesai
+  - id: R2
+    text: Input atau output
+  - id: R3
+    text: Proses
+  - id: R4
+    text: Keputusan Ya/Tidak
+  - id: R5
+    text: Catatan komentar
+  key_mapping:
+    L1: R1
+    L2: R2
+    L3: R3
+    L4: R4
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: R5 adalah pengecoh (tidak dipakai di W8).
+- item_id: item-w08-c-s02-b
+  variant_id: mod-w08.concept.s02.vB
+  item_version: '1.0'
+  stem: Cocokkan setiap isi blok dengan bentuknya.
+  left:
+  - id: L1
+    text: Input nilai
+  - id: L2
+    text: nilai ≥ 75?
+  - id: L3
+    text: total ← total + nilai
+  - id: L4
+    text: Selesai
+  right:
+  - id: R1
+    text: Belah ketupat
+  - id: R2
+    text: Jajar genjang
+  - id: R3
+    text: Oval
+  - id: R4
+    text: Persegi panjang
+  - id: R5
+    text: Segitiga
+  key_mapping:
+    L1: R2
+    L2: R1
+    L3: R4
+    L4: R3
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: R5 adalah pengecoh.

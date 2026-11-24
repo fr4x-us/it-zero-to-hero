@@ -1,0 +1,40 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s14
+competency: comp-w08-trace-01
+format: TF-3
+difficulty: D1
+max_points: 2
+estimated_seconds: 60
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s14-a
+  variant_id: mod-w08.theory.s14.vA
+  item_version: '1.0'
+  stem: 'Telusuri berurutan: (1) `a ← 2`; (2) `b ← a + 3`; (3) `a ← b × 2`; (4) `b ← a − b`. Nilai **b**
+    setelah langkah 4?'
+  accepted_answers:
+  - '5'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta. Jawaban bilangan bulat'
+  explanation: a = 2; b = 5; a = 10; b = 10 − 5 = 5.
+- item_id: item-w08-t-s14-b
+  variant_id: mod-w08.theory.s14.vB
+  item_version: '1.0'
+  stem: 'Telusuri berurutan: (1) `p ← 4`; (2) `q ← p × p`; (3) `p ← q − p`; (4) `q ← p + 1`. Nilai **q**
+    setelah langkah 4?'
+  accepted_answers:
+  - '13'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta. Jawaban bilangan bulat'
+  explanation: p = 4; q = 16; p = 12; q = 13.

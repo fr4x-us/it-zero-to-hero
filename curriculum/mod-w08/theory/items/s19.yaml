@@ -1,0 +1,52 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s19
+competency: comp-w08-correct-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s19-a
+  variant_id: mod-w08.theory.s19.vA
+  item_version: '1.0'
+  stem: '`pos ← 1`; untuk i = 2 sampai n: jika `A[i] < A[pos]`, `pos ← i`. Untuk daftar A = [8, 3, 6,
+    3], output pos adalah …'
+  options:
+  - id: a
+    text: '1'
+  - id: b
+    text: '2'
+  - id: c
+    text: '4'
+  - id: d
+    text: '3'
+  key: b
+  distractor_rationale:
+    a: 3 < 8 mengubah pos
+    c: A[4] = 3 tidak < A[2] = 3 (sama tidak dihitung)
+    d: 6 tidak < 3
+  explanation: 'i = 2: 3 < 8 → pos 2; i = 3: 6 < 3 salah; i = 4: 3 < 3 salah → pos 2 (kemunculan pertama).'
+  option_order: urutan tetap penyusun
+- item_id: item-w08-t-s19-b
+  variant_id: mod-w08.theory.s19.vB
+  item_version: '1.0'
+  stem: '`pos ← 1`; untuk i = 2 sampai n: jika `A[i] ≤ A[pos]`, `pos ← i`. Untuk daftar A = [5, 2, 7,
+    2], output pos adalah …'
+  options:
+  - id: a
+    text: '2'
+  - id: b
+    text: '1'
+  - id: c
+    text: '4'
+  - id: d
+    text: '3'
+  key: c
+  distractor_rationale:
+    a: A[4] = 2 ≤ A[2] = 2 juga mengubah pos
+    b: 2 ≤ 5 mengubah pos
+    d: 7 tidak ≤ 2
+  explanation: 'i = 2: 2 ≤ 5 → pos 2; i = 3: 7 ≤ 2 salah; i = 4: 2 ≤ 2 → pos 4 (kemunculan terakhir).'
+  option_order: urutan tetap penyusun

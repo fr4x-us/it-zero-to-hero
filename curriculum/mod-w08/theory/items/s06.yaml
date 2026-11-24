@@ -1,0 +1,116 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s06
+competency: comp-w08-symbol-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s06-a
+  variant_id: mod-w08.theory.s06.vA
+  item_version: '1.0'
+  stem: Flowchart ditulis sebagai tabel blok. Untuk input **x = 7**, outputnya adalah …
+  stimulus_table:
+  - - Blok
+    - Bentuk
+    - Isi
+    - Berikutnya
+  - - B1
+    - Oval
+    - Mulai
+    - B2
+  - - B2
+    - Jajar genjang
+    - Input x
+    - B3
+  - - B3
+    - Belah ketupat
+    - x > 10?
+    - Ya → B4; Tidak → B5
+  - - B4
+    - Persegi panjang
+    - y ← x − 10
+    - B6
+  - - B5
+    - Persegi panjang
+    - y ← x × 2
+    - B6
+  - - B6
+    - Jajar genjang
+    - Output y
+    - B7
+  - - B7
+    - Oval
+    - Selesai
+    - —
+  options:
+  - id: a
+    text: '7'
+  - id: b
+    text: '14'
+  - id: c
+    text: −3
+  - id: d
+    text: '17'
+  key: b
+  distractor_rationale:
+    a: Input tanpa diproses
+    c: Cabang Ya, padahal 7 > 10 salah
+    d: x + 10, tidak ada di flowchart
+  explanation: '7 > 10? Tidak → B5: y = 14 → output 14.'
+  option_order: urutan tetap penyusun
+- item_id: item-w08-t-s06-b
+  variant_id: mod-w08.theory.s06.vB
+  item_version: '1.0'
+  stem: Flowchart ditulis sebagai tabel blok. Untuk input **x = 20**, outputnya adalah …
+  stimulus_table:
+  - - Blok
+    - Bentuk
+    - Isi
+    - Berikutnya
+  - - B1
+    - Oval
+    - Mulai
+    - B2
+  - - B2
+    - Jajar genjang
+    - Input x
+    - B3
+  - - B3
+    - Belah ketupat
+    - x ≥ 20?
+    - Ya → B4; Tidak → B5
+  - - B4
+    - Persegi panjang
+    - y ← x ÷ 2
+    - B6
+  - - B5
+    - Persegi panjang
+    - y ← x + 5
+    - B6
+  - - B6
+    - Jajar genjang
+    - Output y
+    - B7
+  - - B7
+    - Oval
+    - Selesai
+    - —
+  options:
+  - id: a
+    text: '25'
+  - id: b
+    text: '20'
+  - id: c
+    text: '10'
+  - id: d
+    text: '40'
+  key: c
+  distractor_rationale:
+    a: Cabang Tidak, padahal 20 ≥ 20 benar
+    b: Input tanpa diproses
+    d: x × 2, tidak ada di flowchart
+  explanation: '20 ≥ 20? Ya (sama dengan termasuk) → B4: y = 10.'
+  option_order: urutan tetap penyusun
