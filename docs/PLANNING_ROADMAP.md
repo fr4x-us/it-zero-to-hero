@@ -3,8 +3,9 @@
 Status: dokumentasi · **PLANNING CLEAR: NO** · **IMPLEMENTATION VERIFIED:
 NO** · D-10: eksekusi prototipe **NOT AUTHORIZED** · D-11: implementasi
 **DEFERRED** · PY:F-01–F-15: **NOT VERIFIED**. Tanggal: **2026-11-24**
-(direvisi setelah review PR #23, F-01–F-06). Basis: `main` = `bcecdae`
-(merge PR #22). Status berlaku saat PR pencatatan D-16–D-22 di-merge.
+(direvisi setelah review PR #23, F-01–F-06; diperbarui batch D-23–D-25).
+Basis: `main` = `928e278` (merge PR #23). Klasifikasi jalur disetujui
+owner (D-20, D-25).
 
 Klasifikasi jalur memakai D-20 (P/M/G/V), D-21 (kurikulum wajib di P), dan
 D-22 (tiga penundaan). AC asli tiap butir ada di
@@ -40,9 +41,10 @@ kurikulum (0/64 selesai, §5).
 | V — Verifikasi setelah izin | 0 | 8 | 8 |
 | **Total** | **25** | **31** | **56** |
 
-Pemindahan jalur yang perlu konfirmasi owner (RM-Q1): UW-15 dari P ke V
-(§3). Bila owner menolak, UW-15 tetap di P dan kemajuan jalur P menjadi
-**25/44 (56,8%)**; jalur V menjadi 7. Tidak ada pemindahan lain.
+Pemindahan UW-15 dari P ke V **disetujui D-25** (RM-Q1(a)); AC UW-15
+tetap. Penyebut jalur P = 43 sudah final menurut klasifikasi yang disetujui.
+Batch D-23–D-25 tidak menyelesaikan butir mana pun: keputusan OP-4 (D-23)
+dan CU-6 (D-24) tidak memenuhi seluruh AC UW-26 dan UW-36.
 
 ## 2. Register lengkap dengan klasifikasi (56 butir)
 
@@ -65,7 +67,7 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-12 | OPEN | V | Eksekusi PY:F-01–F-15 setelah UW-10 (D-20) |
 | UW-13 | NOT VERIFIED | V | Build CI pertama; butuh UW-02 |
 | UW-14 | BLOCKED | P | Verifikasi **sumber** dataset untuk klaim perencanaan (CAL:AC-02), bukan verifikasi aplikasi; butuh akses host |
-| UW-15 | NOT VERIFIED | V (usulan, RM-Q1) | Sisa AC "bukti" = pengukuran perangkat yang diizinkan terpisah (D-16 Q3). Sisa perencanaan dipindah eksplisit ke UW-33 (§3) |
+| UW-15 | NOT VERIFIED | V (D-25) | Sisa AC "bukti" = pengukuran perangkat yang diizinkan terpisah (D-16 Q3; prasyarat UW-15, D-25). Sisa perencanaan di UW-33 (§3) |
 | UW-16 | COMPLETE | P | Keputusan D-17 |
 | UW-17 | COMPLETE | P | Keputusan D-14; AC dipenuhi dengan hitungan kontras terdokumentasi. Perilaku perangkat di UW-56 (V) |
 | UW-18 | COMPLETE | P | Keputusan D-15; perilaku perangkat di UW-56 (V) |
@@ -75,18 +77,18 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-22 | COMPLETE | P | Keputusan D-12; kasus batas dievaluasi dengan aritmetika terdokumentasi (NUM §10). Implementasi di UW-56 (V) |
 | UW-23 | BLOCKED | P | Keputusan owner CO-1/CO-2 |
 | UW-24 | BLOCKED | P | Keputusan owner O-09 (pilihan runner); menjalankan runner adalah V |
-| UW-25 | BLOCKED | P | Keputusan owner CU-10 |
-| UW-26 | OPEN | P | Keputusan OP-4 + bank tugas (D-21) |
-| UW-27 | BLOCKED | P | Keputusan OP-5 |
+| UW-25 | BLOCKED | P | Keputusan owner CU-10 (lembar disiapkan) |
+| UW-26 | OPEN | P | Keputusan OP-4 **selesai (D-23)**; bank tugas 16 modul belum ada (AC CC-08) |
+| UW-27 | BLOCKED | P | Keputusan OP-5 (lembar disiapkan) |
 | UW-28 | BLOCKED | P | Keputusan OP-6 |
-| UW-29 | BLOCKED | P | Keputusan OP-7 |
-| UW-30 | BLOCKED | P | Keputusan OP-8, CU-4 |
-| UW-31 | BLOCKED | P | Keputusan OP-9 |
-| UW-32 | BLOCKED | P | Keputusan OP-10, OP-11 |
+| UW-29 | BLOCKED | P | Keputusan OP-7 (lembar disiapkan) |
+| UW-30 | BLOCKED | P | Keputusan OP-8, CU-4 (lembar disiapkan) |
+| UW-31 | BLOCKED | P | Keputusan OP-9 (lembar disiapkan) |
+| UW-32 | BLOCKED | P | Keputusan OP-10, OP-11 (lembar disiapkan) |
 | UW-33 | BLOCKED | P | Keputusan OD-5–OD-9 + sisa perencanaan OD-1 (OD-11–OD-14, §3) |
 | UW-34 | BLOCKED | P | Keputusan CO-4–CO-6 |
 | UW-35 | BLOCKED | P | Keputusan UO-3–UO-9 |
-| UW-36 | BLOCKED | P | Keputusan CU-3, CU-5, CU-6, CU-7, CU-9, CU-11 (+ CU2-O3, CU2-O4 dilacak, §5.3) |
+| UW-36 | BLOCKED | P | CU-6 **selesai (D-24)**; sisa CU-3, CU-5, CU-7, CU-9, CU-11, CU2-O3, CU2-O4 (D-25; lembar disiapkan) |
 | UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21) |
 | UW-38 | DEFERRED | M | D-22 |
 | UW-39 | BLOCKED | V | Lingkungan SDK opsional untuk verifikasi build; tidak punya AC perencanaan |
@@ -119,13 +121,13 @@ verifikasi aplikasinya dicatat terpisah di jalur V.
 | Disetujui (D-16) | AES-256-GCM, nonce acak 96-bit, tag 128-bit, header = AAD, salt CSPRNG per ekspor; Argon2id via Bouncy Castle (bersyarat) + cadangan PBKDF2-HMAC-SHA256 ≥ 600.000; minimum Argon2id 19 MiB/t=2/p=1; envelope OD1 §5 sebagai baseline; H-1–H-7, KV-1–KV-8; restore produksi nonaktif sampai terverifikasi | — (keputusan) | — |
 | Sisa perencanaan | OD-5 format payload; OD-6 aturan kata sandi; OD-7 **kebijakan** batas sumber daya (jenis batas, titik pemeriksaan sebelum alokasi/KDF, perilaku penolakan); OD-8 retensi snapshot + log restore (D-17); OD-9 attempt berjalan; **OD-11** serialisasi envelope (tata letak byte, encoding field, versi; OD-1-Q4 OPEN); **OD-12** kebijakan kapan KDF cadangan dipakai untuk ekspor baru (OD-1-Q6); **OD-13** rencana dan protokol pengukuran (perangkat, prosedur, kriteria terima) untuk diizinkan owner; **OD-14** review dokumen dependensi Bouncy Castle (lisensi, versi, ukuran, dependensi transitif) | UW-33 | P |
 | Verifikasi teknis | Kompatibilitas Bouncy Castle di Android API 29+; pengukuran KDF di perangkat yang diizinkan; **nilai** parameter final dan batas maksimum (disetujui owner setelah pengukuran); CT-1–CT-12 dengan bukti EV | UW-15 | V |
+| Usulan baru (butuh persetujuan, OD-15-Q1) | **OD-15** validasi ledger XP saat pratinjau restore dan perlakuan temuan ([XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) §8.2); diusulkan dilacak di UW-33 | UW-33 | P |
 | Syarat rilis restore produksi | RR-1–RR-8 di [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) §11 | UW-15 + UW-33 + UW-02 | — |
 
 OD-11–OD-14 adalah ID baru (keluarga OD sebelumnya berakhir di OD-10).
 AC UW-33 diperluas, tidak diganti: "OD-5–OD-9 terisi" **dan** "OD-11–OD-14
-terisi". AC UW-15 tetap "Parameter tertulis + bukti". Perluasan dan
-pemindahan ini menunggu konfirmasi owner (RM-Q1); selama itu sisa
-perencanaan tetap dilacak di UW-33 (P), tidak ditunda diam-diam.
+terisi". AC UW-15 tetap "Parameter tertulis + bukti". **Disetujui D-25**
+(RM-Q1(a), (b), (d)); tidak ada persyaratan keamanan yang dihapus.
 
 ## 4. Keputusan perencanaan yang masih dibutuhkan (jalur P, butuh owner)
 
@@ -133,18 +135,18 @@ perencanaan tetap dilacak di UW-33 (P), tidak ditunda diam-diam.
 |---|---|---|---|---|---|---|---|
 | UW-23 | BLOCKED | CO-1, CO-2 | UW-14 | Rentang tahun + mekanisme pembaruan dataset hari libur | Keputusan tertulis | Keputusan di checklist + DECISIONS_LOG | Claude siapkan lembar keputusan |
 | UW-24 | BLOCKED | O-09 | — | Pilihan runner emulator/perangkat | Runner tersedia (keputusan + rencana; menjalankan = V) | Keputusan + rencana runner | Claude siapkan lembar opsi |
-| UW-25 | BLOCKED | CU-10 | — | Penerimaan risiko kunci jawaban dapat diekstrak | Keputusan tertulis | Keputusan | Claude siapkan lembar (selaras D-17) |
-| UW-26 | OPEN | OP-4 | — | Rubrik + bank tugas penjelasan konsep | CUR:CC-08 | Keputusan OP-4 + bank tugas 16 modul | Owner menjawab OP-4-Q1–Q5 |
-| UW-27 | BLOCKED | OP-5 | — | Rumus durasi ujian, format soal | ASM:D-08 terisi | Keputusan | Claude siapkan lembar keputusan |
+| UW-25 | BLOCKED | CU-10 | — | Penerimaan risiko kunci jawaban dapat diekstrak | Keputusan tertulis | Keputusan | Owner menjawab CU-10-Q1–Q2 |
+| UW-26 | OPEN | OP-4 (D-23 ✓) | UW-37 | Bank tugas penjelasan konsep 16 modul | CUR:CC-08 | Bank tugas 16 modul diterima | Ditulis di CB-1–CB-4 |
+| UW-27 | BLOCKED | OP-5 | — | Rumus durasi ujian, format soal | ASM:D-08 terisi | Keputusan | Owner menjawab OP-5-Q1–Q7 |
 | UW-28 | BLOCKED | OP-6 | — | Kebijakan manipulasi jam, toleransi NTP | ASM:E-01–E-04 punya kebijakan | Keputusan | Claude siapkan lembar keputusan |
-| UW-29 | BLOCKED | OP-7 | CU-6 (RA-1/RA-2) | Aturan pengumpulan/interupsi lab-proyek | ASM:L5 terisi | Keputusan | Bersama/sesudah CU-6 |
-| UW-30 | BLOCKED | OP-8, CU-4 | — | Identitas XP, rumus, level, streak, revisi konten | ASM:X-07 terisi | Keputusan | Claude siapkan lembar keputusan |
-| UW-31 | BLOCKED | OP-9 | D-01 M-04 | Aturan unlock rinci | ASM:C6 terisi | Keputusan | Claude siapkan lembar keputusan |
-| UW-32 | BLOCKED | OP-10, OP-11 | — | Komponen yang boleh diulang; debounce autosave | OP-10, OP-11 terisi | Keputusan | Claude siapkan lembar keputusan |
+| UW-29 | BLOCKED | OP-7 | D-24 (RA-1) | Aturan pengumpulan/interupsi lab-proyek | ASM:L5 terisi | Keputusan | Owner menjawab OP-7-Q1 |
+| UW-30 | BLOCKED | OP-8, CU-4 | — | Identitas XP, rumus, level, streak, revisi konten | ASM:X-07 terisi | Keputusan | Owner menjawab OP-8-Q1–Q5 |
+| UW-31 | BLOCKED | OP-9 | D-01 M-04 | Aturan unlock rinci | ASM:C6 terisi | Keputusan | Owner menjawab OP-9-Q1 |
+| UW-32 | BLOCKED | OP-10, OP-11 | — | Komponen yang boleh diulang; debounce autosave | OP-10, OP-11 terisi | Keputusan | Owner menjawab OP-10-Q1–Q2, OP-11-Q1 |
 | UW-33 | BLOCKED | OD-5–OD-9, OD-11–OD-14 | D-16, D-17 | §3 | OD-5–OD-9 dan OD-11–OD-14 terisi | Keputusan + dokumen review | Claude siapkan lembar keputusan |
 | UW-34 | BLOCKED | CO-4–CO-6 | — | Kalender perusahaan, label era, notifikasi jam tenang | CO-4–CO-6 terisi | Keputusan | Claude siapkan lembar keputusan |
 | UW-35 | BLOCKED | UO-3–UO-9 | D-14, D-15 | Tipografi, aset, breakpoint, tab bar, performa, field layar | UO-3–UO-9 terisi | Keputusan | Claude siapkan lembar keputusan |
-| UW-36 | BLOCKED | CU-3, CU-5, CU-6, CU-7, CU-9, CU-11 (+ CU2-O3, CU2-O4) | OP-4 | Format konten, varian, penilaian lab, bentuk lab SQL/HTML/Git, rubrik capstone, pembagian W9/W10, alokasi jam, rubrik mini-project | CU terkait terisi | Keputusan | Owner menjawab CU-6-Q1–Q6; Claude siapkan lembar lain |
+| UW-36 | BLOCKED | CU-3, CU-5, CU-7, CU-9, CU-11, CU2-O3, CU2-O4 (CU-6 ✓ D-24) | D-23, D-24 | Format konten, varian, bentuk lab SQL/HTML/Git, rubrik capstone, pembagian W9/W10, alokasi jam, rubrik mini-project | CU terkait terisi | Keputusan | Owner menjawab CU-3, CU-5, CU-7, CU-9, CU-11, CU2-O3, CU2-O4 |
 | UW-41 | BLOCKED | — | — | Daftar delapan skill tambahan (PENDING SOURCE) | FIN:SE-1–SE-6 | Daftar dari owner | Owner menyerahkan daftar |
 
 Butir akses sumber (P): UW-14 (dataset `syukujitsu.csv`, host
@@ -174,23 +176,28 @@ dicabut.
 
 ### 5.3 Ketergantungan produksi konten (F-06)
 
-| Ketergantungan | Butir | Kolom/batch yang terdampak |
-|---|---|---|
-| Format soal dan durasi ujian (OP-5) | UW-27 | Theory, semua modul |
-| Aturan kredit penjelasan konsep (OP-4) | UW-26 | Concept, semua modul |
-| Penilaian lab (CU-6) | UW-36 | Laboratory, semua modul |
-| Jumlah minimum varian remedial (CU-5) | UW-36 | Semua komponen (materi remedial) |
-| Rubrik mini-project (CU2-O4) | UW-36 (dilacak, RM-Q1) | Mini-project W1–W15 |
-| Rubrik capstone (CU-9) | UW-36 | W16 Mini-project |
-| Format konten/markup/diagram (CU-3) | UW-36 | CB-0 |
-| Bentuk lab SQL/HTML/Git (CU-7) | UW-36 | Laboratory W13–W15 |
-| Pembagian W9/W10 (CU-11) | UW-36 | CB-3 |
-| Alokasi jam per komponen (CU2-O3) | UW-36 (dilacak, RM-Q1) | Semua modul (CPP §5, PROPOSED) |
-| Aturan pengumpulan/interupsi (OP-7) | UW-29 | Laboratory, Mini-project |
-| Identitas XP (OP-8) | UW-30 | Penandaan aktivitas di semua komponen |
-| Komponen yang boleh diulang (OP-10) | UW-32 | Materi remedial |
-| Aturan unlock rinci (OP-9) | UW-31 | Prasyarat modul |
-| Risiko kunci jawaban diekstrak (CU-10) | UW-25 | Desain bank soal |
+| Ketergantungan | Butir | Status | Lembar | Kolom/batch terdampak |
+|---|---|---|---|---|
+| Format soal, poin, durasi ujian (OP-5) | UW-27 | OPEN | [ASSESSMENT_FLOW_DECISION_SHEETS.md](ASSESSMENT_FLOW_DECISION_SHEETS.md) §A | Theory |
+| Aturan kredit penjelasan konsep (OP-4) | UW-26 | **D-23** | [OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md](OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md) | Concept |
+| Penilaian lab (CU-6) | UW-36 | **D-24**; LX-1–LX-9 OPEN | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) | Laboratory |
+| Varian remedial (CU-5) | UW-36 | OPEN | [CURRICULUM_CONTENT_DECISION_SHEETS.md](CURRICULUM_CONTENT_DECISION_SHEETS.md) §B | Semua komponen |
+| Rubrik mini-project (CU2-O4) | UW-36 (D-25) | OPEN | [PROJECT_RUBRIC_DECISION_SHEETS.md](PROJECT_RUBRIC_DECISION_SHEETS.md) §A | Mini-project W1–W15 |
+| Rubrik capstone (CU-9) | UW-36 | OPEN | idem §B | W16 Mini-project |
+| Format konten (CU-3) | UW-36 | OPEN | CCD §A | CB-0 |
+| Lab SQL/HTML/Git (CU-7) | UW-36 | OPEN | CCD §C | W13–W15 |
+| Pembagian W9/W10 (CU-11) | UW-36 | OPEN | CCD §E | CB-3 |
+| Alokasi jam (CU2-O3) | UW-36 (D-25) | OPEN | CCD §D | Semua modul |
+| Pengumpulan/interupsi (OP-7) | UW-29 | OPEN | AF §B | Laboratory, Mini-project |
+| Identitas XP (OP-8, CU-4) | UW-30 | OPEN | [XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) | `activity_id` semua komponen |
+| Unlock rinci (OP-9) | UW-31 | OPEN | AF §C | Prasyarat |
+| Remedial dan autosave (OP-10, OP-11) | UW-32 | OPEN | AF §D | Materi remedial |
+| Risiko kunci jawaban (CU-10) | UW-25 | OPEN | [CU10_ANSWER_KEY_RISK_DECISION_SHEET.md](CU10_ANSWER_KEY_RISK_DECISION_SHEET.md) | Desain bank soal |
+| Asumsi struktur: 6 soal concept, 3 aktivitas lab per modul (CU2-O5) | UW-36 (usulan) | OPEN | CCD §B | Beban konten, durasi C dan L |
+| Persistensi ujian di sekitar tenggat (OP-5-Q8) | UW-27 | OPEN | AF §A.5b | Theory |
+
+Konsistensi usulan terhadap D-01–D-25: [CROSS_SPEC_CONSISTENCY_REVIEW.md](CROSS_SPEC_CONSISTENCY_REVIEW.md).
+Templat provisional CB-0: [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md).
 
 Templat dan rencana produksi ([CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md))
 **bukan** konten; matriks 64 komponen tetap 0/64.
@@ -210,8 +217,8 @@ Templat dan rencana produksi ([CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCT
 | UW-10 | BLOCKED | Izin eksekusi prototipe Python | PLANNING CLEAR: YES | Rencana dan ambang disetujui (D-10); eksekusi butuh izin baru |
 | UW-02 | BLOCKED | Izin implementasi | PLANNING CLEAR: YES | D-11; PLANNING CLEAR tidak mengizinkan implementasi (D-20) |
 
-Izin pengukuran kripto (D-16 Q3) juga izin terpisah; diusulkan dicatat
-sebagai prasyarat UW-15, bukan butir baru (RM-Q1).
+Izin pengukuran kripto (D-16 Q3) adalah izin terpisah, dicatat sebagai
+prasyarat UW-15, bukan butir baru (D-25). Belum diberikan.
 
 ## 8. Verifikasi teknis setelah izin (jalur V)
 
@@ -219,7 +226,7 @@ sebagai prasyarat UW-15, bukan butir baru (RM-Q1).
 |---|---|---|---|---|
 | UW-12 | OPEN (NOT STARTED) | PY:F-01–F-15 | UW-10 | F-01–F-15 PASS dengan bukti EV |
 | UW-13 | NOT VERIFIED | Build CI toolchain | UW-02 | Checklist TC §7 |
-| UW-15 | NOT VERIFIED | Kompatibilitas BC, pengukuran KDF, nilai parameter final dan batas maksimum, CT-1–CT-12 | Izin pengukuran terpisah; OD-13 | Parameter tertulis + bukti |
+| UW-15 | NOT VERIFIED | Kompatibilitas BC, pengukuran KDF, nilai parameter final dan batas maksimum, CT-1–CT-12 (NOT VERIFIED) | Izin pengukuran terpisah (prasyarat, D-25); OD-13 | Parameter tertulis + bukti |
 | UW-39 | BLOCKED | Android SDK di cloud (opsional) | Pengaturan jaringan | Opsional |
 | UW-52 | OPEN (NOT STARTED) | Cek ulang versi toolchain tepat sebelum scaffold | UW-02 | Sumber resmi bertanggal baru |
 | UW-54 | NOT VERIFIED | Butir V toolchain | UW-13 | Log CI |
@@ -229,20 +236,24 @@ sebagai prasyarat UW-15, bukan butir baru (RM-Q1).
 ## 9. Jalur kritis menuju PLANNING CLEAR
 
 ```
-Keputusan owner: OP-4 (UW-26), CU-6/CU-3/CU-5/CU-7/CU-9/CU-11/CU2-O3/CU2-O4 (UW-36),
-                 OP-5 (UW-27), OP-7 (UW-29), OP-8 (UW-30), OP-9 (UW-31), OP-10 (UW-32), CU-10 (UW-25)
+Keputusan owner batch ini (lembar siap):
+  Gelombang 1 — CB-0: CU-3 (format), CU-5 (varian), CU2-O5 (jumlah aktivitas),
+                      OP-5 (ujian), CU2-O3 (jam), CU2-O4 (rubrik),
+                      OP-8-Q1–Q3/CU-4 (xp_id), OP-7, OP-10
+  Gelombang 2 — CB-3/CB-4: CU-11 (W9/W10), CU-7 (SQL/HTML/Git), CU-9 (capstone), CU-10
+  Paralel     — OP-9, OP-11, CU-6 LX-1–LX-9
         │
         ▼
-CB-0  Templat konten final (CPP §6)
+CB-0  Templat final (TPL-01–TPL-12 tanpa field OPEN)
         │
         ▼
-CB-1 → CB-2 → CB-3 → CB-4   Produksi 64 komponen (UW-37); CB-3 = W9–W12, diterima
-        │                    sebagai perencanaan (RM:RV-1–RV-3), runtime NOT VERIFIED
+CB-1 → CB-2 → CB-3 → CB-4   Produksi 64 komponen (UW-37) + bank concept (UW-26)
+        │                    CB-3 diterima sebagai perencanaan, runtime NOT VERIFIED
         ▼
 CB-R  Review + penerimaan owner seluruh konten
         │
         ▼
-PLANNING CLEAR (bersama butir P lain yang paralel)
+PLANNING CLEAR (bersama butir P lain)
 
 Paralel (wajib untuk PLANNING CLEAR, tidak memblokir produksi konten):
 UW-23, UW-24, UW-28, UW-33, UW-34, UW-35, UW-41, UW-14 + UW-53 (akses sumber)
@@ -252,18 +263,19 @@ Tidak ada butir M, G, atau V di jalur kritis PLANNING CLEAR.
 
 ## 10. Batch perencanaan berikutnya yang direkomendasikan
 
-1. Owner menjawab OP-4-Q1–Q5, CU-6-Q1–Q6, dan RM-Q1.
-2. Claude menyiapkan satu batch lembar keputusan untuk UW-27 (OP-5),
-   CU-9, CU2-O4, CU2-O3, CU-3, CU-5, CU-7, CU-11, dan OP-7/OP-8/OP-10
-   (UW-29, UW-30, UW-32).
-3. Setelah itu: CB-0 (templat final), lalu CB-1.
+1. Owner menjawab pertanyaan gelombang 1 (CB-0) dan, bila memungkinkan,
+   gelombang 2 — total 45 pertanyaan dalam matriks
+   [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md).
+2. Batch berikutnya: finalisasi CB-0 (templat tanpa field OPEN) + CB-1
+   modul W1 sebagai **modul percontohan** lengkap (4 komponen) untuk
+   direview sebelum W2–W4.
+3. Paralel: lembar keputusan UW-23, UW-24, UW-28, UW-33 (OD-5–OD-9,
+   OD-11–OD-14), UW-34, UW-35.
 
 ## 11. Pertanyaan owner dari roadmap
 
-**RM-Q1:** Setujui (a) pemindahan UW-15 dari P ke V dengan AC tetap; (b)
-perluasan pelacakan UW-33 dengan OD-11–OD-14 (AC OD-5–OD-9 tetap); (c)
-pelacakan CU2-O3 dan CU2-O4 di bawah UW-36; (d) izin pengukuran kripto
-dicatat sebagai prasyarat UW-15, bukan butir baru? Bila (a) ditolak, UW-15
-tetap di P (kemajuan P 25/44).
+~~RM-Q1~~ — *dijawab D-25 (2026-11-24)*: (a) UW-15 di jalur V dengan AC
+tetap; (b) OD-11–OD-14 di UW-33 bersama OD-5–OD-9; (c) CU2-O3 dan CU2-O4
+di UW-36; (d) izin pengukuran kripto = prasyarat UW-15.
 
-Status: **AWAITING OWNER**.
+Tidak ada pertanyaan roadmap baru.

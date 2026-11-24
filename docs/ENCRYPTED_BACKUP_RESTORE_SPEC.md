@@ -380,3 +380,6 @@ dependensi Bouncy Castle), bersama OD-5–OD-9, di UW-33 (jalur P). Nilai
 parameter final, batas maksimum, dan CT-1–CT-12 tetap UW-15 (jalur V,
 NOT VERIFIED). Syarat rilis restore produksi RR-1–RR-8:
 [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) §11.
+
+Pemisahan di atas **disetujui D-25** (2026-11-24). Tidak ada persyaratan
+keamanan yang dihapus; tidak ada pengukuran yang diizinkan.

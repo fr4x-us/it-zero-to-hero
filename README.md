@@ -45,9 +45,16 @@ Offline-first Android IT Learning Academy: aplikasi Android native
 | Quality gates | [`docs/QUALITY_GATES.md`](docs/QUALITY_GATES.md) |
 | Lingkungan dan rencana CI | [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md) |
 | Riwayat perencanaan (snapshot) | [`docs/PLANNING_HISTORY.md`](docs/PLANNING_HISTORY.md) |
-| Penilaian penjelasan konsep (OP-4, menunggu owner) | [`docs/OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md`](docs/OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md) |
-| Penilaian lab (CU-6, menunggu owner) | [`docs/CU6_LAB_SCORING_DECISION_SHEET.md`](docs/CU6_LAB_SCORING_DECISION_SHEET.md) |
+| Penilaian penjelasan konsep (OP-4, diputuskan D-23) | [`docs/OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md`](docs/OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md) |
+| Penilaian lab (CU-6, diputuskan D-24; klarifikasi LX OPEN) | [`docs/CU6_LAB_SCORING_DECISION_SHEET.md`](docs/CU6_LAB_SCORING_DECISION_SHEET.md) |
 | Rencana produksi kurikulum (UW-37) | [`docs/CURRICULUM_PRODUCTION_PLAN.md`](docs/CURRICULUM_PRODUCTION_PLAN.md) |
+| Ujian teori, pengumpulan, unlock, remedial, autosave (OP-5, OP-7, OP-9–OP-11, menunggu owner) | [`docs/ASSESSMENT_FLOW_DECISION_SHEETS.md`](docs/ASSESSMENT_FLOW_DECISION_SHEETS.md) |
+| XP, level, streak (OP-8, CU-4, menunggu owner) | [`docs/XP_PROGRESS_DECISION_SHEET.md`](docs/XP_PROGRESS_DECISION_SHEET.md) |
+| Format konten, varian, lab SQL/HTML/Git, jam, W9/W10 (menunggu owner) | [`docs/CURRICULUM_CONTENT_DECISION_SHEETS.md`](docs/CURRICULUM_CONTENT_DECISION_SHEETS.md) |
+| Rubrik mini-project dan capstone (CU2-O4, CU-9, menunggu owner) | [`docs/PROJECT_RUBRIC_DECISION_SHEETS.md`](docs/PROJECT_RUBRIC_DECISION_SHEETS.md) |
+| Risiko kunci jawaban offline (CU-10, menunggu owner) | [`docs/CU10_ANSWER_KEY_RISK_DECISION_SHEET.md`](docs/CU10_ANSWER_KEY_RISK_DECISION_SHEET.md) |
+| Templat kurikulum CB-0 (provisional) | [`docs/CURRICULUM_TEMPLATES_CB0.md`](docs/CURRICULUM_TEMPLATES_CB0.md) |
+| Tinjauan konsistensi lintas spesifikasi | [`docs/CROSS_SPEC_CONSISTENCY_REVIEW.md`](docs/CROSS_SPEC_CONSISTENCY_REVIEW.md) |
 
 ## Cara berkontribusi
 

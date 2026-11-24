@@ -216,3 +216,10 @@ Restore produksi tetap **nonaktif** (D-16 Q3) sampai semua terpenuhi:
 | RR-8 | Owner menyetujui pengaktifan restore produksi secara eksplisit |
 
 Status: RR-1–RR-8 **belum terpenuhi**.
+
+### 11.4 Keputusan owner D-25 (2026-11-24)
+
+Pemisahan §11 **disetujui** (RM-Q1(a), (b), (d)): UW-15 di jalur V dengan
+AC asli; OD-11–OD-14 dilacak di UW-33 bersama OD-5–OD-9; pengukuran kripto
+butuh izin owner terpisah sebagai prasyarat UW-15 (belum diberikan).
+RR-1–RR-8 belum terpenuhi; CT-1–CT-12 **NOT VERIFIED**.
