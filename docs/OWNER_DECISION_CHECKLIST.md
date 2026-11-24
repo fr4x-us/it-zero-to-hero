@@ -2,7 +2,8 @@
 
 Status: D-01 **APPROVED** · D-02–D-09 **OWNER APPROVED** (tunduk pada
 verifikasi yang tersisa) · D-10 **PLANNING APPROVED; EXECUTION NOT
-AUTHORIZED** · D-11 **DEFERRED; IMPLEMENTATION NOT AUTHORIZED** · tidak
+AUTHORIZED** · D-11 **DEFERRED; IMPLEMENTATION NOT AUTHORIZED** · D-12–D-15
+**OWNER APPROVED** (2026-11-24; verifikasi implementasi NOT VERIFIED) · tidak
 ada keputusan yang diisi atas nama owner · **PLANNING CLEAR: NO** ·
 **IMPLEMENTATION VERIFIED: NO**.
 Tanggal: **2026-11-23**. Basis awal: `main` = `5931ece` (merge PR #16);
@@ -244,20 +245,88 @@ status menjadi APPROVED hanya setelah PR itu disetujui.
 
 ## Antrean keputusan berikutnya (bukan P0) — disiapkan 2026-11-23
 
-Semua butir di bawah **AWAITING OWNER**. Rekomendasi hanya saran.
+Semua butir di bawah telah dijawab owner pada 2026-11-24 (D-12–D-15). Kolom
+rekomendasi dipertahankan sebagai catatan historis.
 
 | ID | Pertanyaan | Rekomendasi teknis | Lembar keputusan | Keputusan final |
 |---|---|---|---|---|
-| UW-22-Q1 | Representasi skor | NP-4 (integer rasional dari poin mentah) | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) §8 | |
-| UW-22-Q2 | Batas poin maksimum per komponen per attempt | `max ≤ 10.000` | idem | |
-| UW-22-Q3 | Tie skor sama | Attempt paling awal | idem | |
-| UW-22-Q4 | Presisi tampilan | 2 desimal dibulatkan ke bawah + status teks | idem | |
-| CU-2-Q1 | Keempat komponen di setiap modul | Opsi A | [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) §7 | |
-| CU-2-Q2 | Capstone vs modul 16 | Tidak ada rekomendasi; keputusan produk | idem | |
-| CU-2-Q3 | Beberapa aktivitas dalam satu komponen | Poin dijumlah (sejalan NP-4) | idem | |
-| UO-1-Q1 | Teks kecil `#000000` di atas ungu; `#000000` atau `#1C1B1F` di atas biru, hijau, kuning, merah muda (hanya pasangan ≥ 4,5:1; `#1C1B1F` di atas ungu 4,03 gagal) | Ya | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) §8 | |
-| UO-1-Q2 | Varian turunan untuk teks berwarna kecil | Ya (warna merek tetap) | idem | |
-| UO-1-Q3 | Teks putih pada ungu (4,25) hanya untuk teks besar (≥ 18sp, atau tebal ≥ 14sp); teks tebal < 14sp tetap `#000000` | Ya | idem | |
-| UO-2-Q1 | Dark mode | DM-1 (terang saja, Force Dark nonaktif) untuk V1 | idem | |
-| UO-2-Q2 | Material 3 tanpa dynamic color | Ya | idem | |
+| UW-22-Q1 | Representasi skor | NP-4 (integer rasional dari poin mentah) | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) §8 || D-12: NP-4 disetujui |
+| UW-22-Q2 | Batas poin maksimum per komponen per attempt | `max ≤ 10.000` | idem || D-12: `max ≤ 10.000` disetujui |
+| UW-22-Q3 | Tie skor sama | Attempt paling awal | idem || D-12: attempt paling awal; semua attempt disimpan |
+| UW-22-Q4 | Presisi tampilan | 2 desimal dibulatkan ke bawah + status teks | idem || D-12: 2 desimal dibulatkan ke bawah + status lulus/belum lulus eksplisit |
+| CU-2-Q1 | Keempat komponen di setiap modul | Opsi A | [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) §7 || D-13: keempat komponen di semua 16 modul (30/40/20/10) |
+| CU-2-Q2 | Capstone vs modul 16 | Tidak ada rekomendasi; keputusan produk | idem || D-13: capstone = mini-project modul 16 dengan rubrik capstone khusus |
+| CU-2-Q3 | Beberapa aktivitas dalam satu komponen | Poin dijumlah (sejalan NP-4) | idem || D-13: jumlahkan poin diperoleh dan poin maksimum |
+| UO-1-Q1 | Teks kecil `#000000` di atas ungu; `#000000` atau `#1C1B1F` di atas biru, hijau, kuning, merah muda (hanya pasangan ≥ 4,5:1; `#1C1B1F` di atas ungu 4,03 gagal) | Ya | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) §8 || D-14 disetujui |
+| UO-1-Q2 | Varian turunan untuk teks berwarna kecil | Ya (warna merek tetap) | idem || D-14 disetujui (lima warna merek tetap) |
+| UO-1-Q3 | Teks putih pada ungu (4,25) hanya untuk teks besar (≥ 18sp, atau tebal ≥ 14sp); teks tebal < 14sp tetap `#000000` | Ya | idem || D-14 disetujui |
+| UO-2-Q1 | Dark mode | DM-1 (terang saja, Force Dark nonaktif) untuk V1 | idem || D-15: DM-1; Force Dark otomatis dinonaktifkan |
+| UO-2-Q2 | Material 3 tanpa dynamic color | Ya | idem || D-15: dynamic color dinonaktifkan |
+
+## Keputusan owner D-12–D-15 (2026-11-24)
+
+Pernyataan owner: "Saya menyetujui seluruh rekomendasi D-12–D-15. ...
+Implementasi tetap dilarang." Status: **OWNER APPROVED**, berlaku efektif
+setelah PR pencatatan di-merge. Verifikasi pada implementasi tetap
+**NOT VERIFIED** (UW-56).
+
+### D-12 — Presisi angka (UW-22)
+
+| Butir | Keputusan |
+|---|---|
+| Q1 | NP-4: aritmetika integer rasional eksak dari poin mentah `earned` dan `max` |
+| Q2 | Maksimum 10.000 poin per komponen per attempt |
+| Q3 | Skor terbaik sama → pilih attempt paling awal; semua attempt disimpan |
+| Q4 | Tampilan 2 desimal dibulatkan ke bawah, selalu disertai status lulus/belum lulus eksplisit |
+| Wajib dipertahankan | Setiap komponen ≥ 75 dan nilai modul tertimbang ≥ 80 dengan perbandingan eksak; tanpa pembulatan sebelum keputusan akademik; aritmetika *checked* untuk mencegah overflow; pembulatan tampilan tidak pernah memengaruhi hasil akademik |
+| Masih OPEN | Cara nilai parsial penjelasan konsep (OP-4); bobot test case lab (CU-6); alokasi poin per aktivitas; pilihan teknis aritmetika *checked* (mis. `multiplyExact` atau `BigInteger`) saat implementasi |
+
+### D-13 — Struktur komponen per modul (CU-2)
+
+| Butir | Keputusan |
+|---|---|
+| Q1 | Semua 16 modul memiliki keempat komponen: Theory 30%, Laboratory 40%, Mini-project 20%, Concept explanation 10% |
+| Q2 | Capstone adalah mini-project modul 16, dengan rubrik capstone khusus; capstone **tidak** menjadi proyek wajib tambahan di luar 128 jam |
+| Q3 | Komponen dengan beberapa aktivitas bernilai: jumlahkan poin diperoleh dan poin maksimum |
+| Wajib dipertahankan | 16 modul, 128 jam; unlock linear; remedial tanpa batas; skor terbaik per komponen; riwayat attempt lengkap; XP sekali per aktivitas unik yang memenuhi syarat |
+| Masih OPEN | Rubrik rinci (termasuk rubrik capstone), alokasi poin per aktivitas, alokasi jam per komponen |
+
+### D-14 — Aksesibilitas dan kontras (UO-1)
+
+| Butir | Keputusan |
+|---|---|
+| Q1 | Pasangan teks–latar harus memenuhi ambang kontras; teks kecil di atas ungu `#7565F5` memakai `#000000`; di atas empat warna merek lain boleh `#000000` atau `#1C1B1F` hanya bila ambang terpenuhi |
+| Q2 | Warna turunan yang aksesibel diizinkan tanpa mengganti lima warna merek terkunci |
+| Q3 | Teks putih di atas ungu hanya untuk teks besar yang memenuhi syarat (≥ 18sp, atau tebal ≥ 14sp), sesuai persyaratan kontras |
+| Wajib dipertahankan | Status akademik tidak pernah disampaikan hanya lewat warna; pemeriksaan ambang memakai rasio kontras tanpa pembulatan; palet Colorful Academy asli tetap |
+
+### D-15 — Strategi tema (UO-2)
+
+| Butir | Keputusan |
+|---|---|
+| Q1 | DM-1: tema terang saja untuk V1; Force Dark otomatis dinonaktifkan |
+| Q2 | Material 3 dynamic color dinonaktifkan untuk menjaga identitas merek |
+| Catatan | Dark mode dapat dipertimbangkan kelak lewat keputusan terpisah. Perilaku nyata di perangkat **NOT VERIFIED** |
+
+## Antrean keputusan berikutnya — disiapkan 2026-11-24
+
+Semua **AWAITING OWNER**. Rekomendasi hanya saran.
+
+| ID | Pertanyaan | Rekomendasi teknis | Lembar keputusan | Keputusan final |
+|---|---|---|---|---|
+| OD-1-Q1 | AEAD | AES-256-GCM, nonce acak 96-bit, tag 128-bit, header sebagai AAD | [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) §9 | |
+| OD-1-Q2 | KDF | Argon2id (Bouncy Castle, bersyarat review/uji); cadangan PBKDF2-HMAC-SHA256 ≥ 600.000 iterasi | idem | |
+| OD-1-Q3 | Parameter KDF | Minimum OWASP sebagai lantai; final setelah pengukuran (butuh izin) | idem | |
+| OD-1-Q4 | Envelope | Struktur §5 dengan header sebagai AAD | idem | |
+| OD-1-Q5 | Penanganan kasus | H-1–H-7 | idem | |
+| OD-2-Q1 | Model ancaman | Terima §5 dengan risiko residual eksplisit | [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) §7 | |
+| OD-2-Q2 | Penanda asal-usul + log restore | Ya | idem | |
+| OD-2-Q3 | Tanda tangan terikat perangkat | Tidak untuk V1 | idem | |
+| OD-2-Q4 | Rantai hash riwayat | Opsional, hanya pencegah kasual | idem | |
+| OD-2-Q5 | Pernyataan "catatan belajar mandiri" | Ya | idem | |
+| UW-43-Q1 | Lokasi file Batch 01 | Opsi B (tetap di root + erratum TD:5) | [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md) §4 | |
+| UW-11-Q1 | Perlukah skor numerik tingkat program? (D-04 melarang rata-rata baru; bila tidak perlu, agregasi program ditutup sebagai "tidak ada") | Tidak perlu; penyelesaian program = 16 modul lulus + capstone | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) §15 | |
+| PL-Q1 | Konfirmasi klasifikasi register: butir verifikasi teknis (yang hanya bisa setelah izin) tidak menjadi syarat PLANNING CLEAR, tetapi tetap syarat IMPLEMENTATION VERIFIED | Ya | idem §15.3 | |
+| PL-Q2 | Apakah penulisan konten lengkap 16 modul (UW-37) wajib selesai sebelum PLANNING CLEAR, atau cukup format, rubrik, dan contoh per jenis komponen? | Owner memutuskan; Claude tidak merekomendasikan pengurangan syarat | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) §15.3 | |
+| PL-Q3 | Apakah UW-21 (alternatif bila O-04 gagal), UW-38 (R8/signing/distribusi), dan UW-40 (mekanisme effect UI) boleh ditunda ke milestone terkait dan tidak menjadi syarat PLANNING CLEAR? | Ya, karena bergantung hasil uji atau implementasi | idem | |
 

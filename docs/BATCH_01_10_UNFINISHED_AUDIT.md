@@ -556,3 +556,67 @@ Basis: `main` = `6a805a1` (merge PR #20). Lembar keputusan disiapkan;
 prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
 PY:F-01–F-15: **NOT VERIFIED**.
 
+## 15. Pembaruan status — D-12–D-15, OD-1/OD-2/UW-43 (2026-11-24)
+
+Basis: `main` = `b789e9a` (merge PR #21). Berlaku saat PR pencatatan
+D-12–D-15 di-merge.
+
+### 15.1 Perubahan status
+
+| ID | Status baru | AC (§3) | Bukti / sisa |
+|---|---|---|---|
+| UW-22 | **COMPLETE** | "Putuskan" + "Kasus batas ASM:B-01–B-10 lolos secara eksak" | Keputusan D-12 (NP-4). Kasus batas lolos secara eksak dibuktikan secara **hitungan** (NUM §3, §8.1: 0 perbedaan dari 200.000 uji acak). Verifikasi pada implementasi dipindah ke UW-56 (NOT VERIFIED) |
+| UW-17 | **COMPLETE** | "Token memenuhi U1" | Keputusan D-14; semua pasangan yang disetujui memenuhi ambang menurut hitungan (ACC §2, §4). Verifikasi perangkat → UW-56 |
+| UW-18 | **COMPLETE** | "Keputusan tertulis" | Keputusan D-15 (DM-1, Force Dark nonaktif, dynamic color nonaktif). Perilaku perangkat → UW-56 |
+| UW-36 | **BLOCKED** (diperbarui) | CU-2, CU-3, CU-5–CU-7, CU-9, CU-11 terisi | CU-2 diputuskan (D-13); CU-9 sebagian (capstone = mini-project modul 16). Sisa: CU-3, CU-5, CU-6, CU-7, CU-11, rubrik capstone |
+| UW-11 | **BLOCKED** (diperbarui) | "Aturan tertulis" | Kelulusan modul (D-04), representasi (D-12), penggabungan aktivitas dalam komponen (D-13) tertulis. Sisa: UW-11-Q1 — perlukah skor numerik tingkat program (D-04 melarang rata-rata baru) |
+| UW-15 | **BLOCKED** (menunggu owner) | "Parameter tertulis + bukti" | Lembar [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md); OD-1-Q1–Q5 |
+| UW-16 | **BLOCKED** (menunggu owner) | "Keputusan tertulis" | Lembar [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md); OD-2-Q1–Q5 |
+| UW-43 | **BLOCKED** (menunggu owner) | "Rujukan valid" | Lembar [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md); rekomendasi Opsi B. **Koreksi:** hanya TD:5 yang memuat path salah (bukan TD:68) |
+| UW-56 | **NOT VERIFIED** (baru) | Bukti EV untuk NUM:NA-1–NA-6 dan ACC:AT-1–AT-6 di implementasi | Verifikasi keputusan D-12–D-15 di aplikasi nyata. Oleh: T, setelah izin implementasi |
+
+### 15.2 Jumlah per status (56 butir)
+
+| Status | Jumlah | Butir |
+|---|---|---|
+| COMPLETE dengan bukti | 22 | UW-01, UW-03–UW-09, UW-17–UW-20, UW-22, UW-42, UW-44–UW-51 |
+| OPEN (NOT STARTED / PARTIAL) | 4 | UW-12, UW-26, UW-37, UW-52 |
+| BLOCKED | 26 | UW-02, UW-10, UW-11, UW-14–UW-16, UW-21, UW-23–UW-25, UW-27–UW-36, UW-38–UW-41, UW-43, UW-53 |
+| NOT VERIFIED | 4 | UW-13, UW-54, UW-55, UW-56 |
+
+### 15.3 Pemisahan jalur: perencanaan vs verifikasi
+
+Agar tidak ada ketergantungan melingkar (perencanaan selesai hanya bila
+implementasi yang belum diizinkan sudah berjalan), register dipisahkan
+menjadi tiga jalur. Ini **usulan klasifikasi** yang perlu dikonfirmasi
+owner (PL-Q1–PL-Q3 di [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md));
+tidak ada syarat verifikasi yang dihapus.
+
+| Jalur | Butir | Syarat untuk |
+|---|---|---|
+| **P — Perencanaan** (keputusan owner, dokumentasi, akses sumber) | UW-10 (izin uji O-04), UW-11, UW-14, UW-15, UW-16, UW-23–UW-25, UW-27–UW-36, UW-41, UW-43, UW-53; UW-26 dan UW-37 (konten — cakupan menunggu PL-Q2) | PLANNING CLEAR |
+| **M — Ditunda ke milestone** (usulan, menunggu PL-Q3) | UW-21, UW-38, UW-40 | Milestone terkait |
+| **V — Verifikasi setelah izin** | UW-12 (eksekusi prototipe, butuh izin D-10), UW-13, UW-39, UW-52, UW-54, UW-55, UW-56 | IMPLEMENTATION VERIFIED |
+| **G — Gerbang** | UW-02 (izin implementasi) | Dibuka owner setelah PLANNING CLEAR |
+
+Ketergantungan melingkar yang ditemukan: pemilihan runtime Python final
+(O-04) membutuhkan hasil PY:F-01–F-15, sedangkan eksekusi prototipe (D-10)
+mensyaratkan kebutuhan perencanaan selesai lebih dulu. Usulan: yang menjadi
+syarat PLANNING CLEAR hanya **rencana uji dan ambang** (sudah disetujui
+D-10) serta izin eksekusi (UW-10); pemilihan runtime final berada di jalur
+V. Keputusan ini milik owner (PL-Q1).
+
+### 15.4 Checklist PLANNING CLEAR
+
+| # | Kriteria | Status |
+|---|---|---|
+| PC-1–PC-5 | (lihat §12) | YES (PC-3 provisional, NOT VERIFIED) |
+| PC-6 | Aturan model data penilaian | PARTIAL — sisa UW-11-Q1 |
+| PC-7 | Keputusan O-04 | PARTIAL — ambang disetujui; izin eksekusi (UW-10) belum |
+| PC-8 | Dokumentasi konsisten | PARTIAL — UW-43 |
+| PC-9, PC-10 | — | YES |
+
+**PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
+prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
+PY:F-01–F-15: **NOT VERIFIED**.
+

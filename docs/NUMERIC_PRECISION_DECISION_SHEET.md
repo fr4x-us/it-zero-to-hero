@@ -1,6 +1,7 @@
 # IT ZERO → HERO — Decision Sheet: Representasi Angka dan Presisi Penilaian (UW-22)
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode.
+Status: **DIPUTUSKAN OWNER — D-12 (2026-11-24)**, lihat §9 · dokumentasi saja · tanpa kode.
+Verifikasi pada implementasi: **NOT VERIFIED**.
 Tanggal: **2026-11-23**. Basis awal: `main` = `2114ca8` (merge PR #19);
 §8 ditambahkan pada basis `6a805a1` (merge PR #20).
 
@@ -136,3 +137,21 @@ Kriteria ini **NOT VERIFIED** — belum ada implementasi.
 
 Status: **AWAITING OWNER**. UW-22 tetap **OPEN/BLOCKED** sampai dijawab.
 
+## 9. Keputusan owner — D-12 (2026-11-24)
+
+| Butir | Keputusan |
+|---|---|
+| UW-22-Q1 | **NP-4** disetujui: integer rasional eksak dari poin mentah `earned`/`max` |
+| UW-22-Q2 | Maksimum **10.000** poin per komponen per attempt |
+| UW-22-Q3 | Skor terbaik sama → **attempt paling awal**; semua attempt disimpan |
+| UW-22-Q4 | Tampilan **2 desimal dibulatkan ke bawah** + status lulus/belum lulus eksplisit |
+
+Tetap berlaku: komponen ≥ 75 dan nilai tertimbang ≥ 80 dibandingkan
+secara eksak; tanpa pembulatan sebelum keputusan akademik; aritmetika
+*checked* mencegah overflow; pembulatan tampilan tidak memengaruhi hasil.
+
+Ketergantungan yang tersisa (tidak diputuskan di sini): OP-4 (nilai parsial
+penjelasan konsep), CU-6 (bobot test case lab), alokasi poin per aktivitas
+(D-13 menjumlahkan poin aktivitas dalam satu komponen), dan pilihan teknis
+aritmetika *checked* saat implementasi. NA-1–NA-6 (§6) tetap
+**NOT VERIFIED** sampai implementasi diizinkan dan diuji (UW-56).

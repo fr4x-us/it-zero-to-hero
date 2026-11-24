@@ -1,6 +1,7 @@
 # IT ZERO → HERO — Decision Sheet: Kontras Palet dan Strategi Dark Mode (UO-1 / UO-2)
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode.
+Status: **DIPUTUSKAN OWNER — D-14 (UO-1) dan D-15 (UO-2), 2026-11-24**, lihat §9 ·
+dokumentasi saja · tanpa kode. Perilaku di perangkat: **NOT VERIFIED**.
 Tanggal: **2026-11-23**. Basis: `main` = `6a805a1` (merge PR #20).
 
 Lima warna merek **tidak diganti**. Rekomendasi di §6 adalah saran teknis,
@@ -138,3 +139,19 @@ Implikasi Material 3 (PROPOSED):
 5. **UO-2-Q2:** Setujui Material 3 tanpa dynamic color?
 
 Status: **AWAITING OWNER**. UO-1 (UW-17) dan UO-2 (UW-18) tetap **BLOCKED**.
+
+## 9. Keputusan owner — D-14 dan D-15 (2026-11-24)
+
+| Butir | Keputusan |
+|---|---|
+| UO-1-Q1 (D-14) | Pasangan teks–latar memenuhi ambang; teks kecil di atas ungu `#7565F5` memakai `#000000`; di atas biru, hijau, kuning, merah muda boleh `#000000` atau `#1C1B1F` hanya bila ambang terpenuhi |
+| UO-1-Q2 (D-14) | Warna turunan aksesibel diizinkan; lima warna merek terkunci tidak diganti |
+| UO-1-Q3 (D-14) | Teks putih di atas ungu hanya untuk teks besar yang memenuhi syarat (≥ 18sp, atau tebal ≥ 14sp) |
+| UO-2-Q1 (D-15) | **DM-1**: tema terang saja untuk V1; Force Dark otomatis dinonaktifkan |
+| UO-2-Q2 (D-15) | Dynamic color Material 3 dinonaktifkan |
+
+Tetap berlaku: status akademik tidak pernah hanya lewat warna; ambang
+diperiksa dengan rasio kontras tanpa pembulatan (contoh: ungu vs
+`#1C1B1F` = 4,03 → gagal; ungu vs putih = 4,25 → hanya teks besar). Dark
+mode dapat dipertimbangkan kelak lewat keputusan terpisah. AT-1–AT-6 tetap
+**NOT VERIFIED** (UW-56).

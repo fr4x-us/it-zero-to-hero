@@ -301,3 +301,10 @@ Dicatat dari [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md).
 | Penyelesaian program | Seluruh 16 modul lulus **dan** capstone selesai menurut rubrik yang akan disetujui | Tidak ada rata-rata program atau ambang tambahan |
 | Masih OPEN | Agregasi numerik tingkat program; representasi angka (OP-3); rubrik capstone (CU-9) | — |
 | Implikasi untuk dikonfirmasi | Kelulusan per modul dengan empat komponen berarti setiap modul memerlukan Theory, Laboratory, Mini-project, dan Concept explanation | **Tidak** diputuskan di sini; dicatat pada CU-2 |
+
+## 11. Keputusan owner D-12 dan D-13 (2026-11-24)
+
+| Keputusan | Dampak pada spesifikasi ini |
+|---|---|
+| D-12 | Representasi angka: NP-4 ([NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) §9). OP-3 **diputuskan**; aturan tie: attempt paling awal; tampilan 2 desimal dibulatkan ke bawah + status. Kasus batas §6.3 tetap acuan uji (NOT VERIFIED pada implementasi) |
+| D-13 | Setiap modul memiliki keempat komponen; capstone = mini-project modul 16 dengan rubrik khusus; aktivitas dalam satu komponen digabung dengan menjumlah poin. OP-10 (komponen yang boleh diulang) tetap OPEN |

@@ -21,7 +21,7 @@ atau menggantikan [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) dan
 | Batch 01 | [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) | AVAILABLE (di root repo, bukan `docs/`) | **OWNER-APPROVED WITH CONDITIONS** (D-01, 2026-11-23): M-01–M-19 disetujui; detail OPEN/PARTIAL tercatat di §7 dokumen | Matriks §2 historis; §7.1 berlaku. Merge PR #5 sendiri bukan persetujuan. |
 | Batch 02 | [`TECHNICAL_DECISIONS_BATCH_02.md`](TECHNICAL_DECISIONS_BATCH_02.md) | AVAILABLE | OWNER-APPROVED (header dokumen, TD:3) | Disalin tanpa perubahan dari lampiran owner (SHA-256 `0a27420e…a980b`). |
 
-## Keputusan owner D-01–D-11 (2026-11-23)
+## Keputusan owner D-01–D-15 (2026-11-23 / 2026-11-24)
 
 Sumber: [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) (kolom
 "Keputusan final"). Status Batch 02 di bawah tetap dicatat apa adanya;
@@ -40,6 +40,10 @@ tabel ini menunjukkan keputusan owner yang lebih baru.
 | D-09 | OWNER APPROVED | JUnit, kotlinx-coroutines-test, Compose UI Test, Robolectric | O-16 (baseline) | Alat screenshot (milestone UI); verifikasi terhadap D-06 |
 | D-10 | PLANNING APPROVED; EXECUTION NOT AUTHORIZED | Ambang PY:F-01–F-15 disetujui sebagai rencana | Batas uji O-04 | Izin eksekusi; runtime; PY:F-01–F-15 NOT VERIFIED |
 | D-11 | DEFERRED; NOT AUTHORIZED | Implementasi ditunda sampai perencanaan selesai dan izin baru | — | Izin implementasi |
+| D-12 | OWNER APPROVED (2026-11-24) | UW-22: NP-4; `max ≤ 10.000`; tie = attempt paling awal; tampilan 2 desimal dibulatkan ke bawah + status eksplisit | UW-22, OP-3 | OP-4, CU-6, alokasi poin; verifikasi implementasi (UW-56) |
+| D-13 | OWNER APPROVED (2026-11-24) | CU-2: keempat komponen di semua 16 modul; capstone = mini-project modul 16 dengan rubrik khusus; aktivitas digabung dengan menjumlah poin | CU-2 (bagian UW-36), CU-9 sebagian | Rubrik rinci, alokasi poin dan jam |
+| D-14 | OWNER APPROVED (2026-11-24) | UO-1: pasangan kontras sesuai ACC §4; `#000000` untuk teks kecil di atas ungu; turunan aksesibel diizinkan; teks putih di atas ungu hanya teks besar | UO-1 (UW-17) | Verifikasi perangkat (UW-56) |
+| D-15 | OWNER APPROVED (2026-11-24) | UO-2: DM-1 tema terang saja, Force Dark otomatis nonaktif; dynamic color nonaktif | UO-2 (UW-18) | Perilaku perangkat NOT VERIFIED (UW-56) |
 
 Status Batch 02 "Tetap OPEN" yang terdampak: O-01 → provisional (D-06);
 O-02 → diputuskan (D-08); O-07 → diputuskan (D-07); O-16 → baseline
@@ -63,9 +67,12 @@ blueprint atau Batch 02.
 | 10 | [FINAL_PLANNING_READINESS_REVIEW.md](FINAL_PLANNING_READINESS_REVIEW.md) | #15 | Ringkasan kesiapan |
 | Audit | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) | #16 | UW-01–UW-54 |
 | Checklist | [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) | #17, #18, #19 | D-01–D-11 (lihat §Keputusan owner) |
-| UW-22 | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) | #20, PR keputusan berikutnya (§8) | OP-3 / UW-22 — menunggu owner |
-| CU-2 | [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) | PR keputusan berikutnya | CU-2 / UW-36 — menunggu owner |
-| UO-1/UO-2 | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) | PR keputusan berikutnya | UO-1 / UW-17, UO-2 / UW-18 — menunggu owner |
+| UW-22 | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) | #20, #21 | OP-3 / UW-22 — diputuskan D-12 |
+| CU-2 | [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) | #21 | CU-2 — diputuskan D-13 |
+| UO-1/UO-2 | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) | #21 | UO-1, UO-2 — diputuskan D-14, D-15 |
+| OD-1 | [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) | PR D-12–D-15 | OD-1 / UW-15 — menunggu owner |
+| OD-2 | [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) | PR D-12–D-15 | OD-2 / UW-16 — menunggu owner |
+| UW-43 | [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md) | PR D-12–D-15 | UW-43 — menunggu owner |
 
 ## Aturan rujukan lintas dokumen (editorial, UW-44)
 
@@ -90,8 +97,9 @@ diganti. Saat merujuk ID lokal dari dokumen lain, tulis kode dokumennya:
 | `NUM:` | NUMERIC_PRECISION_DECISION_SHEET |
 | `CU2:` | CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET |
 | `ACC:` | ACCESSIBILITY_COLOR_DECISION_SHEET |
+| `OD1:` / `OD2:` / `UW43:` | Lembar keputusan OD-1, OD-2, UW-43 |
 | `UW-nn` | Register audit (ID global, unik) |
-| `D-01`–`D-11` (tanpa kode) | Keputusan owner (global) — [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
+| `D-01`–`D-15` (tanpa kode) | Keputusan owner (global) — [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
 | `O-`, `OP-`, `OD-`, `CO-`, `UO-`, `CU-`, `KS-`, gate QG (`AB-`, `OF-`, `GR-`, `LB-`, `CL-`, `SC-`, `AP-`, `EV-`) | ID global unik, tanpa kode. Pengecualian: opsi Auto Backup `AB-1`–`AB-3` di BKP §7 bentrok dengan gate `AB-1`–`AB-8`, sehingga ditulis `BKP:AB-x` |
 
 Contoh: `ASM:B-03` (kasus batas skor), `BKP:M-1` (mode restore),
@@ -142,7 +150,7 @@ Batch 01 (TD:56).
 | # | Temuan | Status |
 |---|---|---|
 | K-1 | Catatan historis: TD:26 menyebut **DataStore** sebagai bagian "existing blueprint baseline", padahal `BLUEPRINT_LOCKED.md` hanya menyebut Room/SQLite (BL:11). DataStore bukan bagian blueprint awal. Owner kemudian menyetujuinya melalui D-02 (2026-11-23) sebagai keputusan baru, khusus untuk preferensi aplikasi; Room/SQLite tetap sumber kebenaran data akademik dan versi DataStore masih OPEN. TD:26 tidak diubah. Blocker terkait: B-7 (HANDOFF_STATE). | Selesai oleh D-02 |
-| K-2 | TD:5 dan TD:68 merujuk `docs/PLANNING_COMPLETION_BATCH.md`, sedangkan file tersebut berada di root repo. | Informasi |
+| K-2 | TD:5 merujuk `docs/PLANNING_COMPLETION_BATCH.md`, sedangkan file tersebut berada di root repo. *Koreksi 2026-11-24:* catatan semula juga menyebut TD:68, tetapi TD:68 merujuk `docs/TECHNICAL_DECISIONS_BATCH_02.md`, bukan Batch 01. Opsi penyelesaian: [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md). | Informasi (UW-43 menunggu owner) |
 | K-3 | (Diselesaikan oleh D-01 M-18: nama tab blueprint berlaku.) Batch 01 M-18 memakai label tab "Learning Journey, IT Lab, Schedule/Calendar"; blueprint (BL:69) dan TD:25 memakai "Learn, Lab, Calendar". Blueprint yang berlaku. | Informasi |
 | K-4 | ID lokal dipakai ulang antardokumen (mis. `A-xx`, `B-0x`, `F-xx`, `M-1…M-3` vs `M-01…M-19`). Rujukan lintas dokumen harus menyebut nama dokumen. Detail: FINAL_PLANNING_READINESS_REVIEW KS-07. | Informasi |
 | K-5 | `QUALITY_GATES.md` GR-10 lebih lama dari TD:21; arah "bulatkan hanya untuk tampilan" sudah APPROVED (TD:21), agregasi/representasi tetap OPEN. | Informasi |
