@@ -110,4 +110,5 @@ apakah peristiwa pemicu benar-benar memenuhi kelayakan → usulan XV-7–XV-14
 | XS-C20 | D-36 (CU-6-Q13, HF-A) |
 | XS-C21 | D-37 (OD-15-Q2, XV-7–XV-14 + RX-A) |
 
-Tidak ada ketegangan baru. Sisa: nilai angka LX-2 (RM-Q2).
+Tidak ada ketegangan baru. Nilai angka LX-2: keluaran verifikasi UW-12
+(D-38, 2026-11-24); bukan ketegangan spesifikasi.

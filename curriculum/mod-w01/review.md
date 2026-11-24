@@ -13,8 +13,8 @@ review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24; direvisi se
 |---|---|
 | Dokumentasi diproduksi | **YA** |
 | Review mandiri penyusun | **YA**, direvisi dua kali setelah temuan ChatGPT |
-| Review ChatGPT | **Belum lolos** (putaran 2: REQUEST CHANGES; revisi ini menunggu review ulang) |
-| Diterima owner (W01-ACC) | **TIDAK** |
+| Review ChatGPT | **Lolos** review akhir PR #25 (merge `df76c5f`), dengan batas yang diungkapkan (§11) |
+| Diterima owner (W01-ACC) | **YA** (2026-11-24) — modul kurikulum acuan |
 | Runtime diverifikasi | Tidak berlaku / tidak diklaim (W1 tanpa runtime; aplikasi belum ada) |
 | Durasi diuji dengan pelajar | **TIDAK** |
 
@@ -434,4 +434,16 @@ dapat dicapai 56 / 100 / 100 / 21 · XP 305 · 480 menit. Durasi teori tetap
 ### 10.5 Kesiapan review akhir
 
 Semua temuan F-01–F-23 ditangani; D-36 dan D-37 tercatat; belum ada
-persetujuan review independen. W01-ACC tetap AWAITING OWNER.
+persetujuan review independen. W01-ACC saat itu AWAITING OWNER (kemudian
+diterima, §11).
+
+## 11. Penerimaan W1 (W01-ACC) dan batas review independen
+
+PR #25 di-merge (head `f4cb173`, merge commit `df76c5f`). Owner menerima W1
+sebagai modul kurikulum acuan (W01-ACC, 2026-11-24).
+
+Batas review independen yang diungkapkan: F-22 dan F-23 menerima review akhir terarah; pencatatan D-36/D-37 diperiksa; enumerasi independen mengonfirmasi 3.840 kombinasi dan 46 build valid. **Tidak** setiap baris CSV terbaru, setiap butir penilaian yang berubah, atau setiap penerapan kontrak visibilitas diaudit ulang secara independen.
+
+Konsekuensi: modul berikutnya memakai W1 sebagai acuan, tetapi temuan baru
+pada W1 tetap boleh diangkat; penerimaan ini bukan verifikasi runtime atau
+uji durasi dengan pelajar.

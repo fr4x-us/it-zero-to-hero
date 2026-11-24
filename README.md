@@ -21,6 +21,9 @@ Offline-first Android IT Learning Academy: aplikasi Android native
 | 5a | [`docs/PLANNING_ROADMAP.md`](docs/PLANNING_ROADMAP.md) | Roadmap perencanaan tersisa (jalur P/M/G/V) |
 | 6 | [`docs/DECISIONS_LOG.md`](docs/DECISIONS_LOG.md) | Sumber keputusan per batch dan daftar dokumen batch |
 | 7 | [`docs/GITHUB_BRIDGE.md`](docs/GITHUB_BRIDGE.md) | Alur kerja owner, ChatGPT, Claude, dan GitHub |
+| 8 | [`docs/PROJECT_MAP.md`](docs/PROJECT_MAP.md) | Peta navigasi dan rute tugas agen (bukan sumber kebijakan) |
+| 9 | [`docs/AGENT_TOKEN_EFFICIENCY_PROTOCOL.md`](docs/AGENT_TOKEN_EFFICIENCY_PROTOCOL.md) | Protokol efisiensi token TE-01–TE-14, routing skill, checkpoint |
+| 10 | [`docs/AGENT_SKILL_REGISTRY.md`](docs/AGENT_SKILL_REGISTRY.md) | Registry skill agen: asal, versi, status, rollback |
 
 ## Dokumen perencanaan
 

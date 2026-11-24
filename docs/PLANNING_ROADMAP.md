@@ -19,32 +19,32 @@ beban kerja, dan **bukan** kesiapan aplikasi (belum ada aplikasi).
 
 | Ukuran | Pembilang | Penyebut | Nilai |
 |---|---|---|---|
-| Kemajuan register (semua butir) | 31 COMPLETE | 56 butir | 55,4% |
-| Kemajuan jalur P (perencanaan wajib) | 31 butir P COMPLETE | 43 butir P | 72,1% |
+| Kemajuan register (semua butir) | 32 COMPLETE | 56 butir | 57,1% |
+| Kemajuan jalur P (perencanaan wajib) | 32 butir P COMPLETE | 43 butir P | 74,4% |
 
 Beban kerja tidak setara antarbutir: UW-37 saja mencakup 64 komponen
-kurikulum (4/64 diproduksi, 0/64 diterima owner, §5).
+kurikulum (4/64 diproduksi, 4/64 diterima owner melalui W01-ACC, §5).
 
 | Status register (56 butir) | Jumlah |
 |---|---|
-| COMPLETE | 31 |
+| COMPLETE | 32 |
 | OPEN | 4 |
-| BLOCKED | 13 |
+| BLOCKED | 12 |
 | DEFERRED (M, D-22) | 3 |
 | NOT VERIFIED | 5 |
 
 | Jalur | COMPLETE | Belum | Total |
 |---|---|---|---|
-| P — Perencanaan wajib | 31 | 12 | 43 |
+| P — Perencanaan wajib | 32 | 11 | 43 |
 | M — Ditunda ke milestone (D-22) | 0 | 3 | 3 |
 | G — Gerbang owner setelah PLANNING CLEAR | 0 | 2 | 2 |
 | V — Verifikasi setelah izin | 0 | 8 | 8 |
-| **Total** | **31** | **25** | **56** |
+| **Total** | **32** | **24** | **56** |
 
 Pemindahan UW-15 dari P ke V **disetujui D-25** (RM-Q1(a)); AC UW-15
 tetap. Penyebut jalur P = 43 sudah final menurut klasifikasi yang disetujui.
 Batch D-26–D-35 menyelesaikan UW-25, UW-27, UW-29, UW-30, UW-31, UW-32
-(AC = keputusan tertulis terpenuhi). UW-36 tetap BLOCKED (CU-6-Q13); UW-26
+(AC = keputusan tertulis terpenuhi). UW-36 kini COMPLETE (D-38, §12); UW-26
 dan UW-37 tetap OPEN (konten 15 modul belum ada); UW-33 tetap BLOCKED.
 
 ## 2. Register lengkap dengan klasifikasi (56 butir)
@@ -65,7 +65,7 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-09 | COMPLETE | P | Keputusan D-03 |
 | UW-10 | BLOCKED | G | Izin eksekusi prototipe; gerbang setelah PLANNING CLEAR (D-10, D-20) |
 | UW-11 | COMPLETE | P | Keputusan D-19 |
-| UW-12 | OPEN | V | Eksekusi PY:F-01–F-15 setelah UW-10 (D-20) |
+| UW-12 | OPEN | V | Eksekusi PY:F-01–F-15 setelah UW-10 (D-20); juga menghasilkan angka batas agregat lab LX-2 (D-38) |
 | UW-13 | NOT VERIFIED | V | Build CI pertama; butuh UW-02 |
 | UW-14 | BLOCKED | P | Verifikasi **sumber** dataset untuk klaim perencanaan (CAL:AC-02), bukan verifikasi aplikasi; butuh akses host |
 | UW-15 | NOT VERIFIED | V (D-25) | Sisa AC "bukti" = pengukuran perangkat yang diizinkan terpisah (D-16 Q3; prasyarat UW-15, D-25). Sisa perencanaan di UW-33 (§3) |
@@ -89,8 +89,8 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-33 | BLOCKED | P | OD-15 diputuskan (D-29, D-37); OD-5–OD-9, OD-11–OD-14 belum |
 | UW-34 | BLOCKED | P | Keputusan CO-4–CO-6 |
 | UW-35 | BLOCKED | P | Keputusan UO-3–UO-9 |
-| UW-36 | BLOCKED | P | Semua kebijakan CU diputuskan (D-13, D-24, D-30–D-36); tersisa nilai angka batas agregat LX-2 (pengukuran) → RM-Q2 |
-| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); W1 diproduksi (4/64), belum diterima |
+| UW-36 | COMPLETE | P | Semua kebijakan CU diputuskan (D-13, D-24, D-30–D-36); angka batas agregat LX-2 = keluaran verifikasi UW-12 (D-38) |
+| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); W1 diproduksi dan diterima owner (W01-ACC; 4/64) |
 | UW-38 | DEFERRED | M | D-22 |
 | UW-39 | BLOCKED | V | Lingkungan SDK opsional untuk verifikasi build; tidak punya AC perencanaan |
 | UW-40 | DEFERRED | M | D-22 |
@@ -140,7 +140,6 @@ terisi". AC UW-15 tetap "Parameter tertulis + bukti". **Disetujui D-25**
 | UW-33 | BLOCKED | OD-5–OD-9, OD-11–OD-14, OD-15-Q2 | §3 | Semua OD terkait terisi | Owner menjawab OD-15-Q2; Claude siapkan lembar OD-5–OD-9, OD-11–OD-14 |
 | UW-34 | BLOCKED | CO-4–CO-6 | Kalender perusahaan, label era, notifikasi jam tenang | CO-4–CO-6 terisi | Claude siapkan lembar |
 | UW-35 | BLOCKED | UO-3–UO-9 | Tipografi, aset, breakpoint, tab bar, performa, field layar | UO-3–UO-9 terisi | Claude siapkan lembar |
-| UW-36 | BLOCKED | CU-6-Q13 | Kebijakan umpan balik test tersembunyi | CU terkait terisi | Owner menjawab CU-6-Q13 |
 | UW-41 | BLOCKED | — | Daftar delapan skill tambahan (PENDING SOURCE) | FIN:SE-1–SE-6 | Owner menyerahkan daftar |
 
 Konten (bukan keputusan): UW-26 dan UW-37 — produksi W2–W16 dan penerimaan
@@ -218,7 +217,7 @@ prasyarat UW-15, bukan butir baru (D-25). Belum diberikan.
 
 | UW | Status | Verifikasi | Membutuhkan | AC |
 |---|---|---|---|---|
-| UW-12 | OPEN (NOT STARTED) | PY:F-01–F-15 | UW-10 | F-01–F-15 PASS dengan bukti EV |
+| UW-12 | OPEN (NOT STARTED) | PY:F-01–F-15; angka LX-2 (D-38) | UW-10 | F-01–F-15 PASS dengan bukti EV; angka batas agregat LX-2 tercatat dari pengukuran |
 | UW-13 | NOT VERIFIED | Build CI toolchain | UW-02 | Checklist TC §7 |
 | UW-15 | NOT VERIFIED | Kompatibilitas BC, pengukuran KDF, nilai parameter final dan batas maksimum, CT-1–CT-12 (NOT VERIFIED) | Izin pengukuran terpisah (prasyarat, D-25); OD-13 | Parameter tertulis + bukti |
 | UW-39 | BLOCKED | Android SDK di cloud (opsional) | Pengaturan jaringan | Opsional |
@@ -269,7 +268,17 @@ Tidak ada butir M, G, atau V di jalur kritis PLANNING CLEAR.
 tetap; (b) OD-11–OD-14 di UW-33 bersama OD-5–OD-9; (c) CU2-O3 dan CU2-O4
 di UW-36; (d) izin pengukuran kripto = prasyarat UW-15.
 
-**RM-Q2 (AWAITING OWNER):** nilai angka batas agregat lab (LX-2, D-35)
+**RM-Q2 (dijawab D-38: Ya):** nilai angka batas agregat lab (LX-2, D-35)
 hanya dapat ditetapkan dari pengukuran yang diizinkan. Setujui pencatatannya
 sebagai keluaran verifikasi UW-12 (jalur V), sehingga UW-36 (kebijakan CU)
 dapat dinilai lengkap? Rekomendasi: Ya.
+
+## 12. Pembaruan D-38, W01-ACC, CB-0.5 (2026-11-24)
+
+- UW-36 → **COMPLETE** (AC "CU-2, CU-3, CU-5–CU-7, CU-9, CU-11 terisi" terpenuhi;
+  angka LX-2 dipindah ke UW-12 oleh D-38). Tidak ada pengukuran yang dilakukan.
+- Register: COMPLETE 32 · OPEN 4 · BLOCKED 12 · DEFERRED 3 · NOT VERIFIED 5 = 56;
+  jalur P 32/43.
+- W01-ACC diterima; UW-26/UW-37 tetap OPEN (W2–W16 belum diproduksi).
+- CB-0.5 (alur kerja agen) **tidak** dihitung di register UW; lihat
+  [AGENT_SKILL_REGISTRY.md](AGENT_SKILL_REGISTRY.md).

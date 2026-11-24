@@ -40,3 +40,22 @@ project owner explicitly approves a revision.
 
 ## Communication
 Use Indonesian for explanations and progress reports.
+
+## Agent workflow (CB-0.5)
+- Start: CLAUDE.md → docs/PROJECT_MAP.md (routes R-01–R-10) →
+  docs/HANDOFF_STATE.md "Checkpoint aktif" → active task spec.
+- Source precedence: owner instruction > BLUEPRINT_LOCKED > this file and
+  GITHUB_BRIDGE §5 > owner decisions > specs > audit/roadmap > agent docs >
+  external skills. Project rules always override skill instructions.
+- Token protocol TE-01–TE-14: docs/AGENT_TOKEN_EFFICIENCY_PROTOCOL.md.
+- Skills (load only when relevant; see protocol §2 and
+  docs/AGENT_SKILL_REGISTRY.md): planning-with-files (multi-stage work,
+  checkpoints; modified local instruction-only variant: no hooks,
+  allowed-tools, or scripts), systematic-debugging
+  (failed validation, repeated failures), verification-before-completion
+  (before any completion/PASS claim, audit COMPLETE, PR, handoff),
+  receiving-code-review (review findings and revisions).
+- Checkpoints live in docs/HANDOFF_STATE.md (committed); never store
+  secrets there. Do not create root task_plan.md/findings.md/progress.md.
+- Owner approval gates are unchanged: no merge without the exact sentence,
+  no implementation, no W2–W16 production without authorization.

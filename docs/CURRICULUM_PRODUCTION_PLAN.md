@@ -127,13 +127,13 @@ sudah diputuskan (D-23–D-35).
 
 | Ukuran | Diproduksi | Direview (ChatGPT) | Diterima owner | Runtime diverifikasi |
 |---|---|---|---|---|
-| Modul | 1/16 (W1) | 0/16 | 0/16 | Tidak berlaku untuk W1; 0 untuk modul kode |
-| Komponen penilaian | 4/64 | 0/64 | 0/64 | — |
-| Jam nominal tercakup | 8/128 | 0/128 | 0/128 | — |
-| Soal teori | 40/620 | 0 | 0 | — |
-| Soal concept | 12/192 | 0 | 0 | — |
-| Spesifikasi lab | 6/96 | 0 | 0 | — |
-| Spesifikasi mini-project | 1/16 | 0 | 0 | — |
+| Modul | 1/16 (W1) | 1/16 (terbatas) | 1/16 (W01-ACC) | Tidak berlaku untuk W1; 0 untuk modul kode |
+| Komponen penilaian | 4/64 | 4/64 (terbatas) | 4/64 | — |
+| Jam nominal tercakup | 8/128 | 8/128 (terbatas) | 8/128 | — |
+| Soal teori | 40/620 | 40 (terbatas) | 40 | — |
+| Soal concept | 12/192 | 12 (terbatas) | 12 | — |
+| Spesifikasi lab | 6/96 | 6 (terbatas) | 6 | — |
+| Spesifikasi mini-project | 1/16 | 1 (terbatas) | 1 | — |
 
 Inventaris target D-30 (dua butir nyata per slot/aktivitas): teori
 (15 × 20 + 10) × 2 = 620; concept 16 × 6 × 2 = 192; lab 16 × 3 × 2 = 96;
@@ -234,3 +234,9 @@ Semua keputusan produksi diputuskan: OP-4 (D-23), CU-6 (D-24, D-35), OP-5
 | Runtime Python (O-04, UW-12, NOT VERIFIED) | Tidak memblokir penerimaan perencanaan (RM:RV-1) |
 
 Peta lengkap: [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §5.3.
+
+### 4.2 Catatan penerimaan W1 (2026-11-24)
+
+"Terbatas" = lolos review akhir PR #25 dengan batas review independen yang
+diungkapkan owner (lihat [review.md](../curriculum/mod-w01/review.md) §11).
+W1 diterima sebagai modul acuan (W01-ACC). W2–W16 belum dimulai.

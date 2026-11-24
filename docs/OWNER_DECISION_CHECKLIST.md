@@ -3,7 +3,7 @@
 Status: D-01 **APPROVED** · D-02–D-09 **OWNER APPROVED** (tunduk pada
 verifikasi yang tersisa) · D-10 **PLANNING APPROVED; EXECUTION NOT
 AUTHORIZED** · D-11 **DEFERRED; IMPLEMENTATION NOT AUTHORIZED** · D-12–D-15
-**OWNER APPROVED** (2026-11-24; verifikasi implementasi NOT VERIFIED) · D-16–D-22 **OWNER APPROVED** (2026-11-24; D-16 bersyarat verifikasi teknis) · D-23–D-25 **OWNER APPROVED** (2026-11-24) · D-26–D-37 **OWNER APPROVED** (2026-11-24) · tidak
+**OWNER APPROVED** (2026-11-24; verifikasi implementasi NOT VERIFIED) · D-16–D-22 **OWNER APPROVED** (2026-11-24; D-16 bersyarat verifikasi teknis) · D-23–D-25 **OWNER APPROVED** (2026-11-24) · D-26–D-38 **OWNER APPROVED** (2026-11-24) · W01-ACC **OWNER ACCEPTED** (2026-11-24) · tidak
 ada keputusan yang diisi atas nama owner · **PLANNING CLEAR: NO** ·
 **IMPLEMENTATION VERIFIED: NO**.
 Tanggal: **2026-11-23**. Basis awal: `main` = `5931ece` (merge PR #16);
@@ -495,14 +495,14 @@ efektif setelah PR pencatatan di-merge. Rincian opsi dan AC terdampak:
 
 ## Antrean keputusan — disiapkan 2026-11-24 (setelah D-26–D-35)
 
-CU-6-Q13 dan OD-15-Q2 dijawab owner (D-36, D-37). W01-ACC dan RM-Q2 masih **AWAITING OWNER**.
+CU-6-Q13 dan OD-15-Q2 dijawab owner (D-36, D-37). RM-Q2 dijawab (D-38); W01-ACC diterima owner. Antrean ini kosong.
 
 | ID | Pertanyaan | Rekomendasi | Trade-off | Lembar | Keputusan final |
 |---|---|---|---|---|---|
 | CU-6-Q13 | Umpan balik test tersembunyi lab kode setelah evaluasi | HF-A (kode hasil + deskripsi kasus) | Umpan balik bermakna vs penyusun menulis deskripsi | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) §16 | D-36: HF-A disetujui |
 | OD-15-Q2 | Perluasan validasi kelayakan award XV-7–XV-14 dengan RX-A | Ya | Ledger terbukti sah vs butuh catatan peristiwa pelajaran/latihan | [XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) §14.1 | D-37: XV-7–XV-14 + RX-A disetujui |
-| W01-ACC | Penerimaan konten modul W1 sebagai modul acuan | Review PR lalu terima bila tidak ada temuan | Standar untuk W2–W16 vs revisi lebih awal | [curriculum/mod-w01/review.md](../curriculum/mod-w01/review.md) | |
-| RM-Q2 | Nilai angka batas agregat lab (LX-2) adalah hasil pengukuran yang diizinkan: catat sebagai keluaran verifikasi di UW-12 (jalur V), sehingga UW-36 (kebijakan CU) dapat dinilai lengkap? | Ya — kebijakan LX-2 sudah disetujui (D-35); hanya angkanya butuh pengukuran | Butir P tidak bergantung pada pengukuran vs pemindahan butir butuh persetujuan (D-20) | [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §11 | |
+| W01-ACC | Penerimaan konten modul W1 sebagai modul acuan | Review PR lalu terima bila tidak ada temuan | Standar untuk W2–W16 vs revisi lebih awal | [curriculum/mod-w01/review.md](../curriculum/mod-w01/review.md) | W01-ACC: diterima sebagai modul acuan, dengan batas review independen |
+| RM-Q2 | Nilai angka batas agregat lab (LX-2) adalah hasil pengukuran yang diizinkan: catat sebagai keluaran verifikasi di UW-12 (jalur V), sehingga UW-36 (kebijakan CU) dapat dinilai lengkap? | Ya — kebijakan LX-2 sudah disetujui (D-35); hanya angkanya butuh pengukuran | Butir P tidak bergantung pada pengukuran vs pemindahan butir butuh persetujuan (D-20) | [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §11 | D-38: Ya |
 
 ## Keputusan owner D-36–D-37 (2026-11-24)
 
@@ -511,3 +511,9 @@ CU-6-Q13 dan OD-15-Q2 dijawab owner (D-36, D-37). W01-ACC dan RM-Q2 masih **AWAI
 | D-36 | CU-6-Q13 | HF-A: kode hasil + deskripsi kasus; tanpa input mentah, output diharapkan, atau output pelajar untuk test tersembunyi; `case_description` wajib di templat | Nilai batas agregat LX-2; implementasi |
 | D-37 | OD-15-Q2 | XV-7–XV-14 dengan RX-A, persis seperti lembar XP §14.1 | OD-5–OD-9, OD-11–OD-14 (UW-33); implementasi |
 
+## Keputusan owner D-38 dan W01-ACC (2026-11-24)
+
+| ID | Pertanyaan | Keputusan | Tetap OPEN / NOT VERIFIED |
+|---|---|---|---|
+| D-38 | RM-Q2 | Nilai angka batas agregat eksekusi lab (LX-2) = keluaran verifikasi UW-12 (jalur V) | Pengukuran (UW-12; D-10 NOT AUTHORIZED) |
+| W01-ACC | Penerimaan W1 | Diterima sebagai modul kurikulum acuan | Batas review independen (dinyatakan owner): F-22 dan F-23 menerima review akhir terarah; pencatatan D-36/D-37 diperiksa; enumerasi independen mengonfirmasi 3.840 kombinasi dan 46 build valid. Tidak setiap baris CSV terbaru, setiap butir penilaian yang berubah, atau setiap penerapan kontrak visibilitas diaudit ulang secara independen. |
