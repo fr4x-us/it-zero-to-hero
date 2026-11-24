@@ -1,0 +1,163 @@
+# W7 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w07.lab.act-02
+name: Pengenalan pola
+competencies:
+- comp-w07-pattern-01
+max_points: 40
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w07.lab (D-28 XI-2)
+normalization: 'c01–c05, c07, c08: Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu
+  accepted_answers. Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`)
+  dengan tepat sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok
+  tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut
+  di soal boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk
+  rupiah boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan,
+  pecahan (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta. c06: Kata: buang spasi
+  tepi; huruf besar/kecil bebas; cocok persis dengan accepted_answers'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk tidak
+  sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W7 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas kode, urutan, angka, dan pilihan
+variants:
+- variant_id: mod-w07.lab.act-02.vA
+  visible_example:
+    note: 'Contoh terlihat (0 poin): `2, 4, 6, …` suku berikutnya 8'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w07.lab.act-02.vA.c01
+    name: Suku berikutnya
+    question: '`7, 11, 15, 19, …` suku berikutnya?'
+    accepted_answers:
+    - '23'
+    points: 5
+    explanation: '+4'
+  - check_id: mod-w07.lab.act-02.vA.c02
+    name: Suku ke-n
+    question: '`7, 11, 15, 19, …` suku ke-12?'
+    accepted_answers:
+    - '51'
+    points: 5
+    explanation: 7 + 4 × 11
+  - check_id: mod-w07.lab.act-02.vA.c03
+    name: Berkurang tetap
+    question: '`64, 56, 48, …` suku berikutnya?'
+    accepted_answers:
+    - '40'
+    points: 5
+    explanation: −8
+  - check_id: mod-w07.lab.act-02.vA.c04
+    name: Berlipat
+    question: '`2, 6, 18, 54, …` suku berikutnya?'
+    accepted_answers:
+    - '162'
+    points: 5
+    explanation: × 3
+  - check_id: mod-w07.lab.act-02.vA.c05
+    name: Pola gambar
+    question: Susunan segitiga titik berisi `1, 3, 6, 10, …` titik. Susunan berikutnya berisi berapa titik?
+    accepted_answers:
+    - '15'
+    - 15 titik
+    - 15titik
+    points: 5
+    explanation: 'Tambahannya 2, 3, 4, lalu 5: 10 + 5'
+  - check_id: mod-w07.lab.act-02.vA.c06
+    name: Pola berulang
+    question: Lampu berganti warna `merah, kuning, hijau, merah, kuning, hijau, …`. Warna **ke-20**?
+    accepted_answers:
+    - kuning
+    points: 5
+    explanation: Periode 3; 20 = 3 × 6 + 2 → warna ke-2
+  - check_id: mod-w07.lab.act-02.vA.c07
+    name: Pola baris kursi
+    question: Baris ke-1 berisi 6 kursi; setiap baris berikutnya bertambah 2 kursi. Baris **ke-9** berisi
+      berapa kursi?
+    accepted_answers:
+    - '22'
+    - 22 kursi
+    - 22kursi
+    points: 5
+    explanation: 6 + 2 × 8
+  - check_id: mod-w07.lab.act-02.vA.c08
+    name: Jumlah pola
+    question: Pada pola kursi yang sama, berapa **jumlah** kursi baris ke-1 sampai ke-4?
+    accepted_answers:
+    - '36'
+    - 36 kursi
+    - 36kursi
+    points: 5
+    explanation: 6 + 8 + 10 + 12
+- variant_id: mod-w07.lab.act-02.vB
+  visible_example:
+    note: 'Contoh terlihat (0 poin): `2, 4, 6, …` suku berikutnya 8'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w07.lab.act-02.vB.c01
+    name: Suku berikutnya
+    question: '`5, 12, 19, 26, …` suku berikutnya?'
+    accepted_answers:
+    - '33'
+    points: 5
+    explanation: '+7'
+  - check_id: mod-w07.lab.act-02.vB.c02
+    name: Suku ke-n
+    question: '`5, 12, 19, 26, …` suku ke-10?'
+    accepted_answers:
+    - '68'
+    points: 5
+    explanation: 5 + 7 × 9
+  - check_id: mod-w07.lab.act-02.vB.c03
+    name: Berkurang tetap
+    question: '`90, 81, 72, …` suku berikutnya?'
+    accepted_answers:
+    - '63'
+    points: 5
+    explanation: −9
+  - check_id: mod-w07.lab.act-02.vB.c04
+    name: Berlipat
+    question: '`1, 4, 16, 64, …` suku berikutnya?'
+    accepted_answers:
+    - '256'
+    points: 5
+    explanation: × 4
+  - check_id: mod-w07.lab.act-02.vB.c05
+    name: Pola gambar
+    question: Susunan persegi titik berisi `1, 4, 9, 16, …` titik. Susunan berikutnya berisi berapa titik?
+    accepted_answers:
+    - '25'
+    - 25 titik
+    - 25titik
+    points: 5
+    explanation: 'n × n: 5 × 5'
+  - check_id: mod-w07.lab.act-02.vB.c06
+    name: Pola berulang
+    question: Jadwal piket berulang `pagi, siang, malam, pagi, siang, malam, …`. Jadwal **ke-17**?
+    accepted_answers:
+    - siang
+    points: 5
+    explanation: Periode 3; 17 = 3 × 5 + 2 → jadwal ke-2
+  - check_id: mod-w07.lab.act-02.vB.c07
+    name: Pola baris kursi
+    question: Baris ke-1 berisi 10 kursi; setiap baris berikutnya bertambah 3 kursi. Baris **ke-7** berisi
+      berapa kursi?
+    accepted_answers:
+    - '28'
+    - 28 kursi
+    - 28kursi
+    points: 5
+    explanation: 10 + 3 × 6
+  - check_id: mod-w07.lab.act-02.vB.c08
+    name: Jumlah pola
+    question: Pada pola kursi yang sama, berapa **jumlah** kursi baris ke-1 sampai ke-4?
+    accepted_answers:
+    - '58'
+    - 58 kursi
+    - 58kursi
+    points: 5
+    explanation: 10 + 13 + 16 + 19

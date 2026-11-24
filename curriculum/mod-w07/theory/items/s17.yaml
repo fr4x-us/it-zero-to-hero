@@ -1,0 +1,50 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s17
+competency: comp-w07-test-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s17-a
+  variant_id: mod-w07.theory.s17.vA
+  item_version: '1.0'
+  stem: Tujuan **kasus uji** (*test case*) adalah …
+  options:
+  - id: a
+    text: Memeriksa apakah langkah memberi hasil yang benar untuk masukan tertentu
+  - id: b
+    text: Membuat langkah lebih panjang
+  - id: c
+    text: Mengganti algoritma dengan tebakan
+  - id: d
+    text: Menyembunyikan kesalahan
+  key: a
+  distractor_rationale:
+    b: Panjang langkah tidak diuji
+    c: Pengujian memeriksa, bukan menebak
+    d: Pengujian justru mengungkap kesalahan
+  explanation: Kasus uji membandingkan hasil langkah dengan hasil yang diharapkan.
+  option_order: urutan tetap penyusun
+- item_id: item-w07-t-s17-b
+  variant_id: mod-w07.theory.s17.vB
+  item_version: '1.0'
+  stem: Satu **kasus uji** terdiri atas …
+  options:
+  - id: a
+    text: Masukan saja
+  - id: b
+    text: Hasil saja
+  - id: c
+    text: Nama pembuat langkah
+  - id: d
+    text: Masukan dan hasil yang diharapkan
+  key: d
+  distractor_rationale:
+    a: Tanpa hasil yang diharapkan, tidak ada pembanding
+    b: Tanpa masukan, langkah tidak dapat dijalankan
+    c: Tidak berpengaruh pada pengujian
+  explanation: Masukan dijalankan; hasilnya dibandingkan dengan yang diharapkan.
+  option_order: urutan tetap penyusun

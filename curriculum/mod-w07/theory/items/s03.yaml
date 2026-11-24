@@ -1,0 +1,52 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s03
+competency: comp-w07-decomp-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s03-a
+  variant_id: mod-w07.theory.s03.vA
+  item_version: '1.0'
+  stem: 'Masalah: menyiapkan pameran kelas. Kebutuhannya **tiga**: tempat, karya yang dipamerkan, dan
+    undangan pengunjung. Dekomposisi mana yang **mencakup semua kebutuhan tanpa tumpang-tindih**?'
+  options:
+  - id: a
+    text: Tempat · karya · undangan
+  - id: b
+    text: Tempat · karya · dekorasi tempat
+  - id: c
+    text: Karya · undangan
+  - id: d
+    text: 'Satu tugas besar: siapkan pameran'
+  key: a
+  distractor_rationale:
+    b: Undangan hilang; dekorasi tumpang-tindih dengan tempat
+    c: Tempat hilang
+    d: Belum dipecah
+  explanation: Setiap kebutuhan tepat satu bagian; tidak ada yang hilang atau ganda.
+  option_order: urutan tetap penyusun
+- item_id: item-w07-t-s03-b
+  variant_id: mod-w07.theory.s03.vB
+  item_version: '1.0'
+  stem: 'Masalah: membuat buletin kelas. Kebutuhannya **tiga**: tulisan, foto, dan tata letak. Dekomposisi
+    mana yang **mencakup semua kebutuhan tanpa tumpang-tindih**?'
+  options:
+  - id: a
+    text: Tulisan · tata letak
+  - id: b
+    text: Tulisan · foto · tulisan berita
+  - id: c
+    text: 'Satu tugas besar: buat buletin'
+  - id: d
+    text: Tulisan · foto · tata letak
+  key: d
+  distractor_rationale:
+    a: Foto hilang
+    b: Tata letak hilang; tulisan berita tumpang-tindih dengan tulisan
+    c: Belum dipecah
+  explanation: Setiap kebutuhan tepat satu bagian; tidak ada yang hilang atau ganda.
+  option_order: urutan tetap penyusun

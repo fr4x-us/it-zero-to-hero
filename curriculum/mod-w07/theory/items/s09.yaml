@@ -1,0 +1,60 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s09
+competency: comp-w07-abstract-01
+format: TF-2
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s09-a
+  variant_id: mod-w07.theory.s09.vA
+  item_version: '1.0'
+  stem: 'Tujuan: menghitung **total harga** belanja alat tulis. Pilih **semua** informasi yang **diperlukan**
+    (yang dapat mengubah total harga).'
+  options:
+  - id: a
+    text: Harga satuan setiap barang
+  - id: b
+    text: Warna setiap barang
+  - id: c
+    text: Banyak setiap barang
+  - id: d
+    text: Nama kasir
+  - id: e
+    text: Diskon yang berlaku
+  key:
+  - a
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: Warna tidak mengubah total
+    d: Nama kasir tidak mengubah total
+  explanation: Total = jumlah (banyak × harga satuan) dikurangi diskon.
+- item_id: item-w07-t-s09-b
+  variant_id: mod-w07.theory.s09.vB
+  item_version: '1.0'
+  stem: 'Tujuan: menentukan **jam berangkat** agar tiba di sekolah tepat waktu. Pilih **semua** informasi
+    yang **diperlukan** (yang dapat mengubah jam berangkat).'
+  options:
+  - id: a
+    text: Lama perjalanan
+  - id: b
+    text: Warna tas
+  - id: c
+    text: Jam masuk sekolah
+  - id: d
+    text: Lama menunggu angkot
+  - id: e
+    text: Merek sepatu
+  key:
+  - a
+  - c
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: Warna tas tidak mengubah waktu
+    e: Merek sepatu tidak mengubah waktu
+  explanation: Jam berangkat = jam masuk − (lama menunggu + lama perjalanan).

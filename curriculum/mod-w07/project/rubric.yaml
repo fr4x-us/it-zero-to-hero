@@ -1,0 +1,460 @@
+# W7 — rubrik mini-project (MR-A, D-33). Kunci, contoh jawaban, dan contoh evaluasi
+# hanya untuk reviewer/penilai; tidak ditampilkan kepada pelajar sebelum dinilai.
+component: mod-w07.project
+content_version: '1.0'
+max_points: 100
+constants:
+  groups:
+    K: Koordinasi — menghasilkan kesepakatan atau pembagian kerja kelompok
+    R: Riset bacaan — menghasilkan bahan dari sumber bacaan topik (buku, artikel)
+    D: Data — menghasilkan data pengamatan atau olahannya
+    P: Presentasi — menghasilkan atau menyampaikan presentasi
+  tasks:
+    T1:
+      text: Rapat kelompok membahas panduan tugas dari guru
+      output: kesepakatan kelompok tentang kriteria penilaian
+      minutes: 20
+    T2:
+      text: Mencari tiga sumber bacaan di perpustakaan
+      output: tiga sumber bacaan
+      minutes: 60
+    T3:
+      text: Mencatat jumlah botol plastik di kantin selama tiga hari
+      output: tabel data tiga hari
+      minutes: 45
+    T4:
+      text: Membuat grafik dari tabel data
+      output: grafik batang
+      minutes: 30
+    T5:
+      text: Menulis ringkasan dari sumber bacaan
+      output: ringkasan satu halaman
+      minutes: 40
+    T6:
+      text: Menyusun slide presentasi
+      output: slide presentasi
+      minutes: 50
+    T7:
+      text: Berlatih presentasi
+      output: presentasi siap ditampilkan
+      minutes: 35
+    T8:
+      text: Membagi tugas antaranggota
+      output: daftar siapa mengerjakan apa
+      minutes: 20
+  prerequisites:
+  - T1 sebelum T8
+  - T8 sebelum T2
+  - T8 sebelum T3
+  - T2 sebelum T5
+  - T3 sebelum T4
+  - T4 sebelum T6
+  - T5 sebelum T6
+  - T6 sebelum T7
+  info_items:
+    I1: 'Tenggat presentasi: hari Jumat'
+    I2: Perkiraan lama setiap tugas
+    I3: Prasyarat antartugas
+    I4: 'Waktu belajar yang tersedia setiap hari: 70 menit'
+    I5: Warna latar slide yang disukai Dina
+    I6: Nama kucing peliharaan Dina
+    I7: Merek laptop kelompok
+  relevance_rule: Informasi relevan = informasi yang dapat mengubah KAPAN atau DALAM URUTAN APA tugas
+    dikerjakan
+  daily_minutes: 70
+  pattern_data: 'Botol plastik hari 1–3: 12, 15, 18 (bertambah tetap)'
+  key:
+    F1:
+      T1: K
+      T2: R
+      T3: D
+      T4: D
+      T5: R
+      T6: P
+      T7: P
+      T8: K
+    F2_valid_orders:
+    - T1 T8 T2 T3 T4 T5 T6 T7
+    - T1 T8 T2 T3 T5 T4 T6 T7
+    - T1 T8 T2 T5 T3 T4 T6 T7
+    - T1 T8 T3 T2 T4 T5 T6 T7
+    - T1 T8 T3 T2 T5 T4 T6 T7
+    - T1 T8 T3 T4 T2 T5 T6 T7
+    F3: 27
+    F4:
+    - I1
+    - I2
+    - I3
+    - I4
+    F5: 300
+    F6: 5
+field_rules:
+  code_readable: Satu huruf dari {K, R, D, P}, spasi tepi dibuang, huruf besar/kecil bebas; selain itu
+    sel tidak terbaca
+  code_strict: 'K3: huruf besar persis'
+  order_readable: Delapan ID T1–T8 dipisah spasi atau koma, huruf besar/kecil bebas, setiap ID tepat sekali;
+    ID hilang, ganda, atau tak dikenal → F2 tidak terbaca (INVALID_ANSWER)
+  order_valid: F2 terbaca DAN memenuhi SEMUA prasyarat; setiap urutan valid diterima (6 urutan valid,
+    dienumerasi di key)
+  info_readable: Himpunan ID dari I1–I7 tanpa ganda (boleh kosong dianggap tidak terisi); ID tak dikenal
+    atau ganda → F4 tidak terbaca
+  info_score: 'K1.c11: max(0, banyak ID relevan terpilih − banyak ID tidak relevan terpilih) × 2; maksimum
+    8 hanya bila himpunan tepat sama dengan kunci (pola CE-S2, tidak pernah negatif)'
+  number_readable: NB-5 bilangan bulat tidak negatif tanpa nol di depan; F5 boleh diikuti `menit`, F6
+    boleh diikuti `hari`, F3 boleh diikuti `botol` (dengan/tanpa spasi)
+  number_strict: 'K3: digit saja'
+  validity: 'Isian kosong/tidak terbaca → INVALID_ANSWER untuk isian itu saja; pemeriksaan yang depends_on
+    isian itu bernilai 0; isian lain tetap dinilai. F1: ID tugas tak dikenal diabaikan; tugas yang hilang
+    = sel kosong; struktur luar rusak (F1 bukan tabel tugas) → seluruh F1 tidak terbaca. Kegagalan aplikasi/konten
+    → EVALUATION_ERROR (D-24 IE-2), bukan skor 0'
+  value_compare: Setiap isian dibandingkan dengan kunci yang diturunkan dari data proyek, bukan dari isian
+    lain (kredit independen MR-2)
+  dependency_rule: 'MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya kosong atau tidak terbaca;
+    tanpa gerbang nol global. Formulir tanpa isian sama sekali = 0 untuk K1–K3 (MR-6)'
+criteria:
+  K1:
+    name: Kebenaran fungsional
+    points: 60
+    checks:
+    - id: mod-w07.project.K1.c01
+      rule: F1.T1 = K
+      depends_on:
+      - F1.T1 terbaca (code_readable)
+      points: 3
+    - id: mod-w07.project.K1.c02
+      rule: F1.T2 = R
+      depends_on:
+      - F1.T2 terbaca (code_readable)
+      points: 3
+    - id: mod-w07.project.K1.c03
+      rule: F1.T3 = D
+      depends_on:
+      - F1.T3 terbaca (code_readable)
+      points: 3
+    - id: mod-w07.project.K1.c04
+      rule: F1.T4 = D
+      depends_on:
+      - F1.T4 terbaca (code_readable)
+      points: 3
+    - id: mod-w07.project.K1.c05
+      rule: F1.T5 = R
+      depends_on:
+      - F1.T5 terbaca (code_readable)
+      points: 3
+    - id: mod-w07.project.K1.c06
+      rule: F1.T6 = P
+      depends_on:
+      - F1.T6 terbaca (code_readable)
+      points: 3
+    - id: mod-w07.project.K1.c07
+      rule: F1.T7 = P
+      depends_on:
+      - F1.T7 terbaca (code_readable)
+      points: 3
+    - id: mod-w07.project.K1.c08
+      rule: F1.T8 = K
+      depends_on:
+      - F1.T8 terbaca (code_readable)
+      points: 3
+    - id: mod-w07.project.K1.c09
+      rule: F2 order_valid
+      depends_on:
+      - F2 terbaca (order_readable)
+      points: 12
+    - id: mod-w07.project.K1.c10
+      rule: F3 = 27
+      depends_on:
+      - F3 terbaca (number_readable)
+      points: 6
+    - id: mod-w07.project.K1.c11
+      rule: Skor F4 menurut info_score
+      depends_on:
+      - F4 terbaca (info_readable) dan tidak kosong
+      points: 8
+    - id: mod-w07.project.K1.c12
+      rule: F5 = 300
+      depends_on:
+      - F5 terbaca
+      points: 5
+    - id: mod-w07.project.K1.c13
+      rule: F6 = 5
+      depends_on:
+      - F6 terbaca
+      points: 5
+  K2:
+    name: Kelengkapan deliverable
+    points: 20
+    definition: 'MR-A (D-33): deliverable ada DAN terbaca; kebenaran di K1'
+    checks:
+    - id: mod-w07.project.K2.c01
+      rule: Kedelapan kode F1 terbaca
+      depends_on:
+      - F1
+      points: 5
+    - id: mod-w07.project.K2.c02
+      rule: F2 terbaca (permutasi T1–T8)
+      depends_on:
+      - F2
+      points: 5
+    - id: mod-w07.project.K2.c03
+      rule: F3 terbaca
+      depends_on:
+      - F3
+      points: 2
+    - id: mod-w07.project.K2.c04
+      rule: F4 terbaca dan tidak kosong
+      depends_on:
+      - F4
+      points: 4
+    - id: mod-w07.project.K2.c05
+      rule: F5 terbaca
+      depends_on:
+      - F5
+      points: 2
+    - id: mod-w07.project.K2.c06
+      rule: F6 terbaca
+      depends_on:
+      - F6
+      points: 2
+  K3:
+    name: Struktur dan format
+    points: 10
+    checks:
+    - id: mod-w07.project.K3.c01
+      rule: F5 dan F6 terbaca DAN number_strict
+      depends_on:
+      - F5
+      - F6
+      points: 4
+    - id: mod-w07.project.K3.c02
+      rule: F3 terbaca DAN number_strict
+      depends_on:
+      - F3
+      points: 3
+    - id: mod-w07.project.K3.c03
+      rule: Kedelapan kode F1 terbaca DAN code_strict
+      depends_on:
+      - F1
+      points: 3
+  K4:
+    name: Penjelasan proyek (komposisi K-A, 5 × CE-S1, P = 2)
+    points: 10
+    note: 'Soal tentang tugas proyek ini; terpisah dari komponen Concept explanation W7 (D-33 A.2a). Posisi
+      kunci: d, b, a, c, b'
+    items:
+    - id: mod-w07.project.K4.q1
+      lo: comp-w07-decomp-01
+      stem: Mengapa T2 dan T5 masuk kelompok yang sama?
+      options:
+        a: Karena dikerjakan pada hari yang sama
+        b: Karena namanya diawali huruf yang sama
+        c: Karena keduanya paling lama
+        d: Karena keduanya menghasilkan bahan dari sumber bacaan
+      key: d
+      points: 2
+      feedback: Kelompok ditentukan oleh hasil tugas.
+    - id: mod-w07.project.K4.q2
+      lo: comp-w07-order-01
+      stem: Mengapa ada lebih dari satu urutan valid untuk F2?
+      options:
+        a: Karena prasyarat boleh dilanggar
+        b: Karena tugas riset bacaan dan tugas data tidak saling membutuhkan, sehingga dapat diselang-seling
+        c: Karena semua tugas bebas urutannya
+        d: Karena T7 boleh dikerjakan pertama
+      key: b
+      points: 2
+      feedback: Rantai T2→T5 dan T3→T4 dapat digabung dengan berbagai cara (6 urutan).
+    - id: mod-w07.project.K4.q3
+      lo: comp-w07-abstract-01
+      stem: Mengapa warna latar slide (I5) tidak dipilih di F4?
+      options:
+        a: Karena tidak mengubah kapan atau dalam urutan apa tugas dikerjakan
+        b: Karena slide tidak penting
+        c: Karena Dina tidak suka warna
+        d: Karena warna selalu sama
+      key: a
+      points: 2
+      feedback: 'Abstraksi: informasi dipilih menurut tujuan (menyusun jadwal).'
+    - id: mod-w07.project.K4.q4
+      lo: comp-w07-pattern-01
+      stem: F3 memakai pola …
+      options:
+        a: Berlipat dua
+        b: Berulang setiap tiga hari
+        c: Bertambah tetap 3 setiap hari
+        d: Acak
+      key: c
+      points: 2
+      feedback: '12, 15, 18 bertambah 3; hari ke-6: 12 + 3 × 5.'
+    - id: mod-w07.project.K4.q5
+      lo: comp-w07-test-01
+      stem: Cara paling tepat memeriksa bahwa urutan F2 benar adalah …
+      options:
+        a: Memastikan T1 di awal saja
+        b: 'Memeriksa setiap prasyarat satu per satu: tugas yang dibutuhkan selalu muncul lebih dulu'
+        c: Membandingkan dengan urutan teman
+        d: Menghitung banyak tugas
+      key: b
+      points: 2
+      feedback: Setiap prasyarat adalah satu "kasus uji" untuk urutanmu.
+point_check: K1 8×3 + 12 + 6 + 8 + 5 + 5 = 60; K2 5+5+2+4+2+2 = 20; K3 4+3+3 = 10; K4 5×2 = 10; total
+  100
+solution_analysis:
+  F1: Satu kode per tugas (kelompok ditentukan oleh hasil yang tertulis)
+  F2: Tepat 6 urutan valid (enumerasi semua 8! = 40.320 permutasi); semua diterima
+  F4: Satu himpunan bernilai penuh {I1, I2, I3, I4}
+  total_full_score_sets: 6 (hanya F2 yang punya alternatif)
+  reference_strict:
+    F1:
+      T1: K
+      T2: R
+      T3: D
+      T4: D
+      T5: R
+      T6: P
+      T7: P
+      T8: K
+    F2: T1 T8 T2 T3 T4 T5 T6 T7
+    F3: '27'
+    F4:
+    - I1
+    - I2
+    - I3
+    - I4
+    F5: '300'
+    F6: '5'
+reviewer_examples:
+- id: E01
+  case: Isian acuan (urutan valid pertama)
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E02
+  case: F2 = urutan valid lain `T1 T8 T3 T4 T2 T5 T6 T7`
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E03
+  case: 'F2 = `T1 T2 T8 T3 T5 T4 T6 T7` (T2 sebelum T8: melanggar prasyarat)'
+  K1: 48
+  K2: 20
+  K3: 10
+  total: 88
+  zero:
+  - K1.c09
+- id: E04
+  case: F2 tanpa T7 (7 ID)
+  K1: 48
+  K2: 15
+  K3: 10
+  total: 83
+  zero:
+  - K1.c09
+  - K2.c02
+- id: E05
+  case: F2 dengan T5 dua kali
+  K1: 48
+  K2: 15
+  K3: 10
+  total: 83
+  zero:
+  - K1.c09
+  - K2.c02
+- id: E06
+  case: F4 = {I1, I2, I3, I4, I5} (satu tidak relevan ikut dipilih)
+  K1: 58
+  K2: 20
+  K3: 10
+  total: 98
+  zero: []
+- id: E07
+  case: F4 = {I1, I2} (dua relevan terlewat)
+  K1: 56
+  K2: 20
+  K3: 10
+  total: 96
+  zero: []
+- id: E08
+  case: F4 = {I5, I6, I7} (semua tidak relevan)
+  K1: 52
+  K2: 20
+  K3: 10
+  total: 92
+  zero:
+  - K1.c11
+- id: E09
+  case: F4 berisi ID tak dikenal I9
+  K1: 52
+  K2: 16
+  K3: 10
+  total: 88
+  zero:
+  - K1.c11
+  - K2.c04
+- id: E10
+  case: F1.T1 = `R` (salah kelompok)
+  K1: 57
+  K2: 20
+  K3: 10
+  total: 97
+  zero:
+  - K1.c01
+- id: E11
+  case: F1 huruf kecil semua
+  K1: 60
+  K2: 20
+  K3: 7
+  total: 97
+  zero:
+  - K3.c03
+- id: E12
+  case: F6 = `4` (300 ÷ 70 dibulatkan ke bawah)
+  K1: 55
+  K2: 20
+  K3: 10
+  total: 95
+  zero:
+  - K1.c13
+- id: E13
+  case: F5 = `300 menit`, F6 = `5 hari`
+  K1: 60
+  K2: 20
+  K3: 6
+  total: 96
+  zero:
+  - K3.c01
+- id: E14
+  case: Semua isian kosong
+  K1: 0
+  K2: 0
+  K3: 0
+  total: 0 untuk K1–K3 (MR-6); K4 sesuai jawaban
+  zero: semua K1–K3
+- id: E15
+  case: F2 memakai koma dan huruf kecil `t1, t8, t2, t3, t4, t5, t6, t7`
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E16
+  case: Struktur luar F1 rusak (daftar, bukan tabel tugas)
+  K1: 36
+  K2: 15
+  K3: 7
+  total: 68
+  zero:
+  - K1.c01
+  - K1.c02
+  - K1.c03
+  - K1.c04
+  - K1.c05
+  - K1.c06
+  - K1.c07
+  - K1.c08
+  - K2.c01
+  - K3.c03

@@ -1,0 +1,53 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s19
+competency: comp-w07-test-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s19-a
+  variant_id: mod-w07.theory.s19.vA
+  item_version: '1.0'
+  stem: 'Aturan: nilai **≥ 75** → "lulus", selain itu "belum". Himpunan kasus uji mana yang **paling baik**
+    menguji batas aturan?'
+  options:
+  - id: a
+    text: '{80, 90, 100}'
+  - id: b
+    text: '{0, 50}'
+  - id: c
+    text: '{74, 75}'
+  - id: d
+    text: '{75, 75, 75}'
+  key: c
+  distractor_rationale:
+    a: Semuanya jauh di atas batas
+    b: Semuanya jauh di bawah batas
+    d: Hanya satu sisi batas, diulang
+  explanation: 74 (tepat di bawah) dan 75 (tepat di batas) menguji kedua sisi; kesalahan ">" vs "≥" langsung
+    terungkap.
+  option_order: urutan tetap penyusun
+- item_id: item-w07-t-s19-b
+  variant_id: mod-w07.theory.s19.vB
+  item_version: '1.0'
+  stem: 'Aturan: suhu **> 37** → "demam", selain itu "normal". Himpunan kasus uji mana yang **paling baik**
+    menguji batas aturan?'
+  options:
+  - id: a
+    text: '{40, 41}'
+  - id: b
+    text: '{37, 38}'
+  - id: c
+    text: '{20, 30}'
+  - id: d
+    text: '{38, 38, 38}'
+  key: b
+  distractor_rationale:
+    a: Semuanya jauh di atas batas
+    c: Semuanya jauh di bawah batas
+    d: Hanya satu sisi batas, diulang
+  explanation: 37 (tepat di batas, "normal") dan 38 ("demam") menguji kedua sisi.
+  option_order: urutan tetap penyusun

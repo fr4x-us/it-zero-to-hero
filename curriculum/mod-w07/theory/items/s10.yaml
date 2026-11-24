@@ -1,0 +1,52 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s10
+competency: comp-w07-abstract-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s10-a
+  variant_id: mod-w07.theory.s10.vA
+  item_version: '1.0'
+  stem: 'Perhitungan khusus: keliling taman 20 m × 15 m = `2 × (20 + 15)`. **Generalisasi** (abstraksi)
+    yang berlaku untuk **semua** taman persegi panjang adalah …'
+  options:
+  - id: a
+    text: '`keliling = 2 × (20 + 15)`'
+  - id: b
+    text: '`keliling = 70`'
+  - id: c
+    text: '`keliling = 2 × (p + l)`, dengan p panjang dan l lebar'
+  - id: d
+    text: '`keliling = p × l`'
+  key: c
+  distractor_rationale:
+    a: Hanya untuk taman 20 × 15
+    b: Hanya hasil untuk satu taman
+    d: Rumus luas, bukan keliling
+  explanation: Angka khusus diganti variabel sehingga rumus berlaku umum.
+  option_order: urutan tetap penyusun
+- item_id: item-w07-t-s10-b
+  variant_id: mod-w07.theory.s10.vB
+  item_version: '1.0'
+  stem: 'Perhitungan khusus: tiket 3 orang × Rp15.000. **Generalisasi** (abstraksi) untuk **n** orang
+    dengan harga **h** per orang adalah …'
+  options:
+  - id: a
+    text: '`total = n × h`'
+  - id: b
+    text: '`total = 45.000`'
+  - id: c
+    text: '`total = 3 × h`'
+  - id: d
+    text: '`total = n + h`'
+  key: a
+  distractor_rationale:
+    b: Hanya hasil untuk satu kasus
+    c: Masih terikat 3 orang
+    d: Banyak orang dan harga tidak dijumlahkan
+  explanation: Angka khusus diganti variabel sehingga rumus berlaku umum.
+  option_order: urutan tetap penyusun

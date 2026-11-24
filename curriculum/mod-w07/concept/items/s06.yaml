@@ -1,0 +1,64 @@
+# W7 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.concept.s06
+competency: comp-w07-test-01
+required_concepts:
+- kasus uji di batas
+- kesalahan > vs ≥
+format: CE-S2
+max_points: 2
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w07-c-s06-a
+  variant_id: mod-w07.concept.s06.vA
+  item_version: '1.0'
+  stem: 'Aturan: boleh meminjam buku bila usia **≥ 12**. Langkah yang ditulis: "Jika usia > 12, tulis
+    boleh; selain itu tulis tidak". Pilih **semua** pernyataan yang benar.'
+  options:
+  - id: a
+    text: Kasus uji usia = 12 mengungkap kesalahan
+  - id: b
+    text: Kasus uji usia = 20 mengungkap kesalahan
+  - id: c
+    text: Kesalahan terjadi karena memakai > padahal aturannya ≥
+  - id: d
+    text: Langkah itu benar karena hasilnya benar untuk usia 20 dan 5
+  key:
+  - a
+  - c
+  distractor_rationale:
+    b: Usia 20 memberi "boleh" yang benar
+    d: Lolos pada beberapa kasus tidak berarti benar; batas 12 salah
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Usia 12 seharusnya "boleh", tetapi langkah menulis "tidak".
+- item_id: item-w07-c-s06-b
+  variant_id: mod-w07.concept.s06.vB
+  item_version: '1.0'
+  stem: 'Aturan: diskon bila belanja **≥ Rp50.000**. Langkah yang ditulis: "Jika belanja > 50.000, beri
+    diskon; selain itu tanpa diskon". Pilih **semua** pernyataan yang benar.'
+  options:
+  - id: a
+    text: Kasus uji belanja 80.000 mengungkap kesalahan
+  - id: b
+    text: Kasus uji belanja 50.000 mengungkap kesalahan
+  - id: c
+    text: Cukup menguji 80.000 dan 20.000
+  - id: d
+    text: Kesalahan terjadi karena memakai > padahal aturannya ≥
+  key:
+  - b
+  - d
+  distractor_rationale:
+    a: Belanja 80.000 memberi diskon yang benar
+    c: Kedua kasus itu lolos; batas tidak diuji
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Belanja tepat 50.000 seharusnya mendapat diskon.

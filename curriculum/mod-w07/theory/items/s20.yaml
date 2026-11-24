@@ -1,0 +1,41 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s20
+competency: comp-w07-test-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s20-a
+  variant_id: mod-w07.theory.s20.vA
+  item_version: '1.0'
+  stem: 'Langkah yang **salah** untuk menghitung rata-rata tiga nilai: "jumlahkan nilai pertama dan kedua,
+    lalu bagi 3". Untuk nilai 6, 9, 12, **berapa hasil langkah yang salah itu**?'
+  accepted_answers:
+  - '5'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: (6 + 9) ÷ 3 = 5, padahal rata-rata sebenarnya (6 + 9 + 12) ÷ 3 = 9. Kasus uji ini mengungkap
+    kesalahan.
+- item_id: item-w07-t-s20-b
+  variant_id: mod-w07.theory.s20.vB
+  item_version: '1.0'
+  stem: 'Langkah yang **salah** untuk menghitung keliling persegi panjang: "keliling = p + l". Untuk p
+    = 7 dan l = 5, **berapa hasil langkah yang salah itu**?'
+  accepted_answers:
+  - '12'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: 7 + 5 = 12, padahal keliling sebenarnya 2 × (7 + 5) = 24. Kasus uji ini mengungkap kesalahan.

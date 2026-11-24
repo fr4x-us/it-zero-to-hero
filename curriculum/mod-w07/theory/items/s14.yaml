@@ -1,0 +1,60 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s14
+competency: comp-w07-order-01
+format: TF-5
+difficulty: D1
+max_points: 2
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s14-a
+  variant_id: mod-w07.theory.s14.vA
+  item_version: '1.0'
+  stem: Urutkan langkah mengirim tugas lewat surel (setiap langkah membutuhkan hasil langkah sebelumnya).
+  items:
+  - id: A
+    text: Tulis tugas di dokumen
+  - id: B
+    text: Simpan dokumen sebagai berkas
+  - id: C
+    text: Lampirkan berkas ke surel
+  - id: D
+    text: Kirim surel
+  display_order:
+  - C
+  - A
+  - D
+  - B
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Berkas harus ada sebelum dilampirkan; surel dikirim terakhir.
+- item_id: item-w07-t-s14-b
+  variant_id: mod-w07.theory.s14.vB
+  item_version: '1.0'
+  stem: Urutkan langkah menanam bibit (setiap langkah membutuhkan hasil langkah sebelumnya).
+  items:
+  - id: A
+    text: Isi pot dengan tanah
+  - id: B
+    text: Buat lubang di tanah
+  - id: C
+    text: Masukkan bibit lalu tutup dengan tanah
+  - id: D
+    text: Siram bibit
+  display_order:
+  - B
+  - D
+  - C
+  - A
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Lubang butuh tanah; bibit butuh lubang; disiram setelah ditanam.

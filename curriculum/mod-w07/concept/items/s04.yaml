@@ -1,0 +1,83 @@
+# W7 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.concept.s04
+competency: comp-w07-algo-01
+required_concepts:
+- jelas/terukur
+- berakhir
+- urutan benar
+format: CE-S4
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w07-c-s04-a
+  variant_id: mod-w07.concept.s04.vA
+  item_version: '1.0'
+  stem: Cocokkan setiap instruksi dengan penilaiannya.
+  left:
+  - id: L1
+    text: '"Aduk sebentar"'
+  - id: L2
+    text: '"Ulangi langkah 2 terus-menerus"'
+  - id: L3
+    text: '"Tuang air mendidih ke gelas, lalu rebus air"'
+  - id: L4
+    text: '"Aduk 10 kali"'
+  right:
+  - id: R1
+    text: 'Ambigu: tidak terukur'
+  - id: R2
+    text: Tidak pernah berakhir
+  - id: R3
+    text: Urutan salah
+  - id: R4
+    text: Jelas dan dapat dikerjakan
+  - id: R5
+    text: Memakai terlalu banyak bahan
+  key_mapping:
+    L1: R1
+    L2: R2
+    L3: R3
+    L4: R4
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: Algoritma yang baik jelas, berakhir, dan berurutan benar. R5 adalah pengecoh.
+- item_id: item-w07-c-s04-b
+  variant_id: mod-w07.concept.s04.vB
+  item_version: '1.0'
+  stem: Cocokkan setiap instruksi dengan penilaiannya.
+  left:
+  - id: L1
+    text: '"Simpan berkas ke folder Arsip"'
+  - id: L2
+    text: '"Tempel berkas, lalu salin berkas itu"'
+  - id: L3
+    text: '"Tunggu sampai lama"'
+  - id: L4
+    text: '"Kembali ke langkah 1" tanpa syarat berhenti'
+  right:
+  - id: R1
+    text: Urutan salah
+  - id: R2
+    text: Jelas dan dapat dikerjakan
+  - id: R3
+    text: Tidak pernah berakhir
+  - id: R4
+    text: 'Ambigu: tidak terukur'
+  - id: R5
+    text: Terlalu cepat
+  key_mapping:
+    L1: R2
+    L2: R1
+    L3: R4
+    L4: R3
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: Algoritma yang baik jelas, berakhir, dan berurutan benar. R5 adalah pengecoh.

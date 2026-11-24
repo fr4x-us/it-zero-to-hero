@@ -1,0 +1,179 @@
+# W7 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w07.lab.act-03
+name: Algoritma dan pengujian
+competencies:
+- comp-w07-algo-01
+- comp-w07-test-01
+max_points: 30
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w07.lab (D-28 XI-2)
+normalization: 'c01, c04, c05: Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+  Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+  sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga digit
+  (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal boleh
+  ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah boleh diawali
+  `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan (`1/2`), kata,
+  satuan lain, angka desimal lebih/kurang dari yang diminta. c02, c03, c06: Pilihan: satu huruf a–d, huruf
+  besar/kecil bebas'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk tidak
+  sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W7 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas kode, urutan, angka, dan pilihan
+variants:
+- variant_id: mod-w07.lab.act-03.vA
+  visible_example:
+    note: 'Contoh terlihat (0 poin): kasus uji = masukan + hasil yang diharapkan, mis. "x = 1, y = 2 →
+      1" untuk bilangan terkecil'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w07.lab.act-03.vA.c01
+    name: Menelusuri langkah
+    question: 'Ikuti: (1) mulai dengan 6; (2) kalikan 4; (3) kurangi 9; (4) bagi 3. Hasil?'
+    accepted_answers:
+    - '5'
+    points: 5
+    explanation: 24 − 9 = 15; 15 ÷ 3 = 5
+  - check_id: mod-w07.lab.act-03.vA.c02
+    name: Langkah ambigu
+    question: 'Instruksi memasak mi: (1) rebus 400 mL air; (2) masukkan mi; (3) masak **sampai matang**;
+      (4) tiriskan. Langkah mana yang ambigu?'
+    options:
+    - id: a
+      text: Langkah 1
+    - id: b
+      text: Langkah 2
+    - id: c
+      text: Langkah 3
+    - id: d
+      text: Langkah 4
+    expected: c
+    points: 5
+    explanation: '"Sampai matang" tidak terukur; mis. 3 menit'
+  - check_id: mod-w07.lab.act-03.vA.c03
+    name: Kasus uji pengungkap
+    question: 'Langkah "bilangan **terkecil** dari x dan y": (1) jika x < y, hasil = x; (2) selain itu,
+      hasil = x. Kasus uji mana yang mengungkap kesalahan?'
+    options:
+    - id: a
+      text: x = 2, y = 5
+    - id: b
+      text: x = 9, y = 4
+    - id: c
+      text: x = 1, y = 8
+    - id: d
+      text: x = 3, y = 3
+    expected: b
+    points: 5
+    explanation: 'x = 9, y = 4: hasil 9, seharusnya 4'
+  - check_id: mod-w07.lab.act-03.vA.c04
+    name: Hasil yang diharapkan
+    question: Untuk kasus uji x = 9, y = 4, berapa hasil yang **diharapkan** (benar)?
+    accepted_answers:
+    - '4'
+    points: 5
+    explanation: Terkecil dari 9 dan 4
+  - check_id: mod-w07.lab.act-03.vA.c05
+    name: Hasil langkah salah
+    question: Untuk kasus uji x = 9, y = 4, berapa hasil langkah **yang salah** itu?
+    accepted_answers:
+    - '9'
+    points: 5
+    explanation: Langkah 2 memberi x = 9
+  - check_id: mod-w07.lab.act-03.vA.c06
+    name: Uji batas
+    question: 'Aturan: tiket anak bila usia **≤ 12**. Himpunan kasus uji yang **paling baik** menguji
+      batas?'
+    options:
+    - id: a
+      text: '{5, 6}'
+    - id: b
+      text: '{12, 13}'
+    - id: c
+      text: '{20, 30}'
+    - id: d
+      text: '{13, 13}'
+    expected: b
+    points: 5
+    explanation: 12 (masih anak) dan 13 (bukan) di kedua sisi batas
+- variant_id: mod-w07.lab.act-03.vB
+  visible_example:
+    note: 'Contoh terlihat (0 poin): kasus uji = masukan + hasil yang diharapkan, mis. "x = 1, y = 2 →
+      1" untuk bilangan terkecil'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w07.lab.act-03.vB.c01
+    name: Menelusuri langkah
+    question: 'Ikuti: (1) mulai dengan 7; (2) tambah 5; (3) bagi 4; (4) kalikan 6. Hasil?'
+    accepted_answers:
+    - '18'
+    points: 5
+    explanation: 12 ÷ 4 = 3; 3 × 6 = 18
+  - check_id: mod-w07.lab.act-03.vB.c02
+    name: Langkah ambigu
+    question: 'Instruksi mencetak: (1) buka berkas tugas.pdf; (2) pilih Cetak; (3) atur **jumlah salinan
+      secukupnya**; (4) tekan OK. Langkah mana yang ambigu?'
+    options:
+    - id: a
+      text: Langkah 3
+    - id: b
+      text: Langkah 1
+    - id: c
+      text: Langkah 2
+    - id: d
+      text: Langkah 4
+    expected: a
+    points: 5
+    explanation: '"Secukupnya" tidak terukur; mis. 2 salinan'
+  - check_id: mod-w07.lab.act-03.vB.c03
+    name: Kasus uji pengungkap
+    question: 'Langkah "**selisih** dua bilangan (yang besar dikurangi yang kecil)": (1) hasil = x − y.
+      Kasus uji mana yang mengungkap kesalahan?'
+    options:
+    - id: a
+      text: x = 8, y = 3
+    - id: b
+      text: x = 5, y = 5
+    - id: c
+      text: x = 10, y = 1
+    - id: d
+      text: x = 2, y = 9
+    expected: d
+    points: 5
+    explanation: 'x = 2, y = 9: hasil −7, seharusnya 7'
+  - check_id: mod-w07.lab.act-03.vB.c04
+    name: Hasil yang diharapkan
+    question: Untuk kasus uji x = 2, y = 9, berapa hasil yang **diharapkan** (benar)?
+    accepted_answers:
+    - '7'
+    points: 5
+    explanation: 9 − 2
+  - check_id: mod-w07.lab.act-03.vB.c05
+    name: Hasil langkah salah
+    question: Untuk kasus uji x = 2, y = 9, berapa hasil langkah **yang salah** itu?
+    accepted_answers:
+    - '-7'
+    - −7
+    points: 5
+    explanation: 2 − 9 = −7
+  - check_id: mod-w07.lab.act-03.vB.c06
+    name: Uji batas
+    question: 'Aturan: gratis ongkir bila belanja **≥ Rp100.000**. Himpunan kasus uji yang **paling baik**
+      menguji batas?'
+    options:
+    - id: a
+      text: '{150.000, 200.000}'
+    - id: b
+      text: '{20.000, 30.000}'
+    - id: c
+      text: '{99.999, 100.000}'
+    - id: d
+      text: '{100.000, 100.000}'
+    expected: c
+    points: 5
+    explanation: Tepat di bawah dan tepat di batas

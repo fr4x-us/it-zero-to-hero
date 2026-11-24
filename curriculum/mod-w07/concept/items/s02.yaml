@@ -1,0 +1,85 @@
+# W7 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.concept.s02
+competency: comp-w07-pattern-01
+required_concepts:
+- bertambah tetap
+- berlipat
+- rumus suku ke-n
+format: CE-S5
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w07-c-s02-a
+  variant_id: mod-w07.concept.s02.vA
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan berikut. Satu baris salah. Temukan barisnya dan pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: Pola 2, 4, 6, 8 bertambah tetap 2.
+  - id: '2'
+    text: Suku ke-5 pola 2, 4, 6, 8 adalah 10.
+  - id: '3'
+    text: Pola 1, 2, 4, 8 bertambah tetap 2.
+  - id: '4'
+    text: Pola membantu menulis langkah sekali lalu mengulanginya.
+  - id: '5'
+    text: Pola 9, 7, 5, 3 berkurang tetap 2.
+  error_line: '3'
+  correction_options:
+  - id: a
+    text: Bertambah tetap 1
+  - id: b
+    text: Berlipat dua setiap suku
+  - id: c
+    text: Bertambah tetap 3
+  - id: d
+    text: Tidak memiliki pola
+  correction_key: b
+  distractor_rationale:
+    a: 2 − 1 = 1 tetapi 4 − 2 = 2
+    c: Selisihnya tidak tetap
+    d: 'Ada pola: dikali 2'
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: 'Selisih 1, 2, 4 tidak tetap; rasio 2 tetap: berlipat dua.'
+- item_id: item-w07-c-s02-b
+  variant_id: mod-w07.concept.s02.vB
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan berikut. Satu baris salah. Temukan barisnya dan pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: Pola 3, 6, 9, 12 bertambah tetap 3.
+  - id: '2'
+    text: Pola 5, 10, 20, 40 berlipat dua.
+  - id: '3'
+    text: Suku ke-6 pola 3, 6, 9, 12 adalah 15.
+  - id: '4'
+    text: Pola dapat dirumuskan agar suku ke berapa pun dapat dihitung.
+  - id: '5'
+    text: Pola 20, 17, 14 berkurang tetap 3.
+  error_line: '3'
+  correction_options:
+  - id: a
+    text: Suku ke-6 adalah 16
+  - id: b
+    text: Suku ke-6 adalah 21
+  - id: c
+    text: Suku ke-6 adalah 18 (15 adalah suku ke-5)
+  - id: d
+    text: Suku ke-6 adalah 12
+  correction_key: c
+  distractor_rationale:
+    a: Bukan kelipatan 3
+    b: Suku ke-7
+    d: Suku ke-4
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: 'Suku ke-n = 3 × n: suku ke-6 = 18.'

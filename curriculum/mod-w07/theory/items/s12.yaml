@@ -1,0 +1,78 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s12
+competency: comp-w07-algo-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s12-a
+  variant_id: mod-w07.theory.s12.vA
+  item_version: '1.0'
+  stem: Instruksi membuat teh di bawah. Langkah yang **ambigu** (tidak dapat dikerjakan persis sama oleh
+    semua orang) adalah …
+  stimulus_table:
+  - - Langkah
+    - Instruksi
+  - - '1'
+    - Rebus 250 mL air sampai mendidih
+  - - '2'
+    - Masukkan satu kantong teh ke gelas
+  - - '3'
+    - Tuang air mendidih ke gelas
+  - - '4'
+    - Tambahkan gula secukupnya
+  - - '5'
+    - Aduk 10 kali
+  options:
+  - id: a
+    text: Langkah 1
+  - id: b
+    text: Langkah 3
+  - id: c
+    text: Langkah 4
+  - id: d
+    text: Langkah 5
+  key: c
+  distractor_rationale:
+    a: Jumlah air dan batasnya jelas
+    b: Jelas
+    d: Jumlah adukan pasti
+  explanation: '"Secukupnya" tidak terukur; seharusnya, misalnya, 2 sendok teh gula.'
+  option_order: urutan alami, tetap
+- item_id: item-w07-t-s12-b
+  variant_id: mod-w07.theory.s12.vB
+  item_version: '1.0'
+  stem: Instruksi menyalin berkas di bawah. Langkah yang **ambigu** (tidak dapat dikerjakan persis sama
+    oleh semua orang) adalah …
+  stimulus_table:
+  - - Langkah
+    - Instruksi
+  - - '1'
+    - Buka folder Dokumen
+  - - '2'
+    - Pilih berkas laporan.pdf
+  - - '3'
+    - Pilih Salin
+  - - '4'
+    - Buka folder yang sesuai
+  - - '5'
+    - Pilih Tempel
+  options:
+  - id: a
+    text: Langkah 2
+  - id: b
+    text: Langkah 3
+  - id: c
+    text: Langkah 5
+  - id: d
+    text: Langkah 4
+  key: d
+  distractor_rationale:
+    a: Nama berkas pasti
+    b: Jelas
+    c: Jelas
+  explanation: '"Folder yang sesuai" tidak menyebut folder tujuan; seharusnya, misalnya, folder Arsip.'
+  option_order: urutan tetap penyusun

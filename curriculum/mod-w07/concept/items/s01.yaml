@@ -1,0 +1,70 @@
+# W7 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.concept.s01
+competency: comp-w07-decomp-01
+required_concepts:
+- bagian mencakup semua kebutuhan
+- tanpa bagian yang tidak relevan
+format: CE-S2
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w07-c-s01-a
+  variant_id: mod-w07.concept.s01.vA
+  item_version: '1.0'
+  stem: 'Masalah: menyelenggarakan lomba kebersihan kelas. Kebutuhannya: aturan lomba, juri, dan hadiah.
+    Pilih **semua** sub-masalah yang tepat.'
+  options:
+  - id: a
+    text: Menyusun aturan lomba
+  - id: b
+    text: Mencari juri
+  - id: c
+    text: Menyiapkan hadiah
+  - id: d
+    text: Membeli seragam sekolah baru
+  - id: e
+    text: Menonton film bersama
+  key:
+  - a
+  - b
+  - c
+  distractor_rationale:
+    d: Bukan kebutuhan lomba
+    e: Bukan kebutuhan lomba
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Setiap kebutuhan menjadi satu sub-masalah; yang tidak dibutuhkan tidak dimasukkan.
+- item_id: item-w07-c-s01-b
+  variant_id: mod-w07.concept.s01.vB
+  item_version: '1.0'
+  stem: 'Masalah: membuat video profil sekolah. Kebutuhannya: naskah, pengambilan gambar, dan penyuntingan.
+    Pilih **semua** sub-masalah yang tepat.'
+  options:
+  - id: a
+    text: Membeli kamera baru
+  - id: b
+    text: Menulis naskah
+  - id: c
+    text: Merekam gambar
+  - id: d
+    text: Mengganti nama sekolah
+  - id: e
+    text: Menyunting video
+  key:
+  - b
+  - c
+  - e
+  distractor_rationale:
+    a: Tidak disebut sebagai kebutuhan; pengambilan gambar dapat memakai kamera yang ada
+    d: Bukan kebutuhan video
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Setiap kebutuhan menjadi satu sub-masalah; yang tidak dibutuhkan tidak dimasukkan.

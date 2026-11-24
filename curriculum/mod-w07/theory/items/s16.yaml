@@ -1,0 +1,44 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s16
+competency: comp-w07-order-01
+format: TF-3
+difficulty: D3
+max_points: 4
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s16-a
+  variant_id: mod-w07.theory.s16.vA
+  item_version: '1.0'
+  stem: 'Empat tugas A, B, C, D. Prasyarat **hanya**: A sebelum D, B sebelum D, C sebelum D. Berapa banyak
+    urutan valid keempat tugas?'
+  accepted_answers:
+  - '6'
+  - 6 urutan
+  - 6urutan
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: 'D pasti terakhir; A, B, C bebas: 3 × 2 × 1 = 6 urutan.'
+- item_id: item-w07-t-s16-b
+  variant_id: mod-w07.theory.s16.vB
+  item_version: '1.0'
+  stem: 'Empat tugas A, B, C, D. Prasyarat **hanya**: A sebelum B, A sebelum C, A sebelum D. Berapa banyak
+    urutan valid keempat tugas?'
+  accepted_answers:
+  - '6'
+  - 6 urutan
+  - 6urutan
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: 'A pasti pertama; B, C, D bebas: 3 × 2 × 1 = 6 urutan.'

@@ -1,0 +1,51 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s08
+competency: comp-w07-abstract-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s08-a
+  variant_id: mod-w07.theory.s08.vA
+  item_version: '1.0'
+  stem: '**Abstraksi** berarti …'
+  options:
+  - id: a
+    text: Menyimpan semua detail sekecil apa pun
+  - id: b
+    text: Memilih informasi yang penting untuk tujuan tertentu dan mengabaikan detail yang tidak berpengaruh
+  - id: c
+    text: Mengurutkan langkah
+  - id: d
+    text: Memecah masalah menjadi bagian
+  key: b
+  distractor_rationale:
+    a: Kebalikan abstraksi
+    c: Itu algoritma
+    d: Itu dekomposisi
+  explanation: Abstraksi menyaring informasi menurut tujuan.
+  option_order: urutan tetap penyusun
+- item_id: item-w07-t-s08-b
+  variant_id: mod-w07.theory.s08.vB
+  item_version: '1.0'
+  stem: Peta jalur angkot hanya menampilkan rute dan halte, tanpa warna rumah atau nama toko. Ini contoh
+    …
+  options:
+  - id: a
+    text: Dekomposisi
+  - id: b
+    text: Pengenalan pola
+  - id: c
+    text: Abstraksi
+  - id: d
+    text: Pengujian
+  key: c
+  distractor_rationale:
+    a: Tidak memecah masalah
+    b: Tidak mencari keteraturan berulang
+    d: Tidak memeriksa hasil dengan kasus uji
+  explanation: Hanya informasi yang penting untuk memilih rute yang ditampilkan.
+  option_order: urutan tetap penyusun

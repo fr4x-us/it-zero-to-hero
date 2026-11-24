@@ -1,0 +1,44 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s07
+competency: comp-w07-pattern-01
+format: TF-3
+difficulty: D3
+max_points: 4
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s07-a
+  variant_id: mod-w07.theory.s07.vA
+  item_version: '1.0'
+  stem: 'Susunan titik berbentuk persegi: susunan ke-1 berisi 1 titik, ke-2 berisi 4, ke-3 berisi 9, ke-4
+    berisi 16. Berapa titik pada **susunan ke-12**?'
+  accepted_answers:
+  - '144'
+  - 144 titik
+  - 144titik
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: 'Susunan ke-n berisi n × n titik: 12 × 12 = 144.'
+- item_id: item-w07-t-s07-b
+  variant_id: mod-w07.theory.s07.vB
+  item_version: '1.0'
+  stem: 'Model sederhana: banyak sel berlipat dua setiap jam: `3, 6, 12, 24, …` (suku ke-1 = 3). Berapa
+    sel pada **suku ke-7**?'
+  accepted_answers:
+  - '192'
+  - 192 sel
+  - 192sel
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: 'Setiap suku dikali 2: 3, 6, 12, 24, 48, 96, 192.'

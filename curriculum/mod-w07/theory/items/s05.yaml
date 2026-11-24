@@ -1,0 +1,38 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s05
+competency: comp-w07-pattern-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s05-a
+  variant_id: mod-w07.theory.s05.vA
+  item_version: '1.0'
+  stem: Pola `5, 9, 13, 17, …` bertambah tetap. Berapa **suku ke-10**?
+  accepted_answers:
+  - '41'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: 'Suku ke-n = 5 + 4 × (n − 1); n = 10: 5 + 36 = 41.'
+- item_id: item-w07-t-s05-b
+  variant_id: mod-w07.theory.s05.vB
+  item_version: '1.0'
+  stem: Pola `3, 10, 17, 24, …` bertambah tetap. Berapa **suku ke-8**?
+  accepted_answers:
+  - '52'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
+    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
+    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
+    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
+    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
+    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta'
+  explanation: 'Suku ke-n = 3 + 7 × (n − 1); n = 8: 3 + 49 = 52.'
