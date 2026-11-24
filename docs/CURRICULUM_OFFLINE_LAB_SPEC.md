@@ -273,3 +273,12 @@ menunjuk dokumen yang menjabarkan kriteria, **bukan** menutup gap.
 | D-04 | Kelulusan per modul (empat komponen); program = 16 modul lulus + capstone | CU-2: implikasi bahwa setiap modul memiliki keempat komponen **perlu dikonfirmasi owner**; CU-9 tetap OPEN |
 | D-08 | `INTERNET` diizinkan untuk fitur opsional | CC-02 tetap: materi inti harus offline |
 | D-10 | Ambang uji Python disetujui; eksekusi tidak diizinkan | Lab minggu 9–12 tetap bergantung pada O-04 (NOT VERIFIED) |
+
+## 12. Keputusan owner D-13 (2026-11-24)
+
+| Butir | Dampak |
+|---|---|
+| CU-2 | **Diputuskan**: keempat komponen di semua 16 modul (64 komponen penilaian) |
+| CU-9 | Sebagian diputuskan: capstone = mini-project modul 16 dengan rubrik capstone khusus, di dalam 128 jam. Topik, fixture, dan rubrik tetap OPEN |
+| Penggabungan aktivitas | Poin diperoleh dan poin maksimum dijumlahkan per komponen |
+| Masih OPEN | CU-3, CU-5, CU-6, CU-7, CU-11, alokasi jam per komponen, rubrik |

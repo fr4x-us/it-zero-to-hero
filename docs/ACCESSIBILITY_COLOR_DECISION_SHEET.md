@@ -1,10 +1,11 @@
 # IT ZERO → HERO — Decision Sheet: Kontras Palet dan Strategi Dark Mode (UO-1 / UO-2)
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode.
+Status: **DIPUTUSKAN OWNER — D-14 (UO-1) dan D-15 (UO-2), 2026-11-24**, lihat §9 ·
+dokumentasi saja · tanpa kode. Perilaku di perangkat: **NOT VERIFIED**.
 Tanggal: **2026-11-23**. Basis: `main` = `6a805a1` (merge PR #20).
 
-Lima warna merek **tidak diganti**. Rekomendasi di §6 adalah saran teknis,
-**bukan** keputusan. Tidak ada strategi dark mode yang disetujui di sini.
+Lima warna merek **tidak diganti**. Rekomendasi di §6 semula saran teknis;
+keputusan owner kini tercatat di §9 (D-14, D-15).
 
 ## 1. Dasar
 
@@ -129,7 +130,7 @@ Implikasi Material 3 (PROPOSED):
 | AT-5 | Status lulus/belum lulus/hari libur terbaca dalam grayscale (UI:A-08) |
 | AT-6 | Teks pada skala font maksimum yang diuji tetap kontras dan tidak terpotong (UI:A-04) |
 
-## 8. Pertanyaan untuk owner
+## 8. Pertanyaan untuk owner — *historis, dijawab D-14/D-15*
 
 1. **UO-1-Q1:** Setujui teks kecil `#000000` di atas isian ungu, dan `#000000` atau `#1C1B1F` di atas isian biru, hijau, kuning, dan merah muda (hanya pasangan yang ≥ 4,5:1)?
 2. **UO-1-Q2:** Setujui penambahan varian turunan §3 khusus untuk teks berwarna kecil di atas putih (warna merek tetap)?
@@ -137,4 +138,20 @@ Implikasi Material 3 (PROPOSED):
 4. **UO-2-Q1:** Setujui DM-1 (tema terang saja, Force Dark dinonaktifkan) untuk V1?
 5. **UO-2-Q2:** Setujui Material 3 tanpa dynamic color?
 
-Status: **AWAITING OWNER**. UO-1 (UW-17) dan UO-2 (UW-18) tetap **BLOCKED**.
+~~Status: AWAITING OWNER. UO-1 (UW-17) dan UO-2 (UW-18) tetap BLOCKED.~~ *(Historis — dijawab D-14 dan D-15 pada 2026-11-24; lihat §9.)*
+
+## 9. Keputusan owner — D-14 dan D-15 (2026-11-24)
+
+| Butir | Keputusan |
+|---|---|
+| UO-1-Q1 (D-14) | Pasangan teks–latar memenuhi ambang; teks kecil di atas ungu `#7565F5` memakai `#000000`; di atas biru, hijau, kuning, merah muda boleh `#000000` atau `#1C1B1F` hanya bila ambang terpenuhi |
+| UO-1-Q2 (D-14) | Warna turunan aksesibel diizinkan; lima warna merek terkunci tidak diganti |
+| UO-1-Q3 (D-14) | Teks putih di atas ungu hanya untuk teks besar yang memenuhi syarat (≥ 18sp, atau tebal ≥ 14sp) |
+| UO-2-Q1 (D-15) | **DM-1**: tema terang saja untuk V1; Force Dark otomatis dinonaktifkan |
+| UO-2-Q2 (D-15) | Dynamic color Material 3 dinonaktifkan |
+
+Tetap berlaku: status akademik tidak pernah hanya lewat warna; ambang
+diperiksa dengan rasio kontras tanpa pembulatan (contoh: ungu vs
+`#1C1B1F` = 4,03 → gagal; ungu vs putih = 4,25 → hanya teks besar). Dark
+mode dapat dipertimbangkan kelak lewat keputusan terpisah. AT-1–AT-6 tetap
+**NOT VERIFIED** (UW-56).

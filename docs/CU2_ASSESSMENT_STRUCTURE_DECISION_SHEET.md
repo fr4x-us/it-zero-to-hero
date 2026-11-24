@@ -1,6 +1,6 @@
 # IT ZERO → HERO — Decision Sheet: Struktur Komponen Penilaian per Modul (CU-2)
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode.
+Status: **DIPUTUSKAN OWNER — D-13 (2026-11-24)**, lihat §8 · dokumentasi saja · tanpa kode.
 Tanggal: **2026-11-23**. Basis: `main` = `6a805a1` (merge PR #20).
 
 Rekomendasi di §5 adalah saran teknis, **bukan** keputusan. Aturan
@@ -84,7 +84,7 @@ Konsekuensi yang harus diterima bila Opsi A dipilih:
   tetap ±8 jam/minggu (alokasi waktu per komponen: OPEN, D-01 M-03).
 - Konten untuk 64 komponen penilaian (16 × 4) harus ditulis (UW-37).
 
-## 6. Hal yang tetap OPEN apa pun opsinya
+## 6. Hal yang tetap OPEN apa pun opsinya (status terkini: §8)
 
 | ID | Butir |
 |---|---|
@@ -93,10 +93,26 @@ Konsekuensi yang harus diterima bila Opsi A dipilih:
 | CU2-O3 | Alokasi jam per komponen per minggu (D-01 M-03) |
 | CU2-O4 | Rubrik mini-project dan penjelasan konsep (OP-4, CU-9) |
 
-## 7. Pertanyaan untuk owner
+## 7. Pertanyaan untuk owner — *historis, dijawab D-13*
 
 1. **CU-2-Q1:** Setujui Opsi A — setiap modul (1–16) memiliki keempat komponen dengan bobot 30/40/20/10?
 2. **CU-2-Q2:** Capstone: (i) sama dengan mini-project modul 16, atau (ii) artefak terpisah?
 3. **CU-2-Q3:** Bila satu komponen berisi beberapa aktivitas: poin dijumlah (sejalan dengan NP-4) atau cara lain?
 
-Status: **AWAITING OWNER**. CU-2 (UW-36) tetap **BLOCKED**.
+~~Status: AWAITING OWNER. CU-2 (UW-36) tetap BLOCKED.~~ *(Historis — dijawab D-13 pada 2026-11-24; lihat §8.)*
+
+## 8. Keputusan owner — D-13 (2026-11-24)
+
+| Butir | Keputusan |
+|---|---|
+| CU-2-Q1 | **Opsi A**: semua 16 modul memiliki Theory 30%, Laboratory 40%, Mini-project 20%, Concept explanation 10% |
+| CU-2-Q2 | **Capstone = mini-project modul 16**, dengan rubrik capstone khusus; tidak menjadi proyek wajib tambahan di luar 128 jam |
+| CU-2-Q3 | Beberapa aktivitas bernilai dalam satu komponen: **jumlahkan** poin diperoleh dan poin maksimum |
+
+Dipertahankan: 16 modul dan 128 jam; unlock linear; remedial tanpa batas;
+skor terbaik per komponen; riwayat attempt lengkap; XP sekali per aktivitas
+unik yang memenuhi syarat.
+
+CU2-O1 dan CU2-O2 (§6) **terjawab** oleh Q2 dan Q3. Tetap OPEN: CU2-O3
+(alokasi jam per komponen), CU2-O4 (rubrik mini-project, penjelasan konsep,
+dan rubrik capstone), alokasi poin per aktivitas.

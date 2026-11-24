@@ -30,9 +30,12 @@ Offline-first Android IT Learning Academy: aplikasi Android native
 | Python offline (Batch 03) | [`docs/PYTHON_OFFLINE_FEASIBILITY_PLAN.md`](docs/PYTHON_OFFLINE_FEASIBILITY_PLAN.md) |
 | Toolchain (Batch 04) | [`docs/ANDROID_TOOLCHAIN_DECISION_SHEET.md`](docs/ANDROID_TOOLCHAIN_DECISION_SHEET.md) |
 | Penilaian (Batch 05) | [`docs/ASSESSMENT_STATE_MACHINE_SPEC.md`](docs/ASSESSMENT_STATE_MACHINE_SPEC.md) |
-| Presisi angka penilaian (UW-22, menunggu owner) | [`docs/NUMERIC_PRECISION_DECISION_SHEET.md`](docs/NUMERIC_PRECISION_DECISION_SHEET.md) |
-| Struktur komponen per modul (CU-2, menunggu owner) | [`docs/CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md`](docs/CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) |
-| Kontras palet dan dark mode (UO-1/UO-2, menunggu owner) | [`docs/ACCESSIBILITY_COLOR_DECISION_SHEET.md`](docs/ACCESSIBILITY_COLOR_DECISION_SHEET.md) |
+| Presisi angka penilaian (UW-22, diputuskan D-12) | [`docs/NUMERIC_PRECISION_DECISION_SHEET.md`](docs/NUMERIC_PRECISION_DECISION_SHEET.md) |
+| Struktur komponen per modul (CU-2, diputuskan D-13) | [`docs/CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md`](docs/CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) |
+| Kontras palet dan dark mode (UO-1/UO-2, diputuskan D-14/D-15) | [`docs/ACCESSIBILITY_COLOR_DECISION_SHEET.md`](docs/ACCESSIBILITY_COLOR_DECISION_SHEET.md) |
+| Kriptografi backup (OD-1, menunggu owner) | [`docs/OD1_BACKUP_CRYPTO_DECISION_SHEET.md`](docs/OD1_BACKUP_CRYPTO_DECISION_SHEET.md) |
+| Pemalsuan backup dan integritas akademik (OD-2, menunggu owner) | [`docs/OD2_BACKUP_INTEGRITY_DECISION_SHEET.md`](docs/OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) |
+| Konsistensi path Batch 01 (UW-43, menunggu owner) | [`docs/UW43_PATH_CONSISTENCY_DECISION_SHEET.md`](docs/UW43_PATH_CONSISTENCY_DECISION_SHEET.md) |
 | Backup (Batch 06) | [`docs/ENCRYPTED_BACKUP_RESTORE_SPEC.md`](docs/ENCRYPTED_BACKUP_RESTORE_SPEC.md) |
 | Kalender Jepang (Batch 07) | [`docs/JAPAN_CALENDAR_HOLIDAY_SPEC.md`](docs/JAPAN_CALENDAR_HOLIDAY_SPEC.md) |
 | UI dan aksesibilitas (Batch 08) | [`docs/UI_ACCESSIBILITY_VISUAL_SPEC.md`](docs/UI_ACCESSIBILITY_VISUAL_SPEC.md) |

@@ -257,3 +257,12 @@ A-05–A-10, C-05–C-06, UI state (§6), P-01–P-04, S-01–S-06.
 | UO-8 | Alat screenshot test dan baseline (S-04, O-16) |
 | UO-9 | Detail field setiap layar (B01 M-18) |
 | UO-10 | *(Selesai: palet oleh D-01 M-17; guardrail arah oleh TD:25.)* |
+
+## 12. Keputusan owner D-14 dan D-15 (2026-11-24)
+
+| Butir | Status |
+|---|---|
+| UO-1 | **Diputuskan (D-14)**: pasangan kontras sesuai [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) §4 dan §9; KC-1 + KC-2 terbatas |
+| UO-2 / C-02 | **Diputuskan (D-15)**: tema terang saja (DM-1), Force Dark otomatis nonaktif, dynamic color nonaktif |
+| UO-3–UO-9 | Tetap OPEN |
+| Verifikasi | ACC:AT-1–AT-6 dan AC-01–AC-10 di dokumen ini tetap NOT VERIFIED (UW-56) |

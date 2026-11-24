@@ -354,3 +354,10 @@ Dampak pada invarian: I-02 kini mengikuti M-2 (default) atau M-1
 (eksplisit); attempt yang tidak ada di backup tidak pernah hilang tanpa
 snapshot. Skenario G-11 mengikuti keputusan ini. OD-1, OD-2, OD-5–OD-9
 tetap OPEN.
+
+## 13. Lembar keputusan lanjutan (2026-11-24)
+
+| Butir | Lembar | Status |
+|---|---|---|
+| OD-1 (algoritma, KDF, envelope) | [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) | AWAITING OWNER |
+| OD-2 (pemalsuan, integritas akademik) | [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) | AWAITING OWNER |
