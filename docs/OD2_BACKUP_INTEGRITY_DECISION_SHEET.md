@@ -13,7 +13,7 @@ yang sudah disetujui (D-03) tidak diubah.
 | **Kerahasiaan** | Isi backup tidak terbaca tanpa kata sandi | Ya, terhadap pihak tanpa kata sandi |
 | **Integritas kriptografis** | Perubahan isi terdeteksi | Ya, terhadap pihak tanpa kata sandi (tag AEAD) |
 | **Autentisitas** | File benar-benar dibuat oleh aplikasi yang sah | **Tidak.** Siapa pun yang tahu kata sandi dapat membuat file valid; kunci tersembunyi di APK dapat diekstrak |
-| **Kepercayaan akademik** | Nilai mencerminkan kerja nyata siswa | **Tidak.** Aplikasi offline tanpa server tidak dapat membuktikannya |
+| **Kepercayaan akademik** | Nilai mencerminkan kerja dan kompetensi nyata siswa | **Tidak.** Tidak ada mekanisme teknis — dengan atau tanpa server — yang dapat sepenuhnya membuktikannya (mis. bantuan orang lain saat mengerjakan) |
 
 **Pernyataan tegas:** enkripsi terautentikasi berbasis kata sandi **tidak**
 mencegah pemalsuan nilai yang disengaja oleh orang yang mengetahui kata
@@ -53,7 +53,7 @@ itu tetap ada di snapshot pra-restore, tetapi tidak lagi di data aktif.
 | I-1 Terima risiko residual + transparansi | Model ancaman: lindungi dari kerusakan dan pihak ketiga; catat asal-usul data (penanda "dipulihkan dari backup tanggal X") dan log peristiwa restore | Sederhana; jujur; portabel | Tidak mencegah pemalsuan oleh pemilik kata sandi |
 | I-2 Tanda tangan kunci terikat perangkat (Android Keystore, kunci *non-exportable*, OD1:C5) | Backup ditandatangani kunci perangkat; perangkat yang sama dapat memverifikasi | Mendeteksi file buatan luar aplikasi di perangkat yang sama | Merusak portabilitas: perangkat lain tidak dapat memverifikasi; kehilangan perangkat = tanda tangan tak terverifikasi; perangkat di-root tetap dapat memakai kunci lewat proses aplikasi (NOT VERIFIED) |
 | I-3 Rantai hash riwayat attempt (*tamper-evident ledger*) di database | Setiap attempt menyimpan hash attempt sebelumnya | Mendeteksi edit kasual yang tidak menghitung ulang rantai | Algoritma ada di APK, sehingga pemalsu dapat menghitung ulang rantai; bukan pencegahan |
-| I-4 Atestasi server | Validasi di server | Satu-satunya cara memberi kepercayaan akademik | Bertentangan dengan offline-first dan tidak ada server dalam blueprint — **di luar cakupan** |
+| I-4 Validasi/atestasi sisi server | Rekaman atau validasi di server | Dapat **memperkuat** provenance dan integritas data (mis. waktu pengerjaan tercatat di luar perangkat) | Tetap **tidak dapat secara mandiri membuktikan kompetensi siswa yang sebenarnya**; bertentangan dengan offline-first dan tidak ada server dalam blueprint — **di luar cakupan** |
 
 ## 5. Model ancaman yang diusulkan (PROPOSED)
 
@@ -65,13 +65,17 @@ itu tetap ada di snapshot pra-restore, tetapi tidak lagi di data aktif.
   di-root (IT-7), dan klaim kepercayaan akademik di luar aplikasi.
 - **Transparansi:** data hasil restore diberi penanda asal-usul, dan
   setiap restore dicatat di log riwayat yang tidak dihapus oleh restore
-  berikutnya (perlu diselaraskan dengan BKP:M-1; detail OPEN).
+  berikutnya (perlu diselaraskan dengan BKP:M-1; detail OPEN). Penanda dan
+  log ini bersifat **informatif**, bukan bukti yang tahan manipulasi:
+  keduanya tersimpan secara lokal dan dapat diubah oleh pemilik perangkat
+  atau pemilik kata sandi backup.
 - **Pernyataan produk:** rapor dan sertifikat (bila ada) disebut sebagai
   catatan belajar mandiri, bukan bukti akademik tersertifikasi.
 
 ## 6. Rekomendasi (saran, bukan keputusan)
 
-**I-1** untuk V1, dengan penanda asal-usul restore dan log restore. **I-2**
+**I-1** untuk V1, dengan penanda asal-usul restore dan log restore yang
+bersifat informatif (bukan bukti tahan manipulasi). **I-2**
 tidak direkomendasikan untuk V1 karena merusak restore lintas perangkat
 (D-01 M-16 "portabel"). **I-3** opsional sebagai pencegah kasual saja dan
 tidak boleh diklaim sebagai keamanan.
@@ -82,7 +86,7 @@ data aktif lewat BKP:M-1 (riwayat hanya di snapshot).
 ## 7. Pertanyaan untuk owner
 
 1. **OD-2-Q1:** Terima model ancaman §5, termasuk risiko residual bahwa pemilik kata sandi dapat memalsukan nilai, attempt, dan XP?
-2. **OD-2-Q2:** Setujui penanda asal-usul pada data hasil restore dan log restore yang tetap tersimpan?
+2. **OD-2-Q2:** Setujui penanda asal-usul pada data hasil restore dan log restore yang tetap tersimpan, dengan pemahaman bahwa keduanya informatif dan tidak tahan manipulasi?
 3. **OD-2-Q3:** Tolak I-2 (tanda tangan terikat perangkat) untuk V1 demi portabilitas?
 4. **OD-2-Q4:** I-3 (rantai hash) dimasukkan sebagai pencegah kasual, atau tidak?
 5. **OD-2-Q5:** Setujui pernyataan produk bahwa rapor adalah catatan belajar mandiri, bukan bukti akademik tersertifikasi?

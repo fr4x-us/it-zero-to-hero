@@ -98,13 +98,13 @@ Kriteria ini **NOT VERIFIED** — belum ada implementasi.
 
 | ID | Butir |
 |---|---|
-| NP-O1 | Pilihan opsi (NP-1–NP-4) — keputusan owner (UW-22) |
+| NP-O1 | *(Diputuskan D-12: NP-4.)* Pilihan opsi (NP-1–NP-4) |
 | NP-O2 | Cara skor komponen dihasilkan: poin per soal, bobot test case, nilai parsial (OP-4, CU-6) |
-| NP-O3 | Aturan tie antar-attempt dengan skor sama (mis. attempt paling awal) |
-| NP-O4 | Presisi tampilan (berapa digit desimal) |
+| NP-O3 | *(Diputuskan D-12: attempt paling awal.)* Aturan tie antar-attempt |
+| NP-O4 | *(Diputuskan D-12: 2 desimal dibulatkan ke bawah + status.)* Presisi tampilan |
 | NP-O5 | Agregasi numerik tingkat program (D-04 menyatakan OPEN; tidak ada rata-rata baru) |
 
-## 8. Permintaan keputusan owner — UW-22 (2026-11-23)
+## 8. Permintaan keputusan owner — UW-22 (2026-11-23) — *historis, dijawab D-12*
 
 ### 8.1 Verifikasi ulang (hitungan, bukan uji aplikasi)
 
@@ -135,7 +135,7 @@ Kriteria ini **NOT VERIFIED** — belum ada implementasi.
 3. **UW-22-Q3:** Tie skor sama: pilih attempt paling awal?
 4. **UW-22-Q4:** Tampilan: 2 desimal dibulatkan ke bawah + status teks?
 
-Status: **AWAITING OWNER**. UW-22 tetap **OPEN/BLOCKED** sampai dijawab.
+~~Status: AWAITING OWNER. UW-22 tetap OPEN/BLOCKED sampai dijawab.~~ *(Historis — dijawab D-12 pada 2026-11-24; lihat §9.)*
 
 ## 9. Keputusan owner — D-12 (2026-11-24)
 
@@ -155,3 +155,40 @@ penjelasan konsep), CU-6 (bobot test case lab), alokasi poin per aktivitas
 (D-13 menjumlahkan poin aktivitas dalam satu komponen), dan pilihan teknis
 aritmetika *checked* saat implementasi. NA-1–NA-6 (§6) tetap
 **NOT VERIFIED** sampai implementasi diizinkan dan diuji (UW-56).
+
+## 10. Cakupan eksplisit ASM:B-01–ASM:B-10 dengan aturan NP-4 (2026-11-24)
+
+Uji acak di §8.1 saja tidak membuktikan cakupan kasus batas. Karena itu
+setiap kasus ASM:B-01–B-10 dievaluasi **satu per satu** dengan aturan
+integer NP-4 (§8.2): komponen lulus bila `4·earned ≥ 3·max`; nilai
+tertimbang lulus bila `Σ wᵢ·eᵢ·(D/mᵢ) ≥ 80·D`. Skor persen ditulis sebagai
+`earned/10000`. Dihitung dengan Python (bilangan bulat saja); ini bukti
+hitungan, **bukan** uji aplikasi.
+
+| Kasus | T, L, P, C sebagai `earned/max` | Keputusan NP-4 | Tabel ASM §6.3 | Cocok |
+|---|---|---|---|---|
+| ASM:B-01 | 8000, 8000, 8000, 8000 /10000 | LULUS | LULUS | ✓ |
+| ASM:B-02 | 7500, 7500, 7500, 7500 /10000 | BELUM LULUS | BELUM LULUS | ✓ |
+| ASM:B-03 | 7500, 8500, 8000, 7500 /10000 | LULUS | LULUS | ✓ |
+| ASM:B-04 | 10000, 10000, 10000, 7400 /10000 | BELUM LULUS | BELUM LULUS | ✓ |
+| ASM:B-05 | 7500, 7500, 10000, 10000 /10000 | LULUS | LULUS | ✓ |
+| ASM:B-06 | 7500, 7500, 7500, 10000 /10000 | BELUM LULUS | BELUM LULUS | ✓ |
+| ASM:B-07 | 7997, 8000, 8000, 8000 /10000 | BELUM LULUS | BELUM LULUS | ✓ |
+| ASM:B-08 | Lihat catatan | BELUM LULUS | BELUM LULUS | ✓ (dengan catatan) |
+| ASM:B-09 | 10000, 7500, 7500, 7500 /10000 | LULUS | LULUS | ✓ |
+| ASM:B-10 | Komponen C tanpa attempt dinilai | BELUM LENGKAP | BELUM LENGKAP | ✓ |
+
+**Catatan ASM:B-08:** nilai C = 74,999 membutuhkan penyebut 100.000
+(`74999/100000`), sehingga **tidak dapat direpresentasikan** dalam batas
+`max ≤ 10.000` (D-12). Tujuan kasus ini (komponen tepat di bawah 75 yang
+bisa tampak "75" bila dibulatkan) diuji dengan varian yang dapat
+direpresentasikan: C = `2999/4000` (74,975) dan C = `7499/10000` (74,99);
+keduanya BELUM LULUS, dan tampilan dibulatkan ke bawah menghasilkan
+"74,97" dan "74,99" (tidak pernah "75"). Tabel ASM §6.3 tidak diubah;
+penyesuaian fixture uji untuk B-08 dicatat untuk implementasi.
+
+Tampilan ASM:B-07: T = 79,97 → "79,97" (dibulatkan ke bawah), status
+BELUM LULUS.
+
+Status cakupan: **10 dari 10 kasus dievaluasi secara eksplisit**.
+Verifikasi pada kode aplikasi tetap **NOT VERIFIED** (UW-56).

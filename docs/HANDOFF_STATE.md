@@ -70,8 +70,9 @@ modul 16), D-14 (kontras), D-15 (tema terang saja). Lembar keputusan baru:
 [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md),
 [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md).
 Audit §15: 22 COMPLETE, 4 OPEN, 26 BLOCKED, 4 NOT VERIFIED (56 butir), plus
-usulan pemisahan jalur perencanaan vs verifikasi. Status: PR terbuka,
-menunggu review.
+usulan pemisahan jalur perencanaan vs gerbang vs verifikasi (koreksi
+review: izin eksekusi prototipe UW-10 adalah gerbang owner **setelah**
+PLANNING CLEAR, bukan syaratnya). Status: PR terbuka, menunggu review.
 
 ## Blocker
 

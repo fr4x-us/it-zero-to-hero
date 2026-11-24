@@ -316,17 +316,18 @@ Semua **AWAITING OWNER**. Rekomendasi hanya saran.
 |---|---|---|---|---|
 | OD-1-Q1 | AEAD | AES-256-GCM, nonce acak 96-bit, tag 128-bit, header sebagai AAD | [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) §9 | |
 | OD-1-Q2 | KDF | Argon2id (Bouncy Castle, bersyarat review/uji); cadangan PBKDF2-HMAC-SHA256 ≥ 600.000 iterasi | idem | |
-| OD-1-Q3 | Parameter KDF | Minimum OWASP sebagai lantai; final setelah pengukuran (butuh izin) | idem | |
+| OD-1-Q3 | Parameter KDF | Minimum OWASP sebagai batas minimum; batas maksimum difinalkan dari pengukuran sebelum restore produksi diaktifkan (KV-2, KV-3) | idem | |
 | OD-1-Q4 | Envelope | Struktur §5 dengan header sebagai AAD | idem | |
-| OD-1-Q5 | Penanganan kasus | H-1–H-7 | idem | |
+| OD-1-Q5 | Penanganan kasus dan validasi | H-1–H-7, KV-1–KV-8 (validasi header sebelum KDF; tanpa downgrade diam-diam; tanpa retry KDF lain; tanpa plaintext sebelum autentikasi) | idem | |
+| OD-1-Q6 | KDF cadangan | Hanya untuk ekspor baru di bawah kebijakan yang disetujui owner (KV-6); backup lama memakai KDF yang dinyatakan di header (KV-5) | idem | |
 | OD-2-Q1 | Model ancaman | Terima §5 dengan risiko residual eksplisit | [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) §7 | |
-| OD-2-Q2 | Penanda asal-usul + log restore | Ya | idem | |
+| OD-2-Q2 | Penanda asal-usul + log restore (informatif, tidak tahan manipulasi) | Ya | idem | |
 | OD-2-Q3 | Tanda tangan terikat perangkat | Tidak untuk V1 | idem | |
 | OD-2-Q4 | Rantai hash riwayat | Opsional, hanya pencegah kasual | idem | |
 | OD-2-Q5 | Pernyataan "catatan belajar mandiri" | Ya | idem | |
 | UW-43-Q1 | Lokasi file Batch 01 | Opsi B (tetap di root + erratum TD:5) | [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md) §4 | |
 | UW-11-Q1 | Perlukah skor numerik tingkat program? (D-04 melarang rata-rata baru; bila tidak perlu, agregasi program ditutup sebagai "tidak ada") | Tidak perlu; penyelesaian program = 16 modul lulus + capstone | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) §15 | |
-| PL-Q1 | Konfirmasi klasifikasi register: butir verifikasi teknis (yang hanya bisa setelah izin) tidak menjadi syarat PLANNING CLEAR, tetapi tetap syarat IMPLEMENTATION VERIFIED | Ya | idem §15.3 | |
+| PL-Q1 | Konfirmasi klasifikasi register (audit §15.3): butir verifikasi teknis tidak menjadi syarat PLANNING CLEAR, tetapi tetap syarat IMPLEMENTATION VERIFIED; izin eksekusi prototipe (UW-10) dan izin implementasi (UW-02) adalah gerbang owner **setelah** PLANNING CLEAR | Ya | idem §15.3 | |
 | PL-Q2 | Apakah penulisan konten lengkap 16 modul (UW-37) wajib selesai sebelum PLANNING CLEAR, atau cukup format, rubrik, dan contoh per jenis komponen? | Owner memutuskan; Claude tidak merekomendasikan pengurangan syarat | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) §15.3 | |
 | PL-Q3 | Apakah UW-21 (alternatif bila O-04 gagal), UW-38 (R8/signing/distribusi), dan UW-40 (mekanisme effect UI) boleh ditunda ke milestone terkait dan tidak menjadi syarat PLANNING CLEAR? | Ya, karena bergantung hasil uji atau implementasi | idem | |
 

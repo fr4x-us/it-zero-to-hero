@@ -84,7 +84,7 @@ Konsekuensi yang harus diterima bila Opsi A dipilih:
   tetap ±8 jam/minggu (alokasi waktu per komponen: OPEN, D-01 M-03).
 - Konten untuk 64 komponen penilaian (16 × 4) harus ditulis (UW-37).
 
-## 6. Hal yang tetap OPEN apa pun opsinya
+## 6. Hal yang tetap OPEN apa pun opsinya (status terkini: §8)
 
 | ID | Butir |
 |---|---|
@@ -93,13 +93,13 @@ Konsekuensi yang harus diterima bila Opsi A dipilih:
 | CU2-O3 | Alokasi jam per komponen per minggu (D-01 M-03) |
 | CU2-O4 | Rubrik mini-project dan penjelasan konsep (OP-4, CU-9) |
 
-## 7. Pertanyaan untuk owner
+## 7. Pertanyaan untuk owner — *historis, dijawab D-13*
 
 1. **CU-2-Q1:** Setujui Opsi A — setiap modul (1–16) memiliki keempat komponen dengan bobot 30/40/20/10?
 2. **CU-2-Q2:** Capstone: (i) sama dengan mini-project modul 16, atau (ii) artefak terpisah?
 3. **CU-2-Q3:** Bila satu komponen berisi beberapa aktivitas: poin dijumlah (sejalan dengan NP-4) atau cara lain?
 
-Status: **AWAITING OWNER**. CU-2 (UW-36) tetap **BLOCKED**.
+~~Status: AWAITING OWNER. CU-2 (UW-36) tetap BLOCKED.~~ *(Historis — dijawab D-13 pada 2026-11-24; lihat §8.)*
 
 ## 8. Keputusan owner — D-13 (2026-11-24)
 

@@ -95,11 +95,24 @@ waktu ekspor UTC, jumlah entitas, hash per bagian) — sesuai BKP §5.2
 |---|---|---|
 | H-1 | Kata sandi salah | Tag gagal → pesan umum "kata sandi salah atau file rusak"; tidak membedakan keduanya; data aktif tidak berubah |
 | H-2 | File rusak / terpotong | Ditolak saat parsing header (panjang) atau saat verifikasi tag |
-| H-3 | Input berbahaya | Parsing header dengan batas ketat **sebelum** KDF; tolak `kdf_params` di luar rentang yang diizinkan (mencegah DoS memori/waktu dan downgrade); batas ukuran file; plaintext tidak diproses sebelum tag terverifikasi; batas dekompresi; validasi skema di staging |
+| H-3 | Input berbahaya | Validasi header ketat **sebelum** alokasi sumber daya dan KDF (KV-4); tolak `kdf_params` di luar rentang yang diizinkan (mencegah DoS memori/waktu dan downgrade); batas ukuran file; plaintext tidak diproses sebelum tag terverifikasi; batas dekompresi; validasi skema di staging |
 | H-4 | Migrasi format | Pembaca mendukung versi yang tercantum; ekspor selalu memakai versi terbaru; migrasi data dilakukan di staging setelah dekripsi |
 | H-5 | Kebocoran data sensitif | Kata sandi diterima sebagai `CharArray` dan dibersihkan setelah KDF (upaya terbaik; JVM tidak menjamin); tidak ada kata sandi, kunci, salt+kunci, atau plaintext di log; file sementara hanya di penyimpanan privat aplikasi dan dihapus setelah selesai atau saat start berikutnya; tidak ada plaintext di lokasi SAF |
 | H-6 | Offline | Seluruh enkripsi/dekripsi lokal; tanpa jaringan (K-05) |
-| H-7 | Batas sumber daya | Biaya KDF minimum = rekomendasi OWASP (C6); batas atas memori/waktu ditetapkan setelah pengukuran di perangkat target (NOT VERIFIED) |
+| H-7 | Batas sumber daya | Lihat KV-1–KV-3: rentang minimum–maksimum per parameter; batas maksimum ditetapkan dari pengukuran sebelum restore produksi diaktifkan (NOT VERIFIED) |
+
+### 6.1 Aturan parameter KDF dan validasi (PROPOSED)
+
+| ID | Aturan |
+|---|---|
+| KV-1 | Setiap KDF yang didukung memiliki **rentang parameter yang diizinkan**: batas minimum dan batas maksimum untuk setiap parameter (Argon2id: memori, iterasi, paralelisme; PBKDF2: iterasi), serta panjang salt yang diterima |
+| KV-2 | **Batas minimum** usulan = lantai OWASP (C6): Argon2id 19 MiB, t=2, p=1; PBKDF2-HMAC-SHA256 600.000 iterasi. **Batas maksimum** (memori, waktu, iterasi) **OPEN** |
+| KV-3 | Batas maksimum **wajib difinalkan** dari pengukuran di perangkat target (butuh izin terpisah) **sebelum** fitur restore produksi diaktifkan. Tanpa batas maksimum yang disetujui, restore produksi tidak boleh diaktifkan |
+| KV-4 | Header divalidasi secara ketat **sebelum** mengalokasikan memori atau menjalankan KDF: magic, `format_version` yang dikenal, `kdf_id` dan `aead_id` dalam daftar yang didukung, setiap parameter di dalam rentang KV-1, panjang salt/nonce/header tepat. Header belum terautentikasi pada tahap ini, sehingga nilainya diperlakukan sebagai input tak tepercaya |
+| KV-5 | Backup yang sudah ada didekripsi **hanya** dengan format dan KDF yang dinyatakan di header-nya sendiri (header ikut diautentikasi sebagai AAD). Aplikasi tidak mengganti KDF untuk file lama |
+| KV-6 | KDF cadangan (mis. PBKDF2) hanya dipakai untuk **ekspor baru**, dan hanya di bawah kebijakan yang disetujui owner. Tidak ada pemilihan KDF otomatis per perangkat tanpa kebijakan tersebut |
+| KV-7 | **Tidak ada downgrade diam-diam** ke KDF atau parameter yang lebih lemah, dan **tidak ada percobaan ulang dengan KDF lain** setelah autentikasi gagal. Kegagalan autentikasi berakhir sebagai H-1 (pesan umum) |
+| KV-8 | Plaintext **tidak** ditampilkan, diparsing, ditulis ke staging, atau diterapkan sebelum tag AEAD terverifikasi untuk seluruh payload. Bila dekripsi bertahap dipakai kelak, keluaran sebelum verifikasi akhir dianggap tidak tepercaya dan dibuang saat gagal |
 
 ## 7. Rekomendasi (saran, bukan keputusan)
 
@@ -125,7 +138,9 @@ Risiko residual: kekuatan backup tetap bergantung pada kekuatan kata sandi
 | CT-2 | Dua ekspor dengan kata sandi sama menghasilkan salt dan nonce berbeda |
 | CT-3 | Satu bit diubah di header, ciphertext, atau tag → ditolak; data aktif utuh |
 | CT-4 | File terpotong di berbagai titik → ditolak |
-| CT-5 | `kdf_params` di luar rentang → ditolak sebelum KDF dijalankan |
+| CT-5 | `kdf_params` di bawah minimum atau di atas maksimum → ditolak sebelum alokasi memori dan sebelum KDF dijalankan |
+| CT-11 | Autentikasi gagal → tidak ada percobaan KDF lain, tidak ada plaintext yang ditampilkan/diterapkan (KV-7, KV-8) |
+| CT-12 | Backup lama dengan KDF yang dinyatakan di header didekripsi dengan KDF itu, bukan KDF ekspor terbaru (KV-5) |
 | CT-6 | Kata sandi salah → pesan umum; tidak ada perubahan data |
 | CT-7 | Ekspor di perangkat A, restore di perangkat B (API 29 dan versi terbaru) berhasil |
 | CT-8 | Tidak ada kata sandi/kunci/plaintext di logcat |
@@ -136,8 +151,9 @@ Risiko residual: kekuatan backup tetap bergantung pada kekuatan kata sandi
 
 1. **OD-1-Q1:** Setujui AES-256-GCM (nonce acak 96-bit, tag 128-bit, header sebagai AAD) sebagai AEAD?
 2. **OD-1-Q2:** Setujui Argon2id via Bouncy Castle sebagai KDF utama (bersyarat review dependensi dan uji), dengan PBKDF2-HMAC-SHA256 ≥ 600.000 iterasi sebagai cadangan?
-3. **OD-1-Q3:** Setujui parameter minimum OWASP sebagai lantai, dengan nilai final ditetapkan setelah pengukuran perangkat (butuh izin terpisah)?
+3. **OD-1-Q3:** Setujui parameter minimum OWASP sebagai batas minimum (KV-2), dan syarat bahwa batas maksimum difinalkan dari pengukuran perangkat sebelum restore produksi diaktifkan (KV-3; pengukuran butuh izin terpisah)?
 4. **OD-1-Q4:** Setujui struktur envelope §5 (field dan AAD) sebagai dasar format?
-5. **OD-1-Q5:** Setujui penanganan H-1–H-7?
+5. **OD-1-Q5:** Setujui penanganan H-1–H-7 dan aturan KV-1–KV-8 (termasuk: tanpa downgrade diam-diam, tanpa retry KDF lain, tanpa plaintext sebelum autentikasi)?
+6. **OD-1-Q6:** Setujui bahwa KDF cadangan hanya untuk ekspor baru di bawah kebijakan yang disetujui owner (KV-6)?
 
 Status: **AWAITING OWNER**. OD-1 (UW-15) tetap **BLOCKED**.

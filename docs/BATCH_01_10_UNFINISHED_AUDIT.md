@@ -565,7 +565,7 @@ D-12–D-15 di-merge.
 
 | ID | Status baru | AC (§3) | Bukti / sisa |
 |---|---|---|---|
-| UW-22 | **COMPLETE** | "Putuskan" + "Kasus batas ASM:B-01–B-10 lolos secara eksak" | Keputusan D-12 (NP-4). Kasus batas lolos secara eksak dibuktikan secara **hitungan** (NUM §3, §8.1: 0 perbedaan dari 200.000 uji acak). Verifikasi pada implementasi dipindah ke UW-56 (NOT VERIFIED) |
+| UW-22 | **COMPLETE** | "Putuskan" + "Kasus batas ASM:B-01–B-10 lolos secara eksak" | Keputusan D-12 (NP-4). **Setiap** kasus ASM:B-01–B-10 dievaluasi secara eksplisit dengan aturan integer NP-4 dan cocok dengan tabel ASM §6.3 (NUM §10; 10/10). Uji acak NUM §8.1 hanya bukti pelengkap. Catatan: nilai asli ASM:B-08 (74,999) tidak dapat direpresentasikan dalam `max ≤ 10.000`; diuji dengan varian 74,975 dan 74,99. Verifikasi pada implementasi → UW-56 (NOT VERIFIED) |
 | UW-17 | **COMPLETE** | "Token memenuhi U1" | Keputusan D-14; semua pasangan yang disetujui memenuhi ambang menurut hitungan (ACC §2, §4). Verifikasi perangkat → UW-56 |
 | UW-18 | **COMPLETE** | "Keputusan tertulis" | Keputusan D-15 (DM-1, Force Dark nonaktif, dynamic color nonaktif). Perilaku perangkat → UW-56 |
 | UW-36 | **BLOCKED** (diperbarui) | CU-2, CU-3, CU-5–CU-7, CU-9, CU-11 terisi | CU-2 diputuskan (D-13); CU-9 sebagian (capstone = mini-project modul 16). Sisa: CU-3, CU-5, CU-6, CU-7, CU-11, rubrik capstone |
@@ -584,27 +584,41 @@ D-12–D-15 di-merge.
 | BLOCKED | 26 | UW-02, UW-10, UW-11, UW-14–UW-16, UW-21, UW-23–UW-25, UW-27–UW-36, UW-38–UW-41, UW-43, UW-53 |
 | NOT VERIFIED | 4 | UW-13, UW-54, UW-55, UW-56 |
 
-### 15.3 Pemisahan jalur: perencanaan vs verifikasi
+### 15.3 Pemisahan jalur: perencanaan vs gerbang vs verifikasi
 
-Agar tidak ada ketergantungan melingkar (perencanaan selesai hanya bila
-implementasi yang belum diizinkan sudah berjalan), register dipisahkan
-menjadi tiga jalur. Ini **usulan klasifikasi** yang perlu dikonfirmasi
-owner (PL-Q1–PL-Q3 di [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md));
-tidak ada syarat verifikasi yang dihapus.
+*Dikoreksi 2026-11-24 setelah review: izin eksekusi prototipe (UW-10)
+bukan lagi syarat PLANNING CLEAR.*
 
-| Jalur | Butir | Syarat untuk |
+Klasifikasi di bawah adalah **usulan** dan menunggu konfirmasi owner
+(PL-Q1–PL-Q3 di [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md)).
+Tidak ada acceptance criteria yang dihapus; setiap butir tetap memakai AC
+di §3.
+
+Untuk prototipe Python (O-04) dibedakan tiga hal:
+
+| Aspek | Jalur | Status |
 |---|---|---|
-| **P — Perencanaan** (keputusan owner, dokumentasi, akses sumber) | UW-10 (izin uji O-04), UW-11, UW-14, UW-15, UW-16, UW-23–UW-25, UW-27–UW-36, UW-41, UW-43, UW-53; UW-26 dan UW-37 (konten — cakupan menunggu PL-Q2) | PLANNING CLEAR |
-| **M — Ditunda ke milestone** (usulan, menunggu PL-Q3) | UW-21, UW-38, UW-40 | Milestone terkait |
-| **V — Verifikasi setelah izin** | UW-12 (eksekusi prototipe, butuh izin D-10), UW-13, UW-39, UW-52, UW-54, UW-55, UW-56 | IMPLEMENTATION VERIFIED |
-| **G — Gerbang** | UW-02 (izin implementasi) | Dibuka owner setelah PLANNING CLEAR |
+| Rencana prototipe, acceptance criteria (ambang F-03/F-04/F-11–F-13, target uji), dan persyaratan keamanan (isolasi proses, penolakan jaringan, perlindungan data aplikasi) | **P — perencanaan** | Disetujui sebagai rencana (D-10; PY §4, §6, §9; D-08) |
+| Izin eksplisit untuk **mengeksekusi** prototipe | **G — gerbang owner setelah PLANNING CLEAR** | UW-10, belum diberikan |
+| Eksekusi prototipe dan kelayakan runtime final (PY:F-01–F-15, pemilihan runtime) | **V — verifikasi setelah izin** | UW-12, NOT VERIFIED |
 
-Ketergantungan melingkar yang ditemukan: pemilihan runtime Python final
-(O-04) membutuhkan hasil PY:F-01–F-15, sedangkan eksekusi prototipe (D-10)
-mensyaratkan kebutuhan perencanaan selesai lebih dulu. Usulan: yang menjadi
-syarat PLANNING CLEAR hanya **rencana uji dan ambang** (sudah disetujui
-D-10) serta izin eksekusi (UW-10); pemilihan runtime final berada di jalur
-V. Keputusan ini milik owner (PL-Q1).
+Klasifikasi seluruh 34 butir yang belum COMPLETE:
+
+| Jalur | Butir | Jumlah | Syarat untuk |
+|---|---|---|---|
+| **P — Perencanaan** (keputusan owner, dokumentasi, akses sumber) | UW-11, UW-14, UW-15, UW-16, UW-23, UW-24, UW-25, UW-26, UW-27, UW-28, UW-29, UW-30, UW-31, UW-32, UW-33, UW-34, UW-35, UW-36, UW-37 (cakupan menunggu PL-Q2), UW-41, UW-43, UW-53 | 22 | PLANNING CLEAR |
+| **M — Ditunda ke milestone** (usulan, menunggu PL-Q3) | UW-21, UW-38, UW-40 | 3 | Milestone terkait |
+| **G — Gerbang owner setelah PLANNING CLEAR** | UW-10 (izin eksekusi prototipe), UW-02 (izin implementasi) | 2 | Membuka jalur V |
+| **V — Verifikasi setelah izin** | UW-12, UW-13, UW-39, UW-52, UW-54, UW-55, UW-56 | 7 | IMPLEMENTATION VERIFIED |
+
+Total 22 + 3 + 2 + 7 = 34 = 4 OPEN + 26 BLOCKED + 4 NOT VERIFIED.
+
+Ketergantungan melingkar yang dihindari: pemilihan runtime Python final
+membutuhkan hasil PY:F-01–F-15, sedangkan eksekusi prototipe (D-10)
+mensyaratkan kebutuhan perencanaan selesai lebih dulu. Dengan pemisahan
+di atas, PLANNING CLEAR hanya mensyaratkan rencana, ambang, dan persyaratan
+keamanan prototipe; izin eksekusi adalah gerbang sesudahnya; runtime final
+adalah hasil verifikasi. D-10 dan D-11 tidak berubah.
 
 ### 15.4 Checklist PLANNING CLEAR
 
@@ -612,9 +626,10 @@ V. Keputusan ini milik owner (PL-Q1).
 |---|---|---|
 | PC-1–PC-5 | (lihat §12) | YES (PC-3 provisional, NOT VERIFIED) |
 | PC-6 | Aturan model data penilaian | PARTIAL — sisa UW-11-Q1 |
-| PC-7 | Keputusan O-04 | PARTIAL — ambang disetujui; izin eksekusi (UW-10) belum |
+| PC-7 | O-04: rencana uji, ambang penerimaan, dan persyaratan keamanan prototipe disetujui (izin eksekusi = gerbang UW-10 sesudah PLANNING CLEAR, bukan syarat) | YES — D-10, PY §4/§6/§9, D-08 |
 | PC-8 | Dokumentasi konsisten | PARTIAL — UW-43 |
 | PC-9, PC-10 | — | YES |
+| PC-11 | Seluruh butir jalur P selesai atau ditetapkan owner sebagai tidak wajib | NO — 22 butir P belum COMPLETE |
 
 **PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
 prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
