@@ -1,18 +1,18 @@
 # IT ZERO → HERO — Standar Produksi Kurikulum (CB-0)
 
-Status (dibedakan; diperbarui setelah D-36):
+Status (dibedakan; diperbarui setelah merge PR #25, D-38, W01-ACC):
 
 | Aspek | Status |
 |---|---|
 | Keputusan kebijakan owner yang dibutuhkan templat | **Semua terputuskan** (D-12, D-13, D-21, D-23–D-36). Kebijakan umpan balik test tersembunyi = D-36 (HF-A) |
 | Kelengkapan templat (TPL-01–TPL-20, §1a, §3a, §3b) | **Lengkap** sebagai dokumentasi; tidak ada field yang bergantung keputusan terbuka. Nilai angka batas agregat LX-2 bukan field templat (hasil pengukuran, UW-12) |
 | Dapat dipakai | W1–W16 (lab kode W9–W12, W16 kini memiliki aturan umpan balik test tersembunyi) |
-| Review independen (ChatGPT) | **Belum lolos** — menunggu review akhir PR #25 |
-| Penerimaan owner | **Belum** |
+| Review independen (ChatGPT) | **Lolos review akhir PR #25** dengan batas: F-22 dan F-23 menerima review akhir terarah; pencatatan D-36/D-37 diperiksa; enumerasi independen mengonfirmasi 3.840 kombinasi dan 46 build valid. **Tidak** setiap baris CSV terbaru, setiap butir penilaian yang berubah, atau setiap penerapan kontrak visibilitas diaudit ulang secara independen. |
+| Penerimaan owner | CB-0 sendiri: tidak ada keputusan penerimaan terpisah. Modul W1 yang disusun dengan CB-0 **diterima** (W01-ACC) |
 | Verifikasi implementasi teknis | Tidak berlaku (tidak ada implementasi; D-10, D-11) |
 
-CB-0 **tidak** dinyatakan final secara global sebelum review independen dan
-penerimaan owner. Templat **bukan** konten dan
+CB-0 **tidak** dinyatakan final secara global: belum ada penerimaan owner
+terpisah untuk CB-0, dan review independen bersifat terbatas. Templat **bukan** konten dan
 tidak dihitung sebagai komponen selesai. Tanggal: **2026-11-24**. Basis:
 `main` = `40ca205` (merge PR #24). Kode rujukan: `TPL:`.
 

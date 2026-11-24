@@ -21,7 +21,7 @@ atau menggantikan [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) dan
 | Batch 01 | [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) | AVAILABLE (di root repo, bukan `docs/`) | **OWNER-APPROVED WITH CONDITIONS** (D-01, 2026-11-23): M-01–M-19 disetujui; detail OPEN/PARTIAL tercatat di §7 dokumen | Matriks §2 historis; §7.1 berlaku. Merge PR #5 sendiri bukan persetujuan. |
 | Batch 02 | [`TECHNICAL_DECISIONS_BATCH_02.md`](TECHNICAL_DECISIONS_BATCH_02.md) | AVAILABLE | OWNER-APPROVED (header dokumen, TD:3) | Disalin tanpa perubahan dari lampiran owner (SHA-256 `0a27420e…a980b`). |
 
-## Keputusan owner D-01–D-37 (2026-11-23 / 2026-11-24)
+## Keputusan owner D-01–D-38 (2026-11-23 / 2026-11-24)
 
 Sumber: [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) (kolom
 "Keputusan final"). Status Batch 02 di bawah tetap dicatat apa adanya;
@@ -66,6 +66,7 @@ tabel ini menunjukkan keputusan owner yang lebih baru.
 | D-35 | OWNER APPROVED (2026-11-24) | CU-6 LX-1–LX-9: TB-B utama, TB-A cadangan dengan otorisasi, tanpa klaim kesetaraan | CU-6-Q7–Q12 | Nilai batas agregat (UW-12); umpan balik test tersembunyi → D-36 |
 | D-36 | OWNER APPROVED (2026-11-24) | CU-6-Q13 HF-A: umpan balik test tersembunyi = kode hasil + deskripsi kasus dari penyusun; tanpa input mentah, output diharapkan, atau output pelajar | CU-6-Q13; bagian CU-6 di UW-36 | Nilai batas agregat LX-2 (pengukuran, UW-12); verifikasi implementasi |
 | D-37 | OWNER APPROVED (2026-11-24) | OD-15-Q2: XV-7–XV-14 dengan RX-A | OD-15-Q2; UW-33 (sebagian) | OD-5–OD-9, OD-11–OD-14; verifikasi implementasi |
+| D-38 | OWNER APPROVED (2026-11-24) | RM-Q2: nilai angka batas agregat eksekusi lab (LX-2) dicatat sebagai **keluaran verifikasi UW-12 (jalur V)** | RM-Q2; UW-36 → COMPLETE (AC kebijakan CU terpenuhi) | Pengukuran angka LX-2 (UW-12, belum diizinkan; D-10) |
 
 Status Batch 02 "Tetap OPEN" yang terdampak: O-01 → provisional (D-06);
 O-02 → diputuskan (D-08); O-07 → diputuskan (D-07); O-16 → baseline
@@ -135,7 +136,7 @@ diganti. Saat merujuk ID lokal dari dokumen lain, tulis kode dokumennya:
 | `OP4:` / `CU6:` / `RM:` / `CPP:` | Lembar OP-4, CU-6, roadmap perencanaan, rencana produksi kurikulum |
 | `AF:` / `XP:` / `CCD:` / `RB:` / `CU10:` / `TPL:` / `XS:` / `W01:` | Lembar alur penilaian, XP, konten kurikulum, rubrik proyek, CU-10, templat CB-0, tinjauan konsistensi, konten modul W1 (`curriculum/mod-w01/`) |
 | `UW-nn` | Register audit (ID global, unik) |
-| `D-01`–`D-37` (tanpa kode) | Keputusan owner (global) — [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
+| `D-01`–`D-38` (tanpa kode) | Keputusan owner (global) — [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
 | `O-`, `OP-`, `OD-`, `CO-`, `UO-`, `CU-`, `KS-`, gate QG (`AB-`, `OF-`, `GR-`, `LB-`, `CL-`, `SC-`, `AP-`, `EV-`) | ID global unik, tanpa kode. Pengecualian: opsi Auto Backup `AB-1`–`AB-3` di BKP §7 bentrok dengan gate `AB-1`–`AB-8`, sehingga ditulis `BKP:AB-x` |
 
 Contoh: `ASM:B-03` (kasus batas skor), `BKP:M-1` (mode restore),
@@ -197,3 +198,12 @@ Batch 01 (TD:56).
 |---|---|---|---|---|
 | ER-1 | `docs/TECHNICAL_DECISIONS_BATCH_02.md` baris 5 (TD:5) | `docs/PLANNING_COMPLETION_BATCH.md` | `PLANNING_COMPLETION_BATCH.md` (root repositori) | Dokumen Batch 02 adalah salinan verbatim keputusan owner dan **tidak diubah**. File Batch 01 tidak dipindahkan (D-18 Opsi B) |
 
+## Penerimaan dan otorisasi owner lain (2026-11-24)
+
+| ID | Status | Isi | Catatan |
+|---|---|---|---|
+| W01-ACC | OWNER ACCEPTED (2026-11-24) | Modul W1 (`curriculum/mod-w01/`) diterima sebagai **modul kurikulum acuan** | Dengan batas review independen yang diungkapkan (lihat bawah). Bukan verifikasi implementasi |
+| PR #25 | MERGED (2026-11-24) | Head `f4cb17335c65489b165d2214e309ff2f00a765ee`; merge commit `df76c5fbf946e6e8d2ca9e8e87505454041623a3` | Otorisasi: "PR #25 telah direview ChatGPT dan disetujui untuk merge." |
+| CB-0.5 | AUTHORIZED (2026-11-24) | Pemasangan dan integrasi tepat empat skill: Planning with Files, verification-before-completion, systematic-debugging, receiving-code-review | Skill lain ON HOLD. Implementasi aplikasi tetap dilarang. Rincian: [AGENT_SKILL_REGISTRY.md](AGENT_SKILL_REGISTRY.md) |
+
+Batas review independen (dinyatakan owner): F-22 dan F-23 menerima review akhir terarah; pencatatan D-36/D-37 diperiksa; enumerasi independen mengonfirmasi 3.840 kombinasi dan 46 build valid. Tidak setiap baris CSV terbaru, setiap butir penilaian yang berubah, atau setiap penerapan kontrak visibilitas diaudit ulang secara independen.

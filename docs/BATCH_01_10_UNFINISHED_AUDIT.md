@@ -912,3 +912,52 @@ Jumlah status **tidak berubah**: 31 / 4 / 13 / 3 / 5 = 56; jalur P 31/43.
 Kurikulum: diproduksi 4/64, lolos review independen 0/64, diterima owner
 0/64. W01-ACC dan RM-Q2 AWAITING OWNER. Persetujuan D-36/D-37 bukan
 verifikasi implementasi.
+
+## 19. Pembaruan status — merge PR #25, D-38, W01-ACC, CB-0.5 (2026-11-24)
+
+PR #25 di-merge pada head `f4cb17335c65489b165d2214e309ff2f00a765ee`
+(merge commit `df76c5fbf946e6e8d2ca9e8e87505454041623a3`) atas otorisasi
+eksplisit owner.
+
+### 19.1 Perubahan per butir
+
+| ID | Sebelum | Sesudah | AC | Bukti |
+|---|---|---|---|---|
+| UW-36 | BLOCKED | **COMPLETE** | CU-2, CU-3, CU-5–CU-7, CU-9, CU-11 (+ CU2-O3–O5) terisi | D-13, D-24, D-30–D-36 mengisi semua kebijakan; D-38 menetapkan angka batas agregat LX-2 sebagai keluaran verifikasi UW-12 (jalur V), sehingga tidak ada sisa AC perencanaan. Tidak ada pengukuran yang dilakukan |
+| UW-12 | OPEN | OPEN (tidak berubah) | PY:F-01–F-15 PASS + angka LX-2 | Ditambah keluaran angka LX-2 (D-38). Tetap menunggu UW-10 dan izin (D-10 NOT AUTHORIZED) |
+| UW-37 | OPEN | OPEN (tidak berubah) | CUR:CC-01–CC-11 | W1 diterima owner (W01-ACC); W2–W16 belum diproduksi |
+| UW-26 | OPEN | OPEN (tidak berubah) | Rubrik concept per modul | Menunggu konten W2–W16 |
+
+### 19.2 Jumlah per status (56 butir; dihitung ulang)
+
+| Status | §18 | §19 | Butir |
+|---|---|---|---|
+| COMPLETE | 31 | **32** | + UW-36 |
+| OPEN | 4 | 4 | UW-12, UW-26, UW-37, UW-52 |
+| BLOCKED | 13 | **12** | UW-02, UW-10, UW-14, UW-23, UW-24, UW-28, UW-33, UW-34, UW-35, UW-39, UW-41, UW-53 |
+| DEFERRED | 3 | 3 | UW-21, UW-38, UW-40 |
+| NOT VERIFIED | 5 | 5 | UW-13, UW-15, UW-54, UW-55, UW-56 |
+| **Total** | 56 | **56** | |
+
+Jalur P 32/43 (74,4%); belum: UW-14, UW-23, UW-24, UW-26, UW-28, UW-33,
+UW-34, UW-35, UW-37, UW-41, UW-53. Register 32/56 (57,1%).
+
+### 19.3 Kurikulum dan review
+
+| Ukuran | Nilai |
+|---|---|
+| Diproduksi | 1/16 modul · 4/64 komponen |
+| Lolos review independen | W1 (PR #25), dengan batas di bawah |
+| Diterima owner | 1/16 modul · 4/64 komponen (W01-ACC) |
+| Runtime diverifikasi | Tidak ada (D-10, D-11) |
+
+Batas review independen: F-22 dan F-23 menerima review akhir terarah; pencatatan D-36/D-37 diperiksa; enumerasi independen mengonfirmasi 3.840 kombinasi dan 46 build valid. **Tidak** setiap baris CSV terbaru, setiap butir penilaian yang berubah, atau setiap penerapan kontrak visibilitas diaudit ulang secara independen.
+
+### 19.4 CB-0.5 (terpisah dari register UW)
+
+CB-0.5 (alur kerja agen dan efisiensi token) **tidak** dipetakan ke butir UW
+mana pun dan tidak mengubah jumlah di atas. Status dan bukti:
+[AGENT_SKILL_REGISTRY.md](AGENT_SKILL_REGISTRY.md).
+
+PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
+D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.

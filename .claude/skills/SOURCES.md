@@ -21,3 +21,17 @@ Notes:
 - Some passages mention the `android` CLI (`android docs ...`, `android skills add ...`),
   which is not installed in this environment.
 - Guidance is generic Android/KMP; `docs/BLUEPRINT_LOCKED.md` and `CLAUDE.md` take precedence.
+
+## CB-0.5 agent workflow skills (2026-11-24)
+
+| Skill | Source | Commit | License |
+|---|---|---|---|
+| planning-with-files | https://github.com/OthmanAdi/planning-with-files `skills/planning-with-files` | aaa38bc62053f5f7c1bfbcb60f0405f7cf0ee228 | MIT (`planning-with-files/LICENSE`) |
+| verification-before-completion | https://github.com/obra/superpowers `skills/verification-before-completion` | 22f0b463e7a5e579904dd6211a520321035526f7 (v7.0.2) | MIT (`<skill>/LICENSE`) |
+| systematic-debugging | idem `skills/systematic-debugging` | idem | idem |
+| receiving-code-review | idem `skills/receiving-code-review` | idem | idem |
+
+Copied verbatim (byte-compared with `cmp`); subset of files only. Scripts and
+hooks of planning-with-files are intentionally not installed. Full audit,
+status and rollback: `docs/AGENT_SKILL_REGISTRY.md`.
+

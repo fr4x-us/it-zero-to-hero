@@ -284,3 +284,9 @@ Konsekuensi templat: setiap test tersembunyi wajib memiliki field
 `case_description` yang bermakna (CB-0 TPL-10). Kebijakan penilaian,
 remedial, dan penerimaan risiko kunci jawaban (D-34) tidak berubah.
 Persetujuan kebijakan ini bukan verifikasi implementasi.
+
+## 18. Angka batas agregat LX-2 (D-38)
+
+Nilai angka batas agregat eksekusi lab (LX-2, D-35) dicatat sebagai
+**keluaran verifikasi UW-12 (jalur V)** (D-38, 2026-11-24). Kebijakan LX-1–LX-9
+tidak berubah. Belum ada pengukuran (D-10 NOT AUTHORIZED).
