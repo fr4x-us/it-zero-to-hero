@@ -77,6 +77,11 @@ Tempat Sampah. Dan berkas yang sudah dihapus permanen kadang masih dapat
 dipulihkan dengan alat khusus — jadi "hapus" tidak sama dengan "aman
 dimusnahkan".
 
+*Sebelum menghapus berkas asal setelah menyalin:* periksa salinannya —
+jumlah dan nama berkas sama, dan setiap berkas **dapat dibuka** dengan
+isi yang lengkap. Berkas yang tampak ada belum tentu terbaca utuh (mis.
+penyalinan terputus atau flashdisk rusak).
+
 ## 2. Contoh terbimbing: menelusuri operasi
 
 **Keadaan awal** (folder kerja tidak dipakai; semua path absolut):

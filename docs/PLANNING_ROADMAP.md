@@ -90,7 +90,7 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-34 | BLOCKED | P | Keputusan CO-4–CO-6 |
 | UW-35 | BLOCKED | P | Keputusan UO-3–UO-9 |
 | UW-36 | COMPLETE | P | Semua kebijakan CU diputuskan (D-13, D-24, D-30–D-36); angka batas agregat LX-2 = keluaran verifikasi UW-12 (D-38) |
-| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); diproduksi 16/64 (W1–W4); diterima owner 4/64 (W01-ACC); W2–W4 dikoreksi (F-28–F-70, PR #27), menunggu re-review independen dan penerimaan owner |
+| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); diproduksi 16/64 (W1–W4); diterima owner 4/64 (W01-ACC); W2–W4 dikoreksi (F-28–F-72, dua putaran, PR #27), menunggu re-review independen dan penerimaan owner |
 | UW-38 | DEFERRED | M | D-22 |
 | UW-39 | BLOCKED | V | Lingkungan SDK opsional untuk verifikasi build; tidak punya AC perencanaan |
 | UW-40 | DEFERRED | M | D-22 |
@@ -304,3 +304,14 @@ dapat dinilai lengkap? Rekomendasi: Ya.
 - Register tidak berubah (32/4/12/3/5 = 56; P 32/43); UW-26, UW-37 OPEN.
   PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10 NOT AUTHORIZED ·
   D-11 DEFERRED.
+
+## 15. Koreksi terarah putaran 2 (PR #27, 2026-11-24)
+
+- Delta review PR #27 = REQUEST CHANGES; register diperluas menjadi F-28–F-72
+  (45 ID). Deskripsi F-55, F-56, F-57, F-59 dipulihkan owner dan ditangani;
+  catatan BLOCKED di §14 kini historis.
+- F-51 (satuan bit/byte peka huruf, W3), F-71 (W2) dan F-72 (W4)
+  (dependensi rubrik eksplisit) diperbaiki; fixture W4 E19–E20 ditambahkan.
+- Status tidak berubah: W2–W4 menunggu re-review independen dan penerimaan
+  owner; W5–W16 NOT STARTED / NOT AUTHORIZED; register 32/4/12/3/5 = 56;
+  P 32/43; PLANNING CLEAR NO; IMPLEMENTATION VERIFIED NO.

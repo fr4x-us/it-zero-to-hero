@@ -25,7 +25,7 @@ variants:
   distractor_rationale:
     b: 'Integritas: tidak diubah tanpa izin'
     c: 'Ketersediaan: dapat dipakai saat dibutuhkan'
-    d: Autentikasi adalah cara membuktikan pemilik akun, bukan salah satu tiga tujuan
+    d: Autentikasi adalah pemeriksaan bukti saat masuk ke akun, bukan salah satu tiga tujuan
   explanation: Kerahasiaan berarti hanya yang berhak dapat membaca.
   option_order: urutan alami (kategori/baris tabel), tetap
 - item_id: item-w04-t-s01-b

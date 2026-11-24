@@ -83,9 +83,13 @@ panjang, mis. `2001:db8::1`); W3 hanya membahas IPv4.
 harus 16 sampai 31; `172.15.…` dan `172.32.…` **bukan** privat.
 
 **Alamat publik** dipakai di internet dan pada umumnya dialokasikan unik
-secara global; biasanya diberikan ISP ke router rumahmu (sebagian ISP juga
-membagi satu alamat publik ke banyak pelanggan). Router memakai teknik bernama **NAT** agar
-banyak perangkat beralamat privat dapat berbagi satu alamat publik.
+secara global. Alamat privat **tidak dirutekan langsung** di internet
+publik. Router rumah memakai teknik bernama **NAT** agar banyak perangkat
+beralamat privat dapat berbagi alamat yang diterima router dari ISP. Alamat
+itu sering publik, tetapi sebagian ISP memakai **CGNAT**: router rumah
+sendiri mendapat alamat privat dan ISP yang membagi satu alamat publik ke
+banyak pelanggan. Soal W3 menyebut bila router dianggap memegang alamat
+publik.
 
 Alamat khusus: `127.0.0.1` (*loopback*) berarti "perangkat ini sendiri";
 tidak dipakai sebagai alamat perangkat di jaringan.

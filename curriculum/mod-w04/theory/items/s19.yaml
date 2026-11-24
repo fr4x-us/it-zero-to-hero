@@ -11,7 +11,9 @@ variants:
 - item_id: item-w04-t-s19-a
   variant_id: mod-w04.theory.s19.vA
   item_version: '1.0'
-  stem: Akun email Nia diambil alih karena sandinya bocor. Urutkan langkah agar setiap langkah dapat dikerjakan.
+  stem: Sandi email Nia bocor dan orang lain sempat masuk ke akunnya. Nia **masih dapat masuk** dengan
+    sandi lamanya (pelaku belum menggantinya) dari perangkat yang aman. Dalam skenario ini, urutkan langkah
+    agar setiap langkah dapat dikerjakan.
   items:
   - id: A
     text: Setelah MFA aktif, keluarkan semua sesi lain sehingga perangkat lain harus masuk ulang dengan
@@ -33,8 +35,10 @@ variants:
     - A
     - C
   scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
-  explanation: Sandi baru dulu; MFA diaktifkan dengan sandi baru; sesi lain dikeluarkan setelah MFA aktif;
-    kontak diberi tahu setelah akun aman.
+  explanation: Karena Nia masih punya akses, sandi diganti dulu; MFA diaktifkan setelah masuk dengan sandi
+    baru; sesi lain dikeluarkan setelah MFA aktif; kontak diberi tahu setelah akun aman. Urutan ini berlaku
+    untuk skenario ini; bila pemilik sudah kehilangan akses, langkah pertama adalah pemulihan akun lewat
+    kanal resmi penyedia, dan melapor dapat dilakukan sedini mungkin.
 - item_id: item-w04-t-s19-b
   variant_id: mod-w04.theory.s19.vB
   item_version: '1.0'

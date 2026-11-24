@@ -35,7 +35,7 @@ variants:
   - id: R1
     text: Data dan layanan dapat dipakai saat dibutuhkan
   - id: R2
-    text: Membuktikan bahwa kamu pemilik akun
+    text: Memeriksa bukti yang terdaftar untuk akun sebelum mengizinkan masuk
   - id: R3
     text: Data hanya dapat dibaca pihak yang berhak
   - id: R4
@@ -57,13 +57,13 @@ variants:
     terutama terganggu; satu kejadian → istilahnya).
   left:
   - id: L1
-    text: Catatan stok koperasi diubah diam-diam
+    text: Catatan stok koperasi diubah diam-diam oleh orang yang tidak berhak
   - id: L2
-    text: Pesan pribadi dibaca orang lain
+    text: Pesan pribadi dibaca orang lain tanpa izin pemiliknya
   - id: L3
     text: Situs ujian tidak dapat dibuka saat ujian
   - id: L4
-    text: Sidik jari dipakai untuk membuktikan bahwa kamu pemilik akun
+    text: Sidik jari diperiksa sebagai bukti saat masuk ke akun
   right:
   - id: R1
     text: Ketersediaan

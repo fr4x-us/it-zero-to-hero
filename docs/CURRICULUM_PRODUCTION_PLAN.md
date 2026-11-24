@@ -162,7 +162,7 @@ Perpanjangan aksesibilitas, remedial, dan review opsional berada di luar
 |---|---|---|
 | CB-0 | Standar produksi ([CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md)) | Dipakai untuk W1–W4; semua kebijakan terputuskan (D-36); tidak ada keputusan penerimaan owner terpisah; review independen terbatas — **tidak** dinyatakan final global |
 | CB-1a | W1 modul acuan ([curriculum/mod-w01/](../curriculum/mod-w01/module.yaml)) | **ACCEPTED** (W01-ACC, 2026-11-24; penerimaan terbatas, §4.2) |
-| CB-1b | W2–W4 (12 komponen) | **PRODUCED — dikoreksi** (CB-1, PR #27; review REQUEST CHANGES → koreksi konsolidasi F-28–F-70); menunggu re-review independen dan penerimaan owner |
+| CB-1b | W2–W4 (12 komponen) | **PRODUCED — dikoreksi** (CB-1, PR #27; review REQUEST CHANGES dua kali → koreksi F-28–F-72 dalam dua putaran); menunggu re-review independen dan penerimaan owner |
 | CB-2 | W5–W8 (16 komponen) | NOT STARTED |
 | CB-3 | W9–W12 (16 komponen); diterima sebagai perencanaan, runtime NOT VERIFIED (RM:RV-1–RV-3) | NOT STARTED / NOT AUTHORIZED; umpan balik test tersembunyi mengikuti D-36 |
 | CB-4 | W13–W16 (16 komponen), termasuk capstone | NOT STARTED / NOT AUTHORIZED; lab kode W16 mengikuti D-36 |
@@ -267,5 +267,11 @@ lanjutan (bila ada) memerlukan biner.
 **Koreksi konsolidasi CB-1 (PR #27, 2026-11-24).** Review PR #27 = REQUEST
 CHANGES (F-28–F-70). Disposisi per temuan ada di `review.md` masing-masing
 modul (§ register koreksi). Skor maksimum, durasi, dan XP tidak berubah
-(tabel di atas tetap). F-55–F-57 dan F-59 **BLOCKED** — rincian temuan asli
+(tabel di atas tetap). *Historis (putaran 1):* F-55–F-57 dan F-59 BLOCKED — rincian temuan asli
 tidak tersedia. Status: diproduksi dan dikoreksi; **belum diterima**.
+
+**Koreksi terarah putaran 2 (delta review PR #27).** Deskripsi F-55–F-57
+dan F-59 dipulihkan owner dan ditangani; temuan baru F-71 (W2) dan F-72
+(W4) diperbaiki; F-51 mengubah normalisasi satuan kecepatan W3 menjadi peka
+huruf. Register 45 ID (F-28–F-72), tanpa BLOCKED. Skor maksimum, durasi, dan
+XP tetap. Status: dikoreksi; **belum diterima**.

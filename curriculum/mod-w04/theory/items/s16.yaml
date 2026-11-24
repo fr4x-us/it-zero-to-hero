@@ -26,7 +26,10 @@ variants:
     a: Salinan di perangkat sama tidak dihitung (CB-4)
     b: Kurang dari 3 salinan
     c: Salinan di perangkat sama tidak dihitung (CB-4)
-  explanation: 3 salinan, 3 jenis media, awan di luar lokasi.
+  explanation: 'Jenis media model W4 (CB-2): penyimpanan internal perangkat · harddisk/SSD eksternal ·
+    flashdisk · kartu memori · layanan awan. Rencana d: 3 salinan pada 3 jenis media (internal laptop,
+    harddisk eksternal, awan); awan di luar lokasi. Folder lain di perangkat yang sama bukan salinan terhitung
+    dan bukan jenis media baru.'
 - item_id: item-w04-t-s16-b
   variant_id: mod-w04.theory.s16.vB
   item_version: '1.0'
@@ -45,5 +48,7 @@ variants:
     a: Memenuhi
     b: 'Memenuhi: rumah nenek di luar lokasi'
     d: Memenuhi
-  explanation: Folder lain di perangkat yang sama tidak dihitung; hanya 1 salinan terhitung dan tidak
-    ada di luar lokasi.
+  explanation: 'Jenis media model W4 (CB-2): penyimpanan internal perangkat · harddisk/SSD eksternal ·
+    flashdisk · kartu memori · layanan awan. Rencana c: folder lain di laptop yang sama tidak dihitung
+    (CB-4) dan tetap media internal yang sama; hanya 1 salinan terhitung, 1 jenis media, tidak ada di
+    luar lokasi. Rencana a, b, d masing-masing 3 salinan pada 3 jenis media dengan 1 di luar lokasi.'

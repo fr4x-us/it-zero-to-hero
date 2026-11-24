@@ -49,11 +49,11 @@ variants:
   - - K1
     - Situs perpustakaan tidak dapat dibuka sepanjang hari karena dibanjiri permintaan palsu
   - - K2
-    - Kata sandi akun bocor dan dibaca orang lain
+    - Kata sandi akun bocor dan dibaca orang yang tidak berhak
   - - K3
-    - Jumlah pada tagihan diubah diam-diam sebelum dikirim
+    - Jumlah pada tagihan diubah diam-diam oleh orang yang tidak berhak sebelum dikirim
   - - K4
-    - Dokumen rahasia klub dibaca orang luar
+    - Dokumen rahasia klub dibaca orang luar tanpa izin
   options:
   - id: a
     text: K1

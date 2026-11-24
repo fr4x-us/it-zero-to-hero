@@ -78,7 +78,8 @@ variants:
       label: Wi-Fi palsu/mencurigakan (skenario memberi bukti perilaku mencurigakan, bukan hanya nama
         mirip)
     - id: AMN
-      label: Bukan ancaman (tindakan aman)
+      label: Tindakan pengguna yang tepat; skenario tidak memberi bukti cukup untuk enam kategori ancaman
+        (bukan jaminan tidak ada ancaman)
   visible_example:
     note: 'Contoh terlihat (0 poin): "Kamu mengunci layar ponsel dengan PIN sebelum meninggalkannya di
       meja" → AMN'
@@ -161,8 +162,9 @@ variants:
     - id: S9
       text: Kamu masuk ke situs sekolah dengan mengetik sendiri alamat resminya dan memakai MFA.
     - id: S10
-      text: Aplikasi bank resmi memberi tahu ada login dari perangkat baru, dan kamu memeriksanya di aplikasi
-        resmi itu.
+      text: 'Aplikasi bank resmi memberi tahu ada login dari perangkat baru. Kamu memeriksanya dengan
+        membuka sendiri aplikasi resmi itu (bukan lewat tautan di pesan). Yang diklasifikasikan: tindakanmu
+        memeriksa pemberitahuan itu.'
     display_order:
     - S1
     - S2
@@ -231,8 +233,14 @@ variants:
     scenario: S10
     expected: AMN
     points: 3
-primary_classification_rule: 'Bila ciri tumpang-tindih: menyamar sebagai program berguna → TRO; memata-matai
-  tanpa disebut menyamar → SPY; mengunci + tebusan → RAN; pesan/situs/formulir penyamar yang memancing
-  data → PHI; manipulasi langsung tanpa tautan/situs palsu → SOS; jaringan Wi-Fi dengan bukti perilaku
-  mencurigakan → WIF; tindakan lewat kanal resmi tanpa tanda mencurigakan → AMN. Setiap skenario memuat
-  bukti perilaku, bukan hanya gejala'
+primary_classification_rule: 'Aturan berurutan (F-52; pakai aturan pertama yang cocok, sehingga setiap
+  skenario punya tepat satu kunci): (1) mengunci/mengenkripsi + tebusan → RAN; (2) program yang menyamar
+  sebagai program berguna → TRO; (3) program yang memata-matai tanpa disebut menyamar → SPY; (4) jaringan
+  Wi-Fi tiruan/mencurigakan dengan bukti perilaku, termasuk halaman peminta data yang muncul dari jaringan
+  itu → WIF; (5) pesan/situs/formulir penyamar lewat email, SMS, chat, atau tautan yang memancing data
+  → PHI; (6) manipulasi langsung (telepon/tatap muka) tanpa tautan/situs palsu → SOS; (7) bila tidak ada
+  yang cocok: tindakan pengguna yang tepat lewat kanal resmi, tanpa bukti cukup untuk enam kategori ancaman
+  → AMN. AMN menilai ketepatan tindakan pengguna atau tidak cukupnya bukti ancaman dalam skenario, BUKAN
+  jaminan tidak ada ancaman (mis. vB S10: login dari perangkat baru tetap dapat berupa insiden; bila login
+  itu bukan dirimu, amankan akun — Pelajaran 4). Setiap skenario yang berkunci ancaman memuat bukti perilaku,
+  bukan hanya gejala'

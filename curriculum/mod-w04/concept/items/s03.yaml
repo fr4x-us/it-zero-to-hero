@@ -61,8 +61,8 @@ variants:
   - id: '2'
     text: Kata sandi + PIN adalah MFA karena ada dua bukti.
   - id: '3'
-    text: Kode dari aplikasi autentikator membuktikan faktor "yang kamu miliki" (ponsel tempat aplikasinya
-      terpasang).
+    text: Kode dari aplikasi autentikator dipakai sebagai bukti faktor "yang dimiliki" (autentikator di
+      ponselmu), tetapi kode itu dapat dicuri atau diteruskan.
   - id: '4'
     text: Pengelola kata sandi membantu membuat sandi unik.
   - id: '5'

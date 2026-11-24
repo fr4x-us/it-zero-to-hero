@@ -38,7 +38,7 @@ memasang program tersembunyi. *Jawaban:* trojan.
 ## R-AUTH — Autentikasi dan kata sandi (LO3)
 
 **Ingat kembali:** MFA = **dua faktor atau lebih** dari jenis **berbeda**;
-OTP tidak dibagikan; jumlah PIN berbeda = 10 dikalikan sebanyak jumlah digit
+OTP hanya bukti sementara (dapat dicuri atau diteruskan), jadi tidak dibagikan; jumlah PIN berbeda = 10 dikalikan sebanyak jumlah digit
 (digit boleh diawali 0 dan berulang).
 
 **Latihan tambahan:** (1) PIN 2 digit → kombinasi? (2) Apakah sidik jari

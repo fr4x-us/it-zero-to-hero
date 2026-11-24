@@ -89,11 +89,19 @@ yang patut dicurigai, lalu ambil tindakan aman (Pelajaran 4).
 **Kategori utama.** Satu kejadian nyata dapat cocok dengan beberapa
 kategori (mis. aplikasi palsu yang juga memata-matai). Di soal W4, setiap
 skenario memuat bukti perilaku, dan kamu memilih kategori **utama**
-menurut ciri yang paling menonjol: menyamar sebagai program berguna →
-trojan; memata-matai tanpa disebut menyamar → spyware; mengunci + tebusan
-→ ransomware; pesan/situs/formulir penyamar yang memancing data →
-phishing; manipulasi langsung (telepon, tatap muka) tanpa tautan →
-rekayasa sosial; jaringan dengan perilaku mencurigakan → Wi-Fi palsu.
+dengan aturan berurutan — pakai aturan **pertama** yang cocok:
+
+1. Mengunci/mengenkripsi berkas + meminta tebusan → ransomware.
+2. Program yang menyamar sebagai program berguna → trojan.
+3. Program yang memata-matai tanpa disebut menyamar → spyware.
+4. Jaringan Wi-Fi tiruan/mencurigakan dengan bukti perilaku, termasuk
+   halaman peminta data yang muncul dari jaringan itu → Wi-Fi palsu.
+5. Pesan/situs/formulir penyamar lewat email, SMS, chat, atau tautan yang
+   memancing data → phishing.
+6. Manipulasi langsung (telepon, tatap muka) tanpa tautan → rekayasa sosial.
+
+Di dunia nyata satu kejadian bisa termasuk beberapa kategori sekaligus;
+aturan ini hanya cara W4 memilih satu jawaban yang dinilai.
 
 ## 3. Contoh terbimbing
 

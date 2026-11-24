@@ -43,7 +43,9 @@ Kecepatan ideal: tetap, tanpa tambahan informasi protokol; aturan desimal
 ## Yang diserahkan
 
 Huruf opsi (1, 4), nama protokol (2), bilangan bulat (3, 5, 6; boleh
-diikuti satuan yang diminta).
+diikuti satuan yang diminta). Satuan kecepatan di nomor 5 peka huruf
+besar/kecil: tulis persis `MB/s` (varian A) atau `Mbps` (varian B), atau
+angka saja; `b` kecil = bit, `B` besar = byte.
 
 ## Penilaian
 

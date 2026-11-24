@@ -16,9 +16,23 @@ variants:
   - '3'
   - 3 MB/s
   - 3MB/s
-  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
-    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
-    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Angka: bilangan bulat tanpa nol di depan, tanda, desimal, atau pemisah ribuan. Satuan kecepatan **peka
+    huruf besar/kecil** (F-51): hanya `MB/s` (megabyte per detik, B besar = byte) atau `Mbps` (megabit
+    per detik, b kecil = bit) persis seperti tertulis di soal, dengan atau tanpa satu spasi; angka tanpa
+    satuan diterima. Ditolak: satuan dengan huruf lain (mis. `Mb/s` untuk soal MB/s, `MBps`, `mb/s`, `MBPS`),
+    satuan lain, kata'
+  normalization_examples:
+    diterima:
+    - '3'
+    - 3 MB/s
+    - 3MB/s
+    ditolak (0 poin):
+    - 3 Mb/s
+    - 3 mb/s
+    - 3 MBps
+    - '03'
+    - 3,0
   explanation: 24 ÷ 8 = 3 MB/s.
 - item_id: item-w03-t-s18-b
   variant_id: mod-w03.theory.s18.vB
@@ -28,7 +42,21 @@ variants:
   - '56'
   - 56 Mbps
   - 56Mbps
-  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
-    salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
-    depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
+  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
+    Angka: bilangan bulat tanpa nol di depan, tanda, desimal, atau pemisah ribuan. Satuan kecepatan **peka
+    huruf besar/kecil** (F-51): hanya `MB/s` (megabyte per detik, B besar = byte) atau `Mbps` (megabit
+    per detik, b kecil = bit) persis seperti tertulis di soal, dengan atau tanpa satu spasi; angka tanpa
+    satuan diterima. Ditolak: satuan dengan huruf lain (mis. `Mb/s` untuk soal MB/s, `MBps`, `mb/s`, `MBPS`),
+    satuan lain, kata'
+  normalization_examples:
+    diterima:
+    - '56'
+    - 56 Mbps
+    - 56Mbps
+    ditolak (0 poin):
+    - 56 MBps
+    - 56 mbps
+    - 56 MB/s
+    - '056'
+    - 56,0
   explanation: 7 × 8 = 56 Mbps.

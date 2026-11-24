@@ -93,17 +93,17 @@ Kontrak field: [AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTO
 
 | Field | Nilai |
 |---|---|
-| Tugas aktif dan lingkup | CB-1 CONSOLIDATED CORRECTION — koreksi PR #27 (REQUEST CHANGES, F-28–F-70) pada PR yang sama; konten W2–W4 + dokumen status; tanpa PR baru, tanpa merge |
-| Fase | Koreksi selesai dan di-push ke PR #27; **menunggu re-review independen dan otorisasi owner** |
-| Selesai | CB-1 produksi W2–W4 (PR #27); koreksi konsolidasi: 39 temuan diselesaikan (FIXED/CLARIFIED/NOT REPRODUCED), F-55–F-57 dan F-59 BLOCKED; fixture rubrik baru (W2 21, W3 21, W4 18; semuanya cocok dengan evaluator dokumentasi); dokumen status direkonsiliasi (F-69/F-70) |
-| Sisa | Rincian asli F-55, F-56, F-57, F-59 dari reviewer; re-review independen PR #27; otorisasi merge owner; penerimaan W2–W4 terpisah |
-| Berkas relevan | `curriculum/mod-w02/`–`mod-w04/` (`review.md` § register koreksi), `docs/CURRICULUM_PRODUCTION_PLAN.md`, `docs/BATCH_01_10_UNFINISHED_AUDIT.md` §21 |
-| Versi kerja | Branch `planning/cb1-w02-w04`; basis `main` = `ab0103e4954ead4ded6343d105d73a2729916cd6`; head pra-koreksi `a9241d33c2cf32e177ca92618df458b78dd6cb98`; versi terkini = head PR #27 di GitHub |
-| Keputusan | Owner: REQUEST CHANGES PR #27; perbaiki pada PR yang sama. Tidak ada perubahan keputusan terkunci, skor maksimum, durasi, atau XP |
-| Blocker | F-55, F-56, F-57, F-59: rincian temuan asli tidak tersedia (BLOCKED — ORIGINAL FINDING DETAILS REQUIRED) |
-| Pendekatan gagal | Patch multi-pasangan gagal total bila satu pasangan tidak cocok → dijalankan ulang per pasangan; beberapa total fixture yang dihitung tangan salah → dikoreksi dari evaluator dokumentasi |
-| Bukti verifikasi | `curriculum/mod-w0N/review.md` (register koreksi, matriks bukti item, fixture); [CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md) §4 (V03 dari sesi sebelumnya; tidak diklaim ulang) |
-| Aksi berikutnya yang diizinkan | Tidak ada sampai owner mengirim rincian F-55–F-57/F-59, instruksi revisi, atau kalimat otorisasi merge untuk PR #27 |
+| Tugas aktif dan lingkup | CB-1 TARGETED CORRECTION ROUND 2 — koreksi delta review PR #27 (REQUEST CHANGES, register F-28–F-72) pada PR yang sama; konten W2–W4 + dokumen status; tanpa PR baru, tanpa merge |
+| Fase | Koreksi putaran 2 selesai dan di-push ke PR #27; **menunggu re-review independen dan otorisasi owner** |
+| Selesai | Putaran 1 (F-28–F-70); putaran 2: F-49–F-51 sesuai deskripsi asli, F-52–F-55, F-57–F-59, F-71, F-72 diperbaiki; F-56 dan F-65 dipertahankan (inspeksi independen PASS); F-37 diklarifikasi; F-31 NOT REPRODUCED dengan bukti commit `9a562ce` dan head. Register 45 ID tanpa BLOCKED |
+| Sisa | Re-review independen PR #27; otorisasi merge owner; penerimaan W2–W4 terpisah |
+| Berkas relevan | `curriculum/mod-w02/`–`mod-w04/` (`review.md`: register + bagian koreksi terarah putaran 2), `docs/BATCH_01_10_UNFINISHED_AUDIT.md` §22, `docs/PLANNING_ROADMAP.md` §15 |
+| Versi kerja | Branch `planning/cb1-w02-w04`; basis `main` = `ab0103e4954ead4ded6343d105d73a2729916cd6`; head yang direview `145bb5693320c322eda4d7ea0d08b0a284018c9e`; versi terkini = head PR #27 di GitHub |
+| Keputusan | Owner: REQUEST CHANGES (delta) pada PR #27; deskripsi asli F-55–F-57, F-59 dipulihkan owner. Tidak ada perubahan keputusan terkunci, skor maksimum, durasi, atau XP |
+| Blocker | Tidak ada untuk register koreksi; menunggu review dan keputusan owner |
+| Pendekatan gagal | Format `zero` simulasi W2 berupa label, bukan ID → pemeriksaan F-71 diubah membaca depends_on dari rubrik; generator register sempat salah kutip (diperbaiki sebelum dipakai) |
+| Bukti verifikasi | `curriculum/mod-w0N/review.md` (register 45 ID, prosedur validasi dan hasil); V03 dari sesi sebelumnya, tidak diklaim ulang |
+| Aksi berikutnya yang diizinkan | Tidak ada sampai owner mengirim instruksi revisi atau kalimat otorisasi merge untuk PR #27 |
 | Kondisi berhenti | PR #27 diperbarui → STOP. Jangan merge, jangan mulai W5, jangan implementasi |
 
 ## Blocker

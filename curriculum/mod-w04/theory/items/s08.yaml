@@ -43,9 +43,11 @@ variants:
     text: Bukan faktor autentikasi
   key: b
   distractor_rationale:
-    a: Kode tidak kamu hafalkan; kode dibuat perangkat yang kamu miliki
+    a: Kode tidak kamu hafalkan; kode dibuat autentikator di perangkat yang kamu miliki
     c: Itu sidik jari/wajah
     d: Kode itu dipakai untuk autentikasi
-  explanation: Kode itu dibuat aplikasi di ponsel yang kamu miliki; memasukkan kode membuktikan kamu memegang
-    ponsel itu (faktor "dimiliki"). Kodenya sendiri hanya bukti sesaat, bukan faktornya.
+  explanation: Faktornya adalah autentikator di ponsel yang kamu miliki (faktor "dimiliki"). Kode yang
+    dimasukkan hanya bukti sementara bahwa seseorang punya akses ke autentikator itu atau rahasianya —
+    bukan bukti pasti siapa yang memegang ponsel, karena kode dapat dicuri atau diteruskan. Karena itu
+    kode tidak pernah dibagikan.
   option_order: urutan alami (kategori/baris tabel), tetap

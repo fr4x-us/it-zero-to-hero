@@ -27,8 +27,10 @@ respons insiden (LO6).
 
 ## Bagian A — Kejadian yang dialami Lina
 
-Klasifikasikan setiap kejadian dengan **kategori utama** (Pelajaran 1
-§2): `PHI` phishing · `SOS` rekayasa sosial langsung (telepon/tatap muka)
+Klasifikasikan setiap kejadian dengan **kategori utama** (aturan
+berurutan Pelajaran 1 §2: pakai aturan pertama yang cocok — tebusan,
+penyamaran program, memata-matai, Wi-Fi tiruan termasuk halaman dari
+jaringan itu, pesan/situs penyamar, lalu manipulasi langsung): `PHI` phishing · `SOS` rekayasa sosial langsung (telepon/tatap muka)
 · `TRO` trojan · `RAN` ransomware · `SPY` spyware · `WIF` Wi-Fi
 palsu/mencurigakan.
 

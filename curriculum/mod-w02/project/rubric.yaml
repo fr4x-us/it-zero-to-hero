@@ -33,7 +33,7 @@ field_rules:
     rejected_examples: {absolute: ["\\home\\contoh\\a.txt (garis miring terbalik)", "/home/contoh/ (diakhiri /)", "/home//contoh (komponen kosong)", "/home/con toh (spasi di dalam)"], relative: ["/kue/bolu.txt (diawali /)", "..\\kue\\bolu.txt", "../kue/ (diakhiri /)"]}
   path_correct: "Benar bila sama persis (huruf besar/kecil dibedakan) dengan path yang dihitung. Path relatif yang dihitung = '../' diulang u kali + sisa path sasaran, dengan u = jumlah komponen folder kerja setelah awalan bersama terpanjang dengan folder sasaran (jalur terpendek); diterima dengan atau tanpa awalan './'"
   number_rule_F5: "Bilangan bulat tanpa tanda/desimal/spasi di dalam, tanpa nol di depan (kecuali '0'); spasi tepi dibuang; boleh diikuti tepat satu spasi atau tanpa spasi lalu kata 'berkas' (huruf besar/kecil bebas). Contoh diterima: '3', ' 3 ', '3 berkas', '3berkas'. Ditolak: 'tiga', '3,0', '+3', '03', '3 file'"
-  dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian/keadaan yang dibutuhkannya tidak valid; pemeriksaan lain tetap dinilai. Tidak ada gerbang nol untuk seluruh rubrik. Setiap depends_on [F1] berarti F1 ada DAN tree_valid"
+  dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian/keadaan yang dibutuhkannya tidak valid; pemeriksaan lain tetap dinilai. Tidak ada gerbang nol untuk seluruh rubrik. Setiap depends_on yang memuat 'F1 (tree_valid)' — termasuk K1.c11–c14 yang memakai lokasi/folder dari F1 — berarti F1 ada DAN tree_valid; bila tidak, pemeriksaan itu 0. K2.c02–c05 hanya bergantung pada bentuk F2–F5 sehingga tetap dinilai (kredit independen, F-71)"
   final_state_only: "Rubrik menilai KEADAAN AKHIR F1 saja. Riwayat operasi tidak dilacak; pemeriksaan N4 (K3.c03, K3.c04) membuktikan bahwa keadaan akhir tidak memuat folder tambahan, berkas hilang/berganti nama, atau salinan ganda — bukan bahwa tidak pernah ada langkah sementara (mis. dihapus lalu dipulihkan)"
 
 criteria:
@@ -41,26 +41,26 @@ criteria:
     name: Kebenaran fungsional
     points: 60
     checks:
-      - {id: mod-w02.project.K1.c01, rule: "lokasi(sains-laporan.docx) = /home/bima/ProyekSains/dokumen", depends_on: [F1], points: 4}
-      - {id: mod-w02.project.K1.c02, rule: "lokasi(sains-daftar-pustaka.pdf) = /home/bima/ProyekSains/dokumen", depends_on: [F1], points: 4}
-      - {id: mod-w02.project.K1.c03, rule: "lokasi(sains-catatan.txt) = /home/bima/ProyekSains/dokumen", depends_on: [F1], points: 4}
-      - {id: mod-w02.project.K1.c04, rule: "lokasi(sains-foto-akar.jpg) = /home/bima/ProyekSains/gambar", depends_on: [F1], points: 4}
-      - {id: mod-w02.project.K1.c05, rule: "lokasi(sains-grafik.png) = /home/bima/ProyekSains/gambar", depends_on: [F1], points: 4}
-      - {id: mod-w02.project.K1.c06, rule: "lokasi(sains-sketsa.png) = /home/bima/ProyekSains/gambar", depends_on: [F1], points: 4}
-      - {id: mod-w02.project.K1.c07, rule: "lokasi(sains-pengukuran.csv) = /home/bima/ProyekSains/data", depends_on: [F1], points: 4}
-      - {id: mod-w02.project.K1.c08, rule: "lokasi(sains-suhu.xlsx) = /home/bima/ProyekSains/data", depends_on: [F1], points: 4}
-      - {id: mod-w02.project.K1.c09, rule: "lokasi(sains-kelembapan.csv) = /home/bima/ProyekSains/data", depends_on: [F1], points: 4}
-      - {id: mod-w02.project.K1.c10, rule: "lokasi(X) = /home/bima/Unduhan untuk ketiga berkas lain (lagu-favorit.mp3, undangan-ulang-tahun.pdf, pemasang-game.exe)", depends_on: [F1, pohon_diubah], points: 3}
-      - {id: mod-w02.project.K1.c11, rule: "F2 = lokasi(sains-laporan.docx) + '/sains-laporan.docx' (path_correct)", depends_on: [F2 bentuk absolut sah, lokasi(sains-laporan.docx) terdefinisi dan berada di dalam /home/bima/ProyekSains], points: 6}
-      - {id: mod-w02.project.K1.c12, rule: "F3 = path relatif terpendek dari /home/bima/ProyekSains/gambar ke lokasi(sains-laporan.docx)/sains-laporan.docx (path_correct)", depends_on: [F3 bentuk relatif sah, folder /home/bima/ProyekSains/gambar ada di F1, lokasi(sains-laporan.docx) terdefinisi dan berada di dalam /home/bima/ProyekSains], points: 5}
-      - {id: mod-w02.project.K1.c13, rule: "F4 = path relatif terpendek dari /home/bima/Unduhan ke lokasi(sains-pengukuran.csv)/sains-pengukuran.csv (path_correct)", depends_on: [F4 bentuk relatif sah, lokasi(sains-pengukuran.csv) terdefinisi dan berada di dalam /home/bima/ProyekSains], points: 5}
-      - {id: mod-w02.project.K1.c14, rule: "F5 (diurai) = jumlah berkas yang berada langsung di /home/bima/ProyekSains/data pada F1", depends_on: [F5 dapat diurai, folder /home/bima/ProyekSains/data ada di F1], points: 5}
+      - {id: mod-w02.project.K1.c01, rule: "lokasi(sains-laporan.docx) = /home/bima/ProyekSains/dokumen", depends_on: [F1 (tree_valid)], points: 4}
+      - {id: mod-w02.project.K1.c02, rule: "lokasi(sains-daftar-pustaka.pdf) = /home/bima/ProyekSains/dokumen", depends_on: [F1 (tree_valid)], points: 4}
+      - {id: mod-w02.project.K1.c03, rule: "lokasi(sains-catatan.txt) = /home/bima/ProyekSains/dokumen", depends_on: [F1 (tree_valid)], points: 4}
+      - {id: mod-w02.project.K1.c04, rule: "lokasi(sains-foto-akar.jpg) = /home/bima/ProyekSains/gambar", depends_on: [F1 (tree_valid)], points: 4}
+      - {id: mod-w02.project.K1.c05, rule: "lokasi(sains-grafik.png) = /home/bima/ProyekSains/gambar", depends_on: [F1 (tree_valid)], points: 4}
+      - {id: mod-w02.project.K1.c06, rule: "lokasi(sains-sketsa.png) = /home/bima/ProyekSains/gambar", depends_on: [F1 (tree_valid)], points: 4}
+      - {id: mod-w02.project.K1.c07, rule: "lokasi(sains-pengukuran.csv) = /home/bima/ProyekSains/data", depends_on: [F1 (tree_valid)], points: 4}
+      - {id: mod-w02.project.K1.c08, rule: "lokasi(sains-suhu.xlsx) = /home/bima/ProyekSains/data", depends_on: [F1 (tree_valid)], points: 4}
+      - {id: mod-w02.project.K1.c09, rule: "lokasi(sains-kelembapan.csv) = /home/bima/ProyekSains/data", depends_on: [F1 (tree_valid)], points: 4}
+      - {id: mod-w02.project.K1.c10, rule: "lokasi(X) = /home/bima/Unduhan untuk ketiga berkas lain (lagu-favorit.mp3, undangan-ulang-tahun.pdf, pemasang-game.exe)", depends_on: [F1 (tree_valid), pohon_diubah], points: 3}
+      - {id: mod-w02.project.K1.c11, rule: "F2 = lokasi(sains-laporan.docx) + '/sains-laporan.docx' (path_correct)", depends_on: [F1 (tree_valid), F2 bentuk absolut sah, lokasi(sains-laporan.docx) terdefinisi dan berada di dalam /home/bima/ProyekSains], points: 6}
+      - {id: mod-w02.project.K1.c12, rule: "F3 = path relatif terpendek dari /home/bima/ProyekSains/gambar ke lokasi(sains-laporan.docx)/sains-laporan.docx (path_correct)", depends_on: [F1 (tree_valid), F3 bentuk relatif sah, folder /home/bima/ProyekSains/gambar ada di F1, lokasi(sains-laporan.docx) terdefinisi dan berada di dalam /home/bima/ProyekSains], points: 5}
+      - {id: mod-w02.project.K1.c13, rule: "F4 = path relatif terpendek dari /home/bima/Unduhan ke lokasi(sains-pengukuran.csv)/sains-pengukuran.csv (path_correct)", depends_on: [F1 (tree_valid), F4 bentuk relatif sah, lokasi(sains-pengukuran.csv) terdefinisi dan berada di dalam /home/bima/ProyekSains], points: 5}
+      - {id: mod-w02.project.K1.c14, rule: "F5 (diurai) = jumlah berkas yang berada langsung di /home/bima/ProyekSains/data pada F1", depends_on: [F1 (tree_valid), F5 dapat diurai, folder /home/bima/ProyekSains/data ada di F1], points: 5}
   K2:
     name: Kelengkapan deliverable
     points: 20
     definition: "MR-A (D-33): setiap deliverable ada DAN valid secara bentuk. F1 sah bila pohon memuat ≥ 1 folder baru; F2–F4 sah menurut path_form; F5 sah menurut number_rule_F5. K2 tidak menilai kebenaran nilai (K1) atau aturan struktur (K3)"
     checks:
-      - {id: mod-w02.project.K2.c01, rule: "F1 memuat ≥ 1 folder yang tidak ada di keadaan awal", depends_on: [F1], points: 4}
+      - {id: mod-w02.project.K2.c01, rule: "F1 memuat ≥ 1 folder yang tidak ada di keadaan awal", depends_on: [F1 (tree_valid)], points: 4}
       - {id: mod-w02.project.K2.c02, rule: "F2 terisi dan absolute_valid", depends_on: [F2], points: 4}
       - {id: mod-w02.project.K2.c03, rule: "F3 terisi dan relative_valid", depends_on: [F3], points: 4}
       - {id: mod-w02.project.K2.c04, rule: "F4 terisi dan relative_valid", depends_on: [F4], points: 4}
@@ -69,10 +69,10 @@ criteria:
     name: Struktur dan format
     points: 10
     checks:
-      - {id: mod-w02.project.K3.c01, rule: "Folder /home/bima/ProyekSains ada (nama persis, huruf besar/kecil dibedakan)", depends_on: [F1], points: 3}
-      - {id: mod-w02.project.K3.c02, rule: "Ketiga folder /home/bima/ProyekSains/dokumen, /gambar, /data ada (nama persis, huruf kecil)", depends_on: [F1], points: 3}
-      - {id: mod-w02.project.K3.c03, rule: "Tidak ada folder baru selain keempat required_folders (N4)", depends_on: [F1, pohon_diubah], points: 2}
-      - {id: mod-w02.project.K3.c04, rule: "Tepat 12 berkas di luar Tempat Sampah, dengan 12 nama asli, masing-masing tepat satu (tidak ada yang dihapus, disalin, atau diganti nama; N2, N4)", depends_on: [F1, pohon_diubah], points: 2}
+      - {id: mod-w02.project.K3.c01, rule: "Folder /home/bima/ProyekSains ada (nama persis, huruf besar/kecil dibedakan)", depends_on: [F1 (tree_valid)], points: 3}
+      - {id: mod-w02.project.K3.c02, rule: "Ketiga folder /home/bima/ProyekSains/dokumen, /gambar, /data ada (nama persis, huruf kecil)", depends_on: [F1 (tree_valid)], points: 3}
+      - {id: mod-w02.project.K3.c03, rule: "Tidak ada folder baru selain keempat required_folders (N4)", depends_on: [F1 (tree_valid), pohon_diubah], points: 2}
+      - {id: mod-w02.project.K3.c04, rule: "Tepat 12 berkas di luar Tempat Sampah, dengan 12 nama asli, masing-masing tepat satu (tidak ada yang dihapus, disalin, atau diganti nama; N2, N4)", depends_on: [F1 (tree_valid), pohon_diubah], points: 2}
   K4:
     name: Penjelasan proyek (komposisi K-A, 5 × CE-S1, P = 2)
     points: 10

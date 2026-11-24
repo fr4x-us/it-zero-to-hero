@@ -15,8 +15,7 @@ variants:
     itu langsung lewat internet, tetapi tidak sampai ke laptopmu. Penjelasan paling tepat adalah …
   options:
   - id: a
-    text: Alamat itu privat dan hanya bermakna di dalam LAN; di internet, rumahmu memakai alamat publik
-      router dari ISP
+    text: 'Alamat itu privat: hanya bermakna di dalam LAN dan tidak dirutekan langsung di internet publik'
   - id: b
     text: Alamat itu tidak valid
   - id: c
@@ -28,7 +27,10 @@ variants:
     b: Alamatnya valid (4 oktet 0–255)
     c: Tidak ada aturan seperti itu
     d: 127.0.0.1 berarti perangkat itu sendiri
-  explanation: Alamat privat tidak diteruskan langsung di internet; router memakai alamat publik (NAT).
+  explanation: Alamat privat (192.168.x.x) tidak dirutekan langsung di internet publik, sehingga tidak
+    dapat dihubungi langsung dari luar LAN. Router menerjemahkan alamat (NAT) ke alamat yang ia terima
+    dari ISP; alamat itu bisa publik, atau bisa juga privat bila ISP memakai CGNAT (berbagi satu alamat
+    publik untuk banyak pelanggan). Di kedua kasus, alamat 192.168.1.23 tetap hanya bermakna di LAN.
 - item_id: item-w03-t-s07-b
   variant_id: mod-w03.theory.s07.vB
   item_version: '1.0'
@@ -48,4 +50,5 @@ variants:
     a: 192.168.x.x adalah privat
     b: 'Valid: 4 oktet 0–255'
     d: 36.x bukan rentang privat
-  explanation: Router punya alamat publik dari ISP; perangkat di LAN memakai alamat privat.
+  explanation: Dalam skenario ini router menerima alamat publik 36.89.12.5 dari ISP (tanpa CGNAT); perangkat
+    di LAN memakai alamat privat.

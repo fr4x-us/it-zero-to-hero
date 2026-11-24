@@ -38,12 +38,18 @@ konfirmasi).
 | `RAN` | Ransomware |
 | `SPY` | Spyware |
 | `WIF` | Wi-Fi palsu/mencurigakan (skenario memberi bukti perilaku, bukan hanya nama mirip) |
-| `AMN` | Bukan ancaman (tindakan aman) |
+| `AMN` | Tindakan pengguna yang tepat; skenario tidak memberi bukti cukup untuk enam kategori ancaman (**bukan** jaminan tidak ada ancaman) |
 
-Bila ciri tumpang-tindih, pilih kategori **utama** (Pelajaran 1 §2):
-menyamar sebagai program berguna → `TRO`; memata-matai tanpa disebut
-menyamar → `SPY`; mengunci + tebusan → `RAN`; pesan/situs/formulir penyamar
-yang memancing data → `PHI`; manipulasi langsung tanpa tautan → `SOS`.
+Pilih kategori **utama** dengan aturan berurutan Pelajaran 1 §2 — pakai
+aturan pertama yang cocok: (1) mengunci + tebusan → `RAN`; (2) menyamar
+sebagai program berguna → `TRO`; (3) memata-matai tanpa disebut menyamar →
+`SPY`; (4) Wi-Fi tiruan/mencurigakan dengan bukti perilaku, termasuk halaman
+peminta data dari jaringan itu → `WIF`; (5) pesan/situs/formulir penyamar
+lewat email, SMS, chat, atau tautan → `PHI`; (6) manipulasi langsung tanpa
+tautan → `SOS`; (7) tidak ada yang cocok dan tindakannya tepat lewat kanal
+resmi → `AMN`. `AMN` menilai tindakanmu, bukan menjamin tidak ada ancaman:
+kejadian yang kamu periksa lewat kanal resmi tetap bisa ternyata insiden,
+dan saat itu langkah respons Pelajaran 4 berlaku.
 
 **Contoh terlihat (tidak dinilai):** "Kamu mengunci layar ponsel dengan
 PIN sebelum meninggalkannya di meja" → `AMN`.
@@ -78,7 +84,7 @@ PIN sebelum meninggalkannya di meja" → `AMN`.
 | S7 | Di stasiun muncul Wi-Fi "Stasiun-WiFi-Resmi" tanpa sandi yang meminta login akun email, padahal papan informasi menyebut nama Wi-Fi resmi yang lain. |
 | S8 | Email meminta "verifikasi data rapor" lewat formulir di domain yang bukan milik sekolah. |
 | S9 | Kamu masuk ke situs sekolah dengan mengetik sendiri alamat resminya dan memakai MFA. |
-| S10 | Aplikasi bank resmi memberi tahu ada login dari perangkat baru, dan kamu memeriksanya di aplikasi resmi itu. |
+| S10 | Aplikasi bank resmi memberi tahu ada login dari perangkat baru. Kamu memeriksanya dengan membuka sendiri aplikasi resmi itu (bukan lewat tautan di pesan). Yang diklasifikasikan: tindakanmu memeriksa pemberitahuan itu. |
 
 ## Yang diserahkan
 
@@ -98,7 +104,9 @@ dinilai. Gangguan sistem → evaluasi diulang tanpa attempt baru.
 
 ## Umpan balik (setelah evaluasi)
 
-Benar/salah per skenario dan ciri yang menentukan jenisnya.
+Benar/salah per skenario dan ciri yang menentukan jenisnya. Untuk `AMN`:
+mengapa tindakannya tepat dan kapan kejadian itu tetap perlu ditanggapi
+sebagai insiden.
 
 ## Remedial
 

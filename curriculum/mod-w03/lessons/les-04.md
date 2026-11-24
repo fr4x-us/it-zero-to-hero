@@ -52,7 +52,9 @@ Konversi (dua arah):
 - **Mbps → MB/s:** bagi 8. Contoh 16 Mbps ÷ 8 = **2 MB/s**.
 - **MB/s → Mbps:** kali 8. Contoh 2 MB/s × 8 = **16 Mbps**.
 
-Perhatikan huruf: **b** kecil = bit, **B** besar = byte.
+Perhatikan huruf: **b** kecil = bit, **B** besar = byte. Karena itu jawaban
+yang memakai satuan dinilai **peka huruf**: tulis `MB/s` atau `Mbps` persis
+seperti di soal (atau angka saja); `Mb/s` atau `MBps` dinilai salah.
 
 ## 2. Waktu transfer (model ideal)
 

@@ -1043,3 +1043,19 @@ durasi, dan XP tidak berubah (305 XP/modul; 915 untuk W2–W4).
 
 PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
 D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.
+
+## 22. Pembaruan status — koreksi terarah putaran 2 (PR #27, F-28–F-72) (2026-11-24)
+
+Delta review PR #27 (head `145bb5693320c322eda4d7ea0d08b0a284018c9e`) =
+**REQUEST CHANGES**. Register diperluas menjadi 45 ID (F-28–F-72). Deskripsi
+F-55, F-56, F-57, F-59 dipulihkan owner; catatan BLOCKED di §21 kini
+historis. Disposisi per ID: `review.md` W2/W3/W4.
+
+Tidak ada perubahan status butir: COMPLETE 32 · OPEN 4 · BLOCKED 12 ·
+DEFERRED 3 · NOT VERIFIED 5 = **56**; jalur P 32/43; UW-26 dan UW-37 OPEN.
+Kurikulum: diproduksi 4/16 modul (16/64 komponen); diterima owner W1 saja
+(4/64). W2–W4 menunggu re-review independen dan penerimaan owner; W5–W16
+NOT STARTED / NOT AUTHORIZED.
+
+PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
+D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.

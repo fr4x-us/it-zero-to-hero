@@ -59,7 +59,8 @@ variants:
   - id: A
     text: Salin folder `Resep` beserta isinya ke flashdisk
   - id: B
-    text: Buka `Resep` di flashdisk dan periksa semua berkas ada
+    text: 'Buka `Resep` di flashdisk: pastikan jumlah dan nama berkasnya sama dengan di laptop, lalu buka
+      setiap berkas untuk memastikan isinya lengkap dan dapat dibaca'
   - id: C
     text: Hapus folder `Resep` dari laptop
   - id: D
@@ -76,5 +77,6 @@ variants:
     - D
   credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
     maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
-  feedback: Salinan diperiksa sebelum yang asli dihapus; Tempat Sampah dikosongkan terakhir karena setelah
-    itu berkas tidak dapat dipulihkan lewat Tempat Sampah.
+  feedback: Salinan diperiksa (berkasnya ada, dapat dibuka, dan isinya lengkap) sebelum yang asli dihapus
+    — berkas yang ada belum tentu terbaca utuh; Tempat Sampah dikosongkan terakhir karena setelah itu
+    berkas tidak dapat dipulihkan lewat Tempat Sampah.

@@ -11,8 +11,9 @@ variants:
 - item_id: item-w03-t-s13-a
   variant_id: mod-w03.theory.s13.vA
   item_version: '1.0'
-  stem: Laptop **dapat** membuka situs bila alamat IP servernya diketik langsung, tetapi **gagal** bila
-    nama `rapor.example` yang diketik. Layanan mana yang paling mungkin bermasalah?
+  stem: Situs latihan `rapor.example` di LAN sekolah dapat dibuka lewat alamat IP-nya (halaman yang sama,
+    tanpa peringatan sertifikat). Saat nama `rapor.example` diketik, browser menampilkan pesan bahwa **alamat
+    server untuk nama itu tidak ditemukan**. Layanan mana yang **paling mungkin** bermasalah?
   options:
   - id: a
     text: Kabel atau Wi-Fi terputus
@@ -25,9 +26,13 @@ variants:
   key: b
   distractor_rationale:
     a: Situs dapat dibuka dengan alamat IP, jadi sambungan berjalan
-    c: Halaman terbuka lewat alamat IP, jadi bukan HTTPS
+    c: Pesan galatnya "alamat untuk nama tidak ditemukan" muncul sebelum sambungan HTTPS dimulai; masalah
+      HTTPS biasanya tampil sebagai peringatan sertifikat
     d: Laptop sudah punya alamat dan dapat berkomunikasi
-  explanation: 'Yang gagal hanya penerjemahan nama ke alamat IP: tugas DNS.'
+  explanation: 'Pesan "alamat untuk nama tidak ditemukan" menunjukkan penerjemahan nama ke alamat IP gagal,
+    jadi DNS paling mungkin bermasalah. Ini dugaan terkuat dari gejala, bukan bukti pasti: membuka lewat
+    alamat IP saja tidak selalu menyingkirkan masalah lain yang bergantung pada nama (mis. sertifikat
+    atau pengaturan server).'
 - item_id: item-w03-t-s13-b
   variant_id: mod-w03.theory.s13.vB
   item_version: '1.0'

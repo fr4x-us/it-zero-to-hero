@@ -61,8 +61,10 @@ aplikasi autentikator. Bila kata sandi bocor, penyerang masih butuh faktor
 kedua.
 
 **OTP** (*one-time password*) adalah kode sekali pakai. Faktornya adalah
-**perangkat atau nomor** yang kamu miliki; kodenya hanya bukti sesaat bahwa
-kamu memegangnya. Siapa pun yang mendapat kode itu dapat memakainya, jadi
+**perangkat atau nomor** yang kamu miliki; kodenya hanya bukti sementara
+bahwa seseorang punya akses ke perangkat, nomor, atau autentikator itu —
+bukan bukti pasti siapa yang memegangnya. Kode dapat dicuri, diteruskan,
+atau didapat lewat perangkat yang diretas. Siapa pun yang mendapat kode itu dapat memakainya, jadi
 **jangan pernah membagikannya** kepada siapa pun, termasuk yang mengaku
 petugas. Petugas resmi tidak pernah meminta OTP.
 
@@ -159,7 +161,7 @@ sosial, tanpa MFA. Situs game bocor. Apa risikonya dan apa perbaikannya?
 
 ## Ringkasan
 
-- Autentikasi = membuktikan pemilik akun; faktor: diketahui, dimiliki,
+- Autentikasi = memeriksa bukti yang terdaftar untuk akun; faktor: diketahui, dimiliki,
   melekat. **MFA** = dua faktor atau lebih dari jenis berbeda.
 - Kombinasi PIN = 10 pangkat jumlah digit; +1 digit → ×10.
 - Sandi **panjang, unik**, pengelola kata sandi, MFA; **OTP tidak pernah
@@ -169,7 +171,7 @@ sosial, tanpa MFA. Situs game bocor. Apa risikonya dan apa perbaikannya?
 
 | Istilah | Bahasa Inggris | Arti |
 |---|---|---|
-| Autentikasi | authentication | Membuktikan identitas pemilik akun |
+| Autentikasi | authentication | Pemeriksaan bukti yang terdaftar untuk akun sebelum mengizinkan masuk |
 | Faktor | factor | Jenis bukti autentikasi |
 | Frasa sandi | passphrase | Kata sandi panjang dari beberapa kata |
 | Autentikasi multifaktor | MFA | Dua faktor atau lebih dari jenis berbeda |

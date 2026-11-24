@@ -26,51 +26,51 @@ field_rules:
   rule_321: "copies_counted ≥ 3 DAN media_types ≥ 2 DAN ≥ 1 lokasi terpilih di luar lokasi (L5 atau L6)"
   number_rule: "Bilangan bulat tanpa tanda/desimal/spasi di dalam, tanpa nol di depan; spasi tepi dibuang; boleh diikuti (dengan/tanpa satu spasi) kata 'salinan' untuk F4 atau 'jenis' untuk F5 (huruf besar/kecil bebas). Diterima: '3', '3 salinan', '3jenis'. Ditolak: 'tiga', '3,0', '+3', '03'"
   k3_strict: "F4 dan F5 hanya digit"
-  collection_validity: "F-39 (penerapan pola yang sudah ada: CE-V2/CE-V3 dan answer_validation lab D-24 — ID tidak dikenal/ganda → INVALID_ANSWER untuk isian itu saja; bukan kebijakan global baru). F1: kode per kejadian harus salah satu dari {PHI, SOS, TRO, RAN, SPY, WIF}; kode lain/kosong → kejadian itu tidak sah (K1 kejadian itu 0) dan K2.c01 = 0; kejadian lain tetap dinilai. F2: per akun, daftar tindakan sah bila setiap ID ada di T1–T10 dan tidak ada ID ganda; daftar tidak sah → pemeriksaan wajib, larangan (K1) dan kelengkapan (K2) akun itu 0; akun lain tetap dinilai. Akun yang tidak dikenal (selain E, M, D, G) diabaikan. F3: sah bila setiap ID ada di L2–L6 dan tidak ada ID ganda; F3 tidak sah → K1.c15–c17, K2.c06, K3.c01 (bagian C), K3.c02, K3.c03 bernilai 0; F4/F5 tetap dinilai bentuknya di K2.c07–c08. Struktur submission rusak (bukan daftar) → isian itu tidak sah; kegagalan aplikasi/konten → EVALUATION_ERROR (IE-2)"
-  dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya kosong atau tidak sah; pemeriksaan larangan akun dan pemeriksaan angka membutuhkan isian terkait tidak kosong (mencegah poin tanpa pekerjaan)"
+  collection_validity: "F-39 (penerapan pola yang sudah ada: CE-V2/CE-V3 dan answer_validation lab D-24 — ID tidak dikenal/ganda → INVALID_ANSWER untuk isian itu saja; bukan kebijakan global baru). F1: kode per kejadian harus salah satu dari {PHI, SOS, TRO, RAN, SPY, WIF}; kode lain/kosong → kejadian itu tidak sah (K1 kejadian itu 0) dan K2.c01 = 0; kejadian lain tetap dinilai. F2: per akun, daftar tindakan sah bila setiap ID ada di T1–T10 dan tidak ada ID ganda; daftar tidak sah → pemeriksaan wajib, larangan (K1) dan kelengkapan (K2) akun itu 0; akun lain tetap dinilai. Akun yang tidak dikenal (selain E, M, D, G) diabaikan: tidak menambah poin dan tidak membatalkan akun lain; akun E/M/D/G yang tidak ada = kosong. F3: sah bila setiap ID ada di L2–L6 dan tidak ada ID ganda; F3 tidak sah → K1.c15–c17, K2.c06, K3.c01 (bagian C), K3.c02, K3.c03 bernilai 0; F4/F5 tetap dinilai bentuknya di K2.c07–c08. Struktur luar rusak (F1 bukan pemetaan kejadian→kode, F2 bukan pemetaan akun→daftar, F3 bukan daftar) → seluruh isian itu tidak sah dan semua pemeriksaan yang bergantung padanya 0, isian lain tetap dinilai (MR-2); kegagalan aplikasi/konten → EVALUATION_ERROR (IE-2)"
+  dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya kosong atau tidak sah (setiap depends_on yang menyebut F1.Sx/F2.x/F3 mensyaratkan isian itu sah menurut collection_validity — F-72); pemeriksaan larangan akun dan pemeriksaan angka membutuhkan isian terkait tidak kosong (mencegah poin tanpa pekerjaan)"
 
 criteria:
   K1:
     name: Kebenaran fungsional
     points: 60
     checks:
-      - {id: mod-w04.project.K1.c01, rule: "F1.S1 = PHI", depends_on: [F1.S1], points: 3}
-      - {id: mod-w04.project.K1.c02, rule: "F1.S2 = SOS", depends_on: [F1.S2], points: 3}
-      - {id: mod-w04.project.K1.c03, rule: "F1.S3 = TRO", depends_on: [F1.S3], points: 3}
-      - {id: mod-w04.project.K1.c04, rule: "F1.S4 = WIF", depends_on: [F1.S4], points: 3}
-      - {id: mod-w04.project.K1.c05, rule: "F1.S5 = RAN", depends_on: [F1.S5], points: 3}
-      - {id: mod-w04.project.K1.c06, rule: "F1.S6 = PHI", depends_on: [F1.S6], points: 3}
-      - {id: mod-w04.project.K1.c07, rule: "F2.E memuat semua required_actions.E", depends_on: [F2.E ≥ 1 tindakan], points: 5}
-      - {id: mod-w04.project.K1.c08, rule: "F2.E tidak memuat dangerous_actions", depends_on: [F2.E ≥ 1 tindakan], points: 3}
-      - {id: mod-w04.project.K1.c09, rule: "F2.M memuat semua required_actions.M", depends_on: [F2.M ≥ 1 tindakan], points: 5}
-      - {id: mod-w04.project.K1.c10, rule: "F2.M tidak memuat dangerous_actions", depends_on: [F2.M ≥ 1 tindakan], points: 3}
-      - {id: mod-w04.project.K1.c11, rule: "F2.D memuat semua required_actions.D", depends_on: [F2.D ≥ 1 tindakan], points: 5}
-      - {id: mod-w04.project.K1.c12, rule: "F2.D tidak memuat dangerous_actions", depends_on: [F2.D ≥ 1 tindakan], points: 3}
-      - {id: mod-w04.project.K1.c13, rule: "F2.G memuat semua required_actions.G", depends_on: [F2.G ≥ 1 tindakan], points: 5}
-      - {id: mod-w04.project.K1.c14, rule: "F2.G tidak memuat dangerous_actions", depends_on: [F2.G ≥ 1 tindakan], points: 3}
-      - {id: mod-w04.project.K1.c15, rule: "Pilihan F3 memenuhi rule_321", depends_on: [F3 ≥ 1 lokasi], points: 6}
-      - {id: mod-w04.project.K1.c16, rule: "F4 (diurai) = copies_counted(F3)", depends_on: [F3 ≥ 1 lokasi, F4 dapat diurai], points: 2}
-      - {id: mod-w04.project.K1.c17, rule: "F5 (diurai) = media_types(F3)", depends_on: [F3 ≥ 1 lokasi, F5 dapat diurai], points: 2}
+      - {id: mod-w04.project.K1.c01, rule: "F1.S1 = PHI", depends_on: [F1.S1 sah (kode dari daftar)], points: 3}
+      - {id: mod-w04.project.K1.c02, rule: "F1.S2 = SOS", depends_on: [F1.S2 sah (kode dari daftar)], points: 3}
+      - {id: mod-w04.project.K1.c03, rule: "F1.S3 = TRO", depends_on: [F1.S3 sah (kode dari daftar)], points: 3}
+      - {id: mod-w04.project.K1.c04, rule: "F1.S4 = WIF", depends_on: [F1.S4 sah (kode dari daftar)], points: 3}
+      - {id: mod-w04.project.K1.c05, rule: "F1.S5 = RAN", depends_on: [F1.S5 sah (kode dari daftar)], points: 3}
+      - {id: mod-w04.project.K1.c06, rule: "F1.S6 = PHI", depends_on: [F1.S6 sah (kode dari daftar)], points: 3}
+      - {id: mod-w04.project.K1.c07, rule: "F2.E memuat semua required_actions.E", depends_on: [F2.E sah (collection_validity), F2.E ≥ 1 tindakan], points: 5}
+      - {id: mod-w04.project.K1.c08, rule: "F2.E tidak memuat dangerous_actions", depends_on: [F2.E sah (collection_validity), F2.E ≥ 1 tindakan], points: 3}
+      - {id: mod-w04.project.K1.c09, rule: "F2.M memuat semua required_actions.M", depends_on: [F2.M sah (collection_validity), F2.M ≥ 1 tindakan], points: 5}
+      - {id: mod-w04.project.K1.c10, rule: "F2.M tidak memuat dangerous_actions", depends_on: [F2.M sah (collection_validity), F2.M ≥ 1 tindakan], points: 3}
+      - {id: mod-w04.project.K1.c11, rule: "F2.D memuat semua required_actions.D", depends_on: [F2.D sah (collection_validity), F2.D ≥ 1 tindakan], points: 5}
+      - {id: mod-w04.project.K1.c12, rule: "F2.D tidak memuat dangerous_actions", depends_on: [F2.D sah (collection_validity), F2.D ≥ 1 tindakan], points: 3}
+      - {id: mod-w04.project.K1.c13, rule: "F2.G memuat semua required_actions.G", depends_on: [F2.G sah (collection_validity), F2.G ≥ 1 tindakan], points: 5}
+      - {id: mod-w04.project.K1.c14, rule: "F2.G tidak memuat dangerous_actions", depends_on: [F2.G sah (collection_validity), F2.G ≥ 1 tindakan], points: 3}
+      - {id: mod-w04.project.K1.c15, rule: "Pilihan F3 memenuhi rule_321", depends_on: [F3 sah (collection_validity), F3 ≥ 1 lokasi], points: 6}
+      - {id: mod-w04.project.K1.c16, rule: "F4 (diurai) = copies_counted(F3)", depends_on: [F3 sah (collection_validity), F3 ≥ 1 lokasi, F4 dapat diurai], points: 2}
+      - {id: mod-w04.project.K1.c17, rule: "F5 (diurai) = media_types(F3)", depends_on: [F3 sah (collection_validity), F3 ≥ 1 lokasi, F5 dapat diurai], points: 2}
   K2:
     name: Kelengkapan deliverable
     points: 20
     definition: "MR-A (D-33): deliverable ada DAN sah secara bentuk (kode dari daftar; centang dari daftar; angka dapat dibaca). Kebenaran di K1"
     checks:
-      - {id: mod-w04.project.K2.c01, rule: "F1: keenam kejadian terisi kode dari daftar", depends_on: [F1], points: 6}
-      - {id: mod-w04.project.K2.c02, rule: "F2.E ≥ 1 tindakan", depends_on: [F2.E], points: 2}
-      - {id: mod-w04.project.K2.c03, rule: "F2.M ≥ 1 tindakan", depends_on: [F2.M], points: 2}
-      - {id: mod-w04.project.K2.c04, rule: "F2.D ≥ 1 tindakan", depends_on: [F2.D], points: 2}
-      - {id: mod-w04.project.K2.c05, rule: "F2.G ≥ 1 tindakan", depends_on: [F2.G], points: 2}
-      - {id: mod-w04.project.K2.c06, rule: "F3 ≥ 1 lokasi", depends_on: [F3], points: 2}
+      - {id: mod-w04.project.K2.c01, rule: "F1: keenam kejadian terisi kode dari daftar", depends_on: [F1 keenam kode sah], points: 6}
+      - {id: mod-w04.project.K2.c02, rule: "F2.E sah (collection_validity) dan ≥ 1 tindakan", depends_on: [F2.E sah, F2.E], points: 2}
+      - {id: mod-w04.project.K2.c03, rule: "F2.M sah (collection_validity) dan ≥ 1 tindakan", depends_on: [F2.M sah, F2.M], points: 2}
+      - {id: mod-w04.project.K2.c04, rule: "F2.D sah (collection_validity) dan ≥ 1 tindakan", depends_on: [F2.D sah, F2.D], points: 2}
+      - {id: mod-w04.project.K2.c05, rule: "F2.G sah (collection_validity) dan ≥ 1 tindakan", depends_on: [F2.G sah, F2.G], points: 2}
+      - {id: mod-w04.project.K2.c06, rule: "F3 sah (collection_validity) dan ≥ 1 lokasi", depends_on: [F3 sah, F3], points: 2}
       - {id: mod-w04.project.K2.c07, rule: "F4 dapat diurai (number_rule)", depends_on: [F4], points: 2}
       - {id: mod-w04.project.K2.c08, rule: "F5 dapat diurai (number_rule)", depends_on: [F5], points: 2}
   K3:
     name: Struktur dan format
     points: 10
     checks:
-      - {id: mod-w04.project.K3.c01, rule: "Ketiga bagian wajib ada: F1 ≥ 1 kode, F2 ≥ 1 akun dengan tindakan, F3 ≥ 1 lokasi", depends_on: [F1, F2, F3], points: 4}
-      - {id: mod-w04.project.K3.c02, rule: "F4 hanya digit (k3_strict)", depends_on: [F3 ≥ 1 lokasi, F4], points: 3}
-      - {id: mod-w04.project.K3.c03, rule: "F5 hanya digit (k3_strict)", depends_on: [F3 ≥ 1 lokasi, F5], points: 3}
+      - {id: mod-w04.project.K3.c01, rule: "Ketiga bagian wajib ada: F1 ≥ 1 kode sah, F2 ≥ 1 akun dengan daftar sah yang tidak kosong, F3 sah dan ≥ 1 lokasi", depends_on: [F1 ≥ 1 kode sah, F2 ≥ 1 daftar akun sah, F3 sah], points: 4}
+      - {id: mod-w04.project.K3.c02, rule: "F4 hanya digit (k3_strict)", depends_on: [F3 sah (collection_validity), F3 ≥ 1 lokasi, F4], points: 3}
+      - {id: mod-w04.project.K3.c03, rule: "F5 hanya digit (k3_strict)", depends_on: [F3 sah (collection_validity), F3 ≥ 1 lokasi, F5], points: 3}
   K4:
     name: Penjelasan proyek (komposisi K-A, 5 × CE-S1, P = 2)
     points: 10
@@ -139,6 +139,8 @@ reviewer_examples:   # skor dihitung dengan aturan di atas; K4 diasumsikan 10
   - {id: E16, case: "F3 = {L3, L5, L5} (ID ganda); F4 = 3; F5 = 3", K1: 50, K2: 18, K3: 0, total: 78, zero: [K1.c15, K1.c16, K1.c17, K2.c06, K3.c01, K3.c02, K3.c03], note: "Bentuk F4/F5 tetap mendapat K2.c07–c08 (kredit independen)"}
   - {id: E17, case: "F3 = {L1, L5} (L1 bukan pilihan; asli tidak dicentang)", K1: 50, K2: 18, K3: 0, total: 78, note: "Sama dengan E16: F3 tidak sah"}
   - {id: E18, case: "F1.S4 = 'WIFI' (kode tidak dikenal); lainnya acuan", K1: 57, K2: 14, K3: 10, total: 91, zero: [K1.c04, K2.c01]}
+  - {id: E19, case: "F2 memuat akun tak dikenal X = {T4, T5}; akun E, M, D, G acuan", K1: 60, K2: 20, K3: 10, total: 100, note: "Akun tak dikenal diabaikan (collection_validity): tidak menambah poin dan tidak membatalkan akun lain, walaupun memuat tindakan berbahaya"}
+  - {id: E20, case: "Struktur luar F2 rusak (daftar, bukan pemetaan akun → daftar); F1, F3–F5 acuan", K1: 28, K2: 12, K3: 6, total: 56, zero: [K1.c07–c14, K2.c02–c05, K3.c01], note: "Seluruh F2 tidak sah; F1, F3, F4, F5 tetap dinilai (MR-2, tanpa gerbang nol global)"}
   - {id: E13, case: "Semua kosong / centang 'sudah aman' saja", K1: 0, K2: 0, K3: 0, total: "0 untuk K1–K3; K4 sesuai jawaban", note: "MR-6"}
 
 objective_limits: "Pemeriksaan membuktikan rencana memenuhi aturan W4 pada skenario fiktif; tidak membuktikan akun nyata pelajar aman dan tidak mensertifikasi kompetensi (D-17, D-34)"
