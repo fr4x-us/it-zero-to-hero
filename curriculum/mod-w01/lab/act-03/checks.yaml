@@ -1,0 +1,225 @@
+# W1 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w01.lab.act-03
+name: Satuan data dan kompatibilitas
+competencies:
+- comp-w01-unit-01
+- comp-w01-spec-01
+- comp-w01-mem-01
+max_points: 40
+estimated_minutes: 30
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w01.lab (D-28 XI-2)
+normalization: 'Buang spasi/tab di awal dan akhir; ubah ke huruf kecil; cocokkan persis dengan salah satu
+  accepted_answers. Jawaban angka (c01, c02, c07, c08): daftar memuat bentuk dengan/tanpa titik ribuan
+  berpola 1.234 dan dengan/tanpa satuan yang diizinkan; ditolak: tanda +/−, desimal, pengelompokan titik
+  salah (mis. 7.00.0), spasi di dalam angka, satuan lain. c03: satu huruf {a, b, c, d}. c04–c06: ya/tidak'
+answer_validation: 'Per pemeriksaan: kosong atau tidak cocok dengan daftar → 0; pemeriksaan lain tetap
+  dinilai'
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2)
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. Umpan balik test
+  tersembunyi mengikuti D-36 (HF-A); W1 tidak memiliki test kode tersembunyi'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban terstruktur
+variants:
+- variant_id: mod-w01.lab.act-03.vA
+  fixture:
+    cpus:
+    - id: L-CPU1
+      socket: Soket A
+      watt: 95
+    - id: L-CPU2
+      socket: Soket B
+      watt: 125
+    motherboards:
+    - id: L-MB1
+      socket: Soket A
+      ram: DDR4
+      slots: 2
+    - id: L-MB2
+      socket: Soket B
+      ram: DDR5
+      slots: 4
+  units_rule: 'Satuan desimal (KB, MB, GB, TB) memakai faktor 1.000; satuan biner (KiB, MiB, GiB, TiB)
+    memakai faktor 1.024. Desimal adalah bawaan kecuali soal menyebut satuan biner. Besar → kecil: kalikan
+    faktor per tingkat; kecil → besar: bagi faktor per tingkat. GB → GiB: GB × 1.000³ = byte, lalu ÷ 1.024³
+    (c03 hanya meminta memilih penjelasan; tidak ada jawaban angka GiB)'
+  power_rule: kebutuhan daya = daya CPU + 100 W (model belajar W1, bukan standar pembelian)
+  visible_example:
+    note: 'Contoh terlihat (0 poin): 2 GB = 2.000 MB'
+  checks:
+  - check_id: mod-w01.lab.act-03.vA.c01
+    name: Konversi
+    question: 7 GB = … MB
+    expected: '7000'
+    points: 5
+    feedback: 7 × 1.000 = 7.000
+    accepted_answers:
+    - '7000'
+    - '7.000'
+    - 7000 mb
+    - 7.000 mb
+    - 7000mb
+    - 7.000mb
+  - check_id: mod-w01.lab.act-03.vA.c02
+    name: Kapasitas
+    question: SSD 256 GB untuk video 800 MB per video. Berapa video maksimum? (abaikan ruang sistem)
+    expected: '320'
+    points: 5
+    feedback: 256.000 ÷ 800 = 320
+    accepted_answers:
+    - '320'
+    - 320 video
+  - check_id: mod-w01.lab.act-03.vA.c03
+    name: Penjelasan kapasitas
+    question: 'SSD berlabel 512 GB tampil sekitar 477 GiB di sistem operasi. Pilih penjelasan: (a) SSD
+      rusak; (b) sistem operasi menghitung kelipatan 1.024 (GiB), produsen kelipatan 1.000 (GB); (c) RAM
+      memakai sebagian SSD secara permanen; (d) produsen salah mencetak label'
+    expected: b
+    points: 5
+    feedback: 512.000.000.000 ÷ 1.073.741.824 ≈ 476,8 GiB; kapasitas tidak berkurang
+  - check_id: mod-w01.lab.act-03.vA.c04
+    name: Kompatibilitas 1
+    question: Apakah L-CPU1 kompatibel dengan L-MB1? (Ya/Tidak)
+    expected: Ya
+    points: 5
+    feedback: Keduanya Soket A
+    accepted_answers:
+    - ya
+  - check_id: mod-w01.lab.act-03.vA.c05
+    name: Kompatibilitas 2
+    question: Apakah RAM DDR5 dapat dipasang di L-MB1? (Ya/Tidak)
+    expected: Tidak
+    points: 5
+    feedback: L-MB1 hanya DDR4
+    accepted_answers:
+    - tidak
+  - check_id: mod-w01.lab.act-03.vA.c06
+    name: Kompatibilitas 3
+    question: Apakah 4 keping RAM DDR4 dapat dipasang sekaligus di L-MB1? (Ya/Tidak)
+    expected: Tidak
+    points: 5
+    feedback: L-MB1 hanya 2 slot
+    accepted_answers:
+    - tidak
+  - check_id: mod-w01.lab.act-03.vA.c07
+    name: Kebutuhan daya
+    question: Tuliskan kebutuhan daya (W) bila memakai L-CPU1
+    expected: '195'
+    points: 5
+    feedback: 95 + 100 = 195 W
+    accepted_answers:
+    - '195'
+    - 195 w
+    - 195w
+  - check_id: mod-w01.lab.act-03.vA.c08
+    name: Total RAM
+    question: 3 keping RAM masing-masing 4 GB. Total RAM = … GB
+    expected: '12'
+    points: 5
+    feedback: 3 × 4 = 12 GB
+    accepted_answers:
+    - '12'
+    - 12 gb
+    - 12gb
+- variant_id: mod-w01.lab.act-03.vB
+  fixture:
+    cpus:
+    - id: L-CPU1
+      socket: Soket A
+      watt: 95
+    - id: L-CPU2
+      socket: Soket B
+      watt: 125
+    motherboards:
+    - id: L-MB1
+      socket: Soket A
+      ram: DDR4
+      slots: 2
+    - id: L-MB2
+      socket: Soket B
+      ram: DDR5
+      slots: 4
+  units_rule: 'Satuan desimal (KB, MB, GB, TB) memakai faktor 1.000; satuan biner (KiB, MiB, GiB, TiB)
+    memakai faktor 1.024. Desimal adalah bawaan kecuali soal menyebut satuan biner. Besar → kecil: kalikan
+    faktor per tingkat; kecil → besar: bagi faktor per tingkat. GB → GiB: GB × 1.000³ = byte, lalu ÷ 1.024³
+    (c03 hanya meminta memilih penjelasan; tidak ada jawaban angka GiB)'
+  power_rule: kebutuhan daya = daya CPU + 100 W (model belajar W1, bukan standar pembelian)
+  visible_example:
+    note: 'Contoh terlihat (0 poin): 2 GB = 2.000 MB'
+  checks:
+  - check_id: mod-w01.lab.act-03.vB.c01
+    name: Konversi
+    question: 12 GB = … MB
+    expected: '12000'
+    points: 5
+    feedback: 12 × 1.000 = 12.000
+    accepted_answers:
+    - '12000'
+    - '12.000'
+    - 12000 mb
+    - 12.000 mb
+    - 12000mb
+    - 12.000mb
+  - check_id: mod-w01.lab.act-03.vB.c02
+    name: Kapasitas
+    question: Kartu memori 32 GB untuk lagu 5 MB per lagu. Berapa lagu maksimum? (abaikan ruang sistem)
+    expected: '6400'
+    points: 5
+    feedback: 32.000 ÷ 5 = 6.400
+    accepted_answers:
+    - '6400'
+    - '6.400'
+    - 6400 lagu
+    - 6.400 lagu
+  - check_id: mod-w01.lab.act-03.vB.c03
+    name: Penjelasan kapasitas
+    question: 'Flashdisk berlabel 64 GB tampil sekitar 59,6 GiB di sistem operasi. Pilih penjelasan: (a)
+      flashdisk rusak; (b) RAM memakai sebagian flashdisk secara permanen; (c) sistem operasi menghitung
+      kelipatan 1.024 (GiB), produsen kelipatan 1.000 (GB); (d) produsen salah mencetak label'
+    expected: c
+    points: 5
+    feedback: 64.000.000.000 ÷ 1.073.741.824 ≈ 59,6 GiB; kapasitas tidak berkurang
+  - check_id: mod-w01.lab.act-03.vB.c04
+    name: Kompatibilitas 1
+    question: Apakah L-CPU2 kompatibel dengan L-MB1? (Ya/Tidak)
+    expected: Tidak
+    points: 5
+    feedback: L-CPU2 Soket B, L-MB1 Soket A
+    accepted_answers:
+    - tidak
+  - check_id: mod-w01.lab.act-03.vB.c05
+    name: Kompatibilitas 2
+    question: Apakah RAM DDR4 dapat dipasang di L-MB1? (Ya/Tidak)
+    expected: Ya
+    points: 5
+    feedback: L-MB1 mendukung DDR4
+    accepted_answers:
+    - ya
+  - check_id: mod-w01.lab.act-03.vB.c06
+    name: Kompatibilitas 3
+    question: Apakah 2 keping RAM DDR5 dapat dipasang sekaligus di L-MB2? (Ya/Tidak)
+    expected: Ya
+    points: 5
+    feedback: L-MB2 DDR5 dengan 4 slot
+    accepted_answers:
+    - ya
+  - check_id: mod-w01.lab.act-03.vB.c07
+    name: Kebutuhan daya
+    question: Tuliskan kebutuhan daya (W) bila memakai L-CPU2
+    expected: '225'
+    points: 5
+    feedback: 125 + 100 = 225 W
+    accepted_answers:
+    - '225'
+    - 225 w
+    - 225w
+  - check_id: mod-w01.lab.act-03.vB.c08
+    name: Total RAM
+    question: 2 keping RAM masing-masing 16 GB. Total RAM = … GB
+    expected: '32'
+    points: 5
+    feedback: 2 × 16 = 32 GB
+    accepted_answers:
+    - '32'
+    - 32 gb
+    - 32gb

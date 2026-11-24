@@ -1,0 +1,84 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s18
+competency: comp-w01-spec-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s18-a
+  variant_id: mod-w01.theory.s18.vA
+  item_version: '1.0'
+  stem: Kamu punya CPU **Soket A** dan RAM **DDR5**. Menurut tabel, motherboard mana yang kompatibel?
+  stimulus_table:
+  - - Motherboard
+    - Soket
+    - Jenis RAM
+    - Slot RAM
+  - - MB-P
+    - Soket A
+    - DDR4
+    - '2'
+  - - MB-Q
+    - Soket B
+    - DDR5
+    - '4'
+  - - MB-R
+    - Soket A
+    - DDR5
+    - '2'
+  options:
+  - id: a
+    text: MB-P
+  - id: b
+    text: MB-Q
+  - id: c
+    text: MB-R
+  - id: d
+    text: Tidak ada
+  key: c
+  distractor_rationale:
+    a: MB-P memakai DDR4
+    b: MB-Q memakai Soket B
+    d: MB-R cocok
+  explanation: MB-R memiliki Soket A dan mendukung DDR5.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w01-t-s18-b
+  variant_id: mod-w01.theory.s18.vB
+  item_version: '1.0'
+  stem: Kamu punya CPU **Soket B** dan RAM **DDR4**. Menurut tabel, motherboard mana yang kompatibel?
+  stimulus_table:
+  - - Motherboard
+    - Soket
+    - Jenis RAM
+    - Slot RAM
+  - - MB-P
+    - Soket A
+    - DDR4
+    - '2'
+  - - MB-Q
+    - Soket B
+    - DDR5
+    - '4'
+  - - MB-R
+    - Soket A
+    - DDR5
+    - '2'
+  options:
+  - id: a
+    text: MB-P
+  - id: b
+    text: MB-Q
+  - id: c
+    text: MB-R
+  - id: d
+    text: Tidak ada
+  key: d
+  distractor_rationale:
+    a: MB-P memakai Soket A
+    b: MB-Q memakai DDR5
+    c: MB-R memakai Soket A dan DDR5
+  explanation: Satu-satunya motherboard Soket B (MB-Q) memakai DDR5, jadi tidak ada yang cocok.
+  option_order: urutan alami (kategori/baris tabel), tetap

@@ -1,6 +1,6 @@
 # IT ZERO → HERO — Decision Sheet CU-10: Risiko Ekstraksi Kunci Jawaban Offline
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja. Tanggal:
+Status: **DIPUTUSKAN OWNER — D-34 (2026-11-24)**, lihat §7 · dokumentasi saja. Tanggal:
 **2026-11-24**. Basis: `main` = `928e278`. Kode rujukan: `CU10:`. Terkait
 UW-25 (AC: keputusan tertulis).
 
@@ -64,4 +64,13 @@ CU-3, CU-5, OP-5 (FB), UW-38 (R8 tidak dihitung sebagai perlindungan).
 | CU-10-Q1 | Terima risiko ekstraksi kunci jawaban dengan model ancaman §2 (selaras D-17)? | Ya |
 | CU-10-Q2 | Mitigasi V1 AK-A (kebersihan UI, tanpa enkripsi/hash konten, tanpa klaim perlindungan)? | AK-A |
 
-Status: **AWAITING OWNER**. UW-25 tetap BLOCKED.
+~~Status: **AWAITING OWNER**. UW-25 tetap BLOCKED.~~ *(Historis — dijawab owner 2026-11-24; lihat bagian keputusan di bawah.)*
+
+## 7. Keputusan owner — D-34 (2026-11-24)
+
+Pernyataan owner: "Saya menyetujui rekomendasi D-26, D-27, D-28, D-29, D-30, D-31, D-32, D-33, D-34, D-35."
+
+CU-10-Q1 dan CU-10-Q2 disetujui: risiko ekstraksi kunci diterima dengan
+model ancaman belajar mandiri (§2); mitigasi V1 = AK-A. Tidak ada klaim bahwa
+kunci tidak dapat diekstrak; tanpa validasi server wajib, penilaian AI, atau
+tutor AI; hasil belajar lokal bukan kompetensi tersertifikasi independen.

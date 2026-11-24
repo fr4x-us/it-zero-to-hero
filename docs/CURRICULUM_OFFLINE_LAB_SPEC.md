@@ -304,3 +304,16 @@ menunjuk dokumen yang menjabarkan kriteria, **bukan** menutup gap.
 | CU-10 | Usulan: [CU10_ANSWER_KEY_RISK_DECISION_SHEET.md](CU10_ANSWER_KEY_RISK_DECISION_SHEET.md) — **OPEN** |
 | CU-4 | Usulan: [XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) — **OPEN** |
 | Templat | [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md) — PROVISIONAL, bukan konten |
+
+## 15. Keputusan owner D-30–D-35 dan konten W1 (2026-11-24)
+
+| Butir | Status |
+|---|---|
+| CU-3, CU-5, CC-05 (N = 2), CU2-O5 | **D-30** |
+| CU-7 | **D-31** |
+| CU2-O3, CU-11 | **D-32** |
+| CU-9, CU2-O4 | **D-33** |
+| CU-10 | **D-34** |
+| CU-6 (LX) | **D-35**; kebijakan umpan balik test tersembunyi → CU-6-Q13 (OPEN) |
+| K-13 konten | W1 diproduksi: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml) (belum diterima owner); W2–W16 belum ditulis |
+| CC-07 lab non-kode | Diterapkan sebagai contoh terlihat bernilai 0 + pemeriksaan bernilai yang disembunyikan sampai evaluasi (TPL-10) |

@@ -1,0 +1,86 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s05
+competency: comp-w01-cpu-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s05-a
+  variant_id: mod-w01.theory.s05.vA
+  item_version: '1.0'
+  stem: 'Model sederhana W1: anggap ketiga CPU berasal dari generasi dan arsitektur yang sama, dan komponen
+    lain (RAM, penyimpanan) sama, sehingga hanya core dan clock yang berbeda. Dalam kenyataan, core dan
+    clock saja tidak menentukan peringkat kinerja. Pengguna membuka banyak aplikasi sekaligus sehingga
+    pekerjaan dapat dibagi ke banyak core. CPU mana yang **paling sesuai**?'
+  stimulus_table:
+  - - CPU
+    - Core
+    - Clock
+  - - P1
+    - '6'
+    - 3,9 GHz
+  - - P2
+    - '4'
+    - 4,2 GHz
+  - - P3
+    - '8'
+    - 3,6 GHz
+  options:
+  - id: a
+    text: P1
+  - id: b
+    text: P2
+  - id: c
+    text: P3
+  - id: d
+    text: Ketiganya sama saja
+  key: c
+  distractor_rationale:
+    a: P1 punya 6 core, lebih sedikit dari P3
+    b: P2 punya clock tertinggi tetapi core paling sedikit; pekerjaan yang dapat dibagi lebih terbantu
+      oleh core
+    d: Jumlah core berbeda, jadi tidak sama
+  explanation: Dengan asumsi model, pekerjaan yang dapat dibagi lebih terbantu oleh jumlah core; P3 punya
+    8 core.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w01-t-s05-b
+  variant_id: mod-w01.theory.s05.vB
+  item_version: '1.0'
+  stem: 'Model sederhana W1: anggap ketiga CPU berasal dari generasi dan arsitektur yang sama, dan komponen
+    lain (RAM, penyimpanan) sama, sehingga hanya core dan clock yang berbeda. Dalam kenyataan, core dan
+    clock saja tidak menentukan peringkat kinerja. Sebuah program mengerjakan langkahnya **satu per satu**
+    dan tidak dapat dibagi ke core lain. CPU mana yang **kemungkinan paling cepat** menjalankannya?'
+  stimulus_table:
+  - - CPU
+    - Core
+    - Clock
+  - - P1
+    - '6'
+    - 3,9 GHz
+  - - P2
+    - '4'
+    - 4,2 GHz
+  - - P3
+    - '8'
+    - 3,6 GHz
+  options:
+  - id: a
+    text: P1
+  - id: b
+    text: P2
+  - id: c
+    text: P3
+  - id: d
+    text: Ketiganya sama saja
+  key: b
+  distractor_rationale:
+    a: Clock P1 lebih rendah dari P2
+    c: Core tambahan tidak membantu pekerjaan yang tidak dapat dibagi
+    d: Clock berbeda, jadi kemungkinan tidak sama
+  explanation: Dengan asumsi model (generasi, arsitektur, dan komponen lain sama), pekerjaan yang tidak
+    dapat dibagi lebih bergantung pada kecepatan satu core, sehingga clock tertinggi (P2, 4,2 GHz) kemungkinan
+    lebih cepat. Di luar asumsi itu, kinerja juga ditentukan arsitektur, cache, RAM, dan penyimpanan.
+  option_order: urutan alami (kategori/baris tabel), tetap

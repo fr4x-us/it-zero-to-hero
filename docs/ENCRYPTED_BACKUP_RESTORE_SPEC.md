@@ -383,3 +383,10 @@ NOT VERIFIED). Syarat rilis restore produksi RR-1–RR-8:
 
 Pemisahan di atas **disetujui D-25** (2026-11-24). Tidak ada persyaratan
 keamanan yang dihapus; tidak ada pengukuran yang diizinkan.
+
+## 16. Validasi ledger XP saat restore (D-29, D-37)
+
+Pratinjau restore memvalidasi ledger XP dengan XV-1–XV-14
+([XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) §8.2,
+§14.1–§14.2); temuan → restore ditolak (RX-A). D-03, M-1/M-2, dan rollback
+tidak berubah. Belum ada implementasi atau verifikasi.

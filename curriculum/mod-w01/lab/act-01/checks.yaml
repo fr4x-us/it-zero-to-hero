@@ -1,0 +1,199 @@
+# W1 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w01.lab.act-01
+name: Klasifikasi perangkat
+competencies:
+- comp-w01-ipos-01
+max_points: 30
+estimated_minutes: 30
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w01.lab (D-28 XI-2)
+normalization: Setiap jawaban adalah satu kode kategori dari daftar I, O, IO, S, P. Buang spasi/tab di
+  awal dan akhir; ubah ke huruf besar; cocokkan persis dengan satu kode. Tidak ada aturan angka
+answer_validation: 'Per perangkat: kosong → 0; kode di luar daftar, lebih dari satu kode, atau bentuk
+  lain → 0 (INVALID_ANSWER) untuk perangkat itu; perangkat lain tetap dinilai'
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2)
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. Umpan balik test
+  tersembunyi mengikuti D-36 (HF-A); W1 tidak memiliki test kode tersembunyi'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban terstruktur
+variants:
+- variant_id: mod-w01.lab.act-01.vA
+  fixture:
+    categories:
+    - id: I
+      label: Input
+    - id: O
+      label: Output
+    - id: IO
+      label: Input dan output
+    - id: S
+      label: Penyimpanan
+    - id: P
+      label: Pemrosesan
+    devices:
+    - id: d01
+      name: Stylus (pena digital)
+    - id: d02
+      name: Monitor
+    - id: d03
+      name: Printer (hanya mencetak)
+    - id: d04
+      name: Pemindai sidik jari
+    - id: d05
+      name: Layar sentuh
+    - id: d06
+      name: SSD
+    - id: d07
+      name: CPU
+    - id: d08
+      name: Mikrofon
+    - id: d09
+      name: Speaker tanpa mikrofon
+    - id: d10
+      name: Keping DVD (cakram)
+  visible_example:
+    device: Joystick
+    answer: I
+    points: 0
+    note: Contoh terlihat, tidak dinilai
+  checks:
+  - check_id: mod-w01.lab.act-01.vA.c01
+    device: d01
+    expected: I
+    points: 3
+    feedback: Stylus memasukkan gerakan dan sentuhan pena
+  - check_id: mod-w01.lab.act-01.vA.c02
+    device: d02
+    expected: O
+    points: 3
+    feedback: Monitor menampilkan hasil
+  - check_id: mod-w01.lab.act-01.vA.c03
+    device: d03
+    expected: O
+    points: 3
+    feedback: Printer yang hanya mencetak menghasilkan keluaran di kertas
+  - check_id: mod-w01.lab.act-01.vA.c04
+    device: d04
+    expected: I
+    points: 3
+    feedback: Membaca sidik jari dan memasukkannya sebagai data
+  - check_id: mod-w01.lab.act-01.vA.c05
+    device: d05
+    expected: IO
+    points: 3
+    feedback: Menampilkan gambar dan menerima sentuhan
+  - check_id: mod-w01.lab.act-01.vA.c06
+    device: d06
+    expected: S
+    points: 3
+    feedback: Menyimpan data non-volatil
+  - check_id: mod-w01.lab.act-01.vA.c07
+    device: d07
+    expected: P
+    points: 3
+    feedback: Menjalankan instruksi program
+  - check_id: mod-w01.lab.act-01.vA.c08
+    device: d08
+    expected: I
+    points: 3
+    feedback: Menangkap suara
+  - check_id: mod-w01.lab.act-01.vA.c09
+    device: d09
+    expected: O
+    points: 3
+    feedback: Mengeluarkan suara saja
+  - check_id: mod-w01.lab.act-01.vA.c10
+    device: d10
+    expected: S
+    points: 3
+    feedback: Menyimpan data pada cakram; dibaca dengan pemutar DVD
+- variant_id: mod-w01.lab.act-01.vB
+  fixture:
+    categories:
+    - id: I
+      label: Input
+    - id: O
+      label: Output
+    - id: IO
+      label: Input dan output
+    - id: S
+      label: Penyimpanan
+    - id: P
+      label: Pemrosesan
+    devices:
+    - id: d01
+      name: Scanner
+    - id: d02
+      name: Proyektor
+    - id: d03
+      name: Webcam
+    - id: d04
+      name: Headset dengan mikrofon
+    - id: d05
+      name: HDD
+    - id: d06
+      name: GPU (prosesor grafis)
+    - id: d07
+      name: Kamera CCTV
+    - id: d08
+      name: Earphone tanpa mikrofon
+    - id: d09
+      name: Kartu memori SD
+    - id: d10
+      name: Printer (hanya mencetak)
+  visible_example:
+    device: Joystick
+    answer: I
+    points: 0
+    note: Contoh terlihat, tidak dinilai
+  checks:
+  - check_id: mod-w01.lab.act-01.vB.c01
+    device: d01
+    expected: I
+    points: 3
+    feedback: Memasukkan gambar dokumen
+  - check_id: mod-w01.lab.act-01.vB.c02
+    device: d02
+    expected: O
+    points: 3
+    feedback: Menampilkan gambar ke layar besar
+  - check_id: mod-w01.lab.act-01.vB.c03
+    device: d03
+    expected: I
+    points: 3
+    feedback: Menangkap gambar video
+  - check_id: mod-w01.lab.act-01.vB.c04
+    device: d04
+    expected: IO
+    points: 3
+    feedback: Mengeluarkan suara dan menangkap suara
+  - check_id: mod-w01.lab.act-01.vB.c05
+    device: d05
+    expected: S
+    points: 3
+    feedback: Menyimpan data non-volatil
+  - check_id: mod-w01.lab.act-01.vB.c06
+    device: d06
+    expected: P
+    points: 3
+    feedback: Mengolah gambar dan tampilan
+  - check_id: mod-w01.lab.act-01.vB.c07
+    device: d07
+    expected: I
+    points: 3
+    feedback: Menangkap gambar video
+  - check_id: mod-w01.lab.act-01.vB.c08
+    device: d08
+    expected: O
+    points: 3
+    feedback: Mengeluarkan suara saja
+  - check_id: mod-w01.lab.act-01.vB.c09
+    device: d09
+    expected: S
+    points: 3
+    feedback: Menyimpan data non-volatil
+  - check_id: mod-w01.lab.act-01.vB.c10
+    device: d10
+    expected: O
+    points: 3
+    feedback: Mencetak hasil di kertas

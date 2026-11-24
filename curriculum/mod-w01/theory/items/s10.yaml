@@ -1,0 +1,39 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s10
+competency: comp-w01-unit-01
+format: TF-3
+difficulty: D1
+max_points: 2
+estimated_seconds: 60
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s10-a
+  variant_id: mod-w01.theory.s10.vA
+  item_version: '1.0'
+  stem: 1 byte = … bit.
+  accepted_answers:
+  - '8'
+  - 8 bit
+  - 8bit
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
+    salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
+    ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
+    pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
+  explanation: 1 byte terdiri dari 8 bit.
+- item_id: item-w01-t-s10-b
+  variant_id: mod-w01.theory.s10.vB
+  item_version: '1.0'
+  stem: Dengan aturan desimal modul ini, 1 GB = … MB.
+  accepted_answers:
+  - '1000'
+  - '1.000'
+  - 1000 mb
+  - 1000mb
+  - 1.000 mb
+  - 1.000mb
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
+    salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
+    ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
+    pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
+  explanation: 'Aturan desimal: 1 GB = 1.000 MB.'

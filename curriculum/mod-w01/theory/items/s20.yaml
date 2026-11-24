@@ -1,0 +1,48 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s20
+competency: comp-w01-spec-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s20-a
+  variant_id: mod-w01.theory.s20.vA
+  item_version: '1.0'
+  stem: Fungsi utama **PSU** dalam rakitan komputer adalah …
+  options:
+  - id: a
+    text: Menjalankan instruksi program
+  - id: b
+    text: Menyimpan data tanpa listrik (non-volatil)
+  - id: c
+    text: Memasok listrik yang sesuai ke komponen komputer
+  - id: d
+    text: Menampilkan gambar ke pengguna
+  key: c
+  distractor_rationale:
+    a: Itu fungsi CPU
+    b: Itu fungsi penyimpanan
+    d: Itu fungsi monitor
+  explanation: PSU mengubah listrik dari stopkontak menjadi listrik yang sesuai untuk komponen.
+- item_id: item-w01-t-s20-b
+  variant_id: mod-w01.theory.s20.vB
+  item_version: '1.0'
+  stem: Fungsi utama **motherboard** dalam rakitan komputer adalah …
+  options:
+  - id: a
+    text: Memasok listrik dari stopkontak
+  - id: b
+    text: Menyimpan berkas tanpa listrik (non-volatil)
+  - id: c
+    text: Menampilkan gambar ke pengguna
+  - id: d
+    text: Menjadi papan tempat CPU, RAM, dan penyimpanan terpasang dan saling berkomunikasi
+  key: d
+  distractor_rationale:
+    a: Itu fungsi PSU
+    b: Itu fungsi penyimpanan
+    c: Itu fungsi monitor
+  explanation: Motherboard adalah papan sirkuit utama yang menghubungkan komponen.

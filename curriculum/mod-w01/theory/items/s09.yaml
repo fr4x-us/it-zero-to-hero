@@ -1,0 +1,54 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s09
+competency: comp-w01-mem-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s09-a
+  variant_id: mod-w01.theory.s09.vA
+  item_version: '1.0'
+  stem: Sinta mengetik laporan selama 2 jam dan **tidak pernah** menekan Simpan; aplikasinya juga tidak
+    memiliki simpan otomatis atau pemulihan. Listrik padam dan laptop mati. Setelah menyala, laporan itu
+    hilang, tetapi berkas yang disimpan kemarin masih ada. Penjelasan paling tepat adalah …
+  options:
+  - id: a
+    text: Laporan baru hanya ada di RAM yang volatil; berkas kemarin sudah ada di penyimpanan non-volatil
+  - id: b
+    text: SSD menghapus berkas terbaru saat listrik padam
+  - id: c
+    text: Laporan disimpan di CPU dan CPU rusak
+  - id: d
+    text: Berkas kemarin tersimpan di RAM
+  key: a
+  distractor_rationale:
+    b: Penyimpanan tidak menghapus berkas karena listrik padam
+    c: CPU bukan tempat menyimpan berkas
+    d: Isi RAM hilang saat listrik mati
+  explanation: Pekerjaan yang belum disimpan hanya ada di RAM; menyimpan menyalinnya ke penyimpanan non-volatil.
+- item_id: item-w01-t-s09-b
+  variant_id: mod-w01.theory.s09.vB
+  item_version: '1.0'
+  stem: Budi memasang aplikasi baru ke SSD, lalu menyalakan ulang laptop. Anggap browser Budi **hanya
+    menyimpan daftar tab yang terbuka di RAM** selama berjalan dan tidak pernah menuliskannya ke penyimpanan.
+    Setelah menyala, aplikasi baru masih ada, tetapi tab yang tadi terbuka hilang. Penjelasan paling tepat
+    adalah …
+  options:
+  - id: a
+    text: Restart menghapus semua isi SSD kecuali aplikasi
+  - id: b
+    text: Daftar tab hanya ada di RAM yang volatil; aplikasi terpasang di penyimpanan non-volatil
+  - id: c
+    text: Aplikasi tersimpan di RAM sehingga tetap ada
+  - id: d
+    text: CPU menghapus tab karena core bertambah
+  key: b
+  distractor_rationale:
+    a: Restart tidak menghapus isi penyimpanan
+    c: Isi RAM hilang saat komputer mati
+    d: Core tidak berkaitan dengan tab yang hilang
+  explanation: Yang hanya ada di RAM hilang saat komputer dimatikan; yang tersimpan di penyimpanan tetap
+    ada.

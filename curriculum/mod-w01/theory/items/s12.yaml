@@ -1,0 +1,41 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s12
+competency: comp-w01-unit-01
+format: TF-3
+difficulty: D3
+max_points: 4
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s12-a
+  variant_id: mod-w01.theory.s12.vA
+  item_version: '1.0'
+  stem: Kartu memori 120 GB dipakai untuk foto yang masing-masing berukuran 8 MB. Dengan aturan desimal
+    dan mengabaikan ruang untuk sistem, berapa foto **maksimum** yang muat?
+  accepted_answers:
+  - '15000'
+  - '15.000'
+  - 15000 foto
+  - 15000foto
+  - 15.000 foto
+  - 15.000foto
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
+    salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
+    ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
+    pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
+  explanation: 120 GB = 120.000 MB; 120.000 ÷ 8 = 15.000 foto.
+- item_id: item-w01-t-s12-b
+  variant_id: mod-w01.theory.s12.vB
+  item_version: '1.0'
+  stem: SSD 360 GB dipakai untuk video yang masing-masing berukuran 1.500 MB. Dengan aturan desimal dan
+    mengabaikan ruang untuk sistem, berapa video **maksimum** yang muat?
+  accepted_answers:
+  - '240'
+  - 240 video
+  - 240video
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
+    salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
+    ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
+    pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
+  explanation: 360 GB = 360.000 MB; 360.000 ÷ 1.500 = 240 video.

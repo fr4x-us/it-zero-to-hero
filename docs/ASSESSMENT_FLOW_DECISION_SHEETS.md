@@ -1,6 +1,6 @@
 # IT ZERO → HERO — Decision Sheets Alur Penilaian (OP-5, OP-7, OP-9, OP-10, OP-11)
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode,
+Status: **DIPUTUSKAN OWNER — D-26, D-27 (2026-11-24)**, lihat §F · dokumentasi saja · tanpa kode,
 skema database, atau prototipe. Tanggal: **2026-11-24**. Basis: `main` =
 `928e278` (merge PR #23). Kode rujukan: `AF:`.
 
@@ -374,4 +374,21 @@ disetujui owner; AF-AC-13 — daftar state kritis tertulis.
 | OP-10-Q2 | PI-A (perbaikan setelah lulus, tanpa XP baru, status tidak turun)? | PI-A |
 | OP-11-Q1 | AS-B untuk lab/mini-project/concept (500 ms / maks. 5 detik saat penyimpanan sehat / flush siklus hidup / status jujur), ujian memakai DL-1–DL-9, dan tafsiran P-03 untuk commit yang berhasil? | AS-B |
 
-Status: **AWAITING OWNER**. UW-27, UW-29, UW-31, UW-32 tetap BLOCKED.
+~~Status: **AWAITING OWNER**. UW-27, UW-29, UW-31, UW-32 tetap BLOCKED.~~ *(Historis — dijawab owner 2026-11-24; lihat bagian keputusan di bawah.)*
+
+## F. Keputusan owner — D-26, D-27 (2026-11-24)
+
+Pernyataan owner: "Saya menyetujui rekomendasi D-26, D-27, D-28, D-29, D-30, D-31, D-32, D-33, D-34, D-35."
+
+| Keputusan | Pertanyaan | Opsi yang disetujui | Sumber | AC terdampak |
+|---|---|---|---|---|
+| D-26 | OP-5-Q1–Q8 | TQ-B (20 soal W1–W15, 10 soal W16, ≥ 2 per kompetensi); TF-1–TF-5; TP-B (2/3/4) dan distribusi 40/40/20; rumus A.4 (standar 10–45 menit); EX-1–EX-13; TA-B (×1,5, maks. 68 menit) dengan TA-1–TA-4; FB-A; DL-1–DL-9 dengan SF-A | §A | ASM:D-08 terisi → UW-27 |
+| D-27 | OP-7-Q1 | SB-A dan SB-1–SB-12 | §B | ASM:L5 terisi → UW-29 |
+| D-27 | OP-9-Q1 | UL-1–UL-10, PV-A, RV-A | §C | ASM:C6 terisi → UW-31 |
+| D-27 | OP-10-Q1, Q2 | RE-A, PI-A | §D.1 | OP-10 terisi → UW-32 |
+| D-27 | OP-11-Q1 | AS-B (500 ms; target ≤ 5 detik saat penyimpanan sehat; state kritis segera; status Tersimpan/Menyimpan/Gagal jujur; tanpa jaminan durabilitas tanpa syarat); ujian memakai DL-1–DL-9 | §D.2 | OP-11 terisi → UW-32 |
+
+Contoh durasi terverifikasi (A.4): standar 33 menit, W16 18 menit, batas
+bawah 10, > 45 ditolak. Penerapan W1: 33 menit + review 12 menit = 45
+menit ([curriculum/mod-w01/review.md](../curriculum/mod-w01/review.md) §3.2).
+OP-6 (manipulasi jam, UW-28) tetap OPEN.

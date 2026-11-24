@@ -1,0 +1,73 @@
+# W1 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.concept.s06
+competency: comp-w01-spec-01
+required_concepts:
+- soket
+- jenis RAM
+- jumlah slot
+- daya PSU
+- semua syarat dan anggaran
+format: CE-S2
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w01-c-s06-a
+  variant_id: mod-w01.concept.s06.vA
+  item_version: '1.0'
+  stem: Menurut model kompatibilitas W1, pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: Soket CPU harus sama dengan soket motherboard
+  - id: b
+    text: Jumlah keping RAM boleh melebihi jumlah slot
+  - id: c
+    text: RAM DDR5 hanya dapat dipasang di motherboard yang mendukung DDR5
+  - id: d
+    text: Kombinasi tetap memenuhi kebutuhan asalkan harganya murah, walaupun satu syarat gagal
+  - id: e
+    text: Daya PSU harus lebih besar atau sama dengan kebutuhan daya
+  key:
+  - a
+  - c
+  - e
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  distractor_rationale:
+    b: Setiap keping butuh satu slot
+    d: Semua syarat dan anggaran wajib terpenuhi
+  feedback: 'Kelima konsep muncul: soket, jenis RAM, dan daya sebagai pernyataan benar; slot dan aturan
+    semua-syarat sebagai pengecoh.'
+- item_id: item-w01-c-s06-b
+  variant_id: mod-w01.concept.s06.vB
+  item_version: '1.0'
+  stem: Menurut model kompatibilitas W1, pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: RAM DDR4 dapat dipasang di motherboard DDR5 asalkan kapasitasnya sama
+  - id: b
+    text: Soket CPU harus sama dengan soket motherboard
+  - id: c
+    text: Jumlah keping RAM tidak boleh melebihi jumlah slot motherboard
+  - id: d
+    text: Bila satu syarat atau anggaran tidak terpenuhi, kombinasi tidak memenuhi kebutuhan
+  - id: e
+    text: PSU berapa pun cukup asalkan komputer dapat menyala
+  key:
+  - b
+  - c
+  - d
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  distractor_rationale:
+    a: DDR4 dan DDR5 tidak dapat saling menggantikan
+    e: Daya PSU harus ≥ kebutuhan daya
+  feedback: 'Kelima konsep muncul: soket, slot, dan aturan semua-syarat sebagai pernyataan benar; jenis
+    RAM dan daya PSU sebagai pengecoh.'

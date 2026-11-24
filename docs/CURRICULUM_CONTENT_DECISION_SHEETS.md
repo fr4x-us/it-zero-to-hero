@@ -1,6 +1,6 @@
 # IT ZERO → HERO — Decision Sheets Konten Kurikulum (CU-3, CU-5, CU-7, CU2-O3, CU-11)
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa
+Status: **DIPUTUSKAN OWNER — D-30, D-31, D-32 (2026-11-24)**, lihat §G · dokumentasi saja · tanpa
 parser, mesin konten, mesin SQL, WebView, simulator Git, skema database, atau
 prototipe. Tanggal: **2026-11-24**. Basis: `main` = `928e278`. Kode
 rujukan: `CCD:`. Direvisi setelah review PR #24 (F-07–F-09).
@@ -268,5 +268,24 @@ topik yang dipakai sebelum diajarkan.
 | CU2-O3-Q1 | Alokasi jam tabel §D (M/U/L/P/C/R) dan remedial tambahan di luar 128 jam nominal? | Ya |
 | CU-11-Q1 | Pembagian PB-A (revisi F-08) W9/W10? | PB-A |
 
-Status: **AWAITING OWNER**. UW-36 tetap BLOCKED (CU-3, CU-5, CU-7, CU-9,
-CU-11, CU2-O3, CU2-O4 belum diputuskan).
+~~Status: **AWAITING OWNER**. UW-36 tetap BLOCKED (CU-3, CU-5, CU-7, CU-9, CU-11, CU2-O3, CU2-O4 belum diputuskan).~~ *(Historis — dijawab owner 2026-11-24; lihat bagian keputusan di bawah.)*
+
+## G. Keputusan owner — D-30, D-31, D-32 (2026-11-24)
+
+Pernyataan owner: "Saya menyetujui rekomendasi D-26, D-27, D-28, D-29, D-30, D-31, D-32, D-33, D-34, D-35."
+
+| Keputusan | Pertanyaan | Disetujui | AC terdampak |
+|---|---|---|---|
+| D-30 | CU-3-Q1, Q2 | CF-A (Markdown terbatas + YAML), struktur A.3, UP-A (konten V1 hanya lewat pembaruan aplikasi) | CU-3 (UW-36) |
+| D-30 | CU-5-Q1, Q2 | VR-B, MPV-A, VA-1–VA-6 | CU-5, CUR:CC-05 (N = 2) |
+| D-30 | CU2-O5-Q1 | 6 soal concept dan 3 aktivitas lab per modul | CU2-O5 (UW-36) |
+| D-31 | CU-7-Q1–Q3 | SQ-1–SQ-9; HV-A, HT-1–HT-5; GS-A, GT-1–GT-4 (GitHub opsional, tidak dinilai; pratinjau HTML tidak dinilai; mekanisme NOT VERIFIED) | CU-7 (UW-36) |
+| D-32 | CU2-O3-Q1 | HA-A (§D): M 40,25 · U 11,75 · L 32,5 · P 27,5 · C 8 · R 8 = 128 jam; remedial di luar nominal | CU2-O3 (UW-36) |
+| D-32 | CU-11-Q1 | PB-A revisi (konversi dasar di W9; W10 tanpa percabangan, perulangan, atau exception) | CU-11 (UW-36) |
+
+**Rekonsiliasi jumlah varian (D-30):** "2 varian" berarti **2 butir nyata
+per slot/aktivitas** (varian A dan B), bukan 1 asli + 2 tambahan. Inventaris
+program: teori 310 slot × 2 = **620** soal; concept 96 slot × 2 = **192**
+soal; lab 48 aktivitas × 2 = **96** spesifikasi; mini-project 15 + capstone
+1 = **16** spesifikasi (MPV-A, tanpa varian). Ini target produksi, bukan
+konten selesai.

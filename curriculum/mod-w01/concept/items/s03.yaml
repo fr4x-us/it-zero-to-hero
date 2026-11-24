@@ -1,0 +1,84 @@
+# W1 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.concept.s03
+competency: comp-w01-sw-01
+required_concepts:
+- firmware bekerja sebelum sistem operasi
+- POST
+- perangkat boot
+- bootloader memuat ke RAM
+format: CE-S3
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w01-c-s03-a
+  variant_id: mod-w01.concept.s03.vA
+  item_version: '1.0'
+  stem: Model boot sederhana W1. Urutkan langkah saat komputer dinyalakan sampai sistem operasi siap dipakai.
+  display_order:
+  - D
+  - A
+  - E
+  - C
+  - B
+  items:
+  - id: A
+    text: Tombol daya ditekan
+  - id: B
+    text: Firmware (BIOS/UEFI) menjalankan POST
+  - id: C
+    text: Firmware mencari perangkat boot
+  - id: D
+    text: Bootloader memuat sistem operasi ke RAM
+  - id: E
+    text: Sistem operasi siap dipakai
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+    - E
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: Firmware bekerja lebih dulu (POST, mencari perangkat boot), lalu bootloader memuat sistem
+    operasi ke RAM.
+- item_id: item-w01-c-s03-b
+  variant_id: mod-w01.concept.s03.vB
+  item_version: '1.0'
+  stem: Model boot sederhana W1. Flashdisk instalasi sistem operasi sudah dicolokkan **dan sudah dipilih
+    sebagai perangkat boot** di pengaturan firmware (firmware tidak selalu memilih flashdisk secara otomatis).
+    Urutkan langkah sampai layar program instalasi tampil.
+  display_order:
+  - C
+  - E
+  - A
+  - D
+  - B
+  items:
+  - id: A
+    text: Tombol daya laptop ditekan
+  - id: B
+    text: Firmware UEFI menjalankan POST
+  - id: C
+    text: Firmware memakai flashdisk instalasi, yang sudah dipilih sebagai perangkat boot, untuk memulai
+  - id: D
+    text: Bootloader di flashdisk memuat program instalasi sistem operasi ke RAM
+  - id: E
+    text: Layar program instalasi tampil
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+    - E
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: 'Prosesnya sama dengan boot biasa: firmware (POST, mencari perangkat boot) lalu bootloader
+    memuat program dari perangkat boot ke RAM.'

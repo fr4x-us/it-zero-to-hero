@@ -9,7 +9,7 @@ di setiap PR batch.
 | Item | Nilai | Sumber |
 |---|---|---|
 | Tahap | PERSIAPAN; implementasi **belum diizinkan** | [`CLAUDE.md`](../CLAUDE.md), [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) |
-| `main` saat checkpoint ditulis | `928e278` (merge PR #23) | `git log` |
+| `main` saat checkpoint ditulis | `40ca205` (merge PR #24) | `git log` |
 | Kode aplikasi / proyek Gradle / workflow CI / APK | Tidak ada | isi repositori |
 | Build atau test Android pernah dijalankan | **Belum pernah** | [QUALITY_GATES.md](QUALITY_GATES.md) EV-1 |
 
@@ -40,7 +40,8 @@ di setiap PR batch.
 | #21 | Persiapan keputusan UW-22, CU-2, UO-1/UO-2 | Merged 2026-11-24 sebagai `b789e9a` (di-merge Claude atas persetujuan eksplisit owner) |
 | #22 | Pencatatan D-12–D-15; lembar OD-1, OD-2, UW-43 | Merged 2026-11-24 sebagai `bcecdae` (di-merge Claude atas persetujuan eksplisit owner) |
 | #23 | Pencatatan D-16–D-22; roadmap; lembar OP-4, CU-6; rencana produksi kurikulum; revisi F-01–F-06 | Merged 2026-11-24 sebagai `928e278` (di-merge Claude atas persetujuan eksplisit owner) |
-| #24 | Pencatatan D-23–D-25; lembar keputusan kurikulum; templat CB-0; tinjauan konsistensi | Terbuka, menunggu review; **tidak di-merge Claude** |
+| #24 | Pencatatan D-23–D-25; lembar keputusan kurikulum; templat CB-0; tinjauan konsistensi | Merged 2026-11-24 sebagai `40ca205` (di-merge Claude atas persetujuan eksplisit owner) |
+| #25 | Pencatatan D-26–D-37; CB-0; konten W1; revisi kualitas W1 (F-01–F-23) | Terbuka, menunggu review ulang; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -59,6 +60,8 @@ merge." untuk PR itu saja ([GITHUB_BRIDGE.md](GITHUB_BRIDGE.md) §5).
 | D-16 | OWNER APPROVED, bersyarat verifikasi teknis; restore produksi nonaktif sampai batas KDF terverifikasi (UW-15 NOT VERIFIED) |
 | D-17–D-22 | OWNER APPROVED (2026-11-24) |
 | D-23–D-25 | OWNER APPROVED (2026-11-24); UW-26, UW-36 tetap belum selesai; runtime dan kripto NOT VERIFIED |
+| D-26–D-35 | OWNER APPROVED (2026-11-24); UW-26/UW-37 menunggu konten W2–W16 |
+| D-36–D-37 | OWNER APPROVED (2026-11-24): HF-A; XV-7–XV-14 + RX-A. UW-36 menunggu RM-Q2; UW-33 menunggu OD-5–OD-9, OD-11–OD-14 |
 | D-11 | **DEFERRED; IMPLEMENTATION NOT AUTHORIZED** |
 | PLANNING CLEAR | **NO** |
 | IMPLEMENTATION VERIFIED | **NO** |
@@ -69,20 +72,19 @@ Rincian: [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md),
 
 ## Tugas terakhir
 
-Merge PR #23 (`928e278`). Pencatatan D-23 (OP-4), D-24 (CU-6), D-25
-(klasifikasi roadmap). Lembar keputusan baru (semua OPEN):
-[ASSESSMENT_FLOW_DECISION_SHEETS.md](ASSESSMENT_FLOW_DECISION_SHEETS.md),
-[XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md),
-[CURRICULUM_CONTENT_DECISION_SHEETS.md](CURRICULUM_CONTENT_DECISION_SHEETS.md),
-[PROJECT_RUBRIC_DECISION_SHEETS.md](PROJECT_RUBRIC_DECISION_SHEETS.md),
-[CU10_ANSWER_KEY_RISK_DECISION_SHEET.md](CU10_ANSWER_KEY_RISK_DECISION_SHEET.md);
-templat [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md); tinjauan
-[CROSS_SPEC_CONSISTENCY_REVIEW.md](CROSS_SPEC_CONSISTENCY_REVIEW.md).
-Audit §17: 25 COMPLETE, 4 OPEN, 19 BLOCKED, 3 DEFERRED, 5 NOT VERIFIED
-(tidak berubah). Jalur P 25/43; kurikulum 0/64. Revisi review PR #24
-(F-01–F-09): XE-B, validasi restore XP (OD-15), persistensi tenggat
-(DL-1–DL-9), aksesibilitas ujian, LX-1–LX-9, rubrik deterministik, PB-A
-revisi, matriks 45 pertanyaan. Status: PR #24 terbuka, menunggu review.
+Merge PR #24 (`40ca205`). Pencatatan D-26–D-35. CB-0
+([CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md)) dapat dipakai
+untuk W1–W8 (kini kebijakan lengkap setelah D-36; review independen dan
+penerimaan owner belum). Revisi review PR #25:
+rubrik proyek (F8, jumlah keping, contoh E01–E16), posisi kunci seimbang,
+varian setara (matriks), contoh proyek tidak membocorkan jawaban, review per
+butir; putaran 2: maksimum lab dapat dicapai, arah konversi, presisi soal,
+field kanonik, aturan angka, QC-01–QC-10. Konten W1 lengkap diproduksi di
+[curriculum/mod-w01/](../curriculum/mod-w01/module.yaml): 4 pelajaran, 40
+soal teori, 6 spesifikasi lab, 1 mini-project, 12 soal concept, remedial,
+review mandiri. Audit §18: 31 COMPLETE, 4 OPEN, 13 BLOCKED, 3 DEFERRED, 5
+NOT VERIFIED. Jalur P 31/43. Kurikulum diproduksi 4/64, diterima 0/64.
+Status: PR terbuka, menunggu review.
 
 ## Blocker
 
@@ -119,11 +121,13 @@ Selesai: B-2 (PR #7); B-3 (D-01, PR #18); B-7 (D-02, PR #19); B-9 (D-05, PR #19)
 
 ## Langkah berikutnya (usulan, menunggu owner)
 
-1. Review PR #24 (ChatGPT) → instruksi merge eksplisit bila PASS.
-2. Owner menjawab 45 pertanyaan (matriks 7 grup) di
-   [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md); prioritas
-   gelombang 1 untuk CB-0.
-3. Batch berikutnya: finalisasi CB-0 + modul percontohan W1
-   ([PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §10).
-4. Implementasi, prototipe, pengukuran, dan benchmark tetap tidak diizinkan
-   (D-10, D-11, D-20, D-25).
+1. Review akhir PR #25 (ChatGPT) → instruksi merge eksplisit bila PASS.
+2. Owner: W01-ACC (penerimaan W1) dan RM-Q2.
+3. **CB-0.5 — Agent Workflow & Token Optimization**: fase berikutnya, hanya
+   setelah PR #25 direview, diotorisasi, dan di-merge; butuh prompt eksekusi
+   sendiri dan PR terpisah. Owner telah menyetujui pemasangan **di masa
+   depan** untuk skill: Planning with Files, Verification Before Completion,
+   Systematic Debugging, Receiving Code Review. **Belum dipasang** (tidak di
+   PR #25).
+4. Produksi W2–W16 belum dimulai.
+5. Implementasi, prototipe, pengukuran, dan benchmark tetap tidak diizinkan.

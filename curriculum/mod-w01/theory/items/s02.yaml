@@ -1,0 +1,50 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s02
+competency: comp-w01-ipos-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s02-a
+  variant_id: mod-w01.theory.s02.vA
+  item_version: '1.0'
+  stem: Pada model IPOS, **menampilkan hasil perhitungan di layar** adalah tahap …
+  options:
+  - id: a
+    text: Input
+  - id: b
+    text: Proses
+  - id: c
+    text: Output
+  - id: d
+    text: Penyimpanan
+  key: c
+  distractor_rationale:
+    a: Input = data masuk
+    b: Proses = data diolah
+    d: Penyimpanan = data disimpan untuk nanti
+  explanation: Hasil yang disampaikan ke pengguna adalah output.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w01-t-s02-b
+  variant_id: mod-w01.theory.s02.vB
+  item_version: '1.0'
+  stem: Pada model IPOS, **mengetik nilai dengan keyboard** adalah tahap …
+  options:
+  - id: a
+    text: Input
+  - id: b
+    text: Proses
+  - id: c
+    text: Output
+  - id: d
+    text: Penyimpanan
+  key: a
+  distractor_rationale:
+    b: Belum ada pengolahan saat data diketik
+    c: Belum ada hasil yang disampaikan
+    d: Data belum disimpan
+  explanation: Data masuk ke komputer melalui keyboard, jadi input.
+  option_order: urutan alami (kategori/baris tabel), tetap

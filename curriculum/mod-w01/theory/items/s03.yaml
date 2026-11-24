@@ -1,0 +1,64 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s03
+competency: comp-w01-ipos-01
+format: TF-5
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s03-a
+  variant_id: mod-w01.theory.s03.vA
+  item_version: '1.0'
+  stem: Gunakan model IPOS sederhana W1 (input → proses → output → penyimpanan). Kamu menarik uang di
+    mesin ATM. Urutkan kejadian berikut sesuai model itu.
+  items:
+  - id: A
+    text: Sisa saldo tampil di layar dan struk dicetak
+  - id: B
+    text: Kamu mengetik jumlah penarikan di layar ATM
+  - id: C
+    text: Catatan transaksi disimpan setelah struk dicetak
+  - id: D
+    text: ATM menghitung sisa saldo
+  display_order:
+  - A
+  - B
+  - C
+  - D
+  accepted_sequences:
+  - - B
+    - D
+    - A
+    - C
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Input (mengetik jumlah) → proses (menghitung saldo) → output (saldo dan struk) → penyimpanan
+    (catatan transaksi).
+- item_id: item-w01-t-s03-b
+  variant_id: mod-w01.theory.s03.vB
+  item_version: '1.0'
+  stem: Gunakan model IPOS sederhana W1 (input → proses → output → penyimpanan). Kamu membuat catatan
+    suara di ponsel. Urutkan kejadian berikut sesuai model itu.
+  items:
+  - id: A
+    text: Ponsel mengubah suara menjadi teks
+  - id: B
+    text: Kamu menyimpan catatan setelah membaca teksnya di layar
+  - id: C
+    text: Kamu berbicara ke mikrofon ponsel
+  - id: D
+    text: Teks muncul di layar
+  display_order:
+  - A
+  - B
+  - C
+  - D
+  accepted_sequences:
+  - - C
+    - A
+    - D
+    - B
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Input (berbicara) → proses (mengubah suara) → output (teks di layar) → penyimpanan (menyimpan
+    setelah membaca).

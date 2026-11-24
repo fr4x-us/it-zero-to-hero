@@ -1,0 +1,50 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s13
+competency: comp-w01-ipos-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s13-a
+  variant_id: mod-w01.theory.s13.vA
+  item_version: '1.0'
+  stem: Scanner termasuk perangkat …
+  options:
+  - id: a
+    text: Input
+  - id: b
+    text: Output
+  - id: c
+    text: Penyimpanan
+  - id: d
+    text: Pemrosesan
+  key: a
+  distractor_rationale:
+    b: Scanner tidak menampilkan hasil ke pengguna
+    c: Scanner tidak menyimpan data permanen
+    d: Scanner tidak menjalankan instruksi program
+  explanation: 'Scanner memasukkan gambar dokumen ke komputer: input.'
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w01-t-s13-b
+  variant_id: mod-w01.theory.s13.vB
+  item_version: '1.0'
+  stem: Proyektor termasuk perangkat …
+  options:
+  - id: a
+    text: Input
+  - id: b
+    text: Output
+  - id: c
+    text: Penyimpanan
+  - id: d
+    text: Pemrosesan
+  key: b
+  distractor_rationale:
+    a: Proyektor tidak memasukkan data
+    c: Proyektor tidak menyimpan data
+    d: Proyektor tidak menjalankan instruksi program
+  explanation: 'Proyektor menampilkan gambar kepada pengguna: output.'
+  option_order: urutan alami (kategori/baris tabel), tetap

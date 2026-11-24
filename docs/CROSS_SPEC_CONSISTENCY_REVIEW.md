@@ -45,7 +45,7 @@ Dokumen yang ditinjau:
 | XS-C2 | RE-B (hanya komponen < 75 boleh diulang) membuat ASM:B-02/B-06 buntu | Melanggar BL:33 secara efektif | RE-B tidak direkomendasikan | OP-10-Q1 |
 | XS-C3 | Teori TP-B semua-atau-tidak vs kredit parsial D-23 untuk concept explanation | Dua aturan berbeda untuk format serupa | Disengaja (komponen berbeda); TP-C tersedia bila owner ingin satu aturan | OP-5-Q3 |
 | XS-C4 | ASM:T7, ASM:D-04, ASM:D-05 masih PROPOSED (RECOVERED), tidak tercakup D-01 M-07 | Perilaku dibuka-setelah-tenggat belum disetujui | Diajukan eksplisit | OP-5-Q5 |
-| XS-C5 | ST-A (streak harian) bertentangan dengan D-01 M-03 (tanpa tenggat kalender wajib, jadwal akhir pekan/shift) | Streak putus secara normal → terasa sebagai hukuman | ST-C mingguan | OP-8-Q4 |
+| XS-C5 | ST-A (streak harian) bertentangan dengan D-01 M-03 (tanpa tenggat kalender wajib, jadwal akhir pekan/shift) | Streak putus secara normal → terasa sebagai hukuman | ST-C mingguan | OP-8-Q5 (semula ditulis OP-8-Q4 sebelum penomoran ulang) |
 | XS-C6 | Versi awal batch ini menyebut XE-C (dua slot per aktivitas) otomatis sesuai aturan satu-award — **klaim dicabut** | XE-C bertentangan dengan ASM:X-01 tanpa tafsiran ulang | Rekomendasi diganti XE-B; award pertama pada attempt remedial dijelaskan sebagai award pertama (XE-2), butuh konfirmasi | OP-8-Q2 |
 | XS-C7 | CPP §5 versi lama (2,5/1,5/2,5/1,0/0,5) vs CU2-O3 §D | Dua usulan jam berbeda | CPP §5 diganti rujukan ke CU2-O3 (keduanya PROPOSED) | CU2-O3-Q1 |
 | XS-C8 | HTML pratinjau butuh WebView (BL:45 "runtime compatibility requires validation") | Pratinjau mungkin tidak tersedia | Pratinjau tidak dinilai (HT-5) | CU-7-Q2 |
@@ -68,3 +68,46 @@ atau semantik skor yang disetujui. Sembilan belas ketegangan (XS-C1–XS-C19)
 dicatat dan dipetakan ke pertanyaan owner; tidak ada keputusan baru yang
 dicatat sebagai disetujui. Semua klaim runtime tetap
 **NOT VERIFIED**.
+
+## 4. Status setelah D-26–D-35 (2026-11-24)
+
+Ketegangan XS-C1–XS-C19 dijawab oleh keputusan owner berikut; teks §2
+dipertahankan sebagai catatan historis dan **bukan** keputusan saat ini.
+Rujukan pertanyaan OP-8 mengikuti penomoran final (Q1–Q7).
+
+| ID | Diselesaikan oleh |
+|---|---|
+| XS-C1 | D-27 (AS-B; P-03 untuk commit yang berhasil) |
+| XS-C2 | D-27 (RE-A) |
+| XS-C3 | D-26 (TP-B) |
+| XS-C4 | D-26 (EX-6, ASM:T7/D-04/D-05) |
+| XS-C5 | D-28 (OP-8-Q5, ST-C) |
+| XS-C6 | D-28 (OP-8-Q2, XE-B, XE-2) |
+| XS-C7 | D-32 (HA-A menggantikan usulan CPP §5 lama) |
+| XS-C8 | D-31 (HT-5) |
+| XS-C9 | D-35 (LX-5–LX-9) |
+| XS-C10 | D-33 (CR-6 terpisah dari komponen Concept) |
+| XS-C11 | D-24/D-12 (poin mentah) — tidak berubah |
+| XS-C12 | D-27 (RV-A) |
+| XS-C13 | D-26 (TA-B) |
+| XS-C14 | D-28 (OP-8-Q6) |
+| XS-C15 | D-29 (OD-15-Q1); perluasan OD-15-Q2 masih terbuka |
+| XS-C16 | D-26 (DL-1–DL-9), D-27 (OP-11-Q1) |
+| XS-C17 | D-33 (CR-2 hanya perilaku) |
+| XS-C18 | D-32 (PB-A revisi) |
+| XS-C19 | D-30 (CU2-O5-Q1) |
+
+Ketegangan baru: **XS-C20** — CUR §10 mendefinisikan CU-6 termasuk
+"kebijakan umpan balik test tersembunyi" yang belum diputuskan → CU-6-Q13
+(UW-36 tetap BLOCKED). **XS-C21** — validasi award XV-1–XV-6 tidak memeriksa
+apakah peristiwa pemicu benar-benar memenuhi kelayakan → usulan XV-7–XV-14
+(OD-15-Q2).
+
+## 5. Status setelah D-36–D-37 (2026-11-24)
+
+| ID | Diselesaikan oleh |
+|---|---|
+| XS-C20 | D-36 (CU-6-Q13, HF-A) |
+| XS-C21 | D-37 (OD-15-Q2, XV-7–XV-14 + RX-A) |
+
+Tidak ada ketegangan baru. Sisa: nilai angka LX-2 (RM-Q2).

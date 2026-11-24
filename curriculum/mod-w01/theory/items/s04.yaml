@@ -1,0 +1,49 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s04
+competency: comp-w01-cpu-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s04-a
+  variant_id: mod-w01.theory.s04.vA
+  item_version: '1.0'
+  stem: Komponen yang **menjalankan instruksi program** adalah …
+  options:
+  - id: a
+    text: CPU
+  - id: b
+    text: RAM
+  - id: c
+    text: SSD
+  - id: d
+    text: PSU
+  key: a
+  distractor_rationale:
+    b: RAM menampung data yang sedang dipakai, tidak menjalankan instruksi
+    c: SSD menyimpan data non-volatil
+    d: PSU memasok listrik
+  explanation: CPU (prosesor) menjalankan instruksi program.
+- item_id: item-w01-t-s04-b
+  variant_id: mod-w01.theory.s04.vB
+  item_version: '1.0'
+  stem: Saat kamu menekan tombol "=" di aplikasi kalkulator, komponen yang **menjalankan instruksi perhitungannya**
+    adalah …
+  options:
+  - id: a
+    text: RAM
+  - id: b
+    text: SSD
+  - id: c
+    text: Monitor
+  - id: d
+    text: CPU
+  key: d
+  distractor_rationale:
+    a: RAM menampung angka yang sedang dipakai, tetapi tidak menghitung
+    b: SSD menyimpan aplikasi tanpa listrik (non-volatil)
+    c: Monitor menampilkan hasil
+  explanation: CPU menjalankan instruksi program, termasuk perhitungan.

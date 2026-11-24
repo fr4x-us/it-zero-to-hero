@@ -1,0 +1,48 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s14
+competency: comp-w01-ipos-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s14-a
+  variant_id: mod-w01.theory.s14.vA
+  item_version: '1.0'
+  stem: Perangkat berikut yang menjalankan input **dan** output adalah …
+  options:
+  - id: a
+    text: Keyboard
+  - id: b
+    text: Printer (hanya mencetak)
+  - id: c
+    text: SSD
+  - id: d
+    text: Layar sentuh
+  key: d
+  distractor_rationale:
+    a: Keyboard hanya input
+    b: Printer yang hanya mencetak adalah output
+    c: SSD adalah penyimpanan
+  explanation: Layar sentuh menampilkan gambar (output) dan menerima sentuhan (input).
+- item_id: item-w01-t-s14-b
+  variant_id: mod-w01.theory.s14.vB
+  item_version: '1.0'
+  stem: Perangkat berikut yang menjalankan input **dan** output adalah …
+  options:
+  - id: a
+    text: Headset dengan mikrofon
+  - id: b
+    text: Speaker tanpa mikrofon
+  - id: c
+    text: Webcam
+  - id: d
+    text: Flashdisk
+  key: a
+  distractor_rationale:
+    b: Speaker tanpa mikrofon hanya output
+    c: Webcam hanya input
+    d: Flashdisk adalah penyimpanan
+  explanation: Headset bermikrofon mengeluarkan suara (output) dan menangkap suara (input).

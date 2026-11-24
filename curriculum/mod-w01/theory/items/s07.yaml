@@ -1,0 +1,48 @@
+# W1 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w01.theory.s07
+competency: comp-w01-mem-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w01-t-s07-a
+  variant_id: mod-w01.theory.s07.vA
+  item_version: '1.0'
+  stem: Memori yang **isinya hilang saat listrik mati** adalah …
+  options:
+  - id: a
+    text: SSD
+  - id: b
+    text: HDD
+  - id: c
+    text: RAM
+  - id: d
+    text: Flashdisk
+  key: c
+  distractor_rationale:
+    a: SSD non-volatil
+    b: HDD non-volatil
+    d: Flashdisk non-volatil
+  explanation: 'RAM bersifat volatil: isinya hilang saat listrik mati.'
+- item_id: item-w01-t-s07-b
+  variant_id: mod-w01.theory.s07.vB
+  item_version: '1.0'
+  stem: Media yang **datanya tetap ada walau listrik mati** adalah …
+  options:
+  - id: a
+    text: RAM
+  - id: b
+    text: PSU
+  - id: c
+    text: CPU
+  - id: d
+    text: SSD
+  key: d
+  distractor_rationale:
+    a: RAM volatil
+    b: PSU memasok listrik; PSU tidak menyimpan data
+    c: CPU menjalankan instruksi, bukan penyimpanan
+  explanation: SSD adalah penyimpanan non-volatil.

@@ -1,0 +1,269 @@
+# W1 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w01.lab.act-02
+name: Alur IPOS dan lapisan software
+competencies:
+- comp-w01-ipos-01
+- comp-w01-sw-01
+max_points: 30
+estimated_minutes: 30
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w01.lab (D-28 XI-2)
+normalization: 'c01: barisan ID kejadian dari himpunan {A, B, C, D}; buang spasi, ubah ke huruf besar;
+  harus memuat tepat 4 ID berbeda. c02–c05: satu kode tahap dari {I, P, O, S}, huruf besar. c06: satu
+  huruf opsi dari {a, b, c, d}, huruf kecil. Tidak ada aturan angka'
+answer_validation: 'c01: kosong, ID di luar {A–D}, ID ganda, atau panjang ≠ 4 → 0 (INVALID_ANSWER); selain
+  itu adjacency 0/4/8/12. c02–c06: kosong atau kode di luar himpunan → 0 untuk pemeriksaan itu; pemeriksaan
+  lain tetap dinilai'
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2)
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. Umpan balik test
+  tersembunyi mengikuti D-36 (HF-A); W1 tidak memiliki test kode tersembunyi'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban terstruktur
+variants:
+- variant_id: mod-w01.lab.act-02.vA
+  fixture:
+    events:
+    - id: A
+      text: Kamu mengetik kota tujuan dan tanggal di aplikasi tiket kereta
+    - id: B
+      text: Aplikasi mencari jadwal kereta yang cocok
+    - id: C
+      text: Daftar jadwal tampil di layar
+    - id: D
+      text: Setelah memilih jadwal di layar, tiket disimpan di penyimpanan ponsel
+    display_order:
+    - C
+    - A
+    - D
+    - B
+    label_choices:
+    - id: I
+      label: Input
+    - id: P
+      label: Proses
+    - id: O
+      label: Output
+    - id: S
+      label: Penyimpanan
+    layer_question: Software apa yang membantu sistem operasi ponsel membaca sentuhan jarimu pada layar?
+    layer_options:
+    - id: a
+      text: Aplikasi tiket kereta
+    - id: b
+      text: Firmware pengisi daya
+    - id: c
+      text: Baterai
+    - id: d
+      text: Driver layar sentuh
+  visible_example:
+    note: 'Contoh terlihat (0 poin): "Menekan tombol volume" → Input'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil acak); berkas ini
+    = khusus penilai sebelum dinilai; feedback/explanation = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w01.lab.act-02.vA.c01
+    name: Urutan kejadian
+    accepted_sequences:
+    - - A
+      - B
+      - C
+      - D
+    points: 12
+    rule: 4 poin per pasangan berurutan yang benar (adjacency) terhadap urutan diterima; maks. 3 pasangan
+      → 0/4/8/12 poin. Barisan harus memuat ID A–D tanpa ID asing atau ganda; bila tidak → 0 untuk pemeriksaan
+      ini (pemeriksaan lain tetap dinilai)
+    reachable_values:
+    - 0
+    - 4
+    - 8
+    - 12
+    evaluator_examples:
+    - answer:
+      - D
+      - C
+      - B
+      - A
+      correct_pairs: 0
+      points: 0
+    - answer:
+      - A
+      - B
+      - D
+      - C
+      correct_pairs: 1
+      points: 4
+    - answer:
+      - C
+      - D
+      - A
+      - B
+      correct_pairs: 2
+      points: 8
+    - answer:
+      - A
+      - B
+      - C
+      - D
+      correct_pairs: 3
+      points: 12
+    - answer:
+      - A
+      - B
+      - B
+      - D
+      points: 0
+      note: ID ganda → INVALID_ANSWER
+    - answer:
+      - A
+      - B
+      - C
+      points: 0
+      note: tidak lengkap → INVALID_ANSWER
+  - check_id: mod-w01.lab.act-02.vA.c02
+    name: Tahap kejadian A
+    event: A
+    expected: I
+    points: 3
+  - check_id: mod-w01.lab.act-02.vA.c03
+    name: Tahap kejadian B
+    event: B
+    expected: P
+    points: 3
+  - check_id: mod-w01.lab.act-02.vA.c04
+    name: Tahap kejadian C
+    event: C
+    expected: O
+    points: 3
+  - check_id: mod-w01.lab.act-02.vA.c05
+    name: Tahap kejadian D
+    event: D
+    expected: S
+    points: 3
+  - check_id: mod-w01.lab.act-02.vA.c06
+    name: Lapisan software
+    expected: d
+    points: 6
+    feedback: Driver layar sentuh menjadi penghubung sistem operasi dengan sensor sentuh; aplikasi memakai
+      hasilnya lewat sistem operasi.
+- variant_id: mod-w01.lab.act-02.vB
+  fixture:
+    events:
+    - id: A
+      text: Sensor kamera ponsel menangkap gambar
+    - id: B
+      text: Prosesor ponsel memperbaiki kecerahan foto
+    - id: C
+      text: Foto tampil di layar untuk kamu periksa
+    - id: D
+      text: Setelah puas, kamu menyimpan foto ke penyimpanan internal
+    display_order:
+    - B
+    - D
+    - A
+    - C
+    label_choices:
+    - id: I
+      label: Input
+    - id: P
+      label: Proses
+    - id: O
+      label: Output
+    - id: S
+      label: Penyimpanan
+    layer_question: Software apa yang membantu sistem operasi ponsel memakai sensor kamera?
+    layer_options:
+    - id: a
+      text: Aplikasi galeri
+    - id: b
+      text: Baterai
+    - id: c
+      text: Driver kamera
+    - id: d
+      text: Firmware pengisi daya
+  visible_example:
+    note: 'Contoh terlihat (0 poin): "Menekan tombol volume" → Input'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil acak); berkas ini
+    = khusus penilai sebelum dinilai; feedback/explanation = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w01.lab.act-02.vB.c01
+    name: Urutan kejadian
+    accepted_sequences:
+    - - A
+      - B
+      - C
+      - D
+    points: 12
+    rule: 4 poin per pasangan berurutan yang benar (adjacency) terhadap urutan diterima; maks. 3 pasangan
+      → 0/4/8/12 poin. Barisan harus memuat ID A–D tanpa ID asing atau ganda; bila tidak → 0 untuk pemeriksaan
+      ini (pemeriksaan lain tetap dinilai)
+    reachable_values:
+    - 0
+    - 4
+    - 8
+    - 12
+    evaluator_examples:
+    - answer:
+      - D
+      - C
+      - B
+      - A
+      correct_pairs: 0
+      points: 0
+    - answer:
+      - A
+      - B
+      - D
+      - C
+      correct_pairs: 1
+      points: 4
+    - answer:
+      - C
+      - D
+      - A
+      - B
+      correct_pairs: 2
+      points: 8
+    - answer:
+      - A
+      - B
+      - C
+      - D
+      correct_pairs: 3
+      points: 12
+    - answer:
+      - A
+      - B
+      - B
+      - D
+      points: 0
+      note: ID ganda → INVALID_ANSWER
+    - answer:
+      - A
+      - B
+      - C
+      points: 0
+      note: tidak lengkap → INVALID_ANSWER
+  - check_id: mod-w01.lab.act-02.vB.c02
+    name: Tahap kejadian A
+    event: A
+    expected: I
+    points: 3
+  - check_id: mod-w01.lab.act-02.vB.c03
+    name: Tahap kejadian B
+    event: B
+    expected: P
+    points: 3
+  - check_id: mod-w01.lab.act-02.vB.c04
+    name: Tahap kejadian C
+    event: C
+    expected: O
+    points: 3
+  - check_id: mod-w01.lab.act-02.vB.c05
+    name: Tahap kejadian D
+    event: D
+    expected: S
+    points: 3
+  - check_id: mod-w01.lab.act-02.vB.c06
+    name: Lapisan software
+    expected: c
+    points: 6
+    feedback: Driver kamera menjadi penghubung sistem operasi dengan sensor kamera.
