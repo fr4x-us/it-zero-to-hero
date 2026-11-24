@@ -1,0 +1,53 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s13
+competency: comp-w02-path-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s13-a
+  variant_id: mod-w02.theory.s13.vA
+  item_version: '1.0'
+  stem: "Folder kerja: `/sekolah/kelas-10/tugas`. Tulis **path relatif terpendek** ke berkas `/sekolah/kelas-10/jadwal.pdf`.\n\
+    \n```\n/sekolah\n├── kelas-10\n│   ├── jadwal.pdf\n│   └── tugas\n│       └── matematika.docx\n└──\
+    \ kelas-11\n    └── jadwal.pdf\n```"
+  accepted_answers:
+  - ../jadwal.pdf
+  - ./../jadwal.pdf
+  normalization: 'Buang spasi/tab di awal dan akhir; huruf besar/kecil DIBEDAKAN (model path W2); lalu
+    cocokkan persis dengan salah satu accepted_answers (bentuk dengan dan tanpa awalan "./" untuk path
+    relatif sudah tercantum). Selain itu ditolak: "\", spasi di dalam path, "/" di akhir (kecuali root),
+    langkah memutar (mis. "a/../b"), path yang tidak terpendek'
+  explanation: Naik satu tingkat dari tugas ke kelas-10 (..), lalu tunjuk jadwal.pdf.
+- item_id: item-w02-t-s13-b
+  variant_id: mod-w02.theory.s13.vB
+  item_version: '1.0'
+  stem: 'Folder kerja: `/kantor/laporan/bulanan`. Tulis **path relatif terpendek** ke berkas `/kantor/laporan/ringkasan.txt`.
+
+
+    ```
+
+    /kantor
+
+    ├── laporan
+
+    │   ├── ringkasan.txt
+
+    │   └── bulanan
+
+    │       └── mei.xlsx
+
+    └── surat
+
+    ```'
+  accepted_answers:
+  - ../ringkasan.txt
+  - ./../ringkasan.txt
+  normalization: 'Buang spasi/tab di awal dan akhir; huruf besar/kecil DIBEDAKAN (model path W2); lalu
+    cocokkan persis dengan salah satu accepted_answers (bentuk dengan dan tanpa awalan "./" untuk path
+    relatif sudah tercantum). Selain itu ditolak: "\", spasi di dalam path, "/" di akhir (kecuali root),
+    langkah memutar (mis. "a/../b"), path yang tidak terpendek'
+  explanation: Naik satu tingkat dari bulanan ke laporan (..), lalu tunjuk ringkasan.txt.

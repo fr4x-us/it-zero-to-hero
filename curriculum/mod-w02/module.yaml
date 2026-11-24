@@ -1,0 +1,113 @@
+# W2 — ikhtisar modul (TPL-01, TPL-02, TPL-03, TPL-15, TPL-17, TPL-18). Dokumentasi konten; bukan kode aplikasi.
+module_id: mod-w02
+phase: phase-1
+week: 2
+title: "Sistem Operasi dan Manajemen Berkas"
+locked_scope: "W2 OS dan file (B01 M-02, D-01 M-02; CUR §2 baris 2: fungsi OS, proses, sistem file; lab simulasi struktur folder/path)"
+language: id
+content_version: "1.0"
+status:
+  documentation: PRODUCED          # konten lengkap ditulis (CB-1)
+  reviewed: CLAUDE_SELF_REVIEW     # review dokumentasi oleh penyusun; lihat review.md
+  owner_accepted: NO               # menunggu review ChatGPT dan otorisasi owner
+  runtime_verified: NOT_APPLICABLE # W2 tidak memakai runtime Python; aplikasi belum ada
+  learner_tested: NO               # estimasi durasi belum diuji dengan pelajar
+audience: "Pemula total tanpa pengalaman IT atau pemrograman; telah menyelesaikan W1"
+prerequisites: [mod-w01]
+nominal_minutes: 480
+objective_source: "Topik dan tujuan ringkas CUR §2 baris 2 (kerangka D-01 M-02). Rumusan LO rinci disusun penyusun mengikuti pola W1 (tujuan rinci per minggu tetap PROPOSED, CU-1) — bukan keputusan owner baru"
+
+learning_objectives:
+  - id: LO1
+    competency: comp-w02-os-01
+    text: "Menjelaskan fungsi sistem operasi (proses, memori, file, perangkat, antarmuka pengguna) dan membedakan sistem operasi dari aplikasi"
+  - id: LO2
+    competency: comp-w02-proc-01
+    text: "Membedakan program dan proses, menjelaskan multitasking, dan memilih proses yang diakhiri dari tabel manajer tugas beserta akibatnya"
+  - id: LO3
+    competency: comp-w02-fs-01
+    text: "Menjelaskan berkas, folder, nama berkas, dan ekstensi (dari titik terakhir), serta membaca pohon folder"
+  - id: LO4
+    competency: comp-w02-path-01
+    text: "Menulis dan menafsirkan path absolut dan path relatif terpendek (termasuk . dan ..) pada model path W2"
+  - id: LO5
+    competency: comp-w02-ops-01
+    text: "Memprediksi hasil operasi buat, salin, pindah, ganti nama, hapus, dan pulihkan pada pohon folder (model operasi W2)"
+  - id: LO6
+    competency: comp-w02-perm-01
+    text: "Menafsirkan tabel izin baca/tulis/jalankan dan memilih izin akun atau aplikasi yang sesuai prinsip hak minimum"
+
+objective_mapping:   # setiap LO diajarkan, dilatih, dan dinilai
+  LO1: {lessons: [les-01], practice: [prac-01], theory_slots: [s01, s02, s03], lab: [], lab_note: "Lab W2 berfokus pada berkas, path, operasi, izin, dan proses; fungsi OS dinilai di teori, concept, dan proyek (K4.q4)", project: [K4.q4], concept_slots: [s01]}
+  LO2: {lessons: [les-02], practice: [prac-02], theory_slots: [s04, s05, s06], lab: [act-03.c08], project: [K4.q2], concept_slots: [s02]}
+  LO3: {lessons: [les-03], practice: [prac-03], theory_slots: [s07, s08, s09, s10], lab: [act-01.c01–c10], project: [K1.c01–c10, K4.q1], concept_slots: [s03]}
+  LO4: {lessons: [les-03], practice: [prac-03], theory_slots: [s11, s12, s13, s14], lab: [act-02.c01–c06, act-03.c01, act-03.c05], project: [K1.c11, K1.c12, K1.c13, K2.c02, K2.c03, K2.c04], concept_slots: [s04]}
+  LO5: {lessons: [les-04], practice: [prac-04], theory_slots: [s15, s16, s17], lab: [act-03.c01–c05], project: [K1.c01–c09, K1.c14, K3.c03, K3.c04, K4.q3], concept_slots: [s05]}
+  LO6: {lessons: [les-04], practice: [prac-04], theory_slots: [s18, s19, s20], lab: [act-03.c06, act-03.c07], project: [K4.q5], concept_slots: [s06]}
+
+lessons:
+  - {id: mod-w02.les-01, file: lessons/les-01.md, minutes: 40}
+  - {id: mod-w02.les-02, file: lessons/les-02.md, minutes: 40}
+  - {id: mod-w02.les-03, file: lessons/les-03.md, minutes: 55}
+  - {id: mod-w02.les-04, file: lessons/les-04.md, minutes: 45}
+practice_sets:        # latihan terbimbing tidak dinilai, di dalam file pelajaran
+  - {id: mod-w02.prac-01, lesson: mod-w02.les-01}
+  - {id: mod-w02.prac-02, lesson: mod-w02.les-02}
+  - {id: mod-w02.prac-03, lesson: mod-w02.les-03}
+  - {id: mod-w02.prac-04, lesson: mod-w02.les-04}
+
+components:
+  - {id: mod-w02.theory, weight_percent: 30, max_points: 56, blueprint: theory/blueprint.yaml, items_dir: theory/items, slots: 20, variants_per_slot: 2, items: 40}
+  - {id: mod-w02.lab, weight_percent: 40, max_points: 100, activities: [lab/act-01, lab/act-02, lab/act-03], activity_max_points: [30, 30, 40], variants_per_activity: 2, specifications: 6, attempt_scope: "RA-1 (seluruh komponen)"}
+  - {id: mod-w02.project, weight_percent: 20, max_points: 100, spec: project/spec.md, rubric: project/rubric.yaml, remedial: MPV-A}
+  - {id: mod-w02.concept, weight_percent: 10, max_points: 20, items_dir: concept/items, slots: 6, variants_per_slot: 2, items: 12, slot_max_points: {s01: 4, s02: 4, s03: 3, s04: 4, s05: 3, s06: 2}}
+pass_rule: "PASSED ⇔ 4·e ≥ 3·m untuk setiap komponen (skor terbaik) DAN Σ bobot·e/m ≥ 80% secara eksak (NP-4, D-04, D-12)"
+
+unscored_reflection:  # CE-D, D-23: tidak menyumbang skor apa pun
+  id: mod-w02.reflection
+  prompt: "Tuliskan dengan kata-katamu sendiri: bagian mana dari sistem operasi atau path yang paling sulit bagimu di W2, dan apa rencanamu untuk melatihnya?"
+  scored: false
+  xp: none
+
+xp:                   # D-28: satu award per xp_id; XE-B untuk komponen; UG-A untuk pelajaran/latihan
+  identities:
+    - {xp_id: mod-w02.les-01, amount: 5, eligibility: "Pelajaran dibuka sampai bagian akhir untuk pertama kali (XE-4)"}
+    - {xp_id: mod-w02.les-02, amount: 5, eligibility: "idem"}
+    - {xp_id: mod-w02.les-03, amount: 5, eligibility: "idem"}
+    - {xp_id: mod-w02.les-04, amount: 5, eligibility: "idem"}
+    - {xp_id: mod-w02.prac-01, amount: 10, eligibility: "Set latihan diselesaikan pertama kali, berapa pun hasilnya (XE-4)"}
+    - {xp_id: mod-w02.prac-02, amount: 10, eligibility: "idem"}
+    - {xp_id: mod-w02.prac-03, amount: 10, eligibility: "idem"}
+    - {xp_id: mod-w02.prac-04, amount: 10, eligibility: "idem"}
+    - {xp_id: mod-w02.theory, amount: 50, eligibility: "Attempt selesai pertama dengan 4·e ≥ 3·56 (e ≥ 42) (XE-B, XE-1)"}
+    - {xp_id: mod-w02.lab, amount: 70, eligibility: "Attempt komponen selesai pertama (LA-2) dengan 4·e ≥ 3·100 (e ≥ 75)"}
+    - {xp_id: mod-w02.project, amount: 50, eligibility: "Attempt selesai pertama dengan 4·e ≥ 3·100 (e ≥ 75)"}
+    - {xp_id: mod-w02.concept, amount: 25, eligibility: "Attempt selesai pertama dengan 4·e ≥ 3·20 (e ≥ 15)"}
+    - {xp_id: mod-w02.passed, amount: 50, eligibility: "Modul W2 pertama kali berstatus PASSED (XE-5)"}
+  total_obtainable: 305       # 4·5 + 4·10 + 50 + 70 + 50 + 25 + 50
+  not_identities: ["aktivitas lab individual (XI-2)", "varian soal (XI-5)", "Jalankan/latihan lab", "refleksi tanpa skor", "attempt remedial atau perbaikan setelah award"]
+
+schedule:             # HA-A fase 1 (D-32): M 180, U 45, L 90, P 90, C 30, R 45 = 480 menit
+  allocation_minutes: {material_and_practice: 180, theory_exam_and_review: 45, laboratory: 90, mini_project: 90, concept_explanation: 30, scheduled_review_and_remedial_preparation: 45}
+  total_minutes: 480
+  lab_activity_minutes: {act-01: 25, act-02: 30, act-03: 35}
+  theory_exam:
+    standard_minutes: 33                 # rumus A.4 dari blueprint W2: S = 1.680 → ⌈1.848/60⌉ + 2
+    scheduled_feedback_review_minutes: 12  # 45 − 33
+    accessibility_TA_B_minutes: 50      # ⌈33 × 3/2⌉; tambahan 17 menit di luar 480 menit nominal (TA-3)
+    optional_additional_review: "Di luar nominal; bergantung pelajar"
+  suggested_sessions:  # saran, bukan tenggat; dapat dipindah sesuai shift (D-01 M-03)
+    - {session: 1, minutes: 235, content: "les-01 (40) · les-02 (40) · les-03 (55) · les-04 (45) · lab act-01 (25) · lab act-02 (30)"}
+    - {session: 2, minutes: 245, content: "lab act-03 (35) · mini-project (90) · concept (30) · review terjadwal (45) · ujian teori (33) + review umpan balik (12)"}
+  outside_nominal: ["perpanjangan aksesibilitas", "attempt remedial", "review tambahan opsional"]
+
+versioning:
+  module: "1.0"
+  rule: "Perubahan typo/klarifikasi → minor (1.1); perubahan kunci, poin, atau isi soal → mayor (2.0); xp_id dan item_id tidak berubah bila tujuan belajar sama (XI-6)"
+counts:
+  lessons: 4
+  practice_sets: 4
+  theory_items: 40
+  lab_specifications: 6
+  mini_projects: 1
+  concept_items: 12

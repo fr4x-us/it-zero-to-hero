@@ -1,0 +1,48 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s04
+competency: comp-w02-proc-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s04-a
+  variant_id: mod-w02.theory.s04.vA
+  item_version: '1.0'
+  stem: Program yang **sedang berjalan** dan diberi nomor PID oleh sistem operasi disebut …
+  options:
+  - id: a
+    text: Berkas
+  - id: b
+    text: Folder
+  - id: c
+    text: Ekstensi
+  - id: d
+    text: Proses
+  key: d
+  distractor_rationale:
+    a: Berkas adalah data bernama di penyimpanan, belum tentu berjalan
+    b: Folder adalah wadah berkas
+    c: Ekstensi adalah bagian nama berkas
+  explanation: Proses adalah program yang sedang berjalan; OS memberinya PID.
+- item_id: item-w02-t-s04-b
+  variant_id: mod-w02.theory.s04.vB
+  item_version: '1.0'
+  stem: Berkas berisi instruksi yang tersimpan di SSD dan **belum dibuka** disebut …
+  options:
+  - id: a
+    text: Proses
+  - id: b
+    text: PID
+  - id: c
+    text: Program
+  - id: d
+    text: Tempat Sampah
+  key: c
+  distractor_rationale:
+    a: Proses baru ada setelah program dibuka
+    b: PID adalah nomor proses yang berjalan
+    d: Tempat Sampah adalah tempat berkas terhapus
+  explanation: Program adalah berkas instruksi di penyimpanan; saat dibuka ia menjadi proses.

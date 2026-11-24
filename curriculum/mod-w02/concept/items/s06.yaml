@@ -1,0 +1,67 @@
+# W2 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.concept.s06
+competency: comp-w02-perm-01
+required_concepts:
+- hak minimum
+- izin sesuai fungsi
+- akun biasa vs admin
+format: CE-S2
+max_points: 2
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w02-c-s06-a
+  variant_id: mod-w02.concept.s06.vA
+  item_version: '1.0'
+  stem: Pilih **semua** alasan yang benar untuk memakai akun **pengguna biasa** (bukan administrator)
+    dalam kegiatan sehari-hari.
+  options:
+  - id: a
+    text: Kuasa akun itu untuk mengubah pengaturan sistem lebih terbatas, sehingga kesalahan atau program
+      jahat yang berjalan di akun itu juga lebih terbatas
+  - id: b
+    text: Akun pengguna biasa membuat internet lebih cepat
+  - id: c
+    text: 'Sesuai prinsip hak minimum: izin sekecil mungkin yang masih cukup'
+  - id: d
+    text: Akun pengguna biasa tidak dapat membuka berkas miliknya sendiri
+  key:
+  - a
+  - c
+  distractor_rationale:
+    b: Jenis akun tidak menentukan kecepatan internet
+    d: Pengguna biasa dapat mengelola berkas miliknya
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Satu pernyataan benar menjelaskan akibatnya (kuasa terbatas), satu lagi prinsipnya (hak minimum).
+- item_id: item-w02-c-s06-b
+  variant_id: mod-w02.concept.s06.vB
+  item_version: '1.0'
+  stem: Aplikasi senter meminta izin **kontak** dan **lokasi**. Pilih **semua** pernyataan yang benar
+    menurut prinsip hak minimum.
+  options:
+  - id: a
+    text: Izinkan semua agar aplikasi pasti berjalan
+  - id: b
+    text: Tolak izin kontak dan lokasi karena fungsi senter tidak membutuhkannya
+  - id: c
+    text: Menolak izin aplikasi membuat ponsel tidak dapat menyala
+  - id: d
+    text: Izin yang diberikan cukup yang dibutuhkan fungsi aplikasi itu
+  key:
+  - b
+  - d
+  distractor_rationale:
+    a: Memberi izin berlebihan melanggar hak minimum
+    c: Izin aplikasi tidak memengaruhi menyalanya ponsel
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Satu pernyataan benar adalah tindakannya (tolak izin yang tidak perlu), satu lagi prinsipnya
+    (izin sesuai fungsi).

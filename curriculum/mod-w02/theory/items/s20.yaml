@@ -1,0 +1,51 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s20
+competency: comp-w02-perm-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s20-a
+  variant_id: mod-w02.theory.s20.vA
+  item_version: '1.0'
+  stem: Aplikasi panggilan video meminta izin. Fungsinya membutuhkan kamera dan mikrofon saat panggilan
+    berlangsung. Pilihan yang **paling** sesuai prinsip hak minimum adalah …
+  options:
+  - id: a
+    text: Izinkan kamera, mikrofon, lokasi, dan kontak sepanjang waktu
+  - id: b
+    text: Tolak kamera dan mikrofon walaupun panggilan video tidak dapat berjalan tanpanya
+  - id: c
+    text: Pakai akun administrator agar aplikasi tidak perlu meminta izin
+  - id: d
+    text: Izinkan kamera dan mikrofon hanya saat aplikasi digunakan
+  key: d
+  distractor_rationale:
+    a: Lokasi dan kontak tidak dibutuhkan; "sepanjang waktu" lebih besar dari perlu
+    b: Izin yang benar-benar dibutuhkan fungsinya boleh diberikan
+    c: Akun admin memperbesar kuasa, bukan memperkecil
+  explanation: 'Hak minimum: hanya izin yang dibutuhkan fungsi (kamera, mikrofon), dan hanya saat aplikasi
+    digunakan.'
+- item_id: item-w02-t-s20-b
+  variant_id: mod-w02.theory.s20.vB
+  item_version: '1.0'
+  stem: Rani perlu **membaca** berkas laporan milik temannya, tetapi tidak perlu mengubahnya. Izin yang
+    **paling** sesuai prinsip hak minimum untuk akun Rani adalah …
+  options:
+  - id: a
+    text: Baca saja
+  - id: b
+    text: Baca dan tulis
+  - id: c
+    text: Jalankan saja
+  - id: d
+    text: Jadikan akun Rani administrator
+  key: a
+  distractor_rationale:
+    b: Tulis tidak dibutuhkan
+    c: Jalankan tidak membantu membaca laporan
+    d: Admin memberi kuasa jauh melebihi kebutuhan
+  explanation: 'Hak minimum: izin baca sudah cukup untuk kebutuhan Rani.'

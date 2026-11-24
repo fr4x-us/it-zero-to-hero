@@ -1,0 +1,38 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s14
+competency: comp-w02-path-01
+format: TF-3
+difficulty: D3
+max_points: 4
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s14-a
+  variant_id: mod-w02.theory.s14.vA
+  item_version: '1.0'
+  stem: "Folder kerja: `/home/dewi/Kursus/Bahasa`. Tulis **path relatif terpendek** ke berkas `gending.mp3`.\n\
+    \n```\n/home/dewi\n├── Kursus\n│   └── Bahasa\n│       └── kosakata.txt\n└── Musik\n    └── Gamelan\n\
+    \        └── gending.mp3\n```"
+  accepted_answers:
+  - ../../Musik/Gamelan/gending.mp3
+  - ./../../Musik/Gamelan/gending.mp3
+  normalization: 'Buang spasi/tab di awal dan akhir; huruf besar/kecil DIBEDAKAN (model path W2); lalu
+    cocokkan persis dengan salah satu accepted_answers (bentuk dengan dan tanpa awalan "./" untuk path
+    relatif sudah tercantum). Selain itu ditolak: "\", spasi di dalam path, "/" di akhir (kecuali root),
+    langkah memutar (mis. "a/../b"), path yang tidak terpendek'
+  explanation: Naik dua tingkat ke /home/dewi (../..), lalu turun ke Musik/Gamelan/gending.mp3.
+- item_id: item-w02-t-s14-b
+  variant_id: mod-w02.theory.s14.vB
+  item_version: '1.0'
+  stem: "Folder kerja: `/home/joko/Catatan/Ide`. Tulis **path relatif terpendek** ke berkas `rancangan.png`.\n\
+    \n```\n/home/joko\n├── Catatan\n│   └── Ide\n│       └── daftar.txt\n└── Proyek\n    └── Robot\n \
+    \       └── rancangan.png\n```"
+  accepted_answers:
+  - ../../Proyek/Robot/rancangan.png
+  - ./../../Proyek/Robot/rancangan.png
+  normalization: 'Buang spasi/tab di awal dan akhir; huruf besar/kecil DIBEDAKAN (model path W2); lalu
+    cocokkan persis dengan salah satu accepted_answers (bentuk dengan dan tanpa awalan "./" untuk path
+    relatif sudah tercantum). Selain itu ditolak: "\", spasi di dalam path, "/" di akhir (kecuali root),
+    langkah memutar (mis. "a/../b"), path yang tidak terpendek'
+  explanation: Naik dua tingkat ke /home/joko (../..), lalu turun ke Proyek/Robot/rancangan.png.

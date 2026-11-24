@@ -95,14 +95,14 @@ Kontrak field: [AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTO
 | Field | Nilai |
 |---|---|
 | Tugas aktif dan lingkup | CB-1 — produksi modul W2, W3, W4 (otorisasi owner, master prompt 2026-11-24). Konten kurikulum + validasi dokumentasi saja; satu PR baru; tanpa merge |
-| Fase | Fase B selesai (V03 PASS). Fase D: produksi **W2** (modul aktif) |
-| Selesai | Fase A (PR #26 merged `ab0103e`, diverifikasi ulang); Fase B (empat skill dimuat di sesi baru `session_011Df1V7VYFZ1Fdwc9jRg7nK`; V03 PASS) |
-| Sisa | W2 → W3 → W4 (masing-masing: konten, validasi, `review.md`, checkpoint); pembaruan dokumen status; verifikasi akhir; satu PR; STOP |
+| Fase | Fase D: W2 selesai (diproduksi + divalidasi); modul aktif **W3** |
+| Selesai | Fase A (PR #26 merged `ab0103e`, diverifikasi ulang); Fase B (V03 PASS); **W2** `curriculum/mod-w02/` lengkap + `review.md` (0 galat pemeriksa; 16/16 contoh rubrik cocok) |
+| Sisa | W3 → W4 (konten, validasi, `review.md`, checkpoint); pembaruan dokumen status; verifikasi akhir; satu PR; STOP |
 | Berkas relevan | `docs/CURRICULUM_TEMPLATES_CB0.md`, `docs/CURRICULUM_PRODUCTION_PLAN.md`, `docs/PROJECT_RUBRIC_DECISION_SHEETS.md` A.3, `docs/ASSESSMENT_FLOW_DECISION_SHEETS.md` A.4, `curriculum/mod-w01/` (acuan), `curriculum/mod-w02/`–`mod-w04/` (keluaran) |
 | Versi kerja | Branch `planning/cb1-w02-w04`; basis `main` = `ab0103e4954ead4ded6343d105d73a2729916cd6`; checkpoint terbaru = commit terakhir branch ini |
 | Keputusan | Owner menerima CB-0.5; CB-1 diotorisasi. LO rinci W2–W4 diturunkan penyusun dari topik CUR §2 (sama dengan praktik W1; tujuan rinci per minggu tetap PROPOSED, CU-1) |
 | Blocker | Tidak ada untuk W2–W4 (lab non-kode; CU-6-Q13 tidak relevan) |
-| Pendekatan gagal | — |
+| Pendekatan gagal | W2: pemindai kebocoran memakai `lstrip('./')` → positif palsu; diganti pencocokan path utuh |
 | Bukti verifikasi | [CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md) §4 (V03); `curriculum/mod-w0N/review.md` per modul |
 | Aksi berikutnya yang diizinkan | Lanjutkan modul aktif dari berkas yang sudah ada di branch; jangan ulang modul yang sudah ber-`review.md` lengkap |
 | Kondisi berhenti | PR CB-1 dibuka → STOP. Jangan merge, jangan mulai W5, jangan implementasi. Butuh keputusan owner baru → simpan checkpoint dan STOP |

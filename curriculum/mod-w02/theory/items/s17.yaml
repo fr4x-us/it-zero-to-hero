@@ -1,0 +1,77 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s17
+competency: comp-w02-ops-01
+format: TF-4
+difficulty: D3
+max_points: 4
+estimated_seconds: 150
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s17-a
+  variant_id: mod-w02.theory.s17.vA
+  item_version: '1.0'
+  stem: 'Keadaan awal: `/foto` berisi `a.jpg` dan `b.jpg`; `/cadangan` berisi `a.jpg` (versi lama). Operasi
+    pada tabel dijalankan berurutan dengan aturan model W2 (nama sama di tujuan → operasi ditolak; berkas
+    di Tempat Sampah tidak dihitung). Berapa berkas di `/foto` dan di `/cadangan` setelah langkah 4?'
+  stimulus_table:
+  - - Langkah
+    - Operasi
+  - - '1'
+    - Salin /foto/a.jpg ke /cadangan
+  - - '2'
+    - Pindah /foto/b.jpg ke /cadangan
+  - - '3'
+    - Hapus /foto/a.jpg
+  - - '4'
+    - Pulihkan a.jpg dari Tempat Sampah
+  options:
+  - id: a
+    text: /foto 1 berkas, /cadangan 2 berkas
+  - id: b
+    text: /foto 0 berkas, /cadangan 3 berkas
+  - id: c
+    text: /foto 1 berkas, /cadangan 3 berkas
+  - id: d
+    text: /foto 2 berkas, /cadangan 2 berkas
+  key: a
+  distractor_rationale:
+    b: Mengabaikan penolakan langkah 1 dan pemulihan langkah 4
+    c: Mengabaikan penolakan langkah 1 (nama a.jpg sudah ada di /cadangan)
+    d: Menganggap pindah sama dengan salin
+  explanation: 'Langkah 1 ditolak (a.jpg sudah ada). Langkah 2: /cadangan = a.jpg, b.jpg; /foto = a.jpg.
+    Langkah 3: /foto kosong. Langkah 4: a.jpg kembali ke /foto. Hasil /foto 1, /cadangan 2.'
+- item_id: item-w02-t-s17-b
+  variant_id: mod-w02.theory.s17.vB
+  item_version: '1.0'
+  stem: 'Keadaan awal: `/tugas` berisi `esai.docx` dan `peta.png`; `/kirim` berisi `peta.png`. Operasi
+    pada tabel dijalankan berurutan dengan aturan model W2 (nama sama di tujuan → operasi ditolak; berkas
+    di Tempat Sampah tidak dihitung). Berapa berkas di `/tugas` dan di `/kirim` setelah langkah 4?'
+  stimulus_table:
+  - - Langkah
+    - Operasi
+  - - '1'
+    - Pindah /tugas/peta.png ke /kirim
+  - - '2'
+    - Salin /tugas/esai.docx ke /kirim
+  - - '3'
+    - Hapus /kirim/peta.png
+  - - '4'
+    - Kosongkan Tempat Sampah
+  options:
+  - id: a
+    text: /tugas 1 berkas, /kirim 2 berkas
+  - id: b
+    text: /tugas 2 berkas, /kirim 1 berkas
+  - id: c
+    text: /tugas 1 berkas, /kirim 1 berkas
+  - id: d
+    text: /tugas 2 berkas, /kirim 2 berkas
+  key: b
+  distractor_rationale:
+    a: Mengabaikan penolakan langkah 1
+    c: Menganggap salin sama dengan pindah
+    d: Melupakan penghapusan di langkah 3
+  explanation: 'Langkah 1 ditolak (peta.png sudah ada di /kirim). Langkah 2: /kirim = peta.png, esai.docx;
+    /tugas tetap 2. Langkah 3: peta.png di /kirim ke Tempat Sampah. Langkah 4: Tempat Sampah dikosongkan.
+    Hasil /tugas 2, /kirim 1.'

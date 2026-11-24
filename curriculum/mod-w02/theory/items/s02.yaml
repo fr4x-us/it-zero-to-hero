@@ -1,0 +1,58 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s02
+competency: comp-w02-os-01
+format: TF-2
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s02-a
+  variant_id: mod-w02.theory.s02.vA
+  item_version: '1.0'
+  stem: Menurut model W2, pilih **semua** yang termasuk fungsi sistem operasi.
+  options:
+  - id: a
+    text: Menjalankan program dan membagi waktu CPU antarproses
+  - id: b
+    text: Menulis isi laporan sekolah untuk pengguna
+  - id: c
+    text: Mengatur perangkat keras lewat driver
+  - id: d
+    text: Menyediakan antarmuka pengguna seperti ikon dan jendela
+  - id: e
+    text: Memperbaiki layar yang retak secara fisik
+  key:
+  - a
+  - c
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: Menulis isi laporan adalah tugas pengguna dengan aplikasi
+    e: Kerusakan fisik diperbaiki dengan mengganti hardware
+  explanation: Manajemen proses, manajemen perangkat, dan antarmuka pengguna adalah fungsi sistem operasi.
+- item_id: item-w02-t-s02-b
+  variant_id: mod-w02.theory.s02.vB
+  item_version: '1.0'
+  stem: Menurut model W2, pilih **semua** yang termasuk fungsi sistem operasi.
+  options:
+  - id: a
+    text: Menyimpan dan menata berkas serta folder di penyimpanan
+  - id: b
+    text: Membuat desain poster untuk pengguna
+  - id: c
+    text: Membagi RAM untuk setiap program yang berjalan
+  - id: d
+    text: Mengganti baterai ponsel yang rusak
+  - id: e
+    text: Menyediakan cara memberi perintah, baik GUI maupun CLI
+  key:
+  - a
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: Membuat desain adalah tugas pengguna dengan aplikasi
+    d: Baterai adalah hardware yang diganti secara fisik
+  explanation: Manajemen file, manajemen memori, dan antarmuka pengguna adalah fungsi sistem operasi.

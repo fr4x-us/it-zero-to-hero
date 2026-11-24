@@ -1,0 +1,50 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s07
+competency: comp-w02-fs-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s07-a
+  variant_id: mod-w02.theory.s07.vA
+  item_version: '1.0'
+  stem: Berkas `rekaman-rapat.mp3` paling mungkin berisi …
+  options:
+  - id: a
+    text: Video
+  - id: b
+    text: Audio
+  - id: c
+    text: Gambar
+  - id: d
+    text: Dokumen teks
+  key: b
+  distractor_rationale:
+    a: Video umumnya .mp4
+    c: Gambar umumnya .jpg/.png
+    d: Dokumen teks umumnya .txt/.docx/.pdf
+  explanation: Ekstensi .mp3 menandai berkas audio.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w02-t-s07-b
+  variant_id: mod-w02.theory.s07.vB
+  item_version: '1.0'
+  stem: Berkas `poster-lomba.png` paling mungkin berisi …
+  options:
+  - id: a
+    text: Video
+  - id: b
+    text: Audio
+  - id: c
+    text: Gambar
+  - id: d
+    text: Dokumen teks
+  key: c
+  distractor_rationale:
+    a: Video umumnya .mp4
+    b: Audio umumnya .mp3
+    d: Dokumen teks umumnya .txt/.docx/.pdf
+  explanation: Ekstensi .png menandai berkas gambar.
+  option_order: urutan alami (kategori/baris tabel), tetap

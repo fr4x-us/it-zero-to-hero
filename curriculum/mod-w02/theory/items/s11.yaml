@@ -1,0 +1,48 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s11
+competency: comp-w02-path-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s11-a
+  variant_id: mod-w02.theory.s11.vA
+  item_version: '1.0'
+  stem: Menurut model path W2, manakah **path absolut**?
+  options:
+  - id: a
+    text: '`dokumen/surat.txt`'
+  - id: b
+    text: '`/home/ani/dokumen/surat.txt`'
+  - id: c
+    text: '`../surat.txt`'
+  - id: d
+    text: '`./surat.txt`'
+  key: b
+  distractor_rationale:
+    a: Tidak diawali /, jadi relatif
+    c: Memakai .. dari folder kerja, jadi relatif
+    d: Diawali ./ (folder saat ini), jadi relatif
+  explanation: Path absolut dimulai dari root sehingga diawali /.
+- item_id: item-w02-t-s11-b
+  variant_id: mod-w02.theory.s11.vB
+  item_version: '1.0'
+  stem: Menurut model path W2, manakah **path relatif**?
+  options:
+  - id: a
+    text: '`/var/log`'
+  - id: b
+    text: '`/home/budi`'
+  - id: c
+    text: '`/`'
+  - id: d
+    text: '`musik/lagu.mp3`'
+  key: d
+  distractor_rationale:
+    a: Diawali /, jadi absolut
+    b: Diawali /, jadi absolut
+    c: Root sendiri adalah path absolut
+  explanation: Path relatif tidak diawali /; ia dimulai dari folder kerja.

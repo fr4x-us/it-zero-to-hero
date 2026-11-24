@@ -1,0 +1,86 @@
+# W2 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.concept.s01
+competency: comp-w02-os-01
+required_concepts:
+- manajemen proses
+- manajemen memori
+- manajemen perangkat
+- manajemen file
+- antarmuka pengguna
+- kernel
+format: CE-S4
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w02-c-s01-a
+  variant_id: mod-w02.concept.s01.vA
+  item_version: '1.0'
+  stem: Cocokkan setiap istilah dengan penjelasannya.
+  left:
+  - id: L1
+    text: Manajemen proses
+  - id: L2
+    text: Manajemen memori
+  - id: L3
+    text: Manajemen perangkat
+  - id: L4
+    text: Antarmuka pengguna
+  right:
+  - id: R1
+    text: Membagi RAM untuk setiap program dan mengambilnya kembali
+  - id: R2
+    text: Menyediakan ikon, jendela, atau perintah teks untuk pengguna
+  - id: R3
+    text: Menjalankan program dan membagi waktu CPU
+  - id: R4
+    text: Menyimpan, menamai, dan menata berkas di penyimpanan
+  - id: R5
+    text: Mengatur hardware lewat driver
+  key_mapping:
+    L1: R3
+    L2: R1
+    L3: R5
+    L4: R2
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: 'R4 adalah pengecoh: itu manajemen file, yang tidak ada di kolom kiri.'
+- item_id: item-w02-c-s01-b
+  variant_id: mod-w02.concept.s01.vB
+  item_version: '1.0'
+  stem: Cocokkan setiap istilah dengan penjelasannya.
+  left:
+  - id: L1
+    text: Manajemen file
+  - id: L2
+    text: Manajemen memori
+  - id: L3
+    text: Kernel
+  - id: L4
+    text: Antarmuka pengguna
+  right:
+  - id: R1
+    text: Mengatur hardware lewat driver
+  - id: R2
+    text: Inti sistem operasi yang paling dekat dengan hardware
+  - id: R3
+    text: Cara pengguna memberi perintah, lewat GUI atau CLI
+  - id: R4
+    text: Menyimpan, menamai, dan menata berkas di penyimpanan
+  - id: R5
+    text: Membagi RAM untuk setiap program dan mengambilnya kembali
+  key_mapping:
+    L1: R4
+    L2: R5
+    L3: R2
+    L4: R3
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: 'R1 adalah pengecoh: itu manajemen perangkat, yang tidak ada di kolom kiri.'

@@ -1,0 +1,259 @@
+# W2 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w02.lab.act-03
+name: Simulasi operasi berkas, izin, dan proses
+competencies:
+- comp-w02-ops-01
+- comp-w02-perm-01
+- comp-w02-proc-01
+max_points: 40
+estimated_minutes: 35
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w02.lab (D-28 XI-2)
+normalization: 'c01, c05: aturan path (huruf besar/kecil dibedakan; spasi tepi dibuang). c02: bilangan
+  bulat (boleh diikuti "berkas"). c03: satu bilangan bulat 1–6. c04: nama berkas persis (huruf besar/kecil
+  dibedakan). c06: satu nama akun dari pilihan. c07: satu huruf opsi {a, b, c, d}. c08: PID berupa bilangan
+  bulat'
+answer_validation: Kosong, bentuk ditolak, atau di luar pilihan → 0 untuk pemeriksaan itu; pemeriksaan
+  lain tetap dinilai
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2)
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W2 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban terstruktur
+variants:
+- variant_id: mod-w02.lab.act-03.vA
+  fixture:
+    start_state:
+      /bersama/Masuk:
+      - brosur.pdf
+      - menu.xlsx
+      - foto-acara.jpg
+      /bersama/Acara: []
+      /bersama/Lama:
+      - menu.xlsx
+    operations:
+    - Buat folder /bersama/Acara/Foto
+    - Pindah /bersama/Masuk/foto-acara.jpg ke /bersama/Acara/Foto
+    - Salin /bersama/Masuk/brosur.pdf ke /bersama/Acara
+    - Pindah /bersama/Masuk/menu.xlsx ke /bersama/Lama
+    - Hapus /bersama/Masuk/brosur.pdf
+    - Ganti nama /bersama/Acara/brosur.pdf menjadi brosur-final.pdf
+    permission_file: /bersama/Acara/brosur-final.pdf
+    permission_owner: panitia
+    permission_table:
+    - - Akun
+      - Baca
+      - Tulis
+    - - panitia (pemilik)
+      - Ya
+      - Ya
+    - - relawan
+      - Ya
+      - Tidak
+    - - tamu
+      - Tidak
+      - Tidak
+    q06: Akun mana yang dapat membuka brosur-final.pdf tetapi tidak dapat mengubahnya?
+    q06_choices:
+    - panitia
+    - relawan
+    - tamu
+    q07: Relawan baru bertugas memperbarui harga di menu.xlsx. Izin minimum yang cukup untuk akunnya pada
+      berkas itu?
+    q07_options: &id001
+    - id: a
+      text: Baca saja
+    - id: b
+      text: Baca dan tulis
+    - id: c
+      text: Jalankan saja
+    - id: d
+      text: Jadikan administrator
+    process_table:
+    - - Nama proses
+      - PID
+      - Memori
+      - Status
+    - - Pengolah kata
+      - '6012'
+      - 310 MB
+      - Berjalan
+    - - Pengelola berkas
+      - '6027'
+      - 95 MB
+      - Tidak menanggapi
+    - - Pemutar musik
+      - '6040'
+      - 140 MB
+      - Berjalan
+  expected_final_state:
+    /bersama/Masuk:
+    - menu.xlsx
+    /bersama/Acara:
+    - brosur-final.pdf
+    /bersama/Acara/Foto:
+    - foto-acara.jpg
+    /bersama/Lama:
+    - menu.xlsx
+    Tempat Sampah:
+    - brosur.pdf
+  visible_example:
+    note: Contoh terlihat (0 poin) = contoh terbimbing Pelajaran 4 §2 (keadaan /data)
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w02.lab.act-03.vA.c01
+    name: Path absolut foto-acara.jpg setelah langkah 6
+    accepted_answers:
+    - /bersama/Acara/Foto/foto-acara.jpg
+    points: 5
+  - check_id: mod-w02.lab.act-03.vA.c02
+    name: Jumlah berkas langsung di /bersama/Masuk (tanpa subfolder, tanpa Tempat Sampah)
+    accepted_answers:
+    - '1'
+    - 1 berkas
+    - 1berkas
+    points: 5
+  - check_id: mod-w02.lab.act-03.vA.c03
+    name: Nomor operasi yang ditolak (OP-2)
+    accepted_answers:
+    - '4'
+    points: 5
+  - check_id: mod-w02.lab.act-03.vA.c04
+    name: Nama berkas di Tempat Sampah
+    accepted_answers:
+    - brosur.pdf
+    points: 5
+  - check_id: mod-w02.lab.act-03.vA.c05
+    name: Path absolut versi akhir brosur
+    accepted_answers:
+    - /bersama/Acara/brosur-final.pdf
+    points: 5
+  - check_id: mod-w02.lab.act-03.vA.c06
+    name: Akun baca tanpa tulis
+    expected: relawan
+    points: 5
+  - check_id: mod-w02.lab.act-03.vA.c07
+    name: Izin minimum (hak minimum)
+    expected: b
+    points: 5
+  - check_id: mod-w02.lab.act-03.vA.c08
+    name: PID proses yang diakhiri
+    accepted_answers:
+    - '6027'
+    points: 5
+- variant_id: mod-w02.lab.act-03.vB
+  fixture:
+    start_state:
+      /klub/Unggah:
+      - poster.png
+      - jadwal.pdf
+      - daftar-anggota.csv
+      - catatan.txt
+      /klub/Lomba: []
+      /klub/Arsip:
+      - jadwal.pdf
+    operations:
+    - Buat folder /klub/Lomba/Data
+    - Salin /klub/Unggah/poster.png ke /klub/Lomba
+    - Pindah /klub/Unggah/jadwal.pdf ke /klub/Arsip
+    - Pindah /klub/Unggah/daftar-anggota.csv ke /klub/Lomba/Data
+    - Ganti nama /klub/Lomba/poster.png menjadi poster-lomba.png
+    - Hapus /klub/Unggah/poster.png
+    permission_file: /klub/Lomba/poster-lomba.png
+    permission_owner: ketua
+    permission_table:
+    - - Akun
+      - Baca
+      - Tulis
+    - - ketua (pemilik)
+      - Ya
+      - Ya
+    - - publik
+      - Tidak
+      - Tidak
+    - - anggota
+      - Ya
+      - Tidak
+    q06: Akun mana yang dapat membuka poster-lomba.png tetapi tidak dapat mengubahnya?
+    q06_choices:
+    - ketua
+    - publik
+    - anggota
+    q07: Anggota baru hanya perlu melihat daftar-anggota.csv. Izin minimum yang cukup untuk akunnya pada
+      berkas itu?
+    q07_options: *id001
+    process_table:
+    - - Nama proses
+      - PID
+      - Memori
+      - Status
+    - - Browser
+      - '7105'
+      - 850 MB
+      - Berjalan
+    - - Kalkulator
+      - '7118'
+      - 20 MB
+      - Berjalan
+    - - Pengelola berkas
+      - '7131'
+      - 110 MB
+      - Tidak menanggapi
+  expected_final_state:
+    /klub/Unggah:
+    - jadwal.pdf
+    - catatan.txt
+    /klub/Lomba:
+    - poster-lomba.png
+    /klub/Lomba/Data:
+    - daftar-anggota.csv
+    /klub/Arsip:
+    - jadwal.pdf
+    Tempat Sampah:
+    - poster.png
+  visible_example:
+    note: Contoh terlihat (0 poin) = contoh terbimbing Pelajaran 4 §2 (keadaan /data)
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w02.lab.act-03.vB.c01
+    name: Path absolut daftar-anggota.csv setelah langkah 6
+    accepted_answers:
+    - /klub/Lomba/Data/daftar-anggota.csv
+    points: 5
+  - check_id: mod-w02.lab.act-03.vB.c02
+    name: Jumlah berkas langsung di /klub/Unggah (tanpa subfolder, tanpa Tempat Sampah)
+    accepted_answers:
+    - '2'
+    - 2 berkas
+    - 2berkas
+    points: 5
+  - check_id: mod-w02.lab.act-03.vB.c03
+    name: Nomor operasi yang ditolak (OP-2)
+    accepted_answers:
+    - '3'
+    points: 5
+  - check_id: mod-w02.lab.act-03.vB.c04
+    name: Nama berkas di Tempat Sampah
+    accepted_answers:
+    - poster.png
+    points: 5
+  - check_id: mod-w02.lab.act-03.vB.c05
+    name: Path absolut versi akhir poster
+    accepted_answers:
+    - /klub/Lomba/poster-lomba.png
+    points: 5
+  - check_id: mod-w02.lab.act-03.vB.c06
+    name: Akun baca tanpa tulis
+    expected: anggota
+    points: 5
+  - check_id: mod-w02.lab.act-03.vB.c07
+    name: Izin minimum (hak minimum)
+    expected: a
+    points: 5
+  - check_id: mod-w02.lab.act-03.vB.c08
+    name: PID proses yang diakhiri
+    accepted_answers:
+    - '7131'
+    points: 5

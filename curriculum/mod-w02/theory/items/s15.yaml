@@ -1,0 +1,48 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s15
+competency: comp-w02-ops-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s15-a
+  variant_id: mod-w02.theory.s15.vA
+  item_version: '1.0'
+  stem: Operasi yang membuat berkas muncul di folder tujuan **dan tetap ada** di folder asal adalah …
+  options:
+  - id: a
+    text: Pindah
+  - id: b
+    text: Ganti nama
+  - id: c
+    text: Salin
+  - id: d
+    text: Hapus
+  key: c
+  distractor_rationale:
+    a: Pindah menghilangkan berkas dari folder asal
+    b: Ganti nama tidak memindahkan ke folder lain
+    d: Hapus memindahkan berkas ke Tempat Sampah
+  explanation: Salin membuat salinan di tujuan; berkas asal tetap ada.
+- item_id: item-w02-t-s15-b
+  variant_id: mod-w02.theory.s15.vB
+  item_version: '1.0'
+  stem: Operasi yang membuat berkas muncul di folder tujuan **dan hilang** dari folder asal adalah …
+  options:
+  - id: a
+    text: Pindah
+  - id: b
+    text: Ganti nama
+  - id: c
+    text: Salin
+  - id: d
+    text: Hapus
+  key: a
+  distractor_rationale:
+    b: Ganti nama tidak memindahkan ke folder lain
+    c: Salin mempertahankan berkas asal
+    d: Hapus memindahkan ke Tempat Sampah, bukan folder tujuan
+  explanation: Pindah memindahkan berkas; berkas tidak lagi ada di folder asal.

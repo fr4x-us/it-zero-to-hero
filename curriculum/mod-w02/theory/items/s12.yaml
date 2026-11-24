@@ -1,0 +1,35 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s12
+competency: comp-w02-path-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s12-a
+  variant_id: mod-w02.theory.s12.vA
+  item_version: '1.0'
+  stem: "Tulis **path absolut** berkas `praktikum.pdf` (model path W2).\n\n```\n/\n└── home\n    └── raka\n\
+    \        ├── Kuliah\n        │   └── Fisika\n        │       └── praktikum.pdf\n        └── Unduhan\n\
+    ```"
+  accepted_answers:
+  - /home/raka/Kuliah/Fisika/praktikum.pdf
+  normalization: 'Buang spasi/tab di awal dan akhir; huruf besar/kecil DIBEDAKAN (model path W2); lalu
+    cocokkan persis dengan salah satu accepted_answers (bentuk dengan dan tanpa awalan "./" untuk path
+    relatif sudah tercantum). Selain itu ditolak: "\", spasi di dalam path, "/" di akhir (kecuali root),
+    langkah memutar (mis. "a/../b"), path yang tidak terpendek'
+  explanation: 'Dari root: home → raka → Kuliah → Fisika → praktikum.pdf.'
+- item_id: item-w02-t-s12-b
+  variant_id: mod-w02.theory.s12.vB
+  item_version: '1.0'
+  stem: "Tulis **path absolut** berkas `soto.txt` (model path W2).\n\n```\n/\n└── home\n    └── lina\n\
+    \        ├── Hobi\n        │   └── Resep\n        │       └── soto.txt\n        └── Kerja\n```"
+  accepted_answers:
+  - /home/lina/Hobi/Resep/soto.txt
+  normalization: 'Buang spasi/tab di awal dan akhir; huruf besar/kecil DIBEDAKAN (model path W2); lalu
+    cocokkan persis dengan salah satu accepted_answers (bentuk dengan dan tanpa awalan "./" untuk path
+    relatif sudah tercantum). Selain itu ditolak: "\", spasi di dalam path, "/" di akhir (kecuali root),
+    langkah memutar (mis. "a/../b"), path yang tidak terpendek'
+  explanation: 'Dari root: home → lina → Hobi → Resep → soto.txt.'

@@ -1,0 +1,50 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s18
+competency: comp-w02-perm-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s18-a
+  variant_id: mod-w02.theory.s18.vA
+  item_version: '1.0'
+  stem: Izin yang dibutuhkan untuk **mengubah dan menyimpan** isi sebuah berkas adalah …
+  options:
+  - id: a
+    text: Baca
+  - id: b
+    text: Tulis
+  - id: c
+    text: Jalankan
+  - id: d
+    text: Tidak perlu izin apa pun
+  key: b
+  distractor_rationale:
+    a: Baca hanya untuk membuka dan melihat
+    c: Jalankan untuk menjalankan program
+    d: OS mengatur akses dengan izin
+  explanation: Mengubah isi berkas membutuhkan izin tulis.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w02-t-s18-b
+  variant_id: mod-w02.theory.s18.vB
+  item_version: '1.0'
+  stem: Izin yang dibutuhkan untuk **menjalankan** sebuah berkas sebagai program adalah …
+  options:
+  - id: a
+    text: Baca
+  - id: b
+    text: Tulis
+  - id: c
+    text: Jalankan
+  - id: d
+    text: Tidak perlu izin apa pun
+  key: c
+  distractor_rationale:
+    a: Baca hanya untuk melihat isi
+    b: Tulis untuk mengubah isi
+    d: OS mengatur akses dengan izin
+  explanation: Menjalankan berkas sebagai program membutuhkan izin jalankan.
+  option_order: urutan alami (kategori/baris tabel), tetap

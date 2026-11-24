@@ -1,0 +1,80 @@
+# W2 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.concept.s05
+competency: comp-w02-ops-01
+required_concepts:
+- Tempat Sampah
+- pulihkan
+- salin mempertahankan asal
+- periksa sebelum menghapus permanen
+format: CE-S3
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w02-c-s05-a
+  variant_id: mod-w02.concept.s05.vA
+  item_version: '1.0'
+  stem: '`kontrak.pdf` tidak sengaja dihapus dari folder Dokumen. Urutkan langkah untuk mengembalikannya
+    lalu membuat cadangannya di flashdisk.'
+  items:
+  - id: A
+    text: Buka Tempat Sampah
+  - id: B
+    text: Pilih `kontrak.pdf` dan pulihkan
+  - id: C
+    text: Pastikan `kontrak.pdf` sudah kembali di folder Dokumen
+  - id: D
+    text: Salin `kontrak.pdf` dari folder Dokumen ke flashdisk
+  display_order:
+  - D
+  - B
+  - A
+  - C
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  - - A
+    - B
+    - D
+    - C
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: Berkas dipulihkan dari Tempat Sampah ke folder asalnya, lalu disalin sebagai cadangan. Memeriksa
+    lokasi boleh sebelum atau sesudah menyalin (dua urutan diterima).
+- item_id: item-w02-c-s05-b
+  variant_id: mod-w02.concept.s05.vB
+  item_version: '1.0'
+  stem: Kamu ingin memindahkan folder `Resep` dari laptop ke flashdisk dengan aman lalu mengosongkan ruang
+    laptop. Urutkan langkahnya.
+  items:
+  - id: A
+    text: Salin folder `Resep` beserta isinya ke flashdisk
+  - id: B
+    text: Buka `Resep` di flashdisk dan periksa semua berkas ada
+  - id: C
+    text: Hapus folder `Resep` dari laptop
+  - id: D
+    text: Kosongkan Tempat Sampah
+  display_order:
+  - C
+  - A
+  - D
+  - B
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: Salinan diperiksa sebelum yang asli dihapus; Tempat Sampah dikosongkan terakhir karena setelah
+    itu berkas tidak dapat dipulihkan lewat Tempat Sampah.

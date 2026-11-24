@@ -1,0 +1,147 @@
+# W2 — rubrik mini-project (MR-A, D-33). Kunci, contoh jawaban, dan contoh evaluasi
+# hanya untuk reviewer/penilai; tidak ditampilkan kepada pelajar sebelum dinilai.
+component: mod-w02.project
+content_version: "1.0"
+max_points: 100
+start_state_ref: "spec.md, bagian Keadaan awal"
+simulator_model: "Simulator pohon folder memakai model operasi W2 (Pelajaran 4 §1: OP-1–OP-4) dan model path W2 (Pelajaran 3 §3). F1 = keadaan akhir simulator: daftar folder dan lokasi setiap berkas (di luar Tempat Sampah) serta isi Tempat Sampah"
+
+constants:
+  base: /home/bima
+  required_folders: [/home/bima/ProyekSains, /home/bima/ProyekSains/dokumen, /home/bima/ProyekSains/gambar, /home/bima/ProyekSains/data]
+  project_files:      # berkas proyek → folder sasaran (N2)
+    sains-laporan.docx: /home/bima/ProyekSains/dokumen
+    sains-daftar-pustaka.pdf: /home/bima/ProyekSains/dokumen
+    sains-catatan.txt: /home/bima/ProyekSains/dokumen
+    sains-foto-akar.jpg: /home/bima/ProyekSains/gambar
+    sains-grafik.png: /home/bima/ProyekSains/gambar
+    sains-sketsa.png: /home/bima/ProyekSains/gambar
+    sains-pengukuran.csv: /home/bima/ProyekSains/data
+    sains-suhu.xlsx: /home/bima/ProyekSains/data
+    sains-kelembapan.csv: /home/bima/ProyekSains/data
+  other_files: [lagu-favorit.mp3, undangan-ulang-tahun.pdf, pemasang-game.exe]   # tetap di /home/bima/Unduhan (N3)
+
+field_rules:
+  location_of: "lokasi(X) = folder tempat berkas bernama X berada di F1 (di luar Tempat Sampah). Terdefinisi hanya bila TEPAT SATU berkas bernama X ada di luar Tempat Sampah; selain itu (0 atau ≥ 2 salinan) tidak terdefinisi"
+  tree_changed: "pohon_diubah = F1 memuat ≥ 1 folder yang tidak ada di keadaan awal DAN ≥ 1 berkas proyek berada di dalam /home/bima/ProyekSains (subfolder mana pun)"
+  path_form:   # bentuk (K2); dokumentasi, bukan implementasi parser
+    outer_whitespace: "Spasi/tab di awal dan akhir dibuang"
+    absolute_valid: "Diawali '/'; komponen dipisah tepat satu '/'; tidak ada komponen kosong; tanpa '\\'; tanpa spasi di dalam; tidak diakhiri '/'"
+    relative_valid: "Tidak diawali '/'; boleh diawali './'; komponen dipisah tepat satu '/'; tidak ada komponen kosong; tanpa '\\'; tanpa spasi di dalam; tidak diakhiri '/'"
+    accepted_examples: {absolute: ["/home/contoh/Resep/kue/bolu.txt", " /home/contoh/a.txt "], relative: ["../kue/bolu.txt", "./../kue/bolu.txt", "kue/bolu.txt"]}
+    rejected_examples: {absolute: ["\\home\\contoh\\a.txt (garis miring terbalik)", "/home/contoh/ (diakhiri /)", "/home//contoh (komponen kosong)", "/home/con toh (spasi di dalam)"], relative: ["/kue/bolu.txt (diawali /)", "..\\kue\\bolu.txt", "../kue/ (diakhiri /)"]}
+  path_correct: "Benar bila sama persis (huruf besar/kecil dibedakan) dengan path yang dihitung. Path relatif yang dihitung = '../' diulang u kali + sisa path sasaran, dengan u = jumlah komponen folder kerja setelah awalan bersama terpanjang dengan folder sasaran (jalur terpendek); diterima dengan atau tanpa awalan './'"
+  number_rule_F5: "Bilangan bulat tanpa tanda/desimal/spasi di dalam, tanpa nol di depan (kecuali '0'); spasi tepi dibuang; boleh diikuti tepat satu spasi atau tanpa spasi lalu kata 'berkas' (huruf besar/kecil bebas). Contoh diterima: '3', ' 3 ', '3 berkas', '3berkas'. Ditolak: 'tiga', '3,0', '+3', '03', '3 file'"
+  dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian/keadaan yang dibutuhkannya tidak valid; pemeriksaan lain tetap dinilai. Tidak ada gerbang nol untuk seluruh rubrik"
+
+criteria:
+  K1:
+    name: Kebenaran fungsional
+    points: 60
+    checks:
+      - {id: mod-w02.project.K1.c01, rule: "lokasi(sains-laporan.docx) = /home/bima/ProyekSains/dokumen", depends_on: [F1], points: 4}
+      - {id: mod-w02.project.K1.c02, rule: "lokasi(sains-daftar-pustaka.pdf) = /home/bima/ProyekSains/dokumen", depends_on: [F1], points: 4}
+      - {id: mod-w02.project.K1.c03, rule: "lokasi(sains-catatan.txt) = /home/bima/ProyekSains/dokumen", depends_on: [F1], points: 4}
+      - {id: mod-w02.project.K1.c04, rule: "lokasi(sains-foto-akar.jpg) = /home/bima/ProyekSains/gambar", depends_on: [F1], points: 4}
+      - {id: mod-w02.project.K1.c05, rule: "lokasi(sains-grafik.png) = /home/bima/ProyekSains/gambar", depends_on: [F1], points: 4}
+      - {id: mod-w02.project.K1.c06, rule: "lokasi(sains-sketsa.png) = /home/bima/ProyekSains/gambar", depends_on: [F1], points: 4}
+      - {id: mod-w02.project.K1.c07, rule: "lokasi(sains-pengukuran.csv) = /home/bima/ProyekSains/data", depends_on: [F1], points: 4}
+      - {id: mod-w02.project.K1.c08, rule: "lokasi(sains-suhu.xlsx) = /home/bima/ProyekSains/data", depends_on: [F1], points: 4}
+      - {id: mod-w02.project.K1.c09, rule: "lokasi(sains-kelembapan.csv) = /home/bima/ProyekSains/data", depends_on: [F1], points: 4}
+      - {id: mod-w02.project.K1.c10, rule: "lokasi(X) = /home/bima/Unduhan untuk ketiga berkas lain (lagu-favorit.mp3, undangan-ulang-tahun.pdf, pemasang-game.exe)", depends_on: [F1, pohon_diubah], points: 3}
+      - {id: mod-w02.project.K1.c11, rule: "F2 = lokasi(sains-laporan.docx) + '/sains-laporan.docx' (path_correct)", depends_on: [F2 bentuk absolut sah, lokasi(sains-laporan.docx) terdefinisi dan berada di dalam /home/bima/ProyekSains], points: 6}
+      - {id: mod-w02.project.K1.c12, rule: "F3 = path relatif terpendek dari /home/bima/ProyekSains/gambar ke lokasi(sains-laporan.docx)/sains-laporan.docx (path_correct)", depends_on: [F3 bentuk relatif sah, folder /home/bima/ProyekSains/gambar ada di F1, lokasi(sains-laporan.docx) terdefinisi dan berada di dalam /home/bima/ProyekSains], points: 5}
+      - {id: mod-w02.project.K1.c13, rule: "F4 = path relatif terpendek dari /home/bima/Unduhan ke lokasi(sains-pengukuran.csv)/sains-pengukuran.csv (path_correct)", depends_on: [F4 bentuk relatif sah, lokasi(sains-pengukuran.csv) terdefinisi dan berada di dalam /home/bima/ProyekSains], points: 5}
+      - {id: mod-w02.project.K1.c14, rule: "F5 (diurai) = jumlah berkas yang berada langsung di /home/bima/ProyekSains/data pada F1", depends_on: [F5 dapat diurai, folder /home/bima/ProyekSains/data ada di F1], points: 5}
+  K2:
+    name: Kelengkapan deliverable
+    points: 20
+    definition: "MR-A (D-33): setiap deliverable ada DAN valid secara bentuk. F1 sah bila pohon memuat ≥ 1 folder baru; F2–F4 sah menurut path_form; F5 sah menurut number_rule_F5. K2 tidak menilai kebenaran nilai (K1) atau aturan struktur (K3)"
+    checks:
+      - {id: mod-w02.project.K2.c01, rule: "F1 memuat ≥ 1 folder yang tidak ada di keadaan awal", depends_on: [F1], points: 4}
+      - {id: mod-w02.project.K2.c02, rule: "F2 terisi dan absolute_valid", depends_on: [F2], points: 4}
+      - {id: mod-w02.project.K2.c03, rule: "F3 terisi dan relative_valid", depends_on: [F3], points: 4}
+      - {id: mod-w02.project.K2.c04, rule: "F4 terisi dan relative_valid", depends_on: [F4], points: 4}
+      - {id: mod-w02.project.K2.c05, rule: "F5 terisi dan dapat diurai menurut number_rule_F5", depends_on: [F5], points: 4}
+  K3:
+    name: Struktur dan format
+    points: 10
+    checks:
+      - {id: mod-w02.project.K3.c01, rule: "Folder /home/bima/ProyekSains ada (nama persis, huruf besar/kecil dibedakan)", depends_on: [F1], points: 3}
+      - {id: mod-w02.project.K3.c02, rule: "Ketiga folder /home/bima/ProyekSains/dokumen, /gambar, /data ada (nama persis, huruf kecil)", depends_on: [F1], points: 3}
+      - {id: mod-w02.project.K3.c03, rule: "Tidak ada folder baru selain keempat required_folders (N4)", depends_on: [F1, pohon_diubah], points: 2}
+      - {id: mod-w02.project.K3.c04, rule: "Tepat 12 berkas di luar Tempat Sampah, dengan 12 nama asli, masing-masing tepat satu (tidak ada yang dihapus, disalin, atau diganti nama; N2, N4)", depends_on: [F1, pohon_diubah], points: 2}
+  K4:
+    name: Penjelasan proyek (komposisi K-A, 5 × CE-S1, P = 2)
+    points: 10
+    note: "Soal tentang tugas proyek ini; terpisah dari komponen Concept explanation W2 (D-33 A.2a). Urutan opsi tetap; posisi kunci disebar (b, c, a, d, b)"
+    items:
+      - id: mod-w02.project.K4.q1
+        lo: comp-w02-fs-01
+        stem: "Mengapa `undangan-ulang-tahun.pdf` tetap di Unduhan walaupun berekstensi `.pdf`?"
+        options: {a: "Berkas PDF tidak dapat dipindah", b: "Berkas itu bukan berkas proyek karena namanya tidak diawali `sains-`; ekstensi saja tidak menentukan", c: "PDF termasuk berkas tabel/data", d: "Ekstensinya harus diganti dulu sebelum dipindah"}
+        key: b
+        points: 2
+        feedback: "N2 memakai dua syarat: berkas proyek (awalan sains-) lalu jenisnya (ekstensi)."
+      - id: mod-w02.project.K4.q2
+        lo: comp-w02-proc-01
+        stem: "Saat mengerjakan proyek, aplikasi pengelola berkas macet dan kamu mengakhiri prosesnya. Apa yang terjadi pada berkas yang **sudah selesai** dipindah sebelumnya?"
+        options: {a: "Kembali ke Unduhan", b: "Ikut terhapus bersama proses", c: "Tetap di lokasi barunya, karena pemindahan yang sudah selesai sudah tercatat di penyimpanan", d: "Pindah ke Tempat Sampah"}
+        key: c
+        points: 2
+        feedback: "Mengakhiri proses hanya menghilangkan isi RAM proses itu; perubahan yang sudah selesai ditulis ke penyimpanan tetap ada."
+      - id: mod-w02.project.K4.q3
+        lo: comp-w02-ops-01
+        stem: "Kebutuhan meminta berkas proyek **dipindah**, bukan disalin. Apa akibatnya bagi folder Unduhan?"
+        options: {a: "Berkas proyek tidak lagi ada di Unduhan, sehingga tidak ada salinan ganda", b: "Unduhan tetap berisi semua 12 berkas", c: "Folder Unduhan ikut terhapus", d: "Berkas proyek masuk Tempat Sampah"}
+        key: a
+        points: 2
+        feedback: "Pindah menghilangkan berkas dari folder asal; salin akan membuat dua salinan."
+      - id: mod-w02.project.K4.q4
+        lo: comp-w02-os-01
+        stem: "Fungsi sistem operasi mana yang **paling** berperan saat folder dibuat dan berkas dipindah di penyimpanan?"
+        options: {a: "Manajemen proses", b: "Manajemen memori", c: "Manajemen perangkat", d: "Manajemen file"}
+        key: d
+        points: 2
+        feedback: "Menyimpan, menamai, dan menata berkas serta folder adalah manajemen file."
+      - id: mod-w02.project.K4.q5
+        lo: comp-w02-perm-01
+        stem: "Bima ingin teman kelompoknya dapat membuka **dan** mengedit `sains-laporan.docx`, sedangkan siswa kelas lain hanya dapat membacanya. Pengaturan izin mana yang sesuai?"
+        options: {a: "Semua akun: baca dan tulis", b: "Teman kelompok: baca dan tulis; siswa kelas lain: baca saja", c: "Siswa kelas lain: baca dan tulis; teman kelompok: baca saja", d: "Semua akun: tanpa izin baca"}
+        key: b
+        points: 2
+        feedback: "Mengedit butuh izin tulis; sekadar membaca cukup izin baca (hak minimum)."
+
+point_check: "K1 9×4 + 3 + 6 + 5 + 5 + 5 = 60; K2 5×4 = 20; K3 3+3+2+2 = 10; K4 5×2 = 10; total 100"
+
+solution_analysis:   # enumerasi (dokumentasi)
+  required_final_state:
+    /home/bima/Unduhan: [lagu-favorit.mp3, undangan-ulang-tahun.pdf, pemasang-game.exe]
+    /home/bima/ProyekSains: []
+    /home/bima/ProyekSains/dokumen: [sains-laporan.docx, sains-daftar-pustaka.pdf, sains-catatan.txt]
+    /home/bima/ProyekSains/gambar: [sains-foto-akar.jpg, sains-grafik.png, sains-sketsa.png]
+    /home/bima/ProyekSains/data: [sains-pengukuran.csv, sains-suhu.xlsx, sains-kelembapan.csv]
+  count_of_full_score_states: "Tepat 1 keadaan akhir memenuhi semua pemeriksaan K1 dan K3 (nama folder tetap, lokasi setiap berkas ditentukan N2/N3, tanpa folder atau berkas tambahan). Urutan operasi untuk mencapainya bebas"
+  reference_answers: {F2: /home/bima/ProyekSains/dokumen/sains-laporan.docx, F3: ../dokumen/sains-laporan.docx, F4: ../ProyekSains/data/sains-pengukuran.csv, F5: "3"}
+  traps: "undangan-ulang-tahun.pdf (PDF bukan proyek); salin vs pindah; nama folder huruf kecil; F4 butuh naik satu tingkat dari Unduhan"
+
+reviewer_examples:   # skor dihitung dengan aturan di atas; K4 diasumsikan 10
+  - {id: E01, case: "Acuan: keadaan akhir wajib + jawaban acuan", K1: 60, K2: 20, K3: 10, total: 100}
+  - {id: E02, case: "Subfolder bernama 'Dokumen' (D besar) dan tiga berkas dokumen ditaruh di sana; F2/F3 ditulis sesuai pohon itu", K1: 48, K2: 20, K3: 5, total: 83, zero: [K1.c01, K1.c02, K1.c03, K3.c02, K3.c03], note: "K1.c11, c12 tetap dinilai terhadap pohon yang diserahkan (konsisten)"}
+  - {id: E03, case: "Kesembilan berkas proyek disalin, bukan dipindah; F5 = 3", K1: 8, K2: 20, K3: 8, total: 46, zero: [K1.c01–c09, K1.c11, K1.c12, K1.c13, K3.c04], note: "lokasi() tidak terdefinisi untuk berkas ganda"}
+  - {id: E04, case: "undangan-ulang-tahun.pdf ikut dipindah ke dokumen", K1: 57, K2: 20, K3: 10, total: 97, zero: [K1.c10]}
+  - {id: E05, case: "sains-grafik.png ditaruh di data; F5 = 4 (sesuai pohon)", K1: 56, K2: 20, K3: 10, total: 96, zero: [K1.c05]}
+  - {id: E05b, case: "Seperti E05 tetapi F5 = 3", K1: 51, K2: 20, K3: 10, total: 91, zero: [K1.c05, K1.c14]}
+  - {id: E06, case: "F3 ditulis absolut", input: "F3 = /home/bima/ProyekSains/dokumen/sains-laporan.docx", K1: 55, K2: 16, K3: 10, total: 91, zero: [K1.c12, K2.c03]}
+  - {id: E07, case: "F3 tidak terpendek", input: "F3 = ../../ProyekSains/dokumen/sains-laporan.docx", K1: 55, K2: 20, K3: 10, total: 95, zero: [K1.c12]}
+  - {id: E08, case: "F2 memakai garis miring terbalik", input: "F2 = \\home\\bima\\ProyekSains\\dokumen\\sains-laporan.docx", K1: 54, K2: 16, K3: 10, total: 90, zero: [K1.c11, K2.c02]}
+  - {id: E09, case: "F5 ditulis kata", input: "F5 = tiga", K1: 55, K2: 16, K3: 10, total: 91, zero: [K1.c14, K2.c05]}
+  - {id: E10, case: "Pohon tidak diubah, F2–F5 kosong", K1: 0, K2: 0, K3: 0, total: "0 untuk K1–K3; K4 sesuai jawaban", note: "K1.c10, K3.c03, K3.c04 bergantung pada pohon_diubah"}
+  - {id: E11, case: "Pohon tidak diubah, tetapi F2–F5 diisi jawaban acuan", K1: 0, K2: 16, K3: 0, total: "16 + K4", zero: [K1.c11–c14, K2.c01], note: "Path tidak dapat dinilai benar tanpa berkas yang sudah ditata (depends_on); K2 hanya menilai bentuk"}
+  - {id: E12, case: "Folder tambahan /home/bima/ProyekSains/lain dibuat; selain itu acuan", K1: 60, K2: 20, K3: 8, total: 98, zero: [K3.c03]}
+  - {id: E13, case: "lagu-favorit.mp3 dihapus ke Tempat Sampah; selain itu acuan", K1: 57, K2: 20, K3: 8, total: 95, zero: [K1.c10, K3.c04]}
+  - {id: E14, case: "F4 dengan awalan './'", input: "F4 = ./../ProyekSains/data/sains-pengukuran.csv", K1: 60, K2: 20, K3: 10, total: 100}
+  - {id: E15, case: "F2 huruf kecil semua pada pohon acuan", input: "F2 = /home/bima/proyeksains/dokumen/sains-laporan.docx", K1: 54, K2: 20, K3: 10, total: 94, zero: [K1.c11]}
+  - {id: E16, case: "Centang 'sudah selesai' tanpa menata pohon dan tanpa isian", total: "0 untuk K1–K3; K4 sesuai jawaban", note: "MR-6"}
+
+objective_limits: "Pemeriksaan membuktikan keadaan pohon dan path sesuai aturan; tidak membuktikan pelajar memahami semua alasan penataan dan tidak mensertifikasi kompetensi (D-17, D-34)"

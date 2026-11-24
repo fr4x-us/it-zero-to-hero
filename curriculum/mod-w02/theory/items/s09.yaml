@@ -1,0 +1,59 @@
+# W2 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w02.theory.s09
+competency: comp-w02-fs-01
+format: TF-2
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w02-t-s09-a
+  variant_id: mod-w02.theory.s09.vA
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: Ekstensi membantu sistem operasi memilih aplikasi pembuka
+  - id: b
+    text: Mengganti ekstensi `.jpg` menjadi `.txt` mengubah isi gambar menjadi teks
+  - id: c
+    text: Folder dapat berisi folder lain
+  - id: d
+    text: Satu folder boleh berisi dua berkas bernama sama persis
+  - id: e
+    text: Ekstensi berkas `laporan.v2.pdf` adalah `pdf`
+  key:
+  - a
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: Ekstensi hanya label; isinya tetap gambar
+    d: Nama harus unik di dalam satu folder
+  explanation: Ekstensi memilih aplikasi pembuka dan dihitung dari titik terakhir; folder dapat berisi
+    subfolder.
+- item_id: item-w02-t-s09-b
+  variant_id: mod-w02.theory.s09.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: Ekstensi dihitung dari titik **pertama** nama berkas
+  - id: b
+    text: Sebagian sistem operasi menyembunyikan ekstensi secara bawaan
+  - id: c
+    text: Berkas bernama sama boleh ada di dua folder yang berbeda
+  - id: d
+    text: Root adalah folder paling atas dalam pohon folder
+  - id: e
+    text: Mengganti ekstensi mengubah isi berkas
+  key:
+  - b
+  - c
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    a: Ekstensi dihitung dari titik terakhir
+    e: Isi berkas tidak berubah saat ekstensi diganti
+  explanation: Ekstensi dapat disembunyikan OS; nama unik hanya di dalam satu folder; root di puncak pohon.
