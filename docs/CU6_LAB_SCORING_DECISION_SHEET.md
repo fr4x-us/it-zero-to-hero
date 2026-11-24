@@ -251,7 +251,7 @@ sumber daya agregat disetujui hanya sebatas LX-2; **nilai batas final tetap
 OPEN** (butuh pengukuran yang diizinkan, UW-12). Tidak ada eksekusi runtime,
 benchmark, atau pengukuran yang diizinkan.
 
-## 16. Pertanyaan terbuka: umpan balik test tersembunyi (CU-6-Q13, AWAITING OWNER)
+## 16. Umpan balik test tersembunyi (CU-6-Q13) — diputuskan D-36, lihat §17
 
 CUR §10 mendefinisikan CU-6 sebagai "batas eksekusi lab **dan kebijakan
 umpan balik test tersembunyi**". Bagian kedua belum pernah diputuskan
@@ -268,3 +268,19 @@ pelajar. **CU-6-Q13:** pilih HF-A, HF-B, atau HF-C. Rekomendasi: **HF-A**
 (selaras FB-A untuk teori dan D-34: tidak mengklaim perlindungan, tetapi
 tidak membuang nilai remedial).
 
+## 17. Keputusan owner — D-36 (2026-11-24)
+
+Pernyataan owner (2026-11-24, prompt revisi akhir PR #25): owner secara eksplisit menyetujui D-36 (CU-6-Q13: HF-A) dan D-37 (OD-15-Q2: XV-7–XV-14 dengan RX-A).
+
+**CU-6-Q13 → HF-A.** Setelah evaluasi, setiap test **tersembunyi**
+ditampilkan dengan: (1) kode hasil menurut §5 (`PASS`, `FAIL_OUTPUT`,
+`FAIL_ERROR`, `FAIL_TIMEOUT`, `FAIL_OUTPUT_LIMIT`, `NOT_RUN_LEARNER`,
+`EVALUATION_ERROR`); (2) **deskripsi kasus** yang ditulis penyusun (mis.
+"input kosong", "angka negatif"). **Tidak** ditampilkan: input mentah test,
+output yang diharapkan, maupun output mentah pelajar untuk test tersembunyi.
+Test terlihat tetap menampilkan input, output diharapkan, dan output pelajar.
+
+Konsekuensi templat: setiap test tersembunyi wajib memiliki field
+`case_description` yang bermakna (CB-0 TPL-10). Kebijakan penilaian,
+remedial, dan penerimaan risiko kunci jawaban (D-34) tidak berubah.
+Persetujuan kebijakan ini bukan verifikasi implementasi.

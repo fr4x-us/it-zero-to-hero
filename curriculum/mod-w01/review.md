@@ -78,12 +78,12 @@ CPU-4+MB-3 21, CPU-2+MB-1 16, CPU-4+MB-4 6, CPU-2+MB-2 3. Daftar lengkap
 | Tempat | Perhitungan | Hasil |
 |---|---|---|
 | les-01 contoh | 245 ÷ 3 | 81,666… (tampil 81,67) |
-| les-02 konversi | 2 × 1.000; 5.000 ÷ 1.000; 1 × 1.000 × 1.000; 3.000.000 ÷ 1.000 ÷ 1.000 | 2.000 MB; 5 GB; 1.000.000 MB; 3 GB |
+| les-02 konversi | 2 × 1.000; 5.000 ÷ 1.000; 1 × 1.000 × 1.000; 3.000.000 ÷ 1.000 ÷ 1.000; 10¹² ÷ 1.024³ | 2.000 MB; 5 GB; 1.000.000 MB; 3 GB; ≈ 931 GiB |
 | les-02 kapasitas / GiB | 64.000 ÷ 4; 10¹² ÷ 2³⁰ | 16.000; 931,32 |
 | les-02 latihan | 3 × 1.000; 500.000 ÷ 2.000 | 3.000; 250 |
 | les-04 contoh / latihan | 1.700.000 + 1.200.000 + 680.000 + 640.000 + 360.000; 105 + 100; 4 × 8 | 4.580.000; 205; 32 |
-| remedial R-UNIT | 9 × 1.000; 7.000 ÷ 1.000; 2 × 1.000 × 1.000; 5.000.000 ÷ 1.000 ÷ 1.000; 128.000 ÷ 4 | 9.000; 7; 2.000.000; 5; 32.000 |
-| teori s10–s12 | 1 byte; 1 GB; 6 × 1.000; 16 × 1.000; 128.000 ÷ 8; 250.000 ÷ 1.000 | 8; 1.000; 6.000; 16.000; 16.000; 250 |
+| remedial R-UNIT | 9 × 1.000; 8.000 ÷ 1.000; 2 × 1.000 × 1.000; 5.000.000 ÷ 1.000 ÷ 1.000; 128.000 ÷ 4 | 9.000; 8; 2.000.000; 5; 32.000 |
+| teori s10–s12 | 1 byte; 1 GB; 6 × 1.000; 24 × 1.000; 120.000 ÷ 8; 360.000 ÷ 1.500 | 8; 1.000; 6.000; 24.000; 15.000; 240 |
 | lab act-03 | 7 × 1.000; 12 × 1.000; 256.000 ÷ 800; 32.000 ÷ 5; 512·10⁹ ÷ 2³⁰; 64·10⁹ ÷ 2³⁰; 95 + 100; 125 + 100; 3 × 4; 2 × 16 | 7.000; 12.000; 320; 6.400; 476,84; 59,60; 195; 225; 12; 32 |
 | proyek | contoh bentuk 3.600.000 + 2.000.000 + 4 × 440.000 + 640.000 + 360.000; E01 | 8.360.000; 5.400.000 |
 
@@ -191,14 +191,14 @@ pilihan tunggal a 6 · b 6 · c 7 · d 7; pilihan ganda {a,c,e}, {b,c,d},
 | les-01 jam tangan pintar (IPOS) | teori s03 (ATM, catatan suara), lab act-02 (tiket, foto) | Skenario berbeda — latihan keterampilan sama, bukan duplikasi |
 | les-01 latihan kode QR | teori s03 vB (catatan suara) | Berbeda |
 | les-02 tabel perangkat | lab act-01 | Lab kini memuat perangkat di luar tabel (stylus, sidik jari, DVD, CCTV, earphone/speaker tanpa mikrofon); sisanya adalah pengetahuan yang memang diajarkan |
-| les-02 64 GB ÷ 4 MB; latihan 3 GB, 500 GB ÷ 2.000 MB | teori s11 (6 GB, 16 GB), s12 (128 GB ÷ 8 MB, 250 GB ÷ 1.000 MB); lab act-03 (7 GB, 12 GB, 256 GB ÷ 800 MB, 32 GB ÷ 5 MB) | Angka berbeda |
+| les-02 64 GB ÷ 4 MB = 16.000; latihan 3 GB, 500 GB ÷ 2.000 MB = 250 | teori s11 (6 GB, 24 GB), s12 (120 GB ÷ 8 MB = 15.000; 360 GB ÷ 1.500 MB = 240); lab act-03 (7 GB, 12 GB, 256 GB ÷ 800 MB, 32 GB ÷ 5 MB) | Angka soal **dan hasilnya** berbeda (putaran 4: s11 vB, s12 vA, s12 vB diubah karena hasil sama dengan contoh/latihan pelajaran) |
 | les-02 SSD 1 TB ≈ 931 GiB | lab act-03 c03 (512 GB, 64 GB) | Berbeda |
 | les-03 mencetak (lapisan) | teori s17 (scanner, speaker) | Berbeda |
 | les-03 latihan lapisan video | teori s17 | Berbeda perangkat |
 | les-03 urutan boot (materi) | concept s03 vA | Konsep yang diajarkan diuji ulang (wajar); latihan pelajaran tidak lagi memakai urutan boot |
 | les-04 daya 65 W → 165; 105 W → 205; X-RAM 2 × 8 = 16; 4 × 8 = 32 | lab act-03 c07 (95 → 195; 125 → 225), c08 (3 × 4 = 12; 2 × 16 = 32) | c07 dan vA c08 kini berbeda dari contoh; vB c08 = 32 sama hasil dengan latihan les-04 tetapi soal berbeda (2 × 16 vs 4 × 8) |
 | proyek: contoh bentuk isian | Jawaban proyek | Memakai katalog X- (F7 = 205, tidak mungkin untuk rakitan proyek yang sah); tidak membocorkan jawaban |
-| remedial R-UNIT 128 GB ÷ 4 MB | teori s12 vA 128 GB ÷ 8 MB | Angka berbeda; latihan keterampilan sama |
+| remedial R-UNIT 128 GB ÷ 4 MB; 8.000 MB → GB | teori s12 vA 120 GB ÷ 8 MB; lab act-03 c01 7 GB | Angka dan hasil berbeda (putaran 4: "7.000 MB" diganti "8.000 MB") |
 
 ### 6.4 Hasil QC-01–QC-10
 
@@ -368,3 +368,70 @@ di `rubric.yaml` (`catalog_analysis.valid_list`) **identik** dengan baris
 | Status | Diproduksi; belum lolos review ChatGPT; **belum diterima owner** |
 | Terbuka (owner) | CU-6-Q13 (calon D-36), OD-15-Q2 (calon D-37), W01-ACC |
 
+## 10. Revisi putaran 4 (F-22, F-23) dan regresi akhir
+
+### 10.1 F-22 — satuan desimal vs biner
+
+Pelajaran 2 semula menulis "semua latihan dan soal W1 memakai aturan
+desimal", padahal lab act-03 c03 membahas GiB. Kini: KB/MB/GB/TB = ×1.000;
+KiB/MiB/GiB/TiB = ×1.024; desimal adalah bawaan kecuali soal menyebut satuan
+biner; GB → GiB lewat byte (× 1.000³ lalu ÷ 1.024³). Di W1 perbandingan
+GB–GiB hanya dinilai sebagai pilihan penjelasan (c03), bukan angka.
+Diperiksa: Pelajaran 2 (tabel satuan + tabel desimal/biner), teori s10–s12
+(semua "aturan desimal" tertulis di stem), lab act-03 (`spec.md` tujuan dan
+aturan; `units_rule` di `checks.yaml`), remedial R-UNIT (desimal saja),
+concept s05 (baris 931 GiB benar).
+
+### 10.2 F-23 — pemisahan isi pelajar dan penilai
+
+| Berkas V-L | Pengungkapan semula | Perbaikan |
+|---|---|---|
+| `lab/act-02/spec.md` | Tabel fixture dalam urutan A–D (= urutan benar); urutan diterima "A → B → C → D"; tabel contoh skor dengan urutan benar; "driver" di umpan balik | Fixture ditulis dalam urutan tampil (vA C, A, D, B; vB B, D, A, C); aturan pasangan dijelaskan dengan contoh membuat teh; contoh bernilai dipindah ke `checks.yaml` (`evaluator_examples`); umpan balik hanya menyebut jenisnya |
+| `lab/act-01/spec.md` | Contoh umpan balik menyebut kategori "Layar sentuh" (butir vA) | Diganti contoh joystick (contoh terlihat) |
+| `lab/act-03/spec.md` | Contoh bentuk angka memakai jawaban c01 (7000) dan c07 (195); contoh umpan balik memakai c02 (320) | Contoh bentuk memakai 4000 dan 150; contoh umpan balik memakai contoh terlihat (2 GB) |
+| Teori s11 vB, s12 vA, s12 vB | Hasil (16.000, 16.000, 250) sama dengan hasil contoh/latihan Pelajaran 2 | Soal diganti: 24 GB → 24.000 MB; 120 GB ÷ 8 MB = 15.000; 360 GB ÷ 1.500 MB = 240 (format, kesulitan, poin tetap) |
+| `remedial/remedial.md` | "7.000 MB → 7 GB" memperlihatkan pasangan jawaban lab act-03 vA c01 | Diganti 8.000 MB → 8 GB |
+| `lessons/les-04.md` | "kebutuhan 225 W" = jawaban lab act-03 vB c07 | Diganti 245 W |
+
+Pemindaian otomatis jawaban angka (≥ 3 digit) terhadap semua berkas V-L
+setelah perbaikan: hanya `1.000` (definisi 1 GB = 1.000 MB, teori s10 vB)
+yang muncul — konsep yang memang diajarkan, bukan pengungkapan.
+Opsi benar berteks panjang (> 35 karakter) dari teori dan concept: tidak
+ada yang muncul di berkas V-L.
+
+### 10.3 Validasi CSV enumerasi (independen)
+
+Katalog dibaca dari tabel `project/spec.md` (sumber pelajar), bukan dari
+skrip pembuat CSV: 3.840 baris; 3.840 kombinasi unik; 0 kombinasi hilang;
+0 kombinasi asing; 0 total harga salah; 0 bendera syarat/validitas salah;
+46 valid (5.350.000–6.450.000); 240 lolos semua syarat perangkat keras; yang
+terkecil di atas anggaran 6.550.000.
+
+### 10.4 Regresi F-01–F-23
+
+| Temuan | Bukti | Status |
+|---|---|---|
+| F-01, F-02, F-19 | `project/rubric.yaml` K1.c10, `field_rules`, `field_state_matrix`, E01–E23 | Tetap |
+| F-03 | §4 (distribusi kunci; s11/s12 jawaban singkat tanpa opsi) | Tetap |
+| F-04, F-12, F-13 | §5; `concept/items/s02, s03, s06` | Tetap |
+| F-05, F-21 | §3.3, §9.6, §10.3 | Tetap |
+| F-06 | CB-0 tabel status (diperbarui setelah D-36) | Diperbarui |
+| F-07, F-14, F-23 | §6.3, §10.2 | Tetap/diperluas |
+| F-08 | Audit §18.4 | Tetap |
+| F-09 | `lab/act-02/checks.yaml` `reachable_values` 0/4/8/12 | Tetap |
+| F-10, F-22 | `remedial/remedial.md` R-UNIT; Pelajaran 2 §6 | Tetap/diperluas |
+| F-11 | Stem s03, s05, s09, s17; s07 vB | Tetap |
+| F-15 | §6.2 | Tetap |
+| F-16, F-20 | Field kanonik; `normalization` per aktivitas lab | Tetap |
+| F-17 | `lab/act-01` label perangkat | Tetap |
+| F-18 | CB-0 §3b QC-01–QC-12 | Diperluas (QC-11, QC-12) |
+
+Jumlah dan maksimum tetap: 4 pelajaran · 40 soal teori (20 slot) · 12 soal
+concept (6 slot) · 6 spesifikasi lab (3 aktivitas) · 1 proyek · maksimum
+dapat dicapai 56 / 100 / 100 / 21 · XP 305 · 480 menit. Durasi teori tetap
+33 menit (format dan kesulitan s11/s12 tidak berubah).
+
+### 10.5 Kesiapan review akhir
+
+Semua temuan F-01–F-23 ditangani; D-36 dan D-37 tercatat; belum ada
+persetujuan review independen. W01-ACC tetap AWAITING OWNER.

@@ -103,3 +103,11 @@ Ketegangan baru: **XS-C20** — CUR §10 mendefinisikan CU-6 termasuk
 apakah peristiwa pemicu benar-benar memenuhi kelayakan → usulan XV-7–XV-14
 (OD-15-Q2).
 
+## 5. Status setelah D-36–D-37 (2026-11-24)
+
+| ID | Diselesaikan oleh |
+|---|---|
+| XS-C20 | D-36 (CU-6-Q13, HF-A) |
+| XS-C21 | D-37 (OD-15-Q2, XV-7–XV-14 + RX-A) |
+
+Tidak ada ketegangan baru. Sisa: nilai angka LX-2 (RM-Q2).

@@ -60,8 +60,8 @@ untuk menyimpan foto; (2) SSD tetap menyimpan data saat listrik mati.
 - Untuk menghitung jumlah berkas: ubah kapasitas ke satuan ukuran berkas
   dulu, baru bagi.
 
-**Latihan tambahan:** (1) 9 GB = … MB; (2) 7.000 MB = … GB; (3) kartu
-128 GB untuk foto 4 MB → … foto. *Jawaban:* 9.000 MB; 7 GB;
+**Latihan tambahan:** (1) 9 GB = … MB; (2) 8.000 MB = … GB; (3) kartu
+128 GB untuk foto 4 MB → … foto. *Jawaban:* 9.000 MB; 8 GB;
 128 × 1.000 = 128.000 MB, 128.000 ÷ 4 = 32.000 foto.
 
 ## R-SW — Software dan boot (LO5)

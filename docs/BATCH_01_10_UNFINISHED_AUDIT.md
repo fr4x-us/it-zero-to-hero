@@ -900,3 +900,15 @@ regresi F-01–F-18 (`curriculum/mod-w01/review.md` §9). Jumlah status tidak
 berubah: 31 / 4 / 13 / 3 / 5 = 56; jalur P 31/43; kurikulum diproduksi 4/64,
 diterima 0/64. CU-6-Q13, OD-15-Q2, W01-ACC tetap AWAITING OWNER.
 
+### 18.7 D-36, D-37 dan revisi W1 putaran 4 (2026-11-24)
+
+| ID | Perubahan | Status | Alasan |
+|---|---|---|---|
+| UW-36 | Bagian CU-6 "umpan balik test tersembunyi" diputuskan D-36 | **BLOCKED** (tidak otomatis COMPLETE) | Semua kebijakan CU kini terisi; tersisa nilai angka batas agregat LX-2 yang menurut D-35 menunggu pengukuran. Pertanyaan **RM-Q2**: catat angka itu sebagai keluaran verifikasi UW-12 (jalur V) agar UW-36 dapat dinilai lengkap. Tanpa jawaban owner, status tidak diubah (D-20: tidak memindahkan persyaratan tanpa persetujuan) |
+| UW-33 | OD-15-Q2 diputuskan D-37 (XV-7–XV-14, RX-A) | **BLOCKED** | OD-5–OD-9 dan OD-11–OD-14 belum diputuskan |
+| UW-30 | D-37 melengkapi validasi restore XP | COMPLETE (tidak berubah) | — |
+
+Jumlah status **tidak berubah**: 31 / 4 / 13 / 3 / 5 = 56; jalur P 31/43.
+Kurikulum: diproduksi 4/64, lolos review independen 0/64, diterima owner
+0/64. W01-ACC dan RM-Q2 AWAITING OWNER. Persetujuan D-36/D-37 bukan
+verifikasi implementasi.

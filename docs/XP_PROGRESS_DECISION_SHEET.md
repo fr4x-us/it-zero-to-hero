@@ -233,7 +233,7 @@ Pernyataan owner: "Saya menyetujui rekomendasi D-26, D-27, D-28, D-29, D-30, D-3
 Kelulusan akademik dan program tetap tidak membaca XP. D-03 dan D-17 tidak
 berubah. Sisa perencanaan restore tetap di UW-33.
 
-### 14.1 Perluasan validasi kelayakan award (usulan baru, AWAITING OWNER — OD-15-Q2)
+### 14.1 Perluasan validasi kelayakan award (OD-15-Q2) — diputuskan D-37, lihat §14.2
 
 Satu referensi attempt yang ada **tidak** membuktikan bahwa award sah.
 Usulan pemeriksaan tambahan saat pratinjau restore (perlakuan temuan tetap
@@ -250,5 +250,19 @@ RX-A):
 | XV-13 | Identitas pensiun hanya sah bila ada di daftar pensiun dengan versi yang sesuai; selain itu XV-3 |
 | XV-14 | Award hilang diperiksa untuk identitas dinilai **dan** tidak dinilai (butuh catatan peristiwa selesai pelajaran/latihan di data) |
 
-Pertanyaan: **OD-15-Q2** — setujui XV-7–XV-14 sebagai bagian validasi
-OD-15 dengan perlakuan RX-A? Rekomendasi: Ya.
+~~Pertanyaan: OD-15-Q2 — setujui XV-7–XV-14 sebagai bagian validasi OD-15 dengan perlakuan RX-A? Rekomendasi: Ya.~~ *(Historis — dijawab D-37.)*
+
+### 14.2 Keputusan owner — D-37 (2026-11-24)
+
+Pernyataan owner (2026-11-24, prompt revisi akhir PR #25): owner secara eksplisit menyetujui D-36 (CU-6-Q13: HF-A) dan D-37 (OD-15-Q2: XV-7–XV-14 dengan RX-A).
+
+**OD-15-Q2 → disetujui persis seperti §14.1:** XV-7 (identitas XP vs jenis
+identitas katalog), XV-8 (versi katalog dan jumlah award), XV-9 (peristiwa
+pemicu ada dan berjenis benar), XV-10 (attempt selesai dan skor memenuhi),
+XV-11 (attempt pertama yang memenuhi), XV-12 (prasyarat milestone), XV-13
+(identitas pensiun dan versinya), XV-14 (award hilang untuk identitas dinilai
+dan tidak dinilai), dengan **RX-A**: restore ditolak bila validasi menemukan
+kerusakan atau inkonsistensi. Tidak ada perbaikan ledger diam-diam dan tidak
+ada kebijakan XP baru. D-03, D-28, D-29, XV-1–XV-6, semantik M-1/M-2, dan
+persyaratan rollback tidak berubah. Sisa perencanaan restore (OD-5–OD-9,
+OD-11–OD-14) tetap di UW-33. Persetujuan ini bukan verifikasi implementasi.

@@ -41,7 +41,7 @@ di setiap PR batch.
 | #22 | Pencatatan D-12–D-15; lembar OD-1, OD-2, UW-43 | Merged 2026-11-24 sebagai `bcecdae` (di-merge Claude atas persetujuan eksplisit owner) |
 | #23 | Pencatatan D-16–D-22; roadmap; lembar OP-4, CU-6; rencana produksi kurikulum; revisi F-01–F-06 | Merged 2026-11-24 sebagai `928e278` (di-merge Claude atas persetujuan eksplisit owner) |
 | #24 | Pencatatan D-23–D-25; lembar keputusan kurikulum; templat CB-0; tinjauan konsistensi | Merged 2026-11-24 sebagai `40ca205` (di-merge Claude atas persetujuan eksplisit owner) |
-| #25 | Pencatatan D-26–D-35; CB-0; konten W1; revisi kualitas W1 (F-01–F-21) | Terbuka, menunggu review ulang; **tidak di-merge Claude** |
+| #25 | Pencatatan D-26–D-37; CB-0; konten W1; revisi kualitas W1 (F-01–F-23) | Terbuka, menunggu review ulang; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -60,7 +60,8 @@ merge." untuk PR itu saja ([GITHUB_BRIDGE.md](GITHUB_BRIDGE.md) §5).
 | D-16 | OWNER APPROVED, bersyarat verifikasi teknis; restore produksi nonaktif sampai batas KDF terverifikasi (UW-15 NOT VERIFIED) |
 | D-17–D-22 | OWNER APPROVED (2026-11-24) |
 | D-23–D-25 | OWNER APPROVED (2026-11-24); UW-26, UW-36 tetap belum selesai; runtime dan kripto NOT VERIFIED |
-| D-26–D-35 | OWNER APPROVED (2026-11-24); UW-36 menunggu CU-6-Q13; UW-26/UW-37 menunggu konten W2–W16 |
+| D-26–D-35 | OWNER APPROVED (2026-11-24); UW-26/UW-37 menunggu konten W2–W16 |
+| D-36–D-37 | OWNER APPROVED (2026-11-24): HF-A; XV-7–XV-14 + RX-A. UW-36 menunggu RM-Q2; UW-33 menunggu OD-5–OD-9, OD-11–OD-14 |
 | D-11 | **DEFERRED; IMPLEMENTATION NOT AUTHORIZED** |
 | PLANNING CLEAR | **NO** |
 | IMPLEMENTATION VERIFIED | **NO** |
@@ -73,7 +74,8 @@ Rincian: [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md),
 
 Merge PR #24 (`40ca205`). Pencatatan D-26–D-35. CB-0
 ([CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md)) dapat dipakai
-untuk W1–W8; finalisasi global menunggu CU-6-Q13. Revisi review PR #25:
+untuk W1–W8 (kini kebijakan lengkap setelah D-36; review independen dan
+penerimaan owner belum). Revisi review PR #25:
 rubrik proyek (F8, jumlah keping, contoh E01–E16), posisi kunci seimbang,
 varian setara (matriks), contoh proyek tidak membocorkan jawaban, review per
 butir; putaran 2: maksimum lab dapat dicapai, arah konversi, presisi soal,
@@ -119,9 +121,13 @@ Selesai: B-2 (PR #7); B-3 (D-01, PR #18); B-7 (D-02, PR #19); B-9 (D-05, PR #19)
 
 ## Langkah berikutnya (usulan, menunggu owner)
 
-1. Review PR batch ini (ChatGPT) → instruksi merge eksplisit bila PASS.
-2. Owner menerima W1 sebagai modul acuan (W01-ACC) dan menjawab CU-6-Q13
-   serta OD-15-Q2 ([OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md)).
-3. Produksi W2 (satu PR per modul), lalu W3, W4
-   ([CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md) §6.1).
-4. Implementasi, prototipe, pengukuran, dan benchmark tetap tidak diizinkan.
+1. Review akhir PR #25 (ChatGPT) → instruksi merge eksplisit bila PASS.
+2. Owner: W01-ACC (penerimaan W1) dan RM-Q2.
+3. **CB-0.5 — Agent Workflow & Token Optimization**: fase berikutnya, hanya
+   setelah PR #25 direview, diotorisasi, dan di-merge; butuh prompt eksekusi
+   sendiri dan PR terpisah. Owner telah menyetujui pemasangan **di masa
+   depan** untuk skill: Planning with Files, Verification Before Completion,
+   Systematic Debugging, Receiving Code Review. **Belum dipasang** (tidak di
+   PR #25).
+4. Produksi W2–W16 belum dimulai.
+5. Implementasi, prototipe, pengukuran, dan benchmark tetap tidak diizinkan.

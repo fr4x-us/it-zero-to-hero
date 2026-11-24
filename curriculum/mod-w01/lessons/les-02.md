@@ -137,7 +137,7 @@ satuannya.
 
 <a id="tbl-units"></a>
 
-| Satuan | Nilai (aturan desimal yang dipakai di modul ini) |
+| Satuan | Nilai (satuan desimal, bawaan di modul ini) |
 |---|---|
 | 1 **byte** (B) | 8 bit |
 | 1 **kilobyte** (KB) | 1.000 byte |
@@ -157,11 +157,21 @@ bawahnya, kecuali 1 byte = 8 bit.
 | Dua tingkat (TB → MB) | × 1.000 × 1.000 | 1 TB = 1 × 1.000 × 1.000 = 1.000.000 MB |
 | Dua tingkat (KB → GB) | ÷ 1.000 ÷ 1.000 | 3.000.000 KB = 3.000.000 ÷ 1.000 ÷ 1.000 = 3 GB |
 
-**Catatan penting:** produsen penyimpanan memakai aturan desimal di atas.
-Sebagian sistem operasi menghitung dengan kelipatan **1.024** dan menamainya
-KiB, MiB, GiB. Karena itu SSD "1 TB" (1.000.000.000.000 byte) dapat tampil
-sekitar **931 GiB** — kapasitasnya tidak berkurang, hanya cara hitungnya
-berbeda. **Semua latihan dan soal W1 memakai aturan desimal.**
+**Satuan desimal dan biner.**
+
+| Sistem | Satuan | Faktor per tingkat |
+|---|---|---|
+| Desimal (dipakai produsen penyimpanan) | KB, MB, GB, TB | 1.000 |
+| Biner (dipakai sebagian sistem operasi) | KiB, MiB, GiB, TiB | 1.024 (1 KiB = 1.024 byte, 1 GiB = 1.024³ = 1.073.741.824 byte) |
+
+Di W1, **satuan desimal adalah bawaan**: soal dan latihan memakai desimal
+kecuali secara tegas menyebut satuan biner (KiB, MiB, GiB) atau meminta
+membandingkan kedua sistem. Untuk mengubah GB ke GiB: ubah dulu GB ke byte
+(× 1.000³), lalu bagi 1.024³. Contoh: SSD "1 TB" = 1.000.000.000.000 byte;
+1.000.000.000.000 ÷ 1.073.741.824 ≈ **931 GiB** — kapasitasnya tidak
+berkurang, hanya cara hitungnya berbeda. Di W1, perbandingan GB–GiB hanya
+diminta sebagai penjelasan (memilih alasan), bukan hitungan angka yang
+dinilai.
 
 ### Contoh terbimbing: konversi dan kapasitas
 

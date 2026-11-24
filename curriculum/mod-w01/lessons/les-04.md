@@ -39,7 +39,7 @@ satu per satu — keterampilan yang sama dipakai saat menguji program.
 |---|---|---|
 | CPU ↔ motherboard | **Soket** CPU sama dengan soket motherboard | CPU Soket A di motherboard Soket B |
 | RAM ↔ motherboard | **Jenis RAM** sama (DDR4 atau DDR5); jumlah keping ≤ **slot** RAM | RAM DDR5 di motherboard DDR4 |
-| PSU ↔ seluruh komponen | Daya PSU ≥ kebutuhan daya | PSU 200 W untuk kebutuhan 225 W |
+| PSU ↔ seluruh komponen | Daya PSU ≥ kebutuhan daya | PSU 200 W untuk kebutuhan 245 W |
 
 DDR4 dan DDR5 memiliki bentuk dan takik berbeda sehingga tidak dapat saling
 menggantikan. Nama soket nyata contohnya AM5 atau LGA1700; di modul ini

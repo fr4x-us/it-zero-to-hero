@@ -11,31 +11,31 @@ variants:
 - item_id: item-w01-t-s12-a
   variant_id: mod-w01.theory.s12.vA
   item_version: '1.0'
-  stem: Kartu memori 128 GB dipakai untuk foto yang masing-masing berukuran 8 MB. Dengan aturan desimal
+  stem: Kartu memori 120 GB dipakai untuk foto yang masing-masing berukuran 8 MB. Dengan aturan desimal
     dan mengabaikan ruang untuk sistem, berapa foto **maksimum** yang muat?
   accepted_answers:
-  - '16000'
-  - '16.000'
-  - 16000 foto
-  - 16000foto
-  - 16.000 foto
-  - 16.000foto
+  - '15000'
+  - '15.000'
+  - 15000 foto
+  - 15000foto
+  - 15.000 foto
+  - 15.000foto
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
     salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
     ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
     pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
-  explanation: 128 GB = 128.000 MB; 128.000 ÷ 8 = 16.000 foto.
+  explanation: 120 GB = 120.000 MB; 120.000 ÷ 8 = 15.000 foto.
 - item_id: item-w01-t-s12-b
   variant_id: mod-w01.theory.s12.vB
   item_version: '1.0'
-  stem: SSD 250 GB dipakai untuk video yang masing-masing berukuran 1.000 MB. Dengan aturan desimal dan
+  stem: SSD 360 GB dipakai untuk video yang masing-masing berukuran 1.500 MB. Dengan aturan desimal dan
     mengabaikan ruang untuk sistem, berapa video **maksimum** yang muat?
   accepted_answers:
-  - '250'
-  - 250 video
-  - 250video
+  - '240'
+  - 240 video
+  - 240video
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
     salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
     ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
     pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
-  explanation: 250 GB = 250.000 MB; 250.000 ÷ 1.000 = 250 video.
+  explanation: 360 GB = 360.000 MB; 360.000 ÷ 1.500 = 240 video.

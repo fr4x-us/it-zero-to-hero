@@ -16,8 +16,8 @@ answer_validation: 'c01: kosong, ID di luar {A–D}, ID ganda, atau panjang ≠ 
   lain tetap dinilai'
 infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
   sama tanpa attempt baru (D-24 IE-2)
-feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. Aturan umum umpan
-  balik test tersembunyi menunggu CU-6-Q13; W1 tidak memiliki test kode tersembunyi'
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. Umpan balik test
+  tersembunyi mengikuti D-36 (HF-A); W1 tidak memiliki test kode tersembunyi'
 runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban terstruktur
 variants:
 - variant_id: mod-w01.lab.act-02.vA
@@ -57,6 +57,8 @@ variants:
       text: Driver layar sentuh
   visible_example:
     note: 'Contoh terlihat (0 poin): "Menekan tombol volume" → Input'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil acak); berkas ini
+    = khusus penilai sebelum dinilai; feedback/explanation = setelah dinilai (CB-0 §1a)
   checks:
   - check_id: mod-w01.lab.act-02.vA.c01
     name: Urutan kejadian
@@ -74,6 +76,48 @@ variants:
     - 4
     - 8
     - 12
+    evaluator_examples:
+    - answer:
+      - D
+      - C
+      - B
+      - A
+      correct_pairs: 0
+      points: 0
+    - answer:
+      - A
+      - B
+      - D
+      - C
+      correct_pairs: 1
+      points: 4
+    - answer:
+      - C
+      - D
+      - A
+      - B
+      correct_pairs: 2
+      points: 8
+    - answer:
+      - A
+      - B
+      - C
+      - D
+      correct_pairs: 3
+      points: 12
+    - answer:
+      - A
+      - B
+      - B
+      - D
+      points: 0
+      note: ID ganda → INVALID_ANSWER
+    - answer:
+      - A
+      - B
+      - C
+      points: 0
+      note: tidak lengkap → INVALID_ANSWER
   - check_id: mod-w01.lab.act-02.vA.c02
     name: Tahap kejadian A
     event: A
@@ -137,6 +181,8 @@ variants:
       text: Firmware pengisi daya
   visible_example:
     note: 'Contoh terlihat (0 poin): "Menekan tombol volume" → Input'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil acak); berkas ini
+    = khusus penilai sebelum dinilai; feedback/explanation = setelah dinilai (CB-0 §1a)
   checks:
   - check_id: mod-w01.lab.act-02.vB.c01
     name: Urutan kejadian
@@ -154,6 +200,48 @@ variants:
     - 4
     - 8
     - 12
+    evaluator_examples:
+    - answer:
+      - D
+      - C
+      - B
+      - A
+      correct_pairs: 0
+      points: 0
+    - answer:
+      - A
+      - B
+      - D
+      - C
+      correct_pairs: 1
+      points: 4
+    - answer:
+      - C
+      - D
+      - A
+      - B
+      correct_pairs: 2
+      points: 8
+    - answer:
+      - A
+      - B
+      - C
+      - D
+      correct_pairs: 3
+      points: 12
+    - answer:
+      - A
+      - B
+      - B
+      - D
+      points: 0
+      note: ID ganda → INVALID_ANSWER
+    - answer:
+      - A
+      - B
+      - C
+      points: 0
+      note: tidak lengkap → INVALID_ANSWER
   - check_id: mod-w01.lab.act-02.vB.c02
     name: Tahap kejadian A
     event: A

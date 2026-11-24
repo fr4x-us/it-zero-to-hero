@@ -21,7 +21,7 @@ atau menggantikan [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) dan
 | Batch 01 | [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) | AVAILABLE (di root repo, bukan `docs/`) | **OWNER-APPROVED WITH CONDITIONS** (D-01, 2026-11-23): M-01–M-19 disetujui; detail OPEN/PARTIAL tercatat di §7 dokumen | Matriks §2 historis; §7.1 berlaku. Merge PR #5 sendiri bukan persetujuan. |
 | Batch 02 | [`TECHNICAL_DECISIONS_BATCH_02.md`](TECHNICAL_DECISIONS_BATCH_02.md) | AVAILABLE | OWNER-APPROVED (header dokumen, TD:3) | Disalin tanpa perubahan dari lampiran owner (SHA-256 `0a27420e…a980b`). |
 
-## Keputusan owner D-01–D-35 (2026-11-23 / 2026-11-24)
+## Keputusan owner D-01–D-37 (2026-11-23 / 2026-11-24)
 
 Sumber: [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) (kolom
 "Keputusan final"). Status Batch 02 di bawah tetap dicatat apa adanya;
@@ -63,7 +63,9 @@ tabel ini menunjukkan keputusan owner yang lebih baru.
 | D-32 | OWNER APPROVED (2026-11-24) | CU2-O3 HA-A (128 jam); CU-11 PB-A revisi | CU2-O3-Q1, CU-11-Q1; UW-36 | — |
 | D-33 | OWNER APPROVED (2026-11-24) | CU2-O4 MR-A + MR-1–MR-8; CU-9 tema, deliverable, skema SQL, CR-1–CR-6, MC-1–MC-4, CG-B, CP-1–CP-6 | CU2-O4-Q1–Q2, CU-9-Q1–Q4; UW-36 | — |
 | D-34 | OWNER APPROVED (2026-11-24) | CU-10: terima risiko, AK-A | CU-10-Q1–Q2; UW-25 | — |
-| D-35 | OWNER APPROVED (2026-11-24) | CU-6 LX-1–LX-9: TB-B utama, TB-A cadangan dengan otorisasi, tanpa klaim kesetaraan | CU-6-Q7–Q12 | Nilai batas agregat (UW-12); CU-6-Q13 umpan balik test tersembunyi |
+| D-35 | OWNER APPROVED (2026-11-24) | CU-6 LX-1–LX-9: TB-B utama, TB-A cadangan dengan otorisasi, tanpa klaim kesetaraan | CU-6-Q7–Q12 | Nilai batas agregat (UW-12); umpan balik test tersembunyi → D-36 |
+| D-36 | OWNER APPROVED (2026-11-24) | CU-6-Q13 HF-A: umpan balik test tersembunyi = kode hasil + deskripsi kasus dari penyusun; tanpa input mentah, output diharapkan, atau output pelajar | CU-6-Q13; bagian CU-6 di UW-36 | Nilai batas agregat LX-2 (pengukuran, UW-12); verifikasi implementasi |
+| D-37 | OWNER APPROVED (2026-11-24) | OD-15-Q2: XV-7–XV-14 dengan RX-A | OD-15-Q2; UW-33 (sebagian) | OD-5–OD-9, OD-11–OD-14; verifikasi implementasi |
 
 Status Batch 02 "Tetap OPEN" yang terdampak: O-01 → provisional (D-06);
 O-02 → diputuskan (D-08); O-07 → diputuskan (D-07); O-16 → baseline
@@ -98,11 +100,11 @@ blueprint atau Batch 02.
 | Roadmap | [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) | #23 | Sisa jalur P/M/G/V; RM:RV-1–RV-6; RM-Q1 |
 | Kurikulum | [CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md) | #23 | UW-37 (rencana produksi; konten belum dibuat) |
 | OP-5, OP-7, OP-9, OP-10, OP-11 | [ASSESSMENT_FLOW_DECISION_SHEETS.md](ASSESSMENT_FLOW_DECISION_SHEETS.md) | #24 | UW-27, UW-29, UW-31, UW-32 — diputuskan D-26, D-27 |
-| OP-8, CU-4 | [XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) | #24 | UW-30 — diputuskan D-28, D-29; OD-15-Q2 menunggu owner |
+| OP-8, CU-4 | [XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) | #24 | UW-30 — diputuskan D-28, D-29, D-37 |
 | CU-3, CU-5, CU-7, CU2-O3, CU-11 | [CURRICULUM_CONTENT_DECISION_SHEETS.md](CURRICULUM_CONTENT_DECISION_SHEETS.md) | #24 | UW-36 — diputuskan D-30–D-32 |
 | CU2-O4, CU-9 | [PROJECT_RUBRIC_DECISION_SHEETS.md](PROJECT_RUBRIC_DECISION_SHEETS.md) | #24 | UW-36 — diputuskan D-33 |
 | CU-10 | [CU10_ANSWER_KEY_RISK_DECISION_SHEET.md](CU10_ANSWER_KEY_RISK_DECISION_SHEET.md) | #24 | UW-25 — diputuskan D-34 |
-| Templat CB-0 | [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md) | #24, #25 | UW-37 — CB-0 dapat dipakai W1–W8; finalisasi global menunggu CU-6-Q13; bukan konten |
+| Templat CB-0 | [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md) | #24, #25 | UW-37 — CB-0: semua kebijakan terputuskan (D-36); belum direview independen dan belum diterima owner; bukan konten |
 | Konten W1 | [curriculum/mod-w01/module.yaml](../curriculum/mod-w01/module.yaml) | #25 | UW-37, UW-26 — W1 diproduksi, belum diterima owner |
 | Konsistensi | [CROSS_SPEC_CONSISTENCY_REVIEW.md](CROSS_SPEC_CONSISTENCY_REVIEW.md) | #24 | Pemeriksaan usulan terhadap D-01–D-25 |
 
@@ -133,7 +135,7 @@ diganti. Saat merujuk ID lokal dari dokumen lain, tulis kode dokumennya:
 | `OP4:` / `CU6:` / `RM:` / `CPP:` | Lembar OP-4, CU-6, roadmap perencanaan, rencana produksi kurikulum |
 | `AF:` / `XP:` / `CCD:` / `RB:` / `CU10:` / `TPL:` / `XS:` / `W01:` | Lembar alur penilaian, XP, konten kurikulum, rubrik proyek, CU-10, templat CB-0, tinjauan konsistensi, konten modul W1 (`curriculum/mod-w01/`) |
 | `UW-nn` | Register audit (ID global, unik) |
-| `D-01`–`D-35` (tanpa kode) | Keputusan owner (global) — [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
+| `D-01`–`D-37` (tanpa kode) | Keputusan owner (global) — [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
 | `O-`, `OP-`, `OD-`, `CO-`, `UO-`, `CU-`, `KS-`, gate QG (`AB-`, `OF-`, `GR-`, `LB-`, `CL-`, `SC-`, `AP-`, `EV-`) | ID global unik, tanpa kode. Pengecualian: opsi Auto Backup `AB-1`–`AB-3` di BKP §7 bentrok dengan gate `AB-1`–`AB-8`, sehingga ditulis `BKP:AB-x` |
 
 Contoh: `ASM:B-03` (kasus batas skor), `BKP:M-1` (mode restore),

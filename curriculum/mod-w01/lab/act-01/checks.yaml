@@ -13,8 +13,8 @@ answer_validation: 'Per perangkat: kosong → 0; kode di luar daftar, lebih dari
   lain → 0 (INVALID_ANSWER) untuk perangkat itu; perangkat lain tetap dinilai'
 infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
   sama tanpa attempt baru (D-24 IE-2)
-feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. Aturan umum umpan
-  balik test tersembunyi menunggu CU-6-Q13; W1 tidak memiliki test kode tersembunyi'
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. Umpan balik test
+  tersembunyi mengikuti D-36 (HF-A); W1 tidak memiliki test kode tersembunyi'
 runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban terstruktur
 variants:
 - variant_id: mod-w01.lab.act-01.vA

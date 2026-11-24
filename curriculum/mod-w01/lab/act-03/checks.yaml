@@ -17,8 +17,8 @@ answer_validation: 'Per pemeriksaan: kosong atau tidak cocok dengan daftar → 0
   dinilai'
 infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
   sama tanpa attempt baru (D-24 IE-2)
-feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. Aturan umum umpan
-  balik test tersembunyi menunggu CU-6-Q13; W1 tidak memiliki test kode tersembunyi'
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. Umpan balik test
+  tersembunyi mengikuti D-36 (HF-A); W1 tidak memiliki test kode tersembunyi'
 runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban terstruktur
 variants:
 - variant_id: mod-w01.lab.act-03.vA
@@ -39,8 +39,10 @@ variants:
       socket: Soket B
       ram: DDR5
       slots: 4
-  units_rule: 'Aturan desimal: 1 GB = 1.000 MB; 1 MB = 1.000 KB. Dari satuan besar ke satuan kecil: kalikan
-    1.000 per tingkat; dari satuan kecil ke satuan besar: bagi 1.000 per tingkat'
+  units_rule: 'Satuan desimal (KB, MB, GB, TB) memakai faktor 1.000; satuan biner (KiB, MiB, GiB, TiB)
+    memakai faktor 1.024. Desimal adalah bawaan kecuali soal menyebut satuan biner. Besar → kecil: kalikan
+    faktor per tingkat; kecil → besar: bagi faktor per tingkat. GB → GiB: GB × 1.000³ = byte, lalu ÷ 1.024³
+    (c03 hanya meminta memilih penjelasan; tidak ada jawaban angka GiB)'
   power_rule: kebutuhan daya = daya CPU + 100 W (model belajar W1, bukan standar pembelian)
   visible_example:
     note: 'Contoh terlihat (0 poin): 2 GB = 2.000 MB'
@@ -137,8 +139,10 @@ variants:
       socket: Soket B
       ram: DDR5
       slots: 4
-  units_rule: 'Aturan desimal: 1 GB = 1.000 MB; 1 MB = 1.000 KB. Dari satuan besar ke satuan kecil: kalikan
-    1.000 per tingkat; dari satuan kecil ke satuan besar: bagi 1.000 per tingkat'
+  units_rule: 'Satuan desimal (KB, MB, GB, TB) memakai faktor 1.000; satuan biner (KiB, MiB, GiB, TiB)
+    memakai faktor 1.024. Desimal adalah bawaan kecuali soal menyebut satuan biner. Besar → kecil: kalikan
+    faktor per tingkat; kecil → besar: bagi faktor per tingkat. GB → GiB: GB × 1.000³ = byte, lalu ÷ 1.024³
+    (c03 hanya meminta memilih penjelasan; tidak ada jawaban angka GiB)'
   power_rule: kebutuhan daya = daya CPU + 100 W (model belajar W1, bukan standar pembelian)
   visible_example:
     note: 'Contoh terlihat (0 poin): 2 GB = 2.000 MB'

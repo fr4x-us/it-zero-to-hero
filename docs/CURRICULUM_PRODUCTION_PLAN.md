@@ -3,7 +3,7 @@
 Status: **RENCANA** · dokumentasi saja · **belum ada konten yang
 diproduksi** kecuali W1. UW-37 tetap **OPEN** (1/16 modul diproduksi, 0 diterima). Tanggal: **2026-11-24**
 (diperbarui batch D-26–D-35). Basis: `main` = `40ca205` (merge PR #24).
-Standar produksi CB-0 (dapat dipakai W1–W8; finalisasi global menunggu CU-6-Q13): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md). Modul acuan: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml).
+Standar produksi CB-0 (kebijakan lengkap setelah D-36; menunggu review independen dan penerimaan owner): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md). Modul acuan: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml).
 
 Dasar: D-21 (kurikulum lengkap wajib sebelum PLANNING CLEAR, 64 komponen),
 D-13 (empat komponen per modul; capstone = mini-project modul 16), D-19,

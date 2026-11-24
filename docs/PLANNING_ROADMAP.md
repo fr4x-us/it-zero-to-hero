@@ -86,10 +86,10 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-30 | COMPLETE | P | D-28 (ASM:X-07 terisi) |
 | UW-31 | COMPLETE | P | D-27 (ASM:C6 terisi) |
 | UW-32 | COMPLETE | P | D-27 (OP-10, OP-11 terisi) |
-| UW-33 | BLOCKED | P | OD-15 sebagian (D-29; OD-15-Q2 terbuka); OD-5–OD-9, OD-11–OD-14 belum |
+| UW-33 | BLOCKED | P | OD-15 diputuskan (D-29, D-37); OD-5–OD-9, OD-11–OD-14 belum |
 | UW-34 | BLOCKED | P | Keputusan CO-4–CO-6 |
 | UW-35 | BLOCKED | P | Keputusan UO-3–UO-9 |
-| UW-36 | BLOCKED | P | CU-2–CU-11, CU2-O3–O5 diputuskan (D-13, D-24, D-30–D-35), kecuali kebijakan umpan balik test tersembunyi (bagian CU-6) → CU-6-Q13 |
+| UW-36 | BLOCKED | P | Semua kebijakan CU diputuskan (D-13, D-24, D-30–D-36); tersisa nilai angka batas agregat LX-2 (pengukuran) → RM-Q2 |
 | UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); W1 diproduksi (4/64), belum diterima |
 | UW-38 | DEFERRED | M | D-22 |
 | UW-39 | BLOCKED | V | Lingkungan SDK opsional untuk verifikasi build; tidak punya AC perencanaan |
@@ -174,7 +174,7 @@ dicabut.
 |---|---|---|---|---|
 | Format soal, poin, durasi ujian (OP-5) | UW-27 | **D-26** | [ASSESSMENT_FLOW_DECISION_SHEETS.md](ASSESSMENT_FLOW_DECISION_SHEETS.md) §A | Theory |
 | Aturan kredit penjelasan konsep (OP-4) | UW-26 | **D-23** | [OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md](OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md) | Concept |
-| Penilaian lab (CU-6) | UW-36 | **D-24, D-35**; CU-6-Q13 OPEN | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) | Laboratory |
+| Penilaian lab (CU-6) | UW-36 | **D-24, D-35, D-36** | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) | Laboratory |
 | Varian remedial (CU-5) | UW-36 | **D-30** | [CURRICULUM_CONTENT_DECISION_SHEETS.md](CURRICULUM_CONTENT_DECISION_SHEETS.md) §B | Semua komponen |
 | Rubrik mini-project (CU2-O4) | UW-36 (D-25) | **D-33** | [PROJECT_RUBRIC_DECISION_SHEETS.md](PROJECT_RUBRIC_DECISION_SHEETS.md) §A | Mini-project W1–W15 |
 | Rubrik capstone (CU-9) | UW-36 | **D-33** | idem §B | W16 Mini-project |
@@ -191,7 +191,7 @@ dicabut.
 | Persistensi ujian di sekitar tenggat (OP-5-Q8) | UW-27 | **D-26** | AF §A.5b | Theory |
 
 Konsistensi terhadap D-01–D-35: [CROSS_SPEC_CONSISTENCY_REVIEW.md](CROSS_SPEC_CONSISTENCY_REVIEW.md).
-Standar produksi CB-0 (dapat dipakai W1–W8; finalisasi global menunggu CU-6-Q13): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md).
+Standar produksi CB-0 (kebijakan lengkap setelah D-36; menunggu review independen dan penerimaan owner): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md).
 
 Templat dan rencana produksi ([CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md))
 **bukan** konten; matriks 64 komponen tetap 0/64.
@@ -230,7 +230,7 @@ prasyarat UW-15, bukan butir baru (D-25). Belum diberikan.
 ## 9. Jalur kritis menuju PLANNING CLEAR
 
 ```
-CB-0 dapat dipakai W1–W8 (finalisasi global menunggu CU-6-Q13)
+CB-0: kebijakan terputuskan (D-36); review independen dan penerimaan owner belum
         │
         ▼
 W1 PRODUCED (direvisi PR #25) ──► review ulang ChatGPT ──► penerimaan owner (modul acuan)
@@ -239,7 +239,7 @@ W1 PRODUCED (direvisi PR #25) ──► review ulang ChatGPT ──► penerimaa
 W2 → W3 → W4 (CB-1b, satu PR per modul) → W5–W8 (CB-2)
         │
         ▼
-CU-6-Q13 diputuskan ──► W9–W12 (CB-3, runtime NOT VERIFIED) → W13–W16 (CB-4, capstone)
+W9–W12 (CB-3, runtime NOT VERIFIED) → W13–W16 (CB-4, capstone)
         │
         ▼
 CB-R  Penerimaan owner 64 komponen (UW-37) + bank concept 16 modul (UW-26)
@@ -269,4 +269,7 @@ Tidak ada butir M, G, atau V di jalur kritis PLANNING CLEAR.
 tetap; (b) OD-11–OD-14 di UW-33 bersama OD-5–OD-9; (c) CU2-O3 dan CU2-O4
 di UW-36; (d) izin pengukuran kripto = prasyarat UW-15.
 
-Tidak ada pertanyaan roadmap baru.
+**RM-Q2 (AWAITING OWNER):** nilai angka batas agregat lab (LX-2, D-35)
+hanya dapat ditetapkan dari pengukuran yang diizinkan. Setujui pencatatannya
+sebagai keluaran verifikasi UW-12 (jalur V), sehingga UW-36 (kebijakan CU)
+dapat dinilai lengkap? Rekomendasi: Ya.

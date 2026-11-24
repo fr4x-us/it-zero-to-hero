@@ -27,16 +27,16 @@ variants:
 - item_id: item-w01-t-s11-b
   variant_id: mod-w01.theory.s11.vB
   item_version: '1.0'
-  stem: Dengan aturan desimal, flashdisk 16 GB sama dengan … MB.
+  stem: Dengan aturan desimal, flashdisk 24 GB sama dengan … MB.
   accepted_answers:
-  - '16000'
-  - '16.000'
-  - 16000 mb
-  - 16000mb
-  - 16.000 mb
-  - 16.000mb
+  - '24000'
+  - '24.000'
+  - 24000 mb
+  - 24000mb
+  - 24.000 mb
+  - 24.000mb
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
     salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
     ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
     pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
-  explanation: 16 × 1.000 = 16.000 MB.
+  explanation: 24 × 1.000 = 24.000 MB.

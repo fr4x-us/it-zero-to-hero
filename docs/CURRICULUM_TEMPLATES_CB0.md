@@ -1,13 +1,18 @@
 # IT ZERO → HERO — Standar Produksi Kurikulum (CB-0)
 
-Status (dibedakan, revisi review PR #25 F-06):
+Status (dibedakan; diperbarui setelah D-36):
 
 | Aspek | Status |
 |---|---|
-| Dokumentasi dapat dipakai untuk W1–W8 (tanpa lab kode) | **YA** |
-| Finalisasi global CB-0 | **BELUM** — kriteria CB0-AC-05 belum terpenuhi: field TPL-10 `hidden_test_feedback` untuk lab kode (W9–W12, W16) menunggu **CU-6-Q13** (usulan HF-A, AWAITING OWNER) |
-| Review ChatGPT | Belum lolos (menunggu review ulang PR #25) |
-| Penerimaan owner | **Belum** | Templat **bukan** konten dan
+| Keputusan kebijakan owner yang dibutuhkan templat | **Semua terputuskan** (D-12, D-13, D-21, D-23–D-36). Kebijakan umpan balik test tersembunyi = D-36 (HF-A) |
+| Kelengkapan templat (TPL-01–TPL-20, §1a, §3a, §3b) | **Lengkap** sebagai dokumentasi; tidak ada field yang bergantung keputusan terbuka. Nilai angka batas agregat LX-2 bukan field templat (hasil pengukuran, UW-12) |
+| Dapat dipakai | W1–W16 (lab kode W9–W12, W16 kini memiliki aturan umpan balik test tersembunyi) |
+| Review independen (ChatGPT) | **Belum lolos** — menunggu review akhir PR #25 |
+| Penerimaan owner | **Belum** |
+| Verifikasi implementasi teknis | Tidak berlaku (tidak ada implementasi; D-10, D-11) |
+
+CB-0 **tidak** dinyatakan final secara global sebelum review independen dan
+penerimaan owner. Templat **bukan** konten dan
 tidak dihitung sebagai komponen selesai. Tanggal: **2026-11-24**. Basis:
 `main` = `40ca205` (merge PR #24). Kode rujukan: `TPL:`.
 
@@ -40,6 +45,29 @@ curriculum/mod-wNN/
 balik yang disetujui: teori setelah `GRADED` (FB-A, D-26); concept dan lab
 setelah evaluasi; proyek setelah dinilai. Pembahasan **latihan tidak
 dinilai** boleh ada di pelajaran, ditampilkan setelah pelajar mencoba.
+
+## 1a. Kontrak visibilitas pelajar / penilai (revisi review PR #25, F-23)
+
+Kontrak ini mengatur **isi dokumen** dalam format konten yang disetujui
+(CF-A); tidak menetapkan mekanisme aplikasi. Penerimaan risiko ekstraksi
+kunci offline (D-34) tetap berlaku: kontrak ini mencegah pengungkapan
+**sengaja** di materi pelajar, bukan perlindungan teknis.
+
+| Kelas | Kapan terlihat | Tempat (CF-A) | Isi yang boleh |
+|---|---|---|---|
+| **V-L** Pelajar, sebelum dinilai | Selama mengerjakan | `lessons/*.md`; `lab/*/spec.md`; `project/spec.md`; field soal `stem`, `options`, `items`, `left`/`right`, `lines`, `stimulus_table`, `display_order` | Tujuan, prasyarat, instruksi, fixture **dalam urutan tampil acak**, deliverable, aturan skor umum tanpa jawaban, contoh yang **tidak berkaitan** dengan butir bernilai, contoh terlihat bernilai 0 |
+| **V-E** Penilai saja, sebelum dinilai | Tidak pernah ditampilkan sebelum dinilai | `theory/items`, `concept/items`, `lab/*/checks.yaml`, `project/rubric.yaml`, `review.md`, `project/evidence/`: `key`, `accepted_answers`, `accepted_sequences`, `key_mapping`, `error_line`, `correction_key`, `expected`, `rule`, `depends_on`, `evaluator_examples`, `reviewer_examples`, `catalog_analysis`, `distractor_rationale` | Kunci, urutan diterima, label benar, contoh jawaban bernilai yang tepat, metadata evaluasi |
+| **V-P** Pelajar, setelah dinilai | Sesuai kebijakan umpan balik | Field `explanation` / `feedback`, hasil per pemeriksaan | Jawaban benar bila diizinkan (teori FB-A, D-26; lab non-kode dan concept setelah evaluasi; lab kode: test tersembunyi hanya kode hasil + `case_description`, D-36), penjelasan, arahan remedial |
+
+Aturan:
+
+| ID | Aturan |
+|---|---|
+| VC-1 | Berkas V-L tidak memuat isi V-E: tidak ada urutan diterima, label benar, pilihan benar, atau contoh jawaban butir bernilai |
+| VC-2 | Fixture yang diacak ditulis **dalam urutan tampil**, bukan urutan benar |
+| VC-3 | Contoh aturan skor untuk pelajar memakai skenario yang tidak berkaitan dengan butir bernilai |
+| VC-4 | Deskripsi bagian "Umpan balik" di berkas V-L hanya menyebut **jenis** umpan balik, tanpa isi jawaban |
+| VC-5 | Pembahasan latihan **tidak dinilai** boleh berada di pelajaran (V-P untuk latihan), asalkan tidak sama dengan butir bernilai (QC-06) |
 
 ## 2. Konvensi penamaan
 
@@ -142,7 +170,8 @@ SQL/HTML/Git mengikuti SQ-1–SQ-9, HV-A/HT-1–HT-5, GS-A/GT-1–GT-4 (D-31).
 | Kode hasil | §5 lembar CU-6 | D-24 |
 | `answer_validation` | Kosong/ID asing/ganda → 0 untuk pemeriksaan itu; infrastruktur → `EVALUATION_ERROR` | D-24 IE-2 |
 | `visible_example` | Contoh terlihat bernilai 0; pemeriksaan bernilai disembunyikan sampai evaluasi (penerapan CUR:CC-07 untuk lab non-kode) | CC-07 |
-| `hidden_test_feedback` | **OPEN — CU-6-Q13** untuk lab kode (seberapa jauh test tersembunyi dijelaskan setelah evaluasi) | — |
+| `hidden_test_feedback` | Setelah evaluasi, test tersembunyi menampilkan **kode hasil** (§5 CU-6) dan **`case_description`** saja; tanpa input mentah, output diharapkan, atau output pelajar. Test terlihat menampilkan semuanya | D-36 (HF-A) |
+| `case_description` | Wajib untuk setiap test tersembunyi lab kode: deskripsi kasus yang bermakna dan tidak membocorkan nilai (mis. "input kosong", "angka negatif", "daftar satu elemen") | D-36 |
 
 ### TPL-11 Spesifikasi mini-project (`project/spec.md`)
 
@@ -205,7 +234,7 @@ remedial, review opsional).
 
 ### TPL-19 Checklist penerimaan konten (`review.md`)
 
-CQ-01–CQ-20 dan QC-01–QC-10 (§3b): kebenaran teknis, ramah pemula, LO terukur, prasyarat, cakupan,
+CQ-01–CQ-20 dan QC-01–QC-12 (§3b): kebenaran teknis, ramah pemula, LO terukur, prasyarat, cakupan,
 tidak menilai yang belum diajarkan, kelengkapan, kesetaraan varian, kunci,
 aritmetika, fixture deterministik, rubrik objektif, concept, XP unik,
 aksesibilitas, versi, 480 menit, offline, konsistensi D-01–D-35, kunci tidak
@@ -253,10 +282,12 @@ yang diizinkan per isian. Contoh diterima/ditolak:
 | QC-08 | Aturan normalisasi dan ketergantungan deterministik | Contoh diterima/ditolak |
 | QC-09 | Semua nama field mengikuti §3a | Pemeriksaan nama field |
 | QC-10 | Fixture batas mencakup batas yang dapat dicapai (atau dinyatakan tidak dapat dicapai) | Contoh batas dari fixture nyata |
+| QC-11 | Berkas V-L mematuhi kontrak visibilitas §1a (VC-1–VC-5) | Pemeriksaan setiap `spec.md` dan pelajaran terhadap kunci |
+| QC-12 | Satuan desimal vs biner dinyatakan; desimal bawaan; konversi GB–GiB lewat byte | Pemeriksaan pelajaran, soal, lab |
 
 Kriteria ini adalah persyaratan kualitas dokumentasi, **bukan** izin
 implementasi. TPL-19 (checklist penerimaan) mencakup CQ-01–CQ-20 **dan**
-QC-01–QC-10.
+QC-01–QC-12.
 
 ## 4. Batas penilaian objektif (berlaku untuk semua modul)
 
@@ -274,12 +305,12 @@ QC-01–QC-10.
 | CB0-AC-02 | Setiap field dapat dilacak ke keputusan | Kolom/teks "Dasar" | Lulus |
 | CB0-AC-03 | Konvensi penamaan dan field kanonik konsisten | §2, §3a; diterapkan di W1 (213 ID unik; `depends_on`, `normalization`, `accepted_sequences` seragam) | Lulus |
 | CB0-AC-04 | Sumber, kunci, dan tampilan dipisahkan | §1 | Lulus |
-| CB0-AC-05 | Semua field wajib terdefinisi oleh keputusan yang disetujui | TPL-10 `hidden_test_feedback` menunggu CU-6-Q13 (ditandai) | **Belum terpenuhi** untuk lab kode; terpenuhi untuk W1–W8 |
+| CB0-AC-05 | Semua field wajib terdefinisi oleh keputusan yang disetujui | TPL-10 `hidden_test_feedback` dan `case_description` ditetapkan D-36 | Lulus (dokumentasi) |
 | CB0-AC-06 | Diterapkan pada satu modul lengkap | `curriculum/mod-w01/` | Diproduksi; W1 belum lolos review dan belum diterima |
 | CB0-AC-07 | Tidak ada parser, skema database, atau kode aplikasi | Hanya Markdown/YAML konten | Lulus |
 | CB0-AC-08 | Diterima owner | — | **Belum** |
 
-Kesimpulan: CB-0 **belum COMPLETE secara global**. Tambahan dari review PR #25:
+Kesimpulan: kebijakan dan kelengkapan templat terpenuhi; CB-0 **belum** final secara global karena review independen (CB0-AC-06) dan penerimaan owner (CB0-AC-08) belum ada. Tambahan dari review PR #25:
 TPL-07/TPL-08/TPL-13 kini mensyaratkan **posisi kunci seimbang** dengan
 urutan opsi tetap (tanpa pengacakan); TPL-14 mensyaratkan **matriks
 kesetaraan varian** (kompetensi, konsep wajib, tuntutan kognitif, format,

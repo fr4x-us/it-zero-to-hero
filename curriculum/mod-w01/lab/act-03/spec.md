@@ -13,8 +13,9 @@ checks_file: checks.yaml
 
 ## Tujuan
 
-1. Mengonversi satuan data dan menghitung kapasitas dengan aturan desimal.
-2. Menjelaskan perbedaan GB dan GiB.
+1. Mengonversi satuan data dan menghitung kapasitas dengan satuan desimal
+   (bawaan).
+2. Menjelaskan perbedaan GB (desimal, 1.000) dan GiB (biner, 1.024).
 3. Memeriksa kompatibilitas soket, jenis RAM, dan slot.
 4. Menghitung kebutuhan daya dan total RAM.
 
@@ -24,7 +25,9 @@ Pelajaran 2 §6 dan Pelajaran 4.
 
 ## Aturan yang dipakai
 
-- Aturan desimal: 1 GB = 1.000 MB; 1 MB = 1.000 KB.
+- Satuan desimal (bawaan): 1 GB = 1.000 MB; 1 MB = 1.000 KB. Satuan biner
+  (KiB, MiB, GiB) memakai 1.024; di aktivitas ini hanya muncul pada c03
+  sebagai pilihan penjelasan, tanpa hitungan angka.
 - Kebutuhan daya = daya CPU + 100 W (model belajar W1, bukan standar
   pembelian).
 - Dari satuan besar ke satuan kecil kalikan 1.000 per tingkat; dari satuan
@@ -71,9 +74,10 @@ Ya/Tidak (c04–c06).
 8 pemeriksaan × 5 poin = **40 poin** (setiap pemeriksaan bernilai 0 atau 5;
 maksimum 40 tercapai bila semua benar). Jawaban dicocokkan dengan daftar
 jawaban diterima setelah spasi tepi dibuang dan huruf diabaikan besar/kecilnya.
-Diterima: `7000`, `7.000`, `7000 MB`, `7.000MB`; `195`, `195 W`, `195W`.
-Ditolak: `7.00.0` (pengelompokan salah), `7 000` (spasi di dalam angka),
-`7000,0` (desimal), `+195`, `7 GB` (satuan lain).
+Contoh bentuk (angka tidak berkaitan dengan soal): diterima `4000`, `4.000`,
+`4000 MB`, `4.000MB`, `150`, `150 W`, `150W`; ditolak `4.00.0`
+(pengelompokan salah), `4 000` (spasi di dalam angka), `4000,0` (desimal),
+`+150` (tanda), `4 GB` bila yang diminta MB (satuan lain).
 
 ## Kasus gagal
 
@@ -83,8 +87,8 @@ baru.
 
 ## Umpan balik
 
-Jawaban benar dan cara hitung, mis. "256 GB = 256.000 MB; 256.000 ÷ 800 =
-320 video".
+Setelah evaluasi: jawaban benar dan cara hitung untuk setiap pemeriksaan,
+dengan gaya seperti contoh terlihat (mis. "2 GB = 2 × 1.000 = 2.000 MB").
 
 ## Remedial
 

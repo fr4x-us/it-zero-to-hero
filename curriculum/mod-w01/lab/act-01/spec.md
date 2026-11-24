@@ -86,8 +86,8 @@ Kesetaraan varian: kedua varian berisi 3 input, 3 output, 1 input-dan-output,
 
 ## Umpan balik (setelah evaluasi)
 
-Benar/salah per perangkat dan alasan singkat (mis. "Layar sentuh menampilkan
-gambar dan menerima sentuhan").
+Benar/salah per perangkat dan alasan singkat, dengan gaya seperti contoh
+terlihat (mis. "Joystick memasukkan gerakan, jadi Input").
 
 ## Remedial
 
