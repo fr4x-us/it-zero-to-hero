@@ -1,6 +1,6 @@
 # IT ZERO → HERO — Decision Sheet OD-2: Pemalsuan Backup dan Integritas Akademik
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode.
+Status: **DIPUTUSKAN OWNER — D-17 (2026-11-24)**, lihat §8 · dokumentasi saja · tanpa kode.
 Tanggal: **2026-11-24**. Basis: `main` = `b789e9a` (merge PR #21).
 
 Rekomendasi di §6 adalah saran, **bukan** keputusan. Keputusan restore
@@ -83,7 +83,7 @@ tidak boleh diklaim sebagai keamanan.
 Risiko residual yang tetap ada: IT-3, IT-4, IT-5, IT-7, serta penggantian
 data aktif lewat BKP:M-1 (riwayat hanya di snapshot).
 
-## 7. Pertanyaan untuk owner
+## 7. Pertanyaan untuk owner — *historis, dijawab D-17*
 
 1. **OD-2-Q1:** Terima model ancaman §5, termasuk risiko residual bahwa pemilik kata sandi dapat memalsukan nilai, attempt, dan XP?
 2. **OD-2-Q2:** Setujui penanda asal-usul pada data hasil restore dan log restore yang tetap tersimpan, dengan pemahaman bahwa keduanya informatif dan tidak tahan manipulasi?
@@ -91,4 +91,19 @@ data aktif lewat BKP:M-1 (riwayat hanya di snapshot).
 4. **OD-2-Q4:** I-3 (rantai hash) dimasukkan sebagai pencegah kasual, atau tidak?
 5. **OD-2-Q5:** Setujui pernyataan produk bahwa rapor adalah catatan belajar mandiri, bukan bukti akademik tersertifikasi?
 
-Status: **AWAITING OWNER**. OD-2 (UW-16) tetap **BLOCKED**.
+~~Status: AWAITING OWNER. OD-2 (UW-16) tetap BLOCKED.~~ *(Historis — dijawab D-17 pada 2026-11-24; lihat §8.)*
+
+## 8. Keputusan owner — D-17 (2026-11-24)
+
+| Butir | Keputusan |
+|---|---|
+| OD-2-Q1 | I-1 diadopsi; risiko residual terdokumentasi (IT-3–IT-5, IT-7, penggantian data aktif lewat BKP:M-1) diterima secara eksplisit |
+| OD-2-Q2 | Penanda asal-usul restore dan log peristiwa restore yang persisten disertakan; keduanya **informatif, tidak tahan manipulasi** |
+| OD-2-Q3 | Tanpa tanda tangan terikat perangkat (I-2) di V1 |
+| OD-2-Q4 | Tanpa rantai hash riwayat attempt (I-3) di V1 |
+| OD-2-Q5 | Rapor akademik adalah catatan belajar mandiri, bukan bukti akademik tersertifikasi |
+
+Tetap berlaku: enkripsi berbasis kata sandi tidak mencegah pemalsuan oleh
+pemilik kata sandi; portabilitas lintas perangkat dipertahankan; D-03
+(BKP:M-2 default, BKP:M-1 eksplisit dengan snapshot pra-restore, tanpa
+merge riwayat otomatis). OPEN: retensi dan penyimpanan log restore (UW-33).

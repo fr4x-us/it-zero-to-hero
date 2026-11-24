@@ -308,3 +308,12 @@ Dicatat dari [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md).
 |---|---|
 | D-12 | Representasi angka: NP-4 ([NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) §9). OP-3 **diputuskan**; aturan tie: attempt paling awal; tampilan 2 desimal dibulatkan ke bawah + status. Kasus batas §6.3 tetap acuan uji (NOT VERIFIED pada implementasi) |
 | D-13 | Setiap modul memiliki keempat komponen; capstone = mini-project modul 16 dengan rubrik khusus; aktivitas dalam satu komponen digabung dengan menjumlah poin. OP-10 (komponen yang boleh diulang) tetap OPEN |
+
+## 12. Keputusan owner D-19 (2026-11-24)
+
+| Butir | Status |
+|---|---|
+| OP-1 tingkat program | **Diputuskan D-19**: tidak ada skor numerik, rata-rata, atau ambang kelulusan tingkat program |
+| Penyelesaian program | 16 modul lulus **dan** capstone memenuhi rubrik capstone khusus; capstone = mini-project modul 16 (D-13) |
+| Aturan tingkat modul | Tidak berubah: bobot 30/40/20/10, komponen ≥ 75, nilai tertimbang ≥ 80, perbandingan eksak (D-12), riwayat attempt lengkap, remedial tanpa batas |
+| Masih OPEN | OP-4 (penjelasan konsep — lihat [OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md](OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md)), OP-5–OP-11, rubrik capstone |

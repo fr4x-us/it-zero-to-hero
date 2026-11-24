@@ -1,7 +1,8 @@
 # IT ZERO → HERO — Decision Sheet OD-1: Kriptografi Backup Terenkripsi
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode,
-prototipe, atau benchmark. Tanggal: **2026-11-24**. Basis: `main` =
+Status: **DIPUTUSKAN OWNER — D-16 (2026-11-24)**, bersyarat verifikasi teknis; lihat §10 ·
+dokumentasi saja · tanpa kode, prototipe, atau benchmark. Implementasi kripto
+**NOT VERIFIED**; CT-1–CT-12 **NOT VERIFIED**. Tanggal: **2026-11-24**. Basis: `main` =
 `b789e9a` (merge PR #21).
 
 Rekomendasi di §7 adalah saran teknis, **bukan** keputusan. Tidak ada
@@ -147,7 +148,7 @@ Risiko residual: kekuatan backup tetap bergantung pada kekuatan kata sandi
 | CT-9 | File sementara terhapus setelah sukses, gagal, dan process death |
 | CT-10 | Waktu dan memori KDF di perangkat target dalam batas yang disetujui owner |
 
-## 9. Pertanyaan untuk owner
+## 9. Pertanyaan untuk owner — *historis, dijawab D-16*
 
 1. **OD-1-Q1:** Setujui AES-256-GCM (nonce acak 96-bit, tag 128-bit, header sebagai AAD) sebagai AEAD?
 2. **OD-1-Q2:** Setujui Argon2id via Bouncy Castle sebagai KDF utama (bersyarat review dependensi dan uji), dengan PBKDF2-HMAC-SHA256 ≥ 600.000 iterasi sebagai cadangan?
@@ -156,4 +157,19 @@ Risiko residual: kekuatan backup tetap bergantung pada kekuatan kata sandi
 5. **OD-1-Q5:** Setujui penanganan H-1–H-7 dan aturan KV-1–KV-8 (termasuk: tanpa downgrade diam-diam, tanpa retry KDF lain, tanpa plaintext sebelum autentikasi)?
 6. **OD-1-Q6:** Setujui bahwa KDF cadangan hanya untuk ekspor baru di bawah kebijakan yang disetujui owner (KV-6)?
 
-Status: **AWAITING OWNER**. OD-1 (UW-15) tetap **BLOCKED**.
+~~Status: AWAITING OWNER. OD-1 (UW-15) tetap BLOCKED.~~ *(Historis — dijawab D-16 pada 2026-11-24; lihat §10.)*
+
+## 10. Keputusan owner — D-16 (2026-11-24)
+
+| Butir | Keputusan |
+|---|---|
+| OD-1-Q1 | AES-256-GCM; nonce acak 96-bit; tag 128-bit; seluruh header envelope sebagai AAD; salt acak baru dari CSPRNG per ekspor |
+| OD-1-Q2 | KDF utama Argon2id via Bouncy Castle, **bersyarat** review dependensi, kompatibilitas Android, dan verifikasi kinerja; cadangan PBKDF2-HMAC-SHA256 minimum 600.000 iterasi |
+| OD-1-Q3 | Minimum Argon2id 19 MiB, t=2, p=1. Parameter final dan batas maksimum lewat pengukuran perangkat yang diizinkan terpisah. **Restore produksi tetap nonaktif** sampai batas tersebut disetujui dan terverifikasi |
+| OD-1-Q4 | Struktur envelope §5 sebagai baseline format; detail serialisasi dan parameter yang belum diputuskan tetap OPEN |
+| OD-1-Q5 | H-1–H-7 dan KV-1–KV-8 disetujui; validasi ketat header tak tepercaya sebelum alokasi sumber daya dan KDF; tanpa downgrade keamanan diam-diam; tanpa retry KDF lain setelah autentikasi gagal; tanpa parsing, tampilan, staging, atau penerapan plaintext sebelum autentikasi berhasil; data aktif dipertahankan bila validasi atau autentikasi gagal |
+| OD-1-Q6 | KDF cadangan hanya untuk ekspor baru di bawah kebijakan yang disetujui; backup lama didekripsi dengan format dan KDF yang dinyatakan dan terautentikasi |
+
+Yang masih harus diverifikasi (jalur V, setelah izin): review dependensi
+dan kompatibilitas Bouncy Castle di Android API 29+, pengukuran KDF,
+batas maksimum, CT-1–CT-12.

@@ -1,7 +1,7 @@
 # IT ZERO → HERO — Decision Sheet UW-43: Konsistensi Path `PLANNING_COMPLETION_BATCH.md`
 
-Status: **BLOCKED — menunggu keputusan owner** · dokumentasi saja · file
-**tidak** dipindahkan. Tanggal: **2026-11-24**. Basis: `main` = `b789e9a`.
+Status: **DIPUTUSKAN OWNER — D-18 (2026-11-24): Opsi B**, lihat §5 · dokumentasi saja ·
+file **tidak** dipindahkan. Tanggal: **2026-11-24**. Basis: `main` = `b789e9a`.
 
 ## 1. Temuan (diperiksa ulang 2026-11-24)
 
@@ -41,9 +41,25 @@ Opsi A tetap layak bila owner ingin semua dokumen perencanaan berada di
 `docs/`; pemindahan harus dilakukan dalam satu PR khusus dengan pemeriksaan
 tautan.
 
-## 4. Pertanyaan untuk owner
+## 4. Pertanyaan untuk owner — *historis, dijawab D-18*
 
 1. **UW-43-Q1:** Pilih Opsi B (tetap di root + erratum TD:5) atau Opsi A (pindah ke `docs/`)?
 
-Status: **AWAITING OWNER**. UW-43 tetap **BLOCKED**. File tidak dipindahkan
+~~Status: AWAITING OWNER. UW-43 tetap BLOCKED.~~ *(Historis — dijawab D-18.)* File tidak dipindahkan
 dan dokumen verbatim tidak diubah di PR ini.
+
+## 5. Keputusan owner — D-18 (2026-11-24)
+
+**Opsi B.** `PLANNING_COMPLETION_BATCH.md` tetap di root; erratum TD:5
+dicatat di [DECISIONS_LOG.md](DECISIONS_LOG.md) (§Erratum, ER-1);
+`TECHNICAL_DECISIONS_BATCH_02.md` tidak diubah; file Batch 01 tidak
+dipindahkan; tautan relatif dan riwayat dipertahankan.
+
+Verifikasi AC UW-43 ("Rujukan valid") pada 2026-11-24:
+
+| Pemeriksaan | Hasil |
+|---|---|
+| Erratum ER-1 tercatat | Ya (DECISIONS_LOG) |
+| File Batch 01 masih di root | Ya |
+| TD:5 tidak diubah | Ya (`git diff` kosong untuk dokumen Batch 02) |
+| Seluruh tautan Markdown relatif ke `PLANNING_COMPLETION_BATCH.md` valid | Ya (cek otomatis, 0 rusak) |

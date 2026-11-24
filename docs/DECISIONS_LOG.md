@@ -21,7 +21,7 @@ atau menggantikan [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) dan
 | Batch 01 | [`PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) | AVAILABLE (di root repo, bukan `docs/`) | **OWNER-APPROVED WITH CONDITIONS** (D-01, 2026-11-23): M-01–M-19 disetujui; detail OPEN/PARTIAL tercatat di §7 dokumen | Matriks §2 historis; §7.1 berlaku. Merge PR #5 sendiri bukan persetujuan. |
 | Batch 02 | [`TECHNICAL_DECISIONS_BATCH_02.md`](TECHNICAL_DECISIONS_BATCH_02.md) | AVAILABLE | OWNER-APPROVED (header dokumen, TD:3) | Disalin tanpa perubahan dari lampiran owner (SHA-256 `0a27420e…a980b`). |
 
-## Keputusan owner D-01–D-15 (2026-11-23 / 2026-11-24)
+## Keputusan owner D-01–D-22 (2026-11-23 / 2026-11-24)
 
 Sumber: [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) (kolom
 "Keputusan final"). Status Batch 02 di bawah tetap dicatat apa adanya;
@@ -44,6 +44,13 @@ tabel ini menunjukkan keputusan owner yang lebih baru.
 | D-13 | OWNER APPROVED (2026-11-24) | CU-2: keempat komponen di semua 16 modul; capstone = mini-project modul 16 dengan rubrik khusus; aktivitas digabung dengan menjumlah poin | CU-2 (bagian UW-36), CU-9 sebagian | Rubrik rinci, alokasi poin dan jam |
 | D-14 | OWNER APPROVED (2026-11-24) | UO-1: pasangan kontras sesuai ACC §4; `#000000` untuk teks kecil di atas ungu; turunan aksesibel diizinkan; teks putih di atas ungu hanya teks besar | UO-1 (UW-17) | Verifikasi perangkat (UW-56) |
 | D-15 | OWNER APPROVED (2026-11-24) | UO-2: DM-1 tema terang saja, Force Dark otomatis nonaktif; dynamic color nonaktif | UO-2 (UW-18) | Perilaku perangkat NOT VERIFIED (UW-56) |
+| D-16 | OWNER APPROVED (2026-11-24), bersyarat verifikasi teknis | OD-1: AES-256-GCM; Argon2id (BC, bersyarat) + cadangan PBKDF2 ≥ 600.000; minimum 19 MiB/t=2/p=1; envelope OD1 §5; H-1–H-7, KV-1–KV-8; restore produksi nonaktif sampai batas maksimum disetujui dan terverifikasi | OD-1 (keputusan) | Parameter final dan batas maksimum lewat pengukuran yang diizinkan; CT-1–CT-12 NOT VERIFIED (UW-15) |
+| D-17 | OWNER APPROVED (2026-11-24) | OD-2: I-1 + risiko residual diterima; penanda asal-usul + log restore persisten (informatif); tanpa I-2 dan I-3 di V1; rapor = catatan belajar mandiri | OD-2, UW-16 | Retensi/penyimpanan log restore (UW-33) |
+| D-18 | OWNER APPROVED (2026-11-24) | UW-43 Opsi B: file Batch 01 tetap di root; erratum TD:5 | UW-43, K-2 | — |
+| D-19 | OWNER APPROVED (2026-11-24) | Tanpa skor numerik/rata-rata/ambang tingkat program; program = 16 modul lulus + capstone memenuhi rubrik | UW-11 | Rubrik capstone (CU-9) |
+| D-20 | OWNER APPROVED (2026-11-24) | Klasifikasi P/M/G/V diadopsi; UW-02/UW-10 gerbang setelah PLANNING CLEAR; PLANNING CLEAR tidak mengizinkan implementasi | PL-Q1 | — |
+| D-21 | OWNER APPROVED (2026-11-24) | Kurikulum lengkap (64 komponen) wajib sebelum PLANNING CLEAR | PL-Q2 | UW-37 |
+| D-22 | OWNER APPROVED (2026-11-24) | UW-21, UW-38, UW-40 ditunda ke milestone; AC tetap; bukan penyelesaian | PL-Q3 | Ketiga butir |
 
 Status Batch 02 "Tetap OPEN" yang terdampak: O-01 → provisional (D-06);
 O-02 → diputuskan (D-08); O-07 → diputuskan (D-07); O-16 → baseline
@@ -70,9 +77,13 @@ blueprint atau Batch 02.
 | UW-22 | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) | #20, #21 | OP-3 / UW-22 — diputuskan D-12 |
 | CU-2 | [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) | #21 | CU-2 — diputuskan D-13 |
 | UO-1/UO-2 | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) | #21 | UO-1, UO-2 — diputuskan D-14, D-15 |
-| OD-1 | [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) | PR D-12–D-15 | OD-1 / UW-15 — menunggu owner |
-| OD-2 | [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) | PR D-12–D-15 | OD-2 / UW-16 — menunggu owner |
-| UW-43 | [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md) | PR D-12–D-15 | UW-43 — menunggu owner |
+| OD-1 | [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) | #22 | OD-1 — diputuskan D-16 (verifikasi teknis tetap wajib) |
+| OD-2 | [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) | #22 | OD-2 — diputuskan D-17 |
+| UW-43 | [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md) | #22 | UW-43 — diputuskan D-18 |
+| OP-4 | [OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md](OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md) | PR D-16–D-22 | OP-4 / UW-26 — menunggu owner |
+| CU-6 | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) | PR D-16–D-22 | CU-6 (bagian UW-36) — menunggu owner |
+| Roadmap | [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) | PR D-16–D-22 | Sisa jalur P/M/G/V |
+| Kurikulum | [CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md) | PR D-16–D-22 | UW-37 (rencana produksi; konten belum dibuat) |
 
 ## Aturan rujukan lintas dokumen (editorial, UW-44)
 
@@ -98,8 +109,9 @@ diganti. Saat merujuk ID lokal dari dokumen lain, tulis kode dokumennya:
 | `CU2:` | CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET |
 | `ACC:` | ACCESSIBILITY_COLOR_DECISION_SHEET |
 | `OD1:` / `OD2:` / `UW43:` | Lembar keputusan OD-1, OD-2, UW-43 |
+| `OP4:` / `CU6:` / `RM:` / `CPP:` | Lembar OP-4, CU-6, roadmap perencanaan, rencana produksi kurikulum |
 | `UW-nn` | Register audit (ID global, unik) |
-| `D-01`–`D-15` (tanpa kode) | Keputusan owner (global) — [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
+| `D-01`–`D-22` (tanpa kode) | Keputusan owner (global) — [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md) |
 | `O-`, `OP-`, `OD-`, `CO-`, `UO-`, `CU-`, `KS-`, gate QG (`AB-`, `OF-`, `GR-`, `LB-`, `CL-`, `SC-`, `AP-`, `EV-`) | ID global unik, tanpa kode. Pengecualian: opsi Auto Backup `AB-1`–`AB-3` di BKP §7 bentrok dengan gate `AB-1`–`AB-8`, sehingga ditulis `BKP:AB-x` |
 
 Contoh: `ASM:B-03` (kasus batas skor), `BKP:M-1` (mode restore),
@@ -150,7 +162,14 @@ Batch 01 (TD:56).
 | # | Temuan | Status |
 |---|---|---|
 | K-1 | Catatan historis: TD:26 menyebut **DataStore** sebagai bagian "existing blueprint baseline", padahal `BLUEPRINT_LOCKED.md` hanya menyebut Room/SQLite (BL:11). DataStore bukan bagian blueprint awal. Owner kemudian menyetujuinya melalui D-02 (2026-11-23) sebagai keputusan baru, khusus untuk preferensi aplikasi; Room/SQLite tetap sumber kebenaran data akademik dan versi DataStore masih OPEN. TD:26 tidak diubah. Blocker terkait: B-7 (HANDOFF_STATE). | Selesai oleh D-02 |
-| K-2 | TD:5 merujuk `docs/PLANNING_COMPLETION_BATCH.md`, sedangkan file tersebut berada di root repo. *Koreksi 2026-11-24:* catatan semula juga menyebut TD:68, tetapi TD:68 merujuk `docs/TECHNICAL_DECISIONS_BATCH_02.md`, bukan Batch 01. Opsi penyelesaian: [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md). | Informasi (UW-43 menunggu owner) |
+| K-2 | TD:5 merujuk `docs/PLANNING_COMPLETION_BATCH.md`, sedangkan file tersebut berada di root repo. *Koreksi 2026-11-24:* catatan semula juga menyebut TD:68, tetapi TD:68 merujuk `docs/TECHNICAL_DECISIONS_BATCH_02.md`. **Diselesaikan D-18 (Opsi B):** lihat erratum di bawah. | Selesai oleh D-18 |
 | K-3 | (Diselesaikan oleh D-01 M-18: nama tab blueprint berlaku.) Batch 01 M-18 memakai label tab "Learning Journey, IT Lab, Schedule/Calendar"; blueprint (BL:69) dan TD:25 memakai "Learn, Lab, Calendar". Blueprint yang berlaku. | Informasi |
 | K-4 | ID lokal dipakai ulang antardokumen (mis. `A-xx`, `B-0x`, `F-xx`, `M-1…M-3` vs `M-01…M-19`). Rujukan lintas dokumen harus menyebut nama dokumen. Detail: FINAL_PLANNING_READINESS_REVIEW KS-07. | Informasi |
 | K-5 | `QUALITY_GATES.md` GR-10 lebih lama dari TD:21; arah "bulatkan hanya untuk tampilan" sudah APPROVED (TD:21), agregasi/representasi tetap OPEN. | Informasi |
+
+## Erratum (D-18, 2026-11-24)
+
+| ID | Dokumen | Teks asli | Dibaca sebagai | Catatan |
+|---|---|---|---|---|
+| ER-1 | `docs/TECHNICAL_DECISIONS_BATCH_02.md` baris 5 (TD:5) | `docs/PLANNING_COMPLETION_BATCH.md` | `PLANNING_COMPLETION_BATCH.md` (root repositori) | Dokumen Batch 02 adalah salinan verbatim keputusan owner dan **tidak diubah**. File Batch 01 tidak dipindahkan (D-18 Opsi B) |
+
