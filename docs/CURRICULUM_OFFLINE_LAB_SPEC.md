@@ -291,3 +291,16 @@ menunjuk dokumen yang menjabarkan kriteria, **bukan** menutup gap.
 | D-21 | Konten lengkap ke-16 modul (64 komponen) **wajib** sebelum PLANNING CLEAR; UW-37 tetap jalur P. Rencana produksi: [CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md) |
 | D-22 | UW-21 (CU-8: alternatif minggu 9–12 bila runtime Python gagal) ditunda ke milestone kelayakan Python; AC tetap. UW-21 **tidak** memblokir penerimaan perencanaan konten W9–W12; eksekusi tetap NOT VERIFIED; bila runtime gagal setelah izin, kurikulum hanya diubah atas keputusan owner lalu divalidasi ulang ([PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §5.2, RM:RV-1–RV-6) |
 | Keputusan berikutnya | CU-6 (penilaian lab): [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) |
+
+## 14. Keputusan owner D-23–D-25 dan usulan kurikulum (2026-11-24)
+
+| Butir | Status |
+|---|---|
+| CC-08 / OP-4 | Aturan penilaian **diputuskan D-23**; bank soal 16 modul belum ditulis (UW-26 OPEN) |
+| CU-6 | **Diputuskan D-24** (§5 "Skor: persentase bobot test case" dibaca sesuai D-12/D-24: poin mentah integer) |
+| CU2-O3, CU2-O4 | Dilacak di UW-36 (D-25) |
+| CU-3, CU-5, CU-7, CU-11, CU2-O3 | Usulan: [CURRICULUM_CONTENT_DECISION_SHEETS.md](CURRICULUM_CONTENT_DECISION_SHEETS.md) — **OPEN** |
+| CU-9, CU2-O4 | Usulan: [PROJECT_RUBRIC_DECISION_SHEETS.md](PROJECT_RUBRIC_DECISION_SHEETS.md) — **OPEN** |
+| CU-10 | Usulan: [CU10_ANSWER_KEY_RISK_DECISION_SHEET.md](CU10_ANSWER_KEY_RISK_DECISION_SHEET.md) — **OPEN** |
+| CU-4 | Usulan: [XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) — **OPEN** |
+| Templat | [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md) — PROVISIONAL, bukan konten |

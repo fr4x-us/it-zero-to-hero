@@ -317,3 +317,16 @@ Dicatat dari [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md).
 | Penyelesaian program | 16 modul lulus **dan** capstone memenuhi rubrik capstone khusus; capstone = mini-project modul 16 (D-13) |
 | Aturan tingkat modul | Tidak berubah: bobot 30/40/20/10, komponen ≥ 75, nilai tertimbang ≥ 80, perbandingan eksak (D-12), riwayat attempt lengkap, remedial tanpa batas |
 | Masih OPEN | OP-4 (penjelasan konsep — lihat [OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md](OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md)), OP-5–OP-11, rubrik capstone |
+
+## 13. Keputusan owner D-23, D-24 dan usulan batch berikutnya (2026-11-24)
+
+| Butir | Status |
+|---|---|
+| OP-4 | **Diputuskan D-23** — [OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md](OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md) §9. Jawaban salah bentuk (`INVALID_ANSWER`, 0 poin) dibedakan dari kegagalan infrastruktur/konten (`EVALUATION_ERROR`, tanpa penalti) |
+| Lab (L5, L6) | Penilaian lab **diputuskan D-24** (RA-1, LA-1–LA-4, IE-1–IE-5) — [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) §13. Aturan pengumpulan rinci L5 tetap OPEN (OP-7) |
+| OP-5, OP-7, OP-9, OP-10, OP-11 | Usulan: [ASSESSMENT_FLOW_DECISION_SHEETS.md](ASSESSMENT_FLOW_DECISION_SHEETS.md) — **OPEN** |
+| OP-8 / X-07 | Usulan: [XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md) — **OPEN** |
+| OP-6 | Belum disiapkan (UW-28) |
+
+Tidak ada aturan di §1–§12 yang diubah. T7, D-04, D-05 tetap PROPOSED
+sampai OP-5-Q5 dijawab.

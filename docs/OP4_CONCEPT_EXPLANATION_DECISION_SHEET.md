@@ -1,6 +1,6 @@
 # IT ZERO → HERO — Decision Sheet OP-4: Penilaian Penjelasan Konsep
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode.
+Status: **DIPUTUSKAN OWNER — D-23 (2026-11-24)**, lihat §9 · dokumentasi saja · tanpa kode.
 Tanggal: **2026-11-24** (direvisi setelah review PR #23, F-03). Basis:
 `main` = `bcecdae` (merge PR #22).
 
@@ -176,4 +176,26 @@ Risiko: kunci jawaban yang dibundel dapat diekstrak (CU-10, UW-25).
 4. **OP-4-Q4:** Setujui CE-K1–CE-K4 (konsep wajib, jawaban alternatif eksplisit, review manusia)?
 5. **OP-4-Q5:** Setujui validasi CE-V1–CE-V6 (kosong = 0; ID asing/ganda/bentuk salah = 0 dengan `INVALID_ANSWER`; jawaban sebagian dinilai atas bagian yang diisi)?
 
-Status: **AWAITING OWNER**. OP-4 (UW-26) tetap belum diputuskan.
+~~Status: AWAITING OWNER. OP-4 (UW-26) tetap belum diputuskan.~~ *(Historis — dijawab D-23 pada 2026-11-24; lihat §9.)*
+
+## 9. Keputusan owner — D-23 (2026-11-24)
+
+Pernyataan owner: "Saya menyetujui rekomendasi D-23, D-24, D-25."
+
+| Butir | Keputusan |
+|---|---|
+| OP-4-Q1 | **CE-B** — kredit parsial deterministik per format |
+| OP-4-Q2 | **CE-S1–CE-S5** dan **CE-S3a–CE-S3c**: pilihan tunggal penuh/nol; pilihan ganda `max(0, c − w)`; pengurutan = adjacency maksimum terhadap **satu** urutan diterima yang lengkap (pasangan dari urutan berbeda tidak digabung); pencocokan 1 poin per pasangan benar; menemukan kesalahan penuh / setengah (lokasi benar saja) / nol. Poin bilangan bulat eksak |
+| OP-4-Q3 | **CE-C ditolak** (tanpa penalti lintas soal); **CE-D** hanya refleksi tanpa skor |
+| OP-4-Q4 | **CE-K1–CE-K4**: konsep wajib eksplisit, jawaban alternatif eksplisit, urutan diterima lengkap, review manusia atas kunci dan rubrik |
+| OP-4-Q5 | **CE-V1–CE-V6**: kosong = 0; ID asing/ganda/bentuk salah = 0 dengan `INVALID_ANSWER`; jawaban sebagian yang valid dinilai sesuai format; simpan jawaban mentah, poin, maks., status validasi, versi soal |
+
+Ketentuan tambahan dari owner:
+
+| ID | Ketentuan |
+|---|---|
+| CE-V7 | Jawaban pelajar yang salah bentuk (`INVALID_ANSWER`) **dibedakan** dari kegagalan infrastruktur atau konten rusak (mis. kunci hilang, versi soal tidak cocok, data tersimpan rusak di luar jawaban). Kegagalan infrastruktur/konten **tidak** dinilai 0: soal/attempt ditandai `EVALUATION_ERROR`, tidak dihitung untuk skor terbaik, dan dinilai ulang setelah konten valid tanpa attempt baru (selaras D-24 IE-2) |
+| CE-V8 | Tanpa penilaian AI, tutor AI, atau penilaian server wajib |
+
+UW-26 **tetap OPEN**: AC CUR:CC-08 mencakup bank soal penjelasan konsep
+untuk ke-16 modul, yang belum ditulis (UW-37, CB-1–CB-4).

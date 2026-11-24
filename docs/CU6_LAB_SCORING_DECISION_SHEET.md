@@ -1,6 +1,6 @@
 # IT ZERO → HERO — Decision Sheet CU-6: Penilaian Lab dan Bobot Test Case
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode
+Status: **DIPUTUSKAN OWNER — D-24 (2026-11-24)**, lihat §13; klarifikasi lanjutan §14 **OPEN** · dokumentasi saja · tanpa kode
 atau prototipe. Tanggal: **2026-11-24** (direvisi setelah review PR #23,
 F-04). Basis: `main` = `bcecdae`.
 
@@ -163,5 +163,45 @@ komponen yang mencakup semua aktivitas.
 5. **CU-6-Q5:** Setujui anggaran eksekusi TB-B (cadangan TB-A) dan EB-1–EB-5, tanpa mengubah ambang D-10?
 6. **CU-6-Q6:** Setujui IE-1–IE-5 (pelestarian poin dalam satu evaluasi; evaluasi terganggu infrastruktur diulang utuh)?
 
-Status: **AWAITING OWNER**. CU-6 tetap belum diputuskan; LA-4 tetap
-bergantung OP-8.
+~~Status: AWAITING OWNER. CU-6 tetap belum diputuskan; LA-4 tetap bergantung OP-8.~~ *(Historis — dijawab D-24 pada 2026-11-24; lihat §13. LA-4 tetap bergantung OP-8.)*
+
+## 13. Keputusan owner — D-24 (2026-11-24)
+
+| Butir | Keputusan |
+|---|---|
+| CU-6-Q1 | **LW-B** — test case berbobot eksplisit |
+| CU-6-Q2 | **LR-A** — jumlah poin test lulus; tanpa bonus dan tanpa gerbang nol |
+| CU-6-Q3 | Kode hasil §5 dan pembagian penyebab §6 disetujui |
+| CU-6-Q4 | **RA-1** — attempt mencakup seluruh komponen lab; **LA-1–LA-4** |
+| CU-6-Q5 | **TB-B** — timeout per test; **TB-A** cadangan bersyarat bila TB-B tidak layak; **EB-1–EB-5** yang berlaku |
+| CU-6-Q6 | **IE-1–IE-5** |
+
+Dipertahankan secara eksplisit: anggaran eksekusi kode pelajar total
+3.000 ms per latihan Python; start interpreter diukur terpisah; ambang D-10
+tidak berubah; output > 64 KB per eksekusi tidak dapat `PASS` karena awalan
+terpotong yang cocok; test yang sudah lulus mempertahankan poin saat test lain
+gagal karena kode pelajar; kegagalan infrastruktur membatalkan evaluasi
+aktivitas terdampak tanpa penalti; evaluasi ulang submission yang sama tidak
+membuat attempt baru; tanpa pewarisan poin test antar attempt; skor terbaik
+attempt selesai per komponen; riwayat attempt lengkap; tanpa XP ganda.
+
+Kelayakan runtime tetap **NOT VERIFIED**. UW-36 **tidak** COMPLETE (CU-3,
+CU-5, CU-7, CU-9, CU-11, CU2-O3, CU2-O4 belum diputuskan).
+
+## 14. Klarifikasi lanjutan yang diminta D-24 (usulan, OPEN)
+
+Tidak ada batas sumber daya final yang ditetapkan di sini; angka yang belum
+disetujui ditulis sebagai OPEN dan ditentukan setelah pengukuran yang
+diizinkan (UW-12).
+
+| ID | Topik | Usulan | Status |
+|---|---|---|---|
+| LX-1 | Anggaran output agregat | Batas 64 KB berlaku **per eksekusi** (D-10). Pada TB-B setiap test satu eksekusi sehingga setiap test dinilai terhadap batasnya sendiri. Batas penyimpanan output agregat per aktivitas (untuk tampilan/riwayat) hanya memotong **salinan yang disimpan**, tidak pernah memengaruhi skor; nilai batasnya OPEN | Usulan; nilai OPEN |
+| LX-2 | Waktu kode pelajar vs waktu evaluasi total | Anggaran pelajar `Σ tᵢ ≤ 3.000 ms` hanya menghitung eksekusi kode pelajar. Waktu start interpreter, komunikasi proses, dan perbandingan output tidak dibebankan ke pelajar. Batas waktu evaluasi total (wall-clock) berfungsi sebagai pengaman infrastruktur: bila terlampaui di luar kode pelajar → `EVALUATION_ERROR` (IF), tanpa penalti; nilainya OPEN | Usulan; nilai OPEN |
+| LX-3 | Akuntansi bila memakai beberapa proses interpreter | Test dijalankan **berurutan**, tidak paralel; setiap proses memiliki batas memori sendiri (target PY:F-12, penegakan NOT VERIFIED); waktu start setiap proses tidak dibebankan ke pelajar (EB-1); total waktu kode pelajar dijumlahkan lintas proses dan tetap ≤ 3.000 ms | Usulan |
+| LX-4 | Syarat beralih dari TB-B ke TB-A | Hanya bila bukti uji kelayakan yang diizinkan (UW-12) menunjukkan TB-B tidak dapat menegakkan timeout per test atau tidak layak dari sisi waktu/memori; peralihan butuh **keputusan owner tertulis**, berlaku untuk seluruh konten (satu mode per versi konten), tidak per pelajar atau per attempt | Usulan |
+| LX-5 | Kesetaraan skor saat cadangan | Konten menulis `tᵢ` per test (TB-B) dengan `Σ tᵢ ≤ 3.000 ms`, sehingga konten yang sama sah di TB-A. Hasil per test identik selama tidak ada timeout/crash kode pelajar. Perbedaan hanya terjadi bila kode pelajar menghabiskan anggaran: TB-B menilai test berikutnya, TB-A menandai `NOT_RUN_LEARNER`. Karena itu: urutan test di TB-A menempatkan test inti lebih dulu; attempt mencatat mode eksekusi; attempt lama tidak dihitung ulang setelah peralihan; perbedaan ini harus disetujui owner bersama LX-4 | Usulan |
+
+Pertanyaan owner baru: **CU-6-Q7** (LX-1), **CU-6-Q8** (LX-2), **CU-6-Q9**
+(LX-3), **CU-6-Q10** (LX-4), **CU-6-Q11** (LX-5). Rekomendasi: setujui
+struktur LX-1–LX-5; nilai batas tetap OPEN sampai pengukuran diizinkan.

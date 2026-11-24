@@ -3,7 +3,7 @@
 Status: D-01 **APPROVED** · D-02–D-09 **OWNER APPROVED** (tunduk pada
 verifikasi yang tersisa) · D-10 **PLANNING APPROVED; EXECUTION NOT
 AUTHORIZED** · D-11 **DEFERRED; IMPLEMENTATION NOT AUTHORIZED** · D-12–D-15
-**OWNER APPROVED** (2026-11-24; verifikasi implementasi NOT VERIFIED) · D-16–D-22 **OWNER APPROVED** (2026-11-24; D-16 bersyarat verifikasi teknis) · tidak
+**OWNER APPROVED** (2026-11-24; verifikasi implementasi NOT VERIFIED) · D-16–D-22 **OWNER APPROVED** (2026-11-24; D-16 bersyarat verifikasi teknis) · D-23–D-25 **OWNER APPROVED** (2026-11-24) · tidak
 ada keputusan yang diisi atas nama owner · **PLANNING CLEAR: NO** ·
 **IMPLEMENTATION VERIFIED: NO**.
 Tanggal: **2026-11-23**. Basis awal: `main` = `5931ece` (merge PR #16);
@@ -348,21 +348,114 @@ setelah PR pencatatan di-merge.
 | D-21 | PL-Q2 kurikulum | Kurikulum lengkap wajib sebelum PLANNING CLEAR; UW-37 tetap wajib di jalur P; seluruh 64 komponen penilaian dicakup; contoh edukatif dan spesifikasi test berbentuk dokumentasi diizinkan; tanpa prototipe, implementasi runtime, source aplikasi, atau otomasi test; tidak ada klaim latihan sudah dijalankan/terverifikasi | Seluruh konten (UW-37) |
 | D-22 | PL-Q3 penundaan milestone | UW-21 (alternatif final bila runtime Python gagal), UW-38 (R8, signing, distribusi), UW-40 (mekanisme effect UI) ditunda ke milestone terkait; AC asli dipertahankan; penundaan **bukan** penyelesaian; tidak ada penundaan lain tanpa persetujuan eksplisit | Ketiga butir tetap belum selesai |
 
-## Antrean keputusan berikutnya — disiapkan 2026-11-24 (setelah D-16–D-22)
+## Antrean keputusan — disiapkan 2026-11-24 (setelah D-16–D-22)
 
-Semua **AWAITING OWNER**. Rekomendasi hanya saran.
+*Historis:* semula AWAITING OWNER; seluruh butir dijawab owner pada
+2026-11-24 (D-23, D-24, D-25).
 
 | ID | Pertanyaan | Rekomendasi teknis | Lembar keputusan | Keputusan final |
 |---|---|---|---|---|
-| OP-4-Q1 | Struktur rubrik penjelasan konsep | CE-B (kredit parsial terdefinisi per format) | [OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md](OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md) §7 | |
-| OP-4-Q2 | Aturan skor per format CE-S1–CE-S5 (adjacency maksimum, `max_soal` eksak) | §3 lembar OP-4 | idem | |
-| OP-4-Q3 | Penalti dan self-assessment | Tolak CE-C; CE-D hanya latihan tanpa skor | idem | |
-| OP-4-Q4 | Konsep wajib, jawaban alternatif, review manusia | CE-K1–CE-K4 | idem | |
-| OP-4-Q5 | Validasi jawaban (kosong, ID asing/ganda, bentuk salah, sebagian) | CE-V1–CE-V6 | idem | |
-| CU-6-Q1 | Bobot test lab | LW-B (bobot bilangan bulat yang direview) | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) §12 | |
-| CU-6-Q2 | Test wajib/bonus | LR-A (tanpa gerbang, tanpa bonus) | idem | |
-| CU-6-Q3 | Kode hasil test; penyebab pelajar vs infrastruktur; output > 64 KB selalu gagal | §5–§6 lembar CU-6 | idem | |
-| CU-6-Q4 | Lingkup remedial lab, penyelesaian attempt, XP | RA-1 + LA-1–LA-4 | idem | |
-| CU-6-Q5 | Anggaran eksekusi (D-10 tetap) | TB-B, cadangan TB-A; EB-1–EB-5 | idem | |
-| CU-6-Q6 | Eksekusi tidak lengkap dan pelestarian poin | IE-1–IE-5 | idem | |
-| RM-Q1 | UW-15 ke jalur V; OD-11–OD-14 di UW-33; CU2-O3/CU2-O4 dilacak di UW-36; izin pengukuran kripto sebagai prasyarat UW-15 | Setujui | [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §11 | |
+| OP-4-Q1 | Struktur rubrik penjelasan konsep | CE-B (kredit parsial terdefinisi per format) | [OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md](OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md) §7 | D-23: CE-B |
+| OP-4-Q2 | Aturan skor per format CE-S1–CE-S5 (adjacency maksimum, `max_soal` eksak) | §3 lembar OP-4 | idem | D-23: CE-S1–CE-S5, CE-S3a–S3c |
+| OP-4-Q3 | Penalti dan self-assessment | Tolak CE-C; CE-D hanya latihan tanpa skor | idem | D-23: CE-C ditolak; CE-D refleksi tanpa skor |
+| OP-4-Q4 | Konsep wajib, jawaban alternatif, review manusia | CE-K1–CE-K4 | idem | D-23: CE-K1–CE-K4 |
+| OP-4-Q5 | Validasi jawaban (kosong, ID asing/ganda, bentuk salah, sebagian) | CE-V1–CE-V6 | idem | D-23: CE-V1–CE-V6 (+ CE-V7) |
+| CU-6-Q1 | Bobot test lab | LW-B (bobot bilangan bulat yang direview) | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) §12 | D-24: LW-B |
+| CU-6-Q2 | Test wajib/bonus | LR-A (tanpa gerbang, tanpa bonus) | idem | D-24: LR-A |
+| CU-6-Q3 | Kode hasil test; penyebab pelajar vs infrastruktur; output > 64 KB selalu gagal | §5–§6 lembar CU-6 | idem | D-24: §5–§6 |
+| CU-6-Q4 | Lingkup remedial lab, penyelesaian attempt, XP | RA-1 + LA-1–LA-4 | idem | D-24: RA-1, LA-1–LA-4 |
+| CU-6-Q5 | Anggaran eksekusi (D-10 tetap) | TB-B, cadangan TB-A; EB-1–EB-5 | idem | D-24: TB-B, TB-A cadangan bersyarat, EB-1–EB-5 |
+| CU-6-Q6 | Eksekusi tidak lengkap dan pelestarian poin | IE-1–IE-5 | idem | D-24: IE-1–IE-5 |
+| RM-Q1 | UW-15 ke jalur V; OD-11–OD-14 di UW-33; CU2-O3/CU2-O4 dilacak di UW-36; izin pengukuran kripto sebagai prasyarat UW-15 | Setujui | [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §11 | D-25: (a)–(d) disetujui |
+
+## Keputusan owner D-23–D-25 (2026-11-24)
+
+Pernyataan owner: "Saya menyetujui rekomendasi D-23, D-24, D-25. Buat satu
+prompt merge PR #23, pencatatan keputusan yang disetujui, dan lanjutkan batch
+planning kurikulum. Implementasi tetap dilarang." Status: **OWNER APPROVED**,
+berlaku efektif setelah PR pencatatan di-merge.
+
+| ID | Topik | Keputusan | Tetap OPEN / NOT VERIFIED |
+|---|---|---|---|
+| D-23 | OP-4 penilaian penjelasan konsep (UW-26) | CE-B; CE-S1–CE-S5 (pilihan tunggal penuh/nol; pilihan ganda `max(0, c − w)`; pengurutan = adjacency maksimum terhadap satu urutan diterima lengkap, pasangan dari urutan berbeda tidak digabung; pencocokan 1 poin per pasangan; menemukan kesalahan penuh/setengah/nol); CE-S3a–S3c; poin integer eksak; CE-C ditolak; CE-D hanya refleksi tanpa skor; CE-K1–CE-K4; CE-V1–CE-V6; jawaban salah bentuk dibedakan dari kegagalan infrastruktur/konten rusak, tanpa penalti diam-diam (CE-V7); tanpa AI grading, tutor AI, atau penilaian server wajib | UW-26 tetap OPEN sampai bank soal 16 modul ada |
+| D-24 | CU-6 penilaian lab (bagian UW-36) | LW-B; LR-A; RA-1; TB-B dengan TB-A cadangan bersyarat; EB-1–EB-5, LA-1–LA-4, IE-1–IE-5 yang berlaku. Dipertahankan: 3.000 ms kode pelajar per latihan Python; start interpreter diukur terpisah; ambang D-10; output > 64 KB tidak dapat `PASS` lewat awalan terpotong; poin test lulus dipertahankan saat test lain gagal karena kode pelajar; kegagalan infrastruktur membatalkan evaluasi aktivitas tanpa penalti; evaluasi ulang tanpa attempt baru; tanpa pewarisan poin antar attempt; skor terbaik attempt selesai per komponen; riwayat lengkap; tanpa XP ganda | Klarifikasi LX-1–LX-5 (CU-6-Q7–Q11); batas sumber daya final; runtime **NOT VERIFIED**; UW-36 tetap BLOCKED |
+| D-25 | RM-Q1 klasifikasi roadmap | (a) UW-15 di jalur V, AC asli tetap; (b) OD-11–OD-14 dilacak di UW-33 bersama OD-5–OD-9; (c) CU2-O3 dan CU2-O4 dilacak di UW-36; (d) pengukuran kripto butuh izin owner terpisah, dicatat sebagai prasyarat UW-15. Tidak ada persyaratan keamanan yang dihapus | Tidak ada pengukuran, benchmark, prototipe, atau implementasi yang diizinkan |
+
+## Antrean keputusan berikutnya — disiapkan 2026-11-24 (setelah D-23–D-25)
+
+Semua **AWAITING OWNER**. Rekomendasi hanya saran. Dikelompokkan untuk
+review. Konflik terkait: [CROSS_SPEC_CONSISTENCY_REVIEW.md](CROSS_SPEC_CONSISTENCY_REVIEW.md) §2.
+
+### Grup 1 — Ujian teori (OP-5, UW-27) · [ASSESSMENT_FLOW_DECISION_SHEETS.md](ASSESSMENT_FLOW_DECISION_SHEETS.md) §A
+
+| ID | Pertanyaan | Rekomendasi | Keputusan final |
+|---|---|---|---|
+| OP-5-Q1 | Jumlah soal per modul | TQ-B: 20 (W1–W15), 10 (W16), ≥ 2 per kompetensi | |
+| OP-5-Q2 | Format soal | TF-1–TF-5, tanpa esai | |
+| OP-5-Q3 | Poin dan distribusi kesulitan | TP-B (2/3/4, semua-atau-tidak), 40/40/20 | |
+| OP-5-Q4 | Rumus durasi | A.4 (min. 10 menit; > 45 menit = blueprint ditolak) | |
+| OP-5-Q5 | Tenggat, kosong, pengumpulan otomatis, interupsi (termasuk menyetujui ASM:T7/ASM:D-04/ASM:D-05) | EX-1–EX-11 | |
+| OP-5-Q6 | Perpanjangan waktu aksesibilitas | TA-B (×1,5, dipilih sebelum mulai) | |
+| OP-5-Q7 | Umpan balik | FB-A | |
+
+### Grup 2 — Alur attempt (OP-7, OP-9, OP-10, OP-11; UW-29, UW-31, UW-32) · idem §B–§D
+
+| ID | Pertanyaan | Rekomendasi | Keputusan final |
+|---|---|---|---|
+| OP-7-Q1 | Pengumpulan dan interupsi | SB-A + SB-1–SB-12 | |
+| OP-9-Q1 | Unlock rinci | UL-1–UL-10, PV-A, RV-A | |
+| OP-10-Q1 | Komponen yang boleh diulang saat `NOT_PASSED` | RE-A (semua komponen) | |
+| OP-10-Q2 | Perbaikan setelah lulus | PI-A | |
+| OP-11-Q1 | Autosave | AS-B + tafsiran P-03 | |
+
+### Grup 3 — XP dan gamifikasi (OP-8, CU-4; UW-30) · [XP_PROGRESS_DECISION_SHEET.md](XP_PROGRESS_DECISION_SHEET.md)
+
+| ID | Pertanyaan | Rekomendasi | Keputusan final |
+|---|---|---|---|
+| OP-8-Q1 | Identitas XP dan revisi konten (CU-4) | XI-1–XI-7 | |
+| OP-8-Q2 | Kelayakan XP | XE-C (completion + mastery, masing-masing sekali) | |
+| OP-8-Q3 | Jumlah XP dan level | §4, `L(n) = 50·n·(n−1)` | |
+| OP-8-Q4 | Streak | ST-C mingguan JST, tanpa XP | |
+| OP-8-Q5 | Achievement, mastery, restore | XA-1–XA-3, XB-1–XB-5 | |
+
+### Grup 4 — Konten dan varian (CU-3, CU-5, CU2-O3, CU-11; UW-36) · [CURRICULUM_CONTENT_DECISION_SHEETS.md](CURRICULUM_CONTENT_DECISION_SHEETS.md)
+
+| ID | Pertanyaan | Rekomendasi | Keputusan final |
+|---|---|---|---|
+| CU-3-Q1 | Format konten | CF-A (Markdown terbatas + YAML) | |
+| CU-3-Q2 | Struktur folder dan pembaruan konten V1 | A.3 + UP-A (hanya lewat APK) | |
+| CU-5-Q1 | Jumlah varian | VR-B (teori 2, concept 2, lab 2) + MPV-A | |
+| CU-5-Q2 | Kesetaraan dan pemilihan | VA-1–VA-6 | |
+| CU2-O3-Q1 | Alokasi 128 jam | Tabel §D (M/U/L/P/C/R) | |
+| CU-11-Q1 | Pembagian W9/W10 | PB-A | |
+
+### Grup 5 — Lab SQL/HTML/Git (CU-7; UW-36) · idem §C
+
+| ID | Pertanyaan | Rekomendasi | Keputusan final |
+|---|---|---|---|
+| CU-7-Q1 | SQL | SQ-1–SQ-9 | |
+| CU-7-Q2 | HTML/CSS | HV-A, HT-1–HT-5 | |
+| CU-7-Q3 | Git/GitHub | GS-A, GT-1–GT-4 | |
+
+### Grup 6 — Rubrik (CU2-O4, CU-9; UW-36) · [PROJECT_RUBRIC_DECISION_SHEETS.md](PROJECT_RUBRIC_DECISION_SHEETS.md)
+
+| ID | Pertanyaan | Rekomendasi | Keputusan final |
+|---|---|---|---|
+| CU2-O4-Q1 | Rubrik mini-project W1–W15 | MR-A (60/20/10/10) + MR-1–MR-7 | |
+| CU2-O4-Q2 | Brief W1–W15 sebagai arah | Ya | |
+| CU-9-Q1 | Tema dan deliverable capstone | B.1 | |
+| CU-9-Q2 | Rubrik dan kriteria wajib | B.2 + MC-1–MC-4 | |
+| CU-9-Q3 | Gerbang capstone | CG-B (terpisah dari kelulusan modul 16) | |
+
+### Grup 7 — Risiko dan klarifikasi lab (CU-10, UW-25; LX D-24)
+
+| ID | Pertanyaan | Rekomendasi | Lembar | Keputusan final |
+|---|---|---|---|---|
+| CU-10-Q1 | Terima risiko ekstraksi kunci jawaban (selaras D-17) | Ya | [CU10_ANSWER_KEY_RISK_DECISION_SHEET.md](CU10_ANSWER_KEY_RISK_DECISION_SHEET.md) | |
+| CU-10-Q2 | Mitigasi V1 | AK-A | idem | |
+| CU-6-Q7 | Output agregat (LX-1) | Struktur disetujui; nilai OPEN | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) §14 | |
+| CU-6-Q8 | Waktu pelajar vs waktu evaluasi total (LX-2) | Struktur disetujui; nilai OPEN | idem | |
+| CU-6-Q9 | Beberapa proses interpreter (LX-3) | Berurutan; akuntansi per proses | idem | |
+| CU-6-Q10 | Syarat beralih TB-B → TB-A (LX-4) | Keputusan owner tertulis; satu mode per versi konten | idem | |
+| CU-6-Q11 | Kesetaraan skor saat cadangan (LX-5) | Terima perbedaan terbatas yang tercatat | idem | |
+

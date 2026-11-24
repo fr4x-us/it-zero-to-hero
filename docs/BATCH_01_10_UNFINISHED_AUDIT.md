@@ -733,3 +733,53 @@ Klasifikasi jalur seluruh register (56):
 prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
 PY:F-01–F-15: **NOT VERIFIED**.
 
+## 17. Pembaruan status — D-23–D-25 dan batch keputusan kurikulum (2026-11-24)
+
+Basis: `main` = `928e278` (merge PR #23). Berlaku saat PR pencatatan
+D-23–D-25 di-merge. Dihitung ulang dari bukti di repositori; keputusan owner
+tidak otomatis menutup butir.
+
+### 17.1 Perubahan per butir
+
+| ID | Status | Perubahan | Alasan tidak COMPLETE |
+|---|---|---|---|
+| UW-15 | NOT VERIFIED | Jalur V **disetujui D-25**; izin pengukuran = prasyarat | AC "bukti" butuh pengukuran yang belum diizinkan; CT-1–CT-12 NOT VERIFIED |
+| UW-26 | OPEN | OP-4 **diputuskan D-23** | AC CUR:CC-08 butuh bank soal penjelasan konsep 16 modul (belum ditulis) |
+| UW-36 | BLOCKED | CU-6 **diputuskan D-24**; cakupan + CU2-O3, CU2-O4 (D-25); lembar CU-3, CU-5, CU-7, CU-9, CU-11, CU2-O3, CU2-O4 disiapkan | 7 keputusan CU masih OPEN |
+| UW-33 | BLOCKED | Cakupan + OD-11–OD-14 **disetujui D-25** | OD-5–OD-9, OD-11–OD-14 belum diputuskan |
+| UW-25 | BLOCKED | Lembar CU-10 disiapkan | Keputusan owner belum ada |
+| UW-27 | BLOCKED | Lembar OP-5 disiapkan | Keputusan owner belum ada (ASM:D-08 kosong) |
+| UW-29 | BLOCKED | Lembar OP-7 disiapkan | Keputusan owner belum ada (ASM:L5) |
+| UW-30 | BLOCKED | Lembar OP-8/CU-4 disiapkan | Keputusan owner belum ada (ASM:X-07) |
+| UW-31 | BLOCKED | Lembar OP-9 disiapkan | Keputusan owner belum ada (ASM:C6) |
+| UW-32 | BLOCKED | Lembar OP-10/OP-11 disiapkan | Keputusan owner belum ada |
+| UW-37 | OPEN | Templat CB-0 provisional; matriks diperbarui | 0/64 komponen |
+| UW-21, UW-38, UW-40 | DEFERRED | Tidak berubah (D-22) | Ditunda, bukan selesai |
+
+### 17.2 Jumlah (rekonsiliasi terhadap baseline PR #23)
+
+| Status | Baseline §16 | Sesudah batch ini |
+|---|---|---|
+| COMPLETE | 25 | 25 |
+| OPEN | 4 | 4 (UW-12, UW-26, UW-37, UW-52) |
+| BLOCKED | 19 | 19 |
+| DEFERRED | 3 | 3 |
+| NOT VERIFIED | 5 | 5 (UW-13, UW-15, UW-54, UW-55, UW-56) |
+| **Total** | 56 | 56 |
+
+Jalur (D-20, D-25): P 43 (25 COMPLETE, 18 belum) · M 3 · G 2 · V 8.
+
+### 17.3 Laporan kemajuan (terpisah; jumlah butir, bukan beban kerja atau kesiapan aplikasi)
+
+| # | Ukuran | Nilai |
+|---|---|---|
+| 1 | Register keseluruhan | 25/56 COMPLETE (44,6%) |
+| 2 | Jalur P wajib | 25/43 (58,1%) |
+| 3 | Komponen kurikulum | 0/64 (templat tidak dihitung) |
+| 4 | Keputusan owner | D-01–D-25 tercatat; 38 pertanyaan baru AWAITING OWNER (OP-5, OP-7, OP-8/CU-4, OP-9, OP-10, OP-11, CU-3, CU-5, CU-7, CU-9, CU-10, CU-11, CU2-O3, CU2-O4, LX CU-6) |
+| 5 | Ketergantungan kritis | Gelombang 1 untuk CB-0: CU-3, CU-5, OP-5, CU2-O3, CU2-O4, OP-8/CU-4, OP-7, OP-10; lalu CB-1–CB-4 (UW-37, UW-26) |
+
+**PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
+prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
+PY:F-01–F-15: **NOT VERIFIED**. CT-1–CT-12: **NOT VERIFIED**.
+
