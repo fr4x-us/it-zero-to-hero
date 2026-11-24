@@ -40,7 +40,7 @@ di setiap PR batch.
 | #21 | Persiapan keputusan UW-22, CU-2, UO-1/UO-2 | Merged 2026-11-24 sebagai `b789e9a` (di-merge Claude atas persetujuan eksplisit owner) |
 | #22 | Pencatatan D-12–D-15; lembar OD-1, OD-2, UW-43 | Merged 2026-11-24 sebagai `bcecdae` (di-merge Claude atas persetujuan eksplisit owner) |
 | #23 | Pencatatan D-16–D-22; roadmap; lembar OP-4, CU-6; rencana produksi kurikulum; revisi F-01–F-06 | Merged 2026-11-24 sebagai `928e278` (di-merge Claude atas persetujuan eksplisit owner) |
-| PR D-23–D-25 | Pencatatan D-23–D-25; lembar keputusan kurikulum; templat CB-0; tinjauan konsistensi | Terbuka, menunggu review; **tidak di-merge Claude** |
+| #24 | Pencatatan D-23–D-25; lembar keputusan kurikulum; templat CB-0; tinjauan konsistensi | Terbuka, menunggu review; **tidak di-merge Claude** |
 
 ## Aturan merge (permanen)
 
@@ -117,7 +117,7 @@ Selesai: B-2 (PR #7); B-3 (D-01, PR #18); B-7 (D-02, PR #19); B-9 (D-05, PR #19)
 
 ## Langkah berikutnya (usulan, menunggu owner)
 
-1. Review PR D-23–D-25 (ChatGPT) → instruksi merge eksplisit bila PASS.
+1. Review PR #24 (ChatGPT) → instruksi merge eksplisit bila PASS.
 2. Owner menjawab 38 pertanyaan (7 grup) di
    [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md); prioritas
    gelombang 1 untuk CB-0.
