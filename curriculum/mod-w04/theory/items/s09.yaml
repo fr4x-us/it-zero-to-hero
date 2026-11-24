@@ -1,0 +1,44 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s09
+competency: comp-w04-auth-01
+format: TF-3
+difficulty: D1
+max_points: 2
+estimated_seconds: 60
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s09-a
+  variant_id: mod-w04.theory.s09.vA
+  item_version: '1.0'
+  stem: PIN terdiri dari **4 digit** angka 0–9 (setiap PIN dianggap sama mungkin). Berapa **jumlah kombinasi**
+    PIN yang mungkin?
+  accepted_answers:
+  - '10000'
+  - '10.000'
+  - 10000 kombinasi
+  - 10.000 kombinasi
+  - 10000kombinasi
+  - 10.000kombinasi
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    salah satu accepted_answers (dengan/tanpa titik ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan).
+    Ditolak: tanda +/−, desimal, pangkat (10^4), pengelompokan titik yang salah, spasi di dalam angka,
+    kata'
+  explanation: 10 × 10 × 10 × 10 = 10.000.
+- item_id: item-w04-t-s09-b
+  variant_id: mod-w04.theory.s09.vB
+  item_version: '1.0'
+  stem: PIN terdiri dari **5 digit** angka 0–9 (setiap PIN dianggap sama mungkin). Berapa **jumlah kombinasi**
+    PIN yang mungkin?
+  accepted_answers:
+  - '100000'
+  - '100.000'
+  - 100000 kombinasi
+  - 100.000 kombinasi
+  - 100000kombinasi
+  - 100.000kombinasi
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    salah satu accepted_answers (dengan/tanpa titik ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan).
+    Ditolak: tanda +/−, desimal, pangkat (10^4), pengelompokan titik yang salah, spasi di dalam angka,
+    kata'
+  explanation: 10⁵ = 100.000.

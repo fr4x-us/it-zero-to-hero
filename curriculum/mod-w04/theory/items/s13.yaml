@@ -1,0 +1,28 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s13
+competency: comp-w04-phish-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s13-a
+  variant_id: mod-w04.theory.s13.vA
+  item_version: '1.0'
+  stem: Model W4 (UR-1–UR-5). Tulis **domain terdaftar** dari alamat `https://bankcontoh.example.verifikasi-akun.test/masuk`.
+  accepted_answers:
+  - verifikasi-akun.test
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil (UR-5); cocokkan persis
+    dengan accepted_answers. Ditolak: skema (https://), path, subdomain tambahan, titik di akhir'
+  explanation: 'Nama host bankcontoh.example.verifikasi-akun.test; dua bagian terakhir: verifikasi-akun.test.'
+- item_id: item-w04-t-s13-b
+  variant_id: mod-w04.theory.s13.vB
+  item_version: '1.0'
+  stem: Model W4 (UR-1–UR-5). Tulis **domain terdaftar** dari alamat `https://login-bankcontoh.test/aman/bankcontoh.example`.
+  accepted_answers:
+  - login-bankcontoh.test
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil (UR-5); cocokkan persis
+    dengan accepted_answers. Ditolak: skema (https://), path, subdomain tambahan, titik di akhir'
+  explanation: Nama host login-bankcontoh.test; bankcontoh.example hanya ada di path.

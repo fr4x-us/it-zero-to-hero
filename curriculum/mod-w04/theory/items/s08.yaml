@@ -1,0 +1,50 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s08
+competency: comp-w04-auth-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s08-a
+  variant_id: mod-w04.theory.s08.vA
+  item_version: '1.0'
+  stem: '**Sidik jari** termasuk faktor autentikasi …'
+  options:
+  - id: a
+    text: Sesuatu yang kamu ketahui
+  - id: b
+    text: Sesuatu yang kamu miliki
+  - id: c
+    text: Sesuatu yang melekat pada dirimu
+  - id: d
+    text: Bukan faktor autentikasi
+  key: c
+  distractor_rationale:
+    a: Itu kata sandi/PIN
+    b: Itu ponsel/kunci keamanan
+    d: Sidik jari dipakai untuk autentikasi
+  explanation: Sidik jari melekat pada dirimu.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w04-t-s08-b
+  variant_id: mod-w04.theory.s08.vB
+  item_version: '1.0'
+  stem: '**Kode dari aplikasi autentikator** di ponselmu termasuk faktor autentikasi …'
+  options:
+  - id: a
+    text: Sesuatu yang kamu ketahui
+  - id: b
+    text: Sesuatu yang kamu miliki
+  - id: c
+    text: Sesuatu yang melekat pada dirimu
+  - id: d
+    text: Bukan faktor autentikasi
+  key: b
+  distractor_rationale:
+    a: Kode tidak kamu hafalkan; kode dibuat perangkat yang kamu miliki
+    c: Itu sidik jari/wajah
+    d: Kode itu dipakai untuk autentikasi
+  explanation: Kode autentikator membuktikan kamu memiliki ponsel itu.
+  option_order: urutan alami (kategori/baris tabel), tetap

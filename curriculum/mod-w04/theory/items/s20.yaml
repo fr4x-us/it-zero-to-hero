@@ -1,0 +1,52 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s20
+competency: comp-w04-incident-01
+format: TF-1
+difficulty: D3
+max_points: 4
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s20-a
+  variant_id: mod-w04.theory.s20.vA
+  item_version: '1.0'
+  stem: Ransomware mengunci berkas laptop dan meminta tebusan. Ada cadangan di harddisk eksternal yang
+    **tidak tersambung** saat serangan. Tindakan terbaik adalah …
+  options:
+  - id: a
+    text: Membayar tebusan karena berkas pasti dikembalikan
+  - id: b
+    text: Segera menyambungkan harddisk cadangan ke laptop yang masih terinfeksi
+  - id: c
+    text: Memutuskan laptop dari jaringan, meminta bantuan membersihkan sistem, lalu memulihkan dari cadangan
+  - id: d
+    text: Membiarkannya karena ransomware hilang sendiri
+  key: c
+  distractor_rationale:
+    a: Tidak ada jaminan berkas kembali
+    b: Cadangan dapat ikut dikunci
+    d: Ransomware tidak hilang sendiri
+  explanation: Hentikan penyebaran, bersihkan, lalu pulihkan dari cadangan yang aman.
+- item_id: item-w04-t-s20-b
+  variant_id: mod-w04.theory.s20.vB
+  item_version: '1.0'
+  stem: Akun media sosialmu dipakai orang lain untuk mengirim tautan aneh, tetapi kamu masih dapat masuk.
+    Kata sandinya **sama** dengan kata sandi emailmu. Tindakan terbaik adalah …
+  options:
+  - id: a
+    text: Mengganti kata sandi media sosial saja
+  - id: b
+    text: Menghapus akun media sosial saja
+  - id: c
+    text: Menunggu sampai teman berhenti menerima tautan
+  - id: d
+    text: Mengganti kata sandi media sosial dan email dengan sandi unik, mengaktifkan MFA, dan mengeluarkan
+      sesi asing
+  key: d
+  distractor_rationale:
+    a: Email memakai sandi yang sama sehingga ikut terancam
+    b: Email tetap terancam
+    c: Menunda memberi waktu penyerang
+  explanation: Sandi yang dipakai ulang harus diganti di semua akun; MFA dan pengeluaran sesi mengamankan
+    akun.

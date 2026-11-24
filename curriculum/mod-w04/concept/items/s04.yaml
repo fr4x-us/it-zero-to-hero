@@ -1,0 +1,63 @@
+# W4 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.concept.s04
+competency: comp-w04-phish-01
+required_concepts:
+- domain terdaftar menentukan pemilik
+- subdomain/path dapat menipu
+- HTTPS tidak menjamin jujur
+format: CE-S1
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w04-c-s04-a
+  variant_id: mod-w04.concept.s04.vA
+  item_version: '1.0'
+  stem: Mengapa alamat `https://tokobuku.example.promo-hemat.test/` **tidak** menuju situs resmi `tokobuku.example`,
+    walaupun memuat nama itu dan memakai HTTPS?
+  options:
+  - id: a
+    text: Karena alamat yang memakai HTTPS selalu palsu
+  - id: b
+    text: Karena domain terdaftarnya `promo-hemat.test`; `tokobuku.example` hanya subdomain milik pemilik
+      domain itu
+  - id: c
+    text: Karena alamat itu tidak memiliki path
+  - id: d
+    text: Karena nama toko ditulis dengan huruf kecil
+  key: b
+  distractor_rationale:
+    a: Situs resmi juga memakai HTTPS
+    c: Path tidak menentukan pemilik
+    d: Huruf besar/kecil nama host tidak dibedakan
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: Pemilik ditunjukkan dua bagian terakhir nama host; HTTPS hanya mengenkripsi sambungan.
+- item_id: item-w04-c-s04-b
+  variant_id: mod-w04.concept.s04.vB
+  item_version: '1.0'
+  stem: Mengapa gembok HTTPS pada `https://akun-dompet.test/masuk` **tidak** membuktikan situs itu milik
+    penyedia dompet digital resmi `dompetku.example`?
+  options:
+  - id: a
+    text: Karena HTTPS hanya mengenkripsi sambungan ke domain itu; pemiliknya ditentukan domain terdaftar
+      `akun-dompet.test`, bukan `dompetku.example`
+  - id: b
+    text: Karena gembok hanya muncul di situs resmi
+  - id: c
+    text: Karena path `/masuk` menunjukkan situs palsu
+  - id: d
+    text: Karena HTTPS memakai port 80
+  key: a
+  distractor_rationale:
+    b: Situs phishing juga dapat menampilkan gembok
+    c: Path tidak menentukan pemilik
+    d: HTTPS memakai port 443
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: HTTPS tidak membuktikan kejujuran pemilik; periksa domain terdaftar.

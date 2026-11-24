@@ -1,0 +1,58 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s17
+competency: comp-w04-protect-01
+format: TF-2
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s17-a
+  variant_id: mod-w04.theory.s17.vA
+  item_version: '1.0'
+  stem: Pilih **semua** tindakan yang mengurangi risiko malware di **ponsel**.
+  options:
+  - id: a
+    text: Memasang aplikasi hanya dari toko aplikasi resmi
+  - id: b
+    text: Mengizinkan pemasangan dari sumber tak dikenal untuk semua aplikasi
+  - id: c
+    text: Memeriksa izin aplikasi sesuai fungsinya
+  - id: d
+    text: Memperbarui sistem operasi dan aplikasi
+  - id: e
+    text: Membuka berkas `.apk` kiriman nomor tak dikenal
+  key:
+  - a
+  - c
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: Membuka jalan bagi aplikasi tak resmi
+    e: Pemasang aplikasi dari sumber tak dikenal berisiko trojan
+  explanation: Sumber resmi, izin sesuai fungsi, dan pembaruan mengurangi risiko.
+- item_id: item-w04-t-s17-b
+  variant_id: mod-w04.theory.s17.vB
+  item_version: '1.0'
+  stem: Pilih **semua** tindakan yang mengurangi risiko malware di **laptop**.
+  options:
+  - id: a
+    text: Mengunduh software dari situs resmi pembuatnya
+  - id: b
+    text: Mematikan pembaruan agar tidak mengganggu
+  - id: c
+    text: Memakai akun pengguna biasa untuk kegiatan sehari-hari
+  - id: d
+    text: Menjalankan lampiran `undangan.pdf.exe` dari email
+  - id: e
+    text: Mengaktifkan dan memperbarui perlindungan antimalware bawaan
+  key:
+  - a
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: Celah keamanan tetap terbuka
+    d: 'Ekstensi sebenarnya exe: program'
+  explanation: Sumber resmi, akun biasa, dan antimalware aktif mengurangi risiko.

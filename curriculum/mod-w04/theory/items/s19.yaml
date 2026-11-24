@@ -1,0 +1,63 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s19
+competency: comp-w04-incident-01
+format: TF-5
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s19-a
+  variant_id: mod-w04.theory.s19.vA
+  item_version: '1.0'
+  stem: Akun email Nia diambil alih karena sandinya bocor. Urutkan langkah agar setiap langkah dapat dikerjakan.
+  items:
+  - id: A
+    text: Setelah MFA aktif, keluarkan semua sesi lain sehingga perangkat lain harus masuk ulang dengan
+      MFA
+  - id: B
+    text: Ganti kata sandi email dari perangkat yang aman
+  - id: C
+    text: Setelah akun aman, kirim pemberitahuan ke kontak bahwa pesan aneh kemarin bukan darimu
+  - id: D
+    text: Masuk dengan kata sandi baru, lalu aktifkan MFA
+  display_order:
+  - A
+  - B
+  - C
+  - D
+  accepted_sequences:
+  - - B
+    - D
+    - A
+    - C
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Sandi baru dulu; MFA diaktifkan dengan sandi baru; sesi lain dikeluarkan setelah MFA aktif;
+    kontak diberi tahu setelah akun aman.
+- item_id: item-w04-t-s19-b
+  variant_id: mod-w04.theory.s19.vB
+  item_version: '1.0'
+  stem: Laptop Dodi terkena ransomware. Ia punya cadangan di harddisk eksternal yang tidak tersambung
+    saat serangan. Urutkan langkah agar setiap langkah dapat dikerjakan.
+  items:
+  - id: A
+    text: Setelah sistem bersih, sambungkan harddisk cadangan
+  - id: B
+    text: Pulihkan berkas dari cadangan, lalu periksa berkas dapat dibuka
+  - id: C
+    text: Putuskan laptop dari jaringan
+  - id: D
+    text: Setelah terputus, bersihkan atau pasang ulang sistem dengan bantuan pengelola IT
+  display_order:
+  - A
+  - B
+  - C
+  - D
+  accepted_sequences:
+  - - C
+    - D
+    - A
+    - B
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Hentikan penyebaran, bersihkan sistem, baru sambungkan cadangan dan pulihkan.

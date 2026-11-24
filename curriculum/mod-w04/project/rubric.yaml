@@ -1,0 +1,138 @@
+# W4 — rubrik mini-project (MR-A, D-33). Kunci, contoh jawaban, dan contoh evaluasi
+# hanya untuk reviewer/penilai; tidak ditampilkan kepada pelajar sebelum dinilai.
+component: mod-w04.project
+content_version: "1.0"
+max_points: 100
+safety: "Semua tokoh, akun, kejadian, dan domain fiktif; tidak ada akses ke akun, kredensial, perangkat, atau jaringan nyata. Rubrik tidak pernah meminta pelajar menuliskan kata sandi"
+
+constants:
+  F1_key: {S1: PHI, S2: SOS, S3: TRO, S4: WIF, S5: RAN, S6: PHI}
+  dangerous_actions: [T4, T5, T8, T10]
+  required_actions:   # AR-1–AR-3 diterapkan ke atribut akun di spec.md
+    E: [T1, T6, T2]    # memulihkan akun lain
+    M: [T1, T6, T9]    # profil publik
+    D: [T1, T6, T2]    # menyimpan uang
+    G: [T1, T6]
+  backup_locations:
+    L2: {media: internal, same_device: true, offsite: false}
+    L3: {media: external_drive, same_device: false, offsite: false}
+    L4: {media: flashdisk, same_device: false, offsite: false}
+    L5: {media: cloud, same_device: false, offsite: true}
+    L6: {media: external_drive, same_device: false, offsite: true}
+
+field_rules:
+  copies_counted: "1 (asli di laptop) + jumlah lokasi terpilih di F3 yang bukan perangkat yang sama (L2 tidak dihitung, CB-4)"
+  media_types: "Jumlah jenis media berbeda di antara {internal (laptop)} ∪ jenis media lokasi terpilih (L3 dan L6 sejenis: harddisk eksternal)"
+  rule_321: "copies_counted ≥ 3 DAN media_types ≥ 2 DAN ≥ 1 lokasi terpilih di luar lokasi (L5 atau L6)"
+  number_rule: "Bilangan bulat tanpa tanda/desimal/spasi di dalam, tanpa nol di depan; spasi tepi dibuang; boleh diikuti (dengan/tanpa satu spasi) kata 'salinan' untuk F4 atau 'jenis' untuk F5 (huruf besar/kecil bebas). Diterima: '3', '3 salinan', '3jenis'. Ditolak: 'tiga', '3,0', '+3', '03'"
+  k3_strict: "F4 dan F5 hanya digit"
+  dependency_rule: "MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya kosong atau tidak sah; pemeriksaan larangan akun dan pemeriksaan angka membutuhkan isian terkait tidak kosong (mencegah poin tanpa pekerjaan)"
+
+criteria:
+  K1:
+    name: Kebenaran fungsional
+    points: 60
+    checks:
+      - {id: mod-w04.project.K1.c01, rule: "F1.S1 = PHI", depends_on: [F1.S1], points: 3}
+      - {id: mod-w04.project.K1.c02, rule: "F1.S2 = SOS", depends_on: [F1.S2], points: 3}
+      - {id: mod-w04.project.K1.c03, rule: "F1.S3 = TRO", depends_on: [F1.S3], points: 3}
+      - {id: mod-w04.project.K1.c04, rule: "F1.S4 = WIF", depends_on: [F1.S4], points: 3}
+      - {id: mod-w04.project.K1.c05, rule: "F1.S5 = RAN", depends_on: [F1.S5], points: 3}
+      - {id: mod-w04.project.K1.c06, rule: "F1.S6 = PHI", depends_on: [F1.S6], points: 3}
+      - {id: mod-w04.project.K1.c07, rule: "F2.E memuat semua required_actions.E", depends_on: [F2.E ≥ 1 tindakan], points: 5}
+      - {id: mod-w04.project.K1.c08, rule: "F2.E tidak memuat dangerous_actions", depends_on: [F2.E ≥ 1 tindakan], points: 3}
+      - {id: mod-w04.project.K1.c09, rule: "F2.M memuat semua required_actions.M", depends_on: [F2.M ≥ 1 tindakan], points: 5}
+      - {id: mod-w04.project.K1.c10, rule: "F2.M tidak memuat dangerous_actions", depends_on: [F2.M ≥ 1 tindakan], points: 3}
+      - {id: mod-w04.project.K1.c11, rule: "F2.D memuat semua required_actions.D", depends_on: [F2.D ≥ 1 tindakan], points: 5}
+      - {id: mod-w04.project.K1.c12, rule: "F2.D tidak memuat dangerous_actions", depends_on: [F2.D ≥ 1 tindakan], points: 3}
+      - {id: mod-w04.project.K1.c13, rule: "F2.G memuat semua required_actions.G", depends_on: [F2.G ≥ 1 tindakan], points: 5}
+      - {id: mod-w04.project.K1.c14, rule: "F2.G tidak memuat dangerous_actions", depends_on: [F2.G ≥ 1 tindakan], points: 3}
+      - {id: mod-w04.project.K1.c15, rule: "Pilihan F3 memenuhi rule_321", depends_on: [F3 ≥ 1 lokasi], points: 6}
+      - {id: mod-w04.project.K1.c16, rule: "F4 (diurai) = copies_counted(F3)", depends_on: [F3 ≥ 1 lokasi, F4 dapat diurai], points: 2}
+      - {id: mod-w04.project.K1.c17, rule: "F5 (diurai) = media_types(F3)", depends_on: [F3 ≥ 1 lokasi, F5 dapat diurai], points: 2}
+  K2:
+    name: Kelengkapan deliverable
+    points: 20
+    definition: "MR-A (D-33): deliverable ada DAN sah secara bentuk (kode dari daftar; centang dari daftar; angka dapat dibaca). Kebenaran di K1"
+    checks:
+      - {id: mod-w04.project.K2.c01, rule: "F1: keenam kejadian terisi kode dari daftar", depends_on: [F1], points: 6}
+      - {id: mod-w04.project.K2.c02, rule: "F2.E ≥ 1 tindakan", depends_on: [F2.E], points: 2}
+      - {id: mod-w04.project.K2.c03, rule: "F2.M ≥ 1 tindakan", depends_on: [F2.M], points: 2}
+      - {id: mod-w04.project.K2.c04, rule: "F2.D ≥ 1 tindakan", depends_on: [F2.D], points: 2}
+      - {id: mod-w04.project.K2.c05, rule: "F2.G ≥ 1 tindakan", depends_on: [F2.G], points: 2}
+      - {id: mod-w04.project.K2.c06, rule: "F3 ≥ 1 lokasi", depends_on: [F3], points: 2}
+      - {id: mod-w04.project.K2.c07, rule: "F4 dapat diurai (number_rule)", depends_on: [F4], points: 2}
+      - {id: mod-w04.project.K2.c08, rule: "F5 dapat diurai (number_rule)", depends_on: [F5], points: 2}
+  K3:
+    name: Struktur dan format
+    points: 10
+    checks:
+      - {id: mod-w04.project.K3.c01, rule: "Ketiga bagian wajib ada: F1 ≥ 1 kode, F2 ≥ 1 akun dengan tindakan, F3 ≥ 1 lokasi", depends_on: [F1, F2, F3], points: 4}
+      - {id: mod-w04.project.K3.c02, rule: "F4 hanya digit (k3_strict)", depends_on: [F3 ≥ 1 lokasi, F4], points: 3}
+      - {id: mod-w04.project.K3.c03, rule: "F5 hanya digit (k3_strict)", depends_on: [F3 ≥ 1 lokasi, F5], points: 3}
+  K4:
+    name: Penjelasan proyek (komposisi K-A, 5 × CE-S1, P = 2)
+    points: 10
+    note: "Soal tentang tugas proyek ini; terpisah dari komponen Concept explanation W4 (D-33 A.2a). Posisi kunci: c, a, d, b, c"
+    items:
+      - id: mod-w04.project.K4.q1
+        lo: comp-w04-cia-01
+        stem: "Rencana cadangan foto (Bagian C) **terutama** menjaga tujuan keamanan …"
+        options: {a: Kerahasiaan, b: Integritas, c: Ketersediaan, d: Autentikasi}
+        key: c
+        points: 2
+        feedback: "Cadangan memastikan foto dapat dipakai lagi bila salinan asli hilang atau terkunci."
+      - id: mod-w04.project.K4.q2
+        lo: comp-w04-auth-01
+        stem: "Mengapa akun email sekolah (E) wajib MFA?"
+        options: {a: "Email dipakai memulihkan akun lain; bila diambil alih, akun lain ikut terancam", b: "MFA membuat email terkirim lebih cepat", c: "Email itu menyimpan uang", d: "MFA menggantikan kebutuhan kata sandi"}
+        key: a
+        points: 2
+        feedback: "Email pemulihan adalah kunci ke akun lain; MFA menambah faktor kedua."
+      - id: mod-w04.project.K4.q3
+        lo: comp-w04-phish-01
+        stem: "Pada kejadian S1, tanda phishing yang **paling** kuat adalah …"
+        options: {a: "Nama tampilan pengirim \"Admin Sekolah\"", b: "Email dikirim pada pagi hari", c: "Email ditulis dalam bahasa Indonesia", d: "Permintaan kata sandi lewat tautan ke domain terdaftar yang bukan milik sekolah"}
+        key: d
+        points: 2
+        feedback: "Nama tampilan mudah dipalsukan; domain terdaftar dan permintaan kata sandi adalah tanda kuat."
+      - id: mod-w04.project.K4.q4
+        lo: comp-w04-protect-01
+        stem: "Mengapa T10 (sandi di foto catatan pada ponsel tanpa kunci layar) termasuk tindakan berbahaya?"
+        options: {a: "Membuat ponsel lambat", b: "Siapa pun yang memegang ponsel dapat membaca semua sandi", c: "Melanggar aturan profil publik", d: "Foto selalu terunggah otomatis ke internet"}
+        key: b
+        points: 2
+        feedback: "Tanpa kunci layar, catatan sandi terbuka bagi siapa pun yang memegang ponsel."
+      - id: mod-w04.project.K4.q5
+        lo: comp-w04-incident-01
+        stem: "Bila Lina terlanjur memberikan OTP pada kejadian S2, langkah **pertama** yang paling tepat adalah …"
+        options: {a: "Menunggu apakah saldo berkurang", b: "Menelepon balik nomor penelepon", c: "Segera menghubungi penyedia dompet digital lewat kanal resmi untuk mengamankan akun", d: "Menghapus aplikasi dompet digital"}
+        key: c
+        points: 2
+        feedback: "Amankan akun lebih dulu lewat kanal resmi."
+
+point_check: "K1 6×3 + 4×(5+3) + 6 + 2 + 2 = 60; K2 6 + 4×2 + 2 + 2 + 2 = 20; K3 4+3+3 = 10; K4 5×2 = 10; total 100"
+
+solution_analysis:
+  F1: "Satu jawaban benar per kejadian (S1 dan S6 sama-sama PHI, sehingga eliminasi tidak memberi jawaban)"
+  F2_full_score_plans: "Tindakan aman yang tidak wajib boleh ditambah (AR-5): E opsional {T3, T7, T9} → 8; M {T2, T3, T7} → 8; D {T3, T7, T9} → 8; G {T2, T3, T7, T9} → 16; total 8 × 8 × 8 × 16 = 8.192 kombinasi"
+  F3_full_score_sets: "Enumerasi 31 himpunan tak kosong dari L2–L6: 20 memenuhi rule_321 (contoh batas: {L3, L6} = 3 salinan, 2 jenis, L6 di luar lokasi)"
+  total_full_score_plans: "8.192 × 20 = 163.840 (F4 dan F5 ditentukan oleh pilihan F3)"
+  reference: {F1: "PHI, SOS, TRO, WIF, RAN, PHI", E: "T1, T2, T6", M: "T1, T6, T9", D: "T1, T2, T6", G: "T1, T6", F3: "L3, L5", F4: "3", F5: "3"}
+
+reviewer_examples:   # skor dihitung dengan aturan di atas; K4 diasumsikan 10
+  - {id: E01, case: "Rencana acuan", K1: 60, K2: 20, K3: 10, total: 100}
+  - {id: E02, case: "Acuan + tindakan aman tambahan (T3, T7 di semua akun; T2 di M dan G)", K1: 60, K2: 20, K3: 10, total: 100}
+  - {id: E03, case: "Akun D tanpa T2", K1: 55, K2: 20, K3: 10, total: 95, zero: [K1.c11]}
+  - {id: E04, case: "Akun G memilih T4", K1: 57, K2: 20, K3: 10, total: 97, zero: [K1.c14]}
+  - {id: E05, case: "S2 diklasifikasi PHI", K1: 57, K2: 20, K3: 10, total: 97, zero: [K1.c02]}
+  - {id: E06, case: "F3 = {L2, L4}; F4 = 3 (folder di laptop ikut dihitung); F5 = 2", K1: 52, K2: 20, K3: 10, total: 92, zero: [K1.c15, K1.c16]}
+  - {id: E07, case: "F3 = {L3, L4} (semua di rumah); F4 = 3; F5 = 3", K1: 54, K2: 20, K3: 10, total: 94, zero: [K1.c15]}
+  - {id: E08, case: "Batas 2 jenis media: F3 = {L3, L6}; F4 = 3; F5 = 2", K1: 60, K2: 20, K3: 10, total: 100}
+  - {id: E09, case: "F4 = '3 salinan'", K1: 60, K2: 20, K3: 7, total: 97, zero: [K3.c02]}
+  - {id: E10, case: "F5 = 'tiga'", K1: 58, K2: 18, K3: 7, total: 93, zero: [K1.c17, K2.c08, K3.c03]}
+  - {id: E11, case: "Akun M tanpa tindakan", K1: 52, K2: 18, K3: 10, total: 90, zero: [K1.c09, K1.c10, K2.c03]}
+  - {id: E12, case: "Hanya F4 = 3 dan F5 = 3 diisi; bagian lain kosong", K1: 0, K2: 4, K3: 0, total: "4 + K4", note: "Pemeriksaan angka bergantung pada F3 tidak kosong"}
+  - {id: E13, case: "Semua kosong / centang 'sudah aman' saja", K1: 0, K2: 0, K3: 0, total: "0 untuk K1–K3; K4 sesuai jawaban", note: "MR-6"}
+
+objective_limits: "Pemeriksaan membuktikan rencana memenuhi aturan W4 pada skenario fiktif; tidak membuktikan akun nyata pelajar aman dan tidak mensertifikasi kompetensi (D-17, D-34)"

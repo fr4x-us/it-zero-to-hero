@@ -1,0 +1,58 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s05
+competency: comp-w04-threat-01
+format: TF-2
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s05-a
+  variant_id: mod-w04.theory.s05.vA
+  item_version: '1.0'
+  stem: Pilih **semua** tanda yang patut dicurigai sebagai malware pada laptop.
+  options:
+  - id: a
+    text: Jendela iklan aneh terus muncul walaupun browser ditutup
+  - id: b
+    text: Ekstensi berkas berubah dan muncul pesan meminta tebusan
+  - id: c
+    text: Laptop menyala setelah tombol daya ditekan
+  - id: d
+    text: Program tak dikenal terus memakai CPU tinggi di daftar proses
+  - id: e
+    text: Baterai terisi saat pengisi daya dicolokkan
+  key:
+  - a
+  - b
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    c: Perilaku normal
+    e: Perilaku normal
+  explanation: Iklan memaksa, tanda ransomware, dan proses tak dikenal patut dicurigai; dua lainnya normal.
+- item_id: item-w04-t-s05-b
+  variant_id: mod-w04.theory.s05.vB
+  item_version: '1.0'
+  stem: Pilih **semua** tanda yang patut dicurigai sebagai malware pada ponsel.
+  options:
+  - id: a
+    text: Ponsel bergetar saat pesan masuk
+  - id: b
+    text: Muncul aplikasi yang tidak pernah kamu pasang
+  - id: c
+    text: Kuota data habis sangat cepat dan aplikasi tak dikenal terus mengirim data
+  - id: d
+    text: Jam menyesuaikan zona waktu saat bepergian
+  - id: e
+    text: Izin aksesibilitas aktif untuk aplikasi senter padahal kamu tidak pernah memberinya
+  key:
+  - b
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    a: Perilaku normal
+    d: Perilaku normal
+  explanation: Aplikasi asing, pengiriman data tak wajar, dan izin yang tidak diberikan patut dicurigai.

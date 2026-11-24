@@ -1,0 +1,50 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s01
+competency: comp-w04-cia-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s01-a
+  variant_id: mod-w04.theory.s01.vA
+  item_version: '1.0'
+  stem: Tujuan keamanan yang menjaga agar data **hanya dapat dibaca** oleh pihak yang berhak adalah …
+  options:
+  - id: a
+    text: Kerahasiaan
+  - id: b
+    text: Integritas
+  - id: c
+    text: Ketersediaan
+  - id: d
+    text: Autentikasi
+  key: a
+  distractor_rationale:
+    b: 'Integritas: tidak diubah tanpa izin'
+    c: 'Ketersediaan: dapat dipakai saat dibutuhkan'
+    d: Autentikasi adalah cara membuktikan pemilik akun, bukan salah satu tiga tujuan
+  explanation: Kerahasiaan berarti hanya yang berhak dapat membaca.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w04-t-s01-b
+  variant_id: mod-w04.theory.s01.vB
+  item_version: '1.0'
+  stem: Tujuan keamanan yang menjaga agar data **tidak diubah tanpa izin** dan tetap benar adalah …
+  options:
+  - id: a
+    text: Kerahasiaan
+  - id: b
+    text: Integritas
+  - id: c
+    text: Ketersediaan
+  - id: d
+    text: Autentikasi
+  key: b
+  distractor_rationale:
+    a: 'Kerahasiaan: hanya yang berhak membaca'
+    c: 'Ketersediaan: dapat dipakai saat dibutuhkan'
+    d: Autentikasi bukan salah satu tiga tujuan
+  explanation: Integritas berarti data tidak diubah tanpa izin.
+  option_order: urutan alami (kategori/baris tabel), tetap

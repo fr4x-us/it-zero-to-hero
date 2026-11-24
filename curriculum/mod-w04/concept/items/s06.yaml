@@ -1,0 +1,81 @@
+# W4 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.concept.s06
+competency: comp-w04-incident-01
+required_concepts:
+- hentikan → amankan → pulihkan → laporkan
+- kanal resmi
+format: CE-S3
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w04-c-s06-a
+  variant_id: mod-w04.concept.s06.vA
+  item_version: '1.0'
+  stem: Ponselmu hilang di angkutan umum. Urutkan langkah tanggapannya.
+  items:
+  - id: A
+    text: Masuk ke layanan "temukan perangkat" dari perangkat lain
+  - id: B
+    text: Kunci ponsel dari jarak jauh dan tampilkan pesan kontak
+  - id: C
+    text: Ganti kata sandi akun penting yang masuk di ponsel itu
+  - id: D
+    text: Hubungi operator lewat kanal resmi untuk memblokir kartu SIM
+  display_order:
+  - C
+  - A
+  - D
+  - B
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  - - A
+    - B
+    - D
+    - C
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: Kunci perangkat dulu lewat layanan temukan perangkat; mengganti sandi dan memblokir SIM boleh
+    berurutan mana saja (dua urutan diterima).
+- item_id: item-w04-c-s06-b
+  variant_id: mod-w04.concept.s06.vB
+  item_version: '1.0'
+  stem: Kamu mengeklik tautan phishing di laptop dan sempat mengisi kata sandi akun kursus daring. Urutkan
+    langkah tanggapannya.
+  items:
+  - id: A
+    text: Tutup halaman palsu itu
+  - id: B
+    text: Ganti kata sandi akun kursus dari perangkat yang aman
+  - id: C
+    text: Aktifkan MFA di akun kursus
+  - id: D
+    text: Periksa aktivitas login terbaru dan keluarkan sesi asing
+  display_order:
+  - D
+  - B
+  - A
+  - C
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  - - A
+    - B
+    - D
+    - C
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: Hentikan (tutup halaman) lalu amankan dengan sandi baru; MFA dan pemeriksaan sesi boleh berurutan
+    mana saja (dua urutan diterima).

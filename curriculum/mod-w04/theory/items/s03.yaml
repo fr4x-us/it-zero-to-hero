@@ -1,0 +1,52 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s03
+competency: comp-w04-cia-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s03-a
+  variant_id: mod-w04.theory.s03.vA
+  item_version: '1.0'
+  stem: Model W4. Semua berkas di laptop Dina dikunci ransomware sehingga tidak dapat dibuka pemiliknya.
+    Tujuan yang **terutama** terganggu adalah …
+  options:
+  - id: a
+    text: Kerahasiaan
+  - id: b
+    text: Integritas
+  - id: c
+    text: Ketersediaan
+  - id: d
+    text: Autentikasi
+  key: c
+  distractor_rationale:
+    a: Stem tidak menyebut data dibaca orang lain
+    b: Stem menekankan berkas tidak dapat dipakai, bukan isinya diubah
+    d: Autentikasi bukan salah satu tiga tujuan
+  explanation: 'Data tidak dapat dipakai saat dibutuhkan: ketersediaan.'
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w04-t-s03-b
+  variant_id: mod-w04.theory.s03.vB
+  item_version: '1.0'
+  stem: Model W4. Seseorang di belakangmu mengintip dan membaca kode OTP yang tampil di layar ponselmu.
+    Tujuan yang **terutama** terganggu adalah …
+  options:
+  - id: a
+    text: Kerahasiaan
+  - id: b
+    text: Integritas
+  - id: c
+    text: Ketersediaan
+  - id: d
+    text: Autentikasi
+  key: a
+  distractor_rationale:
+    b: Kode tidak diubah
+    c: Kode tetap dapat dipakai pemilik
+    d: Autentikasi bukan salah satu tiga tujuan
+  explanation: 'Data rahasia dibaca pihak yang tidak berhak: kerahasiaan.'
+  option_order: urutan alami (kategori/baris tabel), tetap

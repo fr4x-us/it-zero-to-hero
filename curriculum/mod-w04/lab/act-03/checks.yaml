@@ -1,0 +1,187 @@
+# W4 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w04.lab.act-03
+name: Tujuan keamanan, autentikasi, perlindungan, dan respons
+competencies:
+- comp-w04-cia-01
+- comp-w04-auth-01
+- comp-w04-protect-01
+- comp-w04-incident-01
+max_points: 30
+estimated_minutes: 30
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w04.lab (D-28 XI-2)
+normalization: Huruf opsi {a, b, c, d} untuk c01, c02, c05, c06; bilangan bulat (dengan/tanpa titik ribuan
+  berpola 1.234, boleh diikuti satuan yang diminta) untuk c03, c04
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu; pemeriksaan lain tetap dinilai
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2)
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W4 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python atau jaringan; pemeriksaan deterministik atas jawaban terstruktur
+safety: Semua skenario, nama, domain (.example/.test), dan pesan fiktif. Tidak ada akses ke akun nyata,
+  kredensial nyata, malware, sistem pihak ketiga, atau jaringan tanpa izin; tidak ada tautan yang dibuka
+variants:
+- variant_id: mod-w04.lab.act-03.vA
+  fixture:
+    backup_rules: CB-1–CB-4 (Pelajaran 4 §2)
+  visible_example:
+    note: 'Contoh terlihat (0 poin): kombinasi PIN 1 digit = 10'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w04.lab.act-03.vA.c01
+    name: Tujuan keamanan
+    question: Jadwal piket di grup kelas diubah oleh orang yang tidak berhak. Tujuan yang terutama terganggu?
+    options: &id001
+    - id: a
+      text: Kerahasiaan
+    - id: b
+      text: Integritas
+    - id: c
+      text: Ketersediaan
+    - id: d
+      text: Autentikasi
+    expected: b
+    points: 5
+  - check_id: mod-w04.lab.act-03.vA.c02
+    name: MFA
+    question: Pasangan mana yang merupakan MFA?
+    options:
+    - id: a
+      text: Kata sandi + PIN
+    - id: b
+      text: Kata sandi + kode aplikasi autentikator
+    - id: c
+      text: Dua kata sandi berbeda
+    - id: d
+      text: PIN + jawaban pertanyaan rahasia
+    expected: b
+    points: 5
+  - check_id: mod-w04.lab.act-03.vA.c03
+    name: Kombinasi PIN
+    question: Berapa kombinasi PIN 7 digit (angka 0–9)?
+    accepted_answers:
+    - '10000000'
+    - 10.000.000
+    - 10000000 kombinasi
+    - 10.000.000 kombinasi
+    - 10000000kombinasi
+    - 10.000.000kombinasi
+    points: 5
+  - check_id: mod-w04.lab.act-03.vA.c04
+    name: Salinan terhitung
+    question: 'Rencana: laptop (asli) + flashdisk di rumah + kartu memori di rumah + folder lain di laptop
+      yang sama. Berapa salinan yang dihitung menurut CB-1–CB-4, termasuk asli?'
+    accepted_answers:
+    - '3'
+    - 3 salinan
+    - 3salinan
+    points: 5
+  - check_id: mod-w04.lab.act-03.vA.c05
+    name: Izin aplikasi
+    question: Aplikasi kamus luring meminta izin kontak, lokasi, dan mikrofon. Fungsinya hanya mencari
+      arti kata yang diketik. Pilihan sesuai hak minimum?
+    options:
+    - id: a
+      text: Izinkan semua
+    - id: b
+      text: Izinkan kontak saja
+    - id: c
+      text: Izinkan lokasi sepanjang waktu
+    - id: d
+      text: Tolak ketiganya
+    expected: d
+    points: 5
+  - check_id: mod-w04.lab.act-03.vA.c06
+    name: Langkah pertama insiden
+    question: Laptop menampilkan pesan tebusan ransomware. Langkah pertama yang paling tepat?
+    options:
+    - id: a
+      text: Membayar tebusan
+    - id: b
+      text: Menyambungkan harddisk cadangan
+    - id: c
+      text: Mengunggah tangkapan layar ke media sosial
+    - id: d
+      text: Memutuskan laptop dari jaringan
+    expected: d
+    points: 5
+- variant_id: mod-w04.lab.act-03.vB
+  fixture:
+    backup_rules: CB-1–CB-4 (Pelajaran 4 §2)
+  visible_example:
+    note: 'Contoh terlihat (0 poin): kombinasi PIN 1 digit = 10'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w04.lab.act-03.vB.c01
+    name: Tujuan keamanan
+    question: Aplikasi absensi sekolah tidak dapat dibuka seharian karena servernya mati. Tujuan yang
+      terutama terganggu?
+    options: *id001
+    expected: c
+    points: 5
+  - check_id: mod-w04.lab.act-03.vB.c02
+    name: MFA
+    question: Pasangan mana yang merupakan MFA?
+    options:
+    - id: a
+      text: Kata sandi + sidik jari
+    - id: b
+      text: Kata sandi + PIN
+    - id: c
+      text: PIN + tanggal lahir
+    - id: d
+      text: Dua kata sandi berbeda
+    expected: a
+    points: 5
+  - check_id: mod-w04.lab.act-03.vB.c03
+    name: Kombinasi PIN
+    question: Berapa kombinasi PIN 8 digit (angka 0–9)?
+    accepted_answers:
+    - '100000000'
+    - 100.000.000
+    - 100000000 kombinasi
+    - 100.000.000 kombinasi
+    - 100000000kombinasi
+    - 100.000.000kombinasi
+    points: 5
+  - check_id: mod-w04.lab.act-03.vB.c04
+    name: Salinan terhitung
+    question: 'Rencana: PC (asli) + dua folder lain di PC yang sama + layanan awan. Berapa salinan yang
+      dihitung menurut CB-1–CB-4, termasuk asli?'
+    accepted_answers:
+    - '2'
+    - 2 salinan
+    - 2salinan
+    points: 5
+  - check_id: mod-w04.lab.act-03.vB.c05
+    name: Izin aplikasi
+    question: Aplikasi pemindai dokumen meminta izin kamera dan kontak. Fungsinya memotret dokumen. Pilihan
+      sesuai hak minimum?
+    options:
+    - id: a
+      text: Izinkan kamera saat aplikasi digunakan; tolak kontak
+    - id: b
+      text: Izinkan keduanya sepanjang waktu
+    - id: c
+      text: Izinkan kontak saja
+    - id: d
+      text: Tolak kamera walaupun aplikasi harus memotret
+    expected: a
+    points: 5
+  - check_id: mod-w04.lab.act-03.vB.c06
+    name: Tindakan etis
+    question: Temanmu menemukan sandi Wi-Fi sekolah tertulis di meja guru dan mengajakmu memakainya diam-diam
+      untuk mengunduh game. Tindakan yang tepat?
+    options:
+    - id: a
+      text: Memakainya sebentar saja
+    - id: b
+      text: Memotret sandinya untuk nanti
+    - id: c
+      text: Menolak dan memberi tahu guru agar sandinya diamankan
+    - id: d
+      text: Membagikannya ke grup kelas
+    expected: c
+    points: 5

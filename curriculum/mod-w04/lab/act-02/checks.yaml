@@ -1,0 +1,144 @@
+# W4 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w04.lab.act-02
+name: Menganalisis pesan dan alamat situs
+competencies:
+- comp-w04-phish-01
+max_points: 40
+estimated_minutes: 30
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w04.lab (D-28 XI-2)
+normalization: 'Domain: buang spasi tepi, abaikan huruf besar/kecil (UR-5), cocok persis; tanpa skema,
+  path, atau titik akhir. Penilaian: satu huruf {A, C}, ubah ke huruf besar'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu; pemeriksaan lain tetap dinilai
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2)
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W4 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python atau jaringan; pemeriksaan deterministik atas jawaban terstruktur
+safety: Semua skenario, nama, domain (.example/.test), dan pesan fiktif. Tidak ada akses ke akun nyata,
+  kredensial nyata, malware, sistem pihak ketiga, atau jaringan tanpa izin; tidak ada tautan yang dibuka
+variants:
+- variant_id: mod-w04.lab.act-02.vA
+  fixture:
+    official_domains:
+    - pelita.example (Sekolah Pelita)
+    - bankcontoh.example (Bank Contoh)
+    - kirimcepat.example (Kirim Cepat)
+    - arenagame.example (Arena Game)
+    messages:
+    - id: M1
+      sender_name: Admin Sekolah Pelita
+      text: Nilai rapor sudah terbit. Lihat di https://rapor.pelita.example/semester
+    - id: M2
+      sender_name: Bank Contoh
+      text: 'Akun Anda DIBEKUKAN! Verifikasi dalam 30 menit: https://bankcontoh.example.amankan-akun.test/login'
+    - id: M3
+      sender_name: Kirim Cepat
+      text: Paket tertahan. Bayar Rp7.500 di https://kirimcepat-example.test/bayar
+    - id: M4
+      sender_name: Arena Game
+      text: Turnamen akhir pekan dibuka. Jadwal di https://www.arenagame.example/turnamen
+  visible_example:
+    note: Contoh terlihat (0 poin) = contoh terbimbing Pelajaran 3 §4 (kurir-cepat.example)
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w04.lab.act-02.vA.c01
+    name: Domain terdaftar tautan M1
+    accepted_answers:
+    - pelita.example
+    points: 5
+  - check_id: mod-w04.lab.act-02.vA.c02
+    name: Penilaian M1
+    expected: A
+    points: 5
+  - check_id: mod-w04.lab.act-02.vA.c03
+    name: Domain terdaftar tautan M2
+    accepted_answers:
+    - amankan-akun.test
+    points: 5
+  - check_id: mod-w04.lab.act-02.vA.c04
+    name: Penilaian M2
+    expected: C
+    points: 5
+  - check_id: mod-w04.lab.act-02.vA.c05
+    name: Domain terdaftar tautan M3
+    accepted_answers:
+    - kirimcepat-example.test
+    points: 5
+  - check_id: mod-w04.lab.act-02.vA.c06
+    name: Penilaian M3
+    expected: C
+    points: 5
+  - check_id: mod-w04.lab.act-02.vA.c07
+    name: Domain terdaftar tautan M4
+    accepted_answers:
+    - arenagame.example
+    points: 5
+  - check_id: mod-w04.lab.act-02.vA.c08
+    name: Penilaian M4
+    expected: A
+    points: 5
+- variant_id: mod-w04.lab.act-02.vB
+  fixture:
+    official_domains:
+    - dompetku.example (DompetKu)
+    - bacabuku.example (Perpustakaan BacaBuku)
+    - klubrobot.example (Klub Robot)
+    - jalanyuk.example (JalanYuk)
+    messages:
+    - id: M1
+      sender_name: DompetKu
+      text: Saldo Anda HANGUS hari ini! Masukkan PIN di https://dompetku.example.hadiah-saldo.test/klaim
+    - id: M2
+      sender_name: Perpustakaan BacaBuku
+      text: 'Buku pesananmu sudah tersedia: https://layanan.bacabuku.example/pinjaman'
+    - id: M3
+      sender_name: Klub Robot
+      text: 'Pendaftaran lomba robot dibuka: https://klubrobot.example/daftar'
+    - id: M4
+      sender_name: JalanYuk
+      text: Akun Anda diblokir. Login ulang di https://jalanyuk.test/akun/jalanyuk.example
+  visible_example:
+    note: Contoh terlihat (0 poin) = contoh terbimbing Pelajaran 3 §4 (kurir-cepat.example)
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w04.lab.act-02.vB.c01
+    name: Domain terdaftar tautan M1
+    accepted_answers:
+    - hadiah-saldo.test
+    points: 5
+  - check_id: mod-w04.lab.act-02.vB.c02
+    name: Penilaian M1
+    expected: C
+    points: 5
+  - check_id: mod-w04.lab.act-02.vB.c03
+    name: Domain terdaftar tautan M2
+    accepted_answers:
+    - bacabuku.example
+    points: 5
+  - check_id: mod-w04.lab.act-02.vB.c04
+    name: Penilaian M2
+    expected: A
+    points: 5
+  - check_id: mod-w04.lab.act-02.vB.c05
+    name: Domain terdaftar tautan M3
+    accepted_answers:
+    - klubrobot.example
+    points: 5
+  - check_id: mod-w04.lab.act-02.vB.c06
+    name: Penilaian M3
+    expected: A
+    points: 5
+  - check_id: mod-w04.lab.act-02.vB.c07
+    name: Domain terdaftar tautan M4
+    accepted_answers:
+    - jalanyuk.test
+    points: 5
+  - check_id: mod-w04.lab.act-02.vB.c08
+    name: Penilaian M4
+    expected: C
+    points: 5
+verdict_rule: C bila domain terdaftar tautan bukan domain resmi pengirim yang tercantum di fixture ATAU
+  pesan meminta kata sandi/PIN/OTP/data kartu; selain itu A

@@ -1,0 +1,50 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s04
+competency: comp-w04-threat-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s04-a
+  variant_id: mod-w04.theory.s04.vA
+  item_version: '1.0'
+  stem: Malware yang **mengunci berkas lalu meminta tebusan** disebut …
+  options:
+  - id: a
+    text: Phishing
+  - id: b
+    text: Ransomware
+  - id: c
+    text: Spyware
+  - id: d
+    text: Trojan
+  key: b
+  distractor_rationale:
+    a: Phishing adalah pesan/situs penyamar
+    c: Spyware memata-matai
+    d: Trojan tampak berguna tetapi menyembunyikan fungsi jahat
+  explanation: Ransomware mengunci berkas dan meminta tebusan.
+  option_order: urutan alami (kategori/baris tabel), tetap
+- item_id: item-w04-t-s04-b
+  variant_id: mod-w04.theory.s04.vB
+  item_version: '1.0'
+  stem: Malware yang **diam-diam memata-matai** dan mengirim aktivitasmu ke pihak lain disebut …
+  options:
+  - id: a
+    text: Phishing
+  - id: b
+    text: Ransomware
+  - id: c
+    text: Spyware
+  - id: d
+    text: Trojan
+  key: c
+  distractor_rationale:
+    a: Phishing adalah pesan/situs penyamar
+    b: Ransomware mengunci berkas
+    d: Trojan dicirikan oleh penyamaran sebagai program berguna
+  explanation: Spyware memata-matai pengguna.
+  option_order: urutan alami (kategori/baris tabel), tetap

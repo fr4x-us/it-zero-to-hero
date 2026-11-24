@@ -1,0 +1,58 @@
+# W4 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w04.theory.s10
+competency: comp-w04-auth-01
+format: TF-2
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w04-t-s10-a
+  variant_id: mod-w04.theory.s10.vA
+  item_version: '1.0'
+  stem: Pilih **semua** kebiasaan kata sandi yang baik.
+  options:
+  - id: a
+    text: Memakai frasa sandi panjang dari beberapa kata acak
+  - id: b
+    text: Memakai kata sandi yang sama untuk semua akun
+  - id: c
+    text: Menyimpan kata sandi di pengelola kata sandi
+  - id: d
+    text: Mengaktifkan MFA bila tersedia
+  - id: e
+    text: Memakai tanggal lahir agar mudah diingat
+  key:
+  - a
+  - c
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: Satu kebocoran membuka semua akun
+    e: Mudah ditebak
+  explanation: Panjang, disimpan di pengelola, dan MFA adalah kebiasaan baik.
+- item_id: item-w04-t-s10-b
+  variant_id: mod-w04.theory.s10.vB
+  item_version: '1.0'
+  stem: Pilih **semua** kebiasaan kata sandi yang baik.
+  options:
+  - id: a
+    text: Mengganti satu huruf dari sandi lama lalu memakainya di akun baru
+  - id: b
+    text: Memakai kata sandi berbeda untuk setiap akun penting
+  - id: c
+    text: Memilih kata sandi panjang (misalnya 12 karakter atau lebih) daripada yang pendek
+  - id: d
+    text: Membagikan OTP kepada petugas yang menelepon
+  - id: e
+    text: Menyimpan kata sandi di pengelola kata sandi
+  key:
+  - b
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    a: Variasi kecil mudah ditebak dari sandi lama yang bocor
+    d: OTP tidak pernah dibagikan
+  explanation: Unik, panjang, dan pengelola kata sandi adalah kebiasaan baik.
