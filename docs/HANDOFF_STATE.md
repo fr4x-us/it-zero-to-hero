@@ -9,7 +9,7 @@ di setiap PR batch.
 | Item | Nilai | Sumber |
 |---|---|---|
 | Tahap | PERSIAPAN; implementasi **belum diizinkan** | [`CLAUDE.md`](../CLAUDE.md), [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) |
-| `main` saat checkpoint ditulis | `df76c5f` (merge PR #25) | `git log` |
+| `main` saat checkpoint ditulis | `ab0103e` (merge PR #26) | `git log` |
 | Kode aplikasi / proyek Gradle / workflow CI / APK | Tidak ada | isi repositori |
 | Build atau test Android pernah dijalankan | **Belum pernah** | [QUALITY_GATES.md](QUALITY_GATES.md) EV-1 |
 
@@ -42,7 +42,7 @@ di setiap PR batch.
 | #23 | Pencatatan D-16–D-22; roadmap; lembar OP-4, CU-6; rencana produksi kurikulum; revisi F-01–F-06 | Merged 2026-11-24 sebagai `928e278` (di-merge Claude atas persetujuan eksplisit owner) |
 | #24 | Pencatatan D-23–D-25; lembar keputusan kurikulum; templat CB-0; tinjauan konsistensi | Merged 2026-11-24 sebagai `40ca205` (di-merge Claude atas persetujuan eksplisit owner) |
 | #25 | Pencatatan D-26–D-37; CB-0; konten W1; revisi kualitas W1 (F-01–F-23) | Merged 2026-11-24 sebagai `df76c5f` (head `f4cb173`; di-merge Claude atas otorisasi eksplisit owner) |
-| #26 | CB-0.5: D-38, W01-ACC, empat skill agen, PROJECT_MAP, protokol efisiensi token; revisi F-24–F-27 (hardening keamanan) | Terbuka, menunggu review ulang; **tidak di-merge Claude** |
+| #26 | CB-0.5: D-38, W01-ACC, empat skill agen, PROJECT_MAP, protokol efisiensi token; revisi F-24–F-27 (hardening keamanan) | Merged 2026-11-24 sebagai `ab0103e` (head `691ae87`; di-merge Claude atas otorisasi eksplisit owner, master prompt CB-1) |
 
 ## Aturan merge (permanen)
 
@@ -64,7 +64,8 @@ merge." untuk PR itu saja ([GITHUB_BRIDGE.md](GITHUB_BRIDGE.md) §5).
 | D-26–D-35 | OWNER APPROVED (2026-11-24); UW-26/UW-37 menunggu konten W2–W16 |
 | D-36–D-37 | OWNER APPROVED (2026-11-24): HF-A; XV-7–XV-14 + RX-A. UW-33 menunggu OD-5–OD-9, OD-11–OD-14 |
 | D-38, W01-ACC | OWNER APPROVED / ACCEPTED (2026-11-24): angka LX-2 = keluaran UW-12 (V); UW-36 COMPLETE. W1 = modul acuan (batas review independen diungkapkan) |
-| CB-0.5 | AUTHORIZED (2026-11-24): tepat empat skill; skill lain ON HOLD |
+| CB-0.5 | AUTHORIZED (2026-11-24): tepat empat skill; skill lain ON HOLD. **Diterima owner** (master prompt CB-1) dengan V03 saat itu NOT VERIFIED; V03 kemudian **PASS** di sesi baru |
+| CB-1 | **AUTHORIZED** (2026-11-24): produksi W2–W4 setelah V03 PASS; satu PR baru; tanpa merge otomatis; W5–W16 dan implementasi tidak diizinkan |
 | D-11 | **DEFERRED; IMPLEMENTATION NOT AUTHORIZED** |
 | PLANNING CLEAR | **NO** |
 | IMPLEMENTATION VERIFIED | **NO** |
@@ -93,18 +94,18 @@ Kontrak field: [AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTO
 
 | Field | Nilai |
 |---|---|
-| Tugas aktif dan lingkup | CB-0.5 — Agent Workflow & Token Optimization (otorisasi owner 2026-11-24). Dokumentasi + pemasangan empat skill saja |
-| Fase | Revisi PR #26 (F-24–F-27) selesai; menunggu review ulang ChatGPT |
-| Selesai | Merge PR #25; D-38, W01-ACC dicatat; UW-36 COMPLETE; empat skill dipasang; PROJECT_MAP; protokol TE-01–TE-14; CLAUDE.md; F-24 hook dihapus; F-25 `allowed-tools` dihapus; F-26 varian lokal PwF; F-27 validasi dikoreksi |
-| Sisa | Review independen PR #26; otorisasi merge owner; verifikasi aktivasi di sesi baru (setelah merge) |
-| Berkas relevan | `.claude/skills/{planning-with-files,verification-before-completion,systematic-debugging,receiving-code-review}/`, `docs/AGENT_SKILL_REGISTRY.md`, `docs/PROJECT_MAP.md`, `docs/AGENT_TOKEN_EFFICIENCY_PROTOCOL.md`, `docs/CB05_VALIDATION_REPORT.md`, `CLAUDE.md` |
-| Versi kerja | Branch `planning/cb-0-5-agent-workflow`; basis `main` = `df76c5fbf946e6e8d2ca9e8e87505454041623a3` (merge PR #25); versi terkini = head PR #26 di GitHub (lihat `git log origin/planning/cb-0-5-agent-workflow -1`); revisi sebelumnya yang direview: `102b7a4` |
-| Keputusan | D-38; W01-ACC; CB-0.5 diotorisasi |
-| Blocker | Lihat §Blocker. Aktivasi skill di sesi baru NOT VERIFIED |
-| Pendekatan gagal | (1) `Skill` sesaat setelah salin → "Unknown skill"; diulang hanya setelah skill muncul di daftar. (2) Mengandalkan skrip yang hilang untuk menonaktifkan hook PwF — ditolak review (F-24); diganti dengan menghapus deklarasi hook |
-| Bukti verifikasi | [CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md) |
-| Aksi berikutnya yang diizinkan | Tidak ada sampai owner mengirim otorisasi merge eksplisit untuk PR #26 atau instruksi revisi |
-| Kondisi berhenti | PR #26 diperbarui → STOP. Jangan merge, jangan mulai W2, jangan implementasi |
+| Tugas aktif dan lingkup | CB-1 — produksi modul W2, W3, W4 (otorisasi owner, master prompt 2026-11-24). Konten kurikulum + validasi dokumentasi saja; satu PR baru; tanpa merge |
+| Fase | Fase B selesai (V03 PASS). Fase D: produksi **W2** (modul aktif) |
+| Selesai | Fase A (PR #26 merged `ab0103e`, diverifikasi ulang); Fase B (empat skill dimuat di sesi baru `session_011Df1V7VYFZ1Fdwc9jRg7nK`; V03 PASS) |
+| Sisa | W2 → W3 → W4 (masing-masing: konten, validasi, `review.md`, checkpoint); pembaruan dokumen status; verifikasi akhir; satu PR; STOP |
+| Berkas relevan | `docs/CURRICULUM_TEMPLATES_CB0.md`, `docs/CURRICULUM_PRODUCTION_PLAN.md`, `docs/PROJECT_RUBRIC_DECISION_SHEETS.md` A.3, `docs/ASSESSMENT_FLOW_DECISION_SHEETS.md` A.4, `curriculum/mod-w01/` (acuan), `curriculum/mod-w02/`–`mod-w04/` (keluaran) |
+| Versi kerja | Branch `planning/cb1-w02-w04`; basis `main` = `ab0103e4954ead4ded6343d105d73a2729916cd6`; checkpoint terbaru = commit terakhir branch ini |
+| Keputusan | Owner menerima CB-0.5; CB-1 diotorisasi. LO rinci W2–W4 diturunkan penyusun dari topik CUR §2 (sama dengan praktik W1; tujuan rinci per minggu tetap PROPOSED, CU-1) |
+| Blocker | Tidak ada untuk W2–W4 (lab non-kode; CU-6-Q13 tidak relevan) |
+| Pendekatan gagal | — |
+| Bukti verifikasi | [CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md) §4 (V03); `curriculum/mod-w0N/review.md` per modul |
+| Aksi berikutnya yang diizinkan | Lanjutkan modul aktif dari berkas yang sudah ada di branch; jangan ulang modul yang sudah ber-`review.md` lengkap |
+| Kondisi berhenti | PR CB-1 dibuka → STOP. Jangan merge, jangan mulai W5, jangan implementasi. Butuh keputusan owner baru → simpan checkpoint dan STOP |
 
 ## Blocker
 

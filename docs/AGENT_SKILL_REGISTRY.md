@@ -19,8 +19,9 @@ Keberadaan berkas saja **bukan** bukti aktivasi.
 | receiving-code-review | `.claude/skills/receiving-code-review/` | **VERIFIED_ACTIVE** (sesi ini) | Identik upstream |
 
 "VERIFIED_ACTIVE (sesi ini)" = terdeteksi di daftar skill sesi Claude Code
-Cloud ini **dan** berhasil dimuat dengan alat `Skill`. Aktivasi di sesi baru
-**NOT VERIFIED** untuk keempatnya (§5).
+Cloud ini **dan** berhasil dimuat dengan alat `Skill`. Aktivasi di **sesi baru**
+(`session_011Df1V7VYFZ1Fdwc9jRg7nK`, setelah merge PR #26): **VERIFIED** untuk
+keempatnya (V03 PASS, [CB05_VALIDATION_REPORT.md](CB05_VALIDATION_REPORT.md) §4).
 
 ## 2. Asal dan versi (diamati 2026-11-24)
 
@@ -94,7 +95,7 @@ Frontmatter ketiganya hanya `name` dan `description` (tanpa `hooks`,
 | SK-07 | receiving-code-review | Menyarankan balasan thread via `gh api` | Diterima | Aturan proyek menang (komentar GitHub hanya atas permintaan owner) |
 | SK-08 | Semua | Tanpa symlink, tanpa Unicode tersembunyi (Cf/Co/Cs), tanpa perintah jaringan atau eksekusi jarak jauh | — | Diperiksa ulang setelah modifikasi |
 | SK-09 | PwF | Tautan menggantung ke `plan-inventory.md` | **Ditutup (F-26)** | Tautan dihapus di varian lokal; 0 tautan rusak di repositori |
-| SK-10 | PwF | Hook dari pemuatan varian **upstream** sebelumnya mungkin masih terdaftar dalam sesi yang sama sampai sesi berakhir (perilaku host tidak dapat diamati) | Sisa, terbatas sesi ini | Tidak ada keluaran hook yang teramati; skrip tidak ada; sesi baru memuat varian lokal tanpa hook |
+| SK-10 | PwF | Hook dari pemuatan varian **upstream** sebelumnya mungkin masih terdaftar dalam sesi yang sama sampai sesi berakhir (perilaku host tidak dapat diamati) | **Ditutup** (sesi baru) | Sesi baru memuat varian lokal tanpa hook; tidak ada salinan upstream di `~/.claude` (laporan §4) |
 
 ## 5. Aktivasi
 
@@ -105,10 +106,11 @@ Frontmatter ketiganya hanya `name` dan `description` (tanpa `hooks`,
 | Dimuat (`Skill`) | Ya — isi varian lokal dimuat setelah modifikasi | Ya (sebelum modifikasi PwF; berkas tidak berubah sejak itu) |
 | Kompatibilitas mode instruksi | Ya (inspeksi: tidak ada instruksi yang membutuhkan alat yang tidak tersedia) | Ya, dengan SK-06/SK-07 |
 | Perilaku alur kerja nyata | Sebagian: checkpoint HANDOFF dipakai dan diperbarui di revisi ini | verification-before-completion dipakai sebelum klaim; lainnya disimulasikan (V07, V09) |
-| Aktivasi di sesi baru | **NOT VERIFIED** | **NOT VERIFIED** |
+| Aktivasi di sesi baru | **VERIFIED** (2026-11-24; laporan §4) | **VERIFIED** (2026-11-24; laporan §4) |
 
-Langkah verifikasi tersisa: di sesi baru setelah merge, pastikan keempat
-skill ada di daftar skill dan `planning-with-files` memuat varian lokal.
+Verifikasi sesi baru selesai (V03 PASS): keempat skill ada di daftar skill
+dan `planning-with-files` memuat varian lokal. Sisa kompatibilitas: SK-06,
+SK-07 (diterima); hook milik host tidak dapat diaudit dari sesi.
 
 Pemasangan tingkat repositori; tidak ada perubahan pengaturan akun global,
 `settings.json`, plugin, atau hook.
