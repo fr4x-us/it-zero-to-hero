@@ -570,7 +570,7 @@ D-12–D-15 di-merge.
 | UW-18 | **COMPLETE** | "Keputusan tertulis" | Keputusan D-15 (DM-1, Force Dark nonaktif, dynamic color nonaktif). Perilaku perangkat → UW-56 |
 | UW-36 | **BLOCKED** (diperbarui) | CU-2, CU-3, CU-5–CU-7, CU-9, CU-11 terisi | CU-2 diputuskan (D-13); CU-9 sebagian (capstone = mini-project modul 16). Sisa: CU-3, CU-5, CU-6, CU-7, CU-11, rubrik capstone |
 | UW-11 | **BLOCKED** (diperbarui) | "Aturan tertulis" | Kelulusan modul (D-04), representasi (D-12), penggabungan aktivitas dalam komponen (D-13) tertulis. Sisa: UW-11-Q1 — perlukah skor numerik tingkat program (D-04 melarang rata-rata baru) |
-| UW-15 | **BLOCKED** (menunggu owner) | "Parameter tertulis + bukti" | Lembar [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md); OD-1-Q1–Q5 |
+| UW-15 | **BLOCKED** (menunggu owner) | "Parameter tertulis + bukti" | Lembar [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md); OD-1-Q1–Q6 (rujukan dikoreksi 2026-11-24; diputuskan D-16, lihat §16) |
 | UW-16 | **BLOCKED** (menunggu owner) | "Keputusan tertulis" | Lembar [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md); OD-2-Q1–Q5 |
 | UW-43 | **BLOCKED** (menunggu owner) | "Rujukan valid" | Lembar [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md); rekomendasi Opsi B. **Koreksi:** hanya TD:5 yang memuat path salah (bukan TD:68) |
 | UW-56 | **NOT VERIFIED** (baru) | Bukti EV untuk NUM:NA-1–NA-6 dan ACC:AT-1–AT-6 di implementasi | Verifikasi keputusan D-12–D-15 di aplikasi nyata. Oleh: T, setelah izin implementasi |
@@ -630,6 +630,104 @@ adalah hasil verifikasi. D-10 dan D-11 tidak berubah.
 | PC-8 | Dokumentasi konsisten | PARTIAL — UW-43 |
 | PC-9, PC-10 | — | YES |
 | PC-11 | Seluruh butir jalur P selesai atau ditetapkan owner sebagai tidak wajib | NO — 22 butir P belum COMPLETE |
+
+**PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
+prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
+PY:F-01–F-15: **NOT VERIFIED**.
+
+## 16. Pembaruan status — D-16–D-22 (2026-11-24)
+
+Basis: `main` = `bcecdae` (merge PR #22). Berlaku saat PR pencatatan
+D-16–D-22 di-merge. Keputusan owner tidak otomatis menutup butir; setiap
+perubahan diperiksa terhadap AC di §3.
+
+### 16.1 Perubahan status
+
+| ID | Sebelum | Sesudah | AC (§3) | Bukti / alasan |
+|---|---|---|---|---|
+| UW-11 | BLOCKED | **COMPLETE** | "Aturan tertulis" | D-19: tanpa skor/rata-rata/ambang program; program = 16 modul lulus + capstone memenuhi rubrik; aturan modul (D-04, D-12, D-13) tertulis |
+| UW-16 | BLOCKED | **COMPLETE** | "Keputusan tertulis" | D-17 (I-1, risiko residual diterima) |
+| UW-43 | BLOCKED | **COMPLETE** | "Rujukan valid" | D-18 Opsi B; erratum ER-1 di DECISIONS_LOG; TD tidak diubah; file di root; tautan relatif 0 rusak (UW43 §5) |
+| UW-15 | BLOCKED | **NOT VERIFIED** (jalur V, usulan — RM-Q1) | "Parameter tertulis + bukti" (tetap) | Keputusan algoritma/KDF/batas minimum tertulis (D-16). Sisa: nilai parameter final dan batas maksimum + bukti dari pengukuran perangkat yang **diizinkan terpisah** (D-16 Q3). Sisa **perencanaan** OD-1 dipindah eksplisit ke UW-33 (OD-11–OD-14, §16.5). Restore produksi nonaktif sampai RR-1–RR-8 (OD1 §11) |
+| UW-21 | BLOCKED | **DEFERRED** (M) | "Keputusan tertulis" (tetap) | D-22; bukan penyelesaian |
+| UW-38 | BLOCKED | **DEFERRED** (M) | AP-3–AP-5 (tetap) | D-22 |
+| UW-40 | BLOCKED | **DEFERRED** (M) | (tetap) | D-22 |
+| UW-26 | OPEN | OPEN | CUR:CC-08 | Lembar OP-4 dibuat; keputusan belum ada |
+| UW-36 | BLOCKED | BLOCKED | CU terkait terisi | Lembar CU-6 dibuat; CU-3, CU-5, CU-6, CU-7, CU-9, CU-11 belum diputuskan |
+| UW-37 | OPEN | OPEN (NOT STARTED) | CUR:CC-01–CC-11 | Wajib di jalur P (D-21); rencana produksi dibuat, konten 0/64 |
+| UW-33 | BLOCKED | BLOCKED | OD-5–OD-9 **dan** OD-11–OD-14 (perluasan, RM-Q1) | Ditambah: retensi dan penyimpanan log restore (D-17); serialisasi envelope (OD-11), kebijakan KDF cadangan (OD-12), protokol pengukuran (OD-13), review dependensi BC (OD-14) |
+
+Tidak ada butir baru di batch ini.
+
+### 16.2 Jumlah per status (56 butir)
+
+| Status | §15.2 (sebelum) | §16.2 (sesudah) | Butir |
+|---|---|---|---|
+| COMPLETE | 22 | **25** | UW-01, UW-03–UW-09, UW-11, UW-16–UW-20, UW-22, UW-42–UW-51 |
+| OPEN | 4 | **4** | UW-12, UW-26, UW-37, UW-52 |
+| BLOCKED | 26 | **19** | UW-02, UW-10, UW-14, UW-23–UW-25, UW-27–UW-36, UW-39, UW-41, UW-53 |
+| DEFERRED | — | **3** | UW-21, UW-38, UW-40 |
+| NOT VERIFIED | 4 | **5** | UW-13, UW-15, UW-54, UW-55, UW-56 |
+| **Total** | 56 | **56** | |
+
+### 16.3 Jalur (D-20, D-21, D-22)
+
+| Jalur | Butir belum selesai | Jumlah |
+|---|---|---|
+| P | UW-14, UW-23, UW-24, UW-25, UW-26, UW-27, UW-28, UW-29, UW-30, UW-31, UW-32, UW-33, UW-34, UW-35, UW-36, UW-37, UW-41, UW-53 | 18 |
+| M | UW-21, UW-38, UW-40 | 3 |
+| G | UW-02, UW-10 | 2 |
+| V | UW-12, UW-13, UW-15, UW-39, UW-52, UW-54, UW-55, UW-56 | 8 |
+
+Kemajuan jalur P: 25 selesai dari 43 butir P (dihitung per butir, bukan
+per beban; konten UW-37 = 0/64 komponen). Rincian per butir:
+[PLANNING_ROADMAP.md](PLANNING_ROADMAP.md).
+
+### 16.4 Checklist PLANNING CLEAR
+
+| # | Kriteria | Status |
+|---|---|---|
+| PC-1–PC-5 | (lihat §12) | YES (PC-3 provisional, NOT VERIFIED) |
+| PC-6 | Aturan model data penilaian | **YES** — D-04, D-12, D-13, D-19 |
+| PC-7 | Rencana, ambang, dan keamanan prototipe O-04 | YES — D-10, D-08 |
+| PC-8 | Dokumentasi konsisten | **YES** — UW-43 selesai (D-18), UW-44/UW-45 selesai; tautan 0 rusak |
+| PC-9, PC-10 | — | YES |
+| PC-11 | Seluruh butir jalur P selesai (D-20, D-21) | **NO** — 18 butir P belum selesai, termasuk UW-37 (0/64 komponen) |
+
+**PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
+prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.
+PY:F-01–F-15: **NOT VERIFIED**.
+
+### 16.5 Revisi setelah review PR #23 (F-01–F-06)
+
+| Temuan | Perbaikan |
+|---|---|
+| F-01 | Ketergantungan melingkar kurikulum dicabut: konten W9–W12 dapat diterima sebagai perencanaan sebelum runtime dieksekusi; eksekusi tetap NOT VERIFIED; UW-21 tidak memblokir penerimaan itu; bila runtime gagal setelah izin, implementasi terdampak dihentikan, kurikulum diubah hanya atas keputusan owner, lalu divalidasi ulang ([PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §5.2, RM:RV-1–RV-6). D-21 tidak dikurangi |
+| F-02 | OD-1 dipisah: keputusan D-16; sisa perencanaan → UW-33 (OD-5–OD-9, OD-11–OD-14); verifikasi → UW-15; syarat rilis restore RR-1–RR-8 ([OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) §11). Pemindahan UW-15 ke V menunggu RM-Q1 |
+| F-03 | Lembar OP-4: aturan skor deterministik CE-S1–CE-S5, adjacency maksimum terhadap satu urutan diterima lengkap, validasi CE-V1–CE-V6, contoh diperiksa ulang; contoh pencocokan lama dikoreksi |
+| F-04 | Lembar CU-6: anggaran eksekusi vs ambang D-10, kode hasil, penyebab pelajar vs infrastruktur, output > 64 KB selalu gagal, eksekusi tidak lengkap, pelestarian poin, penyelesaian attempt dan XP, ketergantungan OP-7/OP-8/OP-10 |
+| F-05 | Seluruh 56 butir (termasuk COMPLETE) diklasifikasi P/M/G/V dengan alasan ([PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §2); diperiksa otomatis: 56 ID unik, tanpa duplikat/hilang |
+| F-06 | Ketergantungan produksi kurikulum lengkap di roadmap §5.3; alokasi jam tetap PROPOSED (CU2-O3) |
+
+Jumlah per status **tidak berubah** dari §16.2: 25 COMPLETE, 4 OPEN,
+19 BLOCKED, 3 DEFERRED, 5 NOT VERIFIED (56).
+
+Klasifikasi jalur seluruh register (56):
+
+| Jalur | COMPLETE | Belum | Total |
+|---|---|---|---|
+| P | 25 | 18 | 43 |
+| M | 0 | 3 | 3 |
+| G | 0 | 2 | 2 |
+| V | 0 | 8 | 8 |
+
+- Kemajuan register: 25/56 butir COMPLETE (44,6%).
+- Kemajuan jalur P: 25/43 butir (58,1%); bila RM-Q1(a) ditolak, 25/44 (56,8%).
+- Seluruh 25 butir COMPLETE ada di jalur P dan dipenuhi keputusan owner atau
+  pekerjaan dokumentasi; tidak ada verifikasi teknis aplikasi yang dihitung
+  sebagai penyelesaian perencanaan.
+- Kedua angka adalah jumlah butir, **bukan** beban kerja dan **bukan**
+  kesiapan aplikasi. UW-37 = 0/64 komponen.
 
 **PLANNING CLEAR: NO.** **IMPLEMENTATION VERIFIED: NO.** D-10: eksekusi
 prototipe **NOT AUTHORIZED**. D-11: implementasi **DEFERRED**.

@@ -359,5 +359,24 @@ tetap OPEN.
 
 | Butir | Lembar | Status |
 |---|---|---|
-| OD-1 (algoritma, KDF, envelope) | [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) | AWAITING OWNER |
-| OD-2 (pemalsuan, integritas akademik) | [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) | AWAITING OWNER |
+| OD-1 (algoritma, KDF, envelope) | [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) | *(Historis: AWAITING OWNER.)* Diputuskan D-16; verifikasi NOT VERIFIED |
+| OD-2 (pemalsuan, integritas akademik) | [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) | *(Historis: AWAITING OWNER.)* Diputuskan D-17 |
+
+## 14. Keputusan owner D-16 dan D-17 (2026-11-24)
+
+| Butir di dokumen ini | Status terkini |
+|---|---|
+| OD-1 (kandidat C-1–C-4, §4) | **Diputuskan D-16**: AES-256-GCM + Argon2id (BC, bersyarat) dengan cadangan PBKDF2 ≥ 600.000; envelope OD1 §5; H-1–H-7, KV-1–KV-8. Restore produksi nonaktif sampai batas maksimum KDF disetujui dan terverifikasi |
+| OD-2 (T-03, risiko pemalsuan) | **Diputuskan D-17**: I-1; risiko residual diterima; penanda asal-usul dan log restore persisten (informatif); tanpa I-2/I-3 di V1; rapor = catatan belajar mandiri |
+| OD-3, OD-4, OD-10 | Diputuskan sebelumnya (D-03, D-07, D-05) |
+| OD-5–OD-9 | Tetap OPEN (UW-33), termasuk retensi dan penyimpanan log restore; ditambah OD-11–OD-14 (§15) |
+| G-01–G-12, F-01–F-12 di dokumen ini; OD1:CT-1–CT-12 | **NOT VERIFIED** |
+
+## 15. Pemisahan OD-1 perencanaan/verifikasi (revisi review PR #23)
+
+Sisa perencanaan OD-1 dicatat sebagai OD-11 (serialisasi envelope), OD-12
+(kebijakan KDF cadangan), OD-13 (protokol pengukuran), OD-14 (review
+dependensi Bouncy Castle), bersama OD-5–OD-9, di UW-33 (jalur P). Nilai
+parameter final, batas maksimum, dan CT-1–CT-12 tetap UW-15 (jalur V,
+NOT VERIFIED). Syarat rilis restore produksi RR-1–RR-8:
+[OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) §11.

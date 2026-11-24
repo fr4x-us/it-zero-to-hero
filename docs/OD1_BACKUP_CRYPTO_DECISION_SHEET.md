@@ -1,7 +1,8 @@
 # IT ZERO → HERO — Decision Sheet OD-1: Kriptografi Backup Terenkripsi
 
-Status: **OPEN — menunggu keputusan owner** · dokumentasi saja · tanpa kode,
-prototipe, atau benchmark. Tanggal: **2026-11-24**. Basis: `main` =
+Status: **DIPUTUSKAN OWNER — D-16 (2026-11-24)**, bersyarat verifikasi teknis; lihat §10 ·
+dokumentasi saja · tanpa kode, prototipe, atau benchmark. Implementasi kripto
+**NOT VERIFIED**; CT-1–CT-12 **NOT VERIFIED**. Tanggal: **2026-11-24**. Basis: `main` =
 `b789e9a` (merge PR #21).
 
 Rekomendasi di §7 adalah saran teknis, **bukan** keputusan. Tidak ada
@@ -147,7 +148,7 @@ Risiko residual: kekuatan backup tetap bergantung pada kekuatan kata sandi
 | CT-9 | File sementara terhapus setelah sukses, gagal, dan process death |
 | CT-10 | Waktu dan memori KDF di perangkat target dalam batas yang disetujui owner |
 
-## 9. Pertanyaan untuk owner
+## 9. Pertanyaan untuk owner — *historis, dijawab D-16*
 
 1. **OD-1-Q1:** Setujui AES-256-GCM (nonce acak 96-bit, tag 128-bit, header sebagai AAD) sebagai AEAD?
 2. **OD-1-Q2:** Setujui Argon2id via Bouncy Castle sebagai KDF utama (bersyarat review dependensi dan uji), dengan PBKDF2-HMAC-SHA256 ≥ 600.000 iterasi sebagai cadangan?
@@ -156,4 +157,62 @@ Risiko residual: kekuatan backup tetap bergantung pada kekuatan kata sandi
 5. **OD-1-Q5:** Setujui penanganan H-1–H-7 dan aturan KV-1–KV-8 (termasuk: tanpa downgrade diam-diam, tanpa retry KDF lain, tanpa plaintext sebelum autentikasi)?
 6. **OD-1-Q6:** Setujui bahwa KDF cadangan hanya untuk ekspor baru di bawah kebijakan yang disetujui owner (KV-6)?
 
-Status: **AWAITING OWNER**. OD-1 (UW-15) tetap **BLOCKED**.
+~~Status: AWAITING OWNER. OD-1 (UW-15) tetap BLOCKED.~~ *(Historis — dijawab D-16 pada 2026-11-24; lihat §10.)*
+
+## 10. Keputusan owner — D-16 (2026-11-24)
+
+| Butir | Keputusan |
+|---|---|
+| OD-1-Q1 | AES-256-GCM; nonce acak 96-bit; tag 128-bit; seluruh header envelope sebagai AAD; salt acak baru dari CSPRNG per ekspor |
+| OD-1-Q2 | KDF utama Argon2id via Bouncy Castle, **bersyarat** review dependensi, kompatibilitas Android, dan verifikasi kinerja; cadangan PBKDF2-HMAC-SHA256 minimum 600.000 iterasi |
+| OD-1-Q3 | Minimum Argon2id 19 MiB, t=2, p=1. Parameter final dan batas maksimum lewat pengukuran perangkat yang diizinkan terpisah. **Restore produksi tetap nonaktif** sampai batas tersebut disetujui dan terverifikasi |
+| OD-1-Q4 | Struktur envelope §5 sebagai baseline format; detail serialisasi dan parameter yang belum diputuskan tetap OPEN |
+| OD-1-Q5 | H-1–H-7 dan KV-1–KV-8 disetujui; validasi ketat header tak tepercaya sebelum alokasi sumber daya dan KDF; tanpa downgrade keamanan diam-diam; tanpa retry KDF lain setelah autentikasi gagal; tanpa parsing, tampilan, staging, atau penerapan plaintext sebelum autentikasi berhasil; data aktif dipertahankan bila validasi atau autentikasi gagal |
+| OD-1-Q6 | KDF cadangan hanya untuk ekspor baru di bawah kebijakan yang disetujui; backup lama didekripsi dengan format dan KDF yang dinyatakan dan terautentikasi |
+
+Yang masih harus diverifikasi (jalur V, setelah izin): review dependensi
+dan kompatibilitas Bouncy Castle di Android API 29+, pengukuran KDF,
+batas maksimum, CT-1–CT-12.
+
+## 11. Pemisahan perencanaan dan verifikasi (revisi review PR #23, F-02)
+
+Bagian ini tidak mengubah D-16. Rincian jalur:
+[PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §3.
+
+### 11.1 Sisa perencanaan (jalur P, dilacak di UW-33)
+
+| ID | Kebutuhan | Asal |
+|---|---|---|
+| OD-5 | Format payload P-A / P-B | BKP §5.2 |
+| OD-6 | Aturan kata sandi (panjang minimum, pemeriksaan, pesan) | BKP:T-01 |
+| OD-7 | Kebijakan batas sumber daya: jenis batas (ukuran file, memori/iterasi KDF yang dinyatakan header), titik pemeriksaan sebelum alokasi dan KDF (H-1–H-7), perilaku penolakan. **Nilai** angka = UW-15 | BKP:F-10, F-11 |
+| OD-8 | Retensi snapshot pra-restore dan log restore (D-17) | B01 M-15, D-17 |
+| OD-9 | Attempt `IN_PROGRESS` saat restore | BKP:I-06 |
+| OD-11 | Serialisasi envelope: tata letak byte, encoding field, aturan versi, perlakuan field tak dikenal | D-16 OD-1-Q4 (OPEN) |
+| OD-12 | Kebijakan kapan KDF cadangan (PBKDF2) dipakai untuk ekspor baru | D-16 OD-1-Q2, Q6 |
+| OD-13 | Rencana dan protokol pengukuran KDF (perangkat, prosedur, kriteria terima) untuk diizinkan owner | D-16 OD-1-Q3 |
+| OD-14 | Review dokumen dependensi Bouncy Castle (lisensi, versi, ukuran, dependensi transitif) | D-16 OD-1-Q2 |
+
+### 11.2 Verifikasi teknis (jalur V, UW-15)
+
+Kompatibilitas Bouncy Castle di Android API 29+; pengukuran KDF di perangkat
+yang diizinkan (protokol OD-13); nilai parameter final dan batas maksimum,
+disetujui owner setelah pengukuran; CT-1–CT-12 dengan bukti EV. Tidak ada
+pengukuran atau benchmark yang dijalankan.
+
+### 11.3 Syarat rilis restore produksi
+
+Restore produksi tetap **nonaktif** (D-16 Q3) sampai semua terpenuhi:
+
+| ID | Syarat |
+|---|---|
+| RR-1 | OD-5–OD-9 dan OD-11–OD-14 diputuskan (UW-33) |
+| RR-2 | Review dependensi Bouncy Castle diterima (OD-14) dan kompatibilitas API 29+ terverifikasi, atau owner menyetujui kebijakan cadangan (OD-12) |
+| RR-3 | Pengukuran KDF dijalankan setelah izin terpisah, sesuai OD-13 |
+| RR-4 | Parameter final dan batas maksimum disetujui owner berdasarkan RR-3 |
+| RR-5 | CT-1–CT-12 PASS dengan bukti EV |
+| RR-6 | Implementasi diizinkan (UW-02) |
+| RR-7 | Perilaku restore D-03 (M-2 default, M-1 eksplisit, snapshot pra-restore) dan log restore D-17 terverifikasi |
+| RR-8 | Owner menyetujui pengaktifan restore produksi secara eksplisit |
+
+Status: RR-1–RR-8 **belum terpenuhi**.

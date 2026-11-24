@@ -18,6 +18,7 @@ Offline-first Android IT Learning Academy: aplikasi Android native
 | 3 | [`docs/HANDOFF_STATE.md`](docs/HANDOFF_STATE.md) | Status terkini, blocker, langkah berikutnya |
 | 4 | [`docs/OWNER_DECISION_CHECKLIST.md`](docs/OWNER_DECISION_CHECKLIST.md) | Keputusan P0 yang menunggu owner |
 | 5 | [`docs/BATCH_01_10_UNFINISHED_AUDIT.md`](docs/BATCH_01_10_UNFINISHED_AUDIT.md) | Register pekerjaan belum selesai |
+| 5a | [`docs/PLANNING_ROADMAP.md`](docs/PLANNING_ROADMAP.md) | Roadmap perencanaan tersisa (jalur P/M/G/V) |
 | 6 | [`docs/DECISIONS_LOG.md`](docs/DECISIONS_LOG.md) | Sumber keputusan per batch dan daftar dokumen batch |
 | 7 | [`docs/GITHUB_BRIDGE.md`](docs/GITHUB_BRIDGE.md) | Alur kerja owner, ChatGPT, Claude, dan GitHub |
 
@@ -33,9 +34,9 @@ Offline-first Android IT Learning Academy: aplikasi Android native
 | Presisi angka penilaian (UW-22, diputuskan D-12) | [`docs/NUMERIC_PRECISION_DECISION_SHEET.md`](docs/NUMERIC_PRECISION_DECISION_SHEET.md) |
 | Struktur komponen per modul (CU-2, diputuskan D-13) | [`docs/CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md`](docs/CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) |
 | Kontras palet dan dark mode (UO-1/UO-2, diputuskan D-14/D-15) | [`docs/ACCESSIBILITY_COLOR_DECISION_SHEET.md`](docs/ACCESSIBILITY_COLOR_DECISION_SHEET.md) |
-| Kriptografi backup (OD-1, menunggu owner) | [`docs/OD1_BACKUP_CRYPTO_DECISION_SHEET.md`](docs/OD1_BACKUP_CRYPTO_DECISION_SHEET.md) |
-| Pemalsuan backup dan integritas akademik (OD-2, menunggu owner) | [`docs/OD2_BACKUP_INTEGRITY_DECISION_SHEET.md`](docs/OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) |
-| Konsistensi path Batch 01 (UW-43, menunggu owner) | [`docs/UW43_PATH_CONSISTENCY_DECISION_SHEET.md`](docs/UW43_PATH_CONSISTENCY_DECISION_SHEET.md) |
+| Kriptografi backup (OD-1, diputuskan D-16; verifikasi NOT VERIFIED) | [`docs/OD1_BACKUP_CRYPTO_DECISION_SHEET.md`](docs/OD1_BACKUP_CRYPTO_DECISION_SHEET.md) |
+| Pemalsuan backup dan integritas akademik (OD-2, diputuskan D-17) | [`docs/OD2_BACKUP_INTEGRITY_DECISION_SHEET.md`](docs/OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) |
+| Konsistensi path Batch 01 (UW-43, diputuskan D-18) | [`docs/UW43_PATH_CONSISTENCY_DECISION_SHEET.md`](docs/UW43_PATH_CONSISTENCY_DECISION_SHEET.md) |
 | Backup (Batch 06) | [`docs/ENCRYPTED_BACKUP_RESTORE_SPEC.md`](docs/ENCRYPTED_BACKUP_RESTORE_SPEC.md) |
 | Kalender Jepang (Batch 07) | [`docs/JAPAN_CALENDAR_HOLIDAY_SPEC.md`](docs/JAPAN_CALENDAR_HOLIDAY_SPEC.md) |
 | UI dan aksesibilitas (Batch 08) | [`docs/UI_ACCESSIBILITY_VISUAL_SPEC.md`](docs/UI_ACCESSIBILITY_VISUAL_SPEC.md) |
@@ -44,6 +45,9 @@ Offline-first Android IT Learning Academy: aplikasi Android native
 | Quality gates | [`docs/QUALITY_GATES.md`](docs/QUALITY_GATES.md) |
 | Lingkungan dan rencana CI | [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md) |
 | Riwayat perencanaan (snapshot) | [`docs/PLANNING_HISTORY.md`](docs/PLANNING_HISTORY.md) |
+| Penilaian penjelasan konsep (OP-4, menunggu owner) | [`docs/OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md`](docs/OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md) |
+| Penilaian lab (CU-6, menunggu owner) | [`docs/CU6_LAB_SCORING_DECISION_SHEET.md`](docs/CU6_LAB_SCORING_DECISION_SHEET.md) |
+| Rencana produksi kurikulum (UW-37) | [`docs/CURRICULUM_PRODUCTION_PLAN.md`](docs/CURRICULUM_PRODUCTION_PLAN.md) |
 
 ## Cara berkontribusi
 

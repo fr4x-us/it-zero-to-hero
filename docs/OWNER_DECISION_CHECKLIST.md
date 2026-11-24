@@ -3,7 +3,7 @@
 Status: D-01 **APPROVED** · D-02–D-09 **OWNER APPROVED** (tunduk pada
 verifikasi yang tersisa) · D-10 **PLANNING APPROVED; EXECUTION NOT
 AUTHORIZED** · D-11 **DEFERRED; IMPLEMENTATION NOT AUTHORIZED** · D-12–D-15
-**OWNER APPROVED** (2026-11-24; verifikasi implementasi NOT VERIFIED) · tidak
+**OWNER APPROVED** (2026-11-24; verifikasi implementasi NOT VERIFIED) · D-16–D-22 **OWNER APPROVED** (2026-11-24; D-16 bersyarat verifikasi teknis) · tidak
 ada keputusan yang diisi atas nama owner · **PLANNING CLEAR: NO** ·
 **IMPLEMENTATION VERIFIED: NO**.
 Tanggal: **2026-11-23**. Basis awal: `main` = `5931ece` (merge PR #16);
@@ -250,18 +250,18 @@ rekomendasi dipertahankan sebagai catatan historis.
 
 | ID | Pertanyaan | Rekomendasi teknis | Lembar keputusan | Keputusan final |
 |---|---|---|---|---|
-| UW-22-Q1 | Representasi skor | NP-4 (integer rasional dari poin mentah) | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) §8 || D-12: NP-4 disetujui |
-| UW-22-Q2 | Batas poin maksimum per komponen per attempt | `max ≤ 10.000` | idem || D-12: `max ≤ 10.000` disetujui |
-| UW-22-Q3 | Tie skor sama | Attempt paling awal | idem || D-12: attempt paling awal; semua attempt disimpan |
-| UW-22-Q4 | Presisi tampilan | 2 desimal dibulatkan ke bawah + status teks | idem || D-12: 2 desimal dibulatkan ke bawah + status lulus/belum lulus eksplisit |
-| CU-2-Q1 | Keempat komponen di setiap modul | Opsi A | [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) §7 || D-13: keempat komponen di semua 16 modul (30/40/20/10) |
-| CU-2-Q2 | Capstone vs modul 16 | Tidak ada rekomendasi; keputusan produk | idem || D-13: capstone = mini-project modul 16 dengan rubrik capstone khusus |
-| CU-2-Q3 | Beberapa aktivitas dalam satu komponen | Poin dijumlah (sejalan NP-4) | idem || D-13: jumlahkan poin diperoleh dan poin maksimum |
-| UO-1-Q1 | Teks kecil `#000000` di atas ungu; `#000000` atau `#1C1B1F` di atas biru, hijau, kuning, merah muda (hanya pasangan ≥ 4,5:1; `#1C1B1F` di atas ungu 4,03 gagal) | Ya | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) §8 || D-14 disetujui |
-| UO-1-Q2 | Varian turunan untuk teks berwarna kecil | Ya (warna merek tetap) | idem || D-14 disetujui (lima warna merek tetap) |
-| UO-1-Q3 | Teks putih pada ungu (4,25) hanya untuk teks besar (≥ 18sp, atau tebal ≥ 14sp); teks tebal < 14sp tetap `#000000` | Ya | idem || D-14 disetujui |
-| UO-2-Q1 | Dark mode | DM-1 (terang saja, Force Dark nonaktif) untuk V1 | idem || D-15: DM-1; Force Dark otomatis dinonaktifkan |
-| UO-2-Q2 | Material 3 tanpa dynamic color | Ya | idem || D-15: dynamic color dinonaktifkan |
+| UW-22-Q1 | Representasi skor | NP-4 (integer rasional dari poin mentah) | [NUMERIC_PRECISION_DECISION_SHEET.md](NUMERIC_PRECISION_DECISION_SHEET.md) §8 | D-12: NP-4 disetujui |
+| UW-22-Q2 | Batas poin maksimum per komponen per attempt | `max ≤ 10.000` | idem | D-12: `max ≤ 10.000` disetujui |
+| UW-22-Q3 | Tie skor sama | Attempt paling awal | idem | D-12: attempt paling awal; semua attempt disimpan |
+| UW-22-Q4 | Presisi tampilan | 2 desimal dibulatkan ke bawah + status teks | idem | D-12: 2 desimal dibulatkan ke bawah + status lulus/belum lulus eksplisit |
+| CU-2-Q1 | Keempat komponen di setiap modul | Opsi A | [CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md](CU2_ASSESSMENT_STRUCTURE_DECISION_SHEET.md) §7 | D-13: keempat komponen di semua 16 modul (30/40/20/10) |
+| CU-2-Q2 | Capstone vs modul 16 | Tidak ada rekomendasi; keputusan produk | idem | D-13: capstone = mini-project modul 16 dengan rubrik capstone khusus |
+| CU-2-Q3 | Beberapa aktivitas dalam satu komponen | Poin dijumlah (sejalan NP-4) | idem | D-13: jumlahkan poin diperoleh dan poin maksimum |
+| UO-1-Q1 | Teks kecil `#000000` di atas ungu; `#000000` atau `#1C1B1F` di atas biru, hijau, kuning, merah muda (hanya pasangan ≥ 4,5:1; `#1C1B1F` di atas ungu 4,03 gagal) | Ya | [ACCESSIBILITY_COLOR_DECISION_SHEET.md](ACCESSIBILITY_COLOR_DECISION_SHEET.md) §8 | D-14 disetujui |
+| UO-1-Q2 | Varian turunan untuk teks berwarna kecil | Ya (warna merek tetap) | idem | D-14 disetujui (lima warna merek tetap) |
+| UO-1-Q3 | Teks putih pada ungu (4,25) hanya untuk teks besar (≥ 18sp, atau tebal ≥ 14sp); teks tebal < 14sp tetap `#000000` | Ya | idem | D-14 disetujui |
+| UO-2-Q1 | Dark mode | DM-1 (terang saja, Force Dark nonaktif) untuk V1 | idem | D-15: DM-1; Force Dark otomatis dinonaktifkan |
+| UO-2-Q2 | Material 3 tanpa dynamic color | Ya | idem | D-15: dynamic color dinonaktifkan |
 
 ## Keputusan owner D-12–D-15 (2026-11-24)
 
@@ -310,24 +310,59 @@ setelah PR pencatatan di-merge. Verifikasi pada implementasi tetap
 
 ## Antrean keputusan berikutnya — disiapkan 2026-11-24
 
+*Historis:* semula AWAITING OWNER; seluruh butir dijawab owner pada
+2026-11-24 (D-16–D-22). Kolom rekomendasi dipertahankan sebagai catatan.
+
+| ID | Pertanyaan | Rekomendasi teknis | Lembar keputusan | Keputusan final |
+|---|---|---|---|---|
+| OD-1-Q1 | AEAD | AES-256-GCM, nonce acak 96-bit, tag 128-bit, header sebagai AAD | [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) §9 | D-16 |
+| OD-1-Q2 | KDF | Argon2id (Bouncy Castle, bersyarat review/uji); cadangan PBKDF2-HMAC-SHA256 ≥ 600.000 iterasi | idem | D-16 (Argon2id bersyarat; PBKDF2 ≥ 600.000 cadangan) |
+| OD-1-Q3 | Parameter KDF | Minimum OWASP sebagai batas minimum; batas maksimum difinalkan dari pengukuran sebelum restore produksi diaktifkan (KV-2, KV-3) | idem | D-16 |
+| OD-1-Q4 | Envelope | Struktur §5 dengan header sebagai AAD | idem | D-16 (detail serialisasi OPEN) |
+| OD-1-Q5 | Penanganan kasus dan validasi | H-1–H-7, KV-1–KV-8 (validasi header sebelum KDF; tanpa downgrade diam-diam; tanpa retry KDF lain; tanpa plaintext sebelum autentikasi) | idem | D-16 |
+| OD-1-Q6 | KDF cadangan | Hanya untuk ekspor baru di bawah kebijakan yang disetujui owner (KV-6); backup lama memakai KDF yang dinyatakan di header (KV-5) | idem | D-16 |
+| OD-2-Q1 | Model ancaman | Terima §5 dengan risiko residual eksplisit | [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) §7 | D-17: I-1, risiko residual diterima |
+| OD-2-Q2 | Penanda asal-usul + log restore (informatif, tidak tahan manipulasi) | Ya | idem | D-17 (informatif, tidak tahan manipulasi) |
+| OD-2-Q3 | Tanda tangan terikat perangkat | Tidak untuk V1 | idem | D-17: I-2 tidak dipakai di V1 |
+| OD-2-Q4 | Rantai hash riwayat | Opsional, hanya pencegah kasual | idem | D-17: I-3 tidak dipakai di V1 |
+| OD-2-Q5 | Pernyataan "catatan belajar mandiri" | Ya | idem | D-17 |
+| UW-43-Q1 | Lokasi file Batch 01 | Opsi B (tetap di root + erratum TD:5) | [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md) §4 | D-18: Opsi B |
+| UW-11-Q1 | Perlukah skor numerik tingkat program? (D-04 melarang rata-rata baru; bila tidak perlu, agregasi program ditutup sebagai "tidak ada") | Tidak perlu; penyelesaian program = 16 modul lulus + capstone | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) §15 | D-19: tidak ada skor numerik tingkat program |
+| PL-Q1 | Konfirmasi klasifikasi register (audit §15.3): butir verifikasi teknis tidak menjadi syarat PLANNING CLEAR, tetapi tetap syarat IMPLEMENTATION VERIFIED; izin eksekusi prototipe (UW-10) dan izin implementasi (UW-02) adalah gerbang owner **setelah** PLANNING CLEAR | Ya | idem §15.3 | D-20 |
+| PL-Q2 | Apakah penulisan konten lengkap 16 modul (UW-37) wajib selesai sebelum PLANNING CLEAR, atau cukup format, rubrik, dan contoh per jenis komponen? | Owner memutuskan; Claude tidak merekomendasikan pengurangan syarat | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) §15.3 | D-21: kurikulum lengkap wajib sebelum PLANNING CLEAR |
+| PL-Q3 | Apakah UW-21 (alternatif bila O-04 gagal), UW-38 (R8/signing/distribusi), dan UW-40 (mekanisme effect UI) boleh ditunda ke milestone terkait dan tidak menjadi syarat PLANNING CLEAR? | Ya, karena bergantung hasil uji atau implementasi | idem | D-22 |
+
+## Keputusan owner D-16–D-22 (2026-11-24)
+
+Pernyataan owner: "Saya menyetujui seluruh rekomendasi D-16–D-22. ...
+Implementasi tetap dilarang." Status: **OWNER APPROVED**, berlaku efektif
+setelah PR pencatatan di-merge.
+
+| ID | Topik | Keputusan | Tetap OPEN / NOT VERIFIED |
+|---|---|---|---|
+| D-16 | OD-1 kriptografi backup (UW-15) | Q1: AES-256-GCM, nonce acak 96-bit, tag 128-bit, seluruh header envelope sebagai AAD, salt acak baru (CSPRNG) per ekspor. Q2: KDF utama Argon2id via Bouncy Castle, **bersyarat** review dependensi, kompatibilitas Android, dan verifikasi kinerja; cadangan PBKDF2-HMAC-SHA256 ≥ 600.000 iterasi. Q3: minimum Argon2id 19 MiB, t=2, p=1; parameter final dan batas maksimum ditetapkan lewat pengukuran perangkat yang diizinkan terpisah; **restore produksi tetap nonaktif** sampai batas disetujui dan terverifikasi. Q4: struktur envelope OD1 §5 sebagai baseline format. Q5: H-1–H-7 dan KV-1–KV-8; validasi ketat header tak tepercaya sebelum alokasi sumber daya dan KDF; tanpa downgrade diam-diam; tanpa retry KDF lain setelah autentikasi gagal; tanpa parsing/tampilan/staging/penerapan plaintext sebelum autentikasi berhasil; data aktif dipertahankan bila validasi atau autentikasi gagal. Q6: KDF cadangan hanya untuk ekspor baru di bawah kebijakan yang disetujui; backup lama didekripsi dengan format dan KDF yang dinyatakan dan terautentikasi | Detail serialisasi; parameter final; batas maksimum; implementasi kripto **NOT VERIFIED**; CT-1–CT-12 **NOT VERIFIED** |
+| D-17 | OD-2 pemalsuan dan integritas akademik (UW-16) | Q1: I-1 dengan risiko residual terdokumentasi diterima secara eksplisit. Q2: penanda asal-usul restore dan log peristiwa restore yang persisten. Q3: tanpa tanda tangan terikat perangkat (I-2) di V1. Q4: tanpa rantai hash riwayat attempt (I-3) di V1. Q5: rapor akademik adalah catatan belajar mandiri, bukan bukti akademik tersertifikasi. Penanda dan log bersifat informatif, tidak tahan manipulasi; enkripsi berbasis kata sandi tidak mencegah pemalsuan oleh pemilik kata sandi; portabilitas lintas perangkat dipertahankan; D-03 tetap | Retensi dan penyimpanan log restore |
+| D-18 | UW-43 konsistensi path | Opsi B: `PLANNING_COMPLETION_BATCH.md` tetap di root; erratum TD:5 dicatat di DECISIONS_LOG; dokumen Batch 02 verbatim tidak diubah; file Batch 01 tidak dipindahkan; tautan relatif dan riwayat dipertahankan | — |
+| D-19 | UW-11 agregasi tingkat program | Tidak ada skor numerik tingkat program; tidak ada rata-rata atau ambang kelulusan program baru; program selesai bila 16 modul lulus dan capstone memenuhi rubrik khususnya; capstone tetap mini-project modul 16; aturan tingkat modul tidak berubah | Rubrik capstone (CU-9) |
+| D-20 | PL-Q1 klasifikasi | Klasifikasi P/M/G/V audit §15.3 diadopsi, tunduk pada D-21 dan D-22. P = persyaratan perencanaan wajib; M = pekerjaan bergantung milestone yang disetujui; G = gerbang otorisasi owner; V = verifikasi teknis setelah otorisasi. PLANNING CLEAR mensyaratkan semua persyaratan P wajib dan AC perencanaan yang berlaku terpenuhi. UW-02 dan UW-10 adalah gerbang **setelah** PLANNING CLEAR. Verifikasi teknis tetap wajib untuk gerbang implementasi dan rilis. PLANNING CLEAR **tidak** mengizinkan implementasi; izin owner baru wajib sebelum eksekusi prototipe atau implementasi | Tidak ada butir P tambahan yang boleh dipindah ke M atau V tanpa persetujuan |
+| D-21 | PL-Q2 kurikulum | Kurikulum lengkap wajib sebelum PLANNING CLEAR; UW-37 tetap wajib di jalur P; seluruh 64 komponen penilaian dicakup; contoh edukatif dan spesifikasi test berbentuk dokumentasi diizinkan; tanpa prototipe, implementasi runtime, source aplikasi, atau otomasi test; tidak ada klaim latihan sudah dijalankan/terverifikasi | Seluruh konten (UW-37) |
+| D-22 | PL-Q3 penundaan milestone | UW-21 (alternatif final bila runtime Python gagal), UW-38 (R8, signing, distribusi), UW-40 (mekanisme effect UI) ditunda ke milestone terkait; AC asli dipertahankan; penundaan **bukan** penyelesaian; tidak ada penundaan lain tanpa persetujuan eksplisit | Ketiga butir tetap belum selesai |
+
+## Antrean keputusan berikutnya — disiapkan 2026-11-24 (setelah D-16–D-22)
+
 Semua **AWAITING OWNER**. Rekomendasi hanya saran.
 
 | ID | Pertanyaan | Rekomendasi teknis | Lembar keputusan | Keputusan final |
 |---|---|---|---|---|
-| OD-1-Q1 | AEAD | AES-256-GCM, nonce acak 96-bit, tag 128-bit, header sebagai AAD | [OD1_BACKUP_CRYPTO_DECISION_SHEET.md](OD1_BACKUP_CRYPTO_DECISION_SHEET.md) §9 | |
-| OD-1-Q2 | KDF | Argon2id (Bouncy Castle, bersyarat review/uji); cadangan PBKDF2-HMAC-SHA256 ≥ 600.000 iterasi | idem | |
-| OD-1-Q3 | Parameter KDF | Minimum OWASP sebagai batas minimum; batas maksimum difinalkan dari pengukuran sebelum restore produksi diaktifkan (KV-2, KV-3) | idem | |
-| OD-1-Q4 | Envelope | Struktur §5 dengan header sebagai AAD | idem | |
-| OD-1-Q5 | Penanganan kasus dan validasi | H-1–H-7, KV-1–KV-8 (validasi header sebelum KDF; tanpa downgrade diam-diam; tanpa retry KDF lain; tanpa plaintext sebelum autentikasi) | idem | |
-| OD-1-Q6 | KDF cadangan | Hanya untuk ekspor baru di bawah kebijakan yang disetujui owner (KV-6); backup lama memakai KDF yang dinyatakan di header (KV-5) | idem | |
-| OD-2-Q1 | Model ancaman | Terima §5 dengan risiko residual eksplisit | [OD2_BACKUP_INTEGRITY_DECISION_SHEET.md](OD2_BACKUP_INTEGRITY_DECISION_SHEET.md) §7 | |
-| OD-2-Q2 | Penanda asal-usul + log restore (informatif, tidak tahan manipulasi) | Ya | idem | |
-| OD-2-Q3 | Tanda tangan terikat perangkat | Tidak untuk V1 | idem | |
-| OD-2-Q4 | Rantai hash riwayat | Opsional, hanya pencegah kasual | idem | |
-| OD-2-Q5 | Pernyataan "catatan belajar mandiri" | Ya | idem | |
-| UW-43-Q1 | Lokasi file Batch 01 | Opsi B (tetap di root + erratum TD:5) | [UW43_PATH_CONSISTENCY_DECISION_SHEET.md](UW43_PATH_CONSISTENCY_DECISION_SHEET.md) §4 | |
-| UW-11-Q1 | Perlukah skor numerik tingkat program? (D-04 melarang rata-rata baru; bila tidak perlu, agregasi program ditutup sebagai "tidak ada") | Tidak perlu; penyelesaian program = 16 modul lulus + capstone | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) §15 | |
-| PL-Q1 | Konfirmasi klasifikasi register (audit §15.3): butir verifikasi teknis tidak menjadi syarat PLANNING CLEAR, tetapi tetap syarat IMPLEMENTATION VERIFIED; izin eksekusi prototipe (UW-10) dan izin implementasi (UW-02) adalah gerbang owner **setelah** PLANNING CLEAR | Ya | idem §15.3 | |
-| PL-Q2 | Apakah penulisan konten lengkap 16 modul (UW-37) wajib selesai sebelum PLANNING CLEAR, atau cukup format, rubrik, dan contoh per jenis komponen? | Owner memutuskan; Claude tidak merekomendasikan pengurangan syarat | [BATCH_01_10_UNFINISHED_AUDIT.md](BATCH_01_10_UNFINISHED_AUDIT.md) §15.3 | |
-| PL-Q3 | Apakah UW-21 (alternatif bila O-04 gagal), UW-38 (R8/signing/distribusi), dan UW-40 (mekanisme effect UI) boleh ditunda ke milestone terkait dan tidak menjadi syarat PLANNING CLEAR? | Ya, karena bergantung hasil uji atau implementasi | idem | |
-
+| OP-4-Q1 | Struktur rubrik penjelasan konsep | CE-B (kredit parsial terdefinisi per format) | [OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md](OP4_CONCEPT_EXPLANATION_DECISION_SHEET.md) §7 | |
+| OP-4-Q2 | Aturan skor per format CE-S1–CE-S5 (adjacency maksimum, `max_soal` eksak) | §3 lembar OP-4 | idem | |
+| OP-4-Q3 | Penalti dan self-assessment | Tolak CE-C; CE-D hanya latihan tanpa skor | idem | |
+| OP-4-Q4 | Konsep wajib, jawaban alternatif, review manusia | CE-K1–CE-K4 | idem | |
+| OP-4-Q5 | Validasi jawaban (kosong, ID asing/ganda, bentuk salah, sebagian) | CE-V1–CE-V6 | idem | |
+| CU-6-Q1 | Bobot test lab | LW-B (bobot bilangan bulat yang direview) | [CU6_LAB_SCORING_DECISION_SHEET.md](CU6_LAB_SCORING_DECISION_SHEET.md) §12 | |
+| CU-6-Q2 | Test wajib/bonus | LR-A (tanpa gerbang, tanpa bonus) | idem | |
+| CU-6-Q3 | Kode hasil test; penyebab pelajar vs infrastruktur; output > 64 KB selalu gagal | §5–§6 lembar CU-6 | idem | |
+| CU-6-Q4 | Lingkup remedial lab, penyelesaian attempt, XP | RA-1 + LA-1–LA-4 | idem | |
+| CU-6-Q5 | Anggaran eksekusi (D-10 tetap) | TB-B, cadangan TB-A; EB-1–EB-5 | idem | |
+| CU-6-Q6 | Eksekusi tidak lengkap dan pelestarian poin | IE-1–IE-5 | idem | |
+| RM-Q1 | UW-15 ke jalur V; OD-11–OD-14 di UW-33; CU2-O3/CU2-O4 dilacak di UW-36; izin pengukuran kripto sebagai prasyarat UW-15 | Setujui | [PLANNING_ROADMAP.md](PLANNING_ROADMAP.md) §11 | |
