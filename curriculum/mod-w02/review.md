@@ -595,3 +595,20 @@ Butir W2 yang diterima tidak diubah pada putaran ini.
 | O-2 / R3-04 | Kontrak desain VA-4a (CCD §B.2; DECISIONS_LOG "PR #28 O-2"): pemilihan semua slot dari satu snapshot ter-commit, commit atomik bersama identitas attempt, resume tanpa pemilihan ulang, restore hanya riwayat utuh. Bukti induksi + simulasi (5 skenario sah sinkron; riwayat parsial/rusak ditolak) untuk teori s15 vA + s17 vB. Tertunda: verifikasi implementasi dan OD-9/SB-12/UW-33 | CONDITIONAL PASS | SEBAGIAN | BELUM |
 
 Butir W2 yang diterima tidak diubah pada putaran ini.
+
+## Penerimaan owner final PR #28 (2026-11-25)
+
+Owner menerima 8 varian revisi W2 pada versi persis di HEAD review `b54f930b0cf4479e2984fc148e2bc91c443e1ada` (PR #28 ACC, 2026-11-25; `owner_acceptance: ACCEPTED`, `independent_review: TARGETED_LIMITED`). Penerimaan historis W02-ACC dan baseline aslinya tidak berubah; riwayat revisi dipertahankan.
+
+Verdict independen: "PASS — targeted delta review with disclosed limitations". Batas
+(DECISIONS_LOG): review terarah, bukan audit menyeluruh; putaran 8 memeriksa langsung 7 dari 20
+berkas berubah; putaran 7 tidak menyeluruh; 156 konsep wajib tidak diverifikasi ulang secara
+independen; paket validasi tidak dijalankan ulang secara independen (clone GitHub terhambat);
+tanpa uji pelajar; tanpa verifikasi runtime Android. Hasil penulis (bukan eksekusi independen):
+cakupan 156/0/0, kesetaraan 48/0, 778 pemeriksaan + 8 kasus provenance.
+
+Disposisi final: R7-01 FIX VERIFIED (review statis terarah); R7-02 PASS (review statis terarah atas
+cacat yang dilaporkan); O-1 selesai; O-2/VA-4a PASS tingkat kontrak desain; R3-04 CONDITIONAL PASS
+(verifikasi implementasi dan restore tertunda); PR28-02 PARTIAL PASS independen; PR28-06 diterima
+untuk perencanaan kurikulum. Baris register sebelumnya tetap sebagai catatan historis; kolom
+INDEPENDENT VERIFIED di atas tidak diubah secara retroaktif.

@@ -514,3 +514,20 @@ Butir W4 yang diterima tidak diubah pada putaran ini.
 |---|---|---|---|---|
 | R7-01 / O-1 | Stem teori s10 vA dan vB diganti menjadi "Pilih semua kebiasaan yang baik untuk menjaga keamanan kata sandi dan autentikasi akun." Opsi, kunci (vA a, c, d; vB b, c, e), TF-2, 3 poin semua-atau-tidak, kompetensi, difficulty, estimated_seconds tidak berubah. vA 2.0 → 3.0, vB 1.0 → 2.0; keduanya PENDING (W4: 7; total W1–W4: 21). Rasional dan penjelasan tetap akurat. Batas: teks owner tidak menebalkan "semua" seperti stem TF-2 lain — dipakai verbatim | APPLIED | YA | BELUM |
 | D-39 regresi | OTP: s10 vA opsi d (benar) + vB opsi d (salah) — kedua varian. Sandi kuat/unik/pengelola/mudah ditebak tetap di opsi s10. MFA praktis: proyek K1.c07 (E: T1, T6, T2) dan K1.c11 (D: T1, T6, T2), T2 = "Aktifkan MFA" (spec.md), K4.q2; jenis faktor: lab act-03.c02 vA+vB | PASS (hasil penulis) | YA | BELUM |
+
+## Penerimaan owner final PR #28 (2026-11-25)
+
+Owner menerima 7 varian revisi W4 pada versi persis di HEAD review `b54f930b0cf4479e2984fc148e2bc91c443e1ada` (PR #28 ACC, 2026-11-25; `owner_acceptance: ACCEPTED`, `independent_review: TARGETED_LIMITED`). Penerimaan historis W04-ACC dan baseline aslinya tidak berubah; riwayat revisi dipertahankan.
+
+Verdict independen: "PASS — targeted delta review with disclosed limitations". Batas
+(DECISIONS_LOG): review terarah, bukan audit menyeluruh; putaran 8 memeriksa langsung 7 dari 20
+berkas berubah; putaran 7 tidak menyeluruh; 156 konsep wajib tidak diverifikasi ulang secara
+independen; paket validasi tidak dijalankan ulang secara independen (clone GitHub terhambat);
+tanpa uji pelajar; tanpa verifikasi runtime Android. Hasil penulis (bukan eksekusi independen):
+cakupan 156/0/0, kesetaraan 48/0, 778 pemeriksaan + 8 kasus provenance.
+
+Disposisi final: R7-01 FIX VERIFIED (review statis terarah); R7-02 PASS (review statis terarah atas
+cacat yang dilaporkan); O-1 selesai; O-2/VA-4a PASS tingkat kontrak desain; R3-04 CONDITIONAL PASS
+(verifikasi implementasi dan restore tertunda); PR28-02 PARTIAL PASS independen; PR28-06 diterima
+untuk perencanaan kurikulum. Baris register sebelumnya tetap sebagai catatan historis; kolom
+INDEPENDENT VERIFIED di atas tidak diubah secara retroaktif.

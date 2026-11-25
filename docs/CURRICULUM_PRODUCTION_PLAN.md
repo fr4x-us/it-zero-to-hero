@@ -1,7 +1,7 @@
 # IT ZERO → HERO — Rencana Produksi Kurikulum (UW-37)
 
 Status: **RENCANA** · dokumentasi saja · **belum ada konten yang
-diproduksi** kecuali W1–W8. UW-37 tetap **OPEN** (8/16 modul diproduksi; 4/16 diterima owner secara historis — W1 W01-ACC, W2–W4 W02-ACC–W04-ACC; 21 varian revisi (D-39 + putaran 6–8) di W1–W4 PENDING (TPL-01a); W5–W8 diproduksi pada CB-2, menunggu review independen dan penerimaan owner; W9–W16 NOT STARTED / NOT AUTHORIZED). Tanggal: **2026-11-24**
+diproduksi** kecuali W1–W8. UW-37 tetap **OPEN** (8/16 modul diproduksi; 8/16 diterima owner — W1 W01-ACC, W2–W4 W02-ACC–W04-ACC (historis; 21 varian revisi diterima pada versi review, PR #28 ACC), W5–W8 W05-ACC–W08-ACC (CB-2, ACCEPTED WITH DISCLOSED LIMITATIONS, review independen terarah); W9–W16 NOT STARTED / NOT AUTHORIZED). Tanggal: **2026-11-24**
 (status aktif diperbarui pada CB-2). Basis: `main` = `846051f` (merge PR #27).
 Standar produksi CB-0 (semua kebijakan terputuskan setelah D-36; tidak ada keputusan penerimaan owner terpisah untuk CB-0; review independen terbatas; **bukan** final global): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md). Modul acuan: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml).
 
@@ -128,15 +128,15 @@ sudah diputuskan (D-23–D-36).
 
 | Ukuran | Diproduksi | Direview (ChatGPT) | Diterima owner | Runtime diverifikasi |
 |---|---|---|---|---|
-| Modul | 8/16 (W1–W8) | 4/16 (W1–W4, terbatas) | 4/16 (W01-ACC–W04-ACC) | Tidak berlaku untuk W1–W8; 0 untuk modul kode |
-| Komponen penilaian | 32/64 | 16/64 (terbatas) | 16/64 | — |
-| Jam nominal tercakup | 64/128 | 32/128 (terbatas) | 32/128 | — |
-| Soal teori | 320/620 | 160 (terbatas) | 160 | — |
-| Soal concept | 96/192 | 48 (terbatas) | 48 | — |
-| Spesifikasi lab | 48/96 | 24 (terbatas) | 24 | — |
-| Spesifikasi mini-project | 8/16 | 4 (terbatas) | 4 | — |
+| Modul | 8/16 (W1–W8) | 8/16 (W1–W8, terarah/terbatas) | 8/16 (W01-ACC–W08-ACC) | Tidak berlaku untuk W1–W8; 0 untuk modul kode |
+| Komponen penilaian | 32/64 | 32/64 (terarah/terbatas) | 32/64 | — |
+| Jam nominal tercakup | 64/128 | 64/128 (terarah/terbatas) | 64/128 | — |
+| Soal teori | 320/620 | 320 (terarah/terbatas) | 320 | — |
+| Soal concept | 96/192 | 96 (terarah/terbatas) | 96 | — |
+| Spesifikasi lab | 48/96 | 48 (terarah/terbatas) | 48 | — |
+| Spesifikasi mini-project | 8/16 | 8 (terarah/terbatas) | 8 | — |
 
-Persentase: diproduksi 32/64 = 50%; diterima owner 16/64 = 25% (**historis**: isi pada saat W01-ACC–W04-ACC; 21 varian revisi (D-39 + putaran 6–8) di W1–W4 PENDING (TPL-01a), lihat blok `acceptance` di `module.yaml` W1–W4).
+Persentase: diproduksi 32/64 = 50%; diterima owner 32/64 = 50% (W01-ACC–W04-ACC historis + 21 varian revisi diterima pada versi HEAD review `b54f930`, PR #28 ACC; W05-ACC–W08-ACC pada snapshot yang sama; lihat blok `acceptance` di `module.yaml` W1–W8). "Direview" = review independen terarah dengan batas diungkapkan (DECISIONS_LOG), bukan audit menyeluruh.
 
 Inventaris target D-30 (dua butir nyata per slot/aktivitas): teori
 (15 × 20 + 10) × 2 = 620; concept 16 × 6 × 2 = 192; lab 16 × 3 × 2 = 96;
@@ -333,3 +333,5 @@ direvisi; R3-04 koreksi bukti saja. Status penerimaan terstruktur TPL-01a:
 **Putaran 7 (koreksi konsolidasi, otorisasi owner bersyarat)**: direvisi W3 concept s01 vA/vB, W4 concept s01 vA, W4 teori s10 vA (versi 2.0; kunci tetap); 4 revisi putaran 6 tidak diubah. Cakupan = **hasil penulis** 156 PASS, 0 OPEN, 0 GAP; kesetaraan 48 PASS, 0 OPEN — belum diverifikasi independen. R6-01 jangkar baseline penerimaan tepercaya, R6-02 identitas lokasi varian, R6-03 integritas kunci, R6-04 kombinasi afiks NB-5, R6-05 pemindai NB-5 tahan konten cacat, R6-06 akurasi dokumentasi; VA-2/R3-04 CONDITIONAL PASS (pencatatan atomik varian semua slot belum dinyatakan eksplisit; SB-12/OD-9). 20 varian W1–W4 PENDING. CB-2 belum diterima; PR28-06 tetap OPEN.
 
 **Putaran 8 (koreksi terarah final, otorisasi owner O-1/O-2)**: hanya stem W4 teori s10 vA (3.0) dan vB (2.0) diubah; kontrak desain atomik VA-4a dicatat (CCD §B.2, DECISIONS_LOG); R7-02 pemindai NB-5 mengenali konsumen dari deklarasi normalization. Cakupan 156/0/0 dan kesetaraan 48/0 (hasil penulis); R3-04 CONDITIONAL PASS (implementasi dan OD-9/UW-33 tertunda). 21 varian W1–W4 PENDING. CB-2 belum diterima; PR28-06 tetap OPEN.
+
+**Penerimaan owner final (2026-11-25)**: CB-2 **ACCEPTED WITH DISCLOSED LIMITATIONS** (verdict independen "PASS — targeted delta review with disclosed limitations"). W05-ACC–W08-ACC pada snapshot HEAD review `b54f930b0cf4479e2984fc148e2bc91c443e1ada`; 21 varian revisi W1–W4 (W1 1, W2 8, W3 5, W4 7) diterima owner pada versi persis di HEAD review `b54f930` (PR #28 ACC; `independent_review: TARGETED_LIMITED`, bukan verifikasi independen per varian); W01-ACC–W04-ACC dan baseline aslinya tetap. Kurikulum diproduksi 8/16 modul (64/128 jam) dan diterima 8/16 (64/128 jam). Disposisi: R7-01 FIX VERIFIED dan R7-02 PASS (review statis terarah); O-1 selesai; O-2/VA-4a PASS tingkat kontrak desain (belum diimplementasikan); R3-04 CONDITIONAL PASS; PR28-02 PARTIAL PASS independen; PR28-06 diterima untuk perencanaan kurikulum di bawah penerimaan owner dan batas review terarah. Batas review terarah (DECISIONS_LOG): bukan audit menyeluruh; putaran 8 memeriksa langsung 7 dari 20 berkas; 156 konsep tidak diverifikasi ulang independen; paket validasi tidak dijalankan ulang independen (clone terhambat); tanpa uji pelajar; tanpa runtime Android. Status butir audit **tidak berubah** (32/4/12/3/5 = 56; P 32/43): UW-26 dan UW-37 tetap OPEN karena W9–W16 belum diproduksi. OD-9, SB-12, UW-33, M-10, entri Boolean, huruf `Rp` tetap terbuka. Merge PR #28 menunggu kalimat otorisasi persis (CLAUDE.md).

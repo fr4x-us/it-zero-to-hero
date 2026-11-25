@@ -82,10 +82,23 @@ def trust_errors(m, M, anchors, decision_log, git):
     subj = git.subject(sha)
     if subj is None: err.append(f'W{m}: commit baseline {sha[:12]} tidak ada di repositori')
     else:
-        if not subj.startswith(f'Merge pull request #{an.get("pr")} '): err.append(f'W{m}: commit {sha[:12]} bukan merge PR #{an.get("pr")} ({subj})')
+        # basis 'accepted_review_head' (W5–W8, PR #28): HEAD review yang diterima owner, bukan merge commit
+        if an.get('basis') != 'accepted_review_head' and not subj.startswith(f'Merge pull request #{an.get("pr")} '): err.append(f'W{m}: commit {sha[:12]} bukan merge PR #{an.get("pr")} ({subj})')
         if not git.ancestor(sha): err.append(f'W{m}: commit {sha[:12]} bukan leluhur HEAD')
     if f'| {an.get("decision_log")} | OWNER ACCEPTED' not in decision_log: err.append(f'W{m}: catatan keputusan owner {an.get("decision_log")} tidak ditemukan di DECISIONS_LOG')
     return err, (sha if not err else None)
+
+def revision_trust(m, M, anchors, decision_log, git):
+    """Penerimaan owner atas varian revisi (PR #28 ACC): dipercaya hanya bila cocok dengan jangkar terpisah."""
+    ra = (anchors.get(m) or {}).get('revision_acceptance'); ma = (M.get('acceptance') or {}).get('revision_acceptance')
+    if not ra:
+        return ([f'W{m}: revision_acceptance tanpa jangkar tepercaya'] if ma else []), None
+    err = []
+    if not ma or ma.get('id') != ra.get('id') or str(ma.get('reviewed_head')) != ra.get('reviewed_head'):
+        err.append(f'W{m}: revision_acceptance modul tidak cocok dengan jangkar {ra.get("id")} @ {str(ra.get("reviewed_head"))[:12]}')
+    if git.subject(ra.get('reviewed_head', '')) is None or not git.ancestor(ra.get('reviewed_head', '')): err.append(f'W{m}: reviewed_head tidak ada/bukan leluhur HEAD')
+    if f'| {ra.get("decision_log")} | OWNER ACCEPTED' not in decision_log: err.append(f'W{m}: catatan keputusan owner {ra.get("decision_log")} tidak ditemukan')
+    return err, (ra if not err else None)
 
 # ---- R6-02: identitas lokasi varian ----
 def expected_prefix(rel):
@@ -116,7 +129,7 @@ def body(v):
 def vnum(x):
     return tuple(int(p) for p in str(x).split('.'))
 
-def validate(m, cur, base, acc, cur_sh=None, base_sh=None):
+def validate(m, cur, base, acc, cur_sh=None, base_sh=None, rev=None, rev_variants=None):
     """Kembalikan daftar kesalahan (kosong = sah). cur/base: [(berkas, varian)]; acc: blok acceptance;
     cur_sh/base_sh: {berkas: field bersama}. Perubahan field bersama memengaruhi SEMUA varian berkas itu."""
     err = []
@@ -141,7 +154,7 @@ def validate(m, cur, base, acc, cur_sh=None, base_sh=None):
     B = {v['variant_id']: v for _, v in base}
     C = {v['variant_id']: v for _, v in cur}
     for vid in sorted(set(B) - set(C)): err.append(f'{vid}: varian yang diterima hilang')
-    changed = []
+    changed, accepted = [], []
     for vid, v in C.items():
         if vid not in B:
             err.append(f'{vid}: varian baru setelah penerimaan (tidak ada di baseline)'); continue
@@ -157,17 +170,29 @@ def validate(m, cur, base, acc, cur_sh=None, base_sh=None):
         if e is None: err.append(f'{vid}: revisi tidak tercatat di revised_variants'); continue
         if str(e['accepted_version']) != str(bv): err.append(f'{vid}: accepted_version {e["accepted_version"]} ≠ baseline {bv}')
         if str(e['current_version']) != str(cv): err.append(f'{vid}: current_version {e["current_version"]} ≠ berkas {cv}')
-        if e.get('independent_review') != 'PENDING' or e.get('owner_acceptance') != 'PENDING':
-            err.append(f'{vid}: status revisi harus PENDING (independent_review/owner_acceptance)')
+        st = (e.get('independent_review'), e.get('owner_acceptance'))
+        if st == ('PENDING', 'PENDING'):
+            continue
+        ma = acc.get('revision_acceptance') or {}
+        if st == ('TARGETED_LIMITED', 'ACCEPTED') and rev and ma.get('id') == rev.get('id') and str(ma.get('reviewed_head')) == rev.get('reviewed_head'):
+            RV = {x['variant_id']: x for _, x in (rev_variants or [])}
+            if vid not in RV or body(RV[vid]) != body(v) or str(RV[vid].get('item_version')) != str(cv):
+                err.append(f'{vid}: diterima pada HEAD review, tetapi isi/versi kini berbeda dari HEAD review')
+            accepted.append(vid)
+        else:
+            err.append(f'{vid}: status revisi harus PENDING, atau TARGETED_LIMITED/ACCEPTED dengan penerimaan revisi tepercaya')
     for vid in sorted(set(E) - set(C)): err.append(f'{vid}: entri revisi untuk varian yang tidak ada')
-    want = 'REVISED_PENDING' if changed else 'ACCEPTED_AS_IS'
+    want = 'ACCEPTED_AS_IS' if not changed else ('REVISED_ACCEPTED' if sorted(accepted) == sorted(changed) else 'REVISED_PENDING')
     if acc.get('current_content') != want: err.append(f'current_content harus {want}')
     return err, changed
 
 def mutation_tests(r):
     """Uji mutasi pada salinan data W2 di memori; setiap mutasi harus terdeteksi."""
-    M = load('mod-w02/module.yaml'); acc = M['acceptance']; commit = acc['historical']['baseline_commit']
+    M = load('mod-w02/module.yaml'); real = M['acceptance']; commit = real['historical']['baseline_commit']
     cur, base = current_variants('02'), baseline_variants('02', commit)
+    # jalur PENDING diuji pada salinan dengan status PENDING (sebelum penerimaan revisi)
+    acc = copy.deepcopy(real); acc.pop('revision_acceptance', None); acc['current_content'] = 'REVISED_PENDING'
+    for e in acc['revised_variants']: e['independent_review'] = e['owner_acceptance'] = 'PENDING'
     def run(c=None, b=None, a=None):
         return validate('02', c if c is not None else cur, b if b is not None else base, a if a is not None else acc)[0]
     r.check(not run(), 'mutasi: data asli harus sah')
@@ -225,6 +250,20 @@ def mutation_tests(r):
     c10 = copy.deepcopy(c9); c10[k][1]['stem'] += ' (diubah)'; c10[k][1]['item_version'] = '3.0'
     a10 = copy.deepcopy(acc); a10['revised_variants'].append({'variant_id': 'mod-w02.theory.s03.vA', 'accepted_version': '2.0', 'current_version': '3.0', 'independent_review': 'PENDING', 'owner_acceptance': 'PENDING'})
     r.check(not run(c=c10, b=b9, a=a10), 'mutasi: revisi 2.0 → 3.0 tercatat harus sah')
+    # penerimaan revisi PR #28 ACC (jalur penerimaan)
+    an = load_anchors()['02']['revision_acceptance']; RVv = baseline_variants('02', an['reviewed_head'])
+    def runr(a=real, c=None, rv=an):
+        return validate('02', c if c is not None else cur, base, a, rev=rv, rev_variants=RVv)[0]
+    r.check(not runr(), 'penerimaan revisi: data asli (21 varian ACCEPTED, jangkar cocok) sah')
+    r.check(any('harus PENDING' in e for e in runr(rv=None)), 'penerimaan revisi: ACCEPTED tanpa jangkar tepercaya ditolak')
+    a21 = copy.deepcopy(real); a21['revision_acceptance']['reviewed_head'] = '0' * 40
+    r.check(any('harus PENDING' in e for e in runr(a=a21)), 'penerimaan revisi: reviewed_head modul berbeda dari jangkar ditolak')
+    c22 = copy.deepcopy(cur); j2 = [i for i, (_, v) in enumerate(c22) if v['variant_id'] == real['revised_variants'][0]['variant_id']][0]; c22[j2][1]['stem'] += ' (diubah setelah review)'
+    r.check(any('berbeda dari HEAD review' in e for e in runr(c=c22)), 'penerimaan revisi: isi berubah setelah HEAD review ditolak')
+    a23 = copy.deepcopy(real); a23['revised_variants'][0]['independent_review'] = 'PASS'
+    r.check(any('harus PENDING' in e for e in runr(a=a23)), 'penerimaan revisi: klaim review independen PASS per varian ditolak')
+    a24 = copy.deepcopy(real); a24['current_content'] = 'REVISED_PENDING'
+    r.check(any('current_content' in e for e in runr(a=a24)), 'penerimaan revisi: current_content tidak sesuai ditolak')
     a11 = copy.deepcopy(a10); a11['revised_variants'][-1]['accepted_version'] = '1.0'
     r.check(any('accepted_version' in e for e in run(c=c10, b=b9, a=a11)), 'mutasi: accepted_version 1.0 untuk baseline 2.0')
 
@@ -242,8 +281,8 @@ def trust_tests(r):
     r.check(any('penggantian baseline' in e for e in trust_errors('01', m, A, DL, G)[0]), 'jangkar: baseline modul lain (W1 ← PR #27) ditolak')
     a = copy.deepcopy(A); a['02']['baseline_commit'] = head; m = copy.deepcopy(M2); m['acceptance']['historical']['baseline_commit'] = head
     r.check(any('bukan merge PR' in e for e in trust_errors('02', m, a, DL, G)[0]), 'jangkar: jangkar dan modul sama-sama diganti → bukan merge PR, ditolak')
-    m = copy.deepcopy(M5); m['status']['owner_accepted'] = 'YES'; m['acceptance'] = {'historical': {'id': 'W05-ACC', 'baseline_commit': head}}
-    r.check(any('tanpa jangkar' in e for e in trust_errors('05', m, A, DL, G)[0]), 'jangkar: promosi penerimaan W5 tanpa otorisasi ditolak')
+    m = copy.deepcopy(M5); m['status']['owner_accepted'] = 'YES'; m['acceptance'] = {'historical': {'id': 'W09-ACC', 'baseline_commit': head}}
+    r.check(any('tanpa jangkar' in e for e in trust_errors('09', m, A, DL, G)[0]), 'jangkar: promosi penerimaan modul tanpa jangkar (W9) ditolak')
     r.check(any('catatan keputusan owner' in e for e in trust_errors('02', M2, A, DL.replace('| W02-ACC | OWNER ACCEPTED', '| W02-ACC | PROPOSED'), G)[0]), 'jangkar: catatan keputusan owner hilang ditolak')
     a = copy.deepcopy(A); a['02']['baseline_commit'] = '846051f'
     m = copy.deepcopy(M2); m['acceptance']['historical']['baseline_commit'] = '846051f'
@@ -252,7 +291,7 @@ def trust_tests(r):
 
 def main():
     r = Report('penerimaan')
-    pend = 0
+    pend = acc_n = 0
     A = load_anchors(); DL = (ROOT / 'docs/DECISIONS_LOG.md').read_text(encoding='utf-8'); G = Git()
     for m in ('01', '02', '03', '04', '05', '06', '07', '08'):
         M = load(f'mod-w{m}/module.yaml'); st = M['status']['owner_accepted']
@@ -266,17 +305,22 @@ def main():
             if not r.check(a is not None and a['historical'].get('baseline_commit'), f'W{m}: blok acceptance/baseline_commit'): continue
             r.check(a['historical']['id'] == f'W{m}-ACC', f'W{m}: id historis')
             bc = trusted   # R6-01: baseline dari jangkar tepercaya, bukan dari module.yaml
-            err, changed = validate(m, current_variants(m), baseline_variants(m, bc), a, current_shared(m), baseline_shared(m, bc))
-            pend += len(a.get('revised_variants') or [])
+            rerr, rev = revision_trust(m, M, A, DL, G)
+            for e in rerr: r.check(False, e)
+            rv = baseline_variants(m, rev['reviewed_head']) if rev else None
+            err, changed = validate(m, current_variants(m), baseline_variants(m, bc), a, current_shared(m), baseline_shared(m, bc), rev, rv)
+            ents = a.get('revised_variants') or []
+            pend += sum(e.get('owner_acceptance') == 'PENDING' for e in ents); acc_n += sum(e.get('owner_acceptance') == 'ACCEPTED' for e in ents)
             for e in err: r.check(False, f'W{m}: {e}')
             r.check(True, f'W{m}: perbandingan baseline')
-            print(f'  W{m}: baseline tepercaya {bc[:7]} (merge PR #{A[m]["pr"]}, {A[m]["acceptance_id"]}); varian berubah {len(changed)}; tercatat PENDING {len(a.get("revised_variants") or [])}')
+            kind = 'HEAD review' if A[m].get('basis') == 'accepted_review_head' else 'merge'
+            print(f'  W{m}: baseline tepercaya {bc[:7]} ({kind} PR #{A[m]["pr"]}, {A[m]["acceptance_id"]}); varian berubah {len(changed)}; revisi PENDING {sum(e.get("owner_acceptance") == "PENDING" for e in ents)}, ACCEPTED {sum(e.get("owner_acceptance") == "ACCEPTED" for e in ents)}')
         else:
             r.check(not (M.get('acceptance') or {}).get('historical'), f'W{m}: belum diterima, tidak boleh ada penerimaan historis')
             print(f'  W{m}: belum diterima owner')
-    print(f'  total varian W1–W4 tercatat PENDING: {pend}')
+    print(f'  total varian revisi W1–W4: PENDING {pend}, ACCEPTED {acc_n}')
     mutation_tests(r)
-    print('  uji validator: 27 kasus — 22 mutasi terdeteksi, 5 kasus sah diterima (data asli; versi historis 2.0; revisi 2.0 → 3.0; field bersama berubah + semua varian tercatat; lokasi asli)')
+    print('  uji validator: 33 kasus — 27 mutasi terdeteksi, 6 kasus sah diterima (data PENDING; versi historis 2.0; revisi 2.0 → 3.0; field bersama berubah + semua varian tercatat; lokasi asli; penerimaan revisi PR #28 ACC)')
     nt = trust_tests(r)
     print(f'  uji jangkar R6-01: {nt} kasus — 7 penolakan, 1 penerimaan (baseline sah)')
     return r.done()

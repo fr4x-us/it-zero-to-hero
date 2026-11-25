@@ -195,6 +195,14 @@ atas **belum diterima** (TPL-01a `acceptance.revised_variants`, PENDING).
 | O-2 / R3-04 | Pencatatan atomik varian VA-2 belum dinyatakan | FIXED (kontrak desain VA-4a + bukti induksi + simulasi); R3-04 **CONDITIONAL PASS** — implementasi dan OD-9 tertunda | SEBAGIAN | BELUM |
 | R7-02 | Pemindai NB-5 melewatkan konsumen lab bila accepted_answers hilang/cacat | CONFIRMED — FIXED: konsumen lab diturunkan dari deklarasi `normalization` per pemeriksaan (52 konsumen sama seperti sebelumnya); 15 uji ujung-ke-ujung | YA | BELUM |
 
+## 4f. Penerimaan owner final (2026-11-25)
+
+Owner menerima CB-2 (W05-ACC–W08-ACC) dan 21 varian revisi W1–W4 (PR #28 ACC) pada HEAD review
+`b54f930`, dengan verdict independen "PASS — targeted delta review with disclosed limitations".
+Angka cakupan dan kesetaraan di dokumen ini tetap **hasil penulis**; review independen terarah tidak
+memverifikasi ulang 156 konsep. PR28-06 diterima untuk perencanaan kurikulum di bawah penerimaan
+owner dan batas review terarah (DECISIONS_LOG). R3-04 tetap CONDITIONAL PASS.
+
 ## 7. Usulan koreksi butir
 
 Tidak ada usulan terbuka. Usulan putaran 5–6 (W3 concept s01 vA/vB, W4

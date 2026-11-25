@@ -342,3 +342,20 @@ Baris putaran 6 di atas adalah catatan historis; status aktif di bawah ini. Caku
 | PR28-06 | **OPEN** (lihat W5) | TIDAK | BELUM |
 | R6-03 | Integritas kunci W6 tervalidasi | YA | BELUM |
 | R6-05 | Konsumen NB-5 W6 dipindai tanpa konten cacat; BN-6/B01 tidak berubah | YA | BELUM |
+
+## Penerimaan owner final PR #28 (2026-11-25)
+
+W6 diterima owner sebagai **W06-ACC** (2026-11-25) pada snapshot HEAD review `b54f930b0cf4479e2984fc148e2bc91c443e1ada` (CB-2 ACCEPTED WITH DISCLOSED LIMITATIONS; blok `acceptance` di `module.yaml`).
+
+Verdict independen: "PASS — targeted delta review with disclosed limitations". Batas
+(DECISIONS_LOG): review terarah, bukan audit menyeluruh; putaran 8 memeriksa langsung 7 dari 20
+berkas berubah; putaran 7 tidak menyeluruh; 156 konsep wajib tidak diverifikasi ulang secara
+independen; paket validasi tidak dijalankan ulang secara independen (clone GitHub terhambat);
+tanpa uji pelajar; tanpa verifikasi runtime Android. Hasil penulis (bukan eksekusi independen):
+cakupan 156/0/0, kesetaraan 48/0, 778 pemeriksaan + 8 kasus provenance.
+
+Disposisi final: R7-01 FIX VERIFIED (review statis terarah); R7-02 PASS (review statis terarah atas
+cacat yang dilaporkan); O-1 selesai; O-2/VA-4a PASS tingkat kontrak desain; R3-04 CONDITIONAL PASS
+(verifikasi implementasi dan restore tertunda); PR28-02 PARTIAL PASS independen; PR28-06 diterima
+untuk perencanaan kurikulum. Baris register sebelumnya tetap sebagai catatan historis; kolom
+INDEPENDENT VERIFIED di atas tidak diubah secara retroaktif.

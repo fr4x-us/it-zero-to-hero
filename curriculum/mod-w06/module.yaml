@@ -9,9 +9,18 @@ content_version: "1.0"
 status:
   documentation: PRODUCED          # konten lengkap ditulis (CB-2)
   reviewed: CLAUDE_SELF_REVIEW     # review dokumentasi oleh penyusun; lihat review.md
-  owner_accepted: NO               # menunggu review independen dan penerimaan owner
+  owner_accepted: YES              # W06-ACC (2026-11-25), diterima dengan batas review terarah yang diungkapkan; status terstruktur: blok `acceptance`
   runtime_verified: NOT_APPLICABLE # W6 tidak memakai runtime Python; aplikasi belum ada
   learner_tested: NO               # estimasi durasi belum diuji dengan pelajar
+acceptance:                          # TPL-01a
+  historical:
+    id: W06-ACC
+    date: "2026-11-25"
+    baseline_commit: "b54f930b0cf4479e2984fc148e2bc91c443e1ada"   # HEAD review PR #28 yang diterima owner (bukan merge commit)
+    basis: "Penerimaan owner CB-2 atas HEAD review PR #28 b54f930"
+    scope: "Isi modul pada snapshot review yang diterima; review independen terarah dengan batas diungkapkan (bukan audit menyeluruh); lihat DECISIONS_LOG PR #28 ACC"
+  current_content: ACCEPTED_AS_IS   # ACCEPTED_AS_IS | REVISED_PENDING | REVISED_ACCEPTED
+  revised_variants: []
 audience: "Pemula total tanpa pengalaman IT atau pemrograman; telah menyelesaikan W1–W5"
 prerequisites: [mod-w05]
 nominal_minutes: 480

@@ -1108,9 +1108,10 @@ koreksi terarah tercatat di
 [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
 Tidak ada perubahan status butir: COMPLETE 32 · OPEN 4 · BLOCKED 12 ·
 DEFERRED 3 · NOT VERIFIED 5 = **56**; jalur P 32/43; UW-26 dan UW-37 OPEN.
-Kurikulum: diproduksi 8/16 modul (32/64 komponen); diterima owner 4/16
-(16/64) **secara historis** — 21 varian W1–W4 (14 sebelum putaran 6; 16 sebelum putaran 7; 20 sebelum putaran 8) yang direvisi setelah
-penerimaan berstatus PENDING (TPL-01a). W9–W16 NOT STARTED / NOT AUTHORIZED.
+Kurikulum: diproduksi 8/16 modul (32/64 komponen; 64/128 jam); diterima owner
+8/16 (32/64; 64/128 jam) — W1–W4 historis (W01-ACC–W04-ACC) dengan 21 varian revisi
+(14 sebelum putaran 6; 16 sebelum putaran 7; 20 sebelum putaran 8; 21 final) diterima
+pada versi review (PR #28 ACC); W5–W8 W05-ACC–W08-ACC (CB-2, batas diungkapkan). W9–W16 NOT STARTED / NOT AUTHORIZED.
 
 PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
 D-11: DEFERRED.
@@ -1122,3 +1123,5 @@ D-11: DEFERRED.
 **Putaran 7 (koreksi konsolidasi, otorisasi owner bersyarat)**: direvisi W3 concept s01 vA/vB, W4 concept s01 vA, W4 teori s10 vA (versi 2.0; kunci tetap); 4 revisi putaran 6 tidak diubah. Cakupan = **hasil penulis** 156 PASS, 0 OPEN, 0 GAP; kesetaraan 48 PASS, 0 OPEN — belum diverifikasi independen. R6-01 jangkar baseline penerimaan tepercaya, R6-02 identitas lokasi varian, R6-03 integritas kunci, R6-04 kombinasi afiks NB-5, R6-05 pemindai NB-5 tahan konten cacat, R6-06 akurasi dokumentasi; VA-2/R3-04 CONDITIONAL PASS (pencatatan atomik varian semua slot belum dinyatakan eksplisit; SB-12/OD-9). 20 varian W1–W4 PENDING. CB-2 belum diterima; PR28-06 tetap OPEN.
 
 **Putaran 8 (koreksi terarah final, otorisasi owner O-1/O-2)**: hanya stem W4 teori s10 vA (3.0) dan vB (2.0) diubah; kontrak desain atomik VA-4a dicatat (CCD §B.2, DECISIONS_LOG); R7-02 pemindai NB-5 mengenali konsumen dari deklarasi normalization. Cakupan 156/0/0 dan kesetaraan 48/0 (hasil penulis); R3-04 CONDITIONAL PASS (implementasi dan OD-9/UW-33 tertunda). 21 varian W1–W4 PENDING. CB-2 belum diterima; PR28-06 tetap OPEN.
+
+**Penerimaan owner final (2026-11-25)**: CB-2 **ACCEPTED WITH DISCLOSED LIMITATIONS** (verdict independen "PASS — targeted delta review with disclosed limitations"). W05-ACC–W08-ACC pada snapshot HEAD review `b54f930b0cf4479e2984fc148e2bc91c443e1ada`; 21 varian revisi W1–W4 (W1 1, W2 8, W3 5, W4 7) diterima owner pada versi persis di HEAD review `b54f930` (PR #28 ACC; `independent_review: TARGETED_LIMITED`, bukan verifikasi independen per varian); W01-ACC–W04-ACC dan baseline aslinya tetap. Kurikulum diproduksi 8/16 modul (64/128 jam) dan diterima 8/16 (64/128 jam). Disposisi: R7-01 FIX VERIFIED dan R7-02 PASS (review statis terarah); O-1 selesai; O-2/VA-4a PASS tingkat kontrak desain (belum diimplementasikan); R3-04 CONDITIONAL PASS; PR28-02 PARTIAL PASS independen; PR28-06 diterima untuk perencanaan kurikulum di bawah penerimaan owner dan batas review terarah. Batas review terarah (DECISIONS_LOG): bukan audit menyeluruh; putaran 8 memeriksa langsung 7 dari 20 berkas; 156 konsep tidak diverifikasi ulang independen; paket validasi tidak dijalankan ulang independen (clone terhambat); tanpa uji pelajar; tanpa runtime Android. Status butir audit **tidak berubah** (32/4/12/3/5 = 56; P 32/43): UW-26 dan UW-37 tetap OPEN karena W9–W16 belum diproduksi. OD-9, SB-12, UW-33, M-10, entri Boolean, huruf `Rp` tetap terbuka. Merge PR #28 menunggu kalimat otorisasi persis (CLAUDE.md).
