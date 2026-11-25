@@ -1115,3 +1115,4 @@ penerimaan berstatus PENDING (TPL-01a). W9–W16 NOT STARTED / NOT AUTHORIZED.
 PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
 D-11: DEFERRED.
 
+**Putaran 5 (review `796043c`)**: cakupan = **hasil penulis** 153 PASS, 3 OPEN (bukti semantik lemah: W3 peran router/switch, W4 OTP), 0 GAP; kesetaraan varian 43 PASS, 5 OPEN (W3 s03, W4 s01, s03, W7 s02, s03); usulan koreksi menunggu otorisasi owner (matriks §7). PR28-06 tetap OPEN. Status butir audit dan angka kurikulum tidak berubah (32/4/12/3/5 = 56; P 32/43; 8/16 dan 32/64 diproduksi; 4/16 dan 16/64 diterima historis; 14 varian W1–W4 PENDING).

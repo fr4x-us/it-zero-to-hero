@@ -1,4 +1,6 @@
-"""Kunci yang diubah PR #28 dihitung ulang secara independen (W8 F4, D-39, putaran 2 & 4) + distribusi posisi kunci."""
+"""Kunci PR #28. Kategori (R4-10): HITUNG = jawaban dihitung ulang dari isi soal/aturan (interpreter W8, simulasi berkas W2,
+aritmetika, enumerasi tukar W7); REGRESI = dibandingkan dengan kunci/snapshot tetap (bukan perhitungan ulang);
+STRUKTUR = bentuk butir. Snapshot posisi kunci = baseline 4ddc993."""
 import glob, itertools, random, sys, yaml
 from collections import Counter
 from lib import CUR, load, Report
@@ -53,27 +55,28 @@ def main():
     A, B = rb['constants']['list_A'], rb['constants']['list_B']
     tests = [A, B, [4], [1, 9], [9, 1], [-5, -5], [2, 7, 7, 1], [-1, -4, -2], [0], [3, 8, 8], [-9, -1], [6, 6, 6], [-2, 0, 2], [10, -10]]
     good = [c for c in itertools.product('abcd', repeat=4) if all(run_w8(L, *c)[0] == max(L) for L in tests)]
-    r.check(good == [('b', 'b', 'a', 'b'), ('b', 'b', 'd', 'b')], f'W8: kombinasi benar {good}')
-    r.check(K['F4'] == ['b'] and sorted(K['F3']) == ['a', 'd'] and K['F1'] == ['b'] and K['F2'] == ['b'], 'W8: kunci F1–F4 rubrik')
+    r.check(good == [('b', 'b', 'a', 'b'), ('b', 'b', 'd', 'b')], f'W8: kombinasi benar {good}', 'REGRESI')
+    derived = {k: sorted({g[i] for g in good}) for i, k in enumerate(('F1', 'F2', 'F3', 'F4'))}
+    r.check(all(sorted(K[k]) == derived[k] for k in derived), f'W8: kunci F1–F4 rubrik ≠ turunan interpreter {derived}', 'HITUNG')
     t = run_w8(A, 'b', 'b', 'a', 'b')
-    r.check(t[0] == max(A) and t[1] == [K['F5'][x] for x in ('i2', 'i3', 'i4', 'i5', 'i6')] and t[2] == K['F8'], 'W8: F5/F8')
-    r.check(run_w8(B, 'b', 'b', 'a', 'b')[0] == K['F6'] and run_w8(B, 'a', 'b', 'a', 'b')[0] == K['F7'], 'W8: F6/F7')
-    r.check(run_w8(A, 'b', 'b', 'a', 'c')[0] == 'INDEX_ERROR' and run_w8(A, 'b', 'b', 'a', 'a')[0] == 'NO_TERMINATION', 'W8: F4 c/a gagal')
+    r.check(t[0] == max(A) and t[1] == [K['F5'][x] for x in ('i2', 'i3', 'i4', 'i5', 'i6')] and t[2] == K['F8'], 'W8: F5/F8', 'HITUNG')
+    r.check(run_w8(B, 'b', 'b', 'a', 'b')[0] == K['F6'] and run_w8(B, 'a', 'b', 'a', 'b')[0] == K['F7'], 'W8: F6/F7', 'HITUNG')
+    r.check(run_w8(A, 'b', 'b', 'a', 'c')[0] == 'INDEX_ERROR' and run_w8(A, 'b', 'b', 'a', 'a')[0] == 'NO_TERMINATION', 'W8: F4 c/a gagal', 'HITUNG')
     ref = {'F1': 'b', 'F2': 'b', 'F3': 'a'}
     got = {f4: score_w8(rb, {**ref, 'F4': f4}) for f4 in 'abcde'}
-    r.check(got == {'b': 100, 'a': 94, 'c': 94, 'd': 94, 'e': 92}, f'W8: skor F4 {got}')
+    r.check(got == {'b': 100, 'a': 94, 'c': 94, 'd': 94, 'e': 92}, f'W8: skor F4 {got}', 'HITUNG')
     ex = {e['id']: e['total'] for e in rb['reviewer_examples']}
-    r.check((ex['E01'], ex['E05'], ex['E18'], ex['E19'], ex['E20']) == (100, 94, 94, 94, 92), 'W8: contoh reviewer E01/E05/E18–E20')
+    r.check((ex['E01'], ex['E05'], ex['E18'], ex['E19'], ex['E20']) == (100, 94, 94, 94, 92), 'W8: contoh reviewer E01/E05/E18–E20', 'REGRESI')
     # W8 pelajaran 3 latihan 3 (PR28-11)
     tt, k, chk, it = 1, 1, 0, 0
     while True:
         chk += 1
         if not k <= 3: break
         tt *= 2; k += 1; it += 1
-    r.check((it, chk, tt, k) == (3, 4, 8, 4), 'W8 latihan 3: 3 putaran, 4 pemeriksaan, t=8, k=4')
+    r.check((it, chk, tt, k) == (3, 4, 8, 4), 'W8 latihan 3: 3 putaran, 4 pemeriksaan, t=8, k=4', 'HITUNG')
     # W7 K4.q2 (PR28-07): tukar bersebelahan sah ⇔ depan bukan prasyarat belakang
     valid = lambda o, E: all(o.index(a) < o.index(b) for a, b in E)
-    r.check(valid(['A', 'B', 'C'], [('A', 'B')]) and not valid(['C', 'B', 'A'], [('A', 'B')]), 'W7: kontraeksempel')
+    r.check(valid(['A', 'B', 'C'], [('A', 'B')]) and not valid(['C', 'B', 'A'], [('A', 'B')]), 'W7: kontraeksempel', 'HITUNG')
     rnd = random.Random(7); n_sw = 0
     for _ in range(200):
         n = rnd.randint(3, 6); E = [(a, b) for a in range(n) for b in range(n) if a < b and rnd.random() < 0.35]
@@ -81,15 +84,15 @@ def main():
             if not valid(o, E): continue
             for i in range(n - 1):
                 s = list(o); s[i], s[i + 1] = s[i + 1], s[i]
-                if valid(s, E) != ((o[i], o[i + 1]) not in E): r.check(False, f'W7 tukar {o} {i}')
+                if valid(s, E) != ((o[i], o[i + 1]) not in E): r.check(False, f'W7 tukar {o} {i}', 'HITUNG')
                 n_sw += 1
     print(f'  W7 tukar bersebelahan diuji: {n_sw}')
     q = load('mod-w07/project/rubric.yaml')['criteria']['K4']['items'][1]
-    r.check(q['key'] == 'b' and 'bersebelahan' in q['stem'] and q['points'] == 2, 'W7 K4.q2 struktur')
+    r.check(q['key'] == 'b' and 'bersebelahan' in q['stem'] and q['points'] == 2, 'W7 K4.q2 struktur', 'STRUKTUR')
     # D-39 dan putaran 4: butir yang diubah
     V = lambda f, i: load(f)['variants'][i]
-    r.check(V('mod-w01/theory/items/s10.yaml', 1)['accepted_answers'][0] == str(16 // 8), 'W1 t-s10 vB = 2')
-    r.check(V('mod-w03/theory/items/s08.yaml', 1)['accepted_answers'][0] == str(2 ** 8 - 2 - 1), 'W3 t-s08 vB = 253')
+    r.check(V('mod-w01/theory/items/s10.yaml', 1)['accepted_answers'][0] == str(16 // 8), 'W1 t-s10 vB = 2', 'HITUNG')
+    r.check(V('mod-w03/theory/items/s08.yaml', 1)['accepted_answers'][0] == str(2 ** 8 - 2 - 1), 'W3 t-s08 vB = 253', 'HITUNG')
     fs = {'/tugas': {'esai.docx', 'peta.png'}, '/kirim': {'peta.png'}}; trash = []
     def op(src, f, dst, copy=False):
         if f in fs[dst]: return False
@@ -97,22 +100,22 @@ def main():
     r1 = op('/tugas', 'peta.png', '/kirim'); op('/tugas', 'esai.docx', '/kirim', copy=True)
     fs['/kirim'].discard('peta.png'); trash.append(('/kirim', 'peta.png')); s_, f_ = trash.pop(); fs[s_].add(f_)
     v = V('mod-w02/theory/items/s17.yaml', 1); kt = [o['text'] for o in v['options'] if o['id'] == v['key']][0]
-    r.check(not r1 and kt == f"/tugas {len(fs['/tugas'])} berkas, /kirim {len(fs['/kirim'])} berkas", f'W2 t-s17 vB: {kt}')
+    r.check(not r1 and kt == f"/tugas {len(fs['/tugas'])} berkas, /kirim {len(fs['/kirim'])} berkas", f'W2 t-s17 vB: {kt}', 'HITUNG')
     for i in (0, 1):
         v = V('mod-w02/concept/items/s05.yaml', i)
-        r.check(v['accepted_sequences'] == [['A', 'B', 'C', 'D']], f'W2 c-s05 v{"AB"[i]} urutan A B C D')
+        r.check(v['accepted_sequences'] == [['A', 'B', 'C', 'D']], f'W2 c-s05 v{"AB"[i]} urutan A B C D', 'STRUKTUR')
         txt = ' '.join(x['text'] for x in v['items'])
-        r.check('seluruh' in txt and 'Tempat Sampah' in txt and 'Simulasi' in v['stem'], f'W2 c-s05 v{"AB"[i]}: periksa seluruh isi Tempat Sampah (simulasi)')
+        r.check('seluruh' in txt and 'Tempat Sampah' in txt and 'Simulasi' in v['stem'], f'W2 c-s05 v{"AB"[i]}: periksa seluruh isi Tempat Sampah (simulasi)', 'STRUKTUR')
     for f, i, key in [('mod-w02/theory/items/s02.yaml', 1, ['a', 'c', 'e']), ('mod-w02/theory/items/s09.yaml', 1, ['b', 'c', 'd']),
                       ('mod-w02/concept/items/s06.yaml', 1, ['b', 'd']), ('mod-w03/concept/items/s02.yaml', 1, ['a', 'c', 'd']),
                       ('mod-w04/concept/items/s02.yaml', 1, ['b', 'c', 'e']), ('mod-w04/concept/items/s05.yaml', 0, ['a', 'c']),
                       ('mod-w06/concept/items/s05.yaml', 1, ['b', 'c', 'e'])]:
-        r.check(sorted(V(f, i)['key']) == key, f'{f} v{"AB"[i]}: kunci {key}')
+        r.check(sorted(V(f, i)['key']) == key, f'{f} v{"AB"[i]}: kunci {key}', 'REGRESI')
     rows = [''.join(map(str, b)) for b in itertools.product([0, 1], repeat=3)]
-    r.check(rows[:3] == ['000', '001', '010'] and rows[-1] == '111', 'W6 c-s05 vB opsi e benar')
+    r.check(rows[:3] == ['000', '001', '010'] and rows[-1] == '111', 'W6 c-s05 vB opsi e benar', 'HITUNG')
     exp = yaml.safe_load(open(__file__.replace('check_keys.py', 'expected/key_positions.yaml'), encoding='utf-8'))
     for m in ('01', '02', '03', '04', '05', '06', '07', '08'):
-        r.check(key_positions(m) == exp[f'W{m}'], f'posisi kunci W{m}: {key_positions(m)} ≠ {exp[f"W{m}"]}')
+        r.check(key_positions(m) == exp[f'W{m}'], f'posisi kunci W{m}: {key_positions(m)} ≠ {exp[f"W{m}"]}', 'REGRESI')
     return r.done()
 
 if __name__ == '__main__':

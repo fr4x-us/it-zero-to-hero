@@ -88,13 +88,13 @@ def main():
             acc, norm = find(f['file'], f['id'])
             r.check('N1–N6' in norm, f"{f['id']}: kontrak N1–N6 tidak ada di teks normalisasi")
             got = nb5(f['input'], acc)
-        r.check(got == f['expected'], f"{f.get('id', 'sintetis')} {f['input']!r}: {got} ≠ {f['expected']}")
+        r.check(got == f['expected'], f"{f.get('id', 'sintetis')} {f['input']!r}: {got} ≠ {f['expected']}", 'REGRESI')
     print(f'  fixture NB-5: {len(fx)}')
     for f in yaml.safe_load(open(__file__.replace('check_nb5.py', 'fixtures/f51_fixtures.yaml'), encoding='utf-8')):
         acc, norm = find(f['file'], f['id'])
         r.check('peka huruf' in norm and 'N1–N6' not in norm, f"{f['id']}: kontrak F-51 berubah")
         got = 'ACCEPT' if f['input'].strip() in [str(a) for a in acc] else 'INVALID'
-        r.check(got == f['expected'], f"F-51 {f['input']!r}: {got} ≠ {f['expected']}")
+        r.check(got == f['expected'], f"F-51 {f['input']!r}: {got} ≠ {f['expected']}", 'REGRESI')
     items = consumers()
     nt = sum('.theory.' in i[0] for i in items); nl = sum('.lab.' in i[0] for i in items)
     print(f'  konsumen NB-5 W5–W6: {len(items)} (teori {nt}, lab {nl})')

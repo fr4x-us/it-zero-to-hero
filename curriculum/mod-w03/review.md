@@ -508,3 +508,13 @@ delta independen** terarah. Register F-01–F-72 tidak berubah.
 Register kesetaraan dan cakupan: [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
 Penerimaan W03-ACC tetap historis; varian revisi belum diterima.
 
+### Putaran 5 (review `796043c`, REQUEST CHANGES)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R4-02 | Validator penerimaan kini membandingkan isi setiap varian dengan `baseline_commit` git (field baru di blok `acceptance`); varian revisi tetap PENDING | CONFIRMED — FIXED | YA | BELUM |
+| R4-03 | Cakupan "peran router" dan "peran switch" (concept s01) kini OPEN: hanya berbukti semantik lemah (kunci K4.q1/K4.q2). Usulan: kunci concept s01 vA menyebut switch/access point dan router — menunggu otorisasi owner | OPEN | TIDAK | BELUM |
+| R4-04–R4-09 | Kesetaraan concept s03 OPEN (hitung host vs keanggotaan); usulan vB baris salah jumlah host — menunggu otorisasi | OPEN | TIDAK | BELUM |
+
+Butir W3 yang diterima tidak diubah pada putaran ini.
+

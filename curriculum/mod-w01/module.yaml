@@ -16,6 +16,7 @@ acceptance:                          # TPL-01a (D-39 putaran 4): status penerima
   historical:
     id: W01-ACC
     date: "2026-11-24"
+    baseline_commit: "df76c5fbf946e6e8d2ca9e8e87505454041623a3"   # merge PR #25; isi butir W1 identik sampai 846051f (hanya module.yaml/review.md berubah)
     basis: "W01-ACC di DECISIONS_LOG; penerimaan terbatas (review.md §11)"
     scope: "Isi modul pada saat penerimaan (semua varian item_version 1.0)"
   current_content: REVISED_PENDING   # ACCEPTED_AS_IS | REVISED_PENDING

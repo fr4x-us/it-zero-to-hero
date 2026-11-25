@@ -308,3 +308,13 @@ AUTHOR RESOLVED ≠ INDEPENDENT VERIFIED. PR28-06 **tidak** ditutup independen h
 | R3-08 | TPL-01a `acceptance` (14 varian W1–W4 PENDING) | YA | BELUM |
 | PR28-02 | Paket reproduksi `docs/validation/` (82 konsumen NB-5, 39 fixture, mutasi 5/5) — hasil penulis | YA | BELUM |
 | PR28-06 | Cakupan 156/156 PASS menurut data penulis; 0 GAP | YA | BELUM |
+
+### Putaran 5 (review `796043c`, REQUEST CHANGES; temuan sementara R4-01–R4-10)
+
+Baris putaran 4 di atas adalah catatan historis; status aktif di bawah ini. Cakupan dan kesetaraan = **hasil penulis**.
+
+| ID | Hasil penulis | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|
+| PR28-06 | **OPEN**: cakupan 153 PASS, 3 OPEN (W3 router/switch, W4 OTP — bukti semantik lemah), 0 GAP; kesetaraan 5 slot OPEN | TIDAK | BELUM |
+| R4-03 | Dua lapis bukti (semantik penulis vs jalur matematis); W5: 21/21 PASS | YA | BELUM |
+| R4-04–R4-09 | Kesetaraan W5: 6/6 PASS (register manual) | YA | BELUM |

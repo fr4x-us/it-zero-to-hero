@@ -314,7 +314,7 @@ dienumerasi dan ditulis eksplisit di rubrik.
 
 Owner memilih opsi C (D-39) untuk PR28-06. Audit W1–W8 terhadap 156 konsep
 wajib: 15 GAP sebelum koreksi (W1 1, W2 8, W3 2, W4 3, W6 1), 0 sesudah
-koreksi terarah pada 14 varian butir (`item_version: '2.0'`). Kandidat W5/W6
+koreksi terarah (hasil penulis) pada 14 varian butir (`item_version: '2.0'`). Kandidat W5/W6
 yang semula dicatat PASS tanpa perubahan. Matriks:
 [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
 Penerimaan W01-ACC–W04-ACC tetap tercatat untuk isi yang diterima; butir
@@ -325,3 +325,5 @@ Putaran 4 (review `4ddc993`): R3-03 (keselamatan prosedur W2 concept s05
 vA/vB), R3-05–R3-07 (W3 concept s02 vB, W4 concept s02 vB, s05 vA)
 direvisi; R3-04 koreksi bukti saja. Status penerimaan terstruktur TPL-01a:
 14 varian W1–W4 PENDING. Paket validasi dokumentasi: `docs/validation/`.
+
+**Putaran 5 (review `796043c`)**: cakupan = **hasil penulis** 153 PASS, 3 OPEN (bukti semantik lemah: W3 peran router/switch, W4 OTP), 0 GAP; kesetaraan varian 43 PASS, 5 OPEN (W3 s03, W4 s01, s03, W7 s02, s03); usulan koreksi menunggu otorisasi owner (matriks §7). PR28-06 tetap OPEN.

@@ -560,3 +560,12 @@ delta independen** terarah. Register F-01–F-72 tidak berubah.
 Register kesetaraan dan cakupan: [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
 Penerimaan W02-ACC tetap historis; varian revisi belum diterima.
 
+### Putaran 5 (review `796043c`, REQUEST CHANGES)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R4-02 | Validator penerimaan kini membandingkan isi setiap varian dengan `baseline_commit` git (field baru di blok `acceptance`); varian revisi tetap PENDING | CONFIRMED — FIXED | YA | BELUM |
+| R4-03 | Bukti "salin mempertahankan asal": proyek K4.q3 dihapus (salin hanya pengecoh); bukti (b) teori s15 vA + s17 vB, berlaku karena VA-2 memberi indeks varian yang sama di semua slot (disimulasikan) | CONFIRMED — FIXED (bukti) | YA | BELUM |
+
+Butir W2 yang diterima tidak diubah pada putaran ini.
+

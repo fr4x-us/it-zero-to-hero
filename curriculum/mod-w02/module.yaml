@@ -16,6 +16,7 @@ acceptance:                          # TPL-01a (D-39 putaran 4): status penerima
   historical:
     id: W02-ACC
     date: "2026-11-24"
+    baseline_commit: "846051f66ee4d1e36e9b34e0c9d1787fb713617b"   # merge PR #27
     basis: "PR #27 merge 846051f"
     scope: "Isi modul pada saat penerimaan (semua varian item_version 1.0)"
   current_content: REVISED_PENDING   # ACCEPTED_AS_IS | REVISED_PENDING

@@ -331,3 +331,6 @@ dapat dinilai lengkap? Rekomendasi: Ya.
 - Untuk owner: format editor flowchart (M-10) dan bentuk entri ekspresi
   Boolean belum diputuskan; W6/W8 memakai bentuk jawaban terstruktur yang
   sudah ada (EB-4/D-24).
+- PR #28 putaran 3–5 (2026-11-25): D-39 dicatat; cakupan = hasil penulis (153 PASS, 3 OPEN berbukti
+  semantik lemah, 0 GAP); kesetaraan varian 5 slot OPEN; 14 varian W1–W4 revisi PENDING (TPL-01a);
+  usulan koreksi butir menunggu otorisasi owner. UW-26, UW-37 tetap OPEN.

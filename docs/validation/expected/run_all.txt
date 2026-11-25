@@ -1,19 +1,23 @@
+  dokumen wajib: 43; uji negatif 3, positif 1
+[dokumen] pemeriksaan 5 (STRUKTUR 5): ALL OK
   fixture NB-5: 39
   konsumen NB-5 W5–W6: 82 (teori 30, lab 52)
   uji mutasi tertangkap: 5/5
-[NB-5] pemeriksaan 84: ALL OK
+[NB-5] pemeriksaan 84 (REGRESI 43, STRUKTUR 41): ALL OK
   fixture BN-6 10, B01 9, BX 14
-[BN-6/B01/BX] pemeriksaan 60: ALL OK
+[BN-6/B01/BX] pemeriksaan 60 (HITUNG 5, REGRESI 47, STRUKTUR 8): ALL OK
   W7 tukar bersebelahan diuji: 16476
-[kunci] pemeriksaan 33: ALL OK
-  W01: historis W01-ACC; varian revisi PENDING 1
-  W02: historis W02-ACC; varian revisi PENDING 8
-  W03: historis W03-ACC; varian revisi PENDING 2
-  W04: historis W04-ACC; varian revisi PENDING 3
-  W05: belum diterima owner (owner_accepted False)
-  W06: belum diterima owner (owner_accepted False)
-  W07: belum diterima owner (owner_accepted False)
-  W08: belum diterima owner (owner_accepted False)
-[penerimaan] pemeriksaan 48: ALL OK
-  konsep 156; GAP 0 []; kesetaraan OPEN 4 [('01', 's03', ['beban baca berbeda (35 vs 67 kata)']), ('04', 's01', ['tuntutan kognitif']), ('04', 's03', ['beban baca berbeda (65 vs 107 kata)']), ('04', 's06', ['beban baca berbeda (84 vs 51 kata)'])]
-[cakupan] pemeriksaan 53: ALL OK
+[kunci] pemeriksaan 33 (HITUNG 11, REGRESI 17, STRUKTUR 5): ALL OK
+  W01: baseline df76c5f; varian berubah 1; tercatat PENDING 1
+  W02: baseline 846051f; varian berubah 8; tercatat PENDING 8
+  W03: baseline 846051f; varian berubah 2; tercatat PENDING 2
+  W04: baseline 846051f; varian berubah 3; tercatat PENDING 3
+  W05: belum diterima owner
+  W06: belum diterima owner
+  W07: belum diterima owner
+  W08: belum diterima owner
+  uji validator: 12 kasus — 9 mutasi terdeteksi, 3 kasus sah diterima (data asli; versi historis 2.0; revisi 2.0 → 3.0)
+[penerimaan] pemeriksaan 28 (STRUKTUR 28): ALL OK
+  konsep 156; PASS 153; OPEN (semantik lemah) 3 [('03', 's01', 'peran router'), ('03', 's01', 'peran switch'), ('04', 's03', 'OTP tidak dibagikan')]; GAP 0; kesetaraan PASS 43, OPEN 5 [('03', 's03'), ('04', 's01'), ('04', 's03'), ('07', 's02'), ('07', 's03')]
+  SEMANTIK: bukti "lokasi menilai konsep" dan register kesetaraan = penilaian penulis (tidak diverifikasi otomatis)
+[cakupan] pemeriksaan 174 (STRUKTUR 174): ALL OK

@@ -104,14 +104,16 @@ kecuali ditandai opsional.
 | `components` | 4 komponen, bobot 30/40/20/10, maks. poin, berkas | D-13, BL:27–30 |
 | `pass_rule` | `4·e ≥ 3·m` per komponen dan W ≥ 80 eksak | D-04, D-12 |
 | `unscored_reflection` (opsional) | Refleksi CE-D, `scored: false` | D-23 |
-| `acceptance` (TPL-01a, ekstensi D-39 putaran 4) | Wajib bila `status.owner_accepted: YES` dan ada varian yang berubah setelah penerimaan. `historical` {`id`, `date`, `basis`, `scope`}; `current_content` ∈ {`ACCEPTED_AS_IS`, `REVISED_PENDING`}; `revised_variants[]` {`variant_id`, `accepted_version`, `current_version`, `reason`, `independent_review`, `owner_acceptance` ∈ {`PENDING`, `PASS`/`ACCEPTED`}} | D-39; `status.owner_accepted` tetap mencatat penerimaan **historis** dan tidak ditimpa |
+| `acceptance` (TPL-01a, ekstensi D-39 putaran 4) | Wajib bila `status.owner_accepted: YES` dan ada varian yang berubah setelah penerimaan. `historical` {`id`, `date`, `baseline_commit` (commit git isi yang diterima), `basis`, `scope`}; `current_content` ∈ {`ACCEPTED_AS_IS`, `REVISED_PENDING`}; `revised_variants[]` {`variant_id`, `accepted_version`, `current_version`, `reason`, `independent_review`, `owner_acceptance` ∈ {`PENDING`, `PASS`/`ACCEPTED`}} | D-39; `status.owner_accepted` tetap mencatat penerimaan **historis** dan tidak ditimpa |
 
-**Aturan TPL-01a.** `revised_variants` harus memuat **tepat** semua varian
-modul yang `item_version`-nya berbeda dari versi yang diterima, dengan versi
-yang sama persis (diperiksa otomatis oleh paket validasi dokumentasi
-`docs/validation/`). Varian berstatus `PENDING` tidak termasuk penerimaan
-historis. Ekstensi ini hanya menambah field; tidak ada field lama yang
-diubah artinya.
+**Aturan TPL-01a.** Validator membandingkan setiap varian dengan isinya pada
+`baseline_commit` (bukan dengan asumsi versi 1.0): isi sama → versi sama dan
+tidak tercatat sebagai revisi; isi berubah → versi naik dan tercatat di
+`revised_variants` dengan `accepted_version` = versi baseline (boleh > 1.0)
+dan `current_version` = versi berkas; status `PENDING` sampai review
+independen dan penerimaan owner. Variant ID ganda, entri ganda, entri
+hilang, atau versi salah membuat validasi gagal (`docs/validation/check_acceptance.py`).
+Ekstensi ini hanya menambah field; tidak ada field lama yang diubah artinya.
 
 ### TPL-02 Prasyarat dan tujuan belajar
 
@@ -302,7 +304,7 @@ yang diizinkan per isian. Contoh diterima/ditolak:
 | QC-10 | Fixture batas mencakup batas yang dapat dicapai (atau dinyatakan tidak dapat dicapai) | Contoh batas dari fixture nyata |
 | QC-11 | Berkas V-L mematuhi kontrak visibilitas §1a (VC-1–VC-5) | Pemeriksaan setiap `spec.md` dan pelajaran terhadap kunci |
 | QC-12 | Satuan desimal vs biner dinyatakan; desimal bawaan; konversi GB–GiB lewat byte | Pemeriksaan pelajaran, soal, lab |
-| QC-13 | Cakupan D-39: setiap konsep wajib dijamin di setiap jalur penilaian yang sah; setiap varian menilai kompetensi inti slot secara setara. Bukti yang **cukup**: (a) satu lokasi wajib yang menilai konsep di semua varian yang dapat dipilih, atau proyek; **atau** (b) bukti deterministik setara yang mencakup setiap jalur pelajar sah menurut aturan pemilihan yang berlaku (mis. varian berkorelasi antarslot dalam satu komponen menurut VA-2). Jaminan D-39 dan aturan pemilihan tidak dilemahkan | Baris matriks cakupan per konsep dan register kesetaraan per slot ([CURRICULUM_COVERAGE_MATRIX_W01_W08.md](CURRICULUM_COVERAGE_MATRIX_W01_W08.md)); uji negatif/positif metode; paket `docs/validation/` |
+| QC-13 | Cakupan D-39: setiap konsep wajib dijamin di setiap jalur penilaian yang sah; setiap varian menilai kompetensi inti slot secara setara. Bukti yang **cukup**: (a) satu lokasi wajib yang menilai konsep di semua varian yang dapat dipilih, atau proyek; **atau** (b) bukti deterministik setara yang mencakup setiap jalur pelajar sah menurut aturan pemilihan yang berlaku (mis. varian berkorelasi antarslot dalam satu komponen menurut VA-2). Jaminan D-39 dan aturan pemilihan tidak dilemahkan. Bukti **semantik** (lokasi benar-benar menilai konsep) adalah penilaian reviewer/penulis yang dicatat terpisah dari bukti **jalur** (matematis); kesetaraan varian (VA-1) dinilai terpisah dari cakupan modul | Baris matriks cakupan per konsep dan register kesetaraan per slot ([CURRICULUM_COVERAGE_MATRIX_W01_W08.md](CURRICULUM_COVERAGE_MATRIX_W01_W08.md)); uji negatif/positif metode; paket `docs/validation/` |
 
 Kriteria ini adalah persyaratan kualitas dokumentasi, **bukan** izin
 implementasi. TPL-19 (checklist penerimaan) mencakup CQ-01–CQ-20 **dan**

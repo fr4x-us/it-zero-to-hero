@@ -20,18 +20,27 @@ def content_sha():
     except Exception:
         return 'unknown', 'unknown', True
 
+CATS = {
+    'HITUNG': 'jawaban dihitung ulang secara independen dari isi soal/aturan',
+    'REGRESI': 'dibandingkan dengan nilai harapan tetap (fixture, kunci tetap, snapshot) — bukan perhitungan ulang',
+    'STRUKTUR': 'pemeriksaan struktur/keberadaan/konsistensi berkas',
+}
+
 class Report:
+    """Pencatat hasil. Setiap pemeriksaan diberi kategori klaim (R4-10). Penilaian SEMANTIK penulis tidak dihitung di sini."""
     def __init__(self, name):
-        self.name, self.bad, self.n = name, 0, 0
-    def check(self, cond, msg):
-        self.n += 1
+        self.name, self.bad, self.n, self.cat = name, 0, 0, {}
+    def check(self, cond, msg, cat='STRUKTUR'):
+        assert cat in CATS, cat
+        self.n += 1; self.cat[cat] = self.cat.get(cat, 0) + 1
         if not cond:
             self.bad += 1
-            print('  GAGAL', msg)
+            print('  GAGAL', f'[{cat}]', msg)
         return cond
     def done(self):
         status = 'ALL OK' if not self.bad else f'GAGAL {self.bad}'
-        print(f'[{self.name}] pemeriksaan {self.n}: {status}')
+        cats = ', '.join(f'{k} {v}' for k, v in sorted(self.cat.items()))
+        print(f'[{self.name}] pemeriksaan {self.n} ({cats}): {status}')
         return self.bad == 0
 
 # ---------- NB-5 (kontrak N1–N6, teks normalisasi butir W5–W8) ----------
