@@ -1,7 +1,7 @@
 # IT ZERO → HERO — Rencana Produksi Kurikulum (UW-37)
 
 Status: **RENCANA** · dokumentasi saja · **belum ada konten yang
-diproduksi** kecuali W1–W8. UW-37 tetap **OPEN** (8/16 modul diproduksi; 4/16 diterima owner — W1 W01-ACC, W2–W4 W02-ACC–W04-ACC; W5–W8 diproduksi pada CB-2, menunggu review independen dan penerimaan owner; W9–W16 NOT STARTED / NOT AUTHORIZED). Tanggal: **2026-11-24**
+diproduksi** kecuali W1–W8. UW-37 tetap **OPEN** (8/16 modul diproduksi; 4/16 diterima owner secara historis — W1 W01-ACC, W2–W4 W02-ACC–W04-ACC; 14 varian revisi D-39 di W1–W4 PENDING (TPL-01a); W5–W8 diproduksi pada CB-2, menunggu review independen dan penerimaan owner; W9–W16 NOT STARTED / NOT AUTHORIZED). Tanggal: **2026-11-24**
 (status aktif diperbarui pada CB-2). Basis: `main` = `846051f` (merge PR #27).
 Standar produksi CB-0 (semua kebijakan terputuskan setelah D-36; tidak ada keputusan penerimaan owner terpisah untuk CB-0; review independen terbatas; **bukan** final global): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md). Modul acuan: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml).
 
@@ -136,7 +136,7 @@ sudah diputuskan (D-23–D-36).
 | Spesifikasi lab | 48/96 | 24 (terbatas) | 24 | — |
 | Spesifikasi mini-project | 8/16 | 4 (terbatas) | 4 | — |
 
-Persentase: diproduksi 32/64 = 50%; diterima owner 16/64 = 25%.
+Persentase: diproduksi 32/64 = 50%; diterima owner 16/64 = 25% (**historis**: isi pada saat W01-ACC–W04-ACC; 14 varian revisi D-39 di W1–W4 PENDING (TPL-01a), lihat blok `acceptance` di `module.yaml` W1–W4).
 
 Inventaris target D-30 (dua butir nyata per slot/aktivitas): teori
 (15 × 20 + 10) × 2 = 620; concept 16 × 6 × 2 = 192; lab 16 × 3 × 2 = 96;
@@ -319,4 +319,9 @@ yang semula dicatat PASS tanpa perubahan. Matriks:
 [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
 Penerimaan W01-ACC–W04-ACC tetap tercatat untuk isi yang diterima; butir
 W1–W4 yang diubah **belum** diterima dan memerlukan review delta
-independen. Angka produksi/penerimaan (32/64, 16/64) tidak berubah.
+independen. Angka produksi/penerimaan (32/64, 16/64 historis) tidak berubah.
+
+Putaran 4 (review `4ddc993`): R3-03 (keselamatan prosedur W2 concept s05
+vA/vB), R3-05–R3-07 (W3 concept s02 vB, W4 concept s02 vB, s05 vA)
+direvisi; R3-04 koreksi bukti saja. Status penerimaan terstruktur TPL-01a:
+14 varian W1–W4 PENDING. Paket validasi dokumentasi: `docs/validation/`.

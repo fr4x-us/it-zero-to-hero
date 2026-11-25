@@ -315,5 +315,5 @@ menunjuk dokumen yang menjabarkan kriteria, **bukan** menutup gap.
 | CU-9, CU2-O4 | **D-33** |
 | CU-10 | **D-34** |
 | CU-6 (LX) | **D-35**; kebijakan umpan balik test tersembunyi → CU-6-Q13 (OPEN) |
-| K-13 konten | *Historis (saat ditulis):* W1 diproduksi, belum diterima; W2–W16 belum ditulis. **Status aktif (2026-11-24, CB-2):** W1–W4 diterima (W01-ACC–W04-ACC); W5–W8 diproduksi, menunggu review independen dan penerimaan owner; W9–W16 belum dimulai; audit cakupan D-39 W1–W8: [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](CURRICULUM_COVERAGE_MATRIX_W01_W08.md) — lihat [CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md) §4 |
+| K-13 konten | *Historis (saat ditulis):* W1 diproduksi, belum diterima; W2–W16 belum ditulis. **Status aktif (2026-11-24, CB-2):** W1–W4 diterima secara historis (W01-ACC–W04-ACC; 14 varian revisi D-39 di W1–W4 PENDING (TPL-01a)); W5–W8 diproduksi, menunggu review independen dan penerimaan owner; W9–W16 belum dimulai; audit cakupan D-39 W1–W8: [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](CURRICULUM_COVERAGE_MATRIX_W01_W08.md) — lihat [CURRICULUM_PRODUCTION_PLAN.md](CURRICULUM_PRODUCTION_PLAN.md) §4 |
 | CC-07 lab non-kode | Diterapkan sebagai contoh terlihat bernilai 0 + pemeriksaan bernilai yang disembunyikan sampai evaluasi (TPL-10) |

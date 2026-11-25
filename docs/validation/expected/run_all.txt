@@ -1,0 +1,19 @@
+  fixture NB-5: 39
+  konsumen NB-5 W5–W6: 82 (teori 30, lab 52)
+  uji mutasi tertangkap: 5/5
+[NB-5] pemeriksaan 84: ALL OK
+  fixture BN-6 10, B01 9, BX 14
+[BN-6/B01/BX] pemeriksaan 60: ALL OK
+  W7 tukar bersebelahan diuji: 16476
+[kunci] pemeriksaan 33: ALL OK
+  W01: historis W01-ACC; varian revisi PENDING 1
+  W02: historis W02-ACC; varian revisi PENDING 8
+  W03: historis W03-ACC; varian revisi PENDING 2
+  W04: historis W04-ACC; varian revisi PENDING 3
+  W05: belum diterima owner (owner_accepted False)
+  W06: belum diterima owner (owner_accepted False)
+  W07: belum diterima owner (owner_accepted False)
+  W08: belum diterima owner (owner_accepted False)
+[penerimaan] pemeriksaan 48: ALL OK
+  konsep 156; GAP 0 []; kesetaraan OPEN 4 [('01', 's03', ['beban baca berbeda (35 vs 67 kata)']), ('04', 's01', ['tuntutan kognitif']), ('04', 's03', ['beban baca berbeda (65 vs 107 kata)']), ('04', 's06', ['beban baca berbeda (84 vs 51 kata)'])]
+[cakupan] pemeriksaan 53: ALL OK

@@ -1,0 +1,42 @@
+# Snapshot posisi kunci (TF-1/CE-S1 kunci tunggal, CE-S5 correction_key, K4) — sama dengan baseline 4ddc993 (sebelum putaran 4)
+W01:
+  a: 7
+  b: 9
+  c: 10
+  d: 9
+W02:
+  a: 8
+  b: 7
+  c: 9
+  d: 9
+W03:
+  a: 7
+  b: 8
+  c: 8
+  d: 8
+W04:
+  a: 9
+  b: 8
+  c: 10
+  d: 8
+W05:
+  a: 6
+  b: 6
+  c: 7
+  d: 6
+W06:
+  a: 6
+  b: 7
+  c: 8
+  d: 6
+W07:
+  a: 7
+  b: 7
+  c: 9
+  d: 8
+W08:
+  a: 8
+  b: 7
+  c: 7
+  d: 7
+

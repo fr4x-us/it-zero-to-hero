@@ -44,7 +44,7 @@ di setiap PR batch.
 | #25 | Pencatatan D-26–D-37; CB-0; konten W1; revisi kualitas W1 (F-01–F-23) | Merged 2026-11-24 sebagai `df76c5f` (head `f4cb173`; di-merge Claude atas otorisasi eksplisit owner) |
 | #26 | CB-0.5: D-38, W01-ACC, empat skill agen, PROJECT_MAP, protokol efisiensi token; revisi F-24–F-27 (hardening keamanan) | Merged 2026-11-24 sebagai `ab0103e` (head `691ae87`; di-merge Claude atas otorisasi eksplisit owner, master prompt CB-1) |
 | #27 | CB-1: V03 PASS; kurikulum W2–W4 (12 komponen); dua putaran koreksi F-28–F-72 | Merged 2026-11-24 sebagai `846051f` (head `1a58338`; di-merge Claude atas otorisasi eksplisit owner, master prompt CB-2) |
-| #28 | CB-2: penerimaan W02-ACC–W04-ACC; kurikulum W5–W8 (16 komponen) | OPEN — review independen REQUEST CHANGES (SHA `ca73981`) → dikoreksi (PR28-01–PR28-12, putaran 1–2) → D-39 diterapkan (putaran 3) → menunggu review delta independen; **tidak di-merge Claude** (base `main` = `846051f`, branch `planning/cb2-w05-w08`) |
+| #28 | CB-2: penerimaan W02-ACC–W04-ACC; kurikulum W5–W8 (16 komponen) | OPEN — review independen REQUEST CHANGES (SHA `ca73981`) → dikoreksi (PR28-01–PR28-12, putaran 1–2) → D-39 diterapkan (putaran 3) → koreksi R3-01–R3-08 (putaran 4) → menunggu review delta independen; **tidak di-merge Claude** (base `main` = `846051f`, branch `planning/cb2-w05-w08`) |
 
 ## Aturan merge (permanen)
 
@@ -63,7 +63,7 @@ merge." untuk PR itu saja ([GITHUB_BRIDGE.md](GITHUB_BRIDGE.md) §5).
 | D-16 | OWNER APPROVED, bersyarat verifikasi teknis; restore produksi nonaktif sampai batas KDF terverifikasi (UW-15 NOT VERIFIED) |
 | D-17–D-22 | OWNER APPROVED (2026-11-24) |
 | D-23–D-25 | OWNER APPROVED (2026-11-24); UW-26, UW-36 tetap belum selesai; runtime dan kripto NOT VERIFIED |
-| D-26–D-35 | OWNER APPROVED (2026-11-24); UW-26/UW-37 OPEN: W1–W4 diterima, W5–W8 menunggu review/penerimaan, W9–W16 belum diproduksi |
+| D-26–D-35 | OWNER APPROVED (2026-11-24); UW-26/UW-37 OPEN: W1–W4 diterima (historis; 14 varian revisi D-39 di W1–W4 PENDING (TPL-01a)), W5–W8 menunggu review/penerimaan, W9–W16 belum diproduksi |
 | D-36–D-37 | OWNER APPROVED (2026-11-24): HF-A; XV-7–XV-14 + RX-A. UW-33 menunggu OD-5–OD-9, OD-11–OD-14 |
 | D-38, W01-ACC | OWNER APPROVED / ACCEPTED (2026-11-24): angka LX-2 = keluaran UW-12 (V); UW-36 COMPLETE. W1 = modul acuan (batas review independen diungkapkan) |
 | D-39 | OWNER APPROVED (2026-11-25): HYBRID COMPETENCY COVERAGE (opsi C, PR28-06); melengkapi D-23, TPL-13, VA-1; QC-13. Audit W1–W8: 156 konsep, 15 GAP → 0; butir W1–W4 yang diubah perlu review delta |
@@ -83,7 +83,7 @@ CB-2 (2026-11-24): PR #27 di-merge (`846051f`); W02-ACC–W04-ACC dicatat;
 W5–W8 diproduksi (PR #28); review independen REQUEST CHANGES dua kali →
 koreksi putaran 1 (PR28-01–PR28-12) dan putaran 2 (PR28-07, PR28-08,
 PR28-11, PR28-12). Kurikulum diproduksi 8/16 modul (32/64 komponen),
-diterima 4/16 (16/64). Audit 32/4/12/3/5 = 56; jalur P 32/43; UW-26 dan
+diterima 4/16 (16/64) secara **historis** — 14 varian revisi D-39 di W1–W4 PENDING (TPL-01a). Audit 32/4/12/3/5 = 56; jalur P 32/43; UW-26 dan
 UW-37 OPEN. Keputusan owner D-39 (cakupan hibrida) dicatat; audit W1–W8
 dan koreksi terarah 14 varian butir (W1 1, W2 7, W3 2, W4 3, W6 1). PR #28
 menunggu review delta; tidak di-merge.
@@ -106,10 +106,10 @@ Kontrak field: [AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTO
 
 | Field | Nilai |
 |---|---|
-| Tugas aktif dan lingkup | PR #28 (CB-2): catat D-39 (cakupan hibrida), audit W1–W8, koreksi celah terbukti, tutup tindak lanjut NB-5; tanpa merge, tanpa W9, tanpa implementasi |
-| Fase | CB-2 diproduksi (PR #28); koreksi putaran 1–2; D-39 dicatat dan diterapkan (putaran 3) → PR #28 diperbarui → STOP |
+| Tugas aktif dan lingkup | PR #28 (CB-2) putaran 4: R3-01–R3-08 (QC-13, register kesetaraan, keselamatan W2 c-s05, bukti cakupan, TPL-01a, paket validasi reproduksi); tanpa merge, tanpa W9, tanpa implementasi |
+| Fase | CB-2 diproduksi (PR #28); koreksi putaran 1–2; D-39 (putaran 3); koreksi R3-01–R3-08 + paket validasi `docs/validation/` (putaran 4) → PR #28 diperbarui → STOP |
 | Selesai | PR #27 merged (`846051f66ee4d1e36e9b34e0c9d1787fb713617b`); W02-ACC, W03-ACC, W04-ACC dicatat (DECISIONS_LOG, OWNER_DECISION_CHECKLIST, module.yaml, review.md); **W5** `curriculum/mod-w05/` (42 berkas; validator NO ERRORS; 13/13 contoh proyek; NB-5 58 butir angka; kunci a6 b6 c7 d6); **W6** `curriculum/mod-w06/` (42 berkas; validator NO ERRORS; 16/16 contoh proyek; 24 butir biner + 22 butir Boolean dihitung ulang dari teks soal; kunci a6 b7 c8 d6); **W7** `curriculum/mod-w07/` (42 berkas; validator NO ERRORS; 16/16 contoh proyek; urutan valid dienumerasi; kunci a7 b7 c9 d8); **W8** `curriculum/mod-w08/` (42 berkas; validator NO ERRORS; 17/17 contoh proyek; 256 kombinasi blok dienumerasi → 2 benar; kunci a8 b7 c7 d7); review W6 dikoreksi (hitungan asersi 64/18) |
-| Sisa | Review delta independen PR #28, termasuk varian W1–W4 yang diubah D-39 (perlu review delta sebelum dianggap diterima); keputusan owner: M-10/entri Boolean, varian huruf `Rp`; ledger F-73–F-94 asli tidak tersedia (ID sementara PR28-nn) |
+| Sisa | Review delta independen PR #28: 14 varian W1–W4 revisi (TPL-01a PENDING), register kesetaraan 4 slot OPEN (W1 s03, W4 s01, s03, s06), R3-01–R3-08 AUTHOR RESOLVED (belum INDEPENDENT VERIFIED); keputusan owner: M-10/entri Boolean, varian huruf `Rp`; ledger F-73–F-94 asli tidak tersedia |
 | Berkas relevan | `docs/CURRICULUM_TEMPLATES_CB0.md`, `docs/CURRICULUM_CONTENT_DECISION_SHEETS.md` §D (HA-A fase 2: M 150 · U 45 · L 120 · P 90 · C 30 · R 45), `docs/PROJECT_RUBRIC_DECISION_SHEETS.md` A.3, `docs/ASSESSMENT_FLOW_DECISION_SHEETS.md` A.4, `curriculum/mod-w01`–`mod-w04` (acuan) |
 | Versi kerja | Branch `planning/cb2-w05-w08` dari `main` = `846051f66ee4d1e36e9b34e0c9d1787fb713617b`; versi terkini = head branch di GitHub |
 | Keputusan | Owner: merge PR #27, W02-ACC–W04-ACC (batas review terarah diungkapkan), CB-2 diotorisasi. LO rinci W5–W8 disusun penyusun dari CUR §2 (CU-1 PROPOSED) |
@@ -128,7 +128,7 @@ dipertahankan agar rujukan lama tetap valid.
 
 | # | Blocker | Register |
 |---|---|---|
-| B-10 | Penilaian: kebijakan diputuskan (D-04, D-12, D-13, D-23–D-38); sisa: rubrik concept — W1–W4 diproduksi dan diterima owner; W5–W8 diproduksi, menunggu review independen dan penerimaan owner (PR #28); W9–W16 NOT STARTED / NOT AUTHORIZED (UW-26 OPEN); OP-6 jam (UW-28). | UW-26, UW-28 |
+| B-10 | Penilaian: kebijakan diputuskan (D-04, D-12, D-13, D-23–D-38); sisa: rubrik concept — W1–W4 diproduksi dan diterima owner secara historis (14 varian revisi D-39 di W1–W4 PENDING (TPL-01a)); W5–W8 diproduksi, menunggu review independen dan penerimaan owner (PR #28); W9–W16 NOT STARTED / NOT AUTHORIZED (UW-26 OPEN); OP-6 jam (UW-28). | UW-26, UW-28 |
 | B-11 | Backup: D-03, D-07, D-16, D-17 **diputuskan**; sisa OD-5–OD-9 dan retensi log restore (UW-33); verifikasi kripto (UW-15, jalur V). | UW-33 |
 | B-13 | UI: palet (D-01 M-17), kontras (D-14), tema (D-15) **diputuskan**; sisa: tipografi/aset/breakpoint/alat screenshot (UO-3–UO-9). | UW-35 |
 | B-14 | Kurikulum: kebijakan CU lengkap (UW-36 COMPLETE, D-38); W1–W4 diterima (W01-ACC–W04-ACC); W5–W8 diproduksi (CB-2), menunggu review independen/penerimaan; W9–W16 NOT STARTED / NOT AUTHORIZED; format editor flowchart (M-10) dan entri ekspresi Boolean OPEN; lab minggu 9–12 bergantung O-04. | UW-21, UW-37 |

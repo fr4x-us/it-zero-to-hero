@@ -300,3 +300,16 @@ ID tetap; tidak ada ID baru. Bukti: `cov_check.py`, `cov_keys.py`, `nb5_full.py`
 |---|---|---|
 | PR28-06 | **RESOLVED (D-39)**: 19/19 PASS; satu celah terbukti diperbaiki (concept s05 vB opsi e: urutan baris standar; kunci b, c, e tetap). Kandidat s03 nilai terbesar → lab act-01.c08 kedua varian; s04 NOT → lab act-02.c01–c04 dan teori s13 kedua varian, proyek K1.c11 | Matriks `docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md` |
 | PR28-02 | Tindak lanjut NB-5: termasuk dalam 82 butir W5–W6 — 0 temuan; butir B01/BN-6 dikecualikan dari NB-5 | Matriks `docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md` |
+
+### Putaran 4 (review `4ddc993`, REQUEST CHANGES; temuan sementara R3-01–R3-08)
+
+AUTHOR RESOLVED ≠ INDEPENDENT VERIFIED. PR28-06 **tidak** ditutup independen hanya karena D-39 dicatat.
+
+| ID | Hasil penulis | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|
+| R3-01 | QC-13 diperjelas: bukti (a) cukup, bukti deterministik setara (b) juga sah | YA | BELUM |
+| R3-02 | Register kesetaraan 48 slot (matriks §6): 44 PASS, 4 OPEN (W1 s03, W4 s01, s03, s06) — butir yang sudah diterima tidak diubah tanpa otorisasi | YA | BELUM |
+| R3-03–R3-07 | Lihat `review.md` W2–W4 putaran 4 | YA | BELUM |
+| R3-08 | TPL-01a `acceptance` (14 varian W1–W4 PENDING) | YA | BELUM |
+| PR28-02 | Paket reproduksi `docs/validation/` (82 konsumen NB-5, 39 fixture, mutasi 5/5) — hasil penulis | YA | BELUM |
+| PR28-06 | Cakupan 156/156 PASS menurut data penulis; 0 GAP | YA | BELUM |

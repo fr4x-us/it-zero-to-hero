@@ -9,9 +9,20 @@ content_version: "1.0"
 status:
   documentation: PRODUCED
   reviewed: CLAUDE_SELF_REVIEW
-  owner_accepted: YES              # W04-ACC (2026-11-24), penerimaan dengan batas review terarah; lihat review.md (penerimaan); varian yang diubah D-39 (3 butir) belum diterima — perlu review delta
+  owner_accepted: YES              # W04-ACC (2026-11-24), penerimaan dengan batas review terarah; lihat review.md (penerimaan); status terstruktur: blok `acceptance`
   runtime_verified: NOT_APPLICABLE
   learner_tested: NO
+acceptance:                          # TPL-01a (D-39 putaran 4): status penerimaan terstruktur; owner_accepted di atas = penerimaan historis
+  historical:
+    id: W04-ACC
+    date: "2026-11-24"
+    basis: "PR #27 merge 846051f"
+    scope: "Isi modul pada saat penerimaan (semua varian item_version 1.0)"
+  current_content: REVISED_PENDING   # ACCEPTED_AS_IS | REVISED_PENDING
+  revised_variants:                    # varian yang berubah setelah penerimaan; BELUM diterima
+    - {variant_id: mod-w04.concept.s02.vB, accepted_version: "1.0", current_version: "3.0", reason: "D-39 cakupan konsep wajib", independent_review: PENDING, owner_acceptance: PENDING}
+    - {variant_id: mod-w04.concept.s04.vA, accepted_version: "1.0", current_version: "2.0", reason: "D-39 cakupan konsep wajib", independent_review: PENDING, owner_acceptance: PENDING}
+    - {variant_id: mod-w04.concept.s05.vA, accepted_version: "1.0", current_version: "3.0", reason: "D-39 cakupan konsep wajib", independent_review: PENDING, owner_acceptance: PENDING}
 audience: "Pemula total tanpa pengalaman IT atau pemrograman; telah menyelesaikan W1–W3"
 prerequisites: [mod-w03]
 nominal_minutes: 480

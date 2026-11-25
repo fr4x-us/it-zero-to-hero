@@ -471,3 +471,14 @@ Penerimaan W04-ACC tetap tercatat untuk isi yang diterima. Varian yang
 diubah di atas **tidak** tercakup penerimaan itu dan memerlukan **review
 delta independen** terarah. Register F-01–F-72 tidak berubah.
 
+### Putaran 4 (review `4ddc993`, REQUEST CHANGES) — tindak lanjut D-39
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R3-06 | concept s02 vB (3.0) opsi e: tanda = alasan waspada, belum bukti pasti (benar); kunci b, c, e tetap | CONFIRMED — FIXED | YA | BELUM |
+| R3-07 | concept s05 vA (3.0): stem "pernyataan yang benar"; opsi b satu klaim "menjamin data tidak akan pernah hilang" (salah); kunci a, c tetap | CONFIRMED — FIXED | YA | BELUM |
+| R3-08 | Status penerimaan terstruktur TPL-01a di `module.yaml` → `acceptance` (historis tetap; varian revisi PENDING) | CONFIRMED — FIXED | YA | BELUM |
+
+Register kesetaraan dan cakupan: [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
+Penerimaan W04-ACC tetap historis; varian revisi belum diterima.
+

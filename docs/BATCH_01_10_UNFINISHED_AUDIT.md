@@ -1100,3 +1100,18 @@ jawaban terstruktur di bawah EB-4 (D-24).
 
 PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
 D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.
+
+## 24. Pembaruan status — D-39 dan koreksi PR #28 putaran 3–4 (2026-11-25)
+
+Owner menyetujui D-39 (HYBRID COMPETENCY COVERAGE). Audit cakupan W1–W8 dan
+koreksi terarah tercatat di
+[CURRICULUM_COVERAGE_MATRIX_W01_W08.md](CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
+Tidak ada perubahan status butir: COMPLETE 32 · OPEN 4 · BLOCKED 12 ·
+DEFERRED 3 · NOT VERIFIED 5 = **56**; jalur P 32/43; UW-26 dan UW-37 OPEN.
+Kurikulum: diproduksi 8/16 modul (32/64 komponen); diterima owner 4/16
+(16/64) **secara historis** — 14 varian W1–W4 yang direvisi setelah
+penerimaan berstatus PENDING (TPL-01a). W9–W16 NOT STARTED / NOT AUTHORIZED.
+
+PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
+D-11: DEFERRED.
+

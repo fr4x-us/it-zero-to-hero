@@ -20,16 +20,17 @@ feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
 variants:
 - item_id: item-w02-c-s05-a
   variant_id: mod-w02.concept.s05.vA
-  item_version: '2.0'
-  stem: '`kontrak.pdf` tidak sengaja dihapus dari folder Dokumen. Urutkan langkah untuk mengembalikannya,
-    lalu mengosongkan Tempat Sampah dengan aman.'
+  item_version: '3.0'
+  stem: 'Simulasi pengelola berkas (bukan berkas pribadimu): `kontrak.pdf` tidak sengaja dihapus dari
+    folder Dokumen. Urutkan langkah untuk mengembalikannya, lalu mengosongkan Tempat Sampah dengan aman.'
   items:
   - id: A
     text: Buka Tempat Sampah
   - id: B
     text: Pilih `kontrak.pdf` dan pulihkan
   - id: C
-    text: Pastikan `kontrak.pdf` sudah kembali di folder Dokumen dan dapat dibuka
+    text: Pastikan `kontrak.pdf` sudah kembali di Dokumen, lalu periksa seluruh sisa isi Tempat Sampah
+      dan pulihkan berkas lain yang masih dibutuhkan
   - id: D
     text: Kosongkan Tempat Sampah
   display_order:
@@ -44,13 +45,14 @@ variants:
     - D
   credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
     maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
-  feedback: Berkas dipulihkan dari Tempat Sampah ke folder asalnya dan diperiksa lebih dulu; baru setelah
-    itu Tempat Sampah dikosongkan, karena pengosongan menghapus permanen.
+  feedback: Berkas dipulihkan dari Tempat Sampah ke folder asalnya. Sebelum mengosongkan, seluruh sisa
+    isi Tempat Sampah diperiksa dan berkas lain yang masih dibutuhkan dipulihkan, karena pengosongan menghapus
+    permanen semua isinya — bukan hanya satu berkas.
 - item_id: item-w02-c-s05-b
   variant_id: mod-w02.concept.s05.vB
-  item_version: '1.0'
-  stem: Kamu ingin memindahkan folder `Resep` dari laptop ke flashdisk dengan aman lalu mengosongkan ruang
-    laptop. Urutkan langkahnya.
+  item_version: '2.0'
+  stem: 'Simulasi pengelola berkas (bukan berkas pribadimu): kamu ingin memindahkan folder `Resep` dari
+    laptop ke flashdisk dengan aman lalu mengosongkan ruang laptop. Urutkan langkahnya.'
   items:
   - id: A
     text: Salin folder `Resep` beserta isinya ke flashdisk
@@ -60,7 +62,8 @@ variants:
   - id: C
     text: Hapus folder `Resep` dari laptop
   - id: D
-    text: Kosongkan Tempat Sampah
+    text: Periksa seluruh isi Tempat Sampah, pulihkan berkas lain yang masih dibutuhkan, lalu kosongkan
+      Tempat Sampah
   display_order:
   - C
   - A
@@ -73,6 +76,6 @@ variants:
     - D
   credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
     maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
-  feedback: Salinan diperiksa (berkasnya ada, dapat dibuka, dan isinya lengkap) sebelum yang asli dihapus
-    — berkas yang ada belum tentu terbaca utuh; Tempat Sampah dikosongkan terakhir karena setelah itu
-    berkas tidak dapat dipulihkan lewat Tempat Sampah.
+  feedback: Salinan diperiksa (berkasnya ada, dapat dibuka, dan isinya lengkap) sebelum yang asli dihapus.
+    Tempat Sampah dikosongkan terakhir, setelah seluruh isinya diperiksa, karena pengosongan menghapus
+    permanen semua berkas di dalamnya.

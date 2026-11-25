@@ -498,3 +498,13 @@ Penerimaan W03-ACC tetap tercatat untuk isi yang diterima. Varian yang
 diubah di atas **tidak** tercakup penerimaan itu dan memerlukan **review
 delta independen** terarah. Register F-01–F-72 tidak berubah.
 
+### Putaran 4 (review `4ddc993`, REQUEST CHANGES) — tindak lanjut D-39
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R3-05 | concept s02 vB (3.0) opsi e: "tidak dapat berbagi satu alamat publik" (salah); kunci a, c, d tetap | CONFIRMED — FIXED | YA | BELUM |
+| R3-08 | Status penerimaan terstruktur TPL-01a di `module.yaml` → `acceptance` (historis tetap; varian revisi PENDING) | CONFIRMED — FIXED | YA | BELUM |
+
+Register kesetaraan dan cakupan: [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
+Penerimaan W03-ACC tetap historis; varian revisi belum diterima.
+
