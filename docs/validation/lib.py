@@ -52,36 +52,83 @@ def _canon_num(s):
         return None
     return s.replace('.', '')
 
+def nb5_content_errors(accepted):
+    """R5-04: validasi konten accepted_answers sebelum evaluasi. Kembalikan daftar alasan (kosong = sah)."""
+    if not isinstance(accepted, (list, tuple)) or not accepted:
+        return ['accepted_answers kosong atau bukan daftar']
+    errs, canon, parsed = [], None, []
+    for i, a in enumerate(accepted):
+        if isinstance(a, bool) or not isinstance(a, (str, int)):
+            errs.append(f'entri {i} bukan teks/angka: {a!r}'); continue
+        a = str(a)
+        m = re.fullmatch(r'(Rp ?)?([-−]?[\d.,]+)( ?)(.*)', a)
+        if not m or a != a.strip():
+            errs.append(f'entri {i} tidak berbentuk angka+afiks: {a!r}'); continue
+        pre, num, sp, suf = m.groups()
+        n = _canon_num(num)
+        if n is None:
+            errs.append(f'entri {i} angka tidak sah: {a!r}'); continue
+        if pre and suf:
+            errs.append(f'entri {i} memakai awalan Rp dan akhiran sekaligus: {a!r}')
+        if suf and (re.search(r'\d', suf) or suf != suf.strip()):
+            errs.append(f'entri {i} akhiran tidak sah: {a!r}')
+        if sp and not suf:
+            errs.append(f'entri {i} spasi tanpa akhiran: {a!r}')
+        parsed.append((i, a, pre, n, suf))
+    plain = [x for x in parsed if not x[2] and not x[4]]
+    if not plain:
+        errs.append('tidak ada bentuk kanonik (angka polos)')
+    elif plain[0][0] != 0:
+        errs.append('entri pertama bukan bentuk kanonik')
+    else:
+        canon = plain[0][3]
+    if canon is not None:
+        dec = lambda x: len(x.split(',')[1]) if ',' in x else 0
+        for i, a, pre, n, suf in parsed:
+            if n != canon:
+                errs.append(f'entri {i} nilai/presisi berbeda dari kanonik {canon}: {a!r}')
+            elif dec(n) != dec(canon):
+                errs.append(f'entri {i} presisi berbeda: {a!r}')
+    return errs
+
 def nb5(raw, accepted):
     """Kembalikan ACCEPT / WRONG / INVALID untuk satu isian terhadap accepted_answers butir.
     N1 trim; N2 bentuk angka; N3 afiks: awalan `Rp` (hanya butir rupiah) dan akhiran dari accepted_answers;
-    N4 huruf diabaikan hanya pada akhiran; N5 kanonisasi; N6 bandingkan dengan angka kanonik (presisi sama)."""
-    acc = [str(a) for a in accepted]
-    sufs, rp, canon = set(), False, None
-    for a in acc:
-        m = re.fullmatch(r'(Rp ?)?([-−]?[\d.,]+) ?(.*)', a)
-        if m.group(1):
-            rp = True
-        if m.group(3):
-            sufs.add(m.group(3))
-        if canon is None and not m.group(1) and not m.group(3):
-            canon = _canon_num(m.group(2))
-    s = raw.strip(' \t')
-    m = re.fullmatch(r'(Rp ?)?([-−]?[\d.,]+)( ?)(.*)', s)
-    if not m:
-        return 'INVALID'
-    pre, num, _sp, suf = m.groups()
-    if pre and not rp:
-        return 'INVALID'
-    if suf and suf.lower() not in {x.lower() for x in sufs}:
-        return 'INVALID'
-    n = _canon_num(num)
-    if n is None:
-        return 'INVALID'
-    dec = lambda x: len(x.split(',')[1]) if ',' in x else 0
-    if dec(n) != dec(canon):
-        return 'INVALID'
-    return 'ACCEPT' if n == canon else 'WRONG'
+    N4 huruf diabaikan hanya pada akhiran; N5 kanonisasi; N6 bandingkan dengan angka kanonik (presisi sama).
+    R5-04: konten cacat → CONTENT_ERROR; isian bukan teks → EVALUATION_ERROR (bukan WRONG/INVALID; tanpa exception)."""
+    try:
+        if nb5_content_errors(accepted):
+            return 'CONTENT_ERROR'
+        if not isinstance(raw, str):
+            return 'EVALUATION_ERROR'
+        acc = [str(a) for a in accepted]
+        sufs, rp, canon = set(), False, None
+        for a in acc:
+            m = re.fullmatch(r'(Rp ?)?([-−]?[\d.,]+) ?(.*)', a)
+            if m.group(1):
+                rp = True
+            if m.group(3):
+                sufs.add(m.group(3))
+            if canon is None and not m.group(1) and not m.group(3):
+                canon = _canon_num(m.group(2))
+        s = raw.strip(' \t')
+        m = re.fullmatch(r'(Rp ?)?([-−]?[\d.,]+)( ?)(.*)', s)
+        if not m:
+            return 'INVALID'
+        pre, num, _sp, suf = m.groups()
+        if pre and not rp:
+            return 'INVALID'
+        if suf and suf.lower() not in {x.lower() for x in sufs}:
+            return 'INVALID'
+        n = _canon_num(num)
+        if n is None:
+            return 'INVALID'
+        dec = lambda x: len(x.split(',')[1]) if ',' in x else 0
+        if dec(n) != dec(canon):
+            return 'INVALID'
+        return 'ACCEPT' if n == canon else 'WRONG'
+    except Exception:  # pragma: no cover — jaring pengaman deterministik
+        return 'EVALUATION_ERROR'
 
 # ---------- BN-6 dan B01 ----------
 def bn6(raw, value, mode):

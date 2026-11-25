@@ -569,3 +569,11 @@ Penerimaan W02-ACC tetap historis; varian revisi belum diterima.
 
 Butir W2 yang diterima tidak diubah pada putaran ini.
 
+### Putaran 6 (koreksi terarah; otorisasi owner terbatas; temuan sementara R5-01–R5-05)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R5-05 | Field slot bersama dibandingkan dengan baseline `846051f`; W2: 8 varian PENDING, tidak ada perubahan field bersama | CONFIRMED — FIXED | YA | BELUM |
+| R5-01 | Elemen bernilai W2 (opsi teori s02/s09, bukti (b) s15 vA + s17 vB) tervalidasi | CONFIRMED — FIXED | YA | BELUM |
+
+Butir W2 yang diterima tidak diubah pada putaran ini.

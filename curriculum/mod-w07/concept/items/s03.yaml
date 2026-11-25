@@ -40,21 +40,24 @@ variants:
   feedback: Abstraksi menampilkan yang penting untuk tujuan pemakainya.
 - item_id: item-w07-c-s03-b
   variant_id: mod-w07.concept.s03.vB
-  item_version: '1.0'
-  stem: Mengapa rumus `total = n × h` lebih berguna daripada `total = 3 × 15.000`?
+  item_version: '2.0'
+  stem: Panitia lomba lari ingin mengelompokkan peserta menurut kategori umur dan jarak. Formulir pendaftaran
+    hanya meminta nama, tanggal lahir, dan pilihan jarak, tanpa warna sepatu dan lagu favorit. Mengapa?
   options:
   - id: a
-    text: Karena lebih pendek
+    text: Karena warna sepatu dan lagu favorit tidak dapat ditulis di formulir
   - id: b
-    text: Karena hasilnya selalu lebih kecil
+    text: Karena formulir yang pendek selalu lebih benar
   - id: c
-    text: Karena huruf lebih mudah dihitung daripada angka
+    text: Karena panitia sudah mengetahui warna sepatu semua peserta
   - id: d
-    text: 'Karena berlaku untuk berapa pun banyak orang (n) dan harga (h): generalisasi'
+    text: 'Karena tujuannya mengelompokkan peserta: tanggal lahir dan pilihan jarak menentukan kategori,
+      sedangkan warna sepatu dan lagu favorit tidak mengubah pengelompokan (abstraksi)'
   key: d
   distractor_rationale:
-    a: Panjang bukan alasannya
-    b: Hasil bergantung pada n dan h
-    c: Huruf tetap harus diganti nilai
+    a: Informasi itu dapat ditulis, tetapi tidak dibutuhkan untuk tujuan ini
+    b: Panjang formulir bukan alasannya; yang menentukan adalah tujuan
+    c: Tidak ada dasar; alasannya tidak relevan dengan tujuan
   credit_rule: 4 bila pilihan = kunci; selain itu 0
-  feedback: Abstraksi mengganti nilai khusus dengan variabel.
+  feedback: 'Abstraksi menyaring informasi menurut tujuan: simpan yang mengubah keputusan, abaikan yang
+    tidak.'

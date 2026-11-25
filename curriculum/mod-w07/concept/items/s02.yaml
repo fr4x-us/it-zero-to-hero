@@ -52,34 +52,36 @@ variants:
   feedback: 'Selisih 1, 2, 4 tidak tetap; rasio 2 tetap: berlipat dua.'
 - item_id: item-w07-c-s02-b
   variant_id: mod-w07.concept.s02.vB
-  item_version: '1.0'
+  item_version: '2.0'
   stem: Seorang siswa menulis catatan berikut. Satu baris salah. Temukan barisnya dan pilih perbaikannya.
   lines:
   - id: '1'
-    text: Pola 3, 6, 9, 12 bertambah tetap 3.
+    text: Suku-suku 4, 8, 12, 16 bertambah tetap 4.
   - id: '2'
-    text: Pola 5, 10, 20, 40 berlipat dua.
+    text: Suku-suku 50, 45, 40, 35 berkurang tetap 5.
   - id: '3'
-    text: Suku ke-6 pola 3, 6, 9, 12 adalah 15.
+    text: Suku-suku 3, 9, 27, 81 bertambah tetap 6.
   - id: '4'
-    text: Pola dapat dirumuskan agar suku ke berapa pun dapat dihitung.
+    text: Bila aturan pola sudah ditetapkan, rumus suku ke-n dapat dipakai untuk menghitung suku mana
+      pun.
   - id: '5'
-    text: Pola 20, 17, 14 berkurang tetap 3.
+    text: Langkah yang berpola dapat ditulis sekali lalu diulang.
   error_line: '3'
   correction_options:
   - id: a
-    text: Suku ke-6 adalah 16
+    text: Bertambah tetap 3
   - id: b
-    text: Suku ke-6 adalah 21
+    text: Bertambah tetap 18
   - id: c
-    text: Suku ke-6 adalah 18 (15 adalah suku ke-5)
+    text: 'Berlipat tiga: hasil bagi antarsuku tetap 3'
   - id: d
-    text: Suku ke-6 adalah 12
+    text: Tidak ada keteraturan pada suku-suku itu
   correction_key: c
   distractor_rationale:
-    a: Bukan kelipatan 3
-    b: Suku ke-7
-    d: Suku ke-4
+    a: 3 adalah suku pertama, bukan selisih
+    b: 18 hanya selisih 9 ke 27; selisihnya 6, 18, 54 (tidak tetap)
+    d: Hasil bagi antarsuku tetap 3
   credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
     baris salah/kosong
-  feedback: 'Suku ke-n = 3 × n: suku ke-6 = 18.'
+  feedback: 'Pada suku yang diberikan, selisih 6, 18, 54 tidak tetap, tetapi hasil bagi antarsuku tetap
+    3: berlipat tiga.'

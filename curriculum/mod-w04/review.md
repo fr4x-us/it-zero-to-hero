@@ -492,3 +492,10 @@ Penerimaan W04-ACC tetap historis; varian revisi belum diterima.
 
 Butir W4 yang diterima tidak diubah pada putaran ini.
 
+### Putaran 6 (koreksi terarah; otorisasi owner terbatas; temuan sementara R5-01–R5-05)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R6-A | Otorisasi owner: concept s03 vB 1.0 → 2.0. Baris salah 2 "PIN 4 digit … 40 kombinasi" → koreksi b 10.000; baris 4 kini benar: sandi + PIN bukan MFA (keduanya faktor "yang diketahui"). Faktor berbeda jenis dijamin lab act-03.c02 (vA+vB). OTP **tidak** diklaim terselesaikan. Batas: teori s09 vA juga berjawaban 10.000. Kesetaraan s03 PASS (penilaian penulis). Tercatat PENDING | APPLIED | YA | BELUM |
+| R5-03 | Usulan lama (teori s10 vA opsi e) ditarik: opsi e satu-satunya elemen bernilai untuk sandi mudah ditebak. Usulan baru di matriks §7 (opsi 1 tanpa ubah konten: s12 vA + s10 vB, perlu putusan semantik; opsi 2: ganti opsi d vA). OTP tetap OPEN. Usulan final concept s01 vA (kejadian → istilah, kunci tetap) — TIDAK diterapkan | OPEN | TIDAK | BELUM |
+| R5-05 | Field slot bersama dibandingkan dengan baseline; W4: 4 varian PENDING | CONFIRMED — FIXED | YA | BELUM |

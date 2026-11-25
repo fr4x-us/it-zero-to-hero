@@ -322,3 +322,13 @@ Baris putaran 4 di atas adalah catatan historis; status aktif di bawah ini. Caku
 |---|---|---|---|
 | PR28-06 | **OPEN** (lihat W5) | TIDAK | BELUM |
 | R4-04–R4-09 | Kesetaraan W6: 6/6 PASS; s06 sesuai review independen | YA | BELUM |
+
+### Putaran 6 (koreksi terarah; otorisasi owner terbatas; temuan sementara R5-01–R5-05)
+
+Baris putaran 5 di atas adalah catatan historis; status aktif di bawah ini. Cakupan dan kesetaraan = **hasil penulis**.
+
+| ID | Hasil penulis | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|
+| PR28-06 | **OPEN** (lihat W5) | TIDAK | BELUM |
+| R5-01 | Elemen W6 tervalidasi | YA | BELUM |
+| R5-04 | NB-5 konsumen W6 tanpa konten cacat; BN-6/B01 tidak berubah | YA | BELUM |

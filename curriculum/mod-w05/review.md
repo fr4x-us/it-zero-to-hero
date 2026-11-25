@@ -318,3 +318,13 @@ Baris putaran 4 di atas adalah catatan historis; status aktif di bawah ini. Caku
 | PR28-06 | **OPEN**: cakupan 153 PASS, 3 OPEN (W3 router/switch, W4 OTP — bukti semantik lemah), 0 GAP; kesetaraan 5 slot OPEN | TIDAK | BELUM |
 | R4-03 | Dua lapis bukti (semantik penulis vs jalur matematis); W5: 21/21 PASS | YA | BELUM |
 | R4-04–R4-09 | Kesetaraan W5: 6/6 PASS (register manual) | YA | BELUM |
+
+### Putaran 6 (koreksi terarah; otorisasi owner terbatas; temuan sementara R5-01–R5-05)
+
+Baris putaran 5 di atas adalah catatan historis; status aktif di bawah ini. Cakupan dan kesetaraan = **hasil penulis**.
+
+| ID | Hasil penulis | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|
+| PR28-06 | **OPEN**: cakupan 153 PASS, 3 OPEN (W3 router/switch, W4 OTP — tidak diotorisasi), 0 GAP; kesetaraan 47 PASS, 1 OPEN (W4 concept s01) | TIDAK | BELUM |
+| R5-01 | Kolom elemen bernilai tepat di matriks; W5 semua elemen tervalidasi (keberadaan + dinilai) | YA | BELUM |
+| R5-04 | NB-5: konten cacat → CONTENT_ERROR, isian bukan teks → EVALUATION_ERROR; konsumen W5 tanpa konten cacat; N1–N6 tidak berubah | YA | BELUM |

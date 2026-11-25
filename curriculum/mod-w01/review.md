@@ -481,3 +481,10 @@ Penerimaan W01-ACC tetap historis; varian revisi belum diterima.
 
 Butir W1 yang diterima tidak diubah pada putaran ini.
 
+### Putaran 6 (koreksi terarah; otorisasi owner terbatas; temuan sementara R5-01–R5-05)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R5-05 | Validator penerimaan kini juga membandingkan field slot bersama (kompetensi, required_concepts, format, max_points, validation, feedback_stage, difficulty, estimated_seconds, normalisasi lab) dengan baseline `df76c5f`; W1: 1 varian PENDING, tidak ada perubahan field bersama | CONFIRMED — FIXED | YA | BELUM |
+
+Butir W1 yang diterima tidak diubah pada putaran ini.

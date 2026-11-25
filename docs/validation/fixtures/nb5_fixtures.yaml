@@ -40,3 +40,20 @@
 - {synthetic: ["4200", "4.200"], input: "4,200", expected: INVALID}
 - {synthetic: ["4,200"], input: "4,200", expected: ACCEPT}
 - {synthetic: ["4,200"], input: "4,20", expected: INVALID}
+# R5-04: konten cacat → CONTENT_ERROR; isian bukan teks → EVALUATION_ERROR (bukan WRONG/INVALID).
+- {synthetic: [], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["5 menit"], input: "5 menit", expected: CONTENT_ERROR}
+- {synthetic: ["05"], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["-0"], input: "0", expected: CONTENT_ERROR}
+- {synthetic: [null], input: "5", expected: CONTENT_ERROR}
+- {synthetic: [{a: 1}], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["lima"], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["3,5", "3,50"], input: "3,5", expected: CONTENT_ERROR}
+- {synthetic: ["3,5", "4 kg"], input: "3,5", expected: CONTENT_ERROR}
+- {synthetic: ["5", "Rp 5 ribu"], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["5", "5 2kg"], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["5 menit", "5"], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["5", "5 "], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["5", "5 menit"], input: null, expected: EVALUATION_ERROR}
+- {synthetic: ["5", "5 menit"], input: 5, expected: EVALUATION_ERROR}
+- {synthetic: ["5", "5 menit"], input: "5 MENIT", expected: ACCEPT}

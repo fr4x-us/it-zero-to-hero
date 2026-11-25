@@ -23,6 +23,7 @@ acceptance:                          # TPL-01a (D-39 putaran 4): status penerima
   revised_variants:                    # varian yang berubah setelah penerimaan; BELUM diterima
     - {variant_id: mod-w03.concept.s02.vB, accepted_version: "1.0", current_version: "3.0", reason: "D-39 cakupan konsep wajib", independent_review: PENDING, owner_acceptance: PENDING}
     - {variant_id: mod-w03.theory.s08.vB, accepted_version: "1.0", current_version: "2.0", reason: "D-39 cakupan konsep wajib", independent_review: PENDING, owner_acceptance: PENDING}
+    - {variant_id: mod-w03.concept.s03.vB, accepted_version: "1.0", current_version: "2.0", reason: "R6 otorisasi owner: kesetaraan vA/vB (jumlah host)", independent_review: PENDING, owner_acceptance: PENDING}
 audience: "Pemula total tanpa pengalaman IT atau pemrograman; telah menyelesaikan W1–W2"
 prerequisites: [mod-w02]
 nominal_minutes: 480

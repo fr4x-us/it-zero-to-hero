@@ -23,14 +23,14 @@ N = {
 '03': {
  's01': ('Menjelaskan batas LAN–internet dan peran perangkat', 'memilih alasan pencetakan LAN tetap jalan tanpa internet', 'memilih alasan router diperlukan untuk ke internet', 'Penalaran batas jaringan yang sama dari dua sisi (lalu lintas lokal vs antarjaringan)', P),
  's02': ('Menilai pernyataan alamat privat/publik', 'menilai 5 pernyataan (rentang privat, unik, NAT)', 'menilai 5 pernyataan (rentang privat, ISP, NAT)', 'Konsep dan struktur sama', P),
- 's03': ('Menerapkan aturan subnet /24', 'baris salah: jumlah host 256 → 254 (hitung)', 'baris salah: keanggotaan jaringan berdasarkan oktet terakhir → tiga oktet pertama (klasifikasi)', 'Sub-keterampilan bernilai berbeda: menghitung jumlah host vs menentukan keanggotaan (review independen: OPEN)', O),
+ 's03': ('Menerapkan aturan subnet /24', 'baris salah: jumlah host 256 → 254 (hitung)', 'baris salah v2.0: jumlah host 2⁸ − 1 = 255 → 254 (hitung)', 'Ronde 6: vB 2.0 kini menilai perhitungan jumlah host yang sama (kurangi alamat jaringan dan broadcast); keanggotaan jaringan pindah ke lab act-02.c06–c08 (vA+vB). Kesetaraan = penilaian penulis; menunggu review independen', P),
  's04': ('Memetakan protokol ke fungsi', 'memetakan DHCP, DNS, HTTPS, UDP', 'memetakan TCP, HTTP, DNS, DHCP', 'Tugas pemetaan sama; dua protokol sama', P),
  's05': ('Mengurutkan pembungkusan TCP/IP', 'mengurutkan 5 langkah mengirim', 'mengurutkan 5 langkah menerima', 'Instans cermin (bungkus vs buka bungkus) dari model lapisan yang sama', P),
  's06': ('Menilai kecepatan bit vs byte dan model ideal', 'menilai 4 pernyataan dari 50 Mbps', 'menilai 4 pernyataan dari 3 MB/s', 'Konversi ×8 dan ideal vs nyata di kedua varian', P)},
 '04': {
  's01': ('Mengenali tujuan CIA dan autentikasi', 'memetakan istilah → definisi', 'memetakan kejadian → istilah', 'Konsep sama, tetapi vA pengenalan definisi sedangkan vB klasifikasi skenario; tuntutan kognitif mungkin berbeda (review independen: OPEN)', O),
  's02': ('Mengenali ancaman dan tanda', 'menilai 5 pernyataan (phishing RS, trojan, tanda bukan bukti)', 'menilai 5 pernyataan (phishing RS, trojan, tanda bukan bukti)', 'Konsep yang dinilai sama setelah D-39/R3-06', P),
- 's03': ('Mendeteksi kesalahan autentikasi', 'baris salah: hitung kombinasi PIN (aritmetika)', 'baris salah: klasifikasi jenis faktor MFA (konseptual)', 'Perilaku bernilai langsung berbeda — DIKONFIRMASI review independen', O),
+ 's03': ('Mendeteksi kesalahan autentikasi', 'baris salah: hitung kombinasi PIN 3 digit (10³ = 1.000)', 'baris salah v2.0: hitung kombinasi PIN 4 digit (10⁴ = 10.000)', 'Ronde 6: vB 2.0 kini menilai aturan ×10 per digit yang sama; MFA (faktor berbeda jenis) pindah ke lab act-03.c02 (vA+vB). Batas: theory s09 vA juga meminta 10.000 (keterpaparan angka). Penilaian penulis; menunggu review independen', P),
  's04': ('Menilai bukti identitas situs', 'memilih alasan: domain terdaftar + arti HTTPS', 'memilih alasan: arti HTTPS untuk nama domain tertentu', 'Keduanya menuntut membedakan nama domain dari klaim identitas dan arti HTTPS (setelah D-39)', P),
  's05': ('Menilai rencana cadangan dan batas perlindungan', 'menilai pernyataan salinan di laptop yang sama (3-2-1, perlindungan bukan jaminan)', 'menilai alasan cadangan tetap perlu (perlindungan bukan jaminan, pemulihan)', 'Berbagi konsep yang dinilai langsung "perlindungan tidak menjamin" (R3-07); satu konsep berbeda masing-masing', P),
  's06': ('Mengurutkan respons insiden hentikan → amankan', 'mengurutkan 4 langkah ponsel hilang', 'mengurutkan 4 langkah setelah phishing', 'Struktur urutan dan dua urutan diterima sama (review independen: PASS)', P)},
@@ -50,8 +50,8 @@ N = {
  's06': ('Menerjemahkan aturan ke BX dan mengenali ekspresi ekuivalen', 'memilih ekspresi "dan"', 'memilih ekspresi "atau"', 'Variasi AND/OR yang wajar (review independen: PASS)', P)},
 '07': {
  's01': ('Memilih dekomposisi lengkap tanpa bagian tidak relevan', 'memilih sub-masalah lomba', 'memilih sub-masalah video', 'Tugas sama', P),
- 's02': ('Mendeteksi kesalahan pola', 'baris salah: jenis pola (berlipat dikira bertambah tetap)', 'baris salah: suku ke-n (salah indeks)', 'Sub-keterampilan bernilai berbeda: klasifikasi jenis pola vs perhitungan suku ke-n', O),
- 's03': ('Menjelaskan tujuan abstraksi', 'alasan menyaring informasi (peta kereta)', 'alasan generalisasi dengan variabel', 'Sub-keterampilan berbeda (review independen: OPEN)', O),
+ 's02': ('Mendeteksi kesalahan pola', 'baris salah: jenis pola 1, 2, 4, 8 (berlipat dikira bertambah tetap)', 'baris salah v2.0: jenis pola 3, 9, 27, 81 (berlipat dikira bertambah tetap)', 'Ronde 6: vB 2.0 kini menilai klasifikasi jenis pola yang sama; rumus suku ke-n pindah ke theory s05 (TF-3, vA+vB). Penilaian penulis; menunggu review independen', P),
+ 's03': ('Menjelaskan tujuan abstraksi', 'alasan menyaring informasi (peta kereta)', 'alasan v2.0 menyaring informasi menurut tujuan (formulir lomba lari)', 'Ronde 6: vB 2.0 kini menilai penyaringan informasi menurut tujuan, sama dengan vA (CE-S1); generalisasi dengan variabel pindah ke theory s10 (TF-1, vA+vB). Penilaian penulis; menunggu review independen', P),
  's04': ('Menilai kualitas instruksi', 'memetakan 4 instruksi', 'memetakan 4 instruksi', 'Kategori sama', P),
  's05': ('Mengurutkan tugas berprasyarat', '4 tugas, 2 urutan', '4 tugas, 2 urutan', 'Struktur sama', P),
  's06': ('Memilih kasus uji batas', 'aturan ≥ 12', 'aturan ≥ 50.000', 'Struktur sama', P)},

@@ -38,13 +38,13 @@ penerimaan.
 
 | Berkas | Fungsi |
 |---|---|
-| `lib.py` | Pemuatan berkas; `Report` berkategori; kontrak NB-5 N1–N6 (`nb5`), BN-6, B01, tata bahasa BX |
+| `lib.py` | Pemuatan berkas; `Report` berkategori; kontrak NB-5 N1–N6 (`nb5`; R5-04: `nb5_content_errors`, konten cacat → CONTENT_ERROR, isian bukan teks → EVALUATION_ERROR), BN-6, B01, tata bahasa BX |
 | `check_docs.py` + `expected/doc_baseline.yaml` | R4-01: 43 dokumen wajib tidak hilang, tidak kosong, tidak menyusut di bawah 50% panjang tercatat, berjudul |
-| `check_nb5.py` + `fixtures/nb5_fixtures.yaml`, `fixtures/f51_fixtures.yaml` | 39 fixture terikat butir; 82 konsumen NB-5 W5–W6; uji mutasi 5; F-51 W3 tetap peka huruf |
+| `check_nb5.py` + `fixtures/nb5_fixtures.yaml`, `fixtures/f51_fixtures.yaml` | 39 fixture terikat butir + 16 fixture konten cacat (R5-04); 112 kombinasi konten cacat tanpa exception; 82 konsumen NB-5 W5–W6 tanpa konten cacat; uji mutasi 5; F-51 W3 tetap peka huruf |
 | `check_formats.py` + `fixtures/format_fixtures.yaml` | BN-6, B01, BX (terpisah dari NB-5) |
 | `check_keys.py` + `expected/key_positions.yaml` | W8 F4, W8 latihan 3, W7 K4.q2, kunci butir D-39/putaran 4, posisi kunci (snapshot = baseline `4ddc993`) |
-| `check_acceptance.py` | R4-02: setiap varian dibandingkan dengan isinya pada `acceptance.historical.baseline_commit` (git); 12 uji validator |
-| `coverage_data.py`, `equivalence_notes.py`, `matrix_header.md`, `build_matrix.py` | Cakupan D-39 (bukti jalur QC-13 a/b, validasi referensi lokasi, simulasi VA-2) dan register kesetaraan 48 slot |
+| `check_acceptance.py` | R4-02: setiap varian dibandingkan dengan isinya pada `acceptance.historical.baseline_commit` (git); R5-05: field slot bersama tingkat berkas juga dibandingkan, perubahan bersama menandai semua varian berkas; 22 uji validator (18 mutasi) |
+| `coverage_data.py`, `coverage_elements.py`, `equivalence_notes.py`, `matrix_header.md`, `build_matrix.py` | Cakupan D-39 (bukti jalur QC-13 a/b, validasi referensi lokasi, simulasi VA-2; R5-01 elemen bernilai tepat per varian divalidasi keberadaan dan kelayakan dinilai, 11 uji positif/negatif) dan register kesetaraan 48 slot |
 | `run_all.py`, `expected/run_all.txt` | Menjalankan semua pemeriksaan; mode resmi |
 | `test_provenance.py` | R4-08: uji mode resmi pada klon sementara |
 

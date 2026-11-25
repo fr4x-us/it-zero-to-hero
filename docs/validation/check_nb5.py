@@ -1,6 +1,6 @@
 """PR28-02: kontrak NB-5 (N1–N6) — fixture terikat butir, pemindaian konsumen W5–W6, uji mutasi, F-51 W3."""
 import glob, re, sys, yaml
-from lib import CUR, load, nb5, Report
+from lib import CUR, load, nb5, nb5_content_errors, Report
 
 def find(file, ident):
     d = load(file)
@@ -90,6 +90,17 @@ def main():
             got = nb5(f['input'], acc)
         r.check(got == f['expected'], f"{f.get('id', 'sintetis')} {f['input']!r}: {got} ≠ {f['expected']}", 'REGRESI')
     print(f'  fixture NB-5: {len(fx)}')
+    # R5-04: konten cacat tidak boleh menghasilkan exception atau WRONG/INVALID
+    bad_acc = [None, 5, 'x', [], [None], [[]], [True], ['', '5'], ['5', None], ['Rp'], ['1.2.3'], ['5', '6'], ['5,0', '5'], ['−0']]
+    bad_raw = [None, 5, 5.0, b'5', ['5'], '', ' ', '5']
+    for acc_ in bad_acc:
+        for raw_ in bad_raw:
+            try:
+                got = nb5(raw_, acc_)
+            except Exception as e:  # noqa
+                got = f'EXCEPTION {type(e).__name__}'
+            r.check(got == 'CONTENT_ERROR', f'konten cacat {acc_!r} / {raw_!r}: {got}', 'REGRESI')
+    print(f'  kombinasi konten cacat: {len(bad_acc) * len(bad_raw)}')
     for f in yaml.safe_load(open(__file__.replace('check_nb5.py', 'fixtures/f51_fixtures.yaml'), encoding='utf-8')):
         acc, norm = find(f['file'], f['id'])
         r.check('peka huruf' in norm and 'N1–N6' not in norm, f"{f['id']}: kontrak F-51 berubah")
@@ -102,6 +113,9 @@ def main():
     for x in findings:
         print('  TEMUAN', *x)
     r.check(not findings, f'{len(findings)} temuan pada konsumen NB-5')
+    ce = [(i[0], e) for i in items for e in nb5_content_errors(i[2])]
+    for x in ce: print('  KONTEN', *x)
+    r.check(not ce, f'{len(ce)} konsumen NB-5 dengan konten cacat (CONTENT_ERROR)')
     # uji mutasi: pemeriksa harus menangkap cacat yang disuntikkan
     base = [i for i in items if i[0].endswith('mod-w05.theory.s15.vA')][0]
     s18 = [i for i in items if i[0].endswith('mod-w05.theory.s18.vA')][0]

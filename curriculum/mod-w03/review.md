@@ -518,3 +518,10 @@ Penerimaan W03-ACC tetap historis; varian revisi belum diterima.
 
 Butir W3 yang diterima tidak diubah pada putaran ini.
 
+### Putaran 6 (koreksi terarah; otorisasi owner terbatas; temuan sementara R5-01–R5-05)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R6-A | Otorisasi owner: concept s03 vB 1.0 → 2.0. Baris salah 4 "jumlah host 2⁸ − 1 = 255" → koreksi b 254 (CE-S5, 4 poin); baris keanggotaan kini benar. Keanggotaan jaringan dijamin lab act-02.c06–c08 (vA+vB). Kesetaraan s03 PASS (penilaian penulis). Posisi kunci W3 tidak berubah. Tercatat `acceptance.revised_variants` PENDING | APPLIED | YA | BELUM |
+| R5-02 | Peran router/switch: lokasi wajib alternatif diperiksa (teori s01, s03; lab act-03.c01; K4.q1) — tidak ada bukti kuat; usulan diperbaiki di matriks §7 (concept s01 vA, pengecoh peran tertukar) — TIDAK diterapkan (tidak diotorisasi) | OPEN | TIDAK | BELUM |
+| R5-05 | Field slot bersama dibandingkan dengan baseline; W3: 3 varian PENDING | CONFIRMED — FIXED | YA | BELUM |

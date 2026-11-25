@@ -6,6 +6,7 @@ from pathlib import Path
 from lib import ROOT, load, Report
 from coverage_data import D
 from equivalence_notes import N
+from coverage_elements import EL, ALT_EL
 
 P = '*'
 VARS = {'concept': {'A', 'B'}, 'theory': {'A', 'B'}, 'lab': {'A', 'B'}, 'project': {P}}
@@ -71,6 +72,91 @@ def resolve(m, comp, loc, var):
         return 'kunci K4'
     raise KeyError(comp)
 
+
+# ---- R5-01: elemen bernilai tepat (STRUKTUR; makna = anotasi manual penulis) ----
+def _var(d, x):
+    return [v for v in d['variants'] if v['variant_id'].endswith('.v' + x)][0]
+
+def concept_elements(m, s, idx, concept, cc, el_table=None):
+    """Kembalikan (deskripsi, kesalahan) elemen bernilai slot concept untuk varian di `cc`."""
+    el_table = EL if el_table is None else el_table
+    d = load(f'mod-w{m}/concept/items/{s}.yaml'); fmt = d['format']
+    ann = (el_table.get(m, {}).get(s) or [None] * 99)[idx] or {}
+    vars_ = set(cc) if cc else set(); desc, err = [], []
+    if fmt in ('CE-S1', 'CE-S5'):
+        if ann: err.append(f'{s}: {fmt} tidak boleh memakai anotasi elemen (CE-S1 hanya kunci; CE-S5 hanya baris salah + koreksi) {ann}')
+        for x in sorted(vars_):
+            v = _var(d, x)
+            desc.append(f'v{x} kunci {v["key"]}' if fmt == 'CE-S1' else f'v{x} baris salah {v["error_line"]} + koreksi {v["correction_key"]}')
+        return desc, err
+    if set(ann) != vars_: err.append(f'{s} "{concept}": varian anotasi {sorted(ann)} ≠ cakupan {sorted(vars_)}')
+    for x, ids in sorted(ann.items()):
+        v = _var(d, x)
+        pool = {'CE-S2': [o['id'] for o in v.get('options', [])], 'CE-S3': [i['id'] for i in v.get('items', [])],
+                'CE-S4': [l['id'] for l in v.get('left', []) if l['id'] in v.get('key_mapping', {})]}[fmt]
+        bad = [i for i in ids if i not in pool]
+        if not ids or bad: err.append(f'{s} v{x}: elemen tidak ada/tidak dinilai {bad or ids}')
+        kind = {'CE-S2': 'opsi dinilai', 'CE-S3': 'item urutan', 'CE-S4': 'pasangan'}[fmt]
+        desc.append(f'v{x} {kind} {",".join(ids)}')
+    return desc, err
+
+def alt_elements(m, concept, comp, loc, var, alt_table=None):
+    alt_table = ALT_EL if alt_table is None else alt_table
+    err, desc = [], []
+    if comp == 'theory':
+        d = load(f'mod-w{m}/theory/items/{loc}.yaml'); fmt = d['format']; ann = alt_table.get((m, concept, comp, loc))
+        for x in sorted(set(var)):
+            v = _var(d, x)
+            if fmt in ('TF-1', 'TF-4'):
+                if ann: err.append(f'{loc}: {fmt} pilihan tunggal — hanya kunci yang dihitung; anotasi pengecoh ditolak {ann}')
+                desc.append(f'v{x} kunci {v["key"]}')
+            elif fmt == 'TF-2':
+                ids = (ann or {}).get(x)
+                pool = [o['id'] for o in v['options']]
+                if not ids or any(i not in pool for i in ids): err.append(f'{loc} v{x}: opsi TF-2 tidak dianotasi/tidak ada {ids}')
+                else: desc.append(f'v{x} opsi dinilai {",".join(ids)}')
+            elif fmt == 'TF-3':
+                if not v.get('accepted_answers'): err.append(f'{loc} v{x}: isian tanpa jawaban')
+                desc.append(f'v{x} isian {v["accepted_answers"][0]}')
+            else:
+                desc.append(f'v{x} {fmt}')
+    elif comp == 'lab':
+        mm = _re.fullmatch(r'(act-0\d)\.c(\d\d)(?:–c(\d\d))?', loc)
+        act, a, b = mm.group(1), mm.group(2), mm.group(3) or mm.group(2)
+        d = load(f'mod-w{m}/lab/{act}/checks.yaml')
+        for x in sorted(set(var)):
+            v = _var(d, x); have = {c['check_id'].split('.')[-1]: c for c in v['checks']}
+            for c in _expand('', a, b):
+                ck = have.get(c)
+                if not ck or not ck.get('points') or not (ck.get('accepted_answers') or ck.get('expected') or ck.get('accepted_sequences')):
+                    err.append(f'lab {act} v{x} {c}: pemeriksaan tidak ada/tidak dinilai')
+            desc.append(f'v{x} {act}.c{a}' + (f'–c{b}' if b != a else ''))
+    elif comp == 'project':
+        rb = load(f'mod-w{m}/project/rubric.yaml')
+        pts = {c['id'].split('project.')[1]: c['points'] for K in ('K1', 'K2', 'K3') for c in rb['criteria'][K]['checks']}
+        pts.update({q['id'].split('project.')[1]: (q['points'] if q.get('key') else 0) for q in rb['criteria']['K4']['items']})
+        mm = _re.fullmatch(r'(K\d)\.c(\d\d)(?:–c(\d\d))?', loc)
+        ids = _expand(mm.group(1) + '.', mm.group(2), mm.group(3) or mm.group(2)) if mm else [loc]
+        for i in ids:
+            if not pts.get(i): err.append(f'proyek {i}: kriteria tidak ada/tanpa poin')
+        desc.append(('kriteria ' if mm else 'kunci ') + ','.join(ids))
+    return desc, err
+
+def element_mutation_tests(rep):
+    """Uji positif/negatif validator elemen (R5-01)."""
+    ok = lambda r: not r[1]
+    rep.check(ok(concept_elements('05', 's02', 0, 'variabel', 'AB')), 'elemen: CE-S2 sah diterima')
+    rep.check(not ok(concept_elements('05', 's02', 0, 'variabel', 'AB', {'05': {'s02': [{'A': ['z'], 'B': ['a']}]}})), 'elemen: ID opsi tidak ada ditolak')
+    rep.check(not ok(concept_elements('05', 's04', 0, 'x', 'AB', {'05': {'s04': [{'A': ['a'], 'B': ['a']}]}})), 'elemen: pengecoh CE-S1 sebagai bukti ditolak')
+    rep.check(not ok(concept_elements('05', 's03', 0, 'x', 'AB', {'05': {'s03': [{'A': ['1'], 'B': ['1']}]}})), 'elemen: baris benar CE-S5 sebagai bukti ditolak')
+    rep.check(not ok(concept_elements('05', 's02', 0, 'variabel', 'AB', {'05': {'s02': [{'A': ['a']}]}})), 'elemen: varian tanpa elemen ditolak')
+    rep.check(not ok(concept_elements('05', 's01', 0, 'x', 'AB', {'05': {'s01': [{'A': ['L9'], 'B': ['L1']}]}})), 'elemen: pasangan tidak ada ditolak')
+    rep.check(not ok(alt_elements('02', 'x', 'theory', 's03', 'AB', {('02', 'x', 'theory', 's03'): {'A': ['a']}})), 'elemen: pengecoh TF-1 sebagai bukti ditolak')
+    rep.check(not ok(alt_elements('02', 'x', 'theory', 's02', 'AB', {})), 'elemen: TF-2 tanpa opsi ditolak')
+    rep.check(not ok(alt_elements('03', 'x', 'lab', 'act-02.c09', 'AB')), 'elemen: pemeriksaan lab tidak ada ditolak')
+    rep.check(not ok(alt_elements('03', 'x', 'project', 'K1.c99', P)), 'elemen: kriteria proyek tidak ada ditolak')
+    rep.check(ok(alt_elements('03', 'x', 'lab', 'act-02.c06–c08', 'AB')), 'elemen: pemeriksaan lab sah diterima')
+
 def va2_correlated(n_slots=20, attempts=8):
     """Simulasi VA-2 (D-30): per slot, pilih varian dengan pemakaian paling sedikit dalam riwayat komponen;
     seri → bukan varian attempt sebelumnya; masih seri → indeks terkecil. Setiap attempt komponen memuat semua
@@ -113,6 +199,7 @@ def build():
     rep.check(verdict('B', [('lab', 'c01', 'AB')])[0] == 'PASS', 'uji positif: lab kedua varian')
     rep.check(verdict('', [('theory', 's1', 'A'), ('theory', 's2', 'B')])[1].startswith('(b)'), 'uji bukti (b) berkorelasi')
     rep.check(verdict('', [('project', 'K4.q1', P, 'lemah')])[0] == 'OPEN', 'uji: hanya bukti semantik lemah → OPEN')
+    element_mutation_tests(rep)
     ok, seq = va2_correlated()
     rep.check(ok and seq == ['A', 'B'] * 4, f'VA-2: indeks varian sama untuk semua slot di setiap attempt {seq}')
     rows_md, tot, gaps, nb, opens = [], {}, [], 0, []
@@ -120,6 +207,15 @@ def build():
         M = load(f'mod-w{m}/module.yaml'); c2lo = {lo['competency']: lo['id'] for lo in M['learning_objectives']}
         for s, c, k, cc, alts, note in rows:
             comp = load(f'mod-w{m}/concept/items/{s}.yaml')['competency']
+            ci = [r[1] for r in rows if r[0] == s].index(c)
+            cdesc, cerr = concept_elements(m, s, ci, c, cc)
+            for e in cerr: rep.check(False, f'W{m} {e}')
+            rep.check(True, 'elemen concept')
+            adesc = []
+            for a in alts:
+                dsc, er = alt_elements(m, c, a[0], a[1], a[2])
+                for e in er: rep.check(False, f'W{m} {c}: {e}')
+                adesc.append('; '.join(dsc))
             kinds = []
             for a in alts:
                 try:
@@ -131,8 +227,8 @@ def build():
             tot.setdefault(m, [0, 0]); tot[m][0] += 1; tot[m][1] += v == 'PASS'
             if v == 'GAP': gaps.append((m, s, c))
             if v == 'OPEN': opens.append((m, s, c))
-            loc = '; '.join(f'{a[0]} {a[1]} ({"vA+vB" if a[2] == "AB" else ("tanpa varian" if a[2] == P else "v" + a[2])}; {kd}; semantik {a[3] if len(a) > 3 else "kuat"})' for a, kd in zip(alts, kinds)) or '—'
-            rows_md.append(f'| W{int(m)} | {c2lo[comp]} | {s} | {c} | {k} | {dict(AB="vA+vB", A="vA", B="vB").get(cc, "—")} | {loc} | {why} | sama (VA-2 bergiliran) | {note or "pembacaan butir"} | {v} |')
+            loc = '; '.join(f'{a[0]} {a[1]} [{ad}] ({kd}; semantik {a[3] if len(a) > 3 else "kuat"})' for a, kd, ad in zip(alts, kinds, adesc)) or '—'
+            rows_md.append(f'| W{int(m)} | {c2lo[comp]} | {s} | {c} | {k} | {"; ".join(cdesc) or "—"} | {loc} | {why} | sama (VA-2 bergiliran) | {note or "pembacaan butir"} | {v} |')
     # register kesetaraan 48 slot (penilaian penulis; rasio kata hanya penyaring)
     eq, eq_open = [], []
     for m in D:
@@ -157,7 +253,7 @@ def build():
     head = head.replace('{{DECISIONS_LOG_LINK}}', '[DECISIONS_LOG.md](DECISIONS_LOG.md)')
     txt = head.replace('{{SUMMARY}}', '\n'.join(summ)).replace('{{NB}}', str(nb)).replace('{{GAPS}}', str(len(gaps)))
     txt = txt.replace('{{EQ_PASS}}', str(48 - len(eq_open))).replace('{{EQ_OPEN}}', str(len(eq_open))).replace('{{COV_OPEN}}', str(len(opens)))
-    txt += '\n## 5. Matriks per konsep\n\n| Modul | LO | Slot | Konsep wajib | Kelas | Concept | Lokasi wajib lain | Jaminan jalur (QC-13) | Remedial | Bukti/catatan | Status |\n|---|---|---|---|---|---|---|---|---|---|---|\n'
+    txt += '\n## 5. Matriks per konsep\n\n| Modul | LO | Slot | Konsep wajib | Kelas | Concept (elemen bernilai) | Lokasi wajib lain [elemen bernilai] | Jaminan jalur (QC-13) | Remedial | Bukti/catatan | Status |\n|---|---|---|---|---|---|---|---|---|---|---|\n'
     txt += '\n'.join(rows_md) + '\n'
     txt += ('\n## 6. Register kesetaraan kompetensi inti (48 slot concept, R3-02)\n\n'
             'Register ini adalah **penilaian semantik penulis** (`equivalence_notes.py`), bukan bukti otomatis. '

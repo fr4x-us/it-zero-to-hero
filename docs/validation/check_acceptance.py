@@ -19,6 +19,27 @@ def current_variants(m):
                 out.append((rel, v))
     return out
 
+def shared(doc):
+    """R5-05: field slot bersama = semua field tingkat berkas selain `variants` (kompetensi, required_concepts,
+    format, max_points, validation, feedback_stage, difficulty, estimated_seconds, normalization, dst.)."""
+    return {k: x for k, x in (doc or {}).items() if k != 'variants'} if isinstance(doc, dict) else {}
+
+def current_shared(m):
+    out = {}
+    for pat in ASSESS:
+        for f in sorted(glob.glob(str(CUR / f'mod-w{m}' / pat))):
+            out[str(f)[len(str(CUR)) + 1:]] = shared(yaml.safe_load(open(f, encoding='utf-8')))
+    return out
+
+def baseline_shared(m, commit):
+    out = {}
+    files = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', commit, f'curriculum/mod-w{m}'], cwd=ROOT, text=True).split()
+    for f in files:
+        rel = f[len('curriculum/'):]
+        if any(fnmatch.fnmatch(rel, f'mod-w{m}/' + p) for p in ASSESS):
+            out[rel] = shared(yaml.safe_load(subprocess.check_output(['git', 'show', f'{commit}:{f}'], cwd=ROOT, text=True)))
+    return out
+
 def baseline_variants(m, commit):
     out = []
     files = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', commit, f'curriculum/mod-w{m}'], cwd=ROOT, text=True).split()
@@ -37,9 +58,20 @@ def body(v):
 def vnum(x):
     return tuple(int(p) for p in str(x).split('.'))
 
-def validate(m, cur, base, acc):
-    """Kembalikan daftar kesalahan (kosong = sah). cur/base: [(berkas, varian)]; acc: blok acceptance."""
+def validate(m, cur, base, acc, cur_sh=None, base_sh=None):
+    """Kembalikan daftar kesalahan (kosong = sah). cur/base: [(berkas, varian)]; acc: blok acceptance;
+    cur_sh/base_sh: {berkas: field bersama}. Perubahan field bersama memengaruhi SEMUA varian berkas itu."""
     err = []
+    cur_sh = cur_sh or {}; base_sh = base_sh or {}
+    sh_changed = set()
+    for f in sorted(set(cur_sh) | set(base_sh)):
+        if f in cur_sh and f in base_sh and json.dumps(cur_sh[f], sort_keys=True, ensure_ascii=False) != json.dumps(base_sh[f], sort_keys=True, ensure_ascii=False):
+            keys = sorted(k for k in set(cur_sh[f]) | set(base_sh[f]) if cur_sh[f].get(k) != base_sh[f].get(k))
+            sh_changed.add(f)
+            aff = [v['variant_id'] for ff, v in cur if ff == f]
+            err_f = [vid for vid in aff if vid not in {e['variant_id'] for e in (acc.get('revised_variants') or [])}]
+            if err_f: err.append(f'{f}: field bersama berubah {keys}; varian terdampak belum tercatat/berversi: {err_f}')
+    FILE = {v['variant_id']: ff for ff, v in cur}
     ids = [v['variant_id'] for _, v in cur]
     dup = sorted({i for i in ids if ids.count(i) > 1})
     if dup: err.append(f'variant_id ganda di modul: {dup}')
@@ -55,7 +87,7 @@ def validate(m, cur, base, acc):
         if vid not in B:
             err.append(f'{vid}: varian baru setelah penerimaan (tidak ada di baseline)'); continue
         b = B[vid]; bv = b.get('item_version'); cv = v.get('item_version')
-        if body(v) == body(b):
+        if body(v) == body(b) and FILE.get(vid) not in sh_changed:
             if cv != bv: err.append(f'{vid}: isi sama tetapi versi {bv} → {cv}')
             if vid in E: err.append(f'{vid}: tercatat sebagai revisi padahal isi sama dengan baseline')
             continue
@@ -97,6 +129,26 @@ def mutation_tests(r):
     r.check(any('harus PENDING' in e for e in run(a=a7)), 'mutasi: status penerimaan diklaim')
     a8 = copy.deepcopy(acc); a8['revised_variants'] = a8['revised_variants'][1:]
     r.check(any('tidak tercatat' in e for e in run(a=a8)), 'mutasi: entri revisi hilang')
+    # R5-05: field slot bersama
+    csh, bsh = current_shared('02'), baseline_shared('02', commit)
+    f0 = [f for f, v in cur if v['variant_id'] == 'mod-w02.theory.s03.vA'][0]
+    for fld, val in (('competency', 'comp-x'), ('required_concepts', ['x']), ('max_points', 99), ('difficulty', 'zz'), ('estimated_seconds', 1)):
+        cs = copy.deepcopy(csh); cs[f0][fld] = val
+        r.check(any('field bersama berubah' in e for e in validate('02', cur, base, acc, cs, bsh)[0]), f'mutasi: field bersama {fld} berubah tanpa versi/entri')
+    cs = copy.deepcopy(csh); cs[f0]['max_points'] = 99
+    vids = [v['variant_id'] for f, v in cur if f == f0]
+    c12 = copy.deepcopy(cur)
+    for f, v in c12:
+        if f == f0: v['item_version'] = '2.0'
+    a12 = copy.deepcopy(acc); a12['revised_variants'] += [{'variant_id': x, 'accepted_version': '1.0', 'current_version': '2.0', 'independent_review': 'PENDING', 'owner_acceptance': 'PENDING'} for x in vids]
+    r.check(not validate('02', c12, base, a12, cs, bsh)[0], 'mutasi: field bersama berubah + semua varian berversi & tercatat harus sah')
+    a13 = copy.deepcopy(a12); a13['revised_variants'] = a13['revised_variants'][:-1]
+    r.check(any('field bersama' in e for e in validate('02', c12, base, a13, cs, bsh)[0]), 'mutasi: field bersama berubah, satu varian terdampak tidak tercatat')
+    r.check(any('tanpa kenaikan versi' in e for e in validate('02', cur, base, a12, cs, bsh)[0]), 'mutasi: field bersama berubah, tercatat tetapi versi tidak naik')
+    a15 = copy.deepcopy(acc); a15['current_content'] = 'ACCEPTED_AS_IS'
+    r.check(any('current_content' in e for e in run(a=a15)), 'mutasi: promosi penerimaan (REVISED_PENDING → ACCEPTED_AS_IS)')
+    a16 = copy.deepcopy(acc); a16['revised_variants'][0]['independent_review'] = 'PASS'
+    r.check(any('harus PENDING' in e for e in run(a=a16)), 'mutasi: promosi review independen tanpa otorisasi')
     # versi historis > 1.0 didukung
     b9 = copy.deepcopy(base); j = [i for i, (_, v) in enumerate(b9) if v['variant_id'] == 'mod-w02.theory.s03.vA'][0]
     b9[j][1]['item_version'] = '2.0'; c9 = copy.deepcopy(cur); c9[k][1]['item_version'] = '2.0'
@@ -109,21 +161,25 @@ def mutation_tests(r):
 
 def main():
     r = Report('penerimaan')
+    pend = 0
     for m in ('01', '02', '03', '04', '05', '06', '07', '08'):
         M = load(f'mod-w{m}/module.yaml'); st = M['status']['owner_accepted']
         if st is True or st == 'YES':
             a = M.get('acceptance')
             if not r.check(a is not None and a['historical'].get('baseline_commit'), f'W{m}: blok acceptance/baseline_commit'): continue
             r.check(a['historical']['id'] == f'W{m}-ACC', f'W{m}: id historis')
-            err, changed = validate(m, current_variants(m), baseline_variants(m, a['historical']['baseline_commit']), a)
+            bc = a['historical']['baseline_commit']
+            err, changed = validate(m, current_variants(m), baseline_variants(m, bc), a, current_shared(m), baseline_shared(m, bc))
+            pend += len(a.get('revised_variants') or [])
             for e in err: r.check(False, f'W{m}: {e}')
             r.check(True, f'W{m}: perbandingan baseline')
             print(f'  W{m}: baseline {a["historical"]["baseline_commit"][:7]}; varian berubah {len(changed)}; tercatat PENDING {len(a.get("revised_variants") or [])}')
         else:
             r.check(not (M.get('acceptance') or {}).get('historical'), f'W{m}: belum diterima, tidak boleh ada penerimaan historis')
             print(f'  W{m}: belum diterima owner')
+    print(f'  total varian W1–W4 tercatat PENDING: {pend}')
     mutation_tests(r)
-    print('  uji validator: 12 kasus — 9 mutasi terdeteksi, 3 kasus sah diterima (data asli; versi historis 2.0; revisi 2.0 → 3.0)')
+    print('  uji validator: 22 kasus — 18 mutasi terdeteksi, 4 kasus sah diterima (data asli; versi historis 2.0; revisi 2.0 → 3.0; field bersama berubah + semua varian tercatat)')
     return r.done()
 
 if __name__ == '__main__':
