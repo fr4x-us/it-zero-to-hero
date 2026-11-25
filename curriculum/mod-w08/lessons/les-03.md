@@ -140,7 +140,9 @@ Nilai lama tetap berlaku sampai diganti.
 
 1. 4 kali (i = 2, 3, 4, 5); syarat diperiksa 5 kali.
 2. Tidak: m = 1, 3, 5, 7, 9, 11, … tidak pernah tepat 10.
-3. t: 2, 4, 8; output 8 (k berakhir 4).
+3. Tiga putaran; syarat `k ≤ 3` diperiksa empat kali. t: 2, 4, 8; nilai
+   akhir t = 8 dan k = 4. Tidak ada output karena tidak ada instruksi
+   output.
 
 Cek pemahaman: bila di dalam, nilainya di-reset setiap putaran.
 

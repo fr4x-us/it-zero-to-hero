@@ -63,7 +63,7 @@ merge." untuk PR itu saja ([GITHUB_BRIDGE.md](GITHUB_BRIDGE.md) §5).
 | D-16 | OWNER APPROVED, bersyarat verifikasi teknis; restore produksi nonaktif sampai batas KDF terverifikasi (UW-15 NOT VERIFIED) |
 | D-17–D-22 | OWNER APPROVED (2026-11-24) |
 | D-23–D-25 | OWNER APPROVED (2026-11-24); UW-26, UW-36 tetap belum selesai; runtime dan kripto NOT VERIFIED |
-| D-26–D-35 | OWNER APPROVED (2026-11-24); UW-26/UW-37 menunggu konten W2–W16 |
+| D-26–D-35 | OWNER APPROVED (2026-11-24); UW-26/UW-37 OPEN: W1–W4 diterima, W5–W8 menunggu review/penerimaan, W9–W16 belum diproduksi |
 | D-36–D-37 | OWNER APPROVED (2026-11-24): HF-A; XV-7–XV-14 + RX-A. UW-33 menunggu OD-5–OD-9, OD-11–OD-14 |
 | D-38, W01-ACC | OWNER APPROVED / ACCEPTED (2026-11-24): angka LX-2 = keluaran UW-12 (V); UW-36 COMPLETE. W1 = modul acuan (batas review independen diungkapkan) |
 | CB-0.5 | AUTHORIZED (2026-11-24): tepat empat skill; skill lain ON HOLD. **Diterima owner** (master prompt CB-1) dengan V03 saat itu NOT VERIFIED; V03 kemudian **PASS** di sesi baru |
@@ -77,6 +77,15 @@ Rincian: [OWNER_DECISION_CHECKLIST.md](OWNER_DECISION_CHECKLIST.md),
 [DECISIONS_LOG.md](DECISIONS_LOG.md) §Keputusan owner.
 
 ## Tugas terakhir
+
+CB-2 (2026-11-24): PR #27 di-merge (`846051f`); W02-ACC–W04-ACC dicatat;
+W5–W8 diproduksi (PR #28); review independen REQUEST CHANGES dua kali →
+koreksi putaran 1 (PR28-01–PR28-12) dan putaran 2 (PR28-07, PR28-08,
+PR28-11, PR28-12). Kurikulum diproduksi 8/16 modul (32/64 komponen),
+diterima 4/16 (16/64). Audit 32/4/12/3/5 = 56; jalur P 32/43; UW-26 dan
+UW-37 OPEN. PR #28 menunggu review delta; tidak di-merge.
+
+*Historis (CB-1):*
 
 CB-1 (2026-11-24): Fase A — PR #26 di-merge (`ab0103e`, head `691ae87`),
 diverifikasi ulang di sesi baru. Fase B — V03 **PASS**: keempat skill
@@ -116,7 +125,7 @@ dipertahankan agar rujukan lama tetap valid.
 
 | # | Blocker | Register |
 |---|---|---|
-| B-10 | Penilaian: kebijakan diputuskan (D-04, D-12, D-13, D-23–D-38); sisa: rubrik concept W2–W16 (UW-26), OP-6 jam (UW-28). | UW-26, UW-28 |
+| B-10 | Penilaian: kebijakan diputuskan (D-04, D-12, D-13, D-23–D-38); sisa: rubrik concept — W1–W4 diproduksi dan diterima owner; W5–W8 diproduksi, menunggu review independen dan penerimaan owner (PR #28); W9–W16 NOT STARTED / NOT AUTHORIZED (UW-26 OPEN); OP-6 jam (UW-28). | UW-26, UW-28 |
 | B-11 | Backup: D-03, D-07, D-16, D-17 **diputuskan**; sisa OD-5–OD-9 dan retensi log restore (UW-33); verifikasi kripto (UW-15, jalur V). | UW-33 |
 | B-13 | UI: palet (D-01 M-17), kontras (D-14), tema (D-15) **diputuskan**; sisa: tipografi/aset/breakpoint/alat screenshot (UO-3–UO-9). | UW-35 |
 | B-14 | Kurikulum: kebijakan CU lengkap (UW-36 COMPLETE, D-38); W1–W4 diterima (W01-ACC–W04-ACC); W5–W8 diproduksi (CB-2), menunggu review independen/penerimaan; W9–W16 NOT STARTED / NOT AUTHORIZED; format editor flowchart (M-10) dan entri ekspresi Boolean OPEN; lab minggu 9–12 bergantung O-04. | UW-21, UW-37 |

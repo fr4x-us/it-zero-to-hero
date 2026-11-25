@@ -52,7 +52,7 @@ pemisah ribuan. Agar penilaian otomatis adil dan pasti, W5 memakai aturan:
 | Aturan | Benar | Tidak dapat dibaca |
 |---|---|---|
 | Koma untuk desimal | `7,5` | `7.5` |
-| Titik hanya pemisah ribuan, kelompok tepat tiga digit | `4.200` atau `4200` | `4,200` atau `4.20` |
+| Titik hanya pemisah ribuan, kelompok tepat tiga digit | `4.200` atau `4200` (empat ribu dua ratus) | `4.20` (kelompok bukan tiga digit) |
 | Tanpa nol di depan | `9` | `09` |
 | Minus untuk bilangan negatif | `-8` atau `−8` | `8-` |
 | Banyak angka desimal sesuai yang diminta | diminta satu: `7,5` | `7,50` |
@@ -67,6 +67,12 @@ bernilai sama, dan banyak negara menulis desimal dengan titik (`7.5`).
 Aturan NB-5 hanya menentukan bentuk yang dapat dibaca penilai otomatis:
 bila soal meminta **satu** angka di belakang koma, tulis tepat satu
 (`7,5`), walaupun `7,50` bernilai sama.
+
+Hati-hati dengan **koma**: `4,200` adalah **bilangan desimal** —
+tiga angka di belakang koma (nilainya 4,2), bukan
+empat ribu dua ratus. Jadi `4,200` **salah** bila jawaban yang diminta
+bilangan bulat 4200, tetapi dapat menjadi bentuk yang sah bila soal
+meminta tepat tiga angka di belakang koma dan nilainya memang 4,2.
 
 ## 2. Arti persen
 

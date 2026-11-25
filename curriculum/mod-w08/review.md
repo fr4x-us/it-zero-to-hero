@@ -280,3 +280,12 @@ Status modul tetap: **diproduksi, belum diterima owner**.
 Batas: kontrak normalisasi diverifikasi dengan skrip dokumentasi sementara
 (tidak di-commit), bukan evaluator produksi atau runtime Android.
 Status koreksi: menunggu review delta independen; tidak ada klaim PASS.
+
+### Putaran 2 (review delta REQUEST CHANGES, SHA `9bf2285`)
+
+ID tetap; tidak ada ID baru. Bukti dari `r2_check.py` (skrip dokumentasi sementara).
+
+| ID | Koreksi putaran 2 | Bukti |
+|---|---|---|
+| PR28-11 | W8 pelajaran 3 latihan 3: nilai akhir t = 8, k = 4; tidak ada output | Telusur independen: 3 putaran, 4 pemeriksaan, t = 8, k = 4; konsisten dengan §2 |
+| PR28-12 | HANDOFF B-10, status D-26–D-35, ringkasan tugas terakhir; PROJECT_MAP R-02 | W1–W4 diterima; W5–W8 menunggu; W9–W16 NOT STARTED; 32/64, 16/64, 32/4/12/3/5 = 56, 32/43 tetap |

@@ -257,15 +257,20 @@ criteria:
       feedback: Kelompok ditentukan oleh hasil tugas menurut definisi kode di spesifikasi.
     - id: mod-w07.project.K4.q2
       lo: comp-w07-order-01
-      stem: Kapan dua tugas boleh ditukar urutannya dalam suatu jadwal?
+      stem: Dalam jadwal yang sudah memenuhi semua prasyarat, kapan dua tugas yang **bersebelahan** boleh
+        ditukar posisinya?
       options:
         a: Kapan saja, prasyarat tidak penting
-        b: Bila tidak ada prasyarat langsung maupun tidak langsung di antara keduanya
+        b: Bila tugas yang di depan bukan prasyarat tugas yang di belakangnya; karena hanya kedua tugas
+          itu yang berpindah, semua prasyarat lain tetap terpenuhi
         c: Bila keduanya sama lama
         d: Bila keduanya dikerjakan orang yang sama
       key: b
       points: 2
-      feedback: Tugas yang tidak saling bergantung dapat ditukar; rantai prasyarat tidak boleh dibalik.
+      feedback: 'Menukar dua tugas bersebelahan hanya membalik urutan keduanya. Untuk tugas yang tidak
+        bersebelahan, tugas-tugas di antaranya ikut berubah posisi relatif, jadi setiap prasyarat harus
+        diperiksa ulang (contoh: A prasyarat B, urutan A B C; menukar A dan C menghasilkan C B A, yang
+        melanggar prasyarat B).'
     - id: mod-w07.project.K4.q3
       lo: comp-w07-abstract-01
       stem: Sebuah informasi termasuk relevan untuk F4 bila …

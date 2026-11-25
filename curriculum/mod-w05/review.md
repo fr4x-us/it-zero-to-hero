@@ -277,3 +277,12 @@ Status modul tetap: **diproduksi, belum diterima owner**.
 Batas: kontrak normalisasi diverifikasi dengan skrip dokumentasi sementara
 (tidak di-commit), bukan evaluator produksi atau runtime Android.
 Status koreksi: menunggu review delta independen; tidak ada klaim PASS.
+
+### Putaran 2 (review delta REQUEST CHANGES, SHA `9bf2285`)
+
+ID tetap; tidak ada ID baru. Bukti dari `r2_check.py` (skrip dokumentasi sementara).
+
+| ID | Koreksi putaran 2 | Bukti |
+|---|---|---|
+| PR28-08 | W5 pelajaran 3: `4,200` tidak lagi disebut salah secara umum; dibedakan bulat 4200 vs desimal tiga angka (4,2) | N1–N6: butir bulat → `4.200`/`4200` diterima, `4,200` tidak sah; butir tiga desimal → `4,200` diterima, `4,2`/`4,20` tidak sah |
+| PR28-12 | HANDOFF B-10, status D-26–D-35, ringkasan tugas terakhir; PROJECT_MAP R-02 | W1–W4 diterima; W5–W8 menunggu; W9–W16 NOT STARTED; 32/64, 16/64, 32/4/12/3/5 = 56, 32/43 tetap |
