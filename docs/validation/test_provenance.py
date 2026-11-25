@@ -30,7 +30,11 @@ def main():
         mutate('docs/validation/check_nb5.py', '\n# ubah\n', 'negatif: skrip validasi berubah')
         mutate('docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md', '\nubah\n', 'negatif: dokumen relevan berubah')
         mutate('curriculum/mod-w05/baru.yaml', 'a: 1\n', 'negatif: berkas baru tak terlacak')
-        rc, out = run(clone); cases.append(('diagnostik: dijalankan walau provenance gagal? (bersih → 0)', rc == 0, rc))
+        f = clone / 'curriculum/mod-w05/theory/items/s03.yaml'; orig = f.read_text(encoding='utf-8')
+        f.write_text(orig + '\n# ubah\n', encoding='utf-8')
+        rc, out = run(clone)
+        cases.append(('diagnostik: tree kotor tetap dijalankan tetapi ditandai TIDAK TERVERIFIKASI (bukan bukti)', rc == 0 and 'TIDAK TERVERIFIKASI' in out and 'Mode: DIAGNOSTIK' in out, rc))
+        f.write_text(orig, encoding='utf-8')
         shutil.rmtree(clone / '.git')
         rc, out = run(clone, '--official'); cases.append(('negatif: git/HEAD tidak tersedia', rc == 2 and 'tidak dapat diverifikasi' in out, rc))
         for label, good, rc in cases:
