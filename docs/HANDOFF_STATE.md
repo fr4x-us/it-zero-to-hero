@@ -95,9 +95,9 @@ Kontrak field: [AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTO
 | Field | Nilai |
 |---|---|
 | Tugas aktif dan lingkup | CB-2 — merge PR #27, catat W02-ACC–W04-ACC, produksi W5–W8 (16 komponen), satu PR baru; tanpa merge PR baru, tanpa W9–W16, tanpa implementasi |
-| Fase | Fase A dan B selesai; Fase C: **W5–W8 selesai dan tervalidasi**; Fase D (sinkronisasi dokumen status) berikutnya |
+| Fase | Fase A dan B selesai; Fase C: **W5–W8 selesai dan tervalidasi**; Fase D: dokumen status disinkronkan; verifikasi akhir dan PR berikutnya |
 | Selesai | PR #27 merged (`846051f66ee4d1e36e9b34e0c9d1787fb713617b`); W02-ACC, W03-ACC, W04-ACC dicatat (DECISIONS_LOG, OWNER_DECISION_CHECKLIST, module.yaml, review.md); **W5** `curriculum/mod-w05/` (42 berkas; validator NO ERRORS; 13/13 contoh proyek; NB-5 58 butir angka; kunci a6 b6 c7 d6); **W6** `curriculum/mod-w06/` (42 berkas; validator NO ERRORS; 16/16 contoh proyek; 24 butir biner + 22 butir Boolean dihitung ulang dari teks soal; kunci a6 b7 c8 d6); **W7** `curriculum/mod-w07/` (42 berkas; validator NO ERRORS; 16/16 contoh proyek; urutan valid dienumerasi; kunci a7 b7 c9 d8); **W8** `curriculum/mod-w08/` (42 berkas; validator NO ERRORS; 17/17 contoh proyek; 256 kombinasi blok dienumerasi → 2 benar; kunci a8 b7 c7 d7); review W6 dikoreksi (hitungan asersi 64/18) |
-| Sisa | Sinkronisasi dokumen status; verifikasi akhir; PR CB-2 |
+| Sisa | Verifikasi akhir; PR CB-2 |
 | Berkas relevan | `docs/CURRICULUM_TEMPLATES_CB0.md`, `docs/CURRICULUM_CONTENT_DECISION_SHEETS.md` §D (HA-A fase 2: M 150 · U 45 · L 120 · P 90 · C 30 · R 45), `docs/PROJECT_RUBRIC_DECISION_SHEETS.md` A.3, `docs/ASSESSMENT_FLOW_DECISION_SHEETS.md` A.4, `curriculum/mod-w01`–`mod-w04` (acuan) |
 | Versi kerja | Branch `planning/cb2-w05-w08` dari `main` = `846051f66ee4d1e36e9b34e0c9d1787fb713617b`; versi terkini = head branch di GitHub |
 | Keputusan | Owner: merge PR #27, W02-ACC–W04-ACC (batas review terarah diungkapkan), CB-2 diotorisasi. LO rinci W5–W8 disusun penyusun dari CUR §2 (CU-1 PROPOSED) |
@@ -119,7 +119,7 @@ dipertahankan agar rujukan lama tetap valid.
 | B-10 | Penilaian: kebijakan diputuskan (D-04, D-12, D-13, D-23–D-38); sisa: rubrik concept W2–W16 (UW-26), OP-6 jam (UW-28). | UW-26, UW-28 |
 | B-11 | Backup: D-03, D-07, D-16, D-17 **diputuskan**; sisa OD-5–OD-9 dan retensi log restore (UW-33); verifikasi kripto (UW-15, jalur V). | UW-33 |
 | B-13 | UI: palet (D-01 M-17), kontras (D-14), tema (D-15) **diputuskan**; sisa: tipografi/aset/breakpoint/alat screenshot (UO-3–UO-9). | UW-35 |
-| B-14 | Kurikulum: kebijakan CU lengkap (UW-36 COMPLETE, D-38); W1 diterima (W01-ACC); W2–W4 diproduksi dan dikoreksi (CB-1, PR #27), menunggu re-review/penerimaan; W5–W16 NOT STARTED; lab minggu 9–12 bergantung O-04. | UW-21, UW-37 |
+| B-14 | Kurikulum: kebijakan CU lengkap (UW-36 COMPLETE, D-38); W1–W4 diterima (W01-ACC–W04-ACC); W5–W8 diproduksi (CB-2), menunggu review independen/penerimaan; W9–W16 NOT STARTED / NOT AUTHORIZED; format editor flowchart (M-10) dan entri ekspresi Boolean OPEN; lab minggu 9–12 bergantung O-04. | UW-21, UW-37 |
 | B-5 | O-04, O-06, O-08, O-09, O-10, O-11 masih OPEN (O-01, O-02, O-07, O-16 diputuskan D-06, D-08, D-07, D-09). | UW-15, UW-24, UW-38, UW-39 |
 
 ### Izin

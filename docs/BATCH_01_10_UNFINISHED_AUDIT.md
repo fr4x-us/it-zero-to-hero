@@ -1059,3 +1059,44 @@ NOT STARTED / NOT AUTHORIZED.
 
 PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
 D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.
+
+## 23. Pembaruan status — merge PR #27, W02-ACC–W04-ACC, CB-2 (W5–W8) (2026-11-24)
+
+PR #27 di-merge pada head `1a58338bcc863320ff4eafbb0f407cee4b2a9f59`
+(merge commit `846051f66ee4d1e36e9b34e0c9d1787fb713617b`) atas otorisasi
+eksplisit owner. Owner menerima W2–W4 (W02-ACC–W04-ACC) berdasarkan review
+independen "PASS — targeted delta review with disclosed limitations";
+penerimaan ini **bukan** verifikasi menyeluruh. Owner mengotorisasi CB-2
+(W5–W8).
+
+### 23.1 Perubahan per butir
+
+| ID | Sebelum | Sesudah | AC | Bukti |
+|---|---|---|---|---|
+| UW-37 | OPEN | OPEN (tidak berubah) | CUR:CC-01–CC-11 untuk 64 komponen + penerimaan | Diproduksi 32/64 (W1–W8); diterima owner 16/64 (W1–W4); W5–W8 belum direview independen; W9–W16 belum diproduksi. **Tidak** COMPLETE |
+| UW-26 | OPEN | OPEN (tidak berubah) | Rubrik/bank concept per modul (16 modul) | Bank concept W1–W8 ada (8/16 modul, 96/192 soal); 8 modul belum |
+| Lainnya | — | Tidak berubah | — | CB-2 hanya konten kurikulum + metadata penerimaan + dokumen status |
+
+### 23.2 Jumlah per status (56 butir)
+
+COMPLETE 32 · OPEN 4 (UW-12, UW-26, UW-37, UW-52) · BLOCKED 12 ·
+DEFERRED 3 · NOT VERIFIED 5 = **56** (tidak berubah dari §22). Jalur P
+32/43 (74,4%); register 32/56 (57,1%).
+
+### 23.3 Kurikulum (dilaporkan terpisah: produksi, review, penerimaan)
+
+| Ukuran | Diproduksi | Review independen | Diterima owner |
+|---|---|---|---|
+| Modul | 8/16 (W1–W8) | 4/16 (W1–W4, terbatas) | 4/16 (W1–W4) |
+| Komponen penilaian | **32/64** (50%) | 16/64 | **16/64** (25%) |
+| Soal teori | 320/620 | 160 | 160 |
+| Soal concept | 96/192 | 48 | 48 |
+| Spesifikasi lab | 48/96 | 24 | 24 |
+| Mini-project | 8/16 | 4 | 4 |
+
+W9–W16: NOT STARTED / NOT AUTHORIZED. Format editor flowchart (M-10) dan
+bentuk entri ekspresi Boolean tetap OPEN untuk owner; W6/W8 memakai bentuk
+jawaban terstruktur di bawah EB-4 (D-24).
+
+PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
+D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.

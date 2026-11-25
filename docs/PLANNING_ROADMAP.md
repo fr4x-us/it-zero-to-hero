@@ -315,3 +315,19 @@ dapat dinilai lengkap? Rekomendasi: Ya.
 - Status tidak berubah: W2–W4 menunggu re-review independen dan penerimaan
   owner; W5–W16 NOT STARTED / NOT AUTHORIZED; register 32/4/12/3/5 = 56;
   P 32/43; PLANNING CLEAR NO; IMPLEMENTATION VERIFIED NO.
+
+## 16. Merge PR #27, W02-ACC–W04-ACC, CB-2 — produksi W5–W8 (2026-11-24)
+
+- PR #27 di-merge (`846051f`) atas otorisasi eksplisit owner; W2–W4
+  diterima (W02-ACC–W04-ACC; review terarah dengan batas yang diungkapkan,
+  **bukan** verifikasi menyeluruh).
+- W5, W6, W7, W8 **diproduksi** (16 komponen; `curriculum/mod-w05/`–
+  `mod-w08/`), review mandiri penyusun; **belum** direview ChatGPT dan
+  **belum** diterima owner. Produksi 32/64 komponen (50%); diterima owner
+  16/64 (25%).
+- UW-26 dan UW-37 tetap **OPEN**; register 32/4/12/3/5 = 56; P 32/43.
+  W9–W16 NOT STARTED / NOT AUTHORIZED. PLANNING CLEAR NO ·
+  IMPLEMENTATION VERIFIED NO · D-10 NOT AUTHORIZED · D-11 DEFERRED.
+- Untuk owner: format editor flowchart (M-10) dan bentuk entri ekspresi
+  Boolean belum diputuskan; W6/W8 memakai bentuk jawaban terstruktur yang
+  sudah ada (EB-4/D-24).

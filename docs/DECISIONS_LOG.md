@@ -212,6 +212,7 @@ Batch 01 (TD:56).
 | W03-ACC | OWNER ACCEPTED (2026-11-24) | Modul W3 (`curriculum/mod-w03/`) diterima | Idem |
 | W04-ACC | OWNER ACCEPTED (2026-11-24) | Modul W4 (`curriculum/mod-w04/`) diterima | Idem |
 | CB-2 | AUTHORIZED (2026-11-24) | Produksi W5–W8 (16 komponen); satu PR baru untuk review independen | Tanpa merge otomatis; W9–W16, implementasi, skill tambahan tidak diizinkan. LO rinci W5–W8 disusun penyusun dari CUR §2 (CU-1 tetap PROPOSED) — bukan keputusan owner baru |
+| CB-2 catatan | OPEN — untuk owner (bukan keputusan baru) | Format editor flowchart di aplikasi (M-10) dan bentuk entri ekspresi Boolean belum diputuskan | W6/W8 memakai bentuk jawaban terstruktur yang sudah ada di bawah EB-4/D-24 (pilihan, isian eksak, tabel blok); tanpa editor/evaluator graf. Bila owner memilih bentuk lain, butir terkait W6/W8 perlu disesuaikan |
 
 Batas review independen W02-ACC–W04-ACC (dinyatakan owner, verdict "PASS — targeted delta review with disclosed limitations"): Batas review independen (dinyatakan owner): delta review terarah PASS — F-49–F-59 dan F-71–F-72 lolos review terarah; integritas register F-28–F-72 diverifikasi; 16 simulasi normalisasi independen lolos. Regresi historis penuh, semua skrip validasi sementara, uji dengan pelajar, dan verifikasi runtime Android **tidak** diulang secara independen.
 
