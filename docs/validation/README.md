@@ -28,8 +28,8 @@ bila working tree kotor.
 
 | Item | Nilai |
 |---|---|
-| Commit konten (putaran 4) | `{{CONTENT_COMMIT}}` |
-| Tree `curriculum/` pada commit itu | `{{CURRICULUM_TREE}}` |
+| Commit konten (putaran 4) | `f8e028b8c08b0683837dc6beb961813295948348` |
+| Tree `curriculum/` pada commit itu | `ad5c61377401aae5e565e2df710f19aec518d15b` |
 | Keluaran yang diharapkan | [`expected/run_all.txt`](expected/run_all.txt) |
 | Snapshot posisi kunci | [`expected/key_positions.yaml`](expected/key_positions.yaml) (= baseline `4ddc993`) |
 
