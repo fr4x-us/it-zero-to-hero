@@ -83,7 +83,11 @@ Seperti urutan operasi di W5, ekspresi Boolean punya urutan:
 | 3 | `AND` |
 | 4 | `OR` |
 
-Operator setara dikerjakan dari kiri ke kanan. Contoh: `X OR Y AND Z`
+`NOT` hanya memakai **satu** operand dan boleh berulang: `NOT NOT X` = X
+(dibalik dua kali). `AND` dan `OR` memakai **dua** operand. Deretan
+operator setara (`X AND Y AND Z`, `X OR Y OR Z`) dikerjakan dari kiri ke
+kanan; untuk AND berderet atau OR berderet hasilnya sama dalam urutan apa
+pun. Contoh: `X OR Y AND Z`
 dibaca `X OR (Y AND Z)`. Bila yang dimaksud `(X OR Y) AND Z`, **tulis
 kurungnya**. Menulis kurung walaupun tidak wajib membuat maksud jelas.
 
@@ -149,7 +153,8 @@ Hasil bernilai 1 di 5 baris.
 1. NOT Y = 0; 1 AND 0 = 0.
 2. 0 OR 0 OR 1 = 1.
 3. 2⁵ = 32.
-4. Hanya X = 0, Y = 1 (baris lain bernilai 1).
+4. Tabel lengkap (X Y → NOT Y → X OR NOT Y): 0 0 → 1 → 1; 0 1 → 0 → **0**;
+   1 0 → 1 → 1; 1 1 → 0 → 1. Bernilai 0 hanya di baris X = 0, Y = 1.
 5. `X OR (Y AND Z)`.
 
 Cek pemahaman: kombinasi 000 sampai 111 adalah bilangan 0 sampai 7, masing-

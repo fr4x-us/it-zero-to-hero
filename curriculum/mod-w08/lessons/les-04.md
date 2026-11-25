@@ -41,15 +41,16 @@ nilai sama, nilai negatif, dan ujung daftar.
 | Tujuan | Nilai awal | Alasan |
 |---|---|---|
 | Menjumlahkan | `0` | 0 + x = x (tidak menambah apa-apa) |
+| Menghitung banyak (penghitung) | `0` | Belum ada yang dihitung |
 | Mengalikan | `1` | 1 × x = x |
-| Mencari nilai terkecil | **nilai pertama daftar** | Selalu anggota daftar |
+| Mencari nilai terkecil | **nilai pertama daftar** `A[1]` | Selalu anggota daftar; **syarat**: daftar tidak kosong (n ≥ 1) |
 
 Mengapa bukan angka "besar" atau 0 untuk nilai terkecil? Untuk daftar
 `[12, 30, 18]`, nilai awal 0 membuat tidak ada nilai yang lebih kecil, dan
 output 0 — padahal 0 bukan anggota daftar. Nilai awal dari daftar sendiri
-selalu aman.
+selalu aman, asalkan daftar tidak kosong.
 
-## 2. Algoritma nilai terkecil
+## 2. Algoritma nilai terkecil (domain: daftar berisi n ≥ 1 nilai)
 
 | Blok | Isi |
 |---|---|
@@ -109,7 +110,7 @@ nilai terkecil. Pilih kasus uji yang mengungkapnya.
 
 | Miskonsepsi | Yang benar |
 |---|---|
-| "Nilai awal 0 selalu aman" | Hanya untuk menjumlahkan |
+| "Nilai awal 0 selalu aman" | Aman untuk menjumlahkan dan menghitung banyak; tidak untuk perkalian atau pembanding (terkecil/terbesar) |
 | "Bilangan negatif perlu aturan khusus" | Dibandingkan seperti biasa |
 | "`<` dan `≤` selalu sama saja" | Sama untuk nilai, bisa beda untuk posisi/jumlah penggantian |
 | "Daftar contoh di soal cukup untuk menguji" | Pilih kasus uji yang mengincar kesalahan umum |
@@ -138,8 +139,8 @@ yang tidak ada di daftar.
 
 ## Ringkasan
 
-- Nilai awal: 0 untuk jumlah, 1 untuk perkalian, nilai pertama untuk
-  pembanding.
+- Nilai awal: 0 untuk jumlah dan penghitung, 1 untuk perkalian, nilai
+  pertama untuk pembanding (daftar tidak kosong).
 - Nilai sama: `<` posisi pertama, `≤` posisi terakhir; nilai sama.
 - Uji: satu nilai, semua positif, semua negatif, nilai sama, nilai di akhir.
 

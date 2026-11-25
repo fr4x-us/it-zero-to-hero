@@ -54,6 +54,8 @@ dan memodelkan aturan menjadi ekspresi (LO6).
 - Kata kunci: `AND`, `OR`, `NOT`; kurung `( )` berpasangan.
 - Prioritas: `NOT` lebih dulu, lalu `AND`, lalu `OR`; kurung dihitung
   lebih dulu.
+- `NOT` berlaku untuk satu operand dan boleh berulang (`NOT NOT M` = `M`);
+  `AND` dan `OR` selalu membutuhkan operand di kiri dan kanan.
 - Simbol lain (`&&`, `||`, `!`, `+`, `*`), variabel lain, atau kurung yang
   tidak berpasangan membuat ekspresi **tidak dapat dibaca**.
 - Bentuk terbaik: kata kunci dan variabel **huruf besar**. Huruf kecil

@@ -10,7 +10,7 @@ sumber ada di §2. Path diperiksa terhadap `git ls-files` (CB-0.5, 2026-11-24).
 |---|---|---|
 | Fase | PERSIAPAN (dokumentasi perencanaan + kurikulum). Implementasi **tidak diizinkan** | [`CLAUDE.md`](../CLAUDE.md) |
 | Titik masuk sesi | [`HANDOFF_STATE.md`](HANDOFF_STATE.md) — §Checkpoint aktif | — |
-| Gerbang | PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10 NOT AUTHORIZED · D-11 DEFERRED | [`BATCH_01_10_UNFINISHED_AUDIT.md`](BATCH_01_10_UNFINISHED_AUDIT.md) §19 |
+| Gerbang | PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10 NOT AUTHORIZED · D-11 DEFERRED | [`BATCH_01_10_UNFINISHED_AUDIT.md`](BATCH_01_10_UNFINISHED_AUDIT.md) §23 (status aktif; §19–§22 historis) |
 
 ## 2. Prioritas sumber (bila bertentangan)
 

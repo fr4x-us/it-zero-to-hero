@@ -65,17 +65,26 @@ pernah berhenti.
 | 4 | 4 | Tidak | Tidak (berhenti) |
 
 Isi dikerjakan **3** kali; syarat diperiksa **4** kali (yang terakhir
-bernilai Tidak). Saat berhenti, i = 4.
+bernilai Tidak). Saat berhenti, nilai akhir variabel i = 4. Nilai akhir
+variabel **bukan** output: algoritma hanya mengeluarkan nilai yang ditulis
+di langkah/blok Output.
 
 Bila syarat sudah salah pada pemeriksaan pertama (mis. `i ← 1` dan syarat
 `i ≤ 0`), isi dikerjakan **0** kali.
 
 ## 3. Perulangan yang tidak berhenti
 
-Perulangan berhenti hanya bila syaratnya suatu saat **salah**. Bila
-perubahan menjauhkan dari berhenti (atau tidak ada perubahan), perulangan
-tidak berhenti. Contoh: `j ← 10`; selama `j ≥ 1`: `j ← j + 2` — j makin
-besar, `j ≥ 1` selalu benar.
+Perulangan berhenti hanya bila syaratnya suatu saat bernilai **salah**.
+Bila syarat sudah salah pada pemeriksaan pertama, isi dikerjakan 0 kali dan
+perulangan langsung berhenti. Bila syarat bernilai benar, perulangan **tidak
+pernah berhenti** jika:
+
+- tidak ada variabel di syarat yang berubah di dalam perulangan;
+- perubahannya menjauhkan dari nilai yang membuat syarat salah. Contoh:
+  `j ← 10`; selama `j ≥ 1`: `j ← j + 2` — j makin besar, `j ≥ 1` selalu
+  benar;
+- perubahannya **melompati** satu-satunya nilai yang membuat syarat salah
+  (mis. syarat `≠`, lihat latihan 2).
 
 ## 4. Tabel penelusuran
 

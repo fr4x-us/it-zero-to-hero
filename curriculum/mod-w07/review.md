@@ -247,3 +247,22 @@ Pemeriksaan membuktikan jawaban sesuai aturan tertulis pada skenario fiktif (keb
 | Temuan terbuka | Tidak ada yang diketahui penyusun; butuh review independen dan penerimaan owner |
 
 Metrik W7 (dari transkrip, perkiraan): panggilan alat ≈ 22; aksi gagal 0; temuan tinjauan yang benar 2 (ambiguitas T1, bias posisi kunci); generator `module.yaml` baru dipakai agar tidak mengulang kesalahan sambung templat W6; checkpoint 1. TOKEN USAGE: **NOT MEASURABLE**.
+
+## Register koreksi PR #28 (review independen: REQUEST CHANGES, SHA `ca73981`)
+
+Ledger otoritatif F-73–F-94 **tidak tersedia** di repositori maupun di PR #28
+(komentar/review kosong). Karena itu temuan dicatat dengan ID sementara
+`PR28-nn`; nomor F yang disebut owner hanya sebagai "dikaitkan sebelumnya"
+dan **belum direkonsiliasi**. F-01–F-72 dan disposisinya tidak diubah.
+Status modul tetap: **diproduksi, belum diterima owner**.
+
+| ID sementara | Dikaitkan | Temuan | Disposisi | Bukti / kriteria |
+|---|---|---|---|---|
+| PR28-02 | F-79 | NB-5: teks "cocokkan persis" bertentangan dengan "huruf satuan bebas" | CONFIRMED — FIXED (kontrak N1–N6) | 70 teks normalisasi + 6 aturan proyek diganti; 37 fixture (termasuk W3 F-51 tak berubah) lolos; contoh positif/negatif di butir |
+| PR28-07 | F-78/F-92 (deskripsi asli tidak tersedia) | K4 proyek membuka jawaban isian yang masih dapat diedit | CONFIRMED — FIXED (W6 q2–q4, W7 q1–q4, W8 q1–q5) | Soal ditulis ulang ke tingkat konsep; LO, posisi kunci, dan poin K4 tetap; W5 K4 = QUALITY NOTE (rumus definisi dari spesifikasi, bukan nilai jawaban) |
+| PR28-10 | — | W7 akademik: pola sebagai bukti; contoh berakhir tanpa syarat kemajuan; asumsi bilangan bulat pada batas | CONFIRMED — FIXED (kata-kata) | Pelajaran 2 dan 4 |
+| PR28-12 | F-69/F-70 (pola) | Status aktif tidak sinkron (roadmap UW-26/UW-37, PROJECT_MAP §19, header review W2–W4) | CONFIRMED — FIXED | Metadata aktif diperbarui; catatan historis ditandai, tidak dihapus |
+
+Batas: kontrak normalisasi diverifikasi dengan skrip dokumentasi sementara
+(tidak di-commit), bukan evaluator produksi atau runtime Android.
+Status koreksi: menunggu review delta independen; tidak ada klaim PASS.

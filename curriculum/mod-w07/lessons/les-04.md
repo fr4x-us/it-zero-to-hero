@@ -43,7 +43,7 @@ masukan — kasus uji menemukannya sebelum pengguna menemukannya.
 |---|---|---|
 | **Jelas/terukur** | "Tambahkan air secukupnya" | "Tambahkan 200 mL air" |
 | **Berurutan benar** | "Tempel stiker, lalu kupas kertasnya" | "Kupas kertas stiker, lalu tempel" |
-| **Berakhir** | "Ulangi terus" | "Ulangi 5 kali" atau "ulangi sampai ember penuh" |
+| **Berakhir** | "Ulangi terus" | "Ulangi 5 kali", atau "tuang satu gayung air, ulangi sampai ember penuh" (berakhir karena setiap putaran menambah air dan ember tidak bocor) |
 
 ## 2. Menelusuri langkah
 
@@ -82,7 +82,9 @@ Lolos pada satu kasus **tidak** membuktikan langkah benar. Kasus yang
 Kesalahan sering terjadi **tepat di batas** (memakai `>` padahal aturannya
 `≥`). Uji **tepat di batas** dan **tepat di sebelahnya**: 119 (tidak boleh)
 dan 120 (boleh). Kasus jauh dari batas (90, 150) tidak akan mengungkap
-kesalahan `>` vs `≥`.
+kesalahan `>` vs `≥`. *Asumsi:* tinggi dicatat dalam cm **bilangan bulat**,
+sehingga 119 adalah nilai tepat di sebelah 120; bila tinggi boleh desimal,
+nilai seperti 119,9 juga perlu dipertimbangkan.
 
 ## 5. Contoh terbimbing
 
@@ -109,7 +111,8 @@ Kasus 120 mengungkap kesalahan.
 
 1. Perbaiki: "Panaskan oven sebentar".
 2. Telusuri: mulai 4; kalikan 5; kurangi 2; bagi 6.
-3. Aturan "diskon pelajar bila usia ≤ 18". Pilih dua kasus uji batas.
+3. Aturan "diskon pelajar bila usia ≤ 18" (usia dalam tahun penuh,
+   bilangan bulat). Pilih dua kasus uji batas.
 
 ## 8. Cek pemahaman (tidak dinilai)
 

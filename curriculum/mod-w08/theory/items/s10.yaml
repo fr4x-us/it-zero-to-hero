@@ -16,13 +16,18 @@ variants:
   - '6'
   - 6 kali
   - 6kali
-  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
-    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
-    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
-    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
-    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
-    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
-    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta. Jawaban bilangan bulat'
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51). Jawaban bilangan bulat'
   explanation: i = 1, 2, 3, 4, 5, 6 → 6 kali; saat i = 7 perulangan berhenti.
 - item_id: item-w08-t-s10-b
   variant_id: mod-w08.theory.s10.vB
@@ -32,11 +37,16 @@ variants:
   - '7'
   - 7 kali
   - 7kali
-  normalization: 'Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
-    Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
-    sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga
-    digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal
-    boleh ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah
-    boleh diawali `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan
-    (`1/2`), kata, satuan lain, angka desimal lebih/kurang dari yang diminta. Jawaban bilangan bulat'
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51). Jawaban bilangan bulat'
   explanation: i = 3 sampai 9 → 7 kali; saat i = 10 perulangan berhenti.

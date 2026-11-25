@@ -45,20 +45,27 @@ constants:
     - 0
     F5: 6
 field_rules:
-  cell_readable: Satu digit `0` atau `1` setelah spasi tepi dibuang; selain itu (kata, `true`, kosong)
-    → sel itu tidak terbaca
+  cell_readable: 'B01: satu digit `0` atau `1` setelah spasi/tab tepi dibuang; selain itu (`01`, `1,0`,
+    kata seperti `benar`/`true`, kosong) → sel itu tidak terbaca. Digit yang sah tetap dapat salah terhadap
+    kunci (K1)'
   expression_readable: 'Tata bahasa BX (W6): ekspresi memakai variabel yang disebut di soal, kata kunci
     `AND`, `OR`, `NOT`, dan kurung `( )`; token dipisahkan spasi (kurung boleh menempel). Prioritas: `NOT`
     lebih dulu, lalu `AND`, lalu `OR`; operator setara dikerjakan dari kiri ke kanan; kurung mengubah
     urutan. Kurung harus berpasangan. Token lain (mis. `&&`, `||`, `!`, `+`, `*`, `xor`, variabel yang
     tidak disebut) membuat ekspresi tidak terbaca (INVALID_ANSWER). Variabel yang sah hanya P, J, M; kata
-    kunci dan variabel boleh huruf kecil (dibaca seperti huruf besar)'
+    kunci dan variabel boleh huruf kecil (dibaca seperti huruf besar). Tata bahasa formal: `ekspresi =
+    or_expr`; `or_expr = and_expr { OR and_expr }`; `and_expr = unary { AND unary }`; `unary = NOT unary
+    | primary`; `primary = variabel | "(" ekspresi ")"`. NOT adalah operator satu operand dan boleh berulang
+    (`NOT NOT M` sah dan bernilai sama dengan `M`); AND dan OR selalu dua operand (`M AND` tidak terbaca).
+    Ekspresi terbaca tetapi tidak ekuivalen (mis. `M OR P OR J`) dinilai salah pada K1, bukan tidak terbaca.'
   expression_strict: 'K3: kata kunci ditulis huruf besar persis (`AND`, `OR`, `NOT`) dan variabel huruf
     besar persis (`P`, `J`, `M`)'
   equivalence: Ekspresi terbaca dievaluasi pada kedelapan kombinasi P, J, M; benar bila sama dengan truth_table
     kunci di SEMUA baris (ekspresi ekuivalen apa pun diterima)
   count_readable: 'NB-5 bilangan bulat tidak negatif tanpa nol di depan; F3 boleh diikuti kata `baris`
-    dengan/tanpa spasi. Tidak terbaca: desimal, kata, bilangan biner yang diberi awalan'
+    dengan/tanpa spasi. Tidak terbaca: desimal, kata, bilangan biner yang diberi awalan. Akhiran kata/simbol
+    satuan dibaca tanpa membedakan huruf besar/kecil (mis. `PERSEN`, `Kali`); awalan `Rp` ditulis persis
+    (kontrak NB-5 N3–N4).'
   count_strict: 'K3: digit saja tanpa kata'
   validity: 'Isian kosong/tidak terbaca → INVALID_ANSWER untuk isian itu saja; pemeriksaan yang depends_on
     isian itu bernilai 0; isian lain tetap dinilai. F1: baris R1–R8 yang hilang = sel kosong; ID baris
@@ -202,41 +209,39 @@ criteria:
       feedback: Tabel lengkap memuat setiap kombinasi input tepat sekali.
     - id: mod-w06.project.K4.q2
       lo: comp-w06-model-01
-      stem: Pada aturan alarm, mengapa `P OR J` ditulis di dalam kurung?
+      stem: Dalam tata bahasa BX, mengapa kurung diperlukan bila sebuah OR harus dihitung sebelum AND?
       options:
-        a: Karena "pintu atau jendela" adalah satu syarat yang harus dihitung dulu sebelum digabung dengan
-          mode malam memakai AND
+        a: Karena tanpa kurung AND dikerjakan lebih dulu (prioritas NOT → AND → OR)
         b: Karena kurung membuat ekspresi lebih panjang
         c: Karena OR selalu dikerjakan lebih dulu
-        d: Kurung tidak berpengaruh
+        d: Kurung tidak pernah berpengaruh
       key: a
       points: 2
-      feedback: 'Tanpa kurung, `M AND P OR J` dibaca `(M AND P) OR J`: jendela terbuka saja sudah membunyikan
-        alarm di siang hari.'
+      feedback: 'Contoh umum: `X AND Y OR Z` dibaca `(X AND Y) OR Z`; untuk menghitung `Y OR Z` lebih
+        dulu, tulis `X AND (Y OR Z)`.'
     - id: mod-w06.project.K4.q3
       lo: comp-w06-repr-01
-      stem: Pada F5, `110` adalah …
+      stem: Bila tiga nilai Boolean ditulis berurutan sebagai bilangan biner 3 bit, bobot tempat dari
+        kiri ke kanan adalah …
       options:
-        a: Nilai Boolean benar
-        b: Bilangan seratus sepuluh
-        c: Tiga nilai Boolean yang dijumlahkan
-        d: Kode biner P J M yang bernilai 6 dalam desimal
+        a: 1, 1, 1
+        b: 3, 2, 1
+        c: 100, 10, 1
+        d: 4, 2, 1
       key: d
       points: 2
-      feedback: Deretan bit P J M dibaca sebagai bilangan biner 110₂ = 4 + 2 = 6; setiap bit sendiri adalah
-        nilai Boolean satu input.
+      feedback: 'Bilangan biner 3 bit: bobot 2², 2¹, 2⁰ = 4, 2, 1 (W6 pelajaran 1).'
     - id: mod-w06.project.K4.q4
       lo: comp-w06-ops-01
-      stem: Mengapa lampu kuning memakai `NOT M`?
+      stem: Untuk sebuah variabel X, `NOT X` bernilai 1 tepat ketika …
       options:
-        a: Karena NOT membuat lampu lebih terang
-        b: Karena lampu kuning hanya untuk saat mode malam tidak aktif; NOT M bernilai 1 tepat saat M
-          = 0
-        c: Karena M selalu 0
-        d: Karena NOT sama dengan OR
+        a: X = 1
+        b: X = 0
+        c: X bernilai 1 atau 0
+        d: Tidak pernah
       key: b
       points: 2
-      feedback: NOT membalik nilai M.
+      feedback: 'NOT membalik nilai: NOT 0 = 1, NOT 1 = 0.'
     - id: mod-w06.project.K4.q5
       lo: comp-w06-table-01
       stem: Bagaimana memastikan dua ekspresi berbeda untuk alarm sama-sama benar?

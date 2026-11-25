@@ -86,7 +86,7 @@ Angka pelajaran, latihan, dan remedial dihitung ulang manual baris demi baris.
 | Bulat vs desimal | Jumlah benda/wadah selalu bulat; pembulatan ke atas (s19, lab c08) vs ke bawah (lab act-03 c06, proyek F6) dinyatakan |
 | Pembulatan | Setengah ke atas, bilangan positif; jebakan pembulatan bertahap (lab act-02 c06, concept s06) |
 | Nol dan negatif | Suhu negatif (s03), kurung bernilai negatif (lab act-01 c02); sisa 0 (s10, concept s03); pembulatan negatif dinyatakan di luar cakupan |
-| Bentuk angka NB-5 (`nb5_check.py`) | mod-w05: butir angka diperiksa 58; contoh ditolak yang akan lolos bila titik dianggap desimal (mutasi tertangkap): 1 — ALL OK |
+| Bentuk angka NB-5 (`nb5_check.py`) | mod-w05: butir angka diperiksa 58; contoh ditolak yang akan lolos bila titik dianggap desimal (mutasi tertangkap): 3 — ALL OK |
 
 
 ### 5.1 Evaluator dokumentasi proyek (dihitung, bukan ditulis tangan)
@@ -257,3 +257,23 @@ Pemeriksaan membuktikan jawaban cocok dengan nilai benar pada data fiktif menuru
 | Temuan terbuka | Tidak ada yang diketahui penyusun; butuh review independen dan penerimaan owner |
 
 Metrik W5 (dari transkrip, perkiraan): panggilan alat ≈ 40; berkas acuan dibaca ulang 0 (struktur W4 sudah dimuat); aksi gagal 3 (asersi salah tulis, `F` tidak terdefinisi di generator lab, regex pemeriksa bentuk yang salah mengurai `18.8`) — semuanya tertangkap pemeriksa sebelum commit; temuan pemeriksa yang benar 7 (6 tumpang-tindih/visibilitas, 1 bias posisi kunci); checkpoint 1. TOKEN USAGE: **NOT MEASURABLE**.
+
+## Register koreksi PR #28 (review independen: REQUEST CHANGES, SHA `ca73981`)
+
+Ledger otoritatif F-73–F-94 **tidak tersedia** di repositori maupun di PR #28
+(komentar/review kosong). Karena itu temuan dicatat dengan ID sementara
+`PR28-nn`; nomor F yang disebut owner hanya sebagai "dikaitkan sebelumnya"
+dan **belum direkonsiliasi**. F-01–F-72 dan disposisinya tidak diubah.
+Status modul tetap: **diproduksi, belum diterima owner**.
+
+| ID sementara | Dikaitkan | Temuan | Disposisi | Bukti / kriteria |
+|---|---|---|---|---|
+| PR28-02 | F-79 | NB-5: teks "cocokkan persis" bertentangan dengan "huruf satuan bebas" | CONFIRMED — FIXED (kontrak N1–N6) | 70 teks normalisasi + 6 aturan proyek diganti; 37 fixture (termasuk W3 F-51 tak berubah) lolos; contoh positif/negatif di butir |
+| PR28-06 | F-82 | `required_concepts`: sebagian varian tidak menilai setiap konsep slot (W5 concept s01 vA, s04 vB; W6 s03 vB, s04) | OPEN — keputusan owner | TPL-13 mendefinisikan `required_concepts` per slot; VA-1 tidak menyebutnya. Kunci semua benar; butir tidak diubah |
+| PR28-07 | F-78/F-92 (deskripsi asli tidak tersedia) | K4 proyek membuka jawaban isian yang masih dapat diedit | CONFIRMED — FIXED (W6 q2–q4, W7 q1–q4, W8 q1–q5) | Soal ditulis ulang ke tingkat konsep; LO, posisi kunci, dan poin K4 tetap; W5 K4 = QUALITY NOTE (rumus definisi dari spesifikasi, bukan nilai jawaban) |
+| PR28-08 | — | W5 akademik: "sisa ÷ 7" dapat dibaca membagi sisa; NB-5 dicampur dengan notasi matematika | CONFIRMED — FIXED (kata-kata) | Pelajaran 2 ringkasan, remedial R-DIVMOD, pelajaran 3 §1 |
+| PR28-12 | F-69/F-70 (pola) | Status aktif tidak sinkron (roadmap UW-26/UW-37, PROJECT_MAP §19, header review W2–W4) | CONFIRMED — FIXED | Metadata aktif diperbarui; catatan historis ditandai, tidak dihapus |
+
+Batas: kontrak normalisasi diverifikasi dengan skrip dokumentasi sementara
+(tidak di-commit), bukan evaluator produksi atau runtime Android.
+Status koreksi: menunggu review delta independen; tidak ada klaim PASS.

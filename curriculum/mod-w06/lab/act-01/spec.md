@@ -21,7 +21,7 @@ Pelajaran 1, Pelajaran 2.
 
 ## Asumsi (model modul)
 
-Semua bilangan **tak bertanda** (nol dan positif). Bit diberi nomor posisi dari kanan mulai 0; bobot = 2^posisi. **Aturan BN-6:** jawaban biner hanya 0 dan 1, tanpa spasi atau awalan (`0b`) atau subskrip; "tanpa nol di depan" berarti digit pertama 1; "tepat n bit" berarti tepat n digit termasuk nol di depan. Jawaban desimal ditulis dengan digit biasa tanpa nol di depan (NB-5).
+Semua bilangan **tak bertanda** (nol dan positif). Bit diberi nomor posisi dari kanan mulai 0; bobot = 2^posisi. **Aturan BN-6:** jawaban biner hanya 0 dan 1, tanpa spasi atau awalan (`0b`) atau subskrip; "tanpa nol di depan" berarti bilangan 0 ditulis `0` dan bilangan positif diawali digit 1; "tepat n bit" berarti tepat n digit, nol di depan dipakai untuk mengisi lebar (0 dalam 8 bit = `00000000`). Jawaban desimal ditulis dengan digit biasa tanpa nol di depan (NB-5).
 
 **Contoh terlihat (0 poin): `11₂` = 3; 2 → biner `10`; 1 → tepat 4 bit `0001`**
 

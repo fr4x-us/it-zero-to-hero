@@ -47,7 +47,13 @@ memperkirakan nilai yang belum diamati.
 | Berulang | Urutan yang sama muncul lagi | ganjil, genap, ganjil, genap | ganjil |
 
 **Selalu periksa lebih dari dua suku.** 2, 4 bisa "+2" atau "×2"; suku
-ketiga menentukan (6 atau 8).
+ketiga membedakan kedua dugaan ini (6 atau 8).
+
+*Catatan:* pola yang cocok dengan data hanyalah **dugaan yang masuk akal**,
+bukan bukti. Data yang terbatas selalu dapat dilanjutkan dengan lebih dari
+satu cara. Karena itu soal W7 menyebut jenis polanya (mis. "bertambah
+tetap") atau meminta "menurut pola" yang paling sederhana dan cocok dengan
+semua suku yang diberikan.
 
 ## 2. Suku ke-n pola bertambah tetap
 
@@ -93,7 +99,7 @@ Berapa tabungan pada minggu ke-9?
 | Miskonsepsi | Yang benar |
 |---|---|
 | "Suku ke-n = beda × n" | Suku pertama + beda × (n − 1) |
-| "Dua suku cukup untuk menentukan pola" | Periksa minimal tiga |
+| "Dua suku cukup untuk menentukan pola" | Periksa minimal tiga; pola tetap dugaan kecuali jenisnya disebut |
 | "Pola berulang dihitung dengan membagi biasa" | Pakai sisa bagi; sisa 0 = anggota terakhir |
 
 ## 8. Latihan terbimbing (`mod-w07.prac-02`, tidak dinilai)

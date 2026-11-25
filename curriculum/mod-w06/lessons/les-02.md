@@ -55,7 +55,9 @@ sisa 0.
 ## 2. Metode pembagian berulang dengan 2
 
 Bagi dengan 2, catat **sisa** (0 atau 1, ingat W5), ulangi pada hasil bagi
-sampai hasil baginya 0, lalu **baca sisa dari bawah ke atas**.
+sampai hasil baginya 0, lalu **baca sisa dari bawah ke atas**. Kasus
+khusus: bilangan **0** tidak perlu dibagi — biner kanoniknya `0` (dalam
+tepat 8 bit: `00000000`).
 
 *Deskripsi diagram dg-w06-02:* 29 → sisa 1, 0, 1, 1, 1 dari atas ke bawah;
 dibaca dari bawah: 11101.
@@ -74,7 +76,7 @@ dibaca dari bawah: 11101.
 
 | Instruksi | Artinya | 24 ditulis |
 |---|---|---|
-| Tanpa nol di depan | Digit pertama 1 (kecuali bilangan 0) | `11000` |
+| Tanpa nol di depan | Digit pertama 1; bilangan 0 ditulis `0` | `11000` |
 | Tepat 8 bit | Tepat 8 digit; tambahkan nol di **depan** | `00011000` |
 
 Nol ditambahkan di **depan** (kiri), tidak pernah di belakang, karena nol

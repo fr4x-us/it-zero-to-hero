@@ -260,3 +260,26 @@ Pemeriksaan membuktikan jawaban cocok dengan fungsi Boolean dan nilai biner yang
 | Temuan terbuka | Tidak ada yang diketahui penyusun; butuh review independen dan penerimaan owner |
 
 Metrik W6 (dari transkrip, perkiraan): panggilan alat ≈ 30; restart worker 1 (dilanjutkan dari berkas, tanpa mengulang); aksi gagal 2 (salah sambung templat `module.yaml` menghasilkan YAML rusak — tertangkap validator; `DM` belum terdefinisi di generator); temuan pemeriksa/tinjauan yang benar 9 (8 tumpang-tindih, 1 bias posisi kunci); checkpoint 1. TOKEN USAGE: **NOT MEASURABLE**.
+
+## Register koreksi PR #28 (review independen: REQUEST CHANGES, SHA `ca73981`)
+
+Ledger otoritatif F-73–F-94 **tidak tersedia** di repositori maupun di PR #28
+(komentar/review kosong). Karena itu temuan dicatat dengan ID sementara
+`PR28-nn`; nomor F yang disebut owner hanya sebagai "dikaitkan sebelumnya"
+dan **belum direkonsiliasi**. F-01–F-72 dan disposisinya tidak diubah.
+Status modul tetap: **diproduksi, belum diterima owner**.
+
+| ID sementara | Dikaitkan | Temuan | Disposisi | Bukti / kriteria |
+|---|---|---|---|---|
+| PR28-02 | F-79 | NB-5: teks "cocokkan persis" bertentangan dengan "huruf satuan bebas" | CONFIRMED — FIXED (kontrak N1–N6) | 70 teks normalisasi + 6 aturan proyek diganti; 37 fixture (termasuk W3 F-51 tak berubah) lolos; contoh positif/negatif di butir |
+| PR28-03 | F-89 | BN-6: lab act-01 tanpa pengecualian nol; teori dengan pengecualian | CONFIRMED — FIXED (kontrak) | Teori s08/s09, lab act-01 checks + spec, module.yaml disatukan; 11 fixture lolos; kunci positif yang ada tetap sah |
+| PR28-04 | F-77 | BX: NOT berulang dan unary vs binary tidak tertulis eksplisit | DOCUMENTATION CLARIFIED | Tata bahasa formal di rubrik; spec, module, pelajaran 3; 14 fixture lolos (`NOT NOT M` sah, = M); evaluator dokumentasi tidak berubah |
+| PR28-05 | F-90 (belum dikonfirmasi) | B01: trim tidak tertulis di lab act-02/03 | DOCUMENTATION CLARIFIED | Lab dan proyek: trim tepi lalu tepat satu digit 0/1; 9 fixture lolos |
+| PR28-06 | F-82 | `required_concepts`: sebagian varian tidak menilai setiap konsep slot (W5 concept s01 vA, s04 vB; W6 s03 vB, s04) | OPEN — keputusan owner | TPL-13 mendefinisikan `required_concepts` per slot; VA-1 tidak menyebutnya. Kunci semua benar; butir tidak diubah |
+| PR28-07 | F-78/F-92 (deskripsi asli tidak tersedia) | K4 proyek membuka jawaban isian yang masih dapat diedit | CONFIRMED — FIXED (W6 q2–q4, W7 q1–q4, W8 q1–q5) | Soal ditulis ulang ke tingkat konsep; LO, posisi kunci, dan poin K4 tetap; W5 K4 = QUALITY NOTE (rumus definisi dari spesifikasi, bukan nilai jawaban) |
+| PR28-09 | — | W6 akademik: nol pada konversi; NOT berulang; "NOT (X OR Y) vs NOT X OR NOT Y: belum tentu"; pembahasan tabel latihan tidak lengkap | CONFIRMED — FIXED | Pelajaran 2–4; pernyataan diganti "tidak ekuivalen" dengan baris pembeda |
+| PR28-12 | F-69/F-70 (pola) | Status aktif tidak sinkron (roadmap UW-26/UW-37, PROJECT_MAP §19, header review W2–W4) | CONFIRMED — FIXED | Metadata aktif diperbarui; catatan historis ditandai, tidak dihapus |
+
+Batas: kontrak normalisasi diverifikasi dengan skrip dokumentasi sementara
+(tidak di-commit), bukan evaluator produksi atau runtime Android.
+Status koreksi: menunggu review delta independen; tidak ada klaim PASS.

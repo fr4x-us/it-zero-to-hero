@@ -2,7 +2,7 @@
 module_id: mod-w04
 content_version: "1.0"
 template: TPL-19, TPL-20
-review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1 + koreksi F-28–F-72 (dua putaran). Review independen PR #27: REQUEST CHANGES (dua kali) → dikoreksi; re-review BELUM; belum diterima owner"
+review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1 + koreksi F-28–F-72 (dua putaran). Review independen PR #27: REQUEST CHANGES (dua kali) → dikoreksi → delta review PASS (terarah, dengan batas yang diungkapkan); diterima owner W04-ACC (2026-11-24)"
 ---
 
 # W4 — Review Kualitas, Kesetaraan Varian, Keamanan Konten, dan Bukti
@@ -13,7 +13,7 @@ review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1 + kore
 |---|---|
 | Dokumentasi diproduksi | **YA** (CB-1) |
 | Review mandiri penyusun | **YA** (dokumen ini) |
-| Review independen (ChatGPT) | PR #27: **REQUEST CHANGES** (F-28–F-70, lalu delta F-28–F-72) → dikoreksi; **re-review BELUM** |
+| Review independen (ChatGPT) | PR #27: **REQUEST CHANGES** (F-28–F-70, lalu delta F-28–F-72) → dikoreksi → **delta review PASS** — targeted delta review with disclosed limitations (lihat bagian penerimaan) |
 | Diterima owner (W04-ACC) | **YA** (2026-11-24, PR #27 merge `846051f`) — lihat bagian penerimaan di akhir dokumen |
 | Runtime diverifikasi | Tidak berlaku / tidak diklaim |
 | Durasi diuji dengan pelajar | **TIDAK** |
@@ -215,7 +215,7 @@ tidak membuktikan akun nyata pelajar aman (D-17, D-34).
 | Field | Isi |
 |---|---|
 | Reviewer / tanggal / basis | Claude (penyusun), 2026-11-24, `main` = `ab0103e` |
-| Temuan terbuka | Tidak ada BLOCKED (deskripsi F-55–F-57, F-59 dipulihkan owner, putaran 2); butuh re-review independen dan penerimaan owner. Register: bagian koreksi konsolidasi di akhir dokumen |
+| Temuan terbuka | Tidak ada BLOCKED (deskripsi F-55–F-57, F-59 dipulihkan owner, putaran 2); *historis (sebelum penerimaan):* butuh re-review independen dan penerimaan owner; **status aktif:** delta review PASS dan diterima owner W04-ACC (lihat bagian penerimaan). Register: bagian koreksi konsolidasi di akhir dokumen |
 
 Metrik W4 (dari transkrip; ±2): panggilan alat ≈ 22; berkas baru dibaca 0;
 baca ulang 0; aksi gagal 0; temuan pemeriksa yang benar 5 (2 tumpang-tindih
@@ -229,7 +229,7 @@ pemulihan sesi 0. TOKEN USAGE: **NOT MEASURABLE**.
 Review PR #27 = **REQUEST CHANGES**. Sebelum mengedit diverifikasi: head
 `a9241d33c2cf32e177ca92618df458b78dd6cb98`, base
 `ab0103e4954ead4ded6343d105d73a2729916cd6` (cocok). Koreksi diterapkan pada
-PR #27 yang sama. Status modul: **diproduksi dan dikoreksi; menunggu re-review
+PR #27 yang sama. *Historis (saat koreksi):* status modul **diproduksi dan dikoreksi; menunggu re-review
 independen dan penerimaan owner** — belum diterima.
 
 ### 13.1 Register F-28–F-72 (45 ID; diperbarui pada koreksi terarah putaran 2)

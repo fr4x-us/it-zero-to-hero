@@ -148,7 +148,8 @@ atau dibagi langsung.
 ## Ringkasan
 
 - Hasil bagi × pembagi + sisa = bilangan; sisa 0 sampai pembagi − 1.
-- Sisa ÷ 7 untuk hari; sisa ÷ 60 untuk menit/detik.
+- Hari: pakai **sisa dari n ÷ 7** (sisa pembagian oleh 7, bukan sisa yang
+  dibagi 7); menit/detik: sisa dari n ÷ 60.
 - Ke satuan kecil kali, ke satuan besar bagi; samakan satuan dulu.
 - Perbandingan senilai: hitung satu satuan dulu.
 

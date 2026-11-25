@@ -54,12 +54,15 @@ field_rules:
   rupiah_readable: 'NB-5 bilangan bulat tidak negatif: digit tanpa nol di depan, atau dengan titik ribuan
     berkelompok tepat tiga digit; boleh diawali `Rp` dengan/tanpa spasi; spasi tepi dibuang. Diterima:
     `40000`, `40.000`, `Rp40.000`, `Rp 40000`. Tidak terbaca: `40,000`, `40.000,00`, `40rb`, `040000`,
-    kata'
+    kata. Akhiran kata/simbol satuan dibaca tanpa membedakan huruf besar/kecil (mis. `PERSEN`, `Kali`);
+    awalan `Rp` ditulis persis (kontrak NB-5 N3–N4).'
   percent_readable: 'NB-5 bilangan tidak negatif dengan 0 atau 1 angka di belakang koma; boleh diikuti
     `%` atau `persen` dengan/tanpa spasi. Diterima: `44,4`, `44,4%`, `44`. Tidak terbaca: `44.4` (titik
-    bukan desimal), `44,40` (lebih dari satu angka desimal), kata'
+    bukan desimal), `44,40` (lebih dari satu angka desimal), kata. Akhiran kata/simbol satuan dibaca tanpa
+    membedakan huruf besar/kecil (mis. `PERSEN`, `Kali`); awalan `Rp` ditulis persis (kontrak NB-5 N3–N4).'
   count_readable: 'NB-5 bilangan bulat tidak negatif tanpa nol di depan; boleh diikuti `kali` dengan/tanpa
-    spasi. Tidak terbaca: desimal (`39,7`), kata'
+    spasi. Tidak terbaca: desimal (`39,7`), kata. Akhiran kata/simbol satuan dibaca tanpa membedakan huruf
+    besar/kecil (mis. `PERSEN`, `Kali`); awalan `Rp` ditulis persis (kontrak NB-5 N3–N4).'
   value_compare: 'Nilai terbaca dibandingkan PERSIS dengan konstanta key (bilangan rasional; `44` ≠ `44,4`).
     Tidak ada kredit kesalahan berantai: setiap isian dibandingkan dengan nilai benar dari data proyek,
     bukan dengan isian pelajar lain (kredit independen MR-2)'

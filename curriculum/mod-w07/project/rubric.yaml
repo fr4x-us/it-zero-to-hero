@@ -101,7 +101,9 @@ field_rules:
   info_score: 'K1.c11: max(0, banyak ID relevan terpilih − banyak ID tidak relevan terpilih) × 2; maksimum
     8 hanya bila himpunan tepat sama dengan kunci (pola CE-S2, tidak pernah negatif)'
   number_readable: NB-5 bilangan bulat tidak negatif tanpa nol di depan; F5 boleh diikuti `menit`, F6
-    boleh diikuti `hari`, F3 boleh diikuti `botol` (dengan/tanpa spasi)
+    boleh diikuti `hari`, F3 boleh diikuti `botol` (dengan/tanpa spasi). Akhiran kata/simbol satuan dibaca
+    tanpa membedakan huruf besar/kecil (mis. `PERSEN`, `Kali`); awalan `Rp` ditulis persis (kontrak NB-5
+    N3–N4).
   number_strict: 'K3: digit saja'
   validity: 'Isian kosong/tidak terbaca → INVALID_ANSWER untuk isian itu saja; pemeriksaan yang depends_on
     isian itu bernilai 0; isian lain tetap dinilai. F1: ID tugas tak dikenal diabaikan; tugas yang hilang
@@ -244,48 +246,49 @@ criteria:
     items:
     - id: mod-w07.project.K4.q1
       lo: comp-w07-decomp-01
-      stem: Mengapa T2 dan T5 masuk kelompok yang sama?
+      stem: Dasar pengelompokan tugas di F1 adalah …
       options:
-        a: Karena dikerjakan pada hari yang sama
-        b: Karena namanya diawali huruf yang sama
-        c: Karena keduanya paling lama
-        d: Karena keduanya menghasilkan bahan dari sumber bacaan
+        a: Hari pengerjaan tugas
+        b: Huruf awal nama tugas
+        c: Lama tugas
+        d: Hasil yang dihasilkan setiap tugas, dicocokkan dengan definisi kode kelompok
       key: d
       points: 2
-      feedback: Kelompok ditentukan oleh hasil tugas.
+      feedback: Kelompok ditentukan oleh hasil tugas menurut definisi kode di spesifikasi.
     - id: mod-w07.project.K4.q2
       lo: comp-w07-order-01
-      stem: Mengapa ada lebih dari satu urutan valid untuk F2?
+      stem: Kapan dua tugas boleh ditukar urutannya dalam suatu jadwal?
       options:
-        a: Karena prasyarat boleh dilanggar
-        b: Karena tugas riset bacaan dan tugas data tidak saling membutuhkan, sehingga dapat diselang-seling
-        c: Karena semua tugas bebas urutannya
-        d: Karena T7 boleh dikerjakan pertama
+        a: Kapan saja, prasyarat tidak penting
+        b: Bila tidak ada prasyarat langsung maupun tidak langsung di antara keduanya
+        c: Bila keduanya sama lama
+        d: Bila keduanya dikerjakan orang yang sama
       key: b
       points: 2
-      feedback: Rantai T2→T5 dan T3→T4 dapat digabung dengan berbagai cara (6 urutan).
+      feedback: Tugas yang tidak saling bergantung dapat ditukar; rantai prasyarat tidak boleh dibalik.
     - id: mod-w07.project.K4.q3
       lo: comp-w07-abstract-01
-      stem: Mengapa warna latar slide (I5) tidak dipilih di F4?
+      stem: Sebuah informasi termasuk relevan untuk F4 bila …
       options:
-        a: Karena tidak mengubah kapan atau dalam urutan apa tugas dikerjakan
-        b: Karena slide tidak penting
-        c: Karena Dina tidak suka warna
-        d: Karena warna selalu sama
+        a: Perubahannya dapat mengubah kapan atau dalam urutan apa tugas dikerjakan
+        b: Informasi itu tertulis paling awal
+        c: Informasi itu menarik
+        d: Informasi itu berupa angka
       key: a
       points: 2
       feedback: 'Abstraksi: informasi dipilih menurut tujuan (menyusun jadwal).'
     - id: mod-w07.project.K4.q4
       lo: comp-w07-pattern-01
-      stem: F3 memakai pola …
+      stem: Untuk memperkirakan nilai berikutnya pada data yang mengikuti pola bertambah tetap, langkah
+        yang tepat adalah …
       options:
-        a: Berlipat dua
-        b: Berulang setiap tiga hari
-        c: Bertambah tetap 3 setiap hari
-        d: Acak
+        a: Mengalikan nilai terakhir dengan 2
+        b: Memakai nilai rata-rata semua hari
+        c: Menentukan beda antar-hari dari data, lalu menambahkan beda itu sampai hari yang diminta
+        d: Menebak dari nilai terbesar
       key: c
       points: 2
-      feedback: '12, 15, 18 bertambah 3; hari ke-6: 12 + 3 × 5.'
+      feedback: Suku ke-n = suku pertama + beda × (n − 1) (W7 pelajaran 2).
     - id: mod-w07.project.K4.q5
       lo: comp-w07-test-01
       stem: Cara paling tepat memeriksa bahwa urutan F2 benar adalah …

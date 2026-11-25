@@ -29,7 +29,7 @@ yang diungkapkan tetap berlaku. Isi W8 tidak menyalin isi modul lain.
 | Soal teori | **40** (20 slot × 2) |
 | Soal concept | **12** (6 slot × 2) |
 | Spesifikasi lab | **6** (3 aktivitas × 2 varian) |
-| Mini-project | 1 (`spec.md` + `rubric.yaml`, 17 contoh evaluasi) |
+| Mini-project | 1 (`spec.md` + `rubric.yaml`, 20 contoh evaluasi) |
 | Remedial / review | 1 / 1 |
 
 ## 3. Tujuan belajar (6 LO ↔ 6 kompetensi ↔ 6 slot concept)
@@ -81,7 +81,7 @@ soal/fixture**.
 |---|---|
 | Penelusuran perulangan dan tabel (s10–s15, s20, lab act-02, act-03, proyek F5–F8) | Disimulasikan; banyak putaran dan banyak pemeriksaan syarat dihitung terpisah |
 | Percabangan dan batas (s07–s09, lab act-01) | Disimulasikan termasuk nilai tepat di batas |
-| Isian blok proyek F1–F4 | **Enumerasi semua 4⁴ = 256 kombinasi** pilihan diuji pada fixture A, B, dan daftar uji tambahan (satu nilai, semua negatif, nilai sama, maksimum di akhir): tepat **2** kombinasi benar (F3 `>` atau `≥`); keduanya diterima |
+| Isian blok proyek F1–F4 | **Enumerasi semua 4⁴ = 256 kombinasi** dengan interpreter **tingkat-blok** (mengikuti kolom "Berikutnya" blok demi blok) pada 14 daftar uji (negatif, positif, campuran, nilai sama, satu nilai): tepat **2** kombinasi benar (F1 b, F2 b, F3 `>` atau `≥`, F4 **b** = kembali ke B4); keduanya diterima. *Koreksi PR #28:* kunci F4 semula `c` (B5) akibat simulator generator yang salah memetakan target lompatan; F4 = c melewati penjaga B4 dan mengakses A[n + 1] |
 | Jawaban tunggal yang dapat dipertahankan | Bentuk simbol (s04–s06) mengikuti tabel simbol yang diajarkan; domain (s03) dibatasi pada pembagi; urutan blok (s16) hanya satu urutan sah |
 | Bentuk angka NB-5 (`nb5_check.py`) | ALL OK |
 
@@ -107,11 +107,17 @@ soal/fixture**.
 | E15 | F5 berisi baris tak dikenal i9 di samping i2–i6 acuan | 60 | 20 | 10 | 100 |
 | E16 | Struktur luar F5 rusak (daftar, bukan tabel baris) | 40 | 14 | 6 | 70 |
 | E17 | F6 memakai tanda minus `−` (U+2212) | 60 | 20 | 10 | 100 |
+| E18 | F4 = c (kembali ke B5: melewati penjaga B4, A[n + 1] di luar daftar) | 54 | 20 | 10 | 94 |
+| E19 | F4 = d (kembali ke B9: keluar setelah satu putaran) | 54 | 20 | 10 | 94 |
+| E20 | F4 = `e` (di luar a–d) | 54 | 18 | 10 | 92 |
 
 Prosedur: `sim_w08.py` membaca konstanta, pilihan blok, fixture, dan aturan
-skor dari `rubric.yaml`, menjalankan flowchart acuan, mengevaluasi 17
+skor dari `rubric.yaml`, menjalankan flowchart acuan, mengevaluasi 20
 submission contoh, dan membandingkan dengan harapan yang dihitung tangan
-lebih dulu: semua cocok. Uji mutasi: pemeriksa yang hanya menerima F3 = a
+lebih dulu: semua cocok. Evaluator juga menurunkan ulang kunci F1–F8 dari
+interpreter tingkat-blok independen (`w08_blocks.py`), bukan dari salinan
+kunci rubrik. E18–E20 (F4 = c, d, `e`) ditambahkan pada koreksi PR #28.
+Uji mutasi: pemeriksa yang hanya menerima F3 = a
 (`>`) memberi E02 (F3 = d, `≥`) skor 94 alih-alih 100 — tertangkap; karena
 itu alternatif setara ditulis eksplisit di rubrik. Ruang solusi bernilai
 penuh: 2 kombinasi blok. F5–F8 dinilai terhadap flowchart acuan, bukan
@@ -149,6 +155,7 @@ angka contoh pelajaran (150000/200000/250000). Tinjauan manual:
 | Temuan | Tindakan |
 |---|---|
 | Lab act-03 c06 semula membuka jawaban proyek (banyak pemeriksaan pada daftar maksimum) | **Diperbaiki**: diganti "banyak pemeriksaan B4" untuk fixture lab sendiri |
+| K4 proyek semula membuka/menunjuk jawaban F1, F2, F3, F4, F7, F8 (PR #28) | **Diperbaiki**: kelima soal K4 ditulis ulang ke tingkat konsep (kasus uji, kemajuan perulangan, alur B5, simbol, tabel penelusuran); LO, kunci a–d, dan poin tetap |
 | Latihan les-03 no. 3 sama struktur dan jawaban dengan s12 vA | **Diperbaiki**: diganti perulangan perkalian (output 8) |
 | Latihan les-04 no. 3 sama pola dengan s18 vA | **Diperbaiki**: diganti kasus uji algoritma perkalian |
 | les-04 §1 mengajarkan mengapa `kecil ← 0` salah | Diterima sebagai materi inti LO6 (metode); butir s18 tetap menuntut memilih di antara 4 daftar |
@@ -202,7 +209,7 @@ bukan review independen.
 | L-act-02.vB | loop-01, trace-01 | 8 pemeriksaan | Σ 40 | A | M | M | A+S | — | A | A | M | A | A |  |
 | L-act-03.vA | correct-01, trace-01 | 6 pemeriksaan | Σ 30 | A | M | M | A+S | — | A | A | M | A | A |  |
 | L-act-03.vB | correct-01, trace-01 | 6 pemeriksaan | Σ 30 | A | M | M | A+S | — | A | A | M | A | A |  |
-| P (spec+rubrik) | semua LO | MR-A | contoh 17 | A | M | M | S | — | A+S | A+S | — | A | A |  |
+| P (spec+rubrik) | semua LO | MR-A | contoh 20 | A | M | M | S | — | A+S | A+S | — | A | A |  |
 | les-01 + latihan | LO | Pelajaran | — | M | M | M | M | — | — | — | — | M | A |  |
 | les-02 + latihan | LO | Pelajaran | — | M | M | M | M | — | — | — | — | M | A |  |
 | les-03 + latihan | LO | Pelajaran | — | M | M | M | M | — | — | — | — | M | A |  |
@@ -214,7 +221,7 @@ bukan review independen.
 | QC | Hasil | Bukti |
 |---|---|---|
 | QC-01 | PASS | §4; E01 = 100 |
-| QC-02 | PASS | §5.1 (17/17 dihitung evaluator) |
+| QC-02 | PASS | §5.1 (20/20 dihitung evaluator; kunci diturunkan ulang dari interpreter tingkat-blok) |
 | QC-03 | NOT APPLICABLE | Tidak ada konversi satuan |
 | QC-04 | PASS | §6 |
 | QC-05 | PASS | §7 |
@@ -233,7 +240,7 @@ penerapannya pada W8.
 
 | Temuan | Makna historis | Berlaku? | Artefak | Metode | Hasil teramati | Batas |
 |---|---|---|---|---|---|---|
-| F-01–F-06 | Kebenaran fungsional, penanganan dependensi, batas skor | Berlaku | `project/rubric.yaml` | Setiap isian proyek punya pemeriksaan kebenaran; depends_on eksplisit; kredit independen (MR-2); tanpa gerbang nol global; contoh batas dihitung evaluator | E01–E17 dihitung `sim_w08.py`; kredit independen F5–F8 terhadap flowchart acuan | Evaluator dokumentasi |
+| F-01–F-06 | Kebenaran fungsional, penanganan dependensi, batas skor | Berlaku | `project/rubric.yaml` | Setiap isian proyek punya pemeriksaan kebenaran; depends_on eksplisit; kredit independen (MR-2); tanpa gerbang nol global; contoh batas dihitung evaluator | E01–E20 dihitung `sim_w08.py`; kredit independen F5–F8 terhadap flowchart acuan | Evaluator dokumentasi |
 | F-07–F-08 | Bukti per butir dan visibilitas jawaban | Berlaku | pelajaran, spec | Matriks bukti per butir (§9); pemindai V-L + tinjauan konteks (§8) | 10 hit pemindai = konstanta/substring; 3 tumpang-tindih diperbaiki | Konteks dinilai manual |
 | F-09–F-23 | Maksimum dapat dicapai, satuan, normalisasi, kesetaraan varian, validasi deterministik, input rusak | Berlaku | semua komponen | Validator struktur (maksimum, poin, kunci, ID); pemeriksa NB-5 / bentuk jawaban; matriks kesetaraan (§6); fixture input rusak | Maksimum 56/100/100/20; 256 kombinasi blok dienumerasi | Kesetaraan dinilai manual |
 | F-24–F-27 | Keamanan skill dan bukti aktivasi yang jujur | Berlaku (proses) | `.claude/`, registry | `.claude/`, izin, hooks, allowed-tools, asal skill tidak diubah; V03 tidak diklaim ulang | Tidak ada perubahan | V03 tidak dijalankan ulang |
@@ -253,3 +260,23 @@ Pemeriksaan membuktikan pilihan blok dan penelusuran sesuai flowchart acuan pada
 | Temuan terbuka | Tidak ada yang diketahui penyusun; butuh review independen dan penerimaan owner |
 
 Metrik W8 (dari transkrip, perkiraan): panggilan alat ≈ 30; aksi gagal 0; temuan tinjauan yang benar 3 (tumpang-tindih lab act-03 c06, latihan les-03, latihan les-04) plus koreksi hitungan asersi review W6 (67/19 → 64/18); restart worker 1; checkpoint 1. TOKEN USAGE: **NOT MEASURABLE**.
+
+## Register koreksi PR #28 (review independen: REQUEST CHANGES, SHA `ca73981`)
+
+Ledger otoritatif F-73–F-94 **tidak tersedia** di repositori maupun di PR #28
+(komentar/review kosong). Karena itu temuan dicatat dengan ID sementara
+`PR28-nn`; nomor F yang disebut owner hanya sebagai "dikaitkan sebelumnya"
+dan **belum direkonsiliasi**. F-01–F-72 dan disposisinya tidak diubah.
+Status modul tetap: **diproduksi, belum diterima owner**.
+
+| ID sementara | Dikaitkan | Temuan | Disposisi | Bukti / kriteria |
+|---|---|---|---|---|
+| PR28-01 | F-76 | W8 proyek: kunci F4 = `c` (B5) salah; seharusnya `b` (B4). Akar: simulator generator memetakan target lompatan bergeser | CONFIRMED — FIXED | Kunci, K1.c04, reference_strict, analisis solusi diperbaiki; interpreter tingkat-blok: 256 kombinasi → 2 benar (F4 = b); F4 b/a/c/d/e = 100/94/94/94/92 (E01, E05, E18–E20) |
+| PR28-02 | F-79 | NB-5: teks "cocokkan persis" bertentangan dengan "huruf satuan bebas" | CONFIRMED — FIXED (kontrak N1–N6) | 70 teks normalisasi + 6 aturan proyek diganti; 37 fixture (termasuk W3 F-51 tak berubah) lolos; contoh positif/negatif di butir |
+| PR28-07 | F-78/F-92 (deskripsi asli tidak tersedia) | K4 proyek membuka jawaban isian yang masih dapat diedit | CONFIRMED — FIXED (W6 q2–q4, W7 q1–q4, W8 q1–q5) | Soal ditulis ulang ke tingkat konsep; LO, posisi kunci, dan poin K4 tetap; W5 K4 = QUALITY NOTE (rumus definisi dari spesifikasi, bukan nilai jawaban) |
+| PR28-11 | — | W8 akademik: syarat tidak berhenti; nilai akhir vs output; "0 hanya untuk menjumlah" bertentangan dengan penghitung; prasyarat daftar tidak kosong | CONFIRMED — FIXED | Pelajaran 3 dan 4 |
+| PR28-12 | F-69/F-70 (pola) | Status aktif tidak sinkron (roadmap UW-26/UW-37, PROJECT_MAP §19, header review W2–W4) | CONFIRMED — FIXED | Metadata aktif diperbarui; catatan historis ditandai, tidak dihapus |
+
+Batas: kontrak normalisasi diverifikasi dengan skrip dokumentasi sementara
+(tidak di-commit), bukan evaluator produksi atau runtime Android.
+Status koreksi: menunggu review delta independen; tidak ada klaim PASS.

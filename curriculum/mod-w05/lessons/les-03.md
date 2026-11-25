@@ -56,10 +56,17 @@ pemisah ribuan. Agar penilaian otomatis adil dan pasti, W5 memakai aturan:
 | Tanpa nol di depan | `9` | `09` |
 | Minus untuk bilangan negatif | `-8` atau `−8` | `8-` |
 | Banyak angka desimal sesuai yang diminta | diminta satu: `7,5` | `7,50` |
-| Satuan yang disebut di soal boleh ditulis | `95 menit`, `20%`, `Rp4.200` | satuan lain |
+| Satuan yang disebut di soal boleh ditulis (huruf besar/kecil satuan bebas) | `95 menit`, `95 MENIT`, `20%`, `Rp4.200` | satuan lain, `rp4.200` |
 
 Mengapa `7.5` ditolak? Karena di Indonesia `7.500` berarti tujuh ribu lima
 ratus; aturan yang satu arti mencegah salah baca.
+
+**Penting: matematika vs format isian.** NB-5 adalah aturan **format isian**
+di aplikasi, bukan aturan matematika. Secara matematika `7,5` dan `7,50`
+bernilai sama, dan banyak negara menulis desimal dengan titik (`7.5`).
+Aturan NB-5 hanya menentukan bentuk yang dapat dibaca penilai otomatis:
+bila soal meminta **satu** angka di belakang koma, tulis tepat satu
+(`7,5`), walaupun `7,50` bernilai sama.
 
 ## 2. Arti persen
 

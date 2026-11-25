@@ -44,7 +44,7 @@ di setiap PR batch.
 | #25 | Pencatatan D-26–D-37; CB-0; konten W1; revisi kualitas W1 (F-01–F-23) | Merged 2026-11-24 sebagai `df76c5f` (head `f4cb173`; di-merge Claude atas otorisasi eksplisit owner) |
 | #26 | CB-0.5: D-38, W01-ACC, empat skill agen, PROJECT_MAP, protokol efisiensi token; revisi F-24–F-27 (hardening keamanan) | Merged 2026-11-24 sebagai `ab0103e` (head `691ae87`; di-merge Claude atas otorisasi eksplisit owner, master prompt CB-1) |
 | #27 | CB-1: V03 PASS; kurikulum W2–W4 (12 komponen); dua putaran koreksi F-28–F-72 | Merged 2026-11-24 sebagai `846051f` (head `1a58338`; di-merge Claude atas otorisasi eksplisit owner, master prompt CB-2) |
-| #28 | CB-2: penerimaan W02-ACC–W04-ACC; kurikulum W5–W8 (16 komponen) | OPEN — menunggu review independen; **tidak di-merge Claude** (base `main` = `846051f`, branch `planning/cb2-w05-w08`) |
+| #28 | CB-2: penerimaan W02-ACC–W04-ACC; kurikulum W5–W8 (16 komponen) | OPEN — review independen REQUEST CHANGES (SHA `ca73981`) → dikoreksi (PR28-01–PR28-12) → menunggu review delta independen; **tidak di-merge Claude** (base `main` = `846051f`, branch `planning/cb2-w05-w08`) |
 
 ## Aturan merge (permanen)
 
@@ -94,18 +94,18 @@ Kontrak field: [AGENT_TOKEN_EFFICIENCY_PROTOCOL.md](AGENT_TOKEN_EFFICIENCY_PROTO
 
 | Field | Nilai |
 |---|---|
-| Tugas aktif dan lingkup | CB-2 — merge PR #27, catat W02-ACC–W04-ACC, produksi W5–W8 (16 komponen), satu PR baru; tanpa merge PR baru, tanpa W9–W16, tanpa implementasi |
-| Fase | Fase A dan B selesai; Fase C: **W5–W8 selesai dan tervalidasi**; Fase D: dokumen status disinkronkan; verifikasi akhir selesai; PR #28 dibuka → STOP |
+| Tugas aktif dan lingkup | Koreksi PR #28 (CB-2) atas REQUEST CHANGES: kunci F4 W8, kontrak NB-5/BN-6/BX/B01, kebocoran K4, akurasi akademik, sinkronisasi status; tanpa merge, tanpa W9, tanpa implementasi |
+| Fase | CB-2 diproduksi (PR #28); review independen REQUEST CHANGES; koreksi diterapkan dan divalidasi → PR #28 diperbarui → STOP |
 | Selesai | PR #27 merged (`846051f66ee4d1e36e9b34e0c9d1787fb713617b`); W02-ACC, W03-ACC, W04-ACC dicatat (DECISIONS_LOG, OWNER_DECISION_CHECKLIST, module.yaml, review.md); **W5** `curriculum/mod-w05/` (42 berkas; validator NO ERRORS; 13/13 contoh proyek; NB-5 58 butir angka; kunci a6 b6 c7 d6); **W6** `curriculum/mod-w06/` (42 berkas; validator NO ERRORS; 16/16 contoh proyek; 24 butir biner + 22 butir Boolean dihitung ulang dari teks soal; kunci a6 b7 c8 d6); **W7** `curriculum/mod-w07/` (42 berkas; validator NO ERRORS; 16/16 contoh proyek; urutan valid dienumerasi; kunci a7 b7 c9 d8); **W8** `curriculum/mod-w08/` (42 berkas; validator NO ERRORS; 17/17 contoh proyek; 256 kombinasi blok dienumerasi → 2 benar; kunci a8 b7 c7 d7); review W6 dikoreksi (hitungan asersi 64/18) |
-| Sisa | Tidak ada untuk CB-2; menunggu review PR #28 dan keputusan owner |
+| Sisa | Review delta independen PR #28; keputusan owner: cakupan `required_concepts` (PR28-06), M-10/entri Boolean; ledger F-73–F-94 asli tidak tersedia (ID sementara PR28-nn) |
 | Berkas relevan | `docs/CURRICULUM_TEMPLATES_CB0.md`, `docs/CURRICULUM_CONTENT_DECISION_SHEETS.md` §D (HA-A fase 2: M 150 · U 45 · L 120 · P 90 · C 30 · R 45), `docs/PROJECT_RUBRIC_DECISION_SHEETS.md` A.3, `docs/ASSESSMENT_FLOW_DECISION_SHEETS.md` A.4, `curriculum/mod-w01`–`mod-w04` (acuan) |
 | Versi kerja | Branch `planning/cb2-w05-w08` dari `main` = `846051f66ee4d1e36e9b34e0c9d1787fb713617b`; versi terkini = head branch di GitHub |
 | Keputusan | Owner: merge PR #27, W02-ACC–W04-ACC (batas review terarah diungkapkan), CB-2 diotorisasi. LO rinci W5–W8 disusun penyusun dari CUR §2 (CU-1 PROPOSED) |
 | Blocker | Format editor flowchart (M-10) dan bentuk entri ekspresi Boolean belum diputuskan → W6/W8 memakai bentuk jawaban terstruktur yang sudah ada (pilihan, isian eksak, tabel), tanpa editor graf; dicatat untuk owner |
 | Pendekatan gagal | W5: asersi generator salah tulis (bukan kunci); regex pemeriksa NB-5 awalnya mengurai `18.8` sebagai 18 + satuan — diperbaiki sebelum dipakai sebagai bukti. W6: salah sambung templat module.yaml (YAML rusak, tertangkap validator); restart worker 1 (dilanjutkan dari berkas) |
 | Bukti verifikasi | PR #27 `merged: true`, merge commit `846051f`; main lokal = remote, working tree bersih sebelum branch dibuat |
-| Aksi berikutnya yang diizinkan | Sinkronisasi dokumen status, verifikasi diff vs `846051f`, buka satu PR CB-2 |
-| Kondisi berhenti | PR CB-2 dibuka → STOP. Jangan merge, jangan mulai W9, jangan implementasi |
+| Aksi berikutnya yang diizinkan | Tidak ada tanpa instruksi owner; menunggu review delta |
+| Kondisi berhenti | PR #28 diperbarui dengan laporan koreksi → STOP. Jangan merge, jangan tandai CB-2 diterima, jangan mulai W9, jangan implementasi |
 
 ## Blocker
 
@@ -142,8 +142,8 @@ Selesai: B-2 (PR #7); B-3 (D-01, PR #18); B-7 (D-02, PR #19); B-9 (D-05, PR #19)
 
 ## Langkah berikutnya (usulan, menunggu owner)
 
-1. Review independen PR CB-1 (ChatGPT) → revisi bila ada temuan →
-   otorisasi merge eksplisit bila PASS.
-2. Penerimaan owner W2–W4 (terpisah dari merge).
-3. Produksi W5–W16 belum diizinkan; butuh otorisasi terpisah.
+1. Review delta independen PR #28 (CB-2, koreksi REQUEST CHANGES) →
+   revisi bila ada temuan → otorisasi merge eksplisit bila PASS.
+2. Penerimaan owner W5–W8 (terpisah dari merge); W1–W4 sudah diterima.
+3. Produksi W9–W16 belum diizinkan; butuh otorisasi terpisah.
 4. Implementasi, prototipe, pengukuran, dan benchmark tetap tidak diizinkan.

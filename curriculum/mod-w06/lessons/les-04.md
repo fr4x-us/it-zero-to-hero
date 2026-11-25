@@ -123,7 +123,7 @@ ada halangan (S), **atau** bila tombol darurat ditekan (D)."
 | "Atau berarti hanya salah satu" | Dalam W6, atau = OR inklusif |
 | "Hanya ada satu ekspresi yang benar" | Semua ekspresi ekuivalen sama-sama benar |
 | "Kurung hanya hiasan" | Kurung dapat mengubah arti |
-| "`NOT (X OR Y)` sama dengan `NOT X OR NOT Y`" | Belum tentu; periksa dengan tabel |
+| "`NOT (X OR Y)` sama dengan `NOT X OR NOT Y`" | Tidak ekuivalen: berbeda pada X = 1, Y = 0 (0 vs 1) dan X = 0, Y = 1; selalu periksa semua baris tabel |
 
 ## 6. Latihan terbimbing (`mod-w06.prac-04`, tidak dinilai)
 

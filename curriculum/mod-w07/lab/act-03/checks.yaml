@@ -8,14 +8,18 @@ max_points: 30
 estimated_minutes: 40
 content_version: '1.0'
 xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w07.lab (D-28 XI-2)
-normalization: 'c01, c04, c05: Buang spasi/tab di awal dan akhir; cocokkan persis dengan salah satu accepted_answers.
-  Aturan angka NB-5: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat
-  sebanyak angka desimal yang diminta; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga digit
-  (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif; satuan yang disebut di soal boleh
-  ditulis setelah angka dengan/tanpa satu spasi (huruf besar/kecil satuan bebas); untuk rupiah boleh diawali
-  `Rp` dengan/tanpa spasi. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan (`1/2`), kata,
-  satuan lain, angka desimal lebih/kurang dari yang diminta. c02, c03, c06: Pilihan: satu huruf a–d, huruf
-  besar/kecil bebas'
+normalization: 'c01, c04, c05: Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan
+  (N1–N6; N1 = buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal
+  hanya koma (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah
+  ribuan dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+  N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers butir
+  ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran satuan
+  itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan dan afiks
+  dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers adalah
+  bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai desimal
+  (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang dari
+  yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap peka
+  huruf (F-51). c02, c03, c06: Pilihan: satu huruf a–d, huruf besar/kecil bebas'
 answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk tidak
   sah); pemeriksaan lain tetap dinilai (kredit independen)
 infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang

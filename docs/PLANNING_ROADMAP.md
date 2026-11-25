@@ -45,7 +45,7 @@ Pemindahan UW-15 dari P ke V **disetujui D-25** (RM-Q1(a)); AC UW-15
 tetap. Penyebut jalur P = 43 sudah final menurut klasifikasi yang disetujui.
 Batch D-26–D-35 menyelesaikan UW-25, UW-27, UW-29, UW-30, UW-31, UW-32
 (AC = keputusan tertulis terpenuhi). UW-36 kini COMPLETE (D-38, §12); UW-26
-dan UW-37 tetap OPEN (konten 15 modul belum ada); UW-33 tetap BLOCKED.
+dan UW-37 tetap OPEN (status aktif: 8/16 modul diproduksi, 4/16 diterima; §16); UW-33 tetap BLOCKED.
 
 ## 2. Register lengkap dengan klasifikasi (56 butir)
 
@@ -79,7 +79,7 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-23 | BLOCKED | P | Keputusan owner CO-1/CO-2 |
 | UW-24 | BLOCKED | P | Keputusan owner O-09 (pilihan runner); menjalankan runner adalah V |
 | UW-25 | COMPLETE | P | Keputusan D-34 (AC: keputusan tertulis) |
-| UW-26 | OPEN | P | OP-4 diputuskan (D-23); bank concept W1–W4 diproduksi (48/192 soal; W1 diterima owner, W2–W4 belum direview/diterima), 12 modul belum |
+| UW-26 | OPEN | P | OP-4 diputuskan (D-23); bank concept W1–W8 diproduksi (96/192 soal); W1–W4 diterima owner (48 soal); W5–W8 diproduksi, belum diterima (CB-2, PR #28); 8 modul belum |
 | UW-27 | COMPLETE | P | D-26 (ASM:D-08 terisi) |
 | UW-28 | BLOCKED | P | Keputusan OP-6 |
 | UW-29 | COMPLETE | P | D-27 (ASM:L5 terisi) |
@@ -90,7 +90,7 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-34 | BLOCKED | P | Keputusan CO-4–CO-6 |
 | UW-35 | BLOCKED | P | Keputusan UO-3–UO-9 |
 | UW-36 | COMPLETE | P | Semua kebijakan CU diputuskan (D-13, D-24, D-30–D-36); angka batas agregat LX-2 = keluaran verifikasi UW-12 (D-38) |
-| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); diproduksi 16/64 (W1–W4); diterima owner 4/64 (W01-ACC); W2–W4 dikoreksi (F-28–F-72, dua putaran, PR #27), menunggu re-review independen dan penerimaan owner |
+| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); diproduksi 32/64 (W1–W8); diterima owner 16/64 (W01-ACC–W04-ACC); W5–W8 diproduksi, belum diterima (CB-2, PR #28); W9–W16 NOT STARTED / NOT AUTHORIZED |
 | UW-38 | DEFERRED | M | D-22 |
 | UW-39 | BLOCKED | V | Lingkungan SDK opsional untuk verifikasi build; tidak punya AC perencanaan |
 | UW-40 | DEFERRED | M | D-22 |

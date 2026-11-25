@@ -87,7 +87,7 @@ constants:
     - a
     - d
     F4:
-    - c
+    - b
     F5:
       i2: -2
       i3: -2
@@ -98,14 +98,15 @@ constants:
     F7: 0
     F8: 6
   equivalent_choices: 'F3: `A[i] > maks?` dan `A[i] ≥ maks?` sama-sama benar (nilai sama tidak mengubah
-    nilai maks). Enumerasi 4⁴ = 256 kombinasi F1–F4 pada 8 daftar uji (termasuk semua negatif, nilai sama,
-    satu nilai): tepat 2 kombinasi benar, keduanya diterima'
+    nilai maks). Enumerasi 4⁴ = 256 kombinasi F1–F4 pada 14 daftar uji dengan interpreter tingkat-blok
+    (termasuk semua negatif, nilai sama, satu nilai): tepat 2 kombinasi benar, keduanya diterima'
   trace_note: F5 berisi nilai maks setelah blok B5/B6 pada setiap putaran i = 2 … 6 untuk daftar A; nilainya
     sama untuk > maupun ≥
 field_rules:
   choice_readable: Satu huruf a–d (huruf besar/kecil bebas); selain itu tidak terbaca
   number_readable: NB-5 bilangan bulat (tanda `-` atau `−` untuk negatif, tanpa nol di depan); F5–F7 boleh
-    diawali `maks =` atau `maks=`; F8 boleh diikuti `kali`
+    diawali `maks =` atau `maks=`; F8 boleh diikuti `kali`. Akhiran kata/simbol satuan dibaca tanpa membedakan
+    huruf besar/kecil (mis. `PERSEN`, `Kali`); awalan `Rp` ditulis persis (kontrak NB-5 N3–N4).
   number_strict: 'K3: bilangan saja (tanpa `maks =` atau kata)'
   validity: 'Isian kosong/tidak terbaca → INVALID_ANSWER untuk isian itu saja; pemeriksaan yang depends_on
     isian itu bernilai 0; isian lain tetap dinilai. F5: baris i2–i6 yang hilang = sel kosong; ID baris
@@ -136,7 +137,7 @@ criteria:
       - F3 terbaca
       points: 6
     - id: mod-w08.project.K1.c04
-      rule: F4 = c (kembali ke B4)
+      rule: F4 = b (kembali ke B4)
       depends_on:
       - F4 terbaca
       points: 6
@@ -253,70 +254,73 @@ criteria:
     items:
     - id: mod-w08.project.K4.q1
       lo: comp-w08-correct-01
-      stem: Mengapa `maks ← 0` salah untuk daftar B?
+      stem: Mengapa satu daftar uji yang menghasilkan output benar belum membuktikan flowchart benar?
       options:
-        a: Karena 0 lebih besar dari n
-        b: Karena daftar B terlalu pendek
-        c: Karena 0 adalah bilangan genap
-        d: Karena semua nilai B negatif, tidak ada yang > 0, sehingga output 0 yang bukan anggota daftar
+        a: Karena output selalu salah
+        b: Karena daftar uji harus berisi tepat 6 nilai
+        c: Karena flowchart tidak boleh diuji
+        d: Karena pilihan blok yang salah bisa kebetulan benar untuk daftar tertentu; kebenaran harus
+          berlaku untuk semua daftar dalam domain
       key: d
       points: 2
-      feedback: Nilai awal dari daftar sendiri (A[1]) selalu anggota daftar.
+      feedback: Pilih beberapa kasus uji yang mengincar kesalahan umum (W8 pelajaran 4).
     - id: mod-w08.project.K4.q2
       lo: comp-w08-loop-01
-      stem: Mengapa syarat B4 memakai `i ≤ n` dan bukan `i < n`?
+      stem: Blok mana pada templat yang membuat perulangan bergerak menuju berhenti?
       options:
-        a: Agar nilai terakhir A[n] ikut dibandingkan
-        b: Agar perulangan lebih cepat
-        c: Agar i dimulai dari 2
-        d: Agar A[1] dibandingkan dua kali
+        a: B7 `i ← i + 1`
+        b: B6 `maks ← A[i]`
+        c: B9 Output maks
+        d: B1 Mulai
       key: a
       points: 2
-      feedback: Dengan i < n, A[n] tidak pernah diperiksa.
+      feedback: Variabel pengendali harus berubah mendekati syarat berhenti (W8 pelajaran 3).
     - id: mod-w08.project.K4.q3
       lo: comp-w08-branch-01
-      stem: Pada daftar A, nilai −2 muncul dua kali. Apa pengaruh memilih `>` atau `≥` di B5?
+      stem: Pada templat, bila keputusan B5 bernilai Ya, apa yang terjadi?
       options:
-        a: '`≥` membuat output salah'
-        b: '`>` membuat perulangan tidak berhenti'
-        c: Output dan nilai maks di setiap putaran sama; hanya banyak kali B6 dikerjakan yang dapat berbeda
-        d: Keduanya membuat output −2
+        a: Flowchart langsung selesai
+        b: i dikembalikan ke 2
+        c: '`maks` diganti A[i], lalu lanjut ke B7'
+        d: Output maks ditampilkan
       key: c
       points: 2
-      feedback: Mengganti maks dengan nilai yang sama tidak mengubah nilainya.
+      feedback: 'Ikuti kolom "Berikutnya" pada tabel blok: B5 Ya → B6 → B7.'
     - id: mod-w08.project.K4.q4
       lo: comp-w08-symbol-01
-      stem: Mengapa B8 harus kembali ke B4, bukan ke B3?
+      stem: Mengapa B5 berbentuk belah ketupat?
       options:
-        a: Karena B3 adalah keputusan
-        b: Kembali ke B3 mengatur ulang maks dan i, sehingga perulangan tidak pernah berhenti
-        c: Karena B4 adalah output
-        d: Keduanya sama saja
+        a: Karena B5 memberi nilai pada variabel
+        b: Karena B5 adalah keputusan dengan dua jalur keluar, Ya dan Tidak
+        c: Karena B5 adalah input
+        d: Karena B5 adalah akhir flowchart
       key: b
       points: 2
-      feedback: Inisialisasi hanya sekali, sebelum perulangan.
+      feedback: Belah ketupat = keputusan; selalu punya dua cabang (W8 pelajaran 2).
     - id: mod-w08.project.K4.q5
       lo: comp-w08-trace-01
-      stem: F8 bernilai 6 untuk daftar 6 nilai karena …
+      stem: Pada tabel penelusuran, mengapa nilai `maks` dapat sama pada beberapa baris berturut-turut?
       options:
-        a: B4 diperiksa sekali per nilai
-        b: B4 tidak pernah bernilai Tidak
-        c: i dimulai dari 1
-        d: B4 bernilai Ya untuk i = 2 … 6 (5 kali) dan Tidak untuk i = 7 (1 kali)
+        a: Karena perulangan berhenti
+        b: Karena i tidak berubah
+        c: Karena tabel penelusuran selalu berisi nilai yang sama
+        d: Karena bila B5 bernilai Tidak, B6 dilewati sehingga `maks` tidak berubah pada putaran itu
       key: d
       points: 2
-      feedback: Pemeriksaan terakhir yang bernilai Tidak juga dihitung.
+      feedback: Nilai lama tetap berlaku sampai diganti (W8 pelajaran 3).
 point_check: K1 4×6 + 5×4 + 6 + 5 + 5 = 60; K2 4×2 + 6 + 3×2 = 20; K3 4+3+3 = 10; K4 5×2 = 10; total 100
 solution_analysis:
-  blocks: 'Kombinasi F1–F4 bernilai penuh: 2 (F3 = a atau d), diverifikasi dengan menjalankan 4⁴ = 256
-    kombinasi pada 8 daftar uji'
+  blocks: 'Kombinasi F1–F4 bernilai penuh: 2 (F1 = b, F2 = b, F3 = a atau d, F4 = b), diverifikasi dengan
+    interpreter tingkat-blok yang menjalankan 4⁴ = 256 kombinasi pada 14 daftar uji (negatif, positif,
+    campuran, nilai sama, satu nilai). F4 = c (kembali ke B5) melewati penjaga B4 dan mengakses A[n +
+    1] (di luar daftar); F4 = a tidak berhenti untuk n ≥ 2; F4 = d keluar setelah satu putaran'
   values: F5–F8 tunggal
   total_full_score_sets: 2
   reference_strict:
     F1: b
     F2: b
     F3: a
-    F4: c
+    F4: b
     F5:
       i2: '-2'
       i3: '-2'
@@ -469,3 +473,28 @@ reviewer_examples:
   K3: 10
   total: 100
   zero: []
+- id: E18
+  case: 'F4 = c (kembali ke B5: melewati penjaga B4, A[n + 1] di luar daftar)'
+  K1: 54
+  K2: 20
+  K3: 10
+  total: 94
+  zero:
+  - K1.c04
+- id: E19
+  case: 'F4 = d (kembali ke B9: keluar setelah satu putaran)'
+  K1: 54
+  K2: 20
+  K3: 10
+  total: 94
+  zero:
+  - K1.c04
+- id: E20
+  case: F4 = `e` (di luar a–d)
+  K1: 54
+  K2: 18
+  K3: 10
+  total: 92
+  zero:
+  - K1.c04
+  - K2.c04

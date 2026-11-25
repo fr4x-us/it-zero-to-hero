@@ -16,8 +16,8 @@ audience: "Pemula total tanpa pengalaman IT atau pemrograman; telah menyelesaika
 prerequisites: [mod-w05]
 nominal_minutes: 480
 objective_source: "Topik dan tujuan ringkas CUR §2 baris 6 (kerangka D-01 M-02). Rumusan LO rinci disusun penyusun mengikuti pola W1–W5 (CU-1 tetap PROPOSED) — bukan keputusan owner baru"
-number_rules: "BN-6: biner hanya 0/1, tanpa awalan/subskrip; panjang sesuai instruksi (tanpa nol di depan atau tepat n bit); semua bilangan tak bertanda (tanpa bilangan negatif, overflow, atau lebar bit di luar soal). Desimal mengikuti NB-5 (W5). Nilai Boolean 1 = benar, 0 = salah — bukan bilangan"
-expression_grammar: "BX (Pelajaran 3 §3): variabel yang disebut soal, AND/OR/NOT, kurung; prioritas NOT → AND → OR; operator lain di luar cakupan W6. Format jawaban konten di bawah EB-4 (D-24), bukan kebijakan baru"
+number_rules: "BN-6: biner hanya 0/1, tanpa awalan/subskrip; panjang sesuai instruksi (tanpa nol di depan: 0 ditulis `0`, bilangan positif diawali 1; tepat n bit: tepat n digit dengan nol pengisi); semua bilangan tak bertanda (tanpa bilangan negatif, overflow, atau lebar bit di luar soal). Desimal mengikuti NB-5 (W5). Nilai Boolean 1 = benar, 0 = salah — bukan bilangan"
+expression_grammar: "BX (Pelajaran 3 §3): variabel yang disebut soal, AND/OR/NOT, kurung; prioritas NOT → AND → OR; NOT satu operand dan boleh berulang (NOT NOT X = X), AND/OR dua operand; tata bahasa formal di project/rubric.yaml expression_readable; operator lain di luar cakupan W6. Format jawaban konten di bawah EB-4 (D-24), bukan kebijakan baru"
 python_dependency: "Tidak ada. AND/OR/NOT ditulis sebagai kata logika, bukan sintaks bahasa pemrograman (W9+)"
 
 learning_objectives:

@@ -36,7 +36,8 @@ nilai 50; dua nilai 44 dan 58; nilai ketiga? *Jawaban:* (1) 36 − 18 = 18;
 ## R-DIVMOD — Hasil bagi dan sisa (LO3)
 
 **Ingat kembali:** hasil bagi × pembagi + sisa = bilangan; sisa 0 sampai
-pembagi − 1; hari: sisa ÷ 7.
+pembagi − 1; hari: pakai **sisa dari n ÷ 7** (sisa pembagian oleh 7,
+bukan sisa yang kemudian dibagi 7).
 
 **Latihan tambahan:** (1) 87 ÷ 10; (2) hari ini Minggu, 25 hari lagi?
 *Jawaban:* (1) hasil bagi 8, sisa 7; (2) 25 = 7 × 3 + 4 → Kamis.
