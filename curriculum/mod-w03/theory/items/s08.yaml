@@ -23,14 +23,14 @@ variants:
   explanation: 256 alamat dikurangi alamat jaringan dan broadcast = 254.
 - item_id: item-w03-t-s08-b
   variant_id: mod-w03.theory.s08.vB
-  item_version: '1.0'
-  stem: Dengan mask `255.255.255.0` (/24), berapa **seluruh** alamat di satu jaringan, termasuk alamat
-    jaringan dan broadcast?
+  item_version: '2.0'
+  stem: Jaringan memakai mask `255.255.255.0` (/24). Router sudah memakai **1** alamat host. Berapa alamat
+    host yang **masih dapat** diberikan kepada perangkat lain?
   accepted_answers:
-  - '256'
-  - 256 alamat
-  - 256alamat
+  - '253'
+  - 253 alamat
+  - 253alamat
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
     salah satu accepted_answers (angka saja, atau angka dengan satuan yang diizinkan). Ditolak: nol di
     depan, tanda +/−, desimal, pemisah ribuan, spasi di dalam angka, kata, satuan lain'
-  explanation: Oktet terakhir 0–255 = 256 alamat.
+  explanation: /24 memiliki 256 − 2 = 254 alamat host; satu dipakai router, sisa 253.

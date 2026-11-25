@@ -291,3 +291,12 @@ ID tetap; tidak ada ID baru. Bukti dari `r2_check.py` (skrip dokumentasi sementa
 | ID | Koreksi putaran 2 | Bukti |
 |---|---|---|
 | PR28-12 | HANDOFF B-10, status D-26–D-35, ringkasan tugas terakhir; PROJECT_MAP R-02 | W1–W4 diterima; W5–W8 menunggu; W9–W16 NOT STARTED; 32/64, 16/64, 32/4/12/3/5 = 56, 32/43 tetap |
+
+### Putaran 3 (keputusan owner D-39, HYBRID COMPETENCY COVERAGE)
+
+ID tetap; tidak ada ID baru. Bukti: `cov_check.py`, `cov_keys.py`, `nb5_full.py` (skrip dokumentasi sementara).
+
+| ID | Hasil | Bukti |
+|---|---|---|
+| PR28-06 | **RESOLVED (D-39)**: 19/19 PASS; satu celah terbukti diperbaiki (concept s05 vB opsi e: urutan baris standar; kunci b, c, e tetap). Kandidat s03 nilai terbesar → lab act-01.c08 kedua varian; s04 NOT → lab act-02.c01–c04 dan teori s13 kedua varian, proyek K1.c11 | Matriks `docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md` |
+| PR28-02 | Tindak lanjut NB-5: termasuk dalam 82 butir W5–W6 — 0 temuan; butir B01/BN-6 dikecualikan dari NB-5 | Matriks `docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md` |

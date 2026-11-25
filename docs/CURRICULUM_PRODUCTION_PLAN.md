@@ -309,3 +309,14 @@ pemeriksa bentuk angka perlu uji mutasi (regex awal salah mengurai `18.8`);
 (3) generator `module.yaml` mencegah salah sambung templat; (4) alternatif
 jawaban setara (urutan topologis, ekspresi ekuivalen, `>`/`≥`) harus
 dienumerasi dan ditulis eksplisit di rubrik.
+
+### 4.5 Cakupan kompetensi hibrida D-39 (2026-11-25)
+
+Owner memilih opsi C (D-39) untuk PR28-06. Audit W1–W8 terhadap 156 konsep
+wajib: 15 GAP sebelum koreksi (W1 1, W2 8, W3 2, W4 3, W6 1), 0 sesudah
+koreksi terarah pada 14 varian butir (`item_version: '2.0'`). Kandidat W5/W6
+yang semula dicatat PASS tanpa perubahan. Matriks:
+[CURRICULUM_COVERAGE_MATRIX_W01_W08.md](CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
+Penerimaan W01-ACC–W04-ACC tetap tercatat untuk isi yang diterima; butir
+W1–W4 yang diubah **belum** diterima dan memerlukan review delta
+independen. Angka produksi/penerimaan (32/64, 16/64) tidak berubah.

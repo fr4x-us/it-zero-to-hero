@@ -43,7 +43,7 @@ variants:
   feedback: Satu pernyataan benar menjelaskan akibatnya (kuasa terbatas), satu lagi prinsipnya (hak minimum).
 - item_id: item-w02-c-s06-b
   variant_id: mod-w02.concept.s06.vB
-  item_version: '1.0'
+  item_version: '2.0'
   stem: Aplikasi senter meminta izin **kontak** dan **lokasi**. Pilih **semua** pernyataan yang benar
     menurut prinsip hak minimum.
   options:
@@ -52,7 +52,7 @@ variants:
   - id: b
     text: Tolak izin kontak dan lokasi karena fungsi senter tidak membutuhkannya
   - id: c
-    text: Menolak izin aplikasi membuat ponsel tidak dapat menyala
+    text: Memakai akun administrator untuk kegiatan sehari-hari lebih aman karena semua izin sudah tersedia
   - id: d
     text: Izin yang diberikan cukup yang dibutuhkan fungsi aplikasi itu
   key:
@@ -60,7 +60,8 @@ variants:
   - d
   distractor_rationale:
     a: Memberi izin berlebihan melanggar hak minimum
-    c: Izin aplikasi tidak memengaruhi menyalanya ponsel
+    c: 'Akun administrator berkuasa besar; kesalahan atau program jahat ikut berkuasa besar (hak minimum:
+      pakai akun biasa)'
   credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
     pengurangan hanya di soal ini, tidak pernah negatif
   feedback: Satu pernyataan benar adalah tindakannya (tolak izin yang tidak perlu), satu lagi prinsipnya

@@ -102,7 +102,7 @@ lebih bernilai pendidikan (belajar memperbaiki kesalahan sendiri).
 
 | ID | Aturan |
 |---|---|
-| VA-1 | Varian setara = kompetensi sama, format sama, kesulitan sama, poin maks. sama, tujuan belajar sama; direview manusia (CC-06) |
+| VA-1 | Varian setara = kompetensi sama, format sama, kesulitan sama, poin maks. sama, tujuan belajar sama; direview manusia (CC-06). *Dilengkapi D-39 (2026-11-25): cakupan konsep wajib hibrida — lihat DECISIONS_LOG* |
 | VA-2 | Pemilihan deterministik per slot: pilih varian dengan jumlah pemakaian paling sedikit dalam riwayat attempt pelajar untuk komponen itu; seri → varian yang **tidak** dipakai attempt sebelumnya; masih seri → indeks varian terkecil |
 | VA-3 | Setelah semua varian terpakai, pemakaian ulang mengikuti VA-2 (bergiliran); remedial tetap tanpa batas tanpa bank tak terbatas |
 | VA-4 | Pemilihan dicatat pada attempt (ID varian + versi) sehingga hasil dapat ditafsirkan dan dihitung ulang setelah restore |

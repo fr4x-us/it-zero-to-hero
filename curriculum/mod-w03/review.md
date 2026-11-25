@@ -480,3 +480,21 @@ PR #27 di-merge (head `1a58338bcc863320ff4eafbb0f407cee4b2a9f59`, merge commit `
 Verdict independen: **PASS — targeted delta review with disclosed limitations.** Batas review independen (dinyatakan owner): delta review terarah PASS — F-49–F-59 dan F-71–F-72 lolos review terarah; integritas register F-28–F-72 diverifikasi; 16 simulasi normalisasi independen lolos. Regresi historis penuh, semua skrip validasi sementara, uji dengan pelajar, dan verifikasi runtime Android **tidak** diulang secara independen.
 
 Register F-01–F-72 dan disposisinya di atas tetap sebagai catatan historis (39 FIXED, 5 DOCUMENTATION CLARIFIED, F-31 NOT REPRODUCED pada F-28–F-72). Penerimaan ini **bukan** verifikasi menyeluruh, verifikasi runtime, atau uji durasi dengan pelajar; temuan baru tetap boleh diangkat. Bukti aktivasi V03 tetap dari sesi segar sebelumnya.
+
+## Penyelarasan kebijakan D-39 (2026-11-25) — bukan perubahan disposisi historis
+
+Owner menyetujui **D-39 HYBRID COMPETENCY COVERAGE**. Audit cakupan
+([CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md))
+menemukan celah **di bawah kontrak baru** (bukan kegagalan terhadap kontrak
+saat W3 diterima). Koreksi minimum (format, poin, kesulitan,
+kompetensi, dan distribusi posisi kunci tetap; `item_version: '2.0'`):
+
+| Butir | Perubahan | Konsep yang dijamin |
+|---|---|---|
+| concept s02 vB | opsi e → setiap perangkat wajib alamat publik sendiri (salah; NAT); kunci tetap | NAT berbagi alamat publik |
+| teori s08 vB | `256 seluruh alamat` → host tersisa setelah router (kunci 253) | 254 host |
+
+Penerimaan W03-ACC tetap tercatat untuk isi yang diterima. Varian yang
+diubah di atas **tidak** tercakup penerimaan itu dan memerlukan **review
+delta independen** terarah. Register F-01–F-72 tidak berubah.
+

@@ -45,7 +45,7 @@ variants:
   feedback: 2² = 4; urutan standar; ekuivalen harus sama di semua baris.
 - item_id: item-w06-c-s05-b
   variant_id: mod-w06.concept.s05.vB
-  item_version: '1.0'
+  item_version: '2.0'
   stem: Pilih **semua** pernyataan yang benar tentang tabel kebenaran.
   options:
   - id: a
@@ -57,7 +57,7 @@ variants:
   - id: d
     text: '`A AND NOT A` dapat bernilai 1'
   - id: e
-    text: Setiap baris berisi tepat satu kombinasi nilai input
+    text: Urutan baris standar untuk 3 variabel dimulai 000, 001, 010 dan berakhir 111
   key:
   - b
   - c
@@ -67,4 +67,5 @@ variants:
     d: A dan NOT A tidak pernah sama-sama 1
   credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
     pengurangan hanya di soal ini, tidak pernah negatif
-  feedback: AND sebelum OR; A OR NOT A selalu 1; satu baris = satu kombinasi.
+  feedback: AND sebelum OR; A OR NOT A selalu 1; urutan baris standar seperti menghitung biner dari 000
+    sampai 111.

@@ -516,6 +516,7 @@ CU-6-Q13 dan OD-15-Q2 dijawab owner (D-36, D-37). RM-Q2 dijawab (D-38); W01-ACC 
 | ID | Pertanyaan | Keputusan | Tetap OPEN / NOT VERIFIED |
 |---|---|---|---|
 | D-38 | RM-Q2 | Nilai angka batas agregat eksekusi lab (LX-2) = keluaran verifikasi UW-12 (jalur V) | Pengukuran (UW-12; D-10 NOT AUTHORIZED) |
+| D-39 | PR28-06 | Opsi C HYBRID COMPETENCY COVERAGE (10 aturan; melengkapi D-23, TPL-13, VA-1) | Review delta independen butir W1–W4 yang diubah; klasifikasi inti/pendukung oleh penyusun |
 | W01-ACC | Penerimaan W1 | Diterima sebagai modul kurikulum acuan | Batas review independen (dinyatakan owner): F-22 dan F-23 menerima review akhir terarah; pencatatan D-36/D-37 diperiksa; enumerasi independen mengonfirmasi 3.840 kombinasi dan 46 build valid. Tidak setiap baris CSV terbaru, setiap butir penilaian yang berubah, atau setiap penerapan kontrak visibilitas diaudit ulang secara independen. |
 
 ## Penerimaan owner W02-ACC, W03-ACC, W04-ACC (2026-11-24)

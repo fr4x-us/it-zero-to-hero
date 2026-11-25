@@ -447,3 +447,20 @@ Batas review independen yang diungkapkan: F-22 dan F-23 menerima review akhir te
 Konsekuensi: modul berikutnya memakai W1 sebagai acuan, tetapi temuan baru
 pada W1 tetap boleh diangkat; penerimaan ini bukan verifikasi runtime atau
 uji durasi dengan pelajar.
+
+## Penyelarasan kebijakan D-39 (2026-11-25) — bukan perubahan disposisi historis
+
+Owner menyetujui **D-39 HYBRID COMPETENCY COVERAGE**. Audit cakupan
+([CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md))
+menemukan celah **di bawah kontrak baru** (bukan kegagalan terhadap kontrak
+saat W1 diterima). Koreksi minimum (format, poin, kesulitan,
+kompetensi, dan distribusi posisi kunci tetap; `item_version: '2.0'`):
+
+| Butir | Perubahan | Konsep yang dijamin |
+|---|---|---|
+| teori s10 vB | `1 GB = … MB` → `16 bit = … byte` (kunci 2) | 1 byte = 8 bit (concept s05) |
+
+Penerimaan W01-ACC tetap tercatat untuk isi yang diterima. Varian yang
+diubah di atas **tidak** tercakup penerimaan itu dan memerlukan **review
+delta independen** terarah. Register F-01–F-72 tidak berubah.
+

@@ -19,14 +19,15 @@ feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
 variants:
 - item_id: item-w04-c-s05-a
   variant_id: mod-w04.concept.s05.vA
-  item_version: '1.0'
+  item_version: '2.0'
   stem: Pilih **semua** alasan yang benar mengapa salinan di folder lain pada laptop yang sama **tidak**
     dihitung sebagai cadangan (model W4).
   options:
   - id: a
     text: Bila laptop rusak atau hilang, data asli dan salinannya hilang bersama
   - id: b
-    text: Folder lain membuat laptop lebih lambat
+    text: Pembaruan dan antimalware sudah menjamin data tidak pernah hilang, sehingga salinan di laptop
+      yang sama sudah cukup
   - id: c
     text: Aturan 3-2-1 meminta salinan tersebar di jenis media berbeda dan di luar lokasi
   - id: d
@@ -35,7 +36,8 @@ variants:
   - a
   - c
   distractor_rationale:
-    b: Tidak berkaitan
+    b: Perlindungan mengurangi risiko tetapi tidak menjamin; kerusakan atau kehilangan laptop tetap menghilangkan
+      salinan
     d: Salinan tidak terhapus otomatis
   credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
     pengurangan hanya di soal ini, tidak pernah negatif

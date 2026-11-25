@@ -289,3 +289,11 @@ ID tetap; tidak ada ID baru. Bukti dari `r2_check.py` (skrip dokumentasi sementa
 |---|---|---|
 | PR28-11 | W8 pelajaran 3 latihan 3: nilai akhir t = 8, k = 4; tidak ada output | Telusur independen: 3 putaran, 4 pemeriksaan, t = 8, k = 4; konsisten dengan §2 |
 | PR28-12 | HANDOFF B-10, status D-26–D-35, ringkasan tugas terakhir; PROJECT_MAP R-02 | W1–W4 diterima; W5–W8 menunggu; W9–W16 NOT STARTED; 32/64, 16/64, 32/4/12/3/5 = 56, 32/43 tetap |
+
+### Putaran 3 (keputusan owner D-39, HYBRID COMPETENCY COVERAGE)
+
+ID tetap; tidak ada ID baru. Bukti: `cov_check.py`, `cov_keys.py`, `nb5_full.py` (skrip dokumentasi sementara).
+
+| ID | Hasil | Bukti |
+|---|---|---|
+| PR28-06 | **RESOLVED (D-39)**: 19/19 PASS tanpa perubahan | Matriks `docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md` |

@@ -22,11 +22,11 @@ feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
 variants:
 - item_id: item-w02-c-s01-a
   variant_id: mod-w02.concept.s01.vA
-  item_version: '1.0'
+  item_version: '2.0'
   stem: Cocokkan setiap istilah dengan penjelasannya.
   left:
   - id: L1
-    text: Manajemen proses
+    text: Kernel
   - id: L2
     text: Manajemen memori
   - id: L3
@@ -39,7 +39,7 @@ variants:
   - id: R2
     text: Menyediakan ikon, jendela, atau perintah teks untuk pengguna
   - id: R3
-    text: Menjalankan program dan membagi waktu CPU
+    text: Inti sistem operasi yang paling dekat dengan hardware
   - id: R4
     text: Menyimpan, menamai, dan menata berkas di penyimpanan
   - id: R5

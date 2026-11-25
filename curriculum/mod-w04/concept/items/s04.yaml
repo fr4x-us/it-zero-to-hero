@@ -19,7 +19,7 @@ feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
 variants:
 - item_id: item-w04-c-s04-a
   variant_id: mod-w04.concept.s04.vA
-  item_version: '1.0'
+  item_version: '2.0'
   stem: Mengapa alamat `https://tokobuku.example.promo-hemat.test/` **tidak** menuju situs resmi `tokobuku.example`,
     walaupun memuat nama itu dan memakai HTTPS?
   options:
@@ -27,7 +27,7 @@ variants:
     text: Karena alamat yang memakai HTTPS selalu palsu
   - id: b
     text: Karena domain terdaftarnya `promo-hemat.test`; `tokobuku.example` hanya subdomain di bawah domain
-      yang dikendalikan pihak lain
+      pihak lain, dan HTTPS hanya mengenkripsi sambungan ke nama itu, bukan bukti situs resmi
   - id: c
     text: Karena alamat itu tidak memiliki path
   - id: d

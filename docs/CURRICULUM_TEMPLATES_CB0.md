@@ -196,12 +196,20 @@ Pernyataan pelajar = 0 poin (MR-6).
 `validation` (CE-V1–CE-V7). Per varian: kunci, `accepted_sequences`
 lengkap (CE-S3), `key_mapping` satu-ke-satu (CE-S4), `error_line` +
 `correction_key` + P genap (CE-S5), `credit_rule`, `feedback` (D-23).
+Cakupan `required_concepts` mengikuti **D-39 (hybrid)**: setiap varian
+menilai kompetensi inti slot; setiap konsep wajib dinilai di setiap jalur
+penilaian yang sah — di slot ini atau di lokasi wajib lain (teori, lab,
+proyek) yang menilainya pada **semua** varian yang dapat dipilih. Konsep
+yang hanya disebut di stem, pengecoh pilihan tunggal, baris CE-S5 yang
+benar, umpan balik, pelajaran, atau remedial tidak dihitung (QC-13).
 
 ### TPL-14 Varian remedial
 
 Teori dan concept: 2 varian per slot; lab: 2 varian per aktivitas;
 mini-project: MPV-A (tanpa varian). Kesetaraan VA-1 (kompetensi, format,
-kesulitan, poin, tujuan sama; direview); pemilihan VA-2 (pemakaian paling
+kesulitan, poin, tujuan sama; direview; dilengkapi D-39: kompetensi inti
+sama di setiap varian dan cakupan konsep wajib terjamin di setiap jalur);
+pemilihan VA-2 (pemakaian paling
 sedikit → bukan varian attempt sebelumnya → indeks terkecil); pemakaian
 ulang bergiliran (VA-3); `remedial.md` per LO (D-30).
 
@@ -284,10 +292,11 @@ yang diizinkan per isian. Contoh diterima/ditolak:
 | QC-10 | Fixture batas mencakup batas yang dapat dicapai (atau dinyatakan tidak dapat dicapai) | Contoh batas dari fixture nyata |
 | QC-11 | Berkas V-L mematuhi kontrak visibilitas §1a (VC-1–VC-5) | Pemeriksaan setiap `spec.md` dan pelajaran terhadap kunci |
 | QC-12 | Satuan desimal vs biner dinyatakan; desimal bawaan; konversi GB–GiB lewat byte | Pemeriksaan pelajaran, soal, lab |
+| QC-13 | Cakupan D-39: setiap konsep wajib dijamin di setiap jalur penilaian (bukti deterministik: satu lokasi wajib menilai konsep di semua varian yang dapat dipilih, atau proyek); setiap varian menilai kompetensi inti slot | Baris matriks cakupan per konsep ([CURRICULUM_COVERAGE_MATRIX_W01_W08.md](CURRICULUM_COVERAGE_MATRIX_W01_W08.md)); uji negatif/positif metode |
 
 Kriteria ini adalah persyaratan kualitas dokumentasi, **bukan** izin
 implementasi. TPL-19 (checklist penerimaan) mencakup CQ-01–CQ-20 **dan**
-QC-01–QC-12.
+QC-01–QC-13.
 
 ## 4. Batas penilaian objektif (berlaku untuk semua modul)
 

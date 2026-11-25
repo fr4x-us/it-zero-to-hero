@@ -20,18 +20,18 @@ feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
 variants:
 - item_id: item-w02-c-s05-a
   variant_id: mod-w02.concept.s05.vA
-  item_version: '1.0'
-  stem: '`kontrak.pdf` tidak sengaja dihapus dari folder Dokumen. Urutkan langkah untuk mengembalikannya
-    lalu membuat cadangannya di flashdisk.'
+  item_version: '2.0'
+  stem: '`kontrak.pdf` tidak sengaja dihapus dari folder Dokumen. Urutkan langkah untuk mengembalikannya,
+    lalu mengosongkan Tempat Sampah dengan aman.'
   items:
   - id: A
     text: Buka Tempat Sampah
   - id: B
     text: Pilih `kontrak.pdf` dan pulihkan
   - id: C
-    text: Pastikan `kontrak.pdf` sudah kembali di folder Dokumen
+    text: Pastikan `kontrak.pdf` sudah kembali di folder Dokumen dan dapat dibuka
   - id: D
-    text: Salin `kontrak.pdf` dari folder Dokumen ke flashdisk
+    text: Kosongkan Tempat Sampah
   display_order:
   - D
   - B
@@ -42,14 +42,10 @@ variants:
     - B
     - C
     - D
-  - - A
-    - B
-    - D
-    - C
   credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
     maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
-  feedback: Berkas dipulihkan dari Tempat Sampah ke folder asalnya, lalu disalin sebagai cadangan. Memeriksa
-    lokasi boleh sebelum atau sesudah menyalin (dua urutan diterima).
+  feedback: Berkas dipulihkan dari Tempat Sampah ke folder asalnya dan diperiksa lebih dulu; baru setelah
+    itu Tempat Sampah dikosongkan, karena pengosongan menghapus permanen.
 - item_id: item-w02-c-s05-b
   variant_id: mod-w02.concept.s05.vB
   item_version: '1.0'

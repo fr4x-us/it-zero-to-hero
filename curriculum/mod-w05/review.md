@@ -286,3 +286,12 @@ ID tetap; tidak ada ID baru. Bukti dari `r2_check.py` (skrip dokumentasi sementa
 |---|---|---|
 | PR28-08 | W5 pelajaran 3: `4,200` tidak lagi disebut salah secara umum; dibedakan bulat 4200 vs desimal tiga angka (4,2) | N1–N6: butir bulat → `4.200`/`4200` diterima, `4,200` tidak sah; butir tiga desimal → `4,200` diterima, `4,2`/`4,20` tidak sah |
 | PR28-12 | HANDOFF B-10, status D-26–D-35, ringkasan tugas terakhir; PROJECT_MAP R-02 | W1–W4 diterima; W5–W8 menunggu; W9–W16 NOT STARTED; 32/64, 16/64, 32/4/12/3/5 = 56, 32/43 tetap |
+
+### Putaran 3 (keputusan owner D-39, HYBRID COMPETENCY COVERAGE)
+
+ID tetap; tidak ada ID baru. Bukti: `cov_check.py`, `cov_keys.py`, `nb5_full.py` (skrip dokumentasi sementara).
+
+| ID | Hasil | Bukti |
+|---|---|---|
+| PR28-06 | **RESOLVED (D-39)**: kontrak dicatat; 21/21 konsep wajib W5 PASS tanpa perubahan (kandidat concept s01 pangkat → teori s06 dan lab act-01.c03 kedua varian; s04 60 menit → teori s11 dan lab act-03.c01 kedua varian) | Matriks `docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md` |
+| PR28-02 | Tindak lanjut NB-5: 82 butir NB-5 W5–W6 (teori 30, lab 52) diperiksa — afiks per butir, presisi, kanonik, tanda, ribuan, `Rp` peka huruf, pembeda EVALUATION_ERROR lab: **0 temuan**; uji mutasi (presisi, ribuan, tanda, galat evaluasi) tertangkap | Matriks `docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md` |

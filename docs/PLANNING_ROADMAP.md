@@ -79,7 +79,7 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-23 | BLOCKED | P | Keputusan owner CO-1/CO-2 |
 | UW-24 | BLOCKED | P | Keputusan owner O-09 (pilihan runner); menjalankan runner adalah V |
 | UW-25 | COMPLETE | P | Keputusan D-34 (AC: keputusan tertulis) |
-| UW-26 | OPEN | P | OP-4 diputuskan (D-23); bank concept W1–W8 diproduksi (96/192 soal); W1–W4 diterima owner (48 soal); W5–W8 diproduksi, belum diterima (CB-2, PR #28); 8 modul belum |
+| UW-26 | OPEN | P | OP-4 diputuskan (D-23); cakupan konsep wajib D-39 (hibrida); bank concept W1–W8 diproduksi (96/192 soal); W1–W4 diterima owner (48 soal); W5–W8 diproduksi, belum diterima (CB-2, PR #28); 8 modul belum |
 | UW-27 | COMPLETE | P | D-26 (ASM:D-08 terisi) |
 | UW-28 | BLOCKED | P | Keputusan OP-6 |
 | UW-29 | COMPLETE | P | D-27 (ASM:L5 terisi) |

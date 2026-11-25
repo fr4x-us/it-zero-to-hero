@@ -34,7 +34,7 @@ variants:
   explanation: Manajemen proses, manajemen perangkat, dan antarmuka pengguna adalah fungsi sistem operasi.
 - item_id: item-w02-t-s02-b
   variant_id: mod-w02.theory.s02.vB
-  item_version: '1.0'
+  item_version: '2.0'
   stem: Menurut model W2, pilih **semua** yang termasuk fungsi sistem operasi.
   options:
   - id: a
@@ -42,11 +42,11 @@ variants:
   - id: b
     text: Membuat desain poster untuk pengguna
   - id: c
-    text: Membagi RAM untuk setiap program yang berjalan
+    text: Mengatur giliran program yang berjalan memakai CPU
   - id: d
     text: Mengganti baterai ponsel yang rusak
   - id: e
-    text: Menyediakan cara memberi perintah, baik GUI maupun CLI
+    text: Mengatur printer dan perangkat keras lain melalui driver
   key:
   - a
   - c
@@ -55,4 +55,5 @@ variants:
   distractor_rationale:
     b: Membuat desain adalah tugas pengguna dengan aplikasi
     d: Baterai adalah hardware yang diganti secara fisik
-  explanation: Manajemen file, manajemen memori, dan antarmuka pengguna adalah fungsi sistem operasi.
+  explanation: Manajemen file, manajemen proses (giliran CPU), dan manajemen perangkat (driver) adalah
+    fungsi sistem operasi.
