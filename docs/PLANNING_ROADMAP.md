@@ -45,7 +45,7 @@ Pemindahan UW-15 dari P ke V **disetujui D-25** (RM-Q1(a)); AC UW-15
 tetap. Penyebut jalur P = 43 sudah final menurut klasifikasi yang disetujui.
 Batch D-26–D-35 menyelesaikan UW-25, UW-27, UW-29, UW-30, UW-31, UW-32
 (AC = keputusan tertulis terpenuhi). UW-36 kini COMPLETE (D-38, §12); UW-26
-dan UW-37 tetap OPEN (status aktif: 8/16 modul diproduksi; 4/16 diterima secara historis, 20 varian revisi (D-39 + putaran 6–7) di W1–W4 PENDING (TPL-01a); §16); UW-33 tetap BLOCKED.
+dan UW-37 tetap OPEN (status aktif: 8/16 modul diproduksi; 4/16 diterima secara historis, 21 varian revisi (D-39 + putaran 6–8) di W1–W4 PENDING (TPL-01a); §16); UW-33 tetap BLOCKED.
 
 ## 2. Register lengkap dengan klasifikasi (56 butir)
 
@@ -90,7 +90,7 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-34 | BLOCKED | P | Keputusan CO-4–CO-6 |
 | UW-35 | BLOCKED | P | Keputusan UO-3–UO-9 |
 | UW-36 | COMPLETE | P | Semua kebijakan CU diputuskan (D-13, D-24, D-30–D-36); angka batas agregat LX-2 = keluaran verifikasi UW-12 (D-38) |
-| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); diproduksi 32/64 (W1–W8); diterima owner 16/64 **historis** (W01-ACC–W04-ACC; 20 varian revisi (D-39 + putaran 6–7) di W1–W4 PENDING (TPL-01a)); W5–W8 diproduksi, belum diterima (CB-2, PR #28); W9–W16 NOT STARTED / NOT AUTHORIZED |
+| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); diproduksi 32/64 (W1–W8); diterima owner 16/64 **historis** (W01-ACC–W04-ACC; 21 varian revisi (D-39 + putaran 6–8) di W1–W4 PENDING (TPL-01a)); W5–W8 diproduksi, belum diterima (CB-2, PR #28); W9–W16 NOT STARTED / NOT AUTHORIZED |
 | UW-38 | DEFERRED | M | D-22 |
 | UW-39 | BLOCKED | V | Lingkungan SDK opsional untuk verifikasi build; tidak punya AC perencanaan |
 | UW-40 | DEFERRED | M | D-22 |
@@ -340,3 +340,5 @@ dapat dinilai lengkap? Rekomendasi: Ya.
 - PR #28 putaran 7 (2026-11-25): otorisasi bersyarat W3 c-s01 vA/vB, W4 c-s01 vA, W4 t-s10 vA diterapkan;
   cakupan 156/0/0 dan kesetaraan 48/0 (hasil penulis); R6-01–R6-06; VA-2/R3-04 CONDITIONAL PASS; 20 varian
   W1–W4 PENDING. PR28-06, UW-26, UW-37 tetap OPEN.
+- PR #28 putaran 8 (2026-11-25): O-1 stem W4 teori s10 vA/vB; O-2 kontrak atomik VA-4a (bukan penyelesaian OD-9/UW-33);
+  R7-02; R3-04 CONDITIONAL PASS; 21 varian W1–W4 PENDING. PR28-06, UW-26, UW-37 tetap OPEN.

@@ -1,7 +1,7 @@
 # IT ZERO → HERO — Rencana Produksi Kurikulum (UW-37)
 
 Status: **RENCANA** · dokumentasi saja · **belum ada konten yang
-diproduksi** kecuali W1–W8. UW-37 tetap **OPEN** (8/16 modul diproduksi; 4/16 diterima owner secara historis — W1 W01-ACC, W2–W4 W02-ACC–W04-ACC; 20 varian revisi (D-39 + putaran 6–7) di W1–W4 PENDING (TPL-01a); W5–W8 diproduksi pada CB-2, menunggu review independen dan penerimaan owner; W9–W16 NOT STARTED / NOT AUTHORIZED). Tanggal: **2026-11-24**
+diproduksi** kecuali W1–W8. UW-37 tetap **OPEN** (8/16 modul diproduksi; 4/16 diterima owner secara historis — W1 W01-ACC, W2–W4 W02-ACC–W04-ACC; 21 varian revisi (D-39 + putaran 6–8) di W1–W4 PENDING (TPL-01a); W5–W8 diproduksi pada CB-2, menunggu review independen dan penerimaan owner; W9–W16 NOT STARTED / NOT AUTHORIZED). Tanggal: **2026-11-24**
 (status aktif diperbarui pada CB-2). Basis: `main` = `846051f` (merge PR #27).
 Standar produksi CB-0 (semua kebijakan terputuskan setelah D-36; tidak ada keputusan penerimaan owner terpisah untuk CB-0; review independen terbatas; **bukan** final global): [CURRICULUM_TEMPLATES_CB0.md](CURRICULUM_TEMPLATES_CB0.md). Modul acuan: [curriculum/mod-w01/](../curriculum/mod-w01/module.yaml).
 
@@ -136,7 +136,7 @@ sudah diputuskan (D-23–D-36).
 | Spesifikasi lab | 48/96 | 24 (terbatas) | 24 | — |
 | Spesifikasi mini-project | 8/16 | 4 (terbatas) | 4 | — |
 
-Persentase: diproduksi 32/64 = 50%; diterima owner 16/64 = 25% (**historis**: isi pada saat W01-ACC–W04-ACC; 20 varian revisi (D-39 + putaran 6–7) di W1–W4 PENDING (TPL-01a), lihat blok `acceptance` di `module.yaml` W1–W4).
+Persentase: diproduksi 32/64 = 50%; diterima owner 16/64 = 25% (**historis**: isi pada saat W01-ACC–W04-ACC; 21 varian revisi (D-39 + putaran 6–8) di W1–W4 PENDING (TPL-01a), lihat blok `acceptance` di `module.yaml` W1–W4).
 
 Inventaris target D-30 (dua butir nyata per slot/aktivitas): teori
 (15 × 20 + 10) × 2 = 620; concept 16 × 6 × 2 = 192; lab 16 × 3 × 2 = 96;
@@ -331,3 +331,5 @@ direvisi; R3-04 koreksi bukti saja. Status penerimaan terstruktur TPL-01a:
 **Putaran 6 (koreksi terarah, otorisasi owner terbatas)**: diterapkan hanya W3 concept s03 vB, W4 concept s03 vB, W7 concept s02 vB, W7 concept s03 vB (versi 2.0; posisi kunci tetap). Cakupan = **hasil penulis** 153 PASS, 3 OPEN (W3 router/switch, W4 OTP — usulan §7 tidak diotorisasi), 0 GAP; kesetaraan 47 PASS, 1 OPEN (W4 concept s01). R5-01 elemen bernilai tepat, R5-04 NB-5 konten cacat, R5-05 field slot bersama di validator penerimaan; 16 varian W1–W4 PENDING. CB-2 belum diterima; PR28-06 tetap OPEN.
 
 **Putaran 7 (koreksi konsolidasi, otorisasi owner bersyarat)**: direvisi W3 concept s01 vA/vB, W4 concept s01 vA, W4 teori s10 vA (versi 2.0; kunci tetap); 4 revisi putaran 6 tidak diubah. Cakupan = **hasil penulis** 156 PASS, 0 OPEN, 0 GAP; kesetaraan 48 PASS, 0 OPEN — belum diverifikasi independen. R6-01 jangkar baseline penerimaan tepercaya, R6-02 identitas lokasi varian, R6-03 integritas kunci, R6-04 kombinasi afiks NB-5, R6-05 pemindai NB-5 tahan konten cacat, R6-06 akurasi dokumentasi; VA-2/R3-04 CONDITIONAL PASS (pencatatan atomik varian semua slot belum dinyatakan eksplisit; SB-12/OD-9). 20 varian W1–W4 PENDING. CB-2 belum diterima; PR28-06 tetap OPEN.
+
+**Putaran 8 (koreksi terarah final, otorisasi owner O-1/O-2)**: hanya stem W4 teori s10 vA (3.0) dan vB (2.0) diubah; kontrak desain atomik VA-4a dicatat (CCD §B.2, DECISIONS_LOG); R7-02 pemindai NB-5 mengenali konsumen dari deklarasi normalization. Cakupan 156/0/0 dan kesetaraan 48/0 (hasil penulis); R3-04 CONDITIONAL PASS (implementasi dan OD-9/UW-33 tertunda). 21 varian W1–W4 PENDING. CB-2 belum diterima; PR28-06 tetap OPEN.

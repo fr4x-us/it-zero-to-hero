@@ -587,3 +587,11 @@ Butir W2 yang diterima tidak diubah pada putaran ini.
 | R3-04 / VA-2 | Bukti (b) teori s15 vA + s17 vB: simulasi 6 skenario — riwayat yang diizinkan kontrak (normal, terputus, remedial, restore attempt utuh) sinkron; pencatatan slot tidak atomik dapat menghasilkan jalur s15 vB + s17 vA. Ketergantungan: pemilihan + pencatatan atomik semua slot saat attempt dibuat (VA-4 tidak eksplisit) dan SB-12/OD-9. Kebijakan VA-2 tidak diubah | CONDITIONAL PASS | SEBAGIAN | BELUM |
 
 Butir W2 yang diterima tidak diubah pada putaran ini.
+
+### Putaran 8 (koreksi terarah final; otorisasi owner O-1, O-2; temuan sementara R7-01–R7-02)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| O-2 / R3-04 | Kontrak desain VA-4a (CCD §B.2; DECISIONS_LOG "PR #28 O-2"): pemilihan semua slot dari satu snapshot ter-commit, commit atomik bersama identitas attempt, resume tanpa pemilihan ulang, restore hanya riwayat utuh. Bukti induksi + simulasi (5 skenario sah sinkron; riwayat parsial/rusak ditolak) untuk teori s15 vA + s17 vB. Tertunda: verifikasi implementasi dan OD-9/SB-12/UW-33 | CONDITIONAL PASS | SEBAGIAN | BELUM |
+
+Butir W2 yang diterima tidak diubah pada putaran ini.

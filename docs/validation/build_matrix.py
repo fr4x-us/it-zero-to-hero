@@ -320,34 +320,62 @@ def va2_pick(h):
     if len(cand) > 1 and h: cand = [v for v in cand if v != h[-1]] or cand
     return sorted(cand)[0]
 
+def va2_history_valid(att, n_slots):
+    """VA-4a: riwayat sah hanya bila setiap attempt ter-commit memuat pemilihan untuk SETIAP slot wajib."""
+    return all(isinstance(a, dict) and set(a) == set(range(n_slots)) and set(a.values()) <= {'A', 'B'} for a in att)
+
 def va2_scenarios(n_slots=20):
-    """R3-04/§10: simulasi riwayat VA-2 untuk kasus yang DIIZINKAN kontrak dan kasus yang TIDAK dijamin kontrak.
-    Riwayat = daftar attempt; attempt = {slot: varian} (VA-4). Kembalikan {nama: (diizinkan_kontrak, sinkron, jalur_salin_aman)}."""
+    """R3-04/O-2: simulasi riwayat VA-2 di bawah kontrak atomik VA-4a. Attempt = {slot: varian} yang ter-commit utuh.
+    Induksi diperiksa di setiap langkah: semua slot berstatus riwayat sama (jumlah pemakaian + varian terakhir)
+    → keputusan VA-2 sama → commit atomik mempertahankan status sama. Kembalikan {nama: (jenis, sinkron, aman)}."""
     S15, S17 = 0, 1   # wakil teori s15 dan s17 (W2 "salin mempertahankan asal": s15 vA + s17 vB)
+    def state(att, s):
+        h = [a[s] for a in att]; return (h.count('A'), h.count('B'), h[-1] if h else None)
     def run(events):
-        att = []
+        att, snap, active, induct = [], None, None, True
         for ev in events:
-            hist = {s: [a[s] for a in att if s in a] for s in range(n_slots)}
-            if ev == 'normal' or ev == 'interrupted' or ev == 'remedial':
-                att.append({s: va2_pick(hist[s]) for s in range(n_slots)})      # semua slot dipilih + dicatat saat attempt dibuat
-            elif ev == 'restore_older':
-                att = att[:-1]                                                    # restore memulihkan attempt utuh (A-8, P-10)
-            elif ev == 'partial_record':
-                a = {s: va2_pick(hist[s]) for s in range(n_slots)}; a.pop(S17); att.append(a)  # pencatatan per slot tidak atomik
-            elif ev == 'slot_dropped':
-                att[-1].pop(S15)                                                  # riwayat rusak: satu catatan slot hilang
-        sync = all(len(set(a.values())) == 1 for a in att if len(a) == n_slots)
-        nxt = {s: va2_pick([a[s] for a in att if s in a]) for s in range(n_slots)}
-        sync &= len(set(nxt.values())) == 1
-        safe = not (nxt[S15] == 'B' and nxt[S17] == 'A')
-        return sync, safe
-    sc = {'8 attempt normal': (True, ['normal'] * 8),
-          'attempt terputus (IN_PROGRESS, SB-8/SB-9 dicatat apa adanya)': (True, ['normal', 'interrupted', 'normal', 'interrupted']),
-          'remedial tanpa batas (VA-3)': (True, ['normal'] * 3 + ['remedial'] * 5),
-          'restore cadangan lama (attempt utuh)': (True, ['normal'] * 3 + ['restore_older', 'normal', 'normal']),
-          'pencatatan slot tidak atomik (tidak dijamin kontrak)': (False, ['normal', 'partial_record', 'normal']),
-          'riwayat rusak: catatan satu slot hilang': (False, ['normal', 'normal', 'normal', 'slot_dropped'])}
-    return {k: (allowed,) + run(ev) for k, (allowed, ev) in sc.items()}
+            if ev in ('normal', 'remedial', 'interrupted_after_commit'):
+                induct &= len({state(att, x) for x in range(n_slots)}) == 1      # hipotesis induksi
+                pick = {x: va2_pick([a[x] for a in att]) for x in range(n_slots)}
+                induct &= len(set(pick.values())) == 1                          # status sama → keputusan sama
+                att.append(pick); active = pick if ev == 'interrupted_after_commit' else None   # commit atomik
+            elif ev == 'create_fail_before_commit':
+                _ = {x: va2_pick([a[x] for a in att]) for x in range(n_slots)}  # dihitung lalu dibuang: tidak ada sisa
+            elif ev == 'resume':
+                n0 = len(att); reused = active
+                if reused is None or len(att) != n0 or att[-1] is not reused: return False, False   # tanpa pemilihan ulang/entri ganda
+            elif ev == 'snapshot':
+                snap = [dict(a) for a in att]
+            elif ev == 'restore_snapshot':
+                att = [dict(a) for a in snap]; active = None
+        ok = va2_history_valid(att, n_slots)
+        nxt = {x: va2_pick([a[x] for a in att]) for x in range(n_slots)}
+        sync = ok and induct and all(len(set(a.values())) == 1 for a in att) and len(set(nxt.values())) == 1
+        return sync, not (nxt[S15] == 'B' and nxt[S17] == 'A')
+    def corrupt(kind):
+        att = [{x: v for x in range(n_slots)} for v in 'ABA']
+        if kind == 'partial': att.append({x: 'B' for x in range(n_slots) if x != S17})
+        else: att[1].pop(S15)
+        return va2_history_valid(att, n_slots)
+    out = {
+        '8 attempt normal': ('diizinkan',) + run(['normal'] * 8),
+        'gagal sebelum commit (tanpa sisa parsial)': ('diizinkan',) + run(['normal', 'create_fail_before_commit', 'normal', 'create_fail_before_commit', 'normal']),
+        'terputus setelah commit utuh + resume berulang tanpa pemilihan ulang': ('diizinkan',) + run(['normal', 'interrupted_after_commit', 'resume', 'resume', 'normal']),
+        'remedial tanpa batas (VA-3, 51 attempt)': ('diizinkan',) + run(['normal'] * 3 + ['remedial'] * 48),
+        'restore snapshot utuh yang diizinkan': ('diizinkan',) + run(['normal', 'normal', 'snapshot', 'normal', 'normal', 'restore_snapshot', 'normal']),
+        'riwayat parsial (slot tidak tercatat)': ('ditolak',) + (not corrupt('partial'), True),
+        'riwayat rusak (catatan slot hilang)': ('ditolak',) + (not corrupt('dropped'), True),
+    }
+    return out
+
+def va2_assumptions():
+    """Asumsi induksi: setiap slot teori/concept W1–W8 punya tepat dua varian, berurutan vA lalu vB."""
+    import glob as _g
+    bad = []
+    for f in sorted(_g.glob(str(ROOT / 'curriculum/mod-w0*/*/items/*.yaml'))):
+        ids = [v['variant_id'][-2:] for v in load(str(Path(f).relative_to(ROOT / 'curriculum')))['variants']]
+        if ids != ['vA', 'vB']: bad.append((f, ids))
+    return bad
 
 def structure(fmt, v):
     if fmt == 'CE-S4': return f"{len(v['left'])} pasangan, {len(v['right'])} pilihan kanan"
@@ -380,10 +408,16 @@ def build():
     print(f'  R6-03 integritas kunci: {nk} varian butir + lab + proyek W1–W8; uji kunci {nkm} (positif 8, negatif {nkm - 8})')
     ok, seq = va2_correlated()
     rep.check(ok and seq == ['A', 'B'] * 4, f'VA-2: indeks varian sama untuk semua slot di setiap attempt {seq}')
-    for k, (allowed, sync, safe) in va2_scenarios().items():
-        if allowed: rep.check(sync and safe, f'VA-2 skenario diizinkan kontrak tetap sinkron: {k}')
-        else: rep.check(not sync or not safe, f'VA-2 skenario di luar kontrak terdeteksi tidak sinkron: {k}')
-        print(f'  VA-2 skenario: {k} — {"diizinkan" if allowed else "di luar jaminan kontrak"}; sinkron {sync}; jalur salin aman {safe}')
+    for k, (kind, ok1, safe) in va2_scenarios().items():
+        if kind == 'diizinkan':
+            rep.check(ok1 and safe, f'VA-2 skenario VA-4a tetap sinkron (induksi): {k}')
+            print(f'  VA-2 skenario: {k} — diizinkan VA-4a; sinkron+induksi {ok1}; jalur salin aman {safe}')
+        else:
+            rep.check(ok1, f'VA-2 riwayat tidak sah ditolak sebagai masalah integritas: {k}')
+            print(f'  VA-2 skenario: {k} — ditolak (integritas terkendali) {ok1}')
+    bad = va2_assumptions()
+    rep.check(not bad, f'VA-2 asumsi: setiap slot tepat vA, vB berurutan {bad[:3]}')
+    print(f'  VA-2 asumsi jumlah/urutan varian: {"OK" if not bad else bad[:3]}')
     rows_md, tot, gaps, nb, opens = [], {}, [], 0, []
     for m, rows in D.items():
         M = load(f'mod-w{m}/module.yaml'); c2lo = {lo['competency']: lo['id'] for lo in M['learning_objectives']}

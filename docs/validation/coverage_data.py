@@ -57,7 +57,7 @@ D={
  ('s01','autentikasi bukan tujuan CIA','pendukung','AB',[],''),
  ('s02','phishing sebagai rekayasa sosial','inti','AB',[],'D-39: concept s02 vB opsi a'),('s02','trojan menyamar','inti','AB',[],''),('s02','tanda bukan bukti pasti','pendukung','AB',[],'R3-06: vB opsi e kini "…belum membuktikan pesannya pasti phishing" (benar); vA opsi e'),
  ('s03','faktor berbeda jenis','inti','',[('lab','act-03.c02','AB')],'putaran 6: concept s03 vB kini baris salah PIN; MFA dijamin lab act-03.c02'),
- ('s03','OTP tidak dibagikan','pendukung','',[('project','K1.c02',P,'lemah'),('theory','s10','AB')],'putaran 7 (R5-03): teori s10 vA 2.0 opsi d benar (tidak memberikan OTP kepada siapa pun) + vB opsi d salah (membagikan OTP), TP-B semua-atau-tidak. Riwayat R4-03: K1.c02 menilai klasifikasi S2 (penelepon meminta OTP) sebagai rekayasa sosial, bukan larangan membagikan OTP secara langsung; K4.q5 (kanal resmi) dihapus sebagai bukti — bukti semantik lemah'),
+ ('s03','OTP tidak dibagikan','pendukung','',[('project','K1.c02',P,'lemah'),('theory','s10','AB')],'putaran 8 (R7-01): stem s10 vA 3.0/vB 2.0 kini menyebut autentikasi akun. Putaran 7 (R5-03): teori s10 vA 2.0 opsi d benar (tidak memberikan OTP kepada siapa pun) + vB opsi d salah (membagikan OTP), TP-B semua-atau-tidak. Riwayat R4-03: K1.c02 menilai klasifikasi S2 (penelepon meminta OTP) sebagai rekayasa sosial, bukan larangan membagikan OTP secara langsung; K4.q5 (kanal resmi) dihapus sebagai bukti — bukti semantik lemah'),
  ('s03','kombinasi ×10 per digit','inti','AB',[('theory','s09','AB'),('lab','act-03.c03','AB')],''),
  ('s03','sandi unik','inti','',[('theory','s10','AB')],''),
  ('s04','domain terdaftar menunjukkan pengendali nama','inti','AB',[],''),

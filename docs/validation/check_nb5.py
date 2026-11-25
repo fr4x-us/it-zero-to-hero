@@ -15,9 +15,22 @@ def find(file, ident):
             return v['accepted_answers'], v['normalization']
     raise KeyError(ident)
 
-# Pemeriksaan non-NB-5 di lab W6 (BN-6, B01, pilihan) — dipisah dari NB-5
+# Pemeriksaan non-NB-5 di lab W6 (BN-6, B01, pilihan) — R7-02: kini hanya acuan regresi; konsumen diturunkan dari deklarasi normalization
 W6_NOT_NB5 = {'act-01': {'c05', 'c06', 'c07'}, 'act-02': {'c01', 'c02', 'c03', 'c04', 'c06'}, 'act-03': {'c01', 'c02', 'c03', 'c04', 'c05'}}
 WORD = {'satu': 1, 'dua': 2, 'tiga': 3}
+
+# R7-02: konsumen lab dikenali dari deklarasi `normalization` berkas (segmen "cNN[–cMM], …: <kontrak>";
+# teks sebelum segmen pertama = kontrak bawaan), BUKAN dari isi accepted_answers.
+_SEG = re.compile(r'(?:^|(?<=\. ))((?:c\d\d(?:–c\d\d)?)(?:, c\d\d(?:–c\d\d)?)*): ')
+
+def lab_contracts(norm):
+    ms = list(_SEG.finditer(norm)); default = norm[:ms[0].start()] if ms else norm; per = {}
+    for i, m in enumerate(ms):
+        seg = norm[m.end(): ms[i + 1].start() if i + 1 < len(ms) else len(norm)]
+        for part in m.group(1).split(', '):
+            a, _, b = part.partition('–'); b = b or a
+            for n in range(int(a[1:]), int(b[1:]) + 1): per[f'c{n:02d}'] = seg
+    return default, per
 
 def consumers(modules=('05', '06'), root=CUR):
     """Kumpulkan konsumen NB-5. R6-05: tidak ada akses tanpa pemeriksaan ke accepted_answers[0];
@@ -31,18 +44,14 @@ def consumers(modules=('05', '06'), root=CUR):
                     out.append((v.get('variant_id', '?'), str(v.get('stem', '')), v.get('accepted_answers'), str(v.get('normalization', '')), None, rel))
         for f in sorted(glob.glob(str(root / f'mod-w{m}/lab/act-0*/checks.yaml'))):
             rel = f[len(str(root)) + 1:]
-            d = yaml.safe_load(open(f, encoding='utf-8')) or {}; act = f.split('/')[-2]
+            d = yaml.safe_load(open(f, encoding='utf-8')) or {}
+            default, per = lab_contracts(str(d.get('normalization', '')))
             for var in d.get('variants') or []:
                 for c in var.get('checks') or []:
-                    if 'accepted_answers' not in c:
-                        continue
                     cid = str(c.get('check_id', '?'))
-                    if m == '06' and cid[-3:] in W6_NOT_NB5.get(act, set()):
-                        continue
-                    acc = c['accepted_answers']
-                    first = acc[0] if isinstance(acc, list) and acc else None
-                    if first is not None and not isinstance(first, (dict, list)) and not re.fullmatch(r'[-−]?[\d.,]+', str(first)):
-                        continue   # pemeriksaan teks (bukan NB-5)
+                    if 'NB-5' not in per.get(cid[-3:], default):
+                        continue   # pemeriksaan bukan NB-5 menurut deklarasi berkas
+                    acc = c.get('accepted_answers')   # hilang/kosong/cacat → CONTENT_ERROR di audit
                     out.append((cid, str(c.get('question', '')), acc, str(d.get('normalization', '')),
                                 str(d.get('answer_validation', '')) + ' ' + str(d.get('infrastructure', '')), rel))
     return out
@@ -103,7 +112,11 @@ def scanner_mutation_tests(r):
              ('bukan daftar', 'theory', lambda v: v.__setitem__('accepted_answers', '204000')),
              ('entri cacat', 'theory', lambda v: v.__setitem__('accepted_answers', [None, '204000'])),
              ('kanonik tidak sah', 'theory', lambda v: v.__setitem__('accepted_answers', ['0204000'])),
+             ('lab hilang', 'lab', lambda c: c.pop('accepted_answers')),
              ('lab kosong', 'lab', lambda c: c.__setitem__('accepted_answers', [])),
+             ('lab jawaban pertama teks', 'lab', lambda c: c.__setitem__('accepted_answers', ['lima ribu', '5000'])),
+             ('lab null', 'lab', lambda c: c.__setitem__('accepted_answers', None)),
+             ('lab tipe tak terduga', 'lab', lambda c: c.__setitem__('accepted_answers', {'a': '5000'})),
              ('lab entri dict', 'lab', lambda c: c.__setitem__('accepted_answers', [{'x': 1}]))]
     n = 0
     for name, kind, mut in cases:
@@ -114,7 +127,7 @@ def scanner_mutation_tests(r):
                 f = root / 'mod-w05/theory/items/s15.yaml'; d = yaml.safe_load(open(f, encoding='utf-8')); mut(d['variants'][0]); want = 'mod-w05.theory.s15.vA'
             else:
                 f = root / 'mod-w05/lab/act-01/checks.yaml'; d = yaml.safe_load(open(f, encoding='utf-8'))
-                c = [c for c in d['variants'][0]['checks'] if 'accepted_answers' in c][0]; mut(c); want = c['check_id']
+                c = [c for c in d['variants'][0]['checks'] if c['check_id'].endswith('.c01')][0]; mut(c); want = c['check_id']
             yaml.safe_dump(d, open(f, 'w', encoding='utf-8'), allow_unicode=True, sort_keys=False)
             try:
                 items, fnd = scan(root); exc = None
@@ -126,6 +139,11 @@ def scanner_mutation_tests(r):
             if name == 'kosong':   # CLI: kegagalan terkendali, exit 1, tanpa traceback
                 p = subprocess.run([sys.executable, __file__, '--scan-root', str(root)], capture_output=True, text=True)
                 r.check(p.returncode == 1 and 'Traceback' not in p.stderr and 'CONTENT_ERROR' in p.stdout, f'pemindai CLI: exit {p.returncode}, traceback {"Traceback" in p.stderr}', 'REGRESI'); n += 1
+    # pemeriksaan non-NB-5 yang sah tetap dikecualikan (W5 c06 nama hari; W6 B01/BN-6/pilihan)
+    ids = {i[0] for i in consumers()}
+    r.check('mod-w05.lab.act-01.vA.c06' not in ids, 'pemindai: pemeriksaan teks W5 act-01 c06 tetap dikecualikan', 'REGRESI'); n += 1
+    w6 = {i[0].split('.')[2] + '.' + i[0][-3:] for i in consumers(('06',))}
+    r.check(not any(f'{a}.{c}' in w6 for a, cs in W6_NOT_NB5.items() for c in cs), 'pemindai: pemeriksaan non-NB-5 W6 tetap dikecualikan', 'REGRESI'); n += 1
     with tempfile.TemporaryDirectory() as td:
         root = Path(td) / 'curriculum'
         for m in ('05', '06'): shutil.copytree(CUR / f'mod-w{m}', root / f'mod-w{m}')
@@ -181,7 +199,7 @@ def main():
     r.check(caught == {m[0] for m in mut}, f'uji mutasi tidak semua tertangkap: {caught}')
     print(f'  uji mutasi tertangkap: {len(caught)}/{len(mut)}')
     ns = scanner_mutation_tests(r)
-    print(f'  uji pemindai ujung-ke-ujung R6-05: {ns} (7 konten cacat, 2 CLI)')
+    print(f'  uji pemindai ujung-ke-ujung R6-05/R7-02: {ns} (11 konten cacat, 2 pengecualian non-NB-5, 2 CLI)')
     return r.done()
 
 if __name__ == '__main__':

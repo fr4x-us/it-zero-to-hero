@@ -41,17 +41,24 @@ Kontrak: **D-39 HYBRID COMPETENCY COVERAGE** ([DECISIONS_LOG.md](DECISIONS_LOG.m
   (blueprint teori 20 slot; concept 6 slot; lab RA-1). Generator
   mensimulasikan VA-2 (8 attempt × 20 slot → A, B, A, B, … untuk semua slot).
   Konsep yang memakai bukti (b): **1**. Aturan pemilihan tidak diubah.
-- **Status bukti (b): CONDITIONAL PASS (putaran 7).** Simulasi generator:
-  riwayat yang diizinkan kontrak (attempt normal, attempt terputus yang
-  dicatat apa adanya SB-8/SB-9, remedial VA-3, restore attempt utuh A-8/P-10)
-  tetap sinkron. Riwayat yang **tidak** dijamin kontrak (pemilihan/pencatatan
-  varian per slot tidak atomik; catatan satu slot hilang) dapat tidak
-  sinkron, dan kasus pertama dapat menghasilkan jalur teori s15 vB + s17 vA
-  yang tidak menilai "salin mempertahankan asal". Ketergantungan terbuka:
-  VA-4 tidak menyatakan bahwa semua varian slot dipilih dan disimpan
-  **atomik saat attempt dibuat**; SB-12 (restore saat `IN_PROGRESS`)
-  menunggu OD-9 (UW-33). Kebijakan VA-2 tidak diubah; tidak ada verifikasi
-  runtime Android.
+- **Status bukti (b) (putaran 8): CONDITIONAL PASS — bukti kontrak desain
+  lengkap, verifikasi implementasi dan OD-9 tertunda.** (1) *Kontrak desain*:
+  VA-4a (otorisasi owner PR #28 O-2, [CCD](../CURRICULUM_CONTENT_DECISION_SHEETS.md)
+  §B.2) mewajibkan semua varian satu attempt dipilih dari satu snapshot
+  riwayat ter-commit, mencakup setiap slot wajib, dan di-commit atomik
+  bersama identitas attempt; resume tidak memilih ulang. (2) *Bukti
+  induksi*: basis — sebelum attempt pertama semua slot berstatus sama
+  (pemakaian 0/0, tanpa varian sebelumnya); langkah — status riwayat sama →
+  keputusan VA-2 deterministik sama (jumlah varian dan urutan vA, vB sama di
+  setiap slot, diperiksa generator) → commit atomik menambahkan varian sama
+  ke semua slot → status tetap sama. Maka setiap attempt teori memakai indeks
+  varian sama di s15 dan s17, sehingga jalur sah hanya {s15 vA, s17 vA} atau
+  {s15 vB, s17 vB}, dan keduanya menilai "salin mempertahankan asal". (3)
+  *Simulasi generator*: normal, gagal sebelum commit, terputus setelah commit
+  + resume berulang, remedial 51 attempt, restore snapshot utuh → sinkron;
+  riwayat parsial/rusak ditolak sebagai masalah integritas. (4) *Tertunda*:
+  verifikasi implementasi (belum ada aplikasi) dan OD-9/SB-12/UW-33 (restore
+  saat `IN_PROGRESS`). Tidak ada verifikasi runtime Android.
 - **Integritas kunci (R6-03, STRUKTUR)**: generator memeriksa bahwa setiap
   kunci merujuk elemen yang ada dan dinilai (opsi, baris + opsi koreksi,
   pasangan satu-ke-satu, permutasi urutan, kunci lab/K4, poin > 0) untuk
@@ -94,7 +101,7 @@ kesetaraan 48/0 — **hasil penulis**, belum diverifikasi independen; PR28-06 te
 Kesetaraan akademik varian (R3-02/R4-04–R4-09, §6; penilaian penulis): **48 PASS**,
 **0 OPEN** dari 48 slot. Cakupan modul dan kesetaraan varian adalah syarat terpisah.
 
-## 3. Koreksi butir untuk cakupan dan kesetaraan (D-39, putaran 3–4, 6, dan 7)
+## 3. Koreksi butir untuk cakupan dan kesetaraan (D-39, putaran 3–4, 6, 7, dan 8)
 
 | Modul | Varian | Perubahan | Konsep | Kunci | Versi |
 |---|---|---|---|---|---|
@@ -121,6 +128,7 @@ Kesetaraan akademik varian (R3-02/R4-04–R4-09, §6; penilaian penulis): **48 P
 | W3 | concept s01 vB (R7) | skenario lab hanya switch; struktur kunci dan pengecoh cermin vA | idem | d | 2.0 |
 | W4 | concept s01 vA (R7) | kejadian → istilah (foto KTP, nilai rapor, aplikasi bank, kode autentikator); R4 "Pencadangan data" | kerahasiaan, integritas, ketersediaan, autentikasi | L1→R3, L2→R5, L3→R1, L4→R2 | 2.0 |
 | W4 | teori s10 vA (R7) | opsi d benar: tidak memberikan OTP kepada siapa pun (menggantikan "aktifkan MFA"); opsi e tanggal lahir tetap | OTP tidak dibagikan | a, c, d | 2.0 |
+| W4 | teori s10 vA, vB (R8 O-1) | **hanya stem**: "Pilih semua kebiasaan yang baik untuk menjaga keamanan kata sandi dan autentikasi akun." (opsi, kunci, poin tetap) | OTP tidak dibagikan; sandi unik | vA a, c, d; vB b, c, e | vA 3.0, vB 2.0 |
 
 Format, poin, kompetensi, dan distribusi posisi kunci setiap modul tidak
 berubah (`check_keys.py`, snapshot = baseline `4ddc993`). Varian W1–W4 di
@@ -178,6 +186,14 @@ atas **belum diterima** (TPL-01a `acceptance.revised_variants`, PENDING).
 | R6-05 | Pemindai konsumen NB-5 mengakses `accepted_answers[0]` tanpa pemeriksaan | CONFIRMED — FIXED: validasi konten sebelum penurunan; diagnostik CONTENT_ERROR dengan path + ID; 9 uji ujung-ke-ujung termasuk CLI exit 1 tanpa traceback | YA | BELUM |
 | R6-06 | Ketidakakuratan dokumentasi | CONFIRMED — FIXED: README, OFFICIAL_RUN, hitungan fixture | YA | BELUM |
 | R3-04 / VA-2 | Bukti (b) bergantung pada riwayat sinkron | CONDITIONAL PASS — simulasi 6 skenario (§1); ketergantungan: pemilihan + pencatatan atomik semua slot (VA-4 tidak eksplisit), SB-12/OD-9 | SEBAGIAN | BELUM |
+
+## 4e. Register temuan review putaran 7 dan otorisasi putaran 8 (ID sementara R7-xx)
+
+| ID | Temuan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R7-01 / O-1 | Stem W4 teori s10 hanya menyebut kata sandi, padahal opsi menilai OTP | CONFIRMED — FIXED: stem vA dan vB diganti (hanya stem); vA 2.0 → 3.0, vB 1.0 → 2.0; 21 varian W1–W4 PENDING | YA | BELUM |
+| O-2 / R3-04 | Pencatatan atomik varian VA-2 belum dinyatakan | FIXED (kontrak desain VA-4a + bukti induksi + simulasi); R3-04 **CONDITIONAL PASS** — implementasi dan OD-9 tertunda | SEBAGIAN | BELUM |
+| R7-02 | Pemindai NB-5 melewatkan konsumen lab bila accepted_answers hilang/cacat | CONFIRMED — FIXED: konsumen lab diturunkan dari deklarasi `normalization` per pemeriksaan (52 konsumen sama seperti sebelumnya); 15 uji ujung-ke-ujung | YA | BELUM |
 
 ## 7. Usulan koreksi butir
 
@@ -262,7 +278,7 @@ penerimaan owner.
 | W4 | LO2 | s02 | trojan menyamar | inti | vA opsi dinilai c; vB opsi dinilai c | — | (a) concept slot concept | sama (VA-2 bergiliran) | pembacaan butir | PASS |
 | W4 | LO2 | s02 | tanda bukan bukti pasti | pendukung | vA opsi dinilai e; vB opsi dinilai e | — | (a) concept slot concept | sama (VA-2 bergiliran) | R3-06: vB opsi e kini "…belum membuktikan pesannya pasti phishing" (benar); vA opsi e | PASS |
 | W4 | LO3 | s03 | faktor berbeda jenis | inti | — | lab act-03.c02 [vA act-03.c02; vB act-03.c02] (pemeriksaan lab; semantik kuat) | (a) lab act-03.c02 | sama (VA-2 bergiliran) | putaran 6: concept s03 vB kini baris salah PIN; MFA dijamin lab act-03.c02 | PASS |
-| W4 | LO3 | s03 | OTP tidak dibagikan | pendukung | — | project K1.c02 [kriteria K1.c02] (pemeriksaan proyek; semantik lemah); theory s10 [vA opsi dinilai d; vB opsi dinilai d] (setiap opsi dinilai; semantik kuat) | (a) theory s10 | sama (VA-2 bergiliran) | putaran 7 (R5-03): teori s10 vA 2.0 opsi d benar (tidak memberikan OTP kepada siapa pun) + vB opsi d salah (membagikan OTP), TP-B semua-atau-tidak. Riwayat R4-03: K1.c02 menilai klasifikasi S2 (penelepon meminta OTP) sebagai rekayasa sosial, bukan larangan membagikan OTP secara langsung; K4.q5 (kanal resmi) dihapus sebagai bukti — bukti semantik lemah | PASS |
+| W4 | LO3 | s03 | OTP tidak dibagikan | pendukung | — | project K1.c02 [kriteria K1.c02] (pemeriksaan proyek; semantik lemah); theory s10 [vA opsi dinilai d; vB opsi dinilai d] (setiap opsi dinilai; semantik kuat) | (a) theory s10 | sama (VA-2 bergiliran) | putaran 8 (R7-01): stem s10 vA 3.0/vB 2.0 kini menyebut autentikasi akun. Putaran 7 (R5-03): teori s10 vA 2.0 opsi d benar (tidak memberikan OTP kepada siapa pun) + vB opsi d salah (membagikan OTP), TP-B semua-atau-tidak. Riwayat R4-03: K1.c02 menilai klasifikasi S2 (penelepon meminta OTP) sebagai rekayasa sosial, bukan larangan membagikan OTP secara langsung; K4.q5 (kanal resmi) dihapus sebagai bukti — bukti semantik lemah | PASS |
 | W4 | LO3 | s03 | kombinasi ×10 per digit | inti | vA baris salah 3 + koreksi a; vB baris salah 2 + koreksi b | theory s09 [vA isian 10000; vB isian 100000] (isian; semantik kuat); lab act-03.c03 [vA act-03.c03; vB act-03.c03] (pemeriksaan lab; semantik kuat) | (a) concept slot concept; theory s09; lab act-03.c03 | sama (VA-2 bergiliran) | pembacaan butir | PASS |
 | W4 | LO3 | s03 | sandi unik | inti | — | theory s10 [vA opsi dinilai b; vB opsi dinilai b] (setiap opsi dinilai; semantik kuat) | (a) theory s10 | sama (VA-2 bergiliran) | pembacaan butir | PASS |
 | W4 | LO4 | s04 | domain terdaftar menunjukkan pengendali nama | inti | vA kunci b; vB kunci a | — | (a) concept slot concept | sama (VA-2 bergiliran) | pembacaan butir | PASS |

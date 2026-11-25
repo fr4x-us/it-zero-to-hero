@@ -507,3 +507,10 @@ Butir W4 yang diterima tidak diubah pada putaran ini.
 | R7-A | Otorisasi bersyarat: concept s01 vA 1.0 → 2.0 (kejadian → istilah: foto KTP, nilai rapor, aplikasi bank, kode autentikator; R4 Pencadangan data; pemetaan tetap) dan teori s10 vA 1.0 → 2.0 (opsi d benar: tidak memberikan OTP kepada siapa pun; opsi e tanggal lahir tetap; kunci a, c, d tetap). Gerbang pra-edit: anjuran praktis MFA tetap dinilai wajib di proyek K1.c07 (E→T2), K1.c11 (D→T2), K4.q2 (tanpa varian); faktor MFA di lab act-03.c02 vA+vB; teori s10 vB opsi d tetap menilai larangan membagikan OTP. Tercatat PENDING | APPLIED | YA | BELUM |
 | R5-03 | OTP tidak dibagikan kini teori s10 vA+vB (hasil penulis) | APPLIED | YA | BELUM |
 | R6-01 | Jangkar W04-ACC: merge PR #27 | CONFIRMED — FIXED | YA | BELUM |
+
+### Putaran 8 (koreksi terarah final; otorisasi owner O-1, O-2; temuan sementara R7-01–R7-02)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R7-01 / O-1 | Stem teori s10 vA dan vB diganti menjadi "Pilih semua kebiasaan yang baik untuk menjaga keamanan kata sandi dan autentikasi akun." Opsi, kunci (vA a, c, d; vB b, c, e), TF-2, 3 poin semua-atau-tidak, kompetensi, difficulty, estimated_seconds tidak berubah. vA 2.0 → 3.0, vB 1.0 → 2.0; keduanya PENDING (W4: 7; total W1–W4: 21). Rasional dan penjelasan tetap akurat. Batas: teks owner tidak menebalkan "semua" seperti stem TF-2 lain — dipakai verbatim | APPLIED | YA | BELUM |
+| D-39 regresi | OTP: s10 vA opsi d (benar) + vB opsi d (salah) — kedua varian. Sandi kuat/unik/pengelola/mudah ditebak tetap di opsi s10. MFA praktis: proyek K1.c07 (E: T1, T6, T2) dan K1.c11 (D: T1, T6, T2), T2 = "Aktifkan MFA" (spec.md), K4.q2; jenis faktor: lab act-03.c02 vA+vB | PASS (hasil penulis) | YA | BELUM |
