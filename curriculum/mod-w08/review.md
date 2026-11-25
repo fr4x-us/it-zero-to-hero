@@ -328,3 +328,12 @@ Baris putaran 5 di atas adalah catatan historis; status aktif di bawah ini. Caku
 |---|---|---|---|
 | PR28-06 | **OPEN** (lihat W5) | TIDAK | BELUM |
 | R5-01 | Elemen W8 tervalidasi | YA | BELUM |
+
+### Putaran 7 (koreksi konsolidasi; temuan sementara R6-01–R6-06)
+
+Baris putaran 6 di atas adalah catatan historis; status aktif di bawah ini. Cakupan dan kesetaraan = **hasil penulis**.
+
+| ID | Hasil penulis | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|
+| PR28-06 | **OPEN** (lihat W5) | TIDAK | BELUM |
+| R6-03 | Integritas kunci W8 tervalidasi; F4 dan koreksi penelusuran perulangan tidak berubah | YA | BELUM |

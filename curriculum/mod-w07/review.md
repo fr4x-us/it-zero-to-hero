@@ -315,3 +315,13 @@ Baris putaran 5 di atas adalah catatan historis; status aktif di bawah ini. Caku
 | PR28-06 | **OPEN** (lihat W5) | TIDAK | BELUM |
 | R6-A | Otorisasi owner: concept s02 vB 2.0 (baris salah jenis pola 3, 9, 27, 81 → berlipat tiga; suku ke-n dijamin teori s05 vA+vB) dan concept s03 vB 2.0 (skenario formulir lomba lari: menyaring informasi menurut tujuan; generalisasi dijamin teori s10 vA+vB). Posisi kunci W7 tidak berubah. Kesetaraan W7: 6/6 PASS (penilaian penulis). Belum diterima (CB-2) | YA | BELUM |
 | R5-01 | Elemen W7 tervalidasi | YA | BELUM |
+
+### Putaran 7 (koreksi konsolidasi; temuan sementara R6-01–R6-06)
+
+Baris putaran 6 di atas adalah catatan historis; status aktif di bawah ini. Cakupan dan kesetaraan = **hasil penulis**.
+
+| ID | Hasil penulis | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|
+| PR28-06 | **OPEN** (lihat W5) | TIDAK | BELUM |
+| R6-A | Revisi putaran 6 concept s02 vB dan s03 vB tidak diubah | YA | BELUM |
+| R6-03 | Integritas kunci W7 tervalidasi | YA | BELUM |

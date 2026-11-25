@@ -1,7 +1,8 @@
 """R3-08/R4-02: status penerimaan terstruktur (TPL-01a) dibandingkan dengan baseline penerimaan NYATA di git.
 Untuk modul dengan penerimaan historis: setiap varian dibandingkan dengan isinya pada `acceptance.historical.baseline_commit`.
 Kategori pemeriksaan: STRUKTUR (perbandingan isi berkas; tidak ada penilaian semantik)."""
-import copy, fnmatch, glob, json, subprocess, sys
+import copy, fnmatch, glob, json, re, subprocess, sys
+from pathlib import Path
 import yaml
 from lib import ROOT, CUR, load, Report
 
@@ -52,6 +53,63 @@ def baseline_variants(m, commit):
             out.append((rel, v))
     return out
 
+# ---- R6-01: jangkar penerimaan historis tepercaya ----
+ANCHORS = Path(__file__).parent / 'trust/acceptance_anchors.yaml'
+
+class Git:
+    def subject(self, sha):
+        r = subprocess.run(['git', 'log', '-1', '--format=%s', f'{sha}^{{commit}}', '--'], cwd=ROOT, capture_output=True, text=True)
+        return r.stdout.strip() if r.returncode == 0 else None
+    def ancestor(self, sha):
+        return subprocess.run(['git', 'merge-base', '--is-ancestor', sha, 'HEAD'], cwd=ROOT, capture_output=True).returncode == 0
+
+def load_anchors():
+    return yaml.safe_load(open(ANCHORS, encoding='utf-8'))
+
+def trust_errors(m, M, anchors, decision_log, git):
+    """Kembalikan (kesalahan, baseline tepercaya|None). Baseline TIDAK diambil dari module.yaml."""
+    err = []; an = anchors.get(m)
+    st = M.get('status', {}).get('owner_accepted'); accepted = st is True or st == 'YES'
+    hist = (M.get('acceptance') or {}).get('historical') or {}
+    if not an:
+        if accepted or hist: err.append(f'W{m}: penerimaan historis tanpa jangkar tepercaya (promosi tidak sah)')
+        return err, None
+    sha = str(an.get('baseline_commit', ''))
+    if not re.fullmatch(r'[0-9a-f]{40}', sha): err.append(f'W{m}: jangkar baseline bukan SHA penuh')
+    if not accepted or not hist: err.append(f'W{m}: jangkar ada tetapi modul tidak mencatat penerimaan historis')
+    if hist.get('id') != an.get('acceptance_id'): err.append(f'W{m}: id historis {hist.get("id")} ≠ jangkar {an.get("acceptance_id")}')
+    if str(hist.get('baseline_commit')) != sha: err.append(f'W{m}: baseline_commit modul {str(hist.get("baseline_commit"))[:12]} ≠ jangkar {sha[:12]} (penggantian baseline ditolak)')
+    subj = git.subject(sha)
+    if subj is None: err.append(f'W{m}: commit baseline {sha[:12]} tidak ada di repositori')
+    else:
+        if not subj.startswith(f'Merge pull request #{an.get("pr")} '): err.append(f'W{m}: commit {sha[:12]} bukan merge PR #{an.get("pr")} ({subj})')
+        if not git.ancestor(sha): err.append(f'W{m}: commit {sha[:12]} bukan leluhur HEAD')
+    if f'| {an.get("decision_log")} | OWNER ACCEPTED' not in decision_log: err.append(f'W{m}: catatan keputusan owner {an.get("decision_log")} tidak ditemukan di DECISIONS_LOG')
+    return err, (sha if not err else None)
+
+# ---- R6-02: identitas lokasi varian ----
+def expected_prefix(rel):
+    mm = re.fullmatch(r'mod-w(\d\d)/(theory|concept)/items/(s\d\d)\.yaml', rel)
+    if mm: return f'mod-w{mm.group(1)}.{mm.group(2)}.{mm.group(3)}'
+    mm = re.fullmatch(r'mod-w(\d\d)/lab/(act-0\d)/checks\.yaml', rel)
+    if mm: return f'mod-w{mm.group(1)}.lab.{mm.group(2)}'
+    return None
+
+def location_errors(m, cur, base, cur_sh):
+    err = []
+    FB = {v['variant_id']: (f, v) for f, v in base}
+    for f, v in cur:
+        vid = v.get('variant_id', '?'); pre = expected_prefix(f)
+        if pre is None or not f.startswith(f'mod-w{m}/'): err.append(f'{vid}: berkas {f} bukan lokasi penilaian modul W{m}'); continue
+        if not re.fullmatch(re.escape(pre) + r'\.v[A-Z]', vid): err.append(f'{vid}: identitas tidak cocok dengan lokasi {f} (harus {pre}.vX)')
+        sl = (cur_sh.get(f) or {}).get('slot_id')
+        if sl is not None and sl != pre: err.append(f'{f}: slot_id {sl} ≠ lokasi {pre}')
+        if vid in FB:
+            bf, bv = FB[vid]
+            if bf != f: err.append(f'{vid}: dipindah dari {bf} ke {f}')
+            if bv.get('item_id') != v.get('item_id'): err.append(f'{vid}: item_id berubah {bv.get("item_id")} → {v.get("item_id")}')
+    return err
+
 def body(v):
     return json.dumps({k: x for k, x in v.items() if k != 'item_version'}, sort_keys=True, ensure_ascii=False)
 
@@ -63,6 +121,7 @@ def validate(m, cur, base, acc, cur_sh=None, base_sh=None):
     cur_sh/base_sh: {berkas: field bersama}. Perubahan field bersama memengaruhi SEMUA varian berkas itu."""
     err = []
     cur_sh = cur_sh or {}; base_sh = base_sh or {}
+    err += location_errors(m, cur, base, cur_sh)
     sh_changed = set()
     for f in sorted(set(cur_sh) | set(base_sh)):
         if f in cur_sh and f in base_sh and json.dumps(cur_sh[f], sort_keys=True, ensure_ascii=False) != json.dumps(base_sh[f], sort_keys=True, ensure_ascii=False):
@@ -149,6 +208,16 @@ def mutation_tests(r):
     r.check(any('current_content' in e for e in run(a=a15)), 'mutasi: promosi penerimaan (REVISED_PENDING → ACCEPTED_AS_IS)')
     a16 = copy.deepcopy(acc); a16['revised_variants'][0]['independent_review'] = 'PASS'
     r.check(any('harus PENDING' in e for e in run(a=a16)), 'mutasi: promosi review independen tanpa otorisasi')
+    # R6-02: lokasi varian
+    c17 = copy.deepcopy(cur); c17[k] = ('mod-w02/theory/items/s04.yaml', c17[k][1])
+    r.check(any('dipindah' in e for e in run(c=c17)), 'mutasi: varian dipindah ke berkas lain (isi dan versi sama)')
+    c18 = copy.deepcopy(cur); c18[k] = ('mod-w02/concept/items/s03.yaml', c18[k][1])
+    r.check(any('identitas tidak cocok' in e for e in run(c=c18)), 'mutasi: varian dipindah ke komponen lain')
+    cs19 = copy.deepcopy(csh); cs19[f0]['slot_id'] = 'mod-w02.theory.s99'
+    r.check(any('slot_id' in e for e in validate('02', cur, base, acc, cs19, bsh)[0]), 'mutasi: asosiasi slot diubah')
+    c20 = copy.deepcopy(cur); c20[k][1]['item_id'] = 'item-x'
+    r.check(any('item_id berubah' in e for e in run(c=c20)), 'mutasi: item_id diubah')
+    r.check(not validate('02', cur, base, acc, csh, bsh)[0], 'mutasi: lokasi asli tidak berubah harus sah')
     # versi historis > 1.0 didukung
     b9 = copy.deepcopy(base); j = [i for i, (_, v) in enumerate(b9) if v['variant_id'] == 'mod-w02.theory.s03.vA'][0]
     b9[j][1]['item_version'] = '2.0'; c9 = copy.deepcopy(cur); c9[k][1]['item_version'] = '2.0'
@@ -159,27 +228,57 @@ def mutation_tests(r):
     a11 = copy.deepcopy(a10); a11['revised_variants'][-1]['accepted_version'] = '1.0'
     r.check(any('accepted_version' in e for e in run(c=c10, b=b9, a=a11)), 'mutasi: accepted_version 1.0 untuk baseline 2.0')
 
+def trust_tests(r):
+    """R6-01: uji positif/negatif jangkar penerimaan."""
+    A = load_anchors(); DL = (ROOT / 'docs/DECISIONS_LOG.md').read_text(encoding='utf-8'); G = Git()
+    M2 = load('mod-w02/module.yaml'); M1 = load('mod-w01/module.yaml'); M5 = load('mod-w05/module.yaml')
+    head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+    r.check(not trust_errors('02', M2, A, DL, G)[0], 'jangkar: baseline historis sah diterima')
+    m = copy.deepcopy(M2); m['acceptance']['historical']['baseline_commit'] = head
+    r.check(any('penggantian baseline' in e for e in trust_errors('02', m, A, DL, G)[0]), 'jangkar: baseline diganti commit revisi terbaru ditolak')
+    a = copy.deepcopy(A); a['02']['baseline_commit'] = 'f' * 40; m = copy.deepcopy(M2); m['acceptance']['historical']['baseline_commit'] = 'f' * 40
+    r.check(any('tidak ada di repositori' in e for e in trust_errors('02', m, a, DL, G)[0]), 'jangkar: commit historis tidak ada ditolak')
+    m = copy.deepcopy(M1); m['acceptance']['historical']['baseline_commit'] = A['02']['baseline_commit']
+    r.check(any('penggantian baseline' in e for e in trust_errors('01', m, A, DL, G)[0]), 'jangkar: baseline modul lain (W1 ← PR #27) ditolak')
+    a = copy.deepcopy(A); a['02']['baseline_commit'] = head; m = copy.deepcopy(M2); m['acceptance']['historical']['baseline_commit'] = head
+    r.check(any('bukan merge PR' in e for e in trust_errors('02', m, a, DL, G)[0]), 'jangkar: jangkar dan modul sama-sama diganti → bukan merge PR, ditolak')
+    m = copy.deepcopy(M5); m['status']['owner_accepted'] = 'YES'; m['acceptance'] = {'historical': {'id': 'W05-ACC', 'baseline_commit': head}}
+    r.check(any('tanpa jangkar' in e for e in trust_errors('05', m, A, DL, G)[0]), 'jangkar: promosi penerimaan W5 tanpa otorisasi ditolak')
+    r.check(any('catatan keputusan owner' in e for e in trust_errors('02', M2, A, DL.replace('| W02-ACC | OWNER ACCEPTED', '| W02-ACC | PROPOSED'), G)[0]), 'jangkar: catatan keputusan owner hilang ditolak')
+    a = copy.deepcopy(A); a['02']['baseline_commit'] = '846051f'
+    m = copy.deepcopy(M2); m['acceptance']['historical']['baseline_commit'] = '846051f'
+    r.check(any('SHA penuh' in e for e in trust_errors('02', m, a, DL, G)[0]), 'jangkar: SHA pendek ditolak')
+    return 8
+
 def main():
     r = Report('penerimaan')
     pend = 0
+    A = load_anchors(); DL = (ROOT / 'docs/DECISIONS_LOG.md').read_text(encoding='utf-8'); G = Git()
     for m in ('01', '02', '03', '04', '05', '06', '07', '08'):
         M = load(f'mod-w{m}/module.yaml'); st = M['status']['owner_accepted']
+        terr, trusted = trust_errors(m, M, A, DL, G)
+        for e in terr: r.check(False, e)
+        r.check(True, f'W{m}: jangkar penerimaan')
+        if (st is True or st == 'YES') and trusted is None:
+            print(f'  W{m}: jangkar penerimaan GAGAL — perbandingan baseline dilewati'); continue
         if st is True or st == 'YES':
             a = M.get('acceptance')
             if not r.check(a is not None and a['historical'].get('baseline_commit'), f'W{m}: blok acceptance/baseline_commit'): continue
             r.check(a['historical']['id'] == f'W{m}-ACC', f'W{m}: id historis')
-            bc = a['historical']['baseline_commit']
+            bc = trusted   # R6-01: baseline dari jangkar tepercaya, bukan dari module.yaml
             err, changed = validate(m, current_variants(m), baseline_variants(m, bc), a, current_shared(m), baseline_shared(m, bc))
             pend += len(a.get('revised_variants') or [])
             for e in err: r.check(False, f'W{m}: {e}')
             r.check(True, f'W{m}: perbandingan baseline')
-            print(f'  W{m}: baseline {a["historical"]["baseline_commit"][:7]}; varian berubah {len(changed)}; tercatat PENDING {len(a.get("revised_variants") or [])}')
+            print(f'  W{m}: baseline tepercaya {bc[:7]} (merge PR #{A[m]["pr"]}, {A[m]["acceptance_id"]}); varian berubah {len(changed)}; tercatat PENDING {len(a.get("revised_variants") or [])}')
         else:
             r.check(not (M.get('acceptance') or {}).get('historical'), f'W{m}: belum diterima, tidak boleh ada penerimaan historis')
             print(f'  W{m}: belum diterima owner')
     print(f'  total varian W1–W4 tercatat PENDING: {pend}')
     mutation_tests(r)
-    print('  uji validator: 22 kasus — 18 mutasi terdeteksi, 4 kasus sah diterima (data asli; versi historis 2.0; revisi 2.0 → 3.0; field bersama berubah + semua varian tercatat)')
+    print('  uji validator: 27 kasus — 22 mutasi terdeteksi, 5 kasus sah diterima (data asli; versi historis 2.0; revisi 2.0 → 3.0; field bersama berubah + semua varian tercatat; lokasi asli)')
+    nt = trust_tests(r)
+    print(f'  uji jangkar R6-01: {nt} kasus — 7 penolakan, 1 penerimaan (baseline sah)')
     return r.done()
 
 if __name__ == '__main__':

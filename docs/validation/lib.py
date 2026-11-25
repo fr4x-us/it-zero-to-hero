@@ -95,6 +95,7 @@ def nb5(raw, accepted):
     """Kembalikan ACCEPT / WRONG / INVALID untuk satu isian terhadap accepted_answers butir.
     N1 trim; N2 bentuk angka; N3 afiks: awalan `Rp` (hanya butir rupiah) dan akhiran dari accepted_answers;
     N4 huruf diabaikan hanya pada akhiran; N5 kanonisasi; N6 bandingkan dengan angka kanonik (presisi sama).
+    R6-04: kombinasi (awalan, akhiran) isian harus sama dengan salah satu entri accepted_answers.
     R5-04: konten cacat → CONTENT_ERROR; isian bukan teks → EVALUATION_ERROR (bukan WRONG/INVALID; tanpa exception)."""
     try:
         if nb5_content_errors(accepted):
@@ -102,13 +103,15 @@ def nb5(raw, accepted):
         if not isinstance(raw, str):
             return 'EVALUATION_ERROR'
         acc = [str(a) for a in accepted]
-        sufs, rp, canon = set(), False, None
+        sufs, rp, canon, combos = set(), False, None, set()
         for a in acc:
             m = re.fullmatch(r'(Rp ?)?([-−]?[\d.,]+) ?(.*)', a)
             if m.group(1):
                 rp = True
             if m.group(3):
                 sufs.add(m.group(3))
+            # R6-04: kombinasi afiks yang sah hanya yang tertulis di accepted_answers (tidak dirakit dari awalan + akhiran terpisah)
+            combos.add((bool(m.group(1)), m.group(3).lower()))
             if canon is None and not m.group(1) and not m.group(3):
                 canon = _canon_num(m.group(2))
         s = raw.strip(' \t')
@@ -119,6 +122,8 @@ def nb5(raw, accepted):
         if pre and not rp:
             return 'INVALID'
         if suf and suf.lower() not in {x.lower() for x in sufs}:
+            return 'INVALID'
+        if (bool(pre), suf.lower()) not in combos:
             return 'INVALID'
         n = _canon_num(num)
         if n is None:

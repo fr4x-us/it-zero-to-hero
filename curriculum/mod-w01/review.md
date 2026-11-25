@@ -488,3 +488,12 @@ Butir W1 yang diterima tidak diubah pada putaran ini.
 | R5-05 | Validator penerimaan kini juga membandingkan field slot bersama (kompetensi, required_concepts, format, max_points, validation, feedback_stage, difficulty, estimated_seconds, normalisasi lab) dengan baseline `df76c5f`; W1: 1 varian PENDING, tidak ada perubahan field bersama | CONFIRMED — FIXED | YA | BELUM |
 
 Butir W1 yang diterima tidak diubah pada putaran ini.
+
+### Putaran 7 (koreksi konsolidasi; otorisasi owner bersyarat; temuan sementara R6-01–R6-06)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R6-01 | Baseline penerimaan W01-ACC kini diambil dari jangkar terpisah (`docs/validation/trust/acceptance_anchors.yaml`): `df76c5fbf946e6e8d2ca9e8e87505454041623a3` = merge PR #25, leluhur HEAD, baris W01-ACC di DECISIONS_LOG. Batas: bukan bukti kriptografis | CONFIRMED — FIXED | YA | BELUM |
+| R6-02 | Lokasi varian (modul, komponen, path, slot, item, variant_id) dibandingkan dengan baseline; W1 tidak ada relokasi | CONFIRMED — FIXED | YA | BELUM |
+
+Butir W1 yang diterima tidak diubah pada putaran ini.

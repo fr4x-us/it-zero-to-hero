@@ -20,28 +20,29 @@ feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
 variants:
 - item_id: item-w04-c-s01-a
   variant_id: mod-w04.concept.s01.vA
-  item_version: '1.0'
-  stem: Cocokkan setiap istilah dengan penjelasannya.
+  item_version: '2.0'
+  stem: Cocokkan setiap kejadian dengan istilah yang paling tepat (tiga gangguan → tujuan keamanan yang
+    terutama terganggu; satu kejadian → istilahnya).
   left:
   - id: L1
-    text: Kerahasiaan
+    text: Foto KTP pelanggan dilihat oleh orang yang tidak berhak
   - id: L2
-    text: Integritas
+    text: Nilai rapor di server sekolah diubah tanpa izin
   - id: L3
-    text: Ketersediaan
+    text: Aplikasi bank tidak dapat dipakai karena server mengalami gangguan
   - id: L4
-    text: Autentikasi
+    text: Kode dari aplikasi autentikator diperiksa sebelum akun dibuka
   right:
   - id: R1
-    text: Data dan layanan dapat dipakai saat dibutuhkan
+    text: Ketersediaan
   - id: R2
-    text: Memeriksa bukti yang terdaftar untuk akun sebelum mengizinkan masuk
+    text: Autentikasi
   - id: R3
-    text: Data hanya dapat dibaca pihak yang berhak
+    text: Kerahasiaan
   - id: R4
-    text: Software yang dibuat untuk merugikan
+    text: Pencadangan data
   - id: R5
-    text: Data tidak diubah tanpa izin
+    text: Integritas
   key_mapping:
     L1: R3
     L2: R5
@@ -49,7 +50,8 @@ variants:
     L4: R2
   credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
     dua kali → INVALID_ANSWER (CE-V3)
-  feedback: 'R4 adalah pengecoh: itu definisi malware.'
+  feedback: 'R4 adalah pengecoh: pencadangan adalah praktik perlindungan, bukan tujuan yang terganggu
+    atau proses memeriksa bukti masuk.'
 - item_id: item-w04-c-s01-b
   variant_id: mod-w04.concept.s01.vB
   item_version: '1.0'

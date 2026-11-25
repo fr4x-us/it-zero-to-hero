@@ -10,7 +10,7 @@ feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (F
 variants:
 - item_id: item-w04-t-s10-a
   variant_id: mod-w04.theory.s10.vA
-  item_version: '1.0'
+  item_version: '2.0'
   stem: Pilih **semua** kebiasaan kata sandi yang baik.
   options:
   - id: a
@@ -20,7 +20,7 @@ variants:
   - id: c
     text: Menyimpan kata sandi di pengelola kata sandi
   - id: d
-    text: Mengaktifkan MFA bila tersedia
+    text: Tidak memberikan OTP kepada siapa pun, termasuk penelepon yang mengaku petugas resmi
   - id: e
     text: Memakai tanggal lahir agar mudah diingat
   key:
@@ -31,7 +31,8 @@ variants:
   distractor_rationale:
     b: Satu kebocoran membuka semua akun
     e: Mudah ditebak
-  explanation: Panjang, disimpan di pengelola, dan MFA adalah kebiasaan baik.
+  explanation: Panjang, disimpan di pengelola, dan merahasiakan OTP adalah kebiasaan baik; sandi yang
+    sama untuk semua akun membuat satu kebocoran membuka semua akun, dan tanggal lahir mudah ditebak.
 - item_id: item-w04-t-s10-b
   variant_id: mod-w04.theory.s10.vB
   item_version: '1.0'

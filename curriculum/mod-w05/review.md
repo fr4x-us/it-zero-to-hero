@@ -328,3 +328,14 @@ Baris putaran 5 di atas adalah catatan historis; status aktif di bawah ini. Caku
 | PR28-06 | **OPEN**: cakupan 153 PASS, 3 OPEN (W3 router/switch, W4 OTP — tidak diotorisasi), 0 GAP; kesetaraan 47 PASS, 1 OPEN (W4 concept s01) | TIDAK | BELUM |
 | R5-01 | Kolom elemen bernilai tepat di matriks; W5 semua elemen tervalidasi (keberadaan + dinilai) | YA | BELUM |
 | R5-04 | NB-5: konten cacat → CONTENT_ERROR, isian bukan teks → EVALUATION_ERROR; konsumen W5 tanpa konten cacat; N1–N6 tidak berubah | YA | BELUM |
+
+### Putaran 7 (koreksi konsolidasi; temuan sementara R6-01–R6-06)
+
+Baris putaran 6 di atas adalah catatan historis; status aktif di bawah ini. Cakupan dan kesetaraan = **hasil penulis**.
+
+| ID | Hasil penulis | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|
+| PR28-06 | **OPEN** sampai review independen dan penerimaan owner; hasil penulis: cakupan 156 PASS, 0 OPEN, 0 GAP; kesetaraan 48 PASS, 0 OPEN | TIDAK | BELUM |
+| R6-03 | Integritas kunci W5 (teori, concept, lab, proyek) tervalidasi | YA | BELUM |
+| R6-04 | NB-5: kombinasi afiks hanya yang tertulis di accepted_answers; konsumen W5 tidak terdampak | YA | BELUM |
+| R6-05 | Pemindai konsumen NB-5 tahan konten cacat (CONTENT_ERROR + path + ID; exit 1) | YA | BELUM |

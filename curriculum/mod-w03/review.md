@@ -525,3 +525,10 @@ Butir W3 yang diterima tidak diubah pada putaran ini.
 | R6-A | Otorisasi owner: concept s03 vB 1.0 → 2.0. Baris salah 4 "jumlah host 2⁸ − 1 = 255" → koreksi b 254 (CE-S5, 4 poin); baris keanggotaan kini benar. Keanggotaan jaringan dijamin lab act-02.c06–c08 (vA+vB). Kesetaraan s03 PASS (penilaian penulis). Posisi kunci W3 tidak berubah. Tercatat `acceptance.revised_variants` PENDING | APPLIED | YA | BELUM |
 | R5-02 | Peran router/switch: lokasi wajib alternatif diperiksa (teori s01, s03; lab act-03.c01; K4.q1) — tidak ada bukti kuat; usulan diperbaiki di matriks §7 (concept s01 vA, pengecoh peran tertukar) — TIDAK diterapkan (tidak diotorisasi) | OPEN | TIDAK | BELUM |
 | R5-05 | Field slot bersama dibandingkan dengan baseline; W3: 3 varian PENDING | CONFIRMED — FIXED | YA | BELUM |
+
+### Putaran 7 (koreksi konsolidasi; otorisasi owner bersyarat; temuan sementara R6-01–R6-06)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R7-A / R5-02 | Otorisasi bersyarat: concept s01 vA 1.0 → 2.0 (kotak router Wi-Fi multifungsi, cetak lewat kabel saat internet putus) dan vB 1.0 → 2.0 (lab hanya switch, berbagi berkas jalan, situs tidak terbuka). Kunci kedua varian menyatakan switch meneruskan data di dalam LAN dan router meneruskan paket ke jaringan lain; pengecoh menukar fungsi atau mengacaukan access point; panjang opsi diseimbangkan; kunci b/d tetap. Peran router, peran switch, dan LAN vs internet kini concept vA+vB (hasil penulis). Batas: alamat MAC tidak diajarkan di pelajaran W3, sehingga tidak dinilai (mengubah pelajaran tidak diotorisasi). Tercatat PENDING | APPLIED | YA | BELUM |
+| R6-01 | Jangkar W03-ACC: merge PR #27 | CONFIRMED — FIXED | YA | BELUM |

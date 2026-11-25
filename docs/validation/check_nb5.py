@@ -1,5 +1,6 @@
 """PR28-02: kontrak NB-5 (N1–N6) — fixture terikat butir, pemindaian konsumen W5–W6, uji mutasi, F-51 W3."""
 import glob, re, sys, yaml
+from pathlib import Path
 from lib import CUR, load, nb5, nb5_content_errors, Report
 
 def find(file, ident):
@@ -18,30 +19,41 @@ def find(file, ident):
 W6_NOT_NB5 = {'act-01': {'c05', 'c06', 'c07'}, 'act-02': {'c01', 'c02', 'c03', 'c04', 'c06'}, 'act-03': {'c01', 'c02', 'c03', 'c04', 'c05'}}
 WORD = {'satu': 1, 'dua': 2, 'tiga': 3}
 
-def consumers(modules=('05', '06')):
+def consumers(modules=('05', '06'), root=CUR):
+    """Kumpulkan konsumen NB-5. R6-05: tidak ada akses tanpa pemeriksaan ke accepted_answers[0];
+    konsumen dengan konten cacat tetap dikembalikan agar audit melaporkannya sebagai CONTENT_ERROR."""
     out = []
     for m in modules:
-        for f in sorted(glob.glob(str(CUR / f'mod-w{m}/theory/items/*.yaml'))):
-            for v in yaml.safe_load(open(f, encoding='utf-8'))['variants']:
-                if 'NB-5' in v.get('normalization', ''):
-                    out.append((v['variant_id'], v['stem'], v['accepted_answers'], v['normalization'], None))
-        for f in sorted(glob.glob(str(CUR / f'mod-w{m}/lab/act-0*/checks.yaml'))):
-            d = yaml.safe_load(open(f, encoding='utf-8')); act = f.split('/')[-2]
-            for var in d['variants']:
-                for c in var['checks']:
+        for f in sorted(glob.glob(str(root / f'mod-w{m}/theory/items/*.yaml'))):
+            rel = f[len(str(root)) + 1:]
+            for v in (yaml.safe_load(open(f, encoding='utf-8')) or {}).get('variants') or []:
+                if 'NB-5' in str(v.get('normalization', '')):
+                    out.append((v.get('variant_id', '?'), str(v.get('stem', '')), v.get('accepted_answers'), str(v.get('normalization', '')), None, rel))
+        for f in sorted(glob.glob(str(root / f'mod-w{m}/lab/act-0*/checks.yaml'))):
+            rel = f[len(str(root)) + 1:]
+            d = yaml.safe_load(open(f, encoding='utf-8')) or {}; act = f.split('/')[-2]
+            for var in d.get('variants') or []:
+                for c in var.get('checks') or []:
                     if 'accepted_answers' not in c:
                         continue
-                    if m == '06' and c['check_id'][-3:] in W6_NOT_NB5.get(act, set()):
+                    cid = str(c.get('check_id', '?'))
+                    if m == '06' and cid[-3:] in W6_NOT_NB5.get(act, set()):
                         continue
-                    if not re.fullmatch(r'[-−]?[\d.,]+', str(c['accepted_answers'][0])):
-                        continue
-                    out.append((c['check_id'], c.get('question', ''), c['accepted_answers'], d['normalization'],
-                                d.get('answer_validation', '') + ' ' + d.get('infrastructure', '')))
+                    acc = c['accepted_answers']
+                    first = acc[0] if isinstance(acc, list) and acc else None
+                    if first is not None and not isinstance(first, (dict, list)) and not re.fullmatch(r'[-−]?[\d.,]+', str(first)):
+                        continue   # pemeriksaan teks (bukan NB-5)
+                    out.append((cid, str(c.get('question', '')), acc, str(d.get('normalization', '')),
+                                str(d.get('answer_validation', '')) + ' ' + str(d.get('infrastructure', '')), rel))
     return out
 
 def audit(items):
     find_ = []
-    for iid, stem, acc, norm, val in items:
+    for it in items:
+        iid, stem, acc, norm, val = it[:5]; rel = it[5] if len(it) > 5 else '?'
+        ce = nb5_content_errors(acc)
+        if ce:   # R6-05: konten divalidasi sebelum menurunkan kanonik, presisi, atau afiks
+            find_.append((iid, f'CONTENT_ERROR [{rel}]: ' + '; '.join(ce))); continue
         acc = [str(a) for a in acc]
         if 'N1–N6' not in norm:
             find_.append((iid, 'teks normalisasi belum kontrak N1–N6')); continue
@@ -77,6 +89,49 @@ def audit(items):
         if val is not None and 'EVALUATION_ERROR' not in val:
             find_.append((iid, 'lab tanpa pembeda EVALUATION_ERROR'))
     return find_
+
+def scan(root):
+    """Pemindaian ujung-ke-ujung: kembalikan (konsumen, temuan) tanpa exception tak tertangani."""
+    items = consumers(root=root)
+    return items, audit(items)
+
+def scanner_mutation_tests(r):
+    """R6-05: salin W5–W6 ke direktori sementara, suntikkan konten cacat, jalankan pemindai dan CLI."""
+    import shutil, tempfile, subprocess
+    cases = [('kosong', 'theory', lambda v: v.__setitem__('accepted_answers', [])),
+             ('hilang', 'theory', lambda v: v.pop('accepted_answers')),
+             ('bukan daftar', 'theory', lambda v: v.__setitem__('accepted_answers', '204000')),
+             ('entri cacat', 'theory', lambda v: v.__setitem__('accepted_answers', [None, '204000'])),
+             ('kanonik tidak sah', 'theory', lambda v: v.__setitem__('accepted_answers', ['0204000'])),
+             ('lab kosong', 'lab', lambda c: c.__setitem__('accepted_answers', [])),
+             ('lab entri dict', 'lab', lambda c: c.__setitem__('accepted_answers', [{'x': 1}]))]
+    n = 0
+    for name, kind, mut in cases:
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / 'curriculum'
+            for m in ('05', '06'): shutil.copytree(CUR / f'mod-w{m}', root / f'mod-w{m}')
+            if kind == 'theory':
+                f = root / 'mod-w05/theory/items/s15.yaml'; d = yaml.safe_load(open(f, encoding='utf-8')); mut(d['variants'][0]); want = 'mod-w05.theory.s15.vA'
+            else:
+                f = root / 'mod-w05/lab/act-01/checks.yaml'; d = yaml.safe_load(open(f, encoding='utf-8'))
+                c = [c for c in d['variants'][0]['checks'] if 'accepted_answers' in c][0]; mut(c); want = c['check_id']
+            yaml.safe_dump(d, open(f, 'w', encoding='utf-8'), allow_unicode=True, sort_keys=False)
+            try:
+                items, fnd = scan(root); exc = None
+            except Exception as e:  # noqa
+                fnd, exc = [], e
+            ok = exc is None and any(i == want and t.startswith('CONTENT_ERROR [') for i, t in fnd)
+            ok &= not any(t.startswith(('WRONG', 'INVALID')) for _, t in fnd)
+            r.check(ok, f'pemindai: konten cacat "{name}" → CONTENT_ERROR terkendali ({exc!r})', 'REGRESI'); n += 1
+            if name == 'kosong':   # CLI: kegagalan terkendali, exit 1, tanpa traceback
+                p = subprocess.run([sys.executable, __file__, '--scan-root', str(root)], capture_output=True, text=True)
+                r.check(p.returncode == 1 and 'Traceback' not in p.stderr and 'CONTENT_ERROR' in p.stdout, f'pemindai CLI: exit {p.returncode}, traceback {"Traceback" in p.stderr}', 'REGRESI'); n += 1
+    with tempfile.TemporaryDirectory() as td:
+        root = Path(td) / 'curriculum'
+        for m in ('05', '06'): shutil.copytree(CUR / f'mod-w{m}', root / f'mod-w{m}')
+        p = subprocess.run([sys.executable, __file__, '--scan-root', str(root)], capture_output=True, text=True)
+        r.check(p.returncode == 0 and 'Traceback' not in p.stderr, f'pemindai CLI: salinan sah exit {p.returncode}', 'REGRESI'); n += 1
+    return n
 
 def main():
     r = Report('NB-5')
@@ -125,7 +180,14 @@ def main():
     caught = {m[0] for m in audit(mut)}
     r.check(caught == {m[0] for m in mut}, f'uji mutasi tidak semua tertangkap: {caught}')
     print(f'  uji mutasi tertangkap: {len(caught)}/{len(mut)}')
+    ns = scanner_mutation_tests(r)
+    print(f'  uji pemindai ujung-ke-ujung R6-05: {ns} (7 konten cacat, 2 CLI)')
     return r.done()
 
 if __name__ == '__main__':
+    if '--scan-root' in sys.argv:
+        _items, _f = scan(Path(sys.argv[sys.argv.index('--scan-root') + 1]))
+        for x in _f: print('  TEMUAN', *x)
+        print(f'konsumen {len(_items)}; temuan {len(_f)}')
+        sys.exit(1 if _f else 0)
     sys.exit(0 if main() else 1)

@@ -43,5 +43,5 @@ ALT_EL = {
 ('02', 'manajemen file', 'theory', 's02'): {'B': ['a']},
 ('02', 'ekstensi memilih aplikasi pembuka', 'theory', 's09'): {'A': ['a'], 'B': ['b']},
 ('04', 'sandi unik', 'theory', 's10'): {'A': ['b'], 'B': ['b']},
-('04', 'OTP tidak dibagikan', 'theory', 's10'): {'B': ['d']},
+('04', 'OTP tidak dibagikan', 'theory', 's10'): {'A': ['d'], 'B': ['d']},
 }

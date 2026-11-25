@@ -41,6 +41,22 @@ Kontrak: **D-39 HYBRID COMPETENCY COVERAGE** ([DECISIONS_LOG.md](DECISIONS_LOG.m
   (blueprint teori 20 slot; concept 6 slot; lab RA-1). Generator
   mensimulasikan VA-2 (8 attempt × 20 slot → A, B, A, B, … untuk semua slot).
   Konsep yang memakai bukti (b): **1**. Aturan pemilihan tidak diubah.
+- **Status bukti (b): CONDITIONAL PASS (putaran 7).** Simulasi generator:
+  riwayat yang diizinkan kontrak (attempt normal, attempt terputus yang
+  dicatat apa adanya SB-8/SB-9, remedial VA-3, restore attempt utuh A-8/P-10)
+  tetap sinkron. Riwayat yang **tidak** dijamin kontrak (pemilihan/pencatatan
+  varian per slot tidak atomik; catatan satu slot hilang) dapat tidak
+  sinkron, dan kasus pertama dapat menghasilkan jalur teori s15 vB + s17 vA
+  yang tidak menilai "salin mempertahankan asal". Ketergantungan terbuka:
+  VA-4 tidak menyatakan bahwa semua varian slot dipilih dan disimpan
+  **atomik saat attempt dibuat**; SB-12 (restore saat `IN_PROGRESS`)
+  menunggu OD-9 (UW-33). Kebijakan VA-2 tidak diubah; tidak ada verifikasi
+  runtime Android.
+- **Integritas kunci (R6-03, STRUKTUR)**: generator memeriksa bahwa setiap
+  kunci merujuk elemen yang ada dan dinilai (opsi, baris + opsi koreksi,
+  pasangan satu-ke-satu, permutasi urutan, kunci lab/K4, poin > 0) untuk
+  semua varian teori/concept, lab, dan proyek W1–W8. Ini bukan bukti bahwa
+  kunci benar secara makna.
 - **Status**: PASS bila bukti jalur terpenuhi dengan lokasi berbukti
   semantik **kuat**; OPEN bila hanya terpenuhi dengan bukti semantik
   **lemah**; GAP bila tidak terpenuhi.
@@ -56,13 +72,13 @@ Kontrak: **D-39 HYBRID COMPETENCY COVERAGE** ([DECISIONS_LOG.md](DECISIONS_LOG.m
 |---|---|---|---|---|
 | W1 | 19 | 19 | 0 | 0 |
 | W2 | 24 | 24 | 0 | 0 |
-| W3 | 20 | 18 | 0 | 2 |
-| W4 | 20 | 19 | 0 | 1 |
+| W3 | 20 | 20 | 0 | 0 |
+| W4 | 20 | 20 | 0 | 0 |
 | W5 | 21 | 21 | 0 | 0 |
 | W6 | 19 | 19 | 0 | 0 |
 | W7 | 14 | 14 | 0 | 0 |
 | W8 | 19 | 19 | 0 | 0 |
-| **Total** | **156** | **153** | **0** | **3** |
+| **Total** | **156** | **156** | **0** | **0** |
 
 Riwayat: baseline `a644d61` — 15 GAP (W1 1, W2 8, W3 2, W4 3, W6 1) →
 dikoreksi putaran 3. Putaran 4 (review `4ddc993`): R3-04 = koreksi bukti
@@ -70,13 +86,15 @@ saja; R3-05, R3-06, R3-07 = bukti penolakan opsi tidak cukup, butir
 direvisi minimum; R3-03 = isu keselamatan prosedur dikoreksi. Putaran 5
 (review `796043c`, R4-03): proyek K4.q3 dihapus sebagai bukti salin; tiga
 baris hanya berbukti semantik lemah kini **OPEN**. GAP: **0**; OPEN:
-**3** (usulan koreksi di §7, menunggu otorisasi owner). Putaran 6
+**0** (usulan koreksi di §7, menunggu otorisasi owner). Putaran 6
 (otorisasi owner): 4 varian concept direvisi untuk kesetaraan; cakupan tetap 153/3/0.
+Putaran 7 (otorisasi bersyarat): 4 varian direvisi; cakupan 156/0/0 dan
+kesetaraan 48/0 — **hasil penulis**, belum diverifikasi independen; PR28-06 tetap OPEN.
 
-Kesetaraan akademik varian (R3-02/R4-04–R4-09, §6; penilaian penulis): **47 PASS**,
-**1 OPEN** dari 48 slot. Cakupan modul dan kesetaraan varian adalah syarat terpisah.
+Kesetaraan akademik varian (R3-02/R4-04–R4-09, §6; penilaian penulis): **48 PASS**,
+**0 OPEN** dari 48 slot. Cakupan modul dan kesetaraan varian adalah syarat terpisah.
 
-## 3. Koreksi butir untuk cakupan dan kesetaraan (D-39, putaran 3–4 dan 6)
+## 3. Koreksi butir untuk cakupan dan kesetaraan (D-39, putaran 3–4, 6, dan 7)
 
 | Modul | Varian | Perubahan | Konsep | Kunci | Versi |
 |---|---|---|---|---|---|
@@ -99,6 +117,10 @@ Kesetaraan akademik varian (R3-02/R4-04–R4-09, §6; penilaian penulis): **47 P
 | W4 | concept s03 vB (R6) | baris salah 2: PIN 4 digit "40" → 10.000; baris MFA kini benar (sandi + PIN = dua faktor "yang diketahui") | kombinasi ×10 per digit | 2 + b | 2.0 |
 | W7 | concept s02 vB (CB-2, R6) | baris salah 3: 3, 9, 27, 81 "bertambah tetap 6" → berlipat tiga | berlipat | 3 + c | 2.0 |
 | W7 | concept s03 vB (CB-2, R6) | skenario formulir lomba lari: menyaring informasi menurut tujuan | menyaring informasi menurut tujuan | d | 2.0 |
+| W3 | concept s01 vA (R7) | skenario kotak router Wi-Fi multifungsi; kunci: switch meneruskan di dalam LAN, router ke jaringan lain; pengecoh fungsi tertukar / access point | LAN vs internet, peran router, peran switch | b | 2.0 |
+| W3 | concept s01 vB (R7) | skenario lab hanya switch; struktur kunci dan pengecoh cermin vA | idem | d | 2.0 |
+| W4 | concept s01 vA (R7) | kejadian → istilah (foto KTP, nilai rapor, aplikasi bank, kode autentikator); R4 "Pencadangan data" | kerahasiaan, integritas, ketersediaan, autentikasi | L1→R3, L2→R5, L3→R1, L4→R2 | 2.0 |
+| W4 | teori s10 vA (R7) | opsi d benar: tidak memberikan OTP kepada siapa pun (menggantikan "aktifkan MFA"); opsi e tanggal lahir tetap | OTP tidak dibagikan | a, c, d | 2.0 |
 
 Format, poin, kompetensi, dan distribusi posisi kunci setiap modul tidak
 berubah (`check_keys.py`, snapshot = baseline `4ddc993`). Varian W1–W4 di
@@ -116,7 +138,7 @@ atas **belum diterima** (TPL-01a `acceptance.revised_variants`, PENDING).
 | R3-06 | Tanda vs bukti: vB opsi e tidak menuntut "bukan bukti" | CONFIRMED — FIXED (W4 concept s02 vB opsi e) | YA | BELUM |
 | R3-07 | Pernyataan majemuk W4 concept s05 vA opsi b | CONFIRMED — FIXED (tidak ada lokasi wajib lain; opsi dijadikan satu klaim) | YA | BELUM |
 | R3-08 | Status penerimaan hanya di komentar YAML | CONFIRMED — FIXED (TPL-01a `acceptance`, `check_acceptance.py`) | YA | BELUM |
-| PR28-06 | Cakupan `required_concepts` | D-39 dicatat; audit penulis; **tetap OPEN**: 3 baris cakupan berbukti lemah; kesetaraan OPEN 5 → 1 slot (W4 concept s01) setelah putaran 6 | SEBAGIAN | BELUM |
+| PR28-06 | Cakupan `required_concepts` | D-39 dicatat; audit penulis; **tetap OPEN**: putaran 7: cakupan 156 PASS dan kesetaraan 48 PASS (hasil penulis); tetap OPEN sampai review independen dan penerimaan owner | SEBAGIAN | BELUM |
 | PR28-02 | NB-5 | Paket reproduksi `docs/validation/` | YA | BELUM (PARTIAL PASS independen) |
 
 ## 4b. Register temuan reviewer putaran 4 (ID sementara R4-xx)
@@ -142,19 +164,28 @@ atas **belum diterima** (TPL-01a `acceptance.revised_variants`, PENDING).
 | R5-04 | NB-5 untuk konten cacat | CONFIRMED — FIXED: `nb5_content_errors()`; konten cacat → CONTENT_ERROR, isian bukan teks → EVALUATION_ERROR; 16 fixture + 112 kombinasi tanpa exception | YA | BELUM |
 | R5-05 | Validator penerimaan mengabaikan field slot bersama | CONFIRMED — FIXED: field tingkat berkas dibandingkan dengan baseline; perubahan bersama menandai semua varian berkas; 22 uji (18 mutasi terdeteksi); 16 varian W1–W4 PENDING | YA | BELUM |
 
-## 7. Usulan koreksi butir — MENUNGGU OTORISASI OWNER (tidak diterapkan)
+## 4d. Register temuan review putaran 6 dan otorisasi putaran 7 (ID sementara R6-xx)
 
-Usulan yang sudah diterapkan atas otorisasi putaran 6 (W3 concept s03 vB,
-W4 concept s03 vB, W7 concept s02 vB, W7 concept s03 vB) dipindah ke §3.
+| ID | Temuan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R7-A | Otorisasi bersyarat: W3 concept s01 vA/vB, W4 concept s01 vA, W4 teori s10 vA | APPLIED — versi 2.0; kunci/posisi kunci tetap; 4 varian putaran 6 tidak diubah; 20 varian W1–W4 PENDING | YA | BELUM |
+| R5-02 | Peran router/switch | APPLIED (R7) — kunci kedua varian menuntut fungsi keduanya; batas: alamat MAC tidak diajarkan di W3 sehingga tidak dinilai | YA | BELUM |
+| R5-03 | OTP tanpa menghapus bukti sandi mudah ditebak | APPLIED (R7) — opsi d vA; opsi e tetap; anjuran praktis MFA tetap dinilai wajib di proyek K1.c07 (E→T2), K1.c11 (D→T2), K4.q2; faktor MFA di lab act-03.c02 vA+vB | YA | BELUM |
+| R6-01 | Baseline penerimaan dipercaya dari metadata yang divalidasi | CONFIRMED — FIXED: jangkar terpisah `trust/acceptance_anchors.yaml` diperiksa silang dengan merge PR (#25, #27), leluhur HEAD, dan DECISIONS_LOG; baseline diambil dari jangkar; 8 uji. Batas: bukan bukti kriptografis otorisasi owner | YA | BELUM |
+| R6-02 | Relokasi varian tidak terdeteksi | CONFIRMED — FIXED: modul, komponen, path, slot_id, item_id, variant_id dibandingkan dengan baseline; 5 uji | YA | BELUM |
+| R6-03 | Kunci tidak divalidasi terhadap elemen | CONFIRMED — FIXED: integritas kunci 416 varian + lab + proyek; 28 uji (8 positif, 20 negatif) | YA | BELUM |
+| R6-04 | `Rp5000 rupiah` diterima padahal kombinasi tidak tertulis | CONFIRMED (direproduksi) — FIXED: hanya kombinasi (awalan, akhiran) yang tertulis di accepted_answers; 12 fixture | YA | BELUM |
+| R6-05 | Pemindai konsumen NB-5 mengakses `accepted_answers[0]` tanpa pemeriksaan | CONFIRMED — FIXED: validasi konten sebelum penurunan; diagnostik CONTENT_ERROR dengan path + ID; 9 uji ujung-ke-ujung termasuk CLI exit 1 tanpa traceback | YA | BELUM |
+| R6-06 | Ketidakakuratan dokumentasi | CONFIRMED — FIXED: README, OFFICIAL_RUN, hitungan fixture | YA | BELUM |
+| R3-04 / VA-2 | Bukti (b) bergantung pada riwayat sinkron | CONDITIONAL PASS — simulasi 6 skenario (§1); ketergantungan: pemilihan + pencatatan atomik semua slot (VA-4 tidak eksplisit), SB-12/OD-9 | SEBAGIAN | BELUM |
 
-| Slot | Masalah dan bukti | Usulan | Dampak dan batas |
-|---|---|---|---|
-| W3 concept s01 vA (diterima historis) — R5-02 | Peran router dan switch hanya berbukti lemah. Lokasi wajib alternatif diperiksa: teori s01 TF-1 kunci vA *Access point*, vB *Router* (Switch hanya pengecoh); lab act-03.c01 vA *Router*, vB *Access point*; teori s03 Switch hanya pengecoh; proyek K4.q1 menyebut "bagian switch/access point" hanya di kunci tanpa pembeda fungsi (lemah). Router vB (teori) + vA (lab) berada di komponen berbeda → bukan bukti (b) VA-2. | vA kunci b: "Laptop dan printer berada di LAN yang sama; fungsi switch/access point meneruskan data di dalam LAN, sedangkan fungsi router hanya diperlukan untuk menuju jaringan lain seperti internet". Ganti pengecoh d dengan peran tertukar: "Fungsi router meneruskan data di dalam LAN, sedangkan fungsi switch menghubungkan LAN ke internet". | CE-S1 hanya kunci dihitung; pengecoh peran tertukar membuat pemilihan kunci menuntut pembedaan fungsi. vB kunci d menyebut router saja; agar *peran switch* berbukti kuat di vB juga diperlukan revisi vB (kunci menyebut "switch hanya meneruskan di dalam LAN") — butuh otorisasi terpisah. Posisi kunci tetap. Penilaian semantik = review independen. |
-| W4 teori s10 vA (diterima historis) — R5-03 | Usulan lama (ganti opsi e "tanggal lahir") ditarik: opsi e adalah **satu-satunya** elemen bernilai W4 untuk sandi yang mudah ditebak dari data pribadi (lab act-03 vB c02 opsi c hanya pengecoh pilihan tunggal). | **Opsi 1 (tanpa ubah konten, kandidat bukti)**: jalur (b) VA-2 teori s12 vA kunci a ("Pesan memintamu mengirim kode OTP" = tanda phishing terkuat) + teori s10 vB opsi d (salah, dinilai). Perlu putusan semantik independen: s12 vA menilai pengenalan permintaan OTP sebagai phishing, belum tentu larangan membagikan. **Opsi 2 (ubah konten)**: vA ganti opsi d benar "Mengaktifkan MFA bila tersedia" dengan opsi benar "Tidak memberikan OTP kepada siapa pun, termasuk penelepon yang mengaku petugas"; kunci {a, c, d} dan opsi e tetap. | Opsi 2 kehilangan kebiasaan "aktifkan MFA" di vA (bukan required concept; faktor MFA dijamin lab act-03.c02 vA+vB). Kedua opsi tidak diterapkan; baris "OTP tidak dibagikan" tetap **OPEN**. |
-| W4 concept s01 vA (diterima historis) — usulan final | vA pemetaan istilah → definisi; vB kejadian → istilah. | vA menjadi kejadian → istilah dengan kejadian berbeda dari vB: L1 "Foto KTP pelanggan terlihat oleh orang yang tidak berhak" → R3 Kerahasiaan; L2 "Nilai rapor di server sekolah diganti tanpa izin" → R5 Integritas; L3 "Aplikasi bank tidak dapat dipakai selama server gangguan" → R1 Ketersediaan; L4 "Kode dari aplikasi autentikator diperiksa sebelum akun dibuka" → R2 Autentikasi; R4 pengecoh "Pencadangan data". | Pemetaan kunci {L1→R3, L2→R5, L3→R1, L4→R2} tidak berubah; 4 konsep wajib tetap dinilai per pasangan; kesetaraan tetap OPEN sampai diotorisasi dan direview. |
+## 7. Usulan koreksi butir
 
-Setiap usulan akan mengubah varian butir (versi naik; W1–W4 tercatat PENDING
-di TPL-01a) dan memerlukan otorisasi owner sebelum diterapkan.
+Tidak ada usulan terbuka. Usulan putaran 5–6 (W3 concept s01 vA/vB, W4
+concept s01 vA, W4 teori s10 vA) diterapkan atas otorisasi bersyarat
+putaran 7 (§3, §4d). Otorisasi revisi **bukan** penerimaan: semua varian
+revisi W1–W4 tetap PENDING (TPL-01a) sampai review independen dan
+penerimaan owner.
 
 ## 5. Matriks per konsep
 
@@ -203,9 +234,9 @@ di TPL-01a) dan memerlukan otorisasi owner sebelum diterapkan.
 | W2 | LO6 | s06 | hak minimum | inti | vA opsi dinilai c; vB opsi dinilai d | — | (a) concept slot concept | sama (VA-2 bergiliran) | pembacaan butir | PASS |
 | W2 | LO6 | s06 | izin sesuai fungsi | inti | vB opsi dinilai b,d | theory s18 [vA kunci b; vB kunci c] (kunci pilihan tunggal; semantik kuat) | (a) theory s18 | sama (VA-2 bergiliran) | pembacaan butir | PASS |
 | W2 | LO6 | s06 | akun biasa vs admin | pendukung | vA opsi dinilai a; vB opsi dinilai c | — | (a) concept slot concept | sama (VA-2 bergiliran) | D-39: concept s06 vB opsi c | PASS |
-| W3 | LO1 | s01 | LAN vs internet | inti | vA kunci b | project K4.q1 [kunci K4.q1] (kunci K4; semantik kuat) | (a) project K4.q1 | sama (VA-2 bergiliran) | pembacaan butir | PASS |
-| W3 | LO1 | s01 | peran router | inti | vB kunci d | lab act-03.c01 [vA act-03.c01] (pemeriksaan lab; semantik kuat); theory s01 [vB kunci c] (kunci pilihan tunggal; semantik kuat); project K4.q2 [kunci K4.q2] (kunci K4; semantik lemah) | (a) project K4.q2 — hanya dengan bukti semantik lemah | sama (VA-2 bergiliran) | R4-03: lab vA dan teori vB berada di komponen berbeda; jaminan hanya lewat kunci K4.q2 ("router memakai alamat publik dari ISP") — bukti semantik lemah | OPEN |
-| W3 | LO1 | s01 | peran switch | inti | vB kunci d | project K4.q1 [kunci K4.q1] (kunci K4; semantik lemah) | (a) project K4.q1 — hanya dengan bukti semantik lemah | sama (VA-2 bergiliran) | R4-03: peran switch hanya disebut dalam kurung pada kunci K4.q1 — bukti semantik lemah | OPEN |
+| W3 | LO1 | s01 | LAN vs internet | inti | vA kunci b; vB kunci d | project K4.q1 [kunci K4.q1] (kunci K4; semantik kuat) | (a) concept slot concept; project K4.q1 | sama (VA-2 bergiliran) | putaran 7: concept s01 vB 2.0 kunci d juga menuntut batas LAN–jaringan lain | PASS |
+| W3 | LO1 | s01 | peran router | inti | vA kunci b; vB kunci d | lab act-03.c01 [vA act-03.c01] (pemeriksaan lab; semantik kuat); theory s01 [vB kunci c] (kunci pilihan tunggal; semantik kuat); project K4.q2 [kunci K4.q2] (kunci K4; semantik lemah) | (a) concept slot concept | sama (VA-2 bergiliran) | putaran 7 (R5-02): concept s01 vA/vB 2.0 — kunci menyatakan router meneruskan paket ke jaringan lain; pengecoh menukar fungsi router/switch atau mengacaukan access point. Riwayat R4-03: lokasi lain hanya lemah atau beda komponen | PASS |
+| W3 | LO1 | s01 | peran switch | inti | vA kunci b; vB kunci d | project K4.q1 [kunci K4.q1] (kunci K4; semantik lemah) | (a) concept slot concept | sama (VA-2 bergiliran) | putaran 7 (R5-02): concept s01 vA/vB 2.0 — kunci menyatakan switch meneruskan data di dalam LAN; pengecoh fungsi tertukar. Batas: alamat MAC tidak diajarkan di pelajaran W3, jadi tidak dinilai. Riwayat R4-03: K4.q1 lemah | PASS |
 | W3 | LO2 | s02 | rentang privat | inti | vA opsi dinilai a,d; vB opsi dinilai a,d | — | (a) concept slot concept | sama (VA-2 bergiliran) | pembacaan butir | PASS |
 | W3 | LO2 | s02 | alamat publik dari ISP | inti | vB opsi dinilai c | project K4.q2 [kunci K4.q2] (kunci K4; semantik kuat) | (a) project K4.q2 | sama (VA-2 bergiliran) | pembacaan butir | PASS |
 | W3 | LO2 | s02 | NAT berbagi alamat publik | pendukung | vA opsi dinilai e; vB opsi dinilai e | — | (a) concept slot concept | sama (VA-2 bergiliran) | R3-05: vB opsi e kini menyatakan "tidak dapat berbagi satu alamat publik" (salah); vA opsi e benar | PASS |
@@ -231,7 +262,7 @@ di TPL-01a) dan memerlukan otorisasi owner sebelum diterapkan.
 | W4 | LO2 | s02 | trojan menyamar | inti | vA opsi dinilai c; vB opsi dinilai c | — | (a) concept slot concept | sama (VA-2 bergiliran) | pembacaan butir | PASS |
 | W4 | LO2 | s02 | tanda bukan bukti pasti | pendukung | vA opsi dinilai e; vB opsi dinilai e | — | (a) concept slot concept | sama (VA-2 bergiliran) | R3-06: vB opsi e kini "…belum membuktikan pesannya pasti phishing" (benar); vA opsi e | PASS |
 | W4 | LO3 | s03 | faktor berbeda jenis | inti | — | lab act-03.c02 [vA act-03.c02; vB act-03.c02] (pemeriksaan lab; semantik kuat) | (a) lab act-03.c02 | sama (VA-2 bergiliran) | putaran 6: concept s03 vB kini baris salah PIN; MFA dijamin lab act-03.c02 | PASS |
-| W4 | LO3 | s03 | OTP tidak dibagikan | pendukung | — | project K1.c02 [kriteria K1.c02] (pemeriksaan proyek; semantik lemah); theory s10 [vB opsi dinilai d] (setiap opsi dinilai; semantik kuat) | (a) project K1.c02 — hanya dengan bukti semantik lemah | sama (VA-2 bergiliran) | R4-03: K1.c02 menilai klasifikasi S2 (penelepon meminta OTP) sebagai rekayasa sosial, bukan larangan membagikan OTP secara langsung; K4.q5 (kanal resmi) dihapus sebagai bukti — bukti semantik lemah | OPEN |
+| W4 | LO3 | s03 | OTP tidak dibagikan | pendukung | — | project K1.c02 [kriteria K1.c02] (pemeriksaan proyek; semantik lemah); theory s10 [vA opsi dinilai d; vB opsi dinilai d] (setiap opsi dinilai; semantik kuat) | (a) theory s10 | sama (VA-2 bergiliran) | putaran 7 (R5-03): teori s10 vA 2.0 opsi d benar (tidak memberikan OTP kepada siapa pun) + vB opsi d salah (membagikan OTP), TP-B semua-atau-tidak. Riwayat R4-03: K1.c02 menilai klasifikasi S2 (penelepon meminta OTP) sebagai rekayasa sosial, bukan larangan membagikan OTP secara langsung; K4.q5 (kanal resmi) dihapus sebagai bukti — bukti semantik lemah | PASS |
 | W4 | LO3 | s03 | kombinasi ×10 per digit | inti | vA baris salah 3 + koreksi a; vB baris salah 2 + koreksi b | theory s09 [vA isian 10000; vB isian 100000] (isian; semantik kuat); lab act-03.c03 [vA act-03.c03; vB act-03.c03] (pemeriksaan lab; semantik kuat) | (a) concept slot concept; theory s09; lab act-03.c03 | sama (VA-2 bergiliran) | pembacaan butir | PASS |
 | W4 | LO3 | s03 | sandi unik | inti | — | theory s10 [vA opsi dinilai b; vB opsi dinilai b] (setiap opsi dinilai; semantik kuat) | (a) theory s10 | sama (VA-2 bergiliran) | pembacaan butir | PASS |
 | W4 | LO4 | s04 | domain terdaftar menunjukkan pengendali nama | inti | vA kunci b; vB kunci a | — | (a) concept slot concept | sama (VA-2 bergiliran) | pembacaan butir | PASS |
@@ -335,13 +366,13 @@ Register ini adalah **penilaian semantik penulis** (`equivalence_notes.py`), buk
 | W2 s04 | LO4 — Menafsirkan path relatif terpendek | CE-S5, 4 poin (slot) | vA: baris salah `/Musik` → `../Musik` (5 baris, 4 perbaikan) | vB: baris salah `../../sampul.png` → `../sampul.png` (5 baris, 4 perbaikan) | Keterampilan sama (menghitung naik tingkat dan membedakan absolut/relatif) | 62 vs 57 kata, rasio 1.09 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | — | PASS |
 | W2 s05 | LO5 — Mengurutkan operasi berkas yang aman | CE-S3, 3 poin (slot) | vA: pulihkan → periksa seluruh Tempat Sampah → kosongkan (simulasi) (4 langkah, 1 urutan diterima) | vB: salin → verifikasi → hapus → periksa lalu kosongkan (simulasi) (4 langkah, 1 urutan diterima) | Prinsip sama: verifikasi sebelum langkah permanen; 4 langkah, satu urutan | 53 vs 74 kata, rasio 1.40 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | vA 3.0, vB 2.0 | PASS |
 | W2 s06 | LO6 — Menerapkan prinsip hak minimum | CE-S2, 2 poin (slot) | vA: menilai alasan memakai akun biasa (4 pernyataan, 2 benar) | vB: menilai izin aplikasi senter dan akun administrator (4 pernyataan, 2 benar) | Aturan hak minimum diterapkan pada akun vs izin; keduanya memuat penilaian akun administrator setelah D-39 | 63 vs 54 kata, rasio 1.17 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | vB 2.0 | PASS |
-| W3 s01 | LO1 — Menjelaskan batas LAN–internet dan peran perangkat | CE-S1, 4 poin (slot) | vA: memilih alasan pencetakan LAN tetap jalan tanpa internet (4 pilihan, 1 kunci) | vB: memilih alasan router diperlukan untuk ke internet (4 pilihan, 1 kunci) | Penalaran batas jaringan yang sama dari dua sisi (lalu lintas lokal vs antarjaringan) | 47 vs 41 kata, rasio 1.15 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | — | PASS |
+| W3 s01 | LO1 — Menjelaskan batas LAN–internet dan membedakan fungsi switch dan router | CE-S1, 4 poin (slot) | vA: v2.0: kotak router Wi-Fi rumah (multifungsi), internet putus, cetak lewat kabel tetap jalan — pilih penjelasan fungsi (4 pilihan, 1 kunci) | vB: v2.0: lab hanya switch tanpa router, berbagi berkas jalan, situs tidak terbuka — pilih penjelasan fungsi (4 pilihan, 1 kunci) | Putaran 7: skenario berbeda dengan struktur cermin (lalu lintas lokal jalan, antarjaringan tidak); CE-S1, 4 poin; kunci di kedua varian menyatakan fungsi switch (di dalam LAN) dan router (antarjaringan); pengecoh di kedua varian menukar fungsi atau mengacaukan access point; panjang opsi diseimbangkan. vA juga menuntut memisahkan fungsi dari kotak multifungsi; vB menyebutnya tidak eksplisit. Penilaian penulis; menunggu review independen | 122 vs 108 kata, rasio 1.13 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | vA 2.0, vB 2.0 | PASS |
 | W3 s02 | LO2 — Menilai pernyataan alamat privat/publik | CE-S2, 3 poin (slot) | vA: menilai 5 pernyataan (rentang privat, unik, NAT) (5 pernyataan, 3 benar) | vB: menilai 5 pernyataan (rentang privat, ISP, NAT) (5 pernyataan, 3 benar) | Konsep dan struktur sama | 45 vs 56 kata, rasio 1.24 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | vB 3.0 | PASS |
 | W3 s03 | LO3 — Menerapkan aturan subnet /24 | CE-S5, 4 poin (slot) | vA: baris salah: jumlah host 256 → 254 (hitung) (5 baris, 4 perbaikan) | vB: baris salah v2.0: jumlah host 2⁸ − 1 = 255 → 254 (hitung) (5 baris, 4 perbaikan) | Ronde 6: vB 2.0 kini menilai perhitungan jumlah host yang sama (kurangi alamat jaringan dan broadcast); keanggotaan jaringan pindah ke lab act-02.c06–c08 (vA+vB). Kesetaraan = penilaian penulis; menunggu review independen | 47 vs 52 kata, rasio 1.11 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | vB 2.0 | PASS |
 | W3 s04 | LO4 — Memetakan protokol ke fungsi | CE-S4, 4 poin (slot) | vA: memetakan DHCP, DNS, HTTPS, UDP (4 pasangan, 5 pilihan kanan) | vB: memetakan TCP, HTTP, DNS, DHCP (4 pasangan, 5 pilihan kanan) | Tugas pemetaan sama; dua protokol sama | 43 vs 43 kata, rasio 1.00 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | — | PASS |
 | W3 s05 | LO5 — Mengurutkan pembungkusan TCP/IP | CE-S3, 4 poin (slot) | vA: mengurutkan 5 langkah mengirim (5 langkah, 1 urutan diterima) | vB: mengurutkan 5 langkah menerima (5 langkah, 1 urutan diterima) | Instans cermin (bungkus vs buka bungkus) dari model lapisan yang sama | 42 vs 43 kata, rasio 1.02 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | — | PASS |
 | W3 s06 | LO6 — Menilai kecepatan bit vs byte dan model ideal | CE-S2, 2 poin (slot) | vA: menilai 4 pernyataan dari 50 Mbps (4 pernyataan, 2 benar) | vB: menilai 4 pernyataan dari 3 MB/s (4 pernyataan, 2 benar) | Konversi ×8 dan ideal vs nyata di kedua varian | 43 vs 40 kata, rasio 1.07 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | — | PASS |
-| W4 s01 | LO1 — Mengenali tujuan CIA dan autentikasi | CE-S4, 4 poin (slot) | vA: memetakan istilah → definisi (4 pasangan, 5 pilihan kanan) | vB: memetakan kejadian → istilah (4 pasangan, 5 pilihan kanan) | Konsep sama, tetapi vA pengenalan definisi sedangkan vB klasifikasi skenario; tuntutan kognitif mungkin berbeda (review independen: OPEN) | 42 vs 60 kata, rasio 1.43 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | — | OPEN |
+| W4 s01 | LO1 — Mengenali tujuan CIA dan autentikasi | CE-S4, 4 poin (slot) | vA: v2.0: memetakan kejadian → istilah (foto KTP, nilai rapor, aplikasi bank, kode autentikator) (4 pasangan, 5 pilihan kanan) | vB: memetakan kejadian → istilah (stok koperasi, pesan pribadi, situs ujian, sidik jari) (4 pasangan, 5 pilihan kanan) | Putaran 7: vA kini klasifikasi skenario seperti vB dengan kejadian berbeda; CE-S4, 4 poin, 1 poin per pasangan, satu-ke-satu, 1 pengecoh kanan (pencadangan data vs pembaruan sistem). Penilaian penulis; menunggu review independen | 60 vs 60 kata, rasio 1.00 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | vA 2.0 | PASS |
 | W4 s02 | LO2 — Mengenali ancaman dan tanda | CE-S2, 3 poin (slot) | vA: menilai 5 pernyataan (phishing RS, trojan, tanda bukan bukti) (5 pernyataan, 3 benar) | vB: menilai 5 pernyataan (phishing RS, trojan, tanda bukan bukti) (5 pernyataan, 3 benar) | Konsep yang dinilai sama setelah D-39/R3-06 | 42 vs 59 kata, rasio 1.40 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | vB 3.0 | PASS |
 | W4 s03 | LO3 — Mendeteksi kesalahan autentikasi | CE-S5, 4 poin (slot) | vA: baris salah: hitung kombinasi PIN 3 digit (10³ = 1.000) (5 baris, 4 perbaikan) | vB: baris salah v2.0: hitung kombinasi PIN 4 digit (10⁴ = 10.000) (5 baris, 4 perbaikan) | Ronde 6: vB 2.0 kini menilai aturan ×10 per digit yang sama; MFA (faktor berbeda jenis) pindah ke lab act-03.c02 (vA+vB). Batas: theory s09 vA juga meminta 10.000 (keterpaparan angka). Penilaian penulis; menunggu review independen | 65 vs 88 kata, rasio 1.35 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | vB 2.0 | PASS |
 | W4 s04 | LO4 — Menilai bukti identitas situs | CE-S1, 4 poin (slot) | vA: memilih alasan: domain terdaftar + arti HTTPS (4 pilihan, 1 kunci) | vB: memilih alasan: arti HTTPS untuk nama domain tertentu (4 pilihan, 1 kunci) | Keduanya menuntut membedakan nama domain dari klaim identitas dan arti HTTPS (setelah D-39) | 59 vs 60 kata, rasio 1.02 → tidak ditandai; tanpa field kesulitan/waktu per varian; durasi tidak diuji pelajar | vA 2.0 | PASS |

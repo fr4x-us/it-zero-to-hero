@@ -25,6 +25,8 @@ acceptance:                          # TPL-01a (D-39 putaran 4): status penerima
     - {variant_id: mod-w04.concept.s04.vA, accepted_version: "1.0", current_version: "2.0", reason: "D-39 cakupan konsep wajib", independent_review: PENDING, owner_acceptance: PENDING}
     - {variant_id: mod-w04.concept.s05.vA, accepted_version: "1.0", current_version: "3.0", reason: "D-39 cakupan konsep wajib", independent_review: PENDING, owner_acceptance: PENDING}
     - {variant_id: mod-w04.concept.s03.vB, accepted_version: "1.0", current_version: "2.0", reason: "R6 otorisasi owner: kesetaraan vA/vB (kombinasi PIN)", independent_review: PENDING, owner_acceptance: PENDING}
+    - {variant_id: mod-w04.concept.s01.vA, accepted_version: "1.0", current_version: "2.0", reason: "R7 otorisasi owner bersyarat: cakupan D-39/kesetaraan", independent_review: PENDING, owner_acceptance: PENDING}
+    - {variant_id: mod-w04.theory.s10.vA, accepted_version: "1.0", current_version: "2.0", reason: "R7 otorisasi owner bersyarat: cakupan D-39/kesetaraan", independent_review: PENDING, owner_acceptance: PENDING}
 audience: "Pemula total tanpa pengalaman IT atau pemrograman; telah menyelesaikan W1–W3"
 prerequisites: [mod-w03]
 nominal_minutes: 480

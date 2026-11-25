@@ -499,3 +499,11 @@ Butir W4 yang diterima tidak diubah pada putaran ini.
 | R6-A | Otorisasi owner: concept s03 vB 1.0 → 2.0. Baris salah 2 "PIN 4 digit … 40 kombinasi" → koreksi b 10.000; baris 4 kini benar: sandi + PIN bukan MFA (keduanya faktor "yang diketahui"). Faktor berbeda jenis dijamin lab act-03.c02 (vA+vB). OTP **tidak** diklaim terselesaikan. Batas: teori s09 vA juga berjawaban 10.000. Kesetaraan s03 PASS (penilaian penulis). Tercatat PENDING | APPLIED | YA | BELUM |
 | R5-03 | Usulan lama (teori s10 vA opsi e) ditarik: opsi e satu-satunya elemen bernilai untuk sandi mudah ditebak. Usulan baru di matriks §7 (opsi 1 tanpa ubah konten: s12 vA + s10 vB, perlu putusan semantik; opsi 2: ganti opsi d vA). OTP tetap OPEN. Usulan final concept s01 vA (kejadian → istilah, kunci tetap) — TIDAK diterapkan | OPEN | TIDAK | BELUM |
 | R5-05 | Field slot bersama dibandingkan dengan baseline; W4: 4 varian PENDING | CONFIRMED — FIXED | YA | BELUM |
+
+### Putaran 7 (koreksi konsolidasi; otorisasi owner bersyarat; temuan sementara R6-01–R6-06)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R7-A | Otorisasi bersyarat: concept s01 vA 1.0 → 2.0 (kejadian → istilah: foto KTP, nilai rapor, aplikasi bank, kode autentikator; R4 Pencadangan data; pemetaan tetap) dan teori s10 vA 1.0 → 2.0 (opsi d benar: tidak memberikan OTP kepada siapa pun; opsi e tanggal lahir tetap; kunci a, c, d tetap). Gerbang pra-edit: anjuran praktis MFA tetap dinilai wajib di proyek K1.c07 (E→T2), K1.c11 (D→T2), K4.q2 (tanpa varian); faktor MFA di lab act-03.c02 vA+vB; teori s10 vB opsi d tetap menilai larangan membagikan OTP. Tercatat PENDING | APPLIED | YA | BELUM |
+| R5-03 | OTP tidak dibagikan kini teori s10 vA+vB (hasil penulis) | APPLIED | YA | BELUM |
+| R6-01 | Jangkar W04-ACC: merge PR #27 | CONFIRMED — FIXED | YA | BELUM |

@@ -157,6 +157,146 @@ def element_mutation_tests(rep):
     rep.check(not ok(alt_elements('03', 'x', 'project', 'K1.c99', P)), 'elemen: kriteria proyek tidak ada ditolak')
     rep.check(ok(alt_elements('03', 'x', 'lab', 'act-02.c06–c08', 'AB')), 'elemen: pemeriksaan lab sah diterima')
 
+
+# ---- R6-03: integritas kunci terhadap elemen bernilai (STRUKTUR; bukan bukti kebenaran makna) ----
+def _ids(xs):
+    if not isinstance(xs, list) or not xs: return None
+    ids = [x.get('id') if isinstance(x, dict) else None for x in xs]
+    return ids if all(isinstance(i, str) and i for i in ids) else None
+
+def item_key_errors(fmt, v):
+    vid = v.get('variant_id', '?'); e = []
+    def need(cond, msg):
+        if not cond: e.append(f'{vid}: {msg}')
+    if fmt in ('CE-S1', 'TF-1', 'TF-4', 'CE-S2', 'TF-2'):
+        ids = _ids(v.get('options'))
+        need(ids is not None, 'opsi kosong/cacat')
+        if ids is None: return e
+        need(len(ids) == len(set(ids)), f'ID opsi ganda {ids}')
+        k = v.get('key')
+        if fmt in ('CE-S1', 'TF-1', 'TF-4'):
+            need(isinstance(k, str) and k in ids, f'kunci {k!r} bukan opsi yang ada')
+        else:
+            need(isinstance(k, list) and k and all(isinstance(x, str) for x in k), f'kunci majemuk cacat {k!r}')
+            if isinstance(k, list):
+                need(len(k) == len(set(k)), f'kunci ganda {k}'); need(set(k) <= set(ids), f'kunci {k} memuat opsi tidak ada')
+        if isinstance(v.get('option_order'), list):
+            need(sorted(v['option_order'] or []) == sorted(ids), 'option_order bukan permutasi opsi')
+    elif fmt == 'CE-S5':
+        lids, cids = _ids(v.get('lines')), _ids(v.get('correction_options'))
+        need(lids is not None and len(lids) == len(set(lids)), 'baris kosong/ganda')
+        need(cids is not None and len(cids) == len(set(cids)), 'opsi koreksi kosong/ganda')
+        need(lids is not None and str(v.get('error_line')) in lids, f'error_line {v.get("error_line")!r} tidak ada')
+        need(cids is not None and v.get('correction_key') in cids, f'correction_key {v.get("correction_key")!r} tidak ada')
+    elif fmt == 'CE-S4':
+        L, R, km = _ids(v.get('left')), _ids(v.get('right')), v.get('key_mapping')
+        need(L is not None and R is not None and isinstance(km, dict), 'pasangan cacat')
+        if L is None or R is None or not isinstance(km, dict): return e
+        need(len(L) == len(set(L)) and len(R) == len(set(R)), 'ID kiri/kanan ganda')
+        need(set(km) == set(L), f'key_mapping tidak memetakan tepat semua item kiri {sorted(km)}')
+        need(all(x in R for x in km.values()), 'key_mapping merujuk kanan yang tidak ada')
+        need(len(set(km.values())) == len(km), 'key_mapping tidak satu-ke-satu')
+    elif fmt in ('CE-S3', 'TF-5'):
+        ids = _ids(v.get('items')); seqs = v.get('accepted_sequences')
+        need(ids is not None and len(ids) == len(set(ids)), 'item urutan kosong/ganda')
+        need(isinstance(seqs, list) and seqs, 'accepted_sequences kosong')
+        if ids is not None and isinstance(seqs, list):
+            for q in seqs: need(isinstance(q, list) and sorted(q) == sorted(ids), f'urutan {q} bukan permutasi item')
+            if isinstance(v.get('display_order'), list): need(sorted(v['display_order'] or []) == sorted(ids), 'display_order bukan permutasi item')
+    elif fmt == 'TF-3':
+        aa = v.get('accepted_answers'); need(isinstance(aa, list) and aa, 'accepted_answers kosong')
+    else:
+        e.append(f'{vid}: format tidak dikenal {fmt}')
+    return e
+
+def lab_key_errors(d):
+    e = []
+    for v in d.get('variants', []):
+        cids = [c.get('check_id') for c in v.get('checks', [])]
+        if len(cids) != len(set(cids)): e.append(f'{v.get("variant_id")}: check_id ganda')
+        for c in v.get('checks', []):
+            cid = c.get('check_id', '?')
+            if not isinstance(c.get('points'), (int, float)) or isinstance(c.get('points'), bool) or c['points'] <= 0: e.append(f'{cid}: poin tidak sah')
+            if not cid.startswith(v.get('variant_id', '') + '.c'): e.append(f'{cid}: ID tidak cocok dengan varian')
+            has = [k for k in ('expected', 'accepted_answers', 'accepted_sequences') if c.get(k) not in (None, [], '')]
+            if not has: e.append(f'{cid}: tanpa kunci (expected/accepted_answers/accepted_sequences)')
+            if 'options' in c:
+                oids = _ids(c['options'])
+                if oids is None or len(oids) != len(set(oids)): e.append(f'{cid}: opsi cacat/ganda')
+                elif 'expected' in c and c['expected'] not in oids: e.append(f'{cid}: expected {c["expected"]!r} bukan opsi')
+    return e
+
+def project_key_errors(rb):
+    e = []; seen = set()
+    for K in ('K1', 'K2', 'K3'):
+        for c in rb['criteria'][K]['checks']:
+            if c['id'] in seen: e.append(f'{c["id"]}: ID ganda')
+            seen.add(c['id'])
+            if not isinstance(c.get('points'), (int, float)) or c['points'] <= 0: e.append(f'{c["id"]}: poin tidak sah')
+    for q in rb['criteria']['K4']['items']:
+        if q['id'] in seen: e.append(f'{q["id"]}: ID ganda')
+        seen.add(q['id'])
+        if not isinstance(q.get('options'), dict) or q.get('key') not in q['options']: e.append(f'{q["id"]}: kunci K4 bukan opsi')
+        if not isinstance(q.get('points'), (int, float)) or q['points'] <= 0: e.append(f'{q["id"]}: poin tidak sah')
+    return e
+
+def key_integrity(rep):
+    import glob as _g
+    n = 0
+    for m in ('01', '02', '03', '04', '05', '06', '07', '08'):
+        for comp in ('theory', 'concept'):
+            for f in sorted(_g.glob(str(ROOT / f'curriculum/mod-w{m}/{comp}/items/*.yaml'))):
+                d = load(f'mod-w{m}/{comp}/items/{Path(f).name}')
+                for v in d['variants']:
+                    n += 1
+                    for x in item_key_errors(d['format'], v): rep.check(False, f'W{m} kunci: {x}')
+        for f in sorted(_g.glob(str(ROOT / f'curriculum/mod-w{m}/lab/act-0*/checks.yaml'))):
+            for x in lab_key_errors(load(f'mod-w{m}/lab/{Path(f).parent.name}/checks.yaml')): rep.check(False, f'W{m} lab: {x}')
+        pr = ROOT / f'curriculum/mod-w{m}/project/rubric.yaml'
+        if pr.exists():
+            for x in project_key_errors(load(f'mod-w{m}/project/rubric.yaml')): rep.check(False, f'W{m} proyek: {x}')
+    rep.check(True, f'integritas kunci {n} varian butir')
+    return n
+
+def key_mutation_tests(rep):
+    import copy
+    def bad(fmt, path, mut):
+        d = load(path); v = copy.deepcopy(d['variants'][0]); mut(v); return bool(item_key_errors(fmt, v))
+    def good(fmt, path): d = load(path); return not item_key_errors(fmt, d['variants'][0])
+    T = [('CE-S1', 'mod-w03/concept/items/s01.yaml'), ('TF-1', 'mod-w03/theory/items/s01.yaml'), ('CE-S5', 'mod-w03/concept/items/s03.yaml'),
+         ('TF-2', 'mod-w04/theory/items/s10.yaml'), ('CE-S4', 'mod-w04/concept/items/s01.yaml'), ('TF-5', 'mod-w04/theory/items/s19.yaml')]
+    for fmt, path in T: rep.check(good(fmt, path), f'kunci: {fmt} sah diterima')
+    cases = [
+        ('CE-S1', T[0][1], lambda v: v.__setitem__('key', 'z'), 'kunci CE-S1 tidak ada'),
+        ('CE-S1', T[0][1], lambda v: v['options'][1].__setitem__('id', 'a'), 'ID opsi ganda'),
+        ('TF-1', T[1][1], lambda v: v.__setitem__('key', None), 'kunci TF-1 hilang'),
+        ('TF-1', T[1][1], lambda v: v.__setitem__('option_order', ['a', 'b']), 'option_order cacat'),
+        ('CE-S5', T[2][1], lambda v: v.__setitem__('error_line', '9'), 'error_line tidak ada'),
+        ('CE-S5', T[2][1], lambda v: v.__setitem__('correction_key', 'q'), 'correction_key tidak ada'),
+        ('TF-2', T[3][1], lambda v: v.__setitem__('key', ['a', 'z']), 'kunci majemuk memuat opsi tidak ada'),
+        ('TF-2', T[3][1], lambda v: v.__setitem__('key', ['a', 'a']), 'kunci majemuk ganda'),
+        ('TF-2', T[3][1], lambda v: v.__setitem__('key', 'a'), 'kunci majemuk bukan daftar'),
+        ('CE-S4', T[4][1], lambda v: v['key_mapping'].__setitem__('L1', 'R9'), 'pasangan ke kanan tidak ada'),
+        ('CE-S4', T[4][1], lambda v: v['key_mapping'].__setitem__('L1', v['key_mapping']['L2']), 'pemetaan tidak satu-ke-satu'),
+        ('CE-S4', T[4][1], lambda v: v['key_mapping'].pop('L4'), 'item kiri tanpa pasangan'),
+        ('TF-5', T[5][1], lambda v: v['accepted_sequences'][0].pop(), 'urutan kurang elemen'),
+        ('TF-5', T[5][1], lambda v: v['accepted_sequences'].__setitem__(0, ['A', 'A', 'B', 'C']), 'urutan memuat elemen ganda'),
+    ]
+    for fmt, path, mut, name in cases: rep.check(bad(fmt, path, mut), f'kunci: mutasi tertangkap — {name}')
+    lab = load('mod-w04/lab/act-03/checks.yaml'); rep.check(not lab_key_errors(lab), 'kunci: lab sah diterima')
+    for name, mut in [('poin 0', lambda c: c.__setitem__('points', 0)), ('expected bukan opsi', lambda c: c.__setitem__('expected', 'z')),
+                      ('tanpa kunci', lambda c: c.pop('expected'))]:
+        l2 = copy.deepcopy(lab); c = [c for c in l2['variants'][0]['checks'] if 'options' in c][0]; mut(c)
+        rep.check(bool(lab_key_errors(l2)), f'kunci: mutasi lab tertangkap — {name}')
+    l3 = copy.deepcopy(lab); l3['variants'][0]['checks'].append(copy.deepcopy(l3['variants'][0]['checks'][0]))
+    rep.check(bool(lab_key_errors(l3)), 'kunci: mutasi lab tertangkap — check_id ganda')
+    rb = load('mod-w04/project/rubric.yaml'); rep.check(not project_key_errors(rb), 'kunci: proyek sah diterima')
+    r2 = copy.deepcopy(rb); r2['criteria']['K4']['items'][0]['key'] = 'z'
+    rep.check(bool(project_key_errors(r2)), 'kunci: mutasi proyek tertangkap — kunci K4 bukan opsi')
+    r3 = copy.deepcopy(rb); r3['criteria']['K1']['checks'][0]['points'] = 0
+    rep.check(bool(project_key_errors(r3)), 'kunci: mutasi proyek tertangkap — kriteria tanpa poin')
+    return len(T) + len(cases) + 8
+
 def va2_correlated(n_slots=20, attempts=8):
     """Simulasi VA-2 (D-30): per slot, pilih varian dengan pemakaian paling sedikit dalam riwayat komponen;
     seri → bukan varian attempt sebelumnya; masih seri → indeks terkecil. Setiap attempt komponen memuat semua
@@ -172,6 +312,42 @@ def va2_correlated(n_slots=20, attempts=8):
         for s in hist: hist[s].append(pick[s])
         seq.append(set(pick.values()))
     return all(len(x) == 1 for x in seq), [x.pop() for x in seq]
+
+
+def va2_pick(h):
+    use = {v: h.count(v) for v in 'AB'}; low = min(use.values())
+    cand = [v for v in 'AB' if use[v] == low]
+    if len(cand) > 1 and h: cand = [v for v in cand if v != h[-1]] or cand
+    return sorted(cand)[0]
+
+def va2_scenarios(n_slots=20):
+    """R3-04/§10: simulasi riwayat VA-2 untuk kasus yang DIIZINKAN kontrak dan kasus yang TIDAK dijamin kontrak.
+    Riwayat = daftar attempt; attempt = {slot: varian} (VA-4). Kembalikan {nama: (diizinkan_kontrak, sinkron, jalur_salin_aman)}."""
+    S15, S17 = 0, 1   # wakil teori s15 dan s17 (W2 "salin mempertahankan asal": s15 vA + s17 vB)
+    def run(events):
+        att = []
+        for ev in events:
+            hist = {s: [a[s] for a in att if s in a] for s in range(n_slots)}
+            if ev == 'normal' or ev == 'interrupted' or ev == 'remedial':
+                att.append({s: va2_pick(hist[s]) for s in range(n_slots)})      # semua slot dipilih + dicatat saat attempt dibuat
+            elif ev == 'restore_older':
+                att = att[:-1]                                                    # restore memulihkan attempt utuh (A-8, P-10)
+            elif ev == 'partial_record':
+                a = {s: va2_pick(hist[s]) for s in range(n_slots)}; a.pop(S17); att.append(a)  # pencatatan per slot tidak atomik
+            elif ev == 'slot_dropped':
+                att[-1].pop(S15)                                                  # riwayat rusak: satu catatan slot hilang
+        sync = all(len(set(a.values())) == 1 for a in att if len(a) == n_slots)
+        nxt = {s: va2_pick([a[s] for a in att if s in a]) for s in range(n_slots)}
+        sync &= len(set(nxt.values())) == 1
+        safe = not (nxt[S15] == 'B' and nxt[S17] == 'A')
+        return sync, safe
+    sc = {'8 attempt normal': (True, ['normal'] * 8),
+          'attempt terputus (IN_PROGRESS, SB-8/SB-9 dicatat apa adanya)': (True, ['normal', 'interrupted', 'normal', 'interrupted']),
+          'remedial tanpa batas (VA-3)': (True, ['normal'] * 3 + ['remedial'] * 5),
+          'restore cadangan lama (attempt utuh)': (True, ['normal'] * 3 + ['restore_older', 'normal', 'normal']),
+          'pencatatan slot tidak atomik (tidak dijamin kontrak)': (False, ['normal', 'partial_record', 'normal']),
+          'riwayat rusak: catatan satu slot hilang': (False, ['normal', 'normal', 'normal', 'slot_dropped'])}
+    return {k: (allowed,) + run(ev) for k, (allowed, ev) in sc.items()}
 
 def structure(fmt, v):
     if fmt == 'CE-S4': return f"{len(v['left'])} pasangan, {len(v['right'])} pilihan kanan"
@@ -200,8 +376,14 @@ def build():
     rep.check(verdict('', [('theory', 's1', 'A'), ('theory', 's2', 'B')])[1].startswith('(b)'), 'uji bukti (b) berkorelasi')
     rep.check(verdict('', [('project', 'K4.q1', P, 'lemah')])[0] == 'OPEN', 'uji: hanya bukti semantik lemah → OPEN')
     element_mutation_tests(rep)
+    nk = key_integrity(rep); nkm = key_mutation_tests(rep)
+    print(f'  R6-03 integritas kunci: {nk} varian butir + lab + proyek W1–W8; uji kunci {nkm} (positif 8, negatif {nkm - 8})')
     ok, seq = va2_correlated()
     rep.check(ok and seq == ['A', 'B'] * 4, f'VA-2: indeks varian sama untuk semua slot di setiap attempt {seq}')
+    for k, (allowed, sync, safe) in va2_scenarios().items():
+        if allowed: rep.check(sync and safe, f'VA-2 skenario diizinkan kontrak tetap sinkron: {k}')
+        else: rep.check(not sync or not safe, f'VA-2 skenario di luar kontrak terdeteksi tidak sinkron: {k}')
+        print(f'  VA-2 skenario: {k} — {"diizinkan" if allowed else "di luar jaminan kontrak"}; sinkron {sync}; jalur salin aman {safe}')
     rows_md, tot, gaps, nb, opens = [], {}, [], 0, []
     for m, rows in D.items():
         M = load(f'mod-w{m}/module.yaml'); c2lo = {lo['competency']: lo['id'] for lo in M['learning_objectives']}

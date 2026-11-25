@@ -57,3 +57,16 @@
 - {synthetic: ["5", "5 menit"], input: null, expected: EVALUATION_ERROR}
 - {synthetic: ["5", "5 menit"], input: 5, expected: EVALUATION_ERROR}
 - {synthetic: ["5", "5 menit"], input: "5 MENIT", expected: ACCEPT}
+# R6-04: kombinasi afiks hanya yang tertulis di accepted_answers (awalan dan akhiran tidak dirakit sendiri).
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "5000", expected: ACCEPT}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "Rp5000", expected: ACCEPT}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "5000 rupiah", expected: ACCEPT}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "5000 RUPIAH", expected: ACCEPT}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "Rp5000 rupiah", expected: INVALID}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "Rp 5000 rupiah", expected: INVALID}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "rp5000", expected: INVALID}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "Rp5001", expected: WRONG}
+- {synthetic: ["5000", "5000 rupiah"], input: "Rp5000", expected: INVALID}
+- {file: mod-w05/theory/items/s15.yaml, id: mod-w05.theory.s15.vA, input: "Rp204.000 rupiah", expected: INVALID}
+- {file: mod-w08/lab/act-01/checks.yaml, id: mod-w08.lab.act-01.vA.c01, input: "5.000", expected: ACCEPT}
+- {file: mod-w08/lab/act-01/checks.yaml, id: mod-w08.lab.act-01.vA.c01, input: "RP5000", expected: INVALID}

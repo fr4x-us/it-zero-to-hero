@@ -577,3 +577,13 @@ Butir W2 yang diterima tidak diubah pada putaran ini.
 | R5-01 | Elemen bernilai W2 (opsi teori s02/s09, bukti (b) s15 vA + s17 vB) tervalidasi | CONFIRMED — FIXED | YA | BELUM |
 
 Butir W2 yang diterima tidak diubah pada putaran ini.
+
+### Putaran 7 (koreksi konsolidasi; otorisasi owner bersyarat; temuan sementara R6-01–R6-06)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R6-01 | Jangkar W02-ACC: `846051f66ee4d1e36e9b34e0c9d1787fb713617b` = merge PR #27 | CONFIRMED — FIXED | YA | BELUM |
+| R6-02 | W2 tidak ada relokasi | CONFIRMED — FIXED | YA | BELUM |
+| R3-04 / VA-2 | Bukti (b) teori s15 vA + s17 vB: simulasi 6 skenario — riwayat yang diizinkan kontrak (normal, terputus, remedial, restore attempt utuh) sinkron; pencatatan slot tidak atomik dapat menghasilkan jalur s15 vB + s17 vA. Ketergantungan: pemilihan + pencatatan atomik semua slot saat attempt dibuat (VA-4 tidak eksplisit) dan SB-12/OD-9. Kebijakan VA-2 tidak diubah | CONDITIONAL PASS | SEBAGIAN | BELUM |
+
+Butir W2 yang diterima tidak diubah pada putaran ini.
