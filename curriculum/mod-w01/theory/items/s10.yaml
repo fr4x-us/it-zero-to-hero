@@ -23,17 +23,14 @@ variants:
   explanation: 1 byte terdiri dari 8 bit.
 - item_id: item-w01-t-s10-b
   variant_id: mod-w01.theory.s10.vB
-  item_version: '1.0'
-  stem: Dengan aturan desimal modul ini, 1 GB = … MB.
+  item_version: '2.0'
+  stem: 16 bit = … byte.
   accepted_answers:
-  - '1000'
-  - '1.000'
-  - 1000 mb
-  - 1000mb
-  - 1.000 mb
-  - 1.000mb
+  - '2'
+  - 2 byte
+  - 2byte
   normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; lalu cocokkan persis dengan
     salah satu accepted_answers. Daftar itu sudah memuat semua bentuk yang diterima (dengan/tanpa titik
     ribuan berpola 1.234, dengan/tanpa satuan yang diizinkan). Selain itu ditolak: tanda +/−, desimal,
     pengelompokan titik yang salah, spasi di dalam angka, satuan lain'
-  explanation: 'Aturan desimal: 1 GB = 1.000 MB.'
+  explanation: 1 byte = 8 bit, jadi 16 bit = 16 ÷ 8 = 2 byte.

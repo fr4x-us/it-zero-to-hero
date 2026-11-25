@@ -9,9 +9,24 @@ content_version: "1.0"
 status:
   documentation: PRODUCED          # konten lengkap ditulis
   reviewed: CLAUDE_SELF_REVIEW     # review dokumentasi oleh penyusun; lihat review.md
-  owner_accepted: YES              # W01-ACC (2026-11-24), penerimaan terbatas; lihat review.md §11
+  owner_accepted: YES              # W01-ACC (2026-11-24), penerimaan terbatas; lihat review.md §11; status terstruktur: blok `acceptance`
   runtime_verified: NOT_APPLICABLE # W1 tidak memakai runtime Python; aplikasi belum ada
   learner_tested: NO               # estimasi durasi belum diuji dengan pelajar
+acceptance:                          # TPL-01a (D-39 putaran 4): status penerimaan terstruktur; owner_accepted di atas = penerimaan historis
+  historical:
+    id: W01-ACC
+    date: "2026-11-24"
+    baseline_commit: "df76c5fbf946e6e8d2ca9e8e87505454041623a3"   # merge PR #25; isi butir W1 identik sampai 846051f (hanya module.yaml/review.md berubah)
+    basis: "W01-ACC di DECISIONS_LOG; penerimaan terbatas (review.md §11)"
+    scope: "Isi modul pada saat penerimaan (semua varian item_version 1.0)"
+  current_content: REVISED_ACCEPTED  # ACCEPTED_AS_IS | REVISED_PENDING | REVISED_ACCEPTED
+  revision_acceptance:               # penerimaan owner atas versi revisi yang direview (PR #28), terpisah dari penerimaan historis
+    id: "PR #28 ACC"
+    date: "2026-11-25"
+    reviewed_head: "b54f930b0cf4479e2984fc148e2bc91c443e1ada"   # HEAD review PR #28 yang diterima owner
+    independent_scope: "review independen terarah dengan batas diungkapkan (bukan audit menyeluruh); lihat DECISIONS_LOG PR #28 ACC"
+  revised_variants:                    # varian yang berubah setelah penerimaan historis; diterima owner pada versi yang direview (PR #28 ACC)
+    - {variant_id: mod-w01.theory.s10.vB, accepted_version: "1.0", current_version: "2.0", reason: "D-39 cakupan konsep wajib", independent_review: TARGETED_LIMITED, owner_acceptance: ACCEPTED}
 audience: "Pemula total tanpa pengalaman IT atau pemrograman"
 prerequisites: []
 nominal_minutes: 480

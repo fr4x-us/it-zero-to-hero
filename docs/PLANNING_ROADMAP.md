@@ -45,7 +45,7 @@ Pemindahan UW-15 dari P ke V **disetujui D-25** (RM-Q1(a)); AC UW-15
 tetap. Penyebut jalur P = 43 sudah final menurut klasifikasi yang disetujui.
 Batch D-26–D-35 menyelesaikan UW-25, UW-27, UW-29, UW-30, UW-31, UW-32
 (AC = keputusan tertulis terpenuhi). UW-36 kini COMPLETE (D-38, §12); UW-26
-dan UW-37 tetap OPEN (konten 15 modul belum ada); UW-33 tetap BLOCKED.
+dan UW-37 tetap OPEN (status aktif: 8/16 modul diproduksi; 8/16 diterima (W1–W4 historis + 21 varian revisi diterima PR #28 ACC; W5–W8 W05-ACC–W08-ACC, batas review terarah diungkapkan); §16); UW-33 tetap BLOCKED.
 
 ## 2. Register lengkap dengan klasifikasi (56 butir)
 
@@ -79,7 +79,7 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-23 | BLOCKED | P | Keputusan owner CO-1/CO-2 |
 | UW-24 | BLOCKED | P | Keputusan owner O-09 (pilihan runner); menjalankan runner adalah V |
 | UW-25 | COMPLETE | P | Keputusan D-34 (AC: keputusan tertulis) |
-| UW-26 | OPEN | P | OP-4 diputuskan (D-23); bank concept W1–W4 diproduksi (48/192 soal; W1 diterima owner, W2–W4 belum direview/diterima), 12 modul belum |
+| UW-26 | OPEN | P | OP-4 diputuskan (D-23); cakupan konsep wajib D-39 (hibrida); bank concept W1–W8 diproduksi (96/192 soal); W1–W8 diterima owner (96 soal; W5–W8 lewat CB-2, W05-ACC–W08-ACC, batas review terarah diungkapkan); 8 modul belum |
 | UW-27 | COMPLETE | P | D-26 (ASM:D-08 terisi) |
 | UW-28 | BLOCKED | P | Keputusan OP-6 |
 | UW-29 | COMPLETE | P | D-27 (ASM:L5 terisi) |
@@ -90,7 +90,7 @@ tanpa ID hilang; jumlah per status dan per jalur sama dengan §1.
 | UW-34 | BLOCKED | P | Keputusan CO-4–CO-6 |
 | UW-35 | BLOCKED | P | Keputusan UO-3–UO-9 |
 | UW-36 | COMPLETE | P | Semua kebijakan CU diputuskan (D-13, D-24, D-30–D-36); angka batas agregat LX-2 = keluaran verifikasi UW-12 (D-38) |
-| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); diproduksi 16/64 (W1–W4); diterima owner 4/64 (W01-ACC); W2–W4 dikoreksi (F-28–F-72, dua putaran, PR #27), menunggu re-review independen dan penerimaan owner |
+| UW-37 | OPEN | P | Konten lengkap 64 komponen (D-21); diproduksi 32/64 (W1–W8); diterima owner 32/64 (W01-ACC–W08-ACC; 21 varian revisi W1–W4 diterima PR #28 ACC; batas review terarah diungkapkan) (TPL-01a)); W5–W8 diproduksi, belum diterima (CB-2, PR #28); W9–W16 NOT STARTED / NOT AUTHORIZED |
 | UW-38 | DEFERRED | M | D-22 |
 | UW-39 | BLOCKED | V | Lingkungan SDK opsional untuk verifikasi build; tidak punya AC perencanaan |
 | UW-40 | DEFERRED | M | D-22 |
@@ -315,3 +315,33 @@ dapat dinilai lengkap? Rekomendasi: Ya.
 - Status tidak berubah: W2–W4 menunggu re-review independen dan penerimaan
   owner; W5–W16 NOT STARTED / NOT AUTHORIZED; register 32/4/12/3/5 = 56;
   P 32/43; PLANNING CLEAR NO; IMPLEMENTATION VERIFIED NO.
+
+## 16. Merge PR #27, W02-ACC–W04-ACC, CB-2 — produksi W5–W8 (2026-11-24)
+
+- PR #27 di-merge (`846051f`) atas otorisasi eksplisit owner; W2–W4
+  diterima (W02-ACC–W04-ACC; review terarah dengan batas yang diungkapkan,
+  **bukan** verifikasi menyeluruh).
+- W5, W6, W7, W8 **diproduksi** (16 komponen; `curriculum/mod-w05/`–
+  `mod-w08/`), review mandiri penyusun; **belum** direview ChatGPT dan
+  **belum** diterima owner. Produksi 32/64 komponen (50%); diterima owner
+  16/64 (25%).
+- UW-26 dan UW-37 tetap **OPEN**; register 32/4/12/3/5 = 56; P 32/43.
+  W9–W16 NOT STARTED / NOT AUTHORIZED. PLANNING CLEAR NO ·
+  IMPLEMENTATION VERIFIED NO · D-10 NOT AUTHORIZED · D-11 DEFERRED.
+- Untuk owner: format editor flowchart (M-10) dan bentuk entri ekspresi
+  Boolean belum diputuskan; W6/W8 memakai bentuk jawaban terstruktur yang
+  sudah ada (EB-4/D-24).
+- PR #28 putaran 3–5 (2026-11-25): D-39 dicatat; cakupan = hasil penulis (153 PASS, 3 OPEN berbukti
+  semantik lemah, 0 GAP); kesetaraan varian 5 slot OPEN (putaran 5); 14 varian W1–W4 revisi PENDING (putaran 5) (TPL-01a);
+  usulan koreksi butir menunggu otorisasi owner. UW-26, UW-37 tetap OPEN.
+- PR #28 putaran 6 (2026-11-25): 4 varian concept diotorisasi owner direvisi (W3 s03 vB, W4 s03 vB,
+  W7 s02 vB, s03 vB); kesetaraan 47 PASS/1 OPEN; cakupan 153/3/0 (hasil penulis); 16 varian W1–W4
+  PENDING; usulan W3 c-s01 vA, W4 c-s01 vA, W4 t-s10 vA tidak diterapkan. UW-26, UW-37 tetap OPEN.
+- PR #28 putaran 7 (2026-11-25): otorisasi bersyarat W3 c-s01 vA/vB, W4 c-s01 vA, W4 t-s10 vA diterapkan;
+  cakupan 156/0/0 dan kesetaraan 48/0 (hasil penulis); R6-01–R6-06; VA-2/R3-04 CONDITIONAL PASS; 20 varian
+  W1–W4 PENDING. PR28-06, UW-26, UW-37 tetap OPEN.
+- PR #28 putaran 8 (2026-11-25): O-1 stem W4 teori s10 vA/vB; O-2 kontrak atomik VA-4a (bukan penyelesaian OD-9/UW-33);
+  R7-02; R3-04 CONDITIONAL PASS; 21 varian W1–W4 PENDING. PR28-06, UW-26, UW-37 tetap OPEN.
+- PR #28 penerimaan owner final (2026-11-25): CB-2 ACCEPTED WITH DISCLOSED LIMITATIONS; W05-ACC–W08-ACC;
+  PR #28 ACC (21 varian revisi). Kurikulum diproduksi dan diterima 8/16 modul (64/128 jam). UW-26, UW-37 tetap
+  OPEN; register 32/4/12/3/5 = 56; P 32/43. Merge menunggu kalimat otorisasi persis.

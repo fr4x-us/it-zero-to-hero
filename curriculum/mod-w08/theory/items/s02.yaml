@@ -1,0 +1,52 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s02
+competency: comp-w08-algo-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s02-a
+  variant_id: mod-w08.theory.s02.vA
+  item_version: '1.0'
+  stem: Algoritma menghitung `rata-rata ← jumlah ÷ n`. Asumsi input (**domain**) yang **harus** dinyatakan
+    agar langkah ini selalu dapat dikerjakan adalah …
+  options:
+  - id: a
+    text: n ≥ 1 (bilangan bulat)
+  - id: b
+    text: jumlah ≥ 100
+  - id: c
+    text: n bilangan ganjil
+  - id: d
+    text: Tidak perlu asumsi apa pun
+  key: a
+  distractor_rationale:
+    b: Jumlah berapa pun dapat dibagi
+    c: n genap juga boleh
+    d: n = 0 membuat pembagian tidak terdefinisi
+  explanation: Pembagian dengan 0 tidak terdefinisi, jadi domain harus mengecualikan n = 0.
+  option_order: urutan tetap penyusun
+- item_id: item-w08-t-s02-b
+  variant_id: mod-w08.theory.s02.vB
+  item_version: '1.0'
+  stem: Algoritma menghitung `harga_satuan ← total ÷ banyak`. Asumsi input (**domain**) yang **harus**
+    dinyatakan agar langkah ini selalu dapat dikerjakan adalah …
+  options:
+  - id: a
+    text: total harus genap
+  - id: b
+    text: Tidak perlu asumsi apa pun
+  - id: c
+    text: banyak ≥ 1 (bilangan bulat)
+  - id: d
+    text: banyak harus 10
+  key: c
+  distractor_rationale:
+    a: Total ganjil juga dapat dibagi
+    b: banyak = 0 membuat pembagian tidak terdefinisi
+    d: Terlalu sempit
+  explanation: Pembagian dengan 0 tidak terdefinisi, jadi domain harus mengecualikan banyak = 0.
+  option_order: urutan tetap penyusun

@@ -1,0 +1,50 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s15
+competency: comp-w07-order-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s15-a
+  variant_id: mod-w07.theory.s15.vA
+  item_version: '1.0'
+  stem: 'Prasyarat: A sebelum C, B sebelum C, C sebelum D. Urutan mana yang **tidak** valid?'
+  options:
+  - id: a
+    text: A, C, B, D
+  - id: b
+    text: A, B, C, D
+  - id: c
+    text: B, A, C, D
+  - id: d
+    text: Semua urutan di atas valid
+  key: a
+  distractor_rationale:
+    b: Semua prasyarat terpenuhi
+    c: Semua prasyarat terpenuhi (A dan B bebas urutannya)
+    d: Urutan a melanggar B sebelum C
+  explanation: Pada A, C, B, D, tugas C dikerjakan sebelum B, padahal C membutuhkan B.
+  option_order: urutan tetap penyusun
+- item_id: item-w07-t-s15-b
+  variant_id: mod-w07.theory.s15.vB
+  item_version: '1.0'
+  stem: 'Prasyarat: P sebelum Q, P sebelum R, Q sebelum S, R sebelum S. Urutan mana yang **tidak** valid?'
+  options:
+  - id: a
+    text: P, Q, R, S
+  - id: b
+    text: P, R, Q, S
+  - id: c
+    text: P, Q, S, R
+  - id: d
+    text: Semua urutan di atas valid
+  key: c
+  distractor_rationale:
+    a: Semua prasyarat terpenuhi
+    b: Semua prasyarat terpenuhi (Q dan R bebas urutannya)
+    d: Urutan c melanggar R sebelum S
+  explanation: Pada P, Q, S, R, tugas S dikerjakan sebelum R, padahal S membutuhkan R.
+  option_order: urutan tetap penyusun

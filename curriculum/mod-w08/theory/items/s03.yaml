@@ -1,0 +1,58 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s03
+competency: comp-w08-algo-01
+format: TF-2
+difficulty: D1
+max_points: 2
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s03-a
+  variant_id: mod-w08.theory.s03.vA
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang algoritma.
+  options:
+  - id: a
+    text: Algoritma harus berhenti setelah sejumlah langkah berhingga
+  - id: b
+    text: Setiap langkah harus jelas
+  - id: c
+    text: Flowchart hanya boleh punya satu jalur
+  - id: d
+    text: Algoritma menerima input, memprosesnya, dan menghasilkan output
+  - id: e
+    text: Satu algoritma selalu digambar dengan flowchart yang persis sama
+  key:
+  - a
+  - b
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    c: Keputusan membuat beberapa jalur
+    e: Beberapa flowchart dapat setara
+  explanation: Berhingga, jelas, input–proses–output.
+- item_id: item-w08-t-s03-b
+  variant_id: mod-w08.theory.s03.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang algoritma.
+  options:
+  - id: a
+    text: Algoritma boleh tidak pernah berhenti asal benar
+  - id: b
+    text: Algoritma yang sama dapat digambar dengan beberapa flowchart yang setara
+  - id: c
+    text: Input dan asumsinya perlu dinyatakan
+  - id: d
+    text: Keputusan dalam flowchart selalu punya tiga cabang
+  - id: e
+    text: Output adalah hasil yang diberikan algoritma
+  key:
+  - b
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    a: Algoritma harus berhenti
+    d: Keputusan Ya/Tidak punya dua cabang
+  explanation: Flowchart setara, asumsi input, output.

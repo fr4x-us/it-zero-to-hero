@@ -1,0 +1,236 @@
+# W8 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w08.lab.act-02
+name: Perulangan dan tabel penelusuran
+competencies:
+- comp-w08-loop-01
+- comp-w08-trace-01
+max_points: 40
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w08.lab (D-28 XI-2)
+normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 = buang
+  spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`)
+  dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan dengan kelompok
+  tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif. N3 afiks: hanya awalan
+  `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers butir ini, masing-masing
+  dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran satuan itu (mis. `MENIT`,
+  `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan dan afiks dihapus. N6 bandingkan
+  angka kanonik dengan angka kanonik accepted_answers; accepted_answers adalah bentuk kanonik beserta
+  contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai desimal (`12.5`), nol di
+  depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang dari yang diminta.
+  Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap peka huruf (F-51).
+  Jawaban bilangan bulat (tanda minus untuk negatif) (c07 boleh diikuti kata `kali`)'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk tidak
+  sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W8 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python; pemeriksa deterministik per jenis (EB-4, D-24) atas angka dan
+  pilihan; Flowchart ditulis sebagai tabel blok bernomor (bentuk, isi, blok berikutnya); tidak ada editor
+  graf. Format editor flowchart di aplikasi belum diputuskan (CUR §6, M-10)
+variants:
+- variant_id: mod-w08.lab.act-02.vA
+  fixture:
+    title: Jumlah kuadrat
+    domain: n bilangan bulat ≥ 0
+    input: n = 4 (pertanyaan 1–7), n = 0 (pertanyaan 8)
+    blocks:
+    - - B1
+      - Oval
+      - Mulai
+      - B2
+    - - B2
+      - Jajar genjang
+      - Input n
+      - B3
+    - - B3
+      - Persegi panjang
+      - total ← 0; i ← 1
+      - B4
+    - - B4
+      - Belah ketupat
+      - i ≤ n?
+      - Ya → B5; Tidak → B7
+    - - B5
+      - Persegi panjang
+      - total ← total + i × i
+      - B6
+    - - B6
+      - Persegi panjang
+      - i ← i + 1
+      - B4
+    - - B7
+      - Jajar genjang
+      - Output total
+      - B8
+    - - B8
+      - Oval
+      - Selesai
+      - —
+  visible_example:
+    note: 'Contoh terlihat (0 poin): perulangan lain "i ← 1; selama i ≤ 2: tulis i; i ← i + 1" menulis
+      1, 2'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w08.lab.act-02.vA.c01
+    name: Putaran 1
+    question: Nilai **total** setelah B5 pada putaran ke-1?
+    accepted_answers:
+    - '1'
+    points: 5
+    explanation: total + 1²
+  - check_id: mod-w08.lab.act-02.vA.c02
+    name: Putaran 2
+    question: Nilai **total** setelah B5 pada putaran ke-2?
+    accepted_answers:
+    - '5'
+    points: 5
+    explanation: total + 2²
+  - check_id: mod-w08.lab.act-02.vA.c03
+    name: Putaran 3
+    question: Nilai **total** setelah B5 pada putaran ke-3?
+    accepted_answers:
+    - '14'
+    points: 5
+    explanation: total + 3²
+  - check_id: mod-w08.lab.act-02.vA.c04
+    name: Putaran 4
+    question: Nilai **total** setelah B5 pada putaran ke-4?
+    accepted_answers:
+    - '30'
+    points: 5
+    explanation: total + 4²
+  - check_id: mod-w08.lab.act-02.vA.c05
+    name: Output
+    question: Output untuk n = 4?
+    accepted_answers:
+    - '30'
+    points: 5
+    explanation: 1 + 4 + 9 + 16
+  - check_id: mod-w08.lab.act-02.vA.c06
+    name: i akhir
+    question: Nilai **i** saat perulangan berhenti?
+    accepted_answers:
+    - '5'
+    points: 5
+    explanation: i = 5 membuat i ≤ 4 salah
+  - check_id: mod-w08.lab.act-02.vA.c07
+    name: Banyak pemeriksaan
+    question: Berapa kali keputusan B4 diperiksa untuk n = 4?
+    accepted_answers:
+    - '5'
+    - 5 kali
+    - 5kali
+    points: 5
+    explanation: 4 kali Ya + 1 kali Tidak
+  - check_id: mod-w08.lab.act-02.vA.c08
+    name: Kasus n = 0
+    question: Output untuk n = 0?
+    accepted_answers:
+    - '0'
+    points: 5
+    explanation: 'B4: 1 ≤ 0 Tidak → langsung output 0'
+- variant_id: mod-w08.lab.act-02.vB
+  fixture:
+    title: Pangkat dua
+    domain: n bilangan bulat ≥ 0
+    input: n = 4 (pertanyaan 1–7), n = 0 (pertanyaan 8)
+    blocks:
+    - - B1
+      - Oval
+      - Mulai
+      - B2
+    - - B2
+      - Jajar genjang
+      - Input n
+      - B3
+    - - B3
+      - Persegi panjang
+      - hasil ← 1; i ← 1
+      - B4
+    - - B4
+      - Belah ketupat
+      - i ≤ n?
+      - Ya → B5; Tidak → B7
+    - - B5
+      - Persegi panjang
+      - hasil ← hasil × 2
+      - B6
+    - - B6
+      - Persegi panjang
+      - i ← i + 1
+      - B4
+    - - B7
+      - Jajar genjang
+      - Output hasil
+      - B8
+    - - B8
+      - Oval
+      - Selesai
+      - —
+  visible_example:
+    note: 'Contoh terlihat (0 poin): perulangan lain "i ← 1; selama i ≤ 2: tulis i; i ← i + 1" menulis
+      1, 2'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w08.lab.act-02.vB.c01
+    name: Putaran 1
+    question: Nilai **hasil** setelah B5 pada putaran ke-1?
+    accepted_answers:
+    - '2'
+    points: 5
+    explanation: hasil × 2
+  - check_id: mod-w08.lab.act-02.vB.c02
+    name: Putaran 2
+    question: Nilai **hasil** setelah B5 pada putaran ke-2?
+    accepted_answers:
+    - '4'
+    points: 5
+    explanation: hasil × 2
+  - check_id: mod-w08.lab.act-02.vB.c03
+    name: Putaran 3
+    question: Nilai **hasil** setelah B5 pada putaran ke-3?
+    accepted_answers:
+    - '8'
+    points: 5
+    explanation: hasil × 2
+  - check_id: mod-w08.lab.act-02.vB.c04
+    name: Putaran 4
+    question: Nilai **hasil** setelah B5 pada putaran ke-4?
+    accepted_answers:
+    - '16'
+    points: 5
+    explanation: hasil × 2
+  - check_id: mod-w08.lab.act-02.vB.c05
+    name: Output
+    question: Output untuk n = 4?
+    accepted_answers:
+    - '16'
+    points: 5
+    explanation: 2⁴
+  - check_id: mod-w08.lab.act-02.vB.c06
+    name: i akhir
+    question: Nilai **i** saat perulangan berhenti?
+    accepted_answers:
+    - '5'
+    points: 5
+    explanation: i = 5 membuat i ≤ 4 salah
+  - check_id: mod-w08.lab.act-02.vB.c07
+    name: Banyak pemeriksaan
+    question: Berapa kali keputusan B4 diperiksa untuk n = 4?
+    accepted_answers:
+    - '5'
+    - 5 kali
+    - 5kali
+    points: 5
+    explanation: 4 kali Ya + 1 kali Tidak
+  - check_id: mod-w08.lab.act-02.vB.c08
+    name: Kasus n = 0
+    question: Output untuk n = 0?
+    accepted_answers:
+    - '1'
+    points: 5
+    explanation: 'B4: 1 ≤ 0 Tidak → langsung output 1 (2⁰ = 1)'

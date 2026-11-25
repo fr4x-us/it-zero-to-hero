@@ -1,0 +1,125 @@
+# W6 — ikhtisar modul (TPL-01, TPL-02, TPL-03, TPL-15, TPL-17, TPL-18). Dokumentasi konten; bukan kode aplikasi.
+module_id: mod-w06
+phase: phase-2
+week: 6
+title: "Biner dan Logika Boolean"
+locked_scope: "W6 biner dan logika Boolean (B01 M-02, D-01 M-02; CUR §2 baris 6: konversi basis; tabel kebenaran; lab konversi biner dan evaluator ekspresi Boolean)"
+language: id
+content_version: "1.0"
+status:
+  documentation: PRODUCED          # konten lengkap ditulis (CB-2)
+  reviewed: CLAUDE_SELF_REVIEW     # review dokumentasi oleh penyusun; lihat review.md
+  owner_accepted: YES              # W06-ACC (2026-11-25), diterima dengan batas review terarah yang diungkapkan; status terstruktur: blok `acceptance`
+  runtime_verified: NOT_APPLICABLE # W6 tidak memakai runtime Python; aplikasi belum ada
+  learner_tested: NO               # estimasi durasi belum diuji dengan pelajar
+acceptance:                          # TPL-01a
+  historical:
+    id: W06-ACC
+    date: "2026-11-25"
+    baseline_commit: "b54f930b0cf4479e2984fc148e2bc91c443e1ada"   # HEAD review PR #28 yang diterima owner (bukan merge commit)
+    basis: "Penerimaan owner CB-2 atas HEAD review PR #28 b54f930"
+    scope: "Isi modul pada snapshot review yang diterima; review independen terarah dengan batas diungkapkan (bukan audit menyeluruh); lihat DECISIONS_LOG PR #28 ACC"
+  current_content: ACCEPTED_AS_IS   # ACCEPTED_AS_IS | REVISED_PENDING | REVISED_ACCEPTED
+  revised_variants: []
+audience: "Pemula total tanpa pengalaman IT atau pemrograman; telah menyelesaikan W1–W5"
+prerequisites: [mod-w05]
+nominal_minutes: 480
+objective_source: "Topik dan tujuan ringkas CUR §2 baris 6 (kerangka D-01 M-02). Rumusan LO rinci disusun penyusun mengikuti pola W1–W5 (CU-1 tetap PROPOSED) — bukan keputusan owner baru"
+number_rules: "BN-6: biner hanya 0/1, tanpa awalan/subskrip; panjang sesuai instruksi (tanpa nol di depan: 0 ditulis `0`, bilangan positif diawali 1; tepat n bit: tepat n digit dengan nol pengisi); semua bilangan tak bertanda (tanpa bilangan negatif, overflow, atau lebar bit di luar soal). Desimal mengikuti NB-5 (W5). Nilai Boolean 1 = benar, 0 = salah — bukan bilangan"
+expression_grammar: "BX (Pelajaran 3 §3): variabel yang disebut soal, AND/OR/NOT, kurung; prioritas NOT → AND → OR; NOT satu operand dan boleh berulang (NOT NOT X = X), AND/OR dua operand; tata bahasa formal di project/rubric.yaml expression_readable; operator lain di luar cakupan W6. Format jawaban konten di bawah EB-4 (D-24), bukan kebijakan baru"
+python_dependency: "Tidak ada. AND/OR/NOT ditulis sebagai kata logika, bukan sintaks bahasa pemrograman (W9+)"
+
+learning_objectives:
+  - id: LO1
+    competency: comp-w06-repr-01
+    text: "Menjelaskan bit, basis 2, bobot posisi, dan membedakan bilangan biner, bilangan desimal, dan nilai Boolean"
+  - id: LO2
+    competency: comp-w06-bin2dec-01
+    text: "Mengubah bilangan biner tak bertanda (termasuk 8 bit dengan nol di depan) ke desimal memakai bobot posisi"
+  - id: LO3
+    competency: comp-w06-dec2bin-01
+    text: "Mengubah desimal ke biner tanpa nol di depan atau tepat n bit, dan menentukan rentang nilai n bit tak bertanda"
+  - id: LO4
+    competency: comp-w06-ops-01
+    text: "Menjelaskan dan menerapkan operator AND, OR, dan NOT"
+  - id: LO5
+    competency: comp-w06-table-01
+    text: "Menyusun tabel kebenaran lengkap dan mengevaluasi ekspresi dengan kurung dan prioritas NOT → AND → OR"
+  - id: LO6
+    competency: comp-w06-model-01
+    text: "Mengubah aturan sehari-hari menjadi ekspresi Boolean dan memeriksa ekuivalensi dengan tabel kebenaran"
+
+objective_mapping:
+  LO1: {lessons: [les-01], practice: [prac-01], theory_slots: [s01, s02, s03], lab: [act-01.c08], project: [K1.c12, K4.q3], concept_slots: [s01]}
+  LO2: {lessons: [les-01], practice: [prac-01], theory_slots: [s04, s05, s06, s07], lab: [act-01.c01–c04], project: [K1.c12], concept_slots: [s02]}
+  LO3: {lessons: [les-02], practice: [prac-02], theory_slots: [s08, s09, s10, s11], lab: [act-01.c05–c08], project: [F5 (konteks)], concept_slots: [s03]}
+  LO4: {lessons: [les-03], practice: [prac-03], theory_slots: [s12, s13, s14], lab: [act-02.c01–c04, act-03.c01, act-03.c02], project: [K1.c11, K4.q4], concept_slots: [s04]}
+  LO5: {lessons: [les-03], practice: [prac-03], theory_slots: [s15, s16, s17, s19], lab: [act-02.c05, act-02.c06, act-03.c06], project: [K1.c01–c08, K1.c10, K4.q1, K4.q5], concept_slots: [s05]}
+  LO6: {lessons: [les-04], practice: [prac-04], theory_slots: [s18, s20], lab: [act-03.c03–c05], project: [K1.c09, K1.c11, K4.q2], concept_slots: [s06]}
+
+lessons:
+  - {id: mod-w06.les-01, file: lessons/les-01.md, minutes: 40}
+  - {id: mod-w06.les-02, file: lessons/les-02.md, minutes: 35}
+  - {id: mod-w06.les-03, file: lessons/les-03.md, minutes: 40}
+  - {id: mod-w06.les-04, file: lessons/les-04.md, minutes: 35}
+practice_sets:
+  - {id: mod-w06.prac-01, lesson: mod-w06.les-01}
+  - {id: mod-w06.prac-02, lesson: mod-w06.les-02}
+  - {id: mod-w06.prac-03, lesson: mod-w06.les-03}
+  - {id: mod-w06.prac-04, lesson: mod-w06.les-04}
+
+components:
+  - {id: mod-w06.theory, weight_percent: 30, max_points: 56, blueprint: theory/blueprint.yaml, items_dir: theory/items, slots: 20, variants_per_slot: 2, items: 40}
+  - {id: mod-w06.lab, weight_percent: 40, max_points: 100, activities: [lab/act-01, lab/act-02, lab/act-03], activity_max_points: [30, 40, 30], variants_per_activity: 2, specifications: 6, attempt_scope: "RA-1 (seluruh komponen)"}
+  - {id: mod-w06.project, weight_percent: 20, max_points: 100, spec: project/spec.md, rubric: project/rubric.yaml, remedial: MPV-A}
+  - {id: mod-w06.concept, weight_percent: 10, max_points: 20, items_dir: concept/items, slots: 6, variants_per_slot: 2, items: 12, slot_max_points: {s01: 4, s02: 3, s03: 4, s04: 4, s05: 3, s06: 2}}
+pass_rule: "PASSED ⇔ 4·e ≥ 3·m untuk setiap komponen (skor terbaik) DAN Σ bobot·e/m ≥ 80% secara eksak (NP-4, D-04, D-12)"
+
+unscored_reflection:
+  id: mod-w06.reflection
+  prompt: "Tuliskan satu aturan sehari-hari berbentuk \"jika … dan/atau …\" dan ubah menjadi ekspresi Boolean dengan kata-katamu sendiri."
+  scored: false
+  xp: none
+
+xp:
+  identities:
+    - {xp_id: mod-w06.les-01, amount: 5, eligibility: "Pelajaran dibuka sampai bagian akhir untuk pertama kali (XE-4)"}
+    - {xp_id: mod-w06.les-02, amount: 5, eligibility: "idem"}
+    - {xp_id: mod-w06.les-03, amount: 5, eligibility: "idem"}
+    - {xp_id: mod-w06.les-04, amount: 5, eligibility: "idem"}
+    - {xp_id: mod-w06.prac-01, amount: 10, eligibility: "Set latihan diselesaikan pertama kali, berapa pun hasilnya (XE-4)"}
+    - {xp_id: mod-w06.prac-02, amount: 10, eligibility: "idem"}
+    - {xp_id: mod-w06.prac-03, amount: 10, eligibility: "idem"}
+    - {xp_id: mod-w06.prac-04, amount: 10, eligibility: "idem"}
+    - {xp_id: mod-w06.theory, amount: 50, eligibility: "Attempt selesai pertama dengan 4·e ≥ 3·56 (e ≥ 42) (XE-B, XE-1)"}
+    - {xp_id: mod-w06.lab, amount: 70, eligibility: "Attempt komponen selesai pertama (LA-2) dengan 4·e ≥ 3·100 (e ≥ 75)"}
+    - {xp_id: mod-w06.project, amount: 50, eligibility: "Attempt selesai pertama dengan 4·e ≥ 3·100 (e ≥ 75)"}
+    - {xp_id: mod-w06.concept, amount: 25, eligibility: "Attempt selesai pertama dengan 4·e ≥ 3·20 (e ≥ 15)"}
+    - {xp_id: mod-w06.passed, amount: 50, eligibility: "Modul W6 pertama kali berstatus PASSED (XE-5)"}
+  total_obtainable: 305
+  not_identities: ["aktivitas lab individual (XI-2)", "varian soal (XI-5)", "Jalankan/latihan lab", "refleksi tanpa skor", "attempt remedial atau perbaikan setelah award"]
+
+schedule:             # HA-A fase 2 (D-32): M 150, U 45, L 120, P 90, C 30, R 45 = 480 menit
+  allocation_minutes: {material_and_practice: 150, theory_exam_and_review: 45, laboratory: 120, mini_project: 90, concept_explanation: 30, scheduled_review_and_remedial_preparation: 45}
+  total_minutes: 480
+  lab_activity_minutes: {act-01: 40, act-02: 40, act-03: 40}
+  theory_exam:
+    standard_minutes: 33                 # rumus A.4 dari blueprint W6: S = 1.665 → ⌈1.832/60⌉ + 2
+    scheduled_feedback_review_minutes: 12
+    accessibility_TA_B_minutes: 50      # ⌈33 × 3/2⌉; di luar 480 menit nominal (TA-3)
+    optional_additional_review: "Di luar nominal; bergantung pelajar"
+  suggested_sessions:
+    - {session: 1, minutes: 230, content: "les-01 (40) · les-02 (35) · les-03 (40) · les-04 (35) · lab act-01 (40) · lab act-02 (40)"}
+    - {session: 2, minutes: 250, content: "lab act-03 (40) · mini-project (90) · concept (30) · review terjadwal (45) · ujian teori (33) + review umpan balik (12)"}
+  outside_nominal: ["perpanjangan aksesibilitas", "attempt remedial", "review tambahan opsional"]
+
+versioning:
+  module: "1.0"
+  rule: "Perubahan typo/klarifikasi → minor (1.1); perubahan kunci, poin, atau isi soal → mayor (2.0); xp_id dan item_id tidak berubah bila tujuan belajar sama (XI-6)"
+counts:
+  lessons: 4
+  practice_sets: 4
+  theory_items: 40
+  lab_specifications: 6
+  mini_projects: 1
+  concept_items: 12

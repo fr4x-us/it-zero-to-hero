@@ -251,7 +251,7 @@ AC UW-29: **ASM:L5 terisi**.
 | SB-9 | Attempt tidak dapat dihapus atau dibatalkan; attempt yang belum selesai tetap tercatat apa adanya (append-only) |
 | SB-10 | **Mini-project**: deliverable dibuat di aplikasi (kode, jawaban terstruktur, tabel, berkas teks, keadaan simulasi Git); diserahkan sekali per attempt dengan konfirmasi; dinilai otomatis dengan rubrik objektif (CU2-O4, CU-9). Tidak ada reviewer manusia di aplikasi; centang "sudah selesai" oleh pelajar tidak memberi poin |
 | SB-11 | Attempt remedial mini-project boleh dimulai dari salinan submission sebelumnya (MPV-A, CU-5); attempt lama tidak berubah |
-| SB-12 | Restore saat attempt `IN_PROGRESS`: mengikuti OD-9 (UW-33), tidak diputuskan di sini |
+| SB-12 | Restore saat attempt `IN_PROGRESS`: mengikuti OD-9 (UW-33), tidak diputuskan di sini. Pembuatan attempt dan pemilihan varian atomik serta konsistensi riwayat setelah restore: VA-4a ([CCD](CURRICULUM_CONTENT_DECISION_SHEETS.md) §B.2; otorisasi owner PR #28 O-2) — tidak menyelesaikan OD-9 |
 
 ### B.3 Rekomendasi OP-7
 

@@ -1,0 +1,51 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s20
+competency: comp-w07-test-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s20-a
+  variant_id: mod-w07.theory.s20.vA
+  item_version: '1.0'
+  stem: 'Langkah yang **salah** untuk menghitung rata-rata tiga nilai: "jumlahkan nilai pertama dan kedua,
+    lalu bagi 3". Untuk nilai 6, 9, 12, **berapa hasil langkah yang salah itu**?'
+  accepted_answers:
+  - '5'
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51)'
+  explanation: (6 + 9) ÷ 3 = 5, padahal rata-rata sebenarnya (6 + 9 + 12) ÷ 3 = 9. Kasus uji ini mengungkap
+    kesalahan.
+- item_id: item-w07-t-s20-b
+  variant_id: mod-w07.theory.s20.vB
+  item_version: '1.0'
+  stem: 'Langkah yang **salah** untuk menghitung keliling persegi panjang: "keliling = p + l". Untuk p
+    = 7 dan l = 5, **berapa hasil langkah yang salah itu**?'
+  accepted_answers:
+  - '12'
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51)'
+  explanation: 7 + 5 = 12, padahal keliling sebenarnya 2 × (7 + 5) = 24. Kasus uji ini mengungkap kesalahan.

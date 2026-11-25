@@ -1,0 +1,87 @@
+# W8 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.concept.s03
+competency: comp-w08-branch-01
+required_concepts:
+- dua cabang
+- nilai tepat di batas
+- '> vs ≥'
+format: CE-S5
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w08-c-s03-a
+  variant_id: mod-w08.concept.s03.vA
+  item_version: '1.0'
+  stem: 'Aturan: jika x > 10 maka y ← 1, selain itu y ← 2. Seorang siswa menulis catatan berikut. Satu
+    baris salah. Temukan barisnya dan pilih perbaikannya.'
+  lines:
+  - id: '1'
+    text: 'Keputusan punya dua cabang: Ya dan Tidak.'
+  - id: '2'
+    text: Untuk x = 15, hasilnya y = 1.
+  - id: '3'
+    text: Untuk x = 10, hasilnya y = 1.
+  - id: '4'
+    text: Setiap cabang harus menuju langkah berikutnya atau Selesai.
+  - id: '5'
+    text: Nilai tepat di batas perlu diuji.
+  error_line: '3'
+  correction_options:
+  - id: a
+    text: y = 0
+  - id: b
+    text: y = 1 karena 10 ≥ 10
+  - id: c
+    text: Tidak ada hasil
+  - id: d
+    text: y = 2 karena 10 > 10 salah
+  correction_key: d
+  distractor_rationale:
+    a: Tidak ada cabang y = 0
+    b: Syaratnya >, bukan ≥
+    c: Selalu ada cabang selain itu
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: '10 > 10 salah, jadi cabang "selain itu": y = 2.'
+- item_id: item-w08-c-s03-b
+  variant_id: mod-w08.concept.s03.vB
+  item_version: '1.0'
+  stem: 'Aturan: jika x ≤ 5 maka y ← "kecil", selain itu y ← "besar". Seorang siswa menulis catatan berikut.
+    Satu baris salah. Temukan barisnya dan pilih perbaikannya.'
+  lines:
+  - id: '1'
+    text: Untuk x = 5, hasilnya y = "besar".
+  - id: '2'
+    text: Untuk x = 2, hasilnya y = "kecil".
+  - id: '3'
+    text: Untuk x = 9, hasilnya y = "besar".
+  - id: '4'
+    text: Keputusan punya dua cabang.
+  - id: '5'
+    text: Kasus x = 5 dan x = 6 menguji batas.
+  error_line: '1'
+  correction_options:
+  - id: a
+    text: y = "kecil" karena 5 ≤ 5 benar
+  - id: b
+    text: y = "besar" karena 5 > 5
+  - id: c
+    text: y kosong
+  - id: d
+    text: y = "sedang"
+  correction_key: a
+  distractor_rationale:
+    b: 5 > 5 salah
+    c: Selalu ada hasil
+    d: Tidak ada cabang "sedang"
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: '≤ termasuk sama dengan: 5 ≤ 5 benar → "kecil".'

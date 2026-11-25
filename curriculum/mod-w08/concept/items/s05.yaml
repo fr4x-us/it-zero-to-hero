@@ -1,0 +1,72 @@
+# W8 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.concept.s05
+competency: comp-w08-trace-01
+required_concepts:
+- baris penelusuran mengikuti langkah
+- nilai lama dipakai sampai diganti
+format: CE-S3
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w08-c-s05-a
+  variant_id: mod-w08.concept.s05.vA
+  item_version: '1.0'
+  stem: 'Langkah: `a ← 3`; `b ← a × 2`; `a ← a + b`; `b ← a − 1`. Urutkan baris tabel penelusuran (nilai
+    setelah setiap langkah).'
+  items:
+  - id: A
+    text: a = 3, b = belum ada
+  - id: B
+    text: a = 3, b = 6
+  - id: C
+    text: a = 9, b = 6
+  - id: D
+    text: a = 9, b = 8
+  display_order:
+  - C
+  - A
+  - D
+  - B
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: Setiap baris berubah satu variabel; nilai lain tetap.
+- item_id: item-w08-c-s05-b
+  variant_id: mod-w08.concept.s05.vB
+  item_version: '1.0'
+  stem: 'Langkah: `x ← 10`; `y ← x ÷ 2`; `x ← x − y`; `y ← y + x`. Urutkan baris tabel penelusuran (nilai
+    setelah setiap langkah).'
+  items:
+  - id: A
+    text: x = 10, y = belum ada
+  - id: B
+    text: x = 10, y = 5
+  - id: C
+    text: x = 5, y = 5
+  - id: D
+    text: x = 5, y = 10
+  display_order:
+  - D
+  - B
+  - A
+  - C
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: Setiap baris berubah satu variabel; nilai lain tetap.

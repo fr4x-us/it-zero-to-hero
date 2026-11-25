@@ -1,0 +1,58 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s03
+competency: comp-w06-repr-01
+format: TF-2
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s03-a
+  variant_id: mod-w06.theory.s03.vA
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: '`1010₂` dan `10₁₀` menyatakan nilai yang sama'
+  - id: b
+    text: '`1010₂` dibaca "seribu sepuluh"'
+  - id: c
+    text: Dalam logika Boolean, 1 berarti benar dan 0 berarti salah
+  - id: d
+    text: Bilangan biner selalu tepat 8 digit
+  - id: e
+    text: Menambah nol di depan (`00110₂`) tidak mengubah nilai bilangan biner
+  key:
+  - a
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: Itu cara membaca desimal; nilainya sepuluh
+    d: Panjang bebas kecuali soal meminta n bit
+  explanation: 1010₂ = 8 + 2 = 10. Nilai Boolean hanya benar/salah. 00110₂ = 110₂ = 6.
+- item_id: item-w06-t-s03-b
+  variant_id: mod-w06.theory.s03.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: '`2` adalah digit biner yang sah'
+  - id: b
+    text: '`111₂` bernilai 7 dalam desimal'
+  - id: c
+    text: 'Nilai Boolean hanya dua: benar (1) dan salah (0)'
+  - id: d
+    text: Bit paling kanan berbobot 1
+  - id: e
+    text: '`11₂` sama dengan sebelas'
+  key:
+  - b
+  - c
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    a: Digit biner hanya 0 dan 1
+    e: 11₂ = 2 + 1 = 3
+  explanation: 111₂ = 4 + 2 + 1 = 7; posisi 0 berbobot 2⁰ = 1; Boolean hanya benar/salah.

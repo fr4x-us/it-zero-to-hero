@@ -1,0 +1,67 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s18
+competency: comp-w07-test-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s18-a
+  variant_id: mod-w07.theory.s18.vA
+  item_version: '1.0'
+  stem: Langkah di bawah seharusnya menghasilkan bilangan **terbesar** dari x dan y. Kasus uji mana yang
+    **mengungkap** kesalahannya?
+  stimulus_table:
+  - - Langkah
+    - Isi
+  - - '1'
+    - Jika x > y, hasil = x
+  - - '2'
+    - Selain itu, hasil = x
+  options:
+  - id: a
+    text: x = 5, y = 2
+  - id: b
+    text: x = 9, y = 1
+  - id: c
+    text: x = 3, y = 8
+  - id: d
+    text: x = 7, y = 7
+  key: c
+  distractor_rationale:
+    a: Hasil 5 benar
+    b: Hasil 9 benar
+    d: Hasil 7 benar (kedua bilangan sama)
+  explanation: 'x = 3, y = 8: langkah 2 memberi 3, padahal seharusnya 8. Langkah 2 seharusnya "hasil =
+    y".'
+  option_order: urutan tetap penyusun
+- item_id: item-w07-t-s18-b
+  variant_id: mod-w07.theory.s18.vB
+  item_version: '1.0'
+  stem: Langkah di bawah seharusnya menulis "genap" atau "ganjil" untuk bilangan bulat tidak negatif n.
+    Kasus uji mana yang **mengungkap** kesalahannya?
+  stimulus_table:
+  - - Langkah
+    - Isi
+  - - '1'
+    - Jika sisa n ÷ 2 = 0, tulis "genap"
+  - - '2'
+    - Selain itu, tulis "genap"
+  options:
+  - id: a
+    text: n = 4
+  - id: b
+    text: n = 10
+  - id: c
+    text: n = 0
+  - id: d
+    text: n = 7
+  key: d
+  distractor_rationale:
+    a: '"genap" benar'
+    b: '"genap" benar'
+    c: 0 genap; "genap" benar
+  explanation: 'n = 7: langkah 2 menulis "genap", padahal seharusnya "ganjil".'
+  option_order: urutan alami, tetap

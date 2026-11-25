@@ -1,0 +1,81 @@
+# W5 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.concept.s05
+competency: comp-w05-pct-01
+required_concepts:
+- nilai dasar
+- persen → pecahan desimal
+- urutan perhitungan diskon/kenaikan
+format: CE-S3
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w05-c-s05-a
+  variant_id: mod-w05.concept.s05.vA
+  item_version: '1.0'
+  stem: Urutkan langkah menghitung harga setelah diskon 25% dari Rp160.000.
+  items:
+  - id: A
+    text: 'Tentukan nilai dasar: harga awal Rp160.000'
+  - id: B
+    text: Ubah 25% menjadi pecahan desimal 0,25
+  - id: C
+    text: 'Hitung besar diskon dari nilai dasar: 0,25 × 160.000 = 40.000'
+  - id: D
+    text: 'Kurangkan diskon dari harga awal: 160.000 − 40.000 = 120.000'
+  display_order:
+  - D
+  - B
+  - C
+  - A
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  - - B
+    - A
+    - C
+    - D
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: A dan B tidak saling bergantung (dua urutan diterima); besar diskon butuh keduanya; pengurangan
+    terakhir.
+- item_id: item-w05-c-s05-b
+  variant_id: mod-w05.concept.s05.vB
+  item_version: '1.0'
+  stem: Urutkan langkah menghitung persentase kenaikan dari 60 menjadi 75.
+  items:
+  - id: A
+    text: 'Hitung selisih: 75 − 60 = 15'
+  - id: B
+    text: 'Tentukan nilai dasar: nilai awal 60'
+  - id: C
+    text: 'Bagi selisih dengan nilai dasar: 15 ÷ 60 = 0,25'
+  - id: D
+    text: 'Ubah ke persen: 0,25 = 25%'
+  display_order:
+  - C
+  - D
+  - B
+  - A
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  - - B
+    - A
+    - C
+    - D
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: A dan B tidak saling bergantung (dua urutan diterima); pembagian butuh keduanya; ubah ke persen
+    terakhir.

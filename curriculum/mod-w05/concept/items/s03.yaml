@@ -1,0 +1,86 @@
+# W5 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.concept.s03
+competency: comp-w05-divmod-01
+required_concepts:
+- hasil bagi
+- sisa
+- sisa < pembagi
+- hasil bagi × pembagi + sisa
+format: CE-S5
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w05-c-s03-a
+  variant_id: mod-w05.concept.s03.vA
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan berikut. Satu baris salah. Temukan barisnya dan pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: 17 dibagi 5 menghasilkan hasil bagi 3 dan sisa 2.
+  - id: '2'
+    text: Untuk pembagi positif, sisa selalu lebih kecil daripada pembagi.
+  - id: '3'
+    text: Bilangan genap bersisa 0 bila dibagi 2.
+  - id: '4'
+    text: 29 dibagi 4 menghasilkan hasil bagi 7 dan sisa 3.
+  - id: '5'
+    text: Bila sisanya 0, bilangan itu habis dibagi.
+  error_line: '4'
+  correction_options:
+  - id: a
+    text: Hasil bagi 7 dan sisa 1
+  - id: b
+    text: Hasil bagi 6 dan sisa 5
+  - id: c
+    text: Hasil bagi 7,25 dan sisa 0
+  - id: d
+    text: Hasil bagi 8 dan sisa 3
+  correction_key: a
+  distractor_rationale:
+    b: Sisa 5 tidak boleh ≥ pembagi 4
+    c: Hasil bagi pada pembagian bersisa adalah bilangan bulat
+    d: 4 × 8 = 32 > 29
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: '4 × 7 = 28; 29 − 28 = 1. Periksa: 7 × 4 + 1 = 29.'
+- item_id: item-w05-c-s03-b
+  variant_id: mod-w05.concept.s03.vB
+  item_version: '1.0'
+  stem: Seorang siswa menulis catatan berikut. Satu baris salah. Temukan barisnya dan pilih perbaikannya.
+  lines:
+  - id: '1'
+    text: Sisa pembagian oleh 7 selalu salah satu dari 0 sampai 6.
+  - id: '2'
+    text: 38 dibagi 6 menghasilkan hasil bagi 6 dan sisa 4.
+  - id: '3'
+    text: Bilangan ganjil bersisa 1 bila dibagi 2.
+  - id: '4'
+    text: 24 dibagi 8 bersisa 0.
+  - id: '5'
+    text: Hasil bagi × pembagi + sisa = bilangan yang dibagi.
+  error_line: '2'
+  correction_options:
+  - id: a
+    text: Hasil bagi 5 dan sisa 8
+  - id: b
+    text: Hasil bagi 6,33 dan sisa 0
+  - id: c
+    text: Hasil bagi 7 dan sisa −4
+  - id: d
+    text: Hasil bagi 6 dan sisa 2
+  correction_key: d
+  distractor_rationale:
+    a: Sisa 8 tidak boleh ≥ pembagi 6
+    b: Hasil bagi pada pembagian bersisa adalah bilangan bulat
+    c: Sisa pada W5 tidak negatif
+  credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
+    baris salah/kosong
+  feedback: '6 × 6 = 36; 38 − 36 = 2. Periksa: 6 × 6 + 2 = 38.'

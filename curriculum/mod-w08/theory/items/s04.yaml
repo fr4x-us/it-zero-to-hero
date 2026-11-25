@@ -1,0 +1,50 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s04
+competency: comp-w08-symbol-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s04-a
+  variant_id: mod-w08.theory.s04.vA
+  item_version: '1.0'
+  stem: Bentuk flowchart untuk **keputusan** (pertanyaan Ya/Tidak) adalah …
+  options:
+  - id: a
+    text: Oval
+  - id: b
+    text: Persegi panjang
+  - id: c
+    text: Jajar genjang
+  - id: d
+    text: Belah ketupat
+  key: d
+  distractor_rationale:
+    a: Mulai/Selesai
+    b: Proses
+    c: Input/output
+  explanation: 'Belah ketupat, dengan dua panah keluar: Ya dan Tidak.'
+  option_order: urutan tetap penyusun
+- item_id: item-w08-t-s04-b
+  variant_id: mod-w08.theory.s04.vB
+  item_version: '1.0'
+  stem: Bentuk flowchart untuk **proses** (perhitungan atau pemberian nilai) adalah …
+  options:
+  - id: a
+    text: Oval
+  - id: b
+    text: Persegi panjang
+  - id: c
+    text: Jajar genjang
+  - id: d
+    text: Belah ketupat
+  key: b
+  distractor_rationale:
+    a: Mulai/Selesai
+    c: Input/output
+    d: Keputusan
+  explanation: Persegi panjang, mis. `luas ← p × l`.
+  option_order: urutan tetap penyusun

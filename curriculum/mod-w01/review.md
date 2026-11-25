@@ -447,3 +447,70 @@ Batas review independen yang diungkapkan: F-22 dan F-23 menerima review akhir te
 Konsekuensi: modul berikutnya memakai W1 sebagai acuan, tetapi temuan baru
 pada W1 tetap boleh diangkat; penerimaan ini bukan verifikasi runtime atau
 uji durasi dengan pelajar.
+
+## Penyelarasan kebijakan D-39 (2026-11-25) — bukan perubahan disposisi historis
+
+Owner menyetujui **D-39 HYBRID COMPETENCY COVERAGE**. Audit cakupan
+([CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md))
+menemukan celah **di bawah kontrak baru** (bukan kegagalan terhadap kontrak
+saat W1 diterima). Koreksi minimum (format, poin, kesulitan,
+kompetensi, dan distribusi posisi kunci tetap; `item_version: '2.0'`):
+
+| Butir | Perubahan | Konsep yang dijamin |
+|---|---|---|
+| teori s10 vB | `1 GB = … MB` → `16 bit = … byte` (kunci 2) | 1 byte = 8 bit (concept s05) |
+
+Penerimaan W01-ACC tetap tercatat untuk isi yang diterima. Varian yang
+diubah di atas **tidak** tercakup penerimaan itu dan memerlukan **review
+delta independen** terarah. Register F-01–F-72 tidak berubah.
+
+### Putaran 4 (review `4ddc993`, REQUEST CHANGES) — tindak lanjut D-39
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R3-08 | Status penerimaan terstruktur TPL-01a di `module.yaml` → `acceptance` (historis tetap; varian revisi PENDING) | CONFIRMED — FIXED | YA | BELUM |
+
+Register kesetaraan dan cakupan: [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
+Penerimaan W01-ACC tetap historis; varian revisi belum diterima.
+
+### Putaran 5 (review `796043c`, REQUEST CHANGES)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R4-02 | Validator penerimaan kini membandingkan isi setiap varian dengan `baseline_commit` git (field baru di blok `acceptance`); varian revisi tetap PENDING | CONFIRMED — FIXED | YA | BELUM |
+
+Butir W1 yang diterima tidak diubah pada putaran ini.
+
+### Putaran 6 (koreksi terarah; otorisasi owner terbatas; temuan sementara R5-01–R5-05)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R5-05 | Validator penerimaan kini juga membandingkan field slot bersama (kompetensi, required_concepts, format, max_points, validation, feedback_stage, difficulty, estimated_seconds, normalisasi lab) dengan baseline `df76c5f`; W1: 1 varian PENDING, tidak ada perubahan field bersama | CONFIRMED — FIXED | YA | BELUM |
+
+Butir W1 yang diterima tidak diubah pada putaran ini.
+
+### Putaran 7 (koreksi konsolidasi; otorisasi owner bersyarat; temuan sementara R6-01–R6-06)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R6-01 | Baseline penerimaan W01-ACC kini diambil dari jangkar terpisah (`docs/validation/trust/acceptance_anchors.yaml`): `df76c5fbf946e6e8d2ca9e8e87505454041623a3` = merge PR #25, leluhur HEAD, baris W01-ACC di DECISIONS_LOG. Batas: bukan bukti kriptografis | CONFIRMED — FIXED | YA | BELUM |
+| R6-02 | Lokasi varian (modul, komponen, path, slot, item, variant_id) dibandingkan dengan baseline; W1 tidak ada relokasi | CONFIRMED — FIXED | YA | BELUM |
+
+Butir W1 yang diterima tidak diubah pada putaran ini.
+
+## Penerimaan owner final PR #28 (2026-11-25)
+
+Owner menerima 1 varian revisi W1 pada versi persis di HEAD review `b54f930b0cf4479e2984fc148e2bc91c443e1ada` (PR #28 ACC, 2026-11-25; `owner_acceptance: ACCEPTED`, `independent_review: TARGETED_LIMITED`). Penerimaan historis W01-ACC dan baseline aslinya tidak berubah; riwayat revisi dipertahankan.
+
+Verdict independen: "PASS — targeted delta review with disclosed limitations". Batas
+(DECISIONS_LOG): review terarah, bukan audit menyeluruh; putaran 8 memeriksa langsung 7 dari 20
+berkas berubah; putaran 7 tidak menyeluruh; 156 konsep wajib tidak diverifikasi ulang secara
+independen; paket validasi tidak dijalankan ulang secara independen (clone GitHub terhambat);
+tanpa uji pelajar; tanpa verifikasi runtime Android. Hasil penulis (bukan eksekusi independen):
+cakupan 156/0/0, kesetaraan 48/0, 778 pemeriksaan + 8 kasus provenance.
+
+Disposisi final: R7-01 FIX VERIFIED (review statis terarah); R7-02 PASS (review statis terarah atas
+cacat yang dilaporkan); O-1 selesai; O-2/VA-4a PASS tingkat kontrak desain; R3-04 CONDITIONAL PASS
+(verifikasi implementasi dan restore tertunda); PR28-02 PARTIAL PASS independen; PR28-06 diterima
+untuk perencanaan kurikulum. Baris register sebelumnya tetap sebagai catatan historis; kolom
+INDEPENDENT VERIFIED di atas tidak diubah secara retroaktif.

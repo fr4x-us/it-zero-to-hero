@@ -1,0 +1,200 @@
+# W7 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w07.lab.act-01
+name: Dekomposisi dan urutan tugas
+competencies:
+- comp-w07-decomp-01
+- comp-w07-order-01
+max_points: 30
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w07.lab (D-28 XI-2)
+normalization: 'c01–c03: Kode kelompok: satu huruf dari daftar kode; huruf besar/kecil bebas. c04: Urutan:
+  ID tugas dipisah spasi atau koma; huruf besar/kecil bebas; setiap ID tepat sekali. Dinormalisasi (huruf
+  besar, dipisah satu spasi) lalu dicocokkan dengan SALAH SATU urutan valid di accepted_answers (semua
+  urutan valid dienumerasi). ID tak dikenal, ganda, atau hilang → INVALID_ANSWER. c05: Buang spasi/tab
+  di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 = buang spasi tepi). N2 bentuk angka:
+  bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`) dengan tepat sebanyak angka desimal
+  yang diminta soal; titik hanya sebagai pemisah ribuan dengan kelompok tepat tiga digit (`1.250`); tanda
+  minus `-` atau `−` hanya untuk bilangan negatif. N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran
+  satuan yang tercantum pada accepted_answers butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf:
+  besar/kecil diabaikan hanya pada akhiran satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis.
+  N5 kanonisasi: `−` → `-`, titik ribuan dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik
+  accepted_answers; accepted_answers adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan
+  daftar tertutup. Ditolak: titik sebagai desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan
+  atau afiks lain, angka desimal lebih/kurang dari yang diminta. Satuan data/kecepatan (bit/byte, mis.
+  `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap peka huruf (F-51) (boleh diikuti kata `urutan`). c06: Pilihan:
+  satu huruf a–d, huruf besar/kecil bebas'
+answer_validation: Kosong atau bentuk ditolak → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk tidak
+  sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan. W7 tidak memiliki
+  test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas kode, urutan, angka, dan pilihan
+variants:
+- variant_id: mod-w07.lab.act-01.vA
+  fixture:
+    groups:
+      K: Koordinasi — menghasilkan kesepakatan kelompok
+      I: Isi — menghasilkan teks atau foto
+      T: Tampilan — menghasilkan papan yang tertata
+    tasks:
+      M1: 'Rapat pembagian tugas (hasil: daftar siapa mengerjakan apa)'
+      M2: 'Menulis artikel kegiatan (hasil: teks artikel)'
+      M3: 'Memilih foto kegiatan (hasil: 4 foto terpilih)'
+      M4: 'Mendesain tata letak papan (hasil: sketsa posisi artikel dan foto)'
+      M5: 'Menempel artikel dan foto di papan sesuai sketsa (hasil: mading jadi)'
+    prerequisites:
+    - M1 sebelum M2
+    - M1 sebelum M3
+    - M2 sebelum M4
+    - M3 sebelum M4
+    - M4 sebelum M5
+  visible_example:
+    note: 'Contoh terlihat (0 poin): tugas "membeli spidol (hasil: spidol)" untuk proyek lain → kelompok
+      Barang'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w07.lab.act-01.vA.c01
+    name: Kode M2
+    question: Kelompok untuk M2?
+    accepted_answers:
+    - I
+    points: 5
+    explanation: 'Hasilnya teks: Isi'
+  - check_id: mod-w07.lab.act-01.vA.c02
+    name: Kode M4
+    question: Kelompok untuk M4?
+    accepted_answers:
+    - T
+    points: 5
+    explanation: 'Hasilnya sketsa tata letak: Tampilan'
+  - check_id: mod-w07.lab.act-01.vA.c03
+    name: Kode M1
+    question: Kelompok untuk M1?
+    accepted_answers:
+    - K
+    points: 5
+    explanation: 'Hasilnya kesepakatan: Koordinasi'
+  - check_id: mod-w07.lab.act-01.vA.c04
+    name: Urutan valid
+    question: Tulis satu urutan M1–M5 yang memenuhi semua prasyarat.
+    accepted_answers:
+    - M1 M2 M3 M4 M5
+    - M1 M3 M2 M4 M5
+    points: 5
+    explanation: M1 pertama; M2 dan M3 boleh ditukar; lalu M4, M5
+  - check_id: mod-w07.lab.act-01.vA.c05
+    name: Banyak urutan valid
+    question: Berapa banyak urutan M1–M5 yang memenuhi semua prasyarat?
+    accepted_answers:
+    - '2'
+    - 2 urutan
+    - 2urutan
+    points: 5
+    explanation: 'Hanya M2 dan M3 yang bebas: 2 urutan'
+  - check_id: mod-w07.lab.act-01.vA.c06
+    name: Bekerja bersamaan
+    question: Dua tugas mana yang dapat dikerjakan **bersamaan** oleh dua orang berbeda?
+    options:
+    - id: a
+      text: M1 dan M2
+    - id: b
+      text: M2 dan M3
+    - id: c
+      text: M3 dan M4
+    - id: d
+      text: M4 dan M5
+    expected: b
+    points: 5
+    explanation: M2 dan M3 sama-sama hanya butuh M1
+- variant_id: mod-w07.lab.act-01.vB
+  fixture:
+    groups:
+      K: Koordinasi — menghasilkan kesepakatan kelompok
+      B: Barang — mengumpulkan atau mengemas barang
+      P: Publikasi — menghasilkan pengumuman
+    tasks:
+      B1: 'Rapat menentukan jenis bantuan (hasil: daftar barang yang diterima)'
+      B2: 'Membuat poster pengumuman (hasil: poster)'
+      B3: 'Mengumpulkan barang dari siswa (hasil: barang terkumpul)'
+      B4: 'Mengemas barang per paket (hasil: paket siap kirim)'
+      B5: 'Menyerahkan paket ke panitia (hasil: tanda terima)'
+    prerequisites:
+    - B1 sebelum B2
+    - B1 sebelum B3
+    - B3 sebelum B4
+    - B4 sebelum B5
+  visible_example:
+    note: 'Contoh terlihat (0 poin): tugas "membeli spidol (hasil: spidol)" untuk proyek lain → kelompok
+      Barang'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w07.lab.act-01.vB.c01
+    name: Kode B2
+    question: Kelompok untuk B2?
+    accepted_answers:
+    - P
+    points: 5
+    explanation: 'Hasilnya poster: Publikasi'
+  - check_id: mod-w07.lab.act-01.vB.c02
+    name: Kode B4
+    question: Kelompok untuk B4?
+    accepted_answers:
+    - B
+    points: 5
+    explanation: 'Mengemas barang: Barang'
+  - check_id: mod-w07.lab.act-01.vB.c03
+    name: Kode B1
+    question: Kelompok untuk B1?
+    accepted_answers:
+    - K
+    points: 5
+    explanation: 'Hasilnya kesepakatan: Koordinasi'
+  - check_id: mod-w07.lab.act-01.vB.c04
+    name: Urutan valid
+    question: Tulis satu urutan B1–B5 yang memenuhi semua prasyarat.
+    accepted_answers:
+    - B1 B2 B3 B4 B5
+    - B1 B3 B2 B4 B5
+    - B1 B3 B4 B2 B5
+    - B1 B3 B4 B5 B2
+    points: 5
+    explanation: B1 pertama; B2 boleh di mana saja setelah B1; B3, B4, B5 berurutan
+  - check_id: mod-w07.lab.act-01.vB.c05
+    name: Banyak urutan valid
+    question: Berapa banyak urutan B1–B5 yang memenuhi semua prasyarat?
+    accepted_answers:
+    - '4'
+    - 4 urutan
+    - 4urutan
+    points: 5
+    explanation: 'B2 dapat diselipkan di 4 tempat setelah B1: 4 urutan'
+  - check_id: mod-w07.lab.act-01.vB.c06
+    name: Bekerja bersamaan
+    question: Dua tugas mana yang dapat dikerjakan **bersamaan** oleh dua orang berbeda?
+    options:
+    - id: a
+      text: B1 dan B2
+    - id: b
+      text: B3 dan B4
+    - id: c
+      text: B2 dan B3
+    - id: d
+      text: B4 dan B5
+    expected: c
+    points: 5
+    explanation: B2 dan B3 sama-sama hanya butuh B1
+normalization_examples:
+  c04 (kunci urutan, vA):
+    diterima:
+    - M1 M2 M3 M4 M5
+    - m1,m3,m2,m4,m5
+    - M1, M2, M3, M4, M5
+    ditolak (0 poin):
+    - M1 M2 M4 M3 M5
+    - M1 M2 M3 M4
+    - M1 M2 M2 M3 M4 M5
+    - '12345'

@@ -1,0 +1,48 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s06
+competency: comp-w05-expr-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s06-a
+  variant_id: mod-w05.theory.s06.vA
+  item_version: '1.0'
+  stem: Hitung nilai `a² + 3 × b` bila `a = 4` dan `b = 5`.
+  accepted_answers:
+  - '31'
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51)'
+  explanation: a² = 4 × 4 = 16; 3 × b = 15; 16 + 15 = 31.
+- item_id: item-w05-t-s06-b
+  variant_id: mod-w05.theory.s06.vB
+  item_version: '1.0'
+  stem: Hitung nilai `2 × x² − y` bila `x = 3` dan `y = 7`.
+  accepted_answers:
+  - '11'
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51)'
+  explanation: x² = 3 × 3 = 9 (pangkat sebelum kali); 2 × 9 = 18; 18 − 7 = 11.

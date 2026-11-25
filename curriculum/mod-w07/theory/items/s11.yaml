@@ -1,0 +1,50 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s11
+competency: comp-w07-algo-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s11-a
+  variant_id: mod-w07.theory.s11.vA
+  item_version: '1.0'
+  stem: Ciri **algoritma** yang baik adalah …
+  options:
+  - id: a
+    text: Langkahnya jelas, berurutan, dan berakhir
+  - id: b
+    text: Langkahnya boleh ditafsirkan berbeda oleh setiap orang
+  - id: c
+    text: Langkahnya tidak perlu berakhir
+  - id: d
+    text: Langkahnya ditulis sependek mungkin walaupun tidak lengkap
+  key: a
+  distractor_rationale:
+    b: Langkah harus dapat dikerjakan persis sama
+    c: Algoritma harus berakhir
+    d: Kelengkapan lebih penting daripada pendek
+  explanation: Algoritma = langkah tepat, berurutan, dan berhingga.
+  option_order: urutan tetap penyusun
+- item_id: item-w07-t-s11-b
+  variant_id: mod-w07.theory.s11.vB
+  item_version: '1.0'
+  stem: Instruksi mana yang **paling jelas** sehingga dikerjakan persis sama oleh siapa pun?
+  options:
+  - id: a
+    text: Tambahkan sedikit garam
+  - id: b
+    text: Masak sampai cukup
+  - id: c
+    text: Masak sebentar
+  - id: d
+    text: Tambahkan 2 gram garam
+  key: d
+  distractor_rationale:
+    a: '"sedikit" tidak terukur'
+    b: '"cukup" tidak terukur'
+    c: '"sebentar" tidak terukur'
+  explanation: Ukuran yang pasti (2 gram) tidak dapat ditafsirkan berbeda.
+  option_order: urutan tetap penyusun

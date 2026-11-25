@@ -1,0 +1,68 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s13
+competency: comp-w05-unit-01
+format: TF-3
+difficulty: D3
+max_points: 4
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s13-a
+  variant_id: mod-w05.theory.s13.vA
+  item_version: '1.0'
+  stem: Model ideal (aliran tetap). Keran mengalirkan **250 mL per detik**. Berapa **menit** untuk mengisi
+    bak **90 liter** (1 liter = 1.000 mL)?
+  accepted_answers:
+  - '6'
+  - 6 menit
+  - 6menit
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51)'
+  normalization_examples:
+    diterima:
+    - '6'
+    - 6 MENIT
+    ditolak (0 poin):
+    - 6 menitnya
+    - '06'
+  explanation: 90 liter = 90.000 mL; 90.000 ÷ 250 = 360 detik; 360 ÷ 60 = 6 menit.
+- item_id: item-w05-t-s13-b
+  variant_id: mod-w05.theory.s13.vB
+  item_version: '1.0'
+  stem: Model ideal (aliran tetap). Pompa mengalirkan **400 mL per detik**. Berapa **menit** untuk mengisi
+    tangki **72 liter** (1 liter = 1.000 mL)?
+  accepted_answers:
+  - '3'
+  - 3 menit
+  - 3menit
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51)'
+  normalization_examples:
+    diterima:
+    - '3'
+    - 3 MENIT
+    ditolak (0 poin):
+    - 3 menitnya
+    - '03'
+  explanation: 72 liter = 72.000 mL; 72.000 ÷ 400 = 180 detik; 180 ÷ 60 = 3 menit.

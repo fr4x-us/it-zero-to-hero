@@ -1,0 +1,50 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s12
+competency: comp-w06-ops-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s12-a
+  variant_id: mod-w06.theory.s12.vA
+  item_version: '1.0'
+  stem: A = 1 dan B = 0. Nilai `A AND B` adalah …
+  options:
+  - id: a
+    text: 0 (salah)
+  - id: b
+    text: 1 (benar)
+  - id: c
+    text: '10'
+  - id: d
+    text: Tidak dapat ditentukan
+  key: a
+  distractor_rationale:
+    b: AND bernilai 1 hanya bila semua input 1
+    c: Bukan menggabungkan digit
+    d: Nilai A dan B sudah diketahui
+  explanation: 'AND: 1 hanya bila A dan B sama-sama 1. B = 0, jadi hasil 0.'
+  option_order: urutan alami (nilai/kategori), tetap
+- item_id: item-w06-t-s12-b
+  variant_id: mod-w06.theory.s12.vB
+  item_version: '1.0'
+  stem: A = 0 dan B = 1. Nilai `A OR B` adalah …
+  options:
+  - id: a
+    text: 0 (salah)
+  - id: b
+    text: 1 (benar)
+  - id: c
+    text: '01'
+  - id: d
+    text: Tidak dapat ditentukan
+  key: b
+  distractor_rationale:
+    a: OR bernilai 1 bila sedikitnya satu input 1
+    c: Bukan menggabungkan digit
+    d: Nilai A dan B sudah diketahui
+  explanation: 'OR: 1 bila sedikitnya satu input 1. B = 1, jadi hasil 1.'
+  option_order: urutan alami (nilai/kategori), tetap

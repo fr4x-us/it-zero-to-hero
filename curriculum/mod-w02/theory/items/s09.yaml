@@ -35,13 +35,14 @@ variants:
     subfolder.
 - item_id: item-w02-t-s09-b
   variant_id: mod-w02.theory.s09.vB
-  item_version: '1.0'
+  item_version: '2.0'
   stem: Pilih **semua** pernyataan yang benar.
   options:
   - id: a
     text: Ekstensi dihitung dari titik **pertama** nama berkas
   - id: b
-    text: Sebagian sistem operasi menyembunyikan ekstensi secara bawaan
+    text: Sistem operasi memakai ekstensi untuk memilih aplikasi pembuka, misalnya aplikasi PDF untuk
+      berkas `.pdf`
   - id: c
     text: Berkas bernama sama boleh ada di dua folder yang berbeda
   - id: d
@@ -56,4 +57,5 @@ variants:
   distractor_rationale:
     a: Ekstensi dihitung dari titik terakhir
     e: Isi berkas tidak berubah saat ekstensi diganti
-  explanation: Ekstensi dapat disembunyikan OS; nama unik hanya di dalam satu folder; root di puncak pohon.
+  explanation: OS memilih aplikasi pembuka dari ekstensi; nama unik hanya di dalam satu folder; root di
+    puncak pohon.

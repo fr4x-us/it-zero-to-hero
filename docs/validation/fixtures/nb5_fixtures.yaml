@@ -1,0 +1,72 @@
+# Fixture NB-5 yang terikat pada butir nyata. file + variant_id (teori) atau check_id (lab).
+# expected: ACCEPT | WRONG (bentuk sah, nilai salah) | INVALID (INVALID_ANSWER: bentuk tidak sah).
+- {file: mod-w05/theory/items/s03.yaml, id: mod-w05.theory.s03.vA, input: "-6 °C", expected: ACCEPT}
+- {file: mod-w05/theory/items/s03.yaml, id: mod-w05.theory.s03.vA, input: "-6 °c", expected: ACCEPT}
+- {file: mod-w05/theory/items/s03.yaml, id: mod-w05.theory.s03.vA, input: "−6°C", expected: ACCEPT}
+- {file: mod-w05/theory/items/s03.yaml, id: mod-w05.theory.s03.vA, input: "-6 °F", expected: INVALID}
+- {file: mod-w05/theory/items/s03.yaml, id: mod-w05.theory.s03.vA, input: "6 °C", expected: WRONG}
+- {file: mod-w05/theory/items/s08.yaml, id: mod-w05.theory.s08.vA, input: "5 KELERENG", expected: ACCEPT}
+- {file: mod-w05/theory/items/s08.yaml, id: mod-w05.theory.s08.vA, input: "5 kelerengnya", expected: INVALID}
+- {file: mod-w05/theory/items/s08.yaml, id: mod-w05.theory.s08.vA, input: "05", expected: INVALID}
+- {file: mod-w05/theory/items/s11.yaml, id: mod-w05.theory.s11.vA, input: "205 MENIT", expected: ACCEPT}
+- {file: mod-w05/theory/items/s11.yaml, id: mod-w05.theory.s11.vA, input: "205  menit", expected: INVALID}
+- {file: mod-w05/theory/items/s13.yaml, id: mod-w05.theory.s13.vA, input: "6 MENIT", expected: ACCEPT}
+- {file: mod-w05/theory/items/s16.yaml, id: mod-w05.theory.s16.vA, input: "25 PERSEN", expected: ACCEPT}
+- {file: mod-w05/theory/items/s16.yaml, id: mod-w05.theory.s16.vA, input: "25%", expected: ACCEPT}
+- {file: mod-w05/theory/items/s16.yaml, id: mod-w05.theory.s16.vA, input: "25,0", expected: INVALID}
+- {file: mod-w05/theory/items/s18.yaml, id: mod-w05.theory.s18.vA, input: "3,5", expected: ACCEPT}
+- {file: mod-w05/theory/items/s18.yaml, id: mod-w05.theory.s18.vA, input: "3,50", expected: INVALID}
+- {file: mod-w05/theory/items/s18.yaml, id: mod-w05.theory.s18.vA, input: "3.5", expected: INVALID}
+- {file: mod-w05/theory/items/s18.yaml, id: mod-w05.theory.s18.vA, input: "3,4", expected: WRONG}
+- {file: mod-w05/theory/items/s15.yaml, id: mod-w05.theory.s15.vA, input: "Rp204.000", expected: ACCEPT}
+- {file: mod-w05/theory/items/s15.yaml, id: mod-w05.theory.s15.vA, input: "Rp 204000", expected: ACCEPT}
+- {file: mod-w05/theory/items/s15.yaml, id: mod-w05.theory.s15.vA, input: "rp204.000", expected: INVALID}
+- {file: mod-w05/theory/items/s15.yaml, id: mod-w05.theory.s15.vA, input: "204,000", expected: INVALID}
+- {file: mod-w05/theory/items/s15.yaml, id: mod-w05.theory.s15.vA, input: "20.4000", expected: INVALID}
+- {file: mod-w05/theory/items/s15.yaml, id: mod-w05.theory.s15.vA, input: "-204000", expected: WRONG}
+- {file: mod-w05/lab/act-03/checks.yaml, id: mod-w05.lab.act-03.vA.c05, input: "2400 G", expected: ACCEPT}
+- {file: mod-w05/lab/act-03/checks.yaml, id: mod-w05.lab.act-03.vA.c05, input: "2400GRAM", expected: ACCEPT}
+- {file: mod-w05/lab/act-03/checks.yaml, id: mod-w05.lab.act-03.vA.c05, input: "2.400 gram", expected: ACCEPT}
+- {file: mod-w05/lab/act-03/checks.yaml, id: mod-w05.lab.act-03.vA.c05, input: "2,4 kg", expected: INVALID}
+- {file: mod-w05/lab/act-03/checks.yaml, id: mod-w05.lab.act-03.vA.c04, input: "rp23.000", expected: INVALID}
+- {file: mod-w05/lab/act-02/checks.yaml, id: mod-w05.lab.act-02.vA.c05, input: "18,8", expected: ACCEPT}
+- {file: mod-w05/lab/act-02/checks.yaml, id: mod-w05.lab.act-02.vA.c05, input: "18.8", expected: INVALID}
+- {file: mod-w06/theory/items/s15.yaml, id: mod-w06.theory.s15.vA, input: "8 BARIS", expected: ACCEPT}
+- {file: mod-w06/theory/items/s15.yaml, id: mod-w06.theory.s15.vA, input: "8 kolom", expected: INVALID}
+- {file: mod-w07/lab/act-03/checks.yaml, id: mod-w07.lab.act-03.vB.c05, input: "−7", expected: ACCEPT}
+- {file: mod-w08/lab/act-01/checks.yaml, id: mod-w08.lab.act-01.vA.c01, input: "Rp5.000", expected: ACCEPT}
+# Contoh desimal PR28-08: butir sintetis yang meminta tiga angka desimal (nilai 4,2) vs bilangan bulat 4200
+- {synthetic: ["4200", "4.200"], input: "4.200", expected: ACCEPT}
+- {synthetic: ["4200", "4.200"], input: "4,200", expected: INVALID}
+- {synthetic: ["4,200"], input: "4,200", expected: ACCEPT}
+- {synthetic: ["4,200"], input: "4,20", expected: INVALID}
+# R5-04: konten cacat → CONTENT_ERROR; isian bukan teks → EVALUATION_ERROR (bukan WRONG/INVALID).
+- {synthetic: [], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["5 menit"], input: "5 menit", expected: CONTENT_ERROR}
+- {synthetic: ["05"], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["-0"], input: "0", expected: CONTENT_ERROR}
+- {synthetic: [null], input: "5", expected: CONTENT_ERROR}
+- {synthetic: [{a: 1}], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["lima"], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["3,5", "3,50"], input: "3,5", expected: CONTENT_ERROR}
+- {synthetic: ["3,5", "4 kg"], input: "3,5", expected: CONTENT_ERROR}
+- {synthetic: ["5", "Rp 5 ribu"], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["5", "5 2kg"], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["5 menit", "5"], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["5", "5 "], input: "5", expected: CONTENT_ERROR}
+- {synthetic: ["5", "5 menit"], input: null, expected: EVALUATION_ERROR}
+- {synthetic: ["5", "5 menit"], input: 5, expected: EVALUATION_ERROR}
+- {synthetic: ["5", "5 menit"], input: "5 MENIT", expected: ACCEPT}
+# R6-04: kombinasi afiks hanya yang tertulis di accepted_answers (awalan dan akhiran tidak dirakit sendiri).
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "5000", expected: ACCEPT}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "Rp5000", expected: ACCEPT}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "5000 rupiah", expected: ACCEPT}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "5000 RUPIAH", expected: ACCEPT}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "Rp5000 rupiah", expected: INVALID}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "Rp 5000 rupiah", expected: INVALID}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "rp5000", expected: INVALID}
+- {synthetic: ["5000", "Rp5000", "5000 rupiah"], input: "Rp5001", expected: WRONG}
+- {synthetic: ["5000", "5000 rupiah"], input: "Rp5000", expected: INVALID}
+- {file: mod-w05/theory/items/s15.yaml, id: mod-w05.theory.s15.vA, input: "Rp204.000 rupiah", expected: INVALID}
+- {file: mod-w08/lab/act-01/checks.yaml, id: mod-w08.lab.act-01.vA.c01, input: "5.000", expected: ACCEPT}
+- {file: mod-w08/lab/act-01/checks.yaml, id: mod-w08.lab.act-01.vA.c01, input: "RP5000", expected: INVALID}

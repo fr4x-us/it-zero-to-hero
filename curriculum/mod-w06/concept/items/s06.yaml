@@ -1,0 +1,65 @@
+# W6 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.concept.s06
+competency: comp-w06-model-01
+required_concepts:
+- kalimat "dan" → AND
+- kalimat "atau" → OR
+- ekspresi ekuivalen diterima
+format: CE-S2
+max_points: 2
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w06-c-s06-a
+  variant_id: mod-w06.concept.s06.vA
+  item_version: '1.0'
+  stem: Alarm berbunyi bila **pintu terbuka (P = 1) dan mode malam aktif (M = 1)**. Pilih **semua** ekspresi
+    yang tepat.
+  options:
+  - id: a
+    text: '`P AND M`'
+  - id: b
+    text: '`M AND P`'
+  - id: c
+    text: '`P OR M`'
+  - id: d
+    text: '`P AND NOT M`'
+  key:
+  - a
+  - b
+  distractor_rationale:
+    c: Berbunyi juga saat hanya pintu terbuka
+    d: Mensyaratkan mode malam tidak aktif
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Urutan operand AND tidak mengubah hasil; kedua ekspresi ekuivalen.
+- item_id: item-w06-c-s06-b
+  variant_id: mod-w06.concept.s06.vB
+  item_version: '1.0'
+  stem: Kipas menyala bila **suhu panas (S = 1) atau tombol manual ditekan (T = 1)**. Pilih **semua**
+    ekspresi yang tepat.
+  options:
+  - id: a
+    text: '`S AND T`'
+  - id: b
+    text: '`S OR T`'
+  - id: c
+    text: '`T OR S`'
+  - id: d
+    text: '`NOT S OR T`'
+  key:
+  - b
+  - c
+  distractor_rationale:
+    a: Mensyaratkan keduanya
+    d: Menyala juga saat S = 0, T = 0
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Urutan operand OR tidak mengubah hasil; kedua ekspresi ekuivalen.

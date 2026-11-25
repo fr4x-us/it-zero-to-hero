@@ -1,0 +1,58 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s10
+competency: comp-w05-divmod-01
+format: TF-2
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s10-a
+  variant_id: mod-w05.theory.s10.vA
+  item_version: '1.0'
+  stem: Pilih **semua** bilangan yang habis dibagi 3 (sisanya 0).
+  options:
+  - id: a
+    text: '51'
+  - id: b
+    text: '74'
+  - id: c
+    text: '102'
+  - id: d
+    text: '125'
+  - id: e
+    text: '222'
+  key:
+  - a
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: 74 = 3 × 24 + 2, sisa 2
+    d: 125 = 3 × 41 + 2, sisa 2
+  explanation: 51 = 3 × 17; 102 = 3 × 34; 222 = 3 × 74. Bilangan lain bersisa 2.
+- item_id: item-w05-t-s10-b
+  variant_id: mod-w05.theory.s10.vB
+  item_version: '1.0'
+  stem: Pilih **semua** bilangan yang habis dibagi 4 (sisanya 0).
+  options:
+  - id: a
+    text: '130'
+  - id: b
+    text: '116'
+  - id: c
+    text: '204'
+  - id: d
+    text: '222'
+  - id: e
+    text: '300'
+  key:
+  - b
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    a: 130 = 4 × 32 + 2, sisa 2
+    d: 222 = 4 × 55 + 2, sisa 2
+  explanation: 116 = 4 × 29; 204 = 4 × 51; 300 = 4 × 75. Bilangan lain bersisa 2.

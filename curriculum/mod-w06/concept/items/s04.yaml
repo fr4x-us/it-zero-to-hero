@@ -1,0 +1,59 @@
+# W6 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.concept.s04
+competency: comp-w06-ops-01
+required_concepts:
+- AND = semua 1
+- OR = sedikitnya satu 1
+- NOT membalik
+format: CE-S1
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w06-c-s04-a
+  variant_id: mod-w06.concept.s04.vA
+  item_version: '1.0'
+  stem: Mengapa `A AND B` bernilai **0** bila A = 1 dan B = 0?
+  options:
+  - id: a
+    text: Karena 1 + 0 = 1 lalu dibalik
+  - id: b
+    text: Karena AND bernilai 1 hanya bila semua inputnya 1, dan B = 0
+  - id: c
+    text: Karena AND selalu 0
+  - id: d
+    text: Karena A lebih besar dari B
+  key: b
+  distractor_rationale:
+    a: AND bukan penjumlahan lalu NOT
+    c: AND bernilai 1 pada A = 1, B = 1
+    d: Nilai Boolean tidak dibandingkan besar-kecil
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: AND mensyaratkan semua input 1.
+- item_id: item-w06-c-s04-b
+  variant_id: mod-w06.concept.s04.vB
+  item_version: '1.0'
+  stem: Mengapa `A OR B` bernilai **1** bila A = 0 dan B = 1?
+  options:
+  - id: a
+    text: Karena OR selalu 1
+  - id: b
+    text: Karena 0 + 1 = 1 dalam penjumlahan desimal
+  - id: c
+    text: Karena B lebih besar dari A
+  - id: d
+    text: Karena OR bernilai 1 bila sedikitnya satu input 1, dan B = 1
+  key: d
+  distractor_rationale:
+    a: OR bernilai 0 pada A = 0, B = 0
+    b: Kebetulan sama di baris ini; pada A = 1, B = 1, OR = 1 sedangkan 1 + 1 = 2
+    c: Nilai Boolean tidak dibandingkan besar-kecil
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: OR cukup satu input 1.

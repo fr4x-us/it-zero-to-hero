@@ -1,0 +1,49 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s13
+competency: comp-w08-loop-01
+format: TF-3
+difficulty: D3
+max_points: 4
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s13-a
+  variant_id: mod-w08.theory.s13.vA
+  item_version: '1.0'
+  stem: '`n ← 1`; `hitung ← 0`; selama `n < 100`: `n ← n × 3`, lalu `hitung ← hitung + 1`. Output hitung?'
+  accepted_answers:
+  - '5'
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51). Jawaban bilangan bulat'
+  explanation: 'n: 3, 9, 27, 81, 243 → 5 putaran; 243 < 100 salah, berhenti.'
+- item_id: item-w08-t-s13-b
+  variant_id: mod-w08.theory.s13.vB
+  item_version: '1.0'
+  stem: '`s ← 50`; `hitung ← 0`; selama `s > 1`: `s ← s ÷ 2` (hasil bagi bulat, W5), lalu `hitung ← hitung
+    + 1`. Output hitung?'
+  accepted_answers:
+  - '5'
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51). Jawaban bilangan bulat'
+  explanation: 's: 25, 12, 6, 3, 1 → 5 putaran; 1 > 1 salah, berhenti.'

@@ -10,7 +10,7 @@ sumber ada di §2. Path diperiksa terhadap `git ls-files` (CB-0.5, 2026-11-24).
 |---|---|---|
 | Fase | PERSIAPAN (dokumentasi perencanaan + kurikulum). Implementasi **tidak diizinkan** | [`CLAUDE.md`](../CLAUDE.md) |
 | Titik masuk sesi | [`HANDOFF_STATE.md`](HANDOFF_STATE.md) — §Checkpoint aktif | — |
-| Gerbang | PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10 NOT AUTHORIZED · D-11 DEFERRED | [`BATCH_01_10_UNFINISHED_AUDIT.md`](BATCH_01_10_UNFINISHED_AUDIT.md) §19 |
+| Gerbang | PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10 NOT AUTHORIZED · D-11 DEFERRED | [`BATCH_01_10_UNFINISHED_AUDIT.md`](BATCH_01_10_UNFINISHED_AUDIT.md) §23 (status aktif; §19–§22 historis) |
 
 ## 2. Prioritas sumber (bila bertentangan)
 
@@ -29,7 +29,7 @@ sumber ada di §2. Path diperiksa terhadap `git ls-files` (CB-0.5, 2026-11-24).
 |---|---|
 | [`BLUEPRINT_LOCKED.md`](BLUEPRINT_LOCKED.md) | Produk terkunci (tidak diubah) |
 | [`TECHNICAL_DECISIONS_BATCH_02.md`](TECHNICAL_DECISIONS_BATCH_02.md), [`../PLANNING_COMPLETION_BATCH.md`](../PLANNING_COMPLETION_BATCH.md) | Salinan verbatim historis (tidak diubah) |
-| [`DECISIONS_LOG.md`](DECISIONS_LOG.md) | Indeks keputusan D-01–D-38, W01-ACC, otorisasi |
+| [`DECISIONS_LOG.md`](DECISIONS_LOG.md) | Indeks keputusan D-01–D-39, W01-ACC–W08-ACC, PR #28 ACC/O-1/O-2, otorisasi |
 | [`OWNER_DECISION_CHECKLIST.md`](OWNER_DECISION_CHECKLIST.md) | Pertanyaan owner, rekomendasi, keputusan final |
 | [`BATCH_01_10_UNFINISHED_AUDIT.md`](BATCH_01_10_UNFINISHED_AUDIT.md) | Register UW-01–UW-56; jumlah status (bagian terakhir = berlaku) |
 | [`PLANNING_ROADMAP.md`](PLANNING_ROADMAP.md) | Jalur P/M/G/V, AC per butir, pertanyaan roadmap |
@@ -45,11 +45,14 @@ sumber ada di §2. Path diperiksa terhadap `git ls-files` (CB-0.5, 2026-11-24).
 | Path | Isi |
 |---|---|
 | [`CURRICULUM_OFFLINE_LAB_SPEC.md`](CURRICULUM_OFFLINE_LAB_SPEC.md) | Spesifikasi kurikulum 16 minggu (CU-1–CU-11) |
-| [`CURRICULUM_CONTENT_DECISION_SHEETS.md`](CURRICULUM_CONTENT_DECISION_SHEETS.md) | CU-3, CU-5, CU-7, CU2-O3, CU-11 (D-30–D-32) |
-| [`CURRICULUM_TEMPLATES_CB0.md`](CURRICULUM_TEMPLATES_CB0.md) | Standar produksi CB-0: TPL-01–TPL-20, §1a visibilitas, §3a field, §3b QC-01–QC-12 |
+| [`CURRICULUM_CONTENT_DECISION_SHEETS.md`](CURRICULUM_CONTENT_DECISION_SHEETS.md) | CU-3, CU-5 (VA-1–VA-6, VA-4a atomik O-2), CU-7, CU2-O3, CU-11 (D-30–D-32) |
+| [`CURRICULUM_TEMPLATES_CB0.md`](CURRICULUM_TEMPLATES_CB0.md) | Standar produksi CB-0: TPL-01–TPL-20, §1a visibilitas, §3a field, §3b QC-01–QC-13 (QC-13 = bukti cakupan D-39), TPL-01a status penerimaan |
 | [`CURRICULUM_PRODUCTION_PLAN.md`](CURRICULUM_PRODUCTION_PLAN.md) | Matriks 64 komponen, kemajuan produksi |
-| `curriculum/mod-w02/`, `mod-w03/`, `mod-w04/` | W2 OS & berkas, W3 jaringan, W4 keamanan siber (CB-1; diproduksi, **belum** direview/diterima). Struktur sama dengan W1, tanpa `project/evidence/` (enumerasi dicatat di `rubric.yaml` → `solution_analysis`) |
-| `curriculum/mod-w01/` | Modul acuan W1 (W01-ACC): `module.yaml`, `lessons/les-01..04.md`, `theory/blueprint.yaml` + `theory/items/s01..s20.yaml`, `concept/items/s01..s06.yaml`, `lab/act-01..03/{spec.md,checks.yaml}`, `project/{spec.md,rubric.yaml,evidence/catalog_enumeration.csv}`, `remedial/remedial.md`, `review.md` |
+| [`CURRICULUM_COVERAGE_MATRIX_W01_W08.md`](CURRICULUM_COVERAGE_MATRIX_W01_W08.md) | Matriks cakupan konsep wajib D-39 (QC-13) W1–W8 dan register kesetaraan 48 slot (dibuat generator; hasil penulis, belum diverifikasi independen) |
+| [`validation/README.md`](validation/README.md) | Paket validasi **dokumentasi** yang dapat direproduksi (NB-5, BN-6/B01/BX, kunci, cakupan, TPL-01a, integritas dokumen, provenance snapshot bersih, jangkar penerimaan `validation/trust/`); bukan evaluator produksi |
+| `curriculum/mod-w02/`, `mod-w03/`, `mod-w04/` | W2 OS & berkas, W3 jaringan, W4 keamanan siber (CB-1; diterima owner W02-ACC–W04-ACC secara **historis**; varian revisi diterima pada versi review (PR #28 ACC) — blok `acceptance` di `module.yaml`). Struktur sama dengan W1, tanpa `project/evidence/` (enumerasi dicatat di `rubric.yaml` → `solution_analysis`) |
+| `curriculum/mod-w05/`–`mod-w08/` | W5 dasar matematika, W6 biner & Boolean, W7 berpikir komputasional, W8 algoritma & flowchart (CB-2; diterima owner W05-ACC–W08-ACC dengan batas review terarah diungkapkan). Struktur sama dengan W2–W4 |
+| `curriculum/mod-w01/` | Modul acuan W1 (W01-ACC, historis; 1 varian revisi diterima PR #28 ACC): `module.yaml`, `lessons/les-01..04.md`, `theory/blueprint.yaml` + `theory/items/s01..s20.yaml`, `concept/items/s01..s06.yaml`, `lab/act-01..03/{spec.md,checks.yaml}`, `project/{spec.md,rubric.yaml,evidence/catalog_enumeration.csv}`, `remedial/remedial.md`, `review.md` |
 
 ## 5. Spesifikasi penilaian
 
@@ -90,7 +93,7 @@ Semua rute dimulai dari `CLAUDE.md` + peta ini (TE-01).
 | ID | Tugas | Awal | Bersyarat | Biasanya tidak perlu | Perluas bila | Keluaran | Berhenti bila |
 |---|---|---|---|---|---|---|---|
 | R-01 | Pemulihan sesi | `HANDOFF_STATE.md` §Checkpoint aktif; `git status`, `git log -3` | Dokumen di kolom "Berkas relevan" checkpoint | Decision sheet yang tidak disebut checkpoint | Checkpoint tidak cocok dengan `git log`/PR | Melanjutkan dari "Aksi berikutnya" | Aksi berikutnya = "tidak ada"/menunggu owner |
-| R-02 | Produksi kurikulum modul (W2–W16; butuh otorisasi) | `CURRICULUM_TEMPLATES_CB0.md`; `CURRICULUM_PRODUCTION_PLAN.md` (baris modul); `curriculum/mod-w01/` (acuan) | `CURRICULUM_OFFLINE_LAB_SPEC.md` (topik minggu); decision sheet komponen | Backup, kalender, UI, toolchain | Modul kode (W9–W12, W16): + `CU6_LAB_SCORING_DECISION_SHEET.md`, `PYTHON_OFFLINE_FEASIBILITY_PLAN.md` | Berkas di `curriculum/mod-wNN/` + `review.md` | Tidak ada otorisasi produksi; konflik dengan keputusan terkunci |
+| R-02 | Produksi kurikulum modul (W1–W8 diterima (W1–W4 historis + 21 varian revisi diterima PR #28 ACC; W5–W8 W05-ACC–W08-ACC, batas review terarah); W9–W16 butuh otorisasi) | `CURRICULUM_TEMPLATES_CB0.md`; `CURRICULUM_PRODUCTION_PLAN.md` (baris modul); `curriculum/mod-w01/` (acuan) | `CURRICULUM_OFFLINE_LAB_SPEC.md` (topik minggu); decision sheet komponen | Backup, kalender, UI, toolchain | Modul kode (W9–W12, W16): + `CU6_LAB_SCORING_DECISION_SHEET.md`, `PYTHON_OFFLINE_FEASIBILITY_PLAN.md` | Berkas di `curriculum/mod-wNN/` + `review.md` | Tidak ada otorisasi produksi; konflik dengan keputusan terkunci |
 | R-03 | Desain penilaian | Decision sheet komponen (§5); CB-0 §3a/§3b | `NUMERIC_PRECISION_DECISION_SHEET.md`; `ASSESSMENT_STATE_MACHINE_SPEC.md` | Kurikulum modul lain | Perubahan memengaruhi XP/restore | Spesifikasi/butir + bukti maksimum dapat dicapai | Perlu keputusan owner baru |
 | R-04 | Spesifikasi lab | `CU6_LAB_SCORING_DECISION_SHEET.md`; CB-0 TPL lab + §1a | `curriculum/mod-w01/lab/` (pola) | Rubrik proyek | Lab kode (runtime NOT VERIFIED) | `spec.md` + `checks.yaml` | Butuh runtime/pengukuran (D-10) |
 | R-05 | Rubrik proyek | `PROJECT_RUBRIC_DECISION_SHEETS.md`; CB-0 TPL proyek | `curriculum/mod-w01/project/` (pola) | Lab, teori | Capstone W16 | `spec.md` + `rubric.yaml` (+ bukti enumerasi bila ada) | Rubrik butuh kebijakan baru |

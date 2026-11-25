@@ -54,35 +54,36 @@ variants:
   feedback: 256 alamat dikurangi alamat jaringan dan broadcast = 254.
 - item_id: item-w03-c-s03-b
   variant_id: mod-w03.concept.s03.vB
-  item_version: '1.0'
+  item_version: '2.0'
   stem: Seorang siswa menulis catatan tentang jaringan `10.77.5.0/24`. Satu baris salah. Temukan barisnya
     dan pilih perbaikannya.
   lines:
   - id: '1'
-    text: Host pertama `10.77.5.1`.
+    text: Alamat jaringannya `10.77.5.0`.
   - id: '2'
     text: Host terakhir `10.77.5.254`.
   - id: '3'
     text: Alamat broadcast `10.77.5.255`.
   - id: '4'
-    text: '`10.77.5.9` dan `10.77.6.9` berada di jaringan yang sama karena oktet terakhirnya sama.'
+    text: Jumlah host yang dapat dipakai perangkat adalah 2⁸ − 1 = 255.
   - id: '5'
-    text: Ada 254 alamat yang dapat dipakai perangkat.
+    text: '`10.77.5.9` dan `10.77.6.9` berada di jaringan berbeda karena tiga oktet pertamanya berbeda.'
   error_line: '4'
   correction_options:
   - id: a
-    text: Satu jaringan karena oktet pertamanya sama
+    text: '256'
   - id: b
-    text: Berbeda jaringan karena tiga oktet pertamanya berbeda
+    text: '254'
   - id: c
-    text: Satu jaringan karena mask-nya sama
+    text: '128'
   - id: d
-    text: Berbeda jaringan karena oktet terakhirnya ganjil
+    text: '24'
   correction_key: b
   distractor_rationale:
-    a: Pada /24 yang dibandingkan tiga oktet pertama
-    c: Mask sama tidak membuat jaringan sama
-    d: Ganjil/genap tidak menentukan jaringan
+    a: 256 masih menghitung alamat jaringan dan broadcast
+    c: 128 bukan jumlah alamat /24
+    d: 24 adalah panjang prefiks, bukan jumlah host
   credit_rule: 4 bila baris dan perbaikan benar; 2 bila baris benar dan perbaikan salah/kosong; 0 bila
     baris salah/kosong
-  feedback: 'Pada /24, dua alamat satu jaringan bila tiga oktet pertamanya sama: 10.77.5 ≠ 10.77.6.'
+  feedback: Satu jaringan /24 memiliki 2⁸ = 256 alamat; dikurangi alamat jaringan dan broadcast menjadi
+    254 host.

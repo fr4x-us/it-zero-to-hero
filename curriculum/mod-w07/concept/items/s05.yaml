@@ -1,0 +1,78 @@
+# W7 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.concept.s05
+competency: comp-w07-order-01
+required_concepts:
+- prasyarat menentukan urutan
+- tugas tanpa ketergantungan boleh ditukar
+format: CE-S3
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w07-c-s05-a
+  variant_id: mod-w07.concept.s05.vA
+  item_version: '1.0'
+  stem: Urutkan tugas menyiapkan presentasi kecil. Prasyarat tertulis di setiap tugas.
+  items:
+  - id: A
+    text: Tentukan topik
+  - id: B
+    text: Cari dua sumber bacaan (butuh topik)
+  - id: C
+    text: Siapkan gambar pendukung (butuh topik)
+  - id: D
+    text: Buat slide (butuh sumber bacaan dan gambar)
+  display_order:
+  - D
+  - B
+  - A
+  - C
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  - - A
+    - C
+    - B
+    - D
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: B dan C hanya butuh A, jadi boleh ditukar (dua urutan diterima); D terakhir.
+- item_id: item-w07-c-s05-b
+  variant_id: mod-w07.concept.s05.vB
+  item_version: '1.0'
+  stem: Urutkan tugas membuat kue. Prasyarat tertulis di setiap tugas.
+  items:
+  - id: A
+    text: Siapkan resep
+  - id: B
+    text: Timbang bahan (butuh resep)
+  - id: C
+    text: Panaskan oven sesuai suhu resep (butuh resep)
+  - id: D
+    text: Panggang adonan (butuh bahan dan oven panas)
+  display_order:
+  - C
+  - D
+  - A
+  - B
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  - - A
+    - C
+    - B
+    - D
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: B dan C hanya butuh A, jadi boleh ditukar (dua urutan diterima); D terakhir.

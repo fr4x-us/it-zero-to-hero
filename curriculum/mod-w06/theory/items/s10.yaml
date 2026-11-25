@@ -1,0 +1,52 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s10
+competency: comp-w06-dec2bin-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s10-a
+  variant_id: mod-w06.theory.s10.vA
+  item_version: '1.0'
+  stem: 'Bilangan biner **tak bertanda** (hanya nol dan positif) dengan **5 bit**: nilai desimal **terbesar**
+    yang dapat ditulis adalah …'
+  options:
+  - id: a
+    text: '5'
+  - id: b
+    text: '25'
+  - id: c
+    text: '31'
+  - id: d
+    text: '32'
+  key: c
+  distractor_rationale:
+    a: Banyak bit
+    b: 5 × 5; bukan cara menghitung
+    d: 2⁵ = banyaknya nilai (0 sampai 31), bukan nilai terbesar
+  explanation: 11111₂ = 16 + 8 + 4 + 2 + 1 = 31 = 2⁵ − 1.
+  option_order: urutan alami (nilai/kategori), tetap
+- item_id: item-w06-t-s10-b
+  variant_id: mod-w06.theory.s10.vB
+  item_version: '1.0'
+  stem: 'Bilangan biner **tak bertanda** dengan **6 bit**: **banyaknya** nilai berbeda yang dapat ditulis
+    adalah …'
+  options:
+  - id: a
+    text: '6'
+  - id: b
+    text: '36'
+  - id: c
+    text: '63'
+  - id: d
+    text: '64'
+  key: d
+  distractor_rationale:
+    a: Banyak bit
+    b: 6 × 6
+    c: Nilai terbesar, bukan banyaknya nilai (0 juga dihitung)
+  explanation: 'Setiap bit 2 kemungkinan: 2⁶ = 64 nilai (0 sampai 63).'
+  option_order: urutan alami (nilai/kategori), tetap

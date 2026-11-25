@@ -9,9 +9,28 @@ content_version: "1.0"
 status:
   documentation: PRODUCED          # konten lengkap ditulis (CB-1)
   reviewed: CLAUDE_SELF_REVIEW     # review dokumentasi oleh penyusun; lihat review.md
-  owner_accepted: NO               # dikoreksi (PR #27, F-28–F-70); menunggu re-review independen dan penerimaan owner
+  owner_accepted: YES              # W03-ACC (2026-11-24), penerimaan dengan batas review terarah; lihat review.md (penerimaan); status terstruktur: blok `acceptance`
   runtime_verified: NOT_APPLICABLE # W3 tidak memakai runtime Python atau jaringan nyata; aplikasi belum ada
   learner_tested: NO               # estimasi durasi belum diuji dengan pelajar
+acceptance:                          # TPL-01a (D-39 putaran 4): status penerimaan terstruktur; owner_accepted di atas = penerimaan historis
+  historical:
+    id: W03-ACC
+    date: "2026-11-24"
+    baseline_commit: "846051f66ee4d1e36e9b34e0c9d1787fb713617b"   # merge PR #27
+    basis: "PR #27 merge 846051f"
+    scope: "Isi modul pada saat penerimaan (semua varian item_version 1.0)"
+  current_content: REVISED_ACCEPTED  # ACCEPTED_AS_IS | REVISED_PENDING | REVISED_ACCEPTED
+  revision_acceptance:               # penerimaan owner atas versi revisi yang direview (PR #28), terpisah dari penerimaan historis
+    id: "PR #28 ACC"
+    date: "2026-11-25"
+    reviewed_head: "b54f930b0cf4479e2984fc148e2bc91c443e1ada"   # HEAD review PR #28 yang diterima owner
+    independent_scope: "review independen terarah dengan batas diungkapkan (bukan audit menyeluruh); lihat DECISIONS_LOG PR #28 ACC"
+  revised_variants:                    # varian yang berubah setelah penerimaan historis; diterima owner pada versi yang direview (PR #28 ACC)
+    - {variant_id: mod-w03.concept.s02.vB, accepted_version: "1.0", current_version: "3.0", reason: "D-39 cakupan konsep wajib", independent_review: TARGETED_LIMITED, owner_acceptance: ACCEPTED}
+    - {variant_id: mod-w03.theory.s08.vB, accepted_version: "1.0", current_version: "2.0", reason: "D-39 cakupan konsep wajib", independent_review: TARGETED_LIMITED, owner_acceptance: ACCEPTED}
+    - {variant_id: mod-w03.concept.s03.vB, accepted_version: "1.0", current_version: "2.0", reason: "R6 otorisasi owner: kesetaraan vA/vB (jumlah host)", independent_review: TARGETED_LIMITED, owner_acceptance: ACCEPTED}
+    - {variant_id: mod-w03.concept.s01.vA, accepted_version: "1.0", current_version: "2.0", reason: "R7 otorisasi owner bersyarat: cakupan D-39/kesetaraan", independent_review: TARGETED_LIMITED, owner_acceptance: ACCEPTED}
+    - {variant_id: mod-w03.concept.s01.vB, accepted_version: "1.0", current_version: "2.0", reason: "R7 otorisasi owner bersyarat: cakupan D-39/kesetaraan", independent_review: TARGETED_LIMITED, owner_acceptance: ACCEPTED}
 audience: "Pemula total tanpa pengalaman IT atau pemrograman; telah menyelesaikan W1–W2"
 prerequisites: [mod-w02]
 nominal_minutes: 480

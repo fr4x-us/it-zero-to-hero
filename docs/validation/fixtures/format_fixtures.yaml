@@ -1,0 +1,37 @@
+# PR28-03 BN-6 (biner tak bertanda), PR28-05 B01 (nilai Boolean), PR28-04 BX (ekspresi alarm W6).
+bn6:
+  - {value: 0, mode: canonical, input: "0", expected: ACCEPT}
+  - {value: 0, mode: canonical, input: "00", expected: INVALID}
+  - {value: 0, mode: 8, input: "00000000", expected: ACCEPT}
+  - {value: 0, mode: 8, input: "0", expected: INVALID}
+  - {value: 5, mode: canonical, input: "101", expected: ACCEPT}
+  - {value: 5, mode: canonical, input: "0101", expected: INVALID}
+  - {value: 5, mode: canonical, input: "0b101", expected: INVALID}
+  - {value: 9, mode: 8, input: "00001001", expected: ACCEPT}
+  - {value: 9, mode: 8, input: "1001", expected: INVALID}
+  - {value: 5, mode: canonical, input: "110", expected: WRONG}
+b01:
+  - {input: "0", expected: "0"}
+  - {input: "1", expected: "1"}
+  - {input: " 1 ", expected: "1"}
+  - {input: "\t1", expected: "1"}
+  - {input: "01", expected: null}
+  - {input: "1,0", expected: null}
+  - {input: "true", expected: null}
+  - {input: "benar", expected: null}
+  - {input: "", expected: null}
+bx:   # kunci alarm dihitung dari aturan tertulis: M dan (P atau J)
+  - {expr: "M AND (P OR J)", expected: EQUIV, strict: true}
+  - {expr: "(P OR J) AND M", expected: EQUIV, strict: true}
+  - {expr: "(M AND P) OR (M AND J)", expected: EQUIV, strict: true}
+  - {expr: "M OR P OR J", expected: VALID_NOT_EQUIV, strict: true}
+  - {expr: "M AND (P OR X)", expected: INVALID, strict: false}
+  - {expr: "M AND (P OR J", expected: INVALID, strict: false}
+  - {expr: "M && (P OR J)", expected: INVALID, strict: false}
+  - {expr: "M AND", expected: INVALID, strict: false}
+  - {expr: "NOT NOT M AND (P OR J)", expected: EQUIV, strict: true}
+  - {expr: "m and (p or j)", expected: EQUIV, strict: false}
+  - {expr: "M AND P OR J", expected: VALID_NOT_EQUIV, strict: true}
+  - {expr: "NOT M AND (P OR J)", expected: VALID_NOT_EQUIV, strict: true}
+  - {expr: "OR M", expected: INVALID, strict: false}
+  - {expr: "M NOT P", expected: INVALID, strict: false}

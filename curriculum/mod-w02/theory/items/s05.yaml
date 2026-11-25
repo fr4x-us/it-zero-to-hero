@@ -10,9 +10,10 @@ feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (F
 variants:
 - item_id: item-w02-t-s05-a
   variant_id: mod-w02.theory.s05.vA
-  item_version: '1.0'
-  stem: Tabel manajer tugas (angka fiktif). Editor video macet. Bila **hanya** proses editor video yang
-    diakhiri, pernyataan mana yang benar?
+  item_version: '2.0'
+  stem: Tabel manajer tugas (angka fiktif). Editor video macet dan suntingan terakhir di dalamnya **belum
+    disimpan**; aplikasi ini tidak punya simpan otomatis atau pemulihan. Bila **hanya** proses editor
+    video yang diakhiri, pernyataan mana yang benar?
   stimulus_table:
   - - Nama proses
     - PID
@@ -41,7 +42,8 @@ variants:
     - Berjalan
   options:
   - id: a
-    text: Sekitar 2.100 MB RAM dikembalikan ke sistem operasi dan proses lain tetap berjalan
+    text: Suntingan yang belum disimpan hilang, sekitar 2.100 MB RAM dikembalikan ke sistem operasi, dan
+      proses lain tetap berjalan
   - id: b
     text: Semua proses di tabel ikut berhenti
   - id: c
@@ -53,7 +55,8 @@ variants:
     b: Mengakhiri satu proses tidak menghentikan proses lain
     c: Program (berkas) tetap ada; hanya prosesnya yang berhenti
     d: Proses Pesan tidak diakhiri
-  explanation: Proses PID 3157 berhenti; RAM-nya (2.100 MB) dikembalikan; proses lain tetap berjalan.
+  explanation: Proses PID 3157 berhenti; suntingan yang hanya ada di RAM proses itu hilang; RAM-nya (2.100
+    MB) dikembalikan; proses lain tetap berjalan.
 - item_id: item-w02-t-s05-b
   variant_id: mod-w02.theory.s05.vB
   item_version: '1.0'

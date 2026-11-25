@@ -1,0 +1,63 @@
+# W5 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.concept.s06
+competency: comp-w05-round-01
+required_concepts:
+- aturan pembulatan
+- pembulatan ke atas untuk kebutuhan
+- bulatkan di akhir
+format: CE-S2
+max_points: 2
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w05-c-s06-a
+  variant_id: mod-w05.concept.s06.vA
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar menurut aturan pembulatan W5.
+  options:
+  - id: a
+    text: 7,25 dibulatkan ke satu angka desimal menjadi 7,3
+  - id: b
+    text: Untuk menentukan jumlah bus, hasil bagi selalu dibulatkan ke bawah
+  - id: c
+    text: Membulatkan hasil akhir saja menghindari selisih yang menumpuk dari pembulatan setiap langkah
+  - id: d
+    text: 4,449 dibulatkan ke satu angka desimal menjadi 4,5
+  key:
+  - a
+  - c
+  distractor_rationale:
+    b: Penumpang sisa tetap butuh bus, jadi dibulatkan ke atas
+    d: 'Hanya angka setelah tempat pembulatan (4) yang dilihat: 4,4'
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: 7,25 → 7,3 (angka berikutnya 5); 4,449 → 4,4 (angka berikutnya 4, jangan membulatkan bertahap).
+- item_id: item-w05-c-s06-b
+  variant_id: mod-w05.concept.s06.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar menurut aturan pembulatan W5.
+  options:
+  - id: a
+    text: Pembulatan ke atas dipakai bila sisa sekecil apa pun tetap membutuhkan satu wadah lagi
+  - id: b
+    text: 2,96 dibulatkan ke satu angka desimal menjadi 3,0
+  - id: c
+    text: Membulatkan setiap langkah selalu menghasilkan jawaban yang sama dengan membulatkan di akhir
+  - id: d
+    text: 8,35 dibulatkan ke bilangan bulat menjadi 9
+  key:
+  - a
+  - b
+  distractor_rationale:
+    c: Pembulatan bertahap dapat mengubah hasil (mis. 4,449)
+    d: 'Angka setelah satuan 3 (< 5): 8'
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Kebutuhan wadah dibulatkan ke atas; 2,96 → 3,0; 8,35 → 8.

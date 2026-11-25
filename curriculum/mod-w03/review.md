@@ -2,7 +2,7 @@
 module_id: mod-w03
 content_version: "1.0"
 template: TPL-19, TPL-20
-review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1 + koreksi F-28–F-72 (dua putaran). Review independen PR #27: REQUEST CHANGES (dua kali) → dikoreksi; re-review BELUM; belum diterima owner"
+review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1 + koreksi F-28–F-72 (dua putaran). Review independen PR #27: REQUEST CHANGES (dua kali) → dikoreksi → delta review PASS (terarah, dengan batas yang diungkapkan); diterima owner W03-ACC (2026-11-24)"
 ---
 
 # W3 — Review Kualitas, Kesetaraan Varian, dan Bukti
@@ -13,8 +13,8 @@ review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1 + kore
 |---|---|
 | Dokumentasi diproduksi | **YA** (CB-1) |
 | Review mandiri penyusun | **YA** (dokumen ini) |
-| Review independen (ChatGPT) | PR #27: **REQUEST CHANGES** (F-28–F-70, lalu delta F-28–F-72) → dikoreksi; **re-review BELUM** |
-| Diterima owner | **BELUM** |
+| Review independen (ChatGPT) | PR #27: **REQUEST CHANGES** (F-28–F-70, lalu delta F-28–F-72) → dikoreksi → **delta review PASS** — targeted delta review with disclosed limitations (lihat bagian penerimaan) |
+| Diterima owner (W03-ACC) | **YA** (2026-11-24, PR #27 merge `846051f`) — lihat bagian penerimaan di akhir dokumen |
 | Runtime diverifikasi | Tidak berlaku / tidak diklaim (tanpa runtime, tanpa jaringan nyata) |
 | Durasi diuji dengan pelajar | **TIDAK** |
 
@@ -242,7 +242,7 @@ meminta akses jaringan nyata.
 | Field | Isi |
 |---|---|
 | Reviewer / tanggal / basis | Claude (penyusun), 2026-11-24, `main` = `ab0103e` |
-| Temuan terbuka | Tidak ada BLOCKED (deskripsi F-55–F-57, F-59 dipulihkan owner, putaran 2); butuh re-review independen dan penerimaan owner. Register: bagian koreksi konsolidasi di akhir dokumen |
+| Temuan terbuka | Tidak ada BLOCKED (deskripsi F-55–F-57, F-59 dipulihkan owner, putaran 2); *historis (sebelum penerimaan):* butuh re-review independen dan penerimaan owner; **status aktif:** delta review PASS dan diterima owner W03-ACC (lihat bagian penerimaan). Register: bagian koreksi konsolidasi di akhir dokumen |
 
 Metrik W3 (dari transkrip; ±2): panggilan alat ≈ 25; berkas baru yang
 dibaca untuk persiapan 0 (bukti dan acuan W2/W1 dipakai ulang, TE-13); baca
@@ -257,7 +257,7 @@ skill 0 tambahan; checkpoint 1; operasi validasi 8; **pemulihan sesi 1**
 Review PR #27 = **REQUEST CHANGES**. Sebelum mengedit diverifikasi: head
 `a9241d33c2cf32e177ca92618df458b78dd6cb98`, base
 `ab0103e4954ead4ded6343d105d73a2729916cd6` (cocok). Koreksi diterapkan pada
-PR #27 yang sama. Status modul: **diproduksi dan dikoreksi; menunggu re-review
+PR #27 yang sama. *Historis (saat koreksi):* status modul **diproduksi dan dikoreksi; menunggu re-review
 independen dan penerimaan owner** — belum diterima.
 
 ### 11.1 Register F-28–F-72 (45 ID; diperbarui pada koreksi terarah putaran 2)
@@ -471,3 +471,81 @@ W2 1, W3 78.485.511.600, W4 163.840 — tidak berubah). F-24–F-27
 dipertahankan: tidak ada perubahan `.claude/`, izin, hooks, allowed-tools,
 asal skill, atau kontrak alur kerja; W1 tidak diubah. V03 tidak dijalankan
 ulang. TOKEN USAGE: **NOT MEASURABLE**.
+
+
+## Penerimaan W3 (W03-ACC) dan batas review independen
+
+PR #27 di-merge (head `1a58338bcc863320ff4eafbb0f407cee4b2a9f59`, merge commit `846051f66ee4d1e36e9b34e0c9d1787fb713617b`). Owner menerima W3 (W03-ACC, 2026-11-24).
+
+Verdict independen: **PASS — targeted delta review with disclosed limitations.** Batas review independen (dinyatakan owner): delta review terarah PASS — F-49–F-59 dan F-71–F-72 lolos review terarah; integritas register F-28–F-72 diverifikasi; 16 simulasi normalisasi independen lolos. Regresi historis penuh, semua skrip validasi sementara, uji dengan pelajar, dan verifikasi runtime Android **tidak** diulang secara independen.
+
+Register F-01–F-72 dan disposisinya di atas tetap sebagai catatan historis (39 FIXED, 5 DOCUMENTATION CLARIFIED, F-31 NOT REPRODUCED pada F-28–F-72). Penerimaan ini **bukan** verifikasi menyeluruh, verifikasi runtime, atau uji durasi dengan pelajar; temuan baru tetap boleh diangkat. Bukti aktivasi V03 tetap dari sesi segar sebelumnya.
+
+## Penyelarasan kebijakan D-39 (2026-11-25) — bukan perubahan disposisi historis
+
+Owner menyetujui **D-39 HYBRID COMPETENCY COVERAGE**. Audit cakupan
+([CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md))
+menemukan celah **di bawah kontrak baru** (bukan kegagalan terhadap kontrak
+saat W3 diterima). Koreksi minimum (format, poin, kesulitan,
+kompetensi, dan distribusi posisi kunci tetap; `item_version: '2.0'`):
+
+| Butir | Perubahan | Konsep yang dijamin |
+|---|---|---|
+| concept s02 vB | opsi e → setiap perangkat wajib alamat publik sendiri (salah; NAT); kunci tetap | NAT berbagi alamat publik |
+| teori s08 vB | `256 seluruh alamat` → host tersisa setelah router (kunci 253) | 254 host |
+
+Penerimaan W03-ACC tetap tercatat untuk isi yang diterima. Varian yang
+diubah di atas **tidak** tercakup penerimaan itu dan memerlukan **review
+delta independen** terarah. Register F-01–F-72 tidak berubah.
+
+### Putaran 4 (review `4ddc993`, REQUEST CHANGES) — tindak lanjut D-39
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R3-05 | concept s02 vB (3.0) opsi e: "tidak dapat berbagi satu alamat publik" (salah); kunci a, c, d tetap | CONFIRMED — FIXED | YA | BELUM |
+| R3-08 | Status penerimaan terstruktur TPL-01a di `module.yaml` → `acceptance` (historis tetap; varian revisi PENDING) | CONFIRMED — FIXED | YA | BELUM |
+
+Register kesetaraan dan cakupan: [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
+Penerimaan W03-ACC tetap historis; varian revisi belum diterima.
+
+### Putaran 5 (review `796043c`, REQUEST CHANGES)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R4-02 | Validator penerimaan kini membandingkan isi setiap varian dengan `baseline_commit` git (field baru di blok `acceptance`); varian revisi tetap PENDING | CONFIRMED — FIXED | YA | BELUM |
+| R4-03 | Cakupan "peran router" dan "peran switch" (concept s01) kini OPEN: hanya berbukti semantik lemah (kunci K4.q1/K4.q2). Usulan: kunci concept s01 vA menyebut switch/access point dan router — menunggu otorisasi owner | OPEN | TIDAK | BELUM |
+| R4-04–R4-09 | Kesetaraan concept s03 OPEN (hitung host vs keanggotaan); usulan vB baris salah jumlah host — menunggu otorisasi | OPEN | TIDAK | BELUM |
+
+Butir W3 yang diterima tidak diubah pada putaran ini.
+
+### Putaran 6 (koreksi terarah; otorisasi owner terbatas; temuan sementara R5-01–R5-05)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R6-A | Otorisasi owner: concept s03 vB 1.0 → 2.0. Baris salah 4 "jumlah host 2⁸ − 1 = 255" → koreksi b 254 (CE-S5, 4 poin); baris keanggotaan kini benar. Keanggotaan jaringan dijamin lab act-02.c06–c08 (vA+vB). Kesetaraan s03 PASS (penilaian penulis). Posisi kunci W3 tidak berubah. Tercatat `acceptance.revised_variants` PENDING | APPLIED | YA | BELUM |
+| R5-02 | Peran router/switch: lokasi wajib alternatif diperiksa (teori s01, s03; lab act-03.c01; K4.q1) — tidak ada bukti kuat; usulan diperbaiki di matriks §7 (concept s01 vA, pengecoh peran tertukar) — TIDAK diterapkan (tidak diotorisasi) | OPEN | TIDAK | BELUM |
+| R5-05 | Field slot bersama dibandingkan dengan baseline; W3: 3 varian PENDING | CONFIRMED — FIXED | YA | BELUM |
+
+### Putaran 7 (koreksi konsolidasi; otorisasi owner bersyarat; temuan sementara R6-01–R6-06)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R7-A / R5-02 | Otorisasi bersyarat: concept s01 vA 1.0 → 2.0 (kotak router Wi-Fi multifungsi, cetak lewat kabel saat internet putus) dan vB 1.0 → 2.0 (lab hanya switch, berbagi berkas jalan, situs tidak terbuka). Kunci kedua varian menyatakan switch meneruskan data di dalam LAN dan router meneruskan paket ke jaringan lain; pengecoh menukar fungsi atau mengacaukan access point; panjang opsi diseimbangkan; kunci b/d tetap. Peran router, peran switch, dan LAN vs internet kini concept vA+vB (hasil penulis). Batas: alamat MAC tidak diajarkan di pelajaran W3, sehingga tidak dinilai (mengubah pelajaran tidak diotorisasi). Tercatat PENDING | APPLIED | YA | BELUM |
+| R6-01 | Jangkar W03-ACC: merge PR #27 | CONFIRMED — FIXED | YA | BELUM |
+
+## Penerimaan owner final PR #28 (2026-11-25)
+
+Owner menerima 5 varian revisi W3 pada versi persis di HEAD review `b54f930b0cf4479e2984fc148e2bc91c443e1ada` (PR #28 ACC, 2026-11-25; `owner_acceptance: ACCEPTED`, `independent_review: TARGETED_LIMITED`). Penerimaan historis W03-ACC dan baseline aslinya tidak berubah; riwayat revisi dipertahankan.
+
+Verdict independen: "PASS — targeted delta review with disclosed limitations". Batas
+(DECISIONS_LOG): review terarah, bukan audit menyeluruh; putaran 8 memeriksa langsung 7 dari 20
+berkas berubah; putaran 7 tidak menyeluruh; 156 konsep wajib tidak diverifikasi ulang secara
+independen; paket validasi tidak dijalankan ulang secara independen (clone GitHub terhambat);
+tanpa uji pelajar; tanpa verifikasi runtime Android. Hasil penulis (bukan eksekusi independen):
+cakupan 156/0/0, kesetaraan 48/0, 778 pemeriksaan + 8 kasus provenance.
+
+Disposisi final: R7-01 FIX VERIFIED (review statis terarah); R7-02 PASS (review statis terarah atas
+cacat yang dilaporkan); O-1 selesai; O-2/VA-4a PASS tingkat kontrak desain; R3-04 CONDITIONAL PASS
+(verifikasi implementasi dan restore tertunda); PR28-02 PARTIAL PASS independen; PR28-06 diterima
+untuk perencanaan kurikulum. Baris register sebelumnya tetap sebagai catatan historis; kolom
+INDEPENDENT VERIFIED di atas tidak diubah secara retroaktif.

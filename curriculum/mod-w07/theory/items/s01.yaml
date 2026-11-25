@@ -1,0 +1,52 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s01
+competency: comp-w07-decomp-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s01-a
+  variant_id: mod-w07.theory.s01.vA
+  item_version: '1.0'
+  stem: Memecah masalah besar menjadi bagian-bagian lebih kecil yang dapat dikerjakan atau dijelaskan
+    satu per satu disebut …
+  options:
+  - id: a
+    text: Abstraksi
+  - id: b
+    text: Dekomposisi
+  - id: c
+    text: Pengenalan pola
+  - id: d
+    text: Algoritma
+  key: b
+  distractor_rationale:
+    a: Abstraksi memilih informasi penting
+    c: Pola mencari keteraturan yang berulang
+    d: Algoritma adalah urutan langkah yang tepat
+  explanation: Itu definisi dekomposisi.
+  option_order: urutan tetap penyusun
+- item_id: item-w07-t-s01-b
+  variant_id: mod-w07.theory.s01.vB
+  item_version: '1.0'
+  stem: Membagi tugas "membersihkan kelas" menjadi menyapu lantai, mengelap meja, dan membuang sampah
+    adalah contoh …
+  options:
+  - id: a
+    text: Abstraksi
+  - id: b
+    text: Pengenalan pola
+  - id: c
+    text: Algoritma
+  - id: d
+    text: Dekomposisi
+  key: d
+  distractor_rationale:
+    a: Abstraksi memilih informasi penting
+    b: Tidak mencari keteraturan berulang
+    c: Belum menyusun langkah tepat berurutan
+  explanation: 'Satu tugas besar dipecah menjadi bagian-bagian: dekomposisi.'
+  option_order: urutan tetap penyusun

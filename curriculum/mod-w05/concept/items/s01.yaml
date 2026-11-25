@@ -1,0 +1,86 @@
+# W5 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.concept.s01
+competency: comp-w05-arith-01
+required_concepts:
+- urutan operasi
+- kurung
+- kiri ke kanan untuk operasi setara
+- pangkat
+format: CE-S4
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w05-c-s01-a
+  variant_id: mod-w05.concept.s01.vA
+  item_version: '1.0'
+  stem: Cocokkan setiap ekspresi dengan nilainya.
+  left:
+  - id: L1
+    text: '`2 + 3 × 4`'
+  - id: L2
+    text: '`(2 + 3) × 4`'
+  - id: L3
+    text: '`20 ÷ 4 × 2`'
+  - id: L4
+    text: '`20 ÷ (4 × 2)`'
+  right:
+  - id: R1
+    text: 2,5
+  - id: R2
+    text: '14'
+  - id: R3
+    text: '10'
+  - id: R4
+    text: '20'
+  - id: R5
+    text: '40'
+  key_mapping:
+    L1: R2
+    L2: R4
+    L3: R3
+    L4: R1
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: Kali sebelum tambah (14); kurung lebih dulu (20); ÷ dan × setara, kiri ke kanan (10); kurung
+    mengubah urutan (2,5). R5 = 40 adalah pengecoh.
+- item_id: item-w05-c-s01-b
+  variant_id: mod-w05.concept.s01.vB
+  item_version: '1.0'
+  stem: Cocokkan setiap ekspresi dengan nilainya.
+  left:
+  - id: L1
+    text: '`18 − 6 + 2`'
+  - id: L2
+    text: '`18 − (6 + 2)`'
+  - id: L3
+    text: '`3 × 2²`'
+  - id: L4
+    text: '`(3 × 2)²`'
+  right:
+  - id: R1
+    text: '12'
+  - id: R2
+    text: '36'
+  - id: R3
+    text: '10'
+  - id: R4
+    text: '14'
+  - id: R5
+    text: '6'
+  key_mapping:
+    L1: R4
+    L2: R3
+    L3: R1
+    L4: R2
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: − dan + setara, kiri ke kanan (14); kurung lebih dulu (10); pangkat sebelum kali (12); kurung
+    lebih dulu lalu pangkat (36). R5 = 6 adalah pengecoh.

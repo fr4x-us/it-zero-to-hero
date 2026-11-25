@@ -1,0 +1,435 @@
+# W5 — rubrik mini-project (MR-A, D-33). Kunci, contoh jawaban, dan contoh evaluasi
+# hanya untuk reviewer/penilai; tidak ditampilkan kepada pelajar sebelum dinilai.
+component: mod-w05.project
+content_version: '1.0'
+max_points: 100
+constants:
+  budget: 500000
+  items:
+    P1:
+      name: Buku catatan
+      quantity: 4
+      unit_price: 12500
+      discount_percent: 20
+    P2:
+      name: Pulpen
+      quantity: 6
+      unit_price: 3500
+      discount_percent: 0
+    P3:
+      name: Kuota internet belajar
+      quantity: 1
+      unit_price: 75000
+      discount_percent: 0
+    P4:
+      name: Fotokopi materi (per lembar)
+      quantity: 120
+      unit_price: 250
+      discount_percent: 0
+    P5:
+      name: Transport ke perpustakaan (per perjalanan)
+      quantity: 8
+      unit_price: 7000
+      discount_percent: 0
+  trip_price: 7000
+  key:
+    F1:
+      P1: 40000
+      P2: 21000
+      P3: 75000
+      P4: 30000
+      P5: 56000
+    F2: 222000
+    F3: 278000
+    F4: 44,4
+    F5:
+      P1: 18,0
+      P2: 9,5
+      P3: 33,8
+      P4: 13,5
+      P5: 25,2
+    F6: 39
+    F7: 5000
+field_rules:
+  rupiah_readable: 'NB-5 bilangan bulat tidak negatif: digit tanpa nol di depan, atau dengan titik ribuan
+    berkelompok tepat tiga digit; boleh diawali `Rp` dengan/tanpa spasi; spasi tepi dibuang. Diterima:
+    `40000`, `40.000`, `Rp40.000`, `Rp 40000`. Tidak terbaca: `40,000`, `40.000,00`, `40rb`, `040000`,
+    kata. Akhiran kata/simbol satuan dibaca tanpa membedakan huruf besar/kecil (mis. `PERSEN`, `Kali`);
+    awalan `Rp` ditulis persis (kontrak NB-5 N3–N4).'
+  percent_readable: 'NB-5 bilangan tidak negatif dengan 0 atau 1 angka di belakang koma; boleh diikuti
+    `%` atau `persen` dengan/tanpa spasi. Diterima: `44,4`, `44,4%`, `44`. Tidak terbaca: `44.4` (titik
+    bukan desimal), `44,40` (lebih dari satu angka desimal), kata. Akhiran kata/simbol satuan dibaca tanpa
+    membedakan huruf besar/kecil (mis. `PERSEN`, `Kali`); awalan `Rp` ditulis persis (kontrak NB-5 N3–N4).'
+  count_readable: 'NB-5 bilangan bulat tidak negatif tanpa nol di depan; boleh diikuti `kali` dengan/tanpa
+    spasi. Tidak terbaca: desimal (`39,7`), kata. Akhiran kata/simbol satuan dibaca tanpa membedakan huruf
+    besar/kecil (mis. `PERSEN`, `Kali`); awalan `Rp` ditulis persis (kontrak NB-5 N3–N4).'
+  value_compare: 'Nilai terbaca dibandingkan PERSIS dengan konstanta key (bilangan rasional; `44` ≠ `44,4`).
+    Tidak ada kredit kesalahan berantai: setiap isian dibandingkan dengan nilai benar dari data proyek,
+    bukan dengan isian pelajar lain (kredit independen MR-2)'
+  rupiah_strict: 'K3: bilangan bulat dengan titik ribuan berkelompok tepat tiga digit (`40.000`, `5.000`),
+    tanpa `Rp`'
+  percent_strict: 'K3: tepat satu angka di belakang koma, tanpa `%` atau kata (`18,0`)'
+  count_strict: 'K3: digit saja, tanpa kata satuan'
+  validity: Isian kosong atau tidak terbaca → INVALID_ANSWER untuk isian itu saja; pemeriksaan yang depends_on
+    isian itu bernilai 0; isian lain tetap dinilai. ID baris tidak dikenal (selain P1–P5) diabaikan; baris
+    P1–P5 yang hilang = kosong. Struktur luar rusak (F1 atau F5 bukan tabel P1–P5) → seluruh isian itu
+    tidak terbaca. Kegagalan aplikasi/konten → EVALUATION_ERROR (D-24 IE-2), bukan skor 0
+  dependency_rule: 'MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya kosong atau tidak terbaca;
+    tanpa gerbang nol global. Formulir tanpa isian sama sekali = 0 untuk K1–K3 (MR-6)'
+criteria:
+  K1:
+    name: Kebenaran fungsional
+    points: 60
+    checks:
+    - id: mod-w05.project.K1.c01
+      rule: F1.P1 = 40000
+      depends_on:
+      - F1.P1 terbaca (rupiah_readable)
+      points: 4
+    - id: mod-w05.project.K1.c02
+      rule: F1.P2 = 21000
+      depends_on:
+      - F1.P2 terbaca (rupiah_readable)
+      points: 4
+    - id: mod-w05.project.K1.c03
+      rule: F1.P3 = 75000
+      depends_on:
+      - F1.P3 terbaca (rupiah_readable)
+      points: 4
+    - id: mod-w05.project.K1.c04
+      rule: F1.P4 = 30000
+      depends_on:
+      - F1.P4 terbaca (rupiah_readable)
+      points: 4
+    - id: mod-w05.project.K1.c05
+      rule: F1.P5 = 56000
+      depends_on:
+      - F1.P5 terbaca (rupiah_readable)
+      points: 4
+    - id: mod-w05.project.K1.c06
+      rule: F2 = 222000
+      depends_on:
+      - F2 terbaca
+      points: 6
+    - id: mod-w05.project.K1.c07
+      rule: F3 = 278000
+      depends_on:
+      - F3 terbaca
+      points: 4
+    - id: mod-w05.project.K1.c08
+      rule: F4 = 44,4
+      depends_on:
+      - F4 terbaca (percent_readable)
+      points: 5
+    - id: mod-w05.project.K1.c09
+      rule: F5.P1 = 18,0
+      depends_on:
+      - F5.P1 terbaca (percent_readable)
+      points: 3
+    - id: mod-w05.project.K1.c10
+      rule: F5.P2 = 9,5
+      depends_on:
+      - F5.P2 terbaca (percent_readable)
+      points: 3
+    - id: mod-w05.project.K1.c11
+      rule: F5.P3 = 33,8
+      depends_on:
+      - F5.P3 terbaca (percent_readable)
+      points: 3
+    - id: mod-w05.project.K1.c12
+      rule: F5.P4 = 13,5
+      depends_on:
+      - F5.P4 terbaca (percent_readable)
+      points: 3
+    - id: mod-w05.project.K1.c13
+      rule: F5.P5 = 25,2
+      depends_on:
+      - F5.P5 terbaca (percent_readable)
+      points: 3
+    - id: mod-w05.project.K1.c14
+      rule: F6 = 39
+      depends_on:
+      - F6 terbaca (count_readable)
+      points: 5
+    - id: mod-w05.project.K1.c15
+      rule: F7 = 5000
+      depends_on:
+      - F7 terbaca
+      points: 5
+  K2:
+    name: Kelengkapan deliverable
+    points: 20
+    definition: 'MR-A (D-33): deliverable ada DAN terbaca menurut aturan bentuk; kebenaran dinilai di
+      K1'
+    checks:
+    - id: mod-w05.project.K2.c01
+      rule: Kelima subtotal F1.P1–P5 terbaca
+      depends_on:
+      - F1
+      points: 4
+    - id: mod-w05.project.K2.c02
+      rule: F2 terbaca
+      depends_on:
+      - F2
+      points: 2
+    - id: mod-w05.project.K2.c03
+      rule: F3 terbaca
+      depends_on:
+      - F3
+      points: 2
+    - id: mod-w05.project.K2.c04
+      rule: F4 terbaca
+      depends_on:
+      - F4
+      points: 3
+    - id: mod-w05.project.K2.c05
+      rule: Kelima persentase F5.P1–P5 terbaca
+      depends_on:
+      - F5
+      points: 5
+    - id: mod-w05.project.K2.c06
+      rule: F6 terbaca
+      depends_on:
+      - F6
+      points: 2
+    - id: mod-w05.project.K2.c07
+      rule: F7 terbaca
+      depends_on:
+      - F7
+      points: 2
+  K3:
+    name: Struktur dan format
+    points: 10
+    checks:
+    - id: mod-w05.project.K3.c01
+      rule: Semua isian rupiah (F1.P1–P5, F2, F3, F7) terbaca DAN memenuhi rupiah_strict
+      depends_on:
+      - F1
+      - F2
+      - F3
+      - F7
+      points: 4
+    - id: mod-w05.project.K3.c02
+      rule: F4 dan F5.P1–P5 terbaca DAN memenuhi percent_strict
+      depends_on:
+      - F4
+      - F5
+      points: 3
+    - id: mod-w05.project.K3.c03
+      rule: F6 terbaca DAN memenuhi count_strict
+      depends_on:
+      - F6
+      points: 3
+  K4:
+    name: Penjelasan proyek (komposisi K-A, 5 × CE-S1, P = 2)
+    points: 10
+    note: 'Soal tentang tugas proyek ini; terpisah dari komponen Concept explanation W5 (D-33 A.2a). Posisi
+      kunci: b, d, a, c, b'
+    items:
+    - id: mod-w05.project.K4.q1
+      lo: comp-w05-pct-01
+      stem: Pada F5, persentase setiap barang dihitung terhadap …
+      options:
+        a: Anggaran Rp500.000
+        b: Total belanja (F2), karena yang ditanyakan bagian setiap barang dari belanja
+        c: Sisa anggaran (F3)
+        d: Harga satuan barang itu
+      key: b
+      points: 2
+      feedback: Nilai dasar F5 adalah total belanja; F4 yang memakai anggaran sebagai nilai dasar.
+    - id: mod-w05.project.K4.q2
+      lo: comp-w05-round-01
+      stem: Mengapa jumlah lima persentase F5 yang sudah dibulatkan **boleh saja** tidak tepat 100,0 pada
+        data lain?
+      options:
+        a: Karena persentase selalu salah
+        b: Karena total belanja dihitung keliru
+        c: Karena pembulatan ke atas wajib dipakai
+        d: Karena setiap persentase dibulatkan sendiri-sendiri, sehingga selisih kecil pembulatannya dapat
+          terkumpul
+      key: d
+      points: 2
+      feedback: Pembulatan terpisah dapat membuat jumlahnya 99,9 atau 100,1; pada data proyek ini kebetulan
+        tepat 100,0.
+    - id: mod-w05.project.K4.q3
+      lo: comp-w05-divmod-01
+      stem: F6 (perjalanan tambahan maksimal) memakai …
+      options:
+        a: Hasil bagi sisa anggaran oleh harga perjalanan, karena perjalanan hanya dapat dibayar utuh
+        b: Hasil bagi yang dibulatkan ke atas
+        c: Sisa pembagian
+        d: Persentase sisa anggaran
+      key: a
+      points: 2
+      feedback: Hanya perjalanan yang dapat dibayar penuh yang dihitung; sisa uangnya menjadi F7.
+    - id: mod-w05.project.K4.q4
+      lo: comp-w05-expr-01
+      stem: Rumus subtotal yang sesuai untuk setiap baris adalah …
+      options:
+        a: subtotal = jumlah + harga satuan
+        b: subtotal = harga satuan ÷ jumlah
+        c: subtotal = jumlah × harga satuan × (100 − diskon%) ÷ 100
+        d: subtotal = (jumlah × harga satuan) − diskon%
+      key: c
+      points: 2
+      feedback: Diskon adalah persen dari nilai baris; tanpa diskon, (100 − 0) ÷ 100 = 1.
+    - id: mod-w05.project.K4.q5
+      lo: comp-w05-unit-01
+      stem: Mengapa F4 (persen anggaran terpakai) dihitung F2 ÷ anggaran × 100%, bukan F3 ÷ anggaran?
+      options:
+        a: Keduanya sama saja
+        b: F2 adalah uang yang sudah dipakai, sedangkan F3 adalah yang belum dipakai
+        c: Karena F3 selalu nol
+        d: Karena anggaran harus dikali 100 dulu
+      key: b
+      points: 2
+      feedback: F3 ÷ anggaran memberi persen yang **belum** terpakai (55,6%).
+point_check: K1 5×4 + 6 + 4 + 5 + 5×3 + 5 + 5 = 60; K2 4+2+2+3+5+2+2 = 20; K3 4+3+3 = 10; K4 5×2 = 10;
+  total 100
+solution_analysis:
+  unique_values: Data tetap; setiap isian punya tepat satu nilai benar. Banyaknya himpunan nilai bernilai
+    penuh = 1 (bentuk tulisan boleh berbeda sesuai aturan terbaca/strict)
+  reference_strict:
+    F1:
+      P1: '40.000'
+      P2: '21.000'
+      P3: '75.000'
+      P4: '30.000'
+      P5: '56.000'
+    F2: '222.000'
+    F3: '278.000'
+    F4: 44,4
+    F5:
+      P1: 18,0
+      P2: 9,5
+      P3: 33,8
+      P4: 13,5
+      P5: 25,2
+    F6: '39'
+    F7: '5.000'
+  checks: F5 berjumlah 100,0; F2 + F3 = anggaran; F6 × 7.000 + F7 = F3
+reviewer_examples:
+- id: E01
+  case: Isian acuan (bentuk strict)
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E02
+  case: F5.P1 ditulis `18` (tanpa desimal); lainnya acuan
+  K1: 60
+  K2: 20
+  K3: 7
+  total: 97
+  zero:
+  - K3.c02
+- id: E03
+  case: 'Lupa diskon buku: P1 = 50.000, lalu semua turunan dihitung konsisten dari total 232.000'
+  K1: 16
+  K2: 20
+  K3: 10
+  total: 56
+  zero:
+  - K1.c01
+  - K1.c06
+  - K1.c07
+  - K1.c08
+  - K1.c09
+  - K1.c10
+  - K1.c11
+  - K1.c12
+  - K1.c13
+  - K1.c14
+  - K1.c15
+- id: E04
+  case: F4 = `44%` (dibulatkan ke bilangan bulat)
+  K1: 55
+  K2: 20
+  K3: 7
+  total: 92
+  zero:
+  - K1.c08
+  - K3.c02
+- id: E05
+  case: F5.P1 = `18.0` (titik sebagai desimal)
+  K1: 57
+  K2: 15
+  K3: 7
+  total: 89
+  zero:
+  - K1.c09
+  - K2.c05
+  - K3.c02
+- id: E06
+  case: F6 = `39,7` (desimal)
+  K1: 55
+  K2: 18
+  K3: 7
+  total: 90
+  zero:
+  - K1.c14
+  - K2.c06
+  - K3.c03
+- id: E07
+  case: Semua rupiah ditulis dengan `Rp` (mis. `Rp40.000`)
+  K1: 60
+  K2: 20
+  K3: 6
+  total: 96
+  zero:
+  - K3.c01
+- id: E08
+  case: Semua rupiah tanpa titik ribuan (mis. `40000`)
+  K1: 60
+  K2: 20
+  K3: 6
+  total: 96
+  zero:
+  - K3.c01
+- id: E09
+  case: Semua isian kosong
+  K1: 0
+  K2: 0
+  K3: 0
+  total: 0 untuk K1–K3 (MR-6); K4 sesuai jawaban
+  zero: semua K1–K3
+- id: E10
+  case: F7 = `6.000` (salah hitung sisa)
+  K1: 55
+  K2: 20
+  K3: 10
+  total: 95
+  zero:
+  - K1.c15
+- id: E11
+  case: F2 = `222,000` (koma sebagai pemisah ribuan)
+  K1: 54
+  K2: 18
+  K3: 6
+  total: 88
+  zero:
+  - K1.c06
+  - K2.c02
+  - K3.c01
+- id: E12
+  case: F1 berisi baris tak dikenal P9 = `1.000` di samping P1–P5 acuan
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E13
+  case: Struktur luar F5 rusak (daftar, bukan tabel P1–P5)
+  K1: 45
+  K2: 15
+  K3: 7
+  total: 77
+  zero:
+  - K1.c09
+  - K1.c10
+  - K1.c11
+  - K1.c12
+  - K1.c13
+  - K2.c05
+  - K3.c02

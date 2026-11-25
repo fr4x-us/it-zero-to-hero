@@ -1,0 +1,57 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s07
+competency: comp-w05-expr-01
+format: TF-3
+difficulty: D3
+max_points: 4
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s07-a
+  variant_id: mod-w05.theory.s07.vA
+  item_version: '1.0'
+  stem: Rata-rata **empat** nilai ulangan Dika adalah **80**. Tiga nilai pertama 75, 82, dan 90. Berapa
+    nilai keempat?
+  accepted_answers:
+  - '73'
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51)'
+  explanation: Jumlah = rata-rata × banyak = 80 × 4 = 320. Tiga nilai berjumlah 247. Nilai keempat = 320
+    − 247 = 73.
+- item_id: item-w05-t-s07-b
+  variant_id: mod-w05.theory.s07.vB
+  item_version: '1.0'
+  stem: 'Rata-rata tabungan Sari selama **lima** hari adalah **Rp6.000** per hari. Empat hari pertama:
+    Rp5.000, Rp7.000, Rp4.000, Rp8.000. Berapa rupiah tabungan hari kelima?'
+  accepted_answers:
+  - '6000'
+  - '6.000'
+  - Rp6000
+  - Rp 6000
+  - Rp6.000
+  - Rp 6.000
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51)'
+  explanation: Jumlah = 6.000 × 5 = 30.000. Empat hari berjumlah 24.000. Hari kelima = 30.000 − 24.000
+    = 6.000.

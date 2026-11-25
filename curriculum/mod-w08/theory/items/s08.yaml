@@ -1,0 +1,68 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s08
+competency: comp-w08-branch-01
+format: TF-4
+difficulty: D2
+max_points: 3
+estimated_seconds: 120
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s08-a
+  variant_id: mod-w08.theory.s08.vA
+  item_version: '1.0'
+  stem: Aturan bertingkat di bawah. Untuk nilai **70**, outputnya adalah …
+  stimulus_table:
+  - - Urutan
+    - Pemeriksaan
+  - - '1'
+    - Jika nilai ≥ 85 → output "A"
+  - - '2'
+    - Selain itu, jika nilai ≥ 70 → output "B"
+  - - '3'
+    - Selain itu → output "C"
+  options:
+  - id: a
+    text: '"A"'
+  - id: b
+    text: '"B"'
+  - id: c
+    text: '"C"'
+  - id: d
+    text: Tidak ada output
+  key: b
+  distractor_rationale:
+    a: 70 ≥ 85 salah
+    c: 70 ≥ 70 benar, jadi berhenti di pemeriksaan 2
+    d: Selalu ada cabang "selain itu"
+  explanation: 'Pemeriksaan 1 salah; pemeriksaan 2: 70 ≥ 70 benar → "B".'
+  option_order: urutan alami, tetap
+- item_id: item-w08-t-s08-b
+  variant_id: mod-w08.theory.s08.vB
+  item_version: '1.0'
+  stem: Aturan bertingkat di bawah. Untuk suhu **28**, outputnya adalah …
+  stimulus_table:
+  - - Urutan
+    - Pemeriksaan
+  - - '1'
+    - Jika suhu < 18 → output "dingin"
+  - - '2'
+    - Selain itu, jika suhu ≤ 28 → output "sejuk"
+  - - '3'
+    - Selain itu → output "panas"
+  options:
+  - id: a
+    text: '"dingin"'
+  - id: b
+    text: '"panas"'
+  - id: c
+    text: Tidak ada output
+  - id: d
+    text: '"sejuk"'
+  key: d
+  distractor_rationale:
+    a: 28 < 18 salah
+    b: 28 ≤ 28 benar, jadi berhenti di pemeriksaan 2
+    c: Selalu ada cabang "selain itu"
+  explanation: 'Pemeriksaan 1 salah; pemeriksaan 2: 28 ≤ 28 benar → "sejuk".'
+  option_order: urutan tetap penyusun

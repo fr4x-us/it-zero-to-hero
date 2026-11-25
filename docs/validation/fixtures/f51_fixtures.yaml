@@ -1,0 +1,5 @@
+# F-51 (W3, kontrak diterima owner, TIDAK diubah): satuan kecepatan peka huruf; cocok persis setelah trim.
+- {file: mod-w03/theory/items/s18.yaml, id: mod-w03.theory.s18.vA, input: "3 MB/s", expected: ACCEPT}
+- {file: mod-w03/theory/items/s18.yaml, id: mod-w03.theory.s18.vA, input: "3 Mb/s", expected: INVALID}
+- {file: mod-w03/theory/items/s18.yaml, id: mod-w03.theory.s18.vB, input: "56 Mbps", expected: ACCEPT}
+- {file: mod-w03/theory/items/s18.yaml, id: mod-w03.theory.s18.vB, input: "56 MBps", expected: INVALID}

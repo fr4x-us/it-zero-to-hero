@@ -1,0 +1,54 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s18
+competency: comp-w08-correct-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s18-a
+  variant_id: mod-w08.theory.s18.vA
+  item_version: '1.0'
+  stem: 'Algoritma "nilai **terkecil** daftar" memakai `kecil ← 0`, lalu untuk setiap v: jika `v < kecil`,
+    `kecil ← v`. Daftar mana yang membuat output **salah**?'
+  options:
+  - id: a
+    text: '[−3, 4, 1]'
+  - id: b
+    text: '[0, 5, 2]'
+  - id: c
+    text: '[6, 2, 9]'
+  - id: d
+    text: '[−1, −5, 0]'
+  key: c
+  distractor_rationale:
+    a: Output −3 benar
+    b: Output 0 benar (0 memang terkecil)
+    d: Output −5 benar
+  explanation: 'Semua nilai positif: tidak ada v < 0, output 0 padahal terkecil 2. Nilai awal sebaiknya
+    nilai pertama daftar.'
+  option_order: urutan tetap penyusun
+- item_id: item-w08-t-s18-b
+  variant_id: mod-w08.theory.s18.vB
+  item_version: '1.0'
+  stem: 'Algoritma "nilai **terkecil** daftar" memakai `kecil ← 100`, lalu untuk setiap v: jika `v < kecil`,
+    `kecil ← v`. Daftar mana yang membuat output **salah**?'
+  options:
+  - id: a
+    text: '[150, 120, 200]'
+  - id: b
+    text: '[5, 80, 3]'
+  - id: c
+    text: '[99, 100, 7]'
+  - id: d
+    text: '[−2, 50, 101]'
+  key: a
+  distractor_rationale:
+    b: Output 3 benar
+    c: Output 7 benar
+    d: Output −2 benar
+  explanation: 'Semua nilai > 100: output 100 padahal terkecil 120. Nilai awal sebaiknya nilai pertama
+    daftar.'
+  option_order: urutan tetap penyusun

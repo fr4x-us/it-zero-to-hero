@@ -1,0 +1,84 @@
+# W6 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.concept.s01
+competency: comp-w06-repr-01
+required_concepts:
+- bilangan biner
+- bilangan desimal
+- nilai Boolean benar/salah
+format: CE-S4
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w06-c-s01-a
+  variant_id: mod-w06.concept.s01.vA
+  item_version: '1.0'
+  stem: Cocokkan setiap tulisan dengan artinya.
+  left:
+  - id: L1
+    text: '`101₂`'
+  - id: L2
+    text: '`101₁₀`'
+  - id: L3
+    text: Nilai Boolean `1`
+  - id: L4
+    text: Nilai Boolean `0`
+  right:
+  - id: R1
+    text: Lima
+  - id: R2
+    text: Seratus satu
+  - id: R3
+    text: Benar (true)
+  - id: R4
+    text: Salah (false)
+  - id: R5
+    text: Sebelas
+  key_mapping:
+    L1: R1
+    L2: R2
+    L3: R3
+    L4: R4
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: 101₂ = 4 + 1 = 5; 101₁₀ dibaca seratus satu; 1/0 Boolean = benar/salah, bukan jumlah. R5 adalah
+    pengecoh.
+- item_id: item-w06-c-s01-b
+  variant_id: mod-w06.concept.s01.vB
+  item_version: '1.0'
+  stem: Cocokkan setiap tulisan dengan artinya.
+  left:
+  - id: L1
+    text: '`11₂`'
+  - id: L2
+    text: '`11₁₀`'
+  - id: L3
+    text: Nilai Boolean `0`
+  - id: L4
+    text: Nilai Boolean `1`
+  right:
+  - id: R1
+    text: Benar (true)
+  - id: R2
+    text: Tiga
+  - id: R3
+    text: Sebelas
+  - id: R4
+    text: Salah (false)
+  - id: R5
+    text: Seratus sebelas
+  key_mapping:
+    L1: R2
+    L2: R3
+    L3: R4
+    L4: R1
+  credit_rule: 1 poin per item kiri yang dipetakan ke pasangan benarnya; satu-ke-satu; opsi kanan dipakai
+    dua kali → INVALID_ANSWER (CE-V3)
+  feedback: 11₂ = 2 + 1 = 3; 11₁₀ = sebelas; 0/1 Boolean = salah/benar. R5 adalah pengecoh.

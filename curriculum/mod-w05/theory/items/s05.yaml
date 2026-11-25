@@ -1,0 +1,51 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s05
+competency: comp-w05-expr-01
+format: TF-1
+difficulty: D1
+max_points: 2
+estimated_seconds: 45
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s05-a
+  variant_id: mod-w05.theory.s05.vA
+  item_version: '1.0'
+  stem: Dalam rumus `keliling = 2 × (p + l)`, huruf `p` dan `l` adalah …
+  options:
+  - id: a
+    text: Konstanta yang nilainya selalu 2
+  - id: b
+    text: Operator
+  - id: c
+    text: Satuan panjang
+  - id: d
+    text: 'Variabel: nama untuk nilai yang dapat berbeda-beda'
+  key: d
+  distractor_rationale:
+    a: Angka 2 adalah konstanta; p dan l dapat berubah
+    b: Operatornya × dan +
+    c: Satuan ditulis terpisah, mis. cm
+  explanation: 'p (panjang) dan l (lebar) adalah variabel: nilainya diganti sesuai persegi panjang yang
+    dihitung.'
+  option_order: urutan alami (nilai/kategori), tetap
+- item_id: item-w05-t-s05-b
+  variant_id: mod-w05.theory.s05.vB
+  item_version: '1.0'
+  stem: Dalam rumus `total = harga × jumlah`, nama `total` adalah …
+  options:
+  - id: a
+    text: Variabel yang nilainya dihitung dari harga dan jumlah
+  - id: b
+    text: Angka tetap yang tidak pernah berubah
+  - id: c
+    text: Operator perkalian
+  - id: d
+    text: Satuan rupiah
+  key: a
+  distractor_rationale:
+    b: Nilai total berubah bila harga atau jumlah berubah
+    c: Operatornya ×
+    d: Rupiah adalah satuan, bukan nama variabel
+  explanation: 'total adalah variabel hasil: nilainya bergantung pada variabel harga dan jumlah.'
+  option_order: urutan alami (nilai/kategori), tetap

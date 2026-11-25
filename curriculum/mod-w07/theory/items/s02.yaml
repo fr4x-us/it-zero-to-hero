@@ -1,0 +1,58 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s02
+competency: comp-w07-decomp-01
+format: TF-2
+difficulty: D1
+max_points: 2
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s02-a
+  variant_id: mod-w07.theory.s02.vA
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang dekomposisi.
+  options:
+  - id: a
+    text: Bagian hasil dekomposisi sebaiknya cukup kecil untuk dikerjakan sendiri
+  - id: b
+    text: Dekomposisi berarti mengerjakan semua bagian sekaligus
+  - id: c
+    text: Gabungan semua bagian harus mencakup seluruh masalah
+  - id: d
+    text: Satu bagian dapat membutuhkan hasil bagian lain (prasyarat)
+  - id: e
+    text: Dekomposisi hanya dipakai dalam pemrograman
+  key:
+  - a
+  - c
+  - d
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    b: Bagian dikerjakan terpisah, satu per satu atau dibagi ke beberapa orang
+    e: Dipakai juga dalam kegiatan sehari-hari
+  explanation: Bagian kecil, lengkap bersama-sama, dan dapat saling bergantung.
+- item_id: item-w07-t-s02-b
+  variant_id: mod-w07.theory.s02.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar tentang dekomposisi.
+  options:
+  - id: a
+    text: Satu masalah hanya punya satu cara dekomposisi yang benar
+  - id: b
+    text: Dekomposisi membantu membagi pekerjaan ke beberapa orang
+  - id: c
+    text: Bagian yang masih terlalu besar dapat dipecah lagi
+  - id: d
+    text: Bagian boleh dihilangkan asal masalah terasa selesai
+  - id: e
+    text: Dekomposisi dipakai juga dalam kegiatan sehari-hari, misalnya memasak
+  key:
+  - b
+  - c
+  - e
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila himpunan pilihan tepat sama dengan kunci'
+  distractor_rationale:
+    a: Sering ada beberapa dekomposisi yang sama-sama benar
+    d: Bagian yang hilang membuat masalah tidak terselesaikan seluruhnya
+  explanation: Dekomposisi dapat bertingkat, membantu pembagian kerja, dan berlaku umum.

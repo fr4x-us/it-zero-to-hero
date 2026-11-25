@@ -1,0 +1,52 @@
+# W7 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.theory.s06
+competency: comp-w07-pattern-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w07-t-s06-a
+  variant_id: mod-w07.theory.s06.vA
+  item_version: '1.0'
+  stem: 'Membuat 3 kue memakai langkah yang sama untuk setiap kue: timbang tepung, campur, panggang. Cara
+    memakai **pola** ini untuk menyederhanakan instruksi adalah …'
+  options:
+  - id: a
+    text: Tulis ketiga langkah sekali, lalu "ulangi untuk setiap kue"
+  - id: b
+    text: Tulis 9 langkah satu per satu
+  - id: c
+    text: Hapus langkah memanggang
+  - id: d
+    text: Ubah urutan langkah untuk setiap kue
+  key: a
+  distractor_rationale:
+    b: Benar hasilnya, tetapi tidak memakai pola (berulang ditulis ulang)
+    c: Mengubah hasil
+    d: Urutan yang berubah dapat merusak hasil
+  explanation: Bagian yang berulang ditulis sekali lalu diulang — gagasan perulangan.
+  option_order: urutan tetap penyusun
+- item_id: item-w07-t-s06-b
+  variant_id: mod-w07.theory.s06.vB
+  item_version: '1.0'
+  stem: 'Mengirim undangan kepada 30 siswa memakai langkah yang sama untuk setiap siswa: tulis nama, masukkan
+    ke amplop, tempel perangko. Cara memakai **pola** ini untuk menyederhanakan instruksi adalah …'
+  options:
+  - id: a
+    text: Tulis 90 langkah satu per satu
+  - id: b
+    text: Kirim undangan tanpa nama
+  - id: c
+    text: Tulis ketiga langkah sekali, lalu "ulangi untuk setiap siswa"
+  - id: d
+    text: Masukkan semua undangan ke satu amplop
+  key: c
+  distractor_rationale:
+    a: Benar hasilnya, tetapi tidak memakai pola
+    b: Mengubah hasil
+    d: 'Mengubah hasil: setiap siswa harus menerima undangannya'
+  explanation: Bagian yang berulang ditulis sekali lalu diulang — gagasan perulangan.
+  option_order: urutan tetap penyusun

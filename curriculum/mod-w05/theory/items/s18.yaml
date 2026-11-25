@@ -1,0 +1,62 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s18
+competency: comp-w05-round-01
+format: TF-3
+difficulty: D1
+max_points: 2
+estimated_seconds: 60
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s18-a
+  variant_id: mod-w05.theory.s18.vA
+  item_version: '1.0'
+  stem: Bulatkan **3,46** ke **satu** angka di belakang koma.
+  accepted_answers:
+  - 3,5
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51). Pembulatan memakai aturan W5: lihat satu angka setelah tempat pembulatan; 5 atau
+    lebih → naik, kurang dari 5 → tetap (bilangan positif)'
+  normalization_examples:
+    diterima:
+    - 3,5
+    ditolak (0 poin):
+    - '3.5'
+    - 3,50
+  explanation: Angka setelah tempat persepuluhan adalah 6 (≥ 5), jadi 3,4 naik menjadi 3,5.
+- item_id: item-w05-t-s18-b
+  variant_id: mod-w05.theory.s18.vB
+  item_version: '1.0'
+  stem: Bulatkan **12,349** ke **dua** angka di belakang koma.
+  accepted_answers:
+  - 12,35
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51). Pembulatan memakai aturan W5: lihat satu angka setelah tempat pembulatan; 5 atau
+    lebih → naik, kurang dari 5 → tetap (bilangan positif)'
+  normalization_examples:
+    diterima:
+    - 12,35
+    ditolak (0 poin):
+    - '12.35'
+    - 12,350
+  explanation: Angka setelah tempat perseratusan adalah 9 (≥ 5), jadi 12,34 naik menjadi 12,35.

@@ -1,0 +1,76 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s03
+competency: comp-w05-arith-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s03-a
+  variant_id: mod-w05.theory.s03.vA
+  item_version: '1.0'
+  stem: Suhu pagi di puncak gunung **−3 °C**. Siang suhu naik **8 °C**, lalu malam turun **11 °C** dari
+    suhu siang. Berapa suhu malam (dalam °C)?
+  accepted_answers:
+  - '-6'
+  - −6
+  - -6 °C
+  - -6°C
+  - −6 °C
+  - −6°C
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51)'
+  normalization_examples:
+    diterima:
+    - '-6'
+    - -6 °C
+    - −6
+    ditolak (0 poin):
+    - -6 °Cnya
+    - '-06'
+  explanation: −3 + 8 = 5; 5 − 11 = −6. Jawaban −6 °C.
+- item_id: item-w05-t-s03-b
+  variant_id: mod-w05.theory.s03.vB
+  item_version: '1.0'
+  stem: Suhu awal di dalam lemari pendingin **4 °C**. Suhu turun **9 °C**, lalu naik **2 °C**. Berapa
+    suhu akhir (dalam °C)?
+  accepted_answers:
+  - '-3'
+  - −3
+  - -3 °C
+  - -3°C
+  - −3 °C
+  - −3°C
+  normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 =
+    buang spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma
+    (`12,5`) dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan
+    dengan kelompok tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif.
+    N3 afiks: hanya awalan `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers
+    butir ini, masing-masing dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran
+    satuan itu (mis. `MENIT`, `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan
+    dan afiks dihapus. N6 bandingkan angka kanonik dengan angka kanonik accepted_answers; accepted_answers
+    adalah bentuk kanonik beserta contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai
+    desimal (`12.5`), nol di depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang
+    dari yang diminta. Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap
+    peka huruf (F-51)'
+  normalization_examples:
+    diterima:
+    - '-3'
+    - -3 °C
+    - −3
+    ditolak (0 poin):
+    - -3 °Cnya
+    - '-03'
+  explanation: 4 − 9 = −5; −5 + 2 = −3. Jawaban −3 °C.

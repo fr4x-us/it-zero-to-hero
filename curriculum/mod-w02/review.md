@@ -2,7 +2,7 @@
 module_id: mod-w02
 content_version: "1.0"
 template: TPL-19, TPL-20
-review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1 + koreksi F-28–F-72 (dua putaran). Review independen PR #27: REQUEST CHANGES (dua kali) → dikoreksi; re-review BELUM; belum diterima owner"
+review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1 + koreksi F-28–F-72 (dua putaran). Review independen PR #27: REQUEST CHANGES (dua kali) → dikoreksi → delta review PASS (terarah, dengan batas yang diungkapkan); diterima owner W02-ACC (2026-11-24)"
 ---
 
 # W2 — Review Kualitas, Kesetaraan Varian, dan Bukti
@@ -13,8 +13,8 @@ review_type: "Review dokumentasi oleh penyusun (Claude), 2026-11-24, CB-1 + kore
 |---|---|
 | Dokumentasi diproduksi | **YA** (CB-1) |
 | Review mandiri penyusun | **YA** (dokumen ini) |
-| Review independen (ChatGPT) | PR #27: **REQUEST CHANGES** (F-28–F-70, lalu delta F-28–F-72) → dikoreksi; **re-review BELUM** |
-| Diterima owner | **BELUM** |
+| Review independen (ChatGPT) | PR #27: **REQUEST CHANGES** (F-28–F-70, lalu delta F-28–F-72) → dikoreksi → **delta review PASS** — targeted delta review with disclosed limitations (lihat bagian penerimaan) |
+| Diterima owner (W02-ACC) | **YA** (2026-11-24, PR #27 merge `846051f`) — lihat bagian penerimaan di akhir dokumen |
 | Runtime diverifikasi | Tidak berlaku / tidak diklaim (W2 tanpa runtime; aplikasi belum ada) |
 | Durasi diuji dengan pelajar | **TIDAK** |
 
@@ -289,7 +289,7 @@ mekanismenya di aplikasi belum ada (tidak ada klaim implementasi).
 | Reviewer | Claude (penyusun), review mandiri |
 | Tanggal | 2026-11-24 |
 | Basis | `main` = `ab0103e` |
-| Temuan terbuka | Tidak ada BLOCKED (deskripsi F-55–F-57, F-59 dipulihkan owner, putaran 2); butuh re-review independen dan penerimaan owner. Register: bagian koreksi konsolidasi di akhir dokumen |
+| Temuan terbuka | Tidak ada BLOCKED (deskripsi F-55–F-57, F-59 dipulihkan owner, putaran 2); *historis (sebelum penerimaan):* butuh re-review independen dan penerimaan owner; **status aktif:** delta review PASS dan diterima owner W02-ACC (lihat bagian penerimaan). Register: bagian koreksi konsolidasi di akhir dokumen |
 
 Metrik W2 (dihitung dari transkrip sesi; perkiraan ±2 untuk hitungan
 panggilan): panggilan alat ≈ 40 untuk produksi + validasi W2; berkas unik
@@ -307,7 +307,7 @@ pemindai V-L 2); pemulihan sesi 0. TOKEN USAGE: **NOT MEASURABLE**.
 Review PR #27 = **REQUEST CHANGES**. Sebelum mengedit diverifikasi: head
 `a9241d33c2cf32e177ca92618df458b78dd6cb98`, base
 `ab0103e4954ead4ded6343d105d73a2729916cd6` (cocok). Koreksi diterapkan pada
-PR #27 yang sama. Status modul: **diproduksi dan dikoreksi; menunggu re-review
+PR #27 yang sama. *Historis (saat koreksi):* status modul **diproduksi dan dikoreksi; menunggu re-review
 independen dan penerimaan owner** — belum diterima.
 
 ### 13.1 Register F-28–F-72 (45 ID; diperbarui pada koreksi terarah putaran 2)
@@ -517,3 +517,98 @@ W2 1, W3 78.485.511.600, W4 163.840 — tidak berubah). F-24–F-27
 dipertahankan: tidak ada perubahan `.claude/`, izin, hooks, allowed-tools,
 asal skill, atau kontrak alur kerja; W1 tidak diubah. V03 tidak dijalankan
 ulang. TOKEN USAGE: **NOT MEASURABLE**.
+
+
+## Penerimaan W2 (W02-ACC) dan batas review independen
+
+PR #27 di-merge (head `1a58338bcc863320ff4eafbb0f407cee4b2a9f59`, merge commit `846051f66ee4d1e36e9b34e0c9d1787fb713617b`). Owner menerima W2 (W02-ACC, 2026-11-24).
+
+Verdict independen: **PASS — targeted delta review with disclosed limitations.** Batas review independen (dinyatakan owner): delta review terarah PASS — F-49–F-59 dan F-71–F-72 lolos review terarah; integritas register F-28–F-72 diverifikasi; 16 simulasi normalisasi independen lolos. Regresi historis penuh, semua skrip validasi sementara, uji dengan pelajar, dan verifikasi runtime Android **tidak** diulang secara independen.
+
+Register F-01–F-72 dan disposisinya di atas tetap sebagai catatan historis (39 FIXED, 5 DOCUMENTATION CLARIFIED, F-31 NOT REPRODUCED pada F-28–F-72). Penerimaan ini **bukan** verifikasi menyeluruh, verifikasi runtime, atau uji durasi dengan pelajar; temuan baru tetap boleh diangkat. Bukti aktivasi V03 tetap dari sesi segar sebelumnya.
+
+## Penyelarasan kebijakan D-39 (2026-11-25) — bukan perubahan disposisi historis
+
+Owner menyetujui **D-39 HYBRID COMPETENCY COVERAGE**. Audit cakupan
+([CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md))
+menemukan celah **di bawah kontrak baru** (bukan kegagalan terhadap kontrak
+saat W2 diterima). Koreksi minimum (format, poin, kesulitan,
+kompetensi, dan distribusi posisi kunci tetap; `item_version: '2.0'`):
+
+| Butir | Perubahan | Konsep yang dijamin |
+|---|---|---|
+| concept s01 vA | L1 `Manajemen proses` → `Kernel`; R3 = definisi kernel | kernel (concept s01) |
+| teori s02 vB | opsi c (giliran CPU) dan e (driver) menggantikan memori/antarmuka; kunci a, c, e tetap | manajemen proses, manajemen perangkat |
+| teori s05 vA | stem menyebut suntingan belum disimpan; kunci a memuat akibatnya | yang belum disimpan hilang |
+| teori s09 vB | opsi b → ekstensi memilih aplikasi pembuka; kunci tetap | ekstensi memilih aplikasi pembuka |
+| teori s17 vB | langkah 4 → pulihkan; hasil /tugas 2, /kirim 2; opsi b/d ditukar sehingga kunci tetap b | pulihkan |
+| concept s05 vA | urutan pulihkan → periksa → kosongkan Tempat Sampah; satu urutan diterima | periksa sebelum menghapus permanen |
+| concept s06 vB | opsi c → akun administrator untuk sehari-hari (salah); kunci tetap | akun biasa vs admin |
+
+Penerimaan W02-ACC tetap tercatat untuk isi yang diterima. Varian yang
+diubah di atas **tidak** tercakup penerimaan itu dan memerlukan **review
+delta independen** terarah. Register F-01–F-72 tidak berubah.
+
+### Putaran 4 (review `4ddc993`, REQUEST CHANGES) — tindak lanjut D-39
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R3-03 | concept s05 vA (3.0) dan vB (2.0): simulasi; periksa **seluruh** sisa isi Tempat Sampah dan pulihkan yang masih dibutuhkan sebelum mengosongkan; urutan A B C D tetap | CONFIRMED — FIXED | YA | BELUM |
+| R3-04 | Bukti "salin mempertahankan asal": teori s17 vA (salin ditolak) tidak sah; dijamin proyek K4.q3 dan teori s15 vA + s17 vB — tanpa perubahan butir | CONFIRMED (bukti) — matriks dikoreksi | YA | BELUM |
+| R3-08 | Status penerimaan terstruktur TPL-01a di `module.yaml` → `acceptance` (historis tetap; varian revisi PENDING) | CONFIRMED — FIXED | YA | BELUM |
+
+Register kesetaraan dan cakupan: [CURRICULUM_COVERAGE_MATRIX_W01_W08.md](../../docs/CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
+Penerimaan W02-ACC tetap historis; varian revisi belum diterima.
+
+### Putaran 5 (review `796043c`, REQUEST CHANGES)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R4-02 | Validator penerimaan kini membandingkan isi setiap varian dengan `baseline_commit` git (field baru di blok `acceptance`); varian revisi tetap PENDING | CONFIRMED — FIXED | YA | BELUM |
+| R4-03 | Bukti "salin mempertahankan asal": proyek K4.q3 dihapus (salin hanya pengecoh); bukti (b) teori s15 vA + s17 vB, berlaku karena VA-2 memberi indeks varian yang sama di semua slot (disimulasikan) | CONFIRMED — FIXED (bukti) | YA | BELUM |
+
+Butir W2 yang diterima tidak diubah pada putaran ini.
+
+### Putaran 6 (koreksi terarah; otorisasi owner terbatas; temuan sementara R5-01–R5-05)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R5-05 | Field slot bersama dibandingkan dengan baseline `846051f`; W2: 8 varian PENDING, tidak ada perubahan field bersama | CONFIRMED — FIXED | YA | BELUM |
+| R5-01 | Elemen bernilai W2 (opsi teori s02/s09, bukti (b) s15 vA + s17 vB) tervalidasi | CONFIRMED — FIXED | YA | BELUM |
+
+Butir W2 yang diterima tidak diubah pada putaran ini.
+
+### Putaran 7 (koreksi konsolidasi; otorisasi owner bersyarat; temuan sementara R6-01–R6-06)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| R6-01 | Jangkar W02-ACC: `846051f66ee4d1e36e9b34e0c9d1787fb713617b` = merge PR #27 | CONFIRMED — FIXED | YA | BELUM |
+| R6-02 | W2 tidak ada relokasi | CONFIRMED — FIXED | YA | BELUM |
+| R3-04 / VA-2 | Bukti (b) teori s15 vA + s17 vB: simulasi 6 skenario — riwayat yang diizinkan kontrak (normal, terputus, remedial, restore attempt utuh) sinkron; pencatatan slot tidak atomik dapat menghasilkan jalur s15 vB + s17 vA. Ketergantungan: pemilihan + pencatatan atomik semua slot saat attempt dibuat (VA-4 tidak eksplisit) dan SB-12/OD-9. Kebijakan VA-2 tidak diubah | CONDITIONAL PASS | SEBAGIAN | BELUM |
+
+Butir W2 yang diterima tidak diubah pada putaran ini.
+
+### Putaran 8 (koreksi terarah final; otorisasi owner O-1, O-2; temuan sementara R7-01–R7-02)
+
+| ID | Tindakan | Disposisi | AUTHOR RESOLVED | INDEPENDENT VERIFIED |
+|---|---|---|---|---|
+| O-2 / R3-04 | Kontrak desain VA-4a (CCD §B.2; DECISIONS_LOG "PR #28 O-2"): pemilihan semua slot dari satu snapshot ter-commit, commit atomik bersama identitas attempt, resume tanpa pemilihan ulang, restore hanya riwayat utuh. Bukti induksi + simulasi (5 skenario sah sinkron; riwayat parsial/rusak ditolak) untuk teori s15 vA + s17 vB. Tertunda: verifikasi implementasi dan OD-9/SB-12/UW-33 | CONDITIONAL PASS | SEBAGIAN | BELUM |
+
+Butir W2 yang diterima tidak diubah pada putaran ini.
+
+## Penerimaan owner final PR #28 (2026-11-25)
+
+Owner menerima 8 varian revisi W2 pada versi persis di HEAD review `b54f930b0cf4479e2984fc148e2bc91c443e1ada` (PR #28 ACC, 2026-11-25; `owner_acceptance: ACCEPTED`, `independent_review: TARGETED_LIMITED`). Penerimaan historis W02-ACC dan baseline aslinya tidak berubah; riwayat revisi dipertahankan.
+
+Verdict independen: "PASS — targeted delta review with disclosed limitations". Batas
+(DECISIONS_LOG): review terarah, bukan audit menyeluruh; putaran 8 memeriksa langsung 7 dari 20
+berkas berubah; putaran 7 tidak menyeluruh; 156 konsep wajib tidak diverifikasi ulang secara
+independen; paket validasi tidak dijalankan ulang secara independen (clone GitHub terhambat);
+tanpa uji pelajar; tanpa verifikasi runtime Android. Hasil penulis (bukan eksekusi independen):
+cakupan 156/0/0, kesetaraan 48/0, 778 pemeriksaan + 8 kasus provenance.
+
+Disposisi final: R7-01 FIX VERIFIED (review statis terarah); R7-02 PASS (review statis terarah atas
+cacat yang dilaporkan); O-1 selesai; O-2/VA-4a PASS tingkat kontrak desain; R3-04 CONDITIONAL PASS
+(verifikasi implementasi dan restore tertunda); PR28-02 PARTIAL PASS independen; PR28-06 diterima
+untuk perencanaan kurikulum. Baris register sebelumnya tetap sebagai catatan historis; kolom
+INDEPENDENT VERIFIED di atas tidak diubah secara retroaktif.

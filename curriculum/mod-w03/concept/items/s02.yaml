@@ -44,7 +44,7 @@ variants:
   feedback: Privat bermakna di LAN dan dapat dipakai ulang; router (NAT) memakai satu alamat publik.
 - item_id: item-w03-c-s02-b
   variant_id: mod-w03.concept.s02.vB
-  item_version: '1.0'
+  item_version: '3.0'
   stem: Pilih **semua** pernyataan yang benar tentang alamat IP.
   options:
   - id: a
@@ -56,14 +56,15 @@ variants:
   - id: d
     text: Rentang `172.16.x.x` sampai `172.31.x.x` termasuk alamat privat
   - id: e
-    text: '`192.168.300.1` adalah alamat privat yang valid'
+    text: Router rumah tidak dapat membuat beberapa perangkat beralamat privat berbagi satu alamat publik;
+      setiap perangkat perlu alamat publik sendiri
   key:
   - a
   - c
   - d
   distractor_rationale:
     b: Alamat privat tidak diteruskan langsung di internet
-    e: 300 > 255, tidak valid
+    e: Router (NAT) membuat banyak perangkat beralamat privat berbagi satu alamat publik dari ISP
   credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
     pengurangan hanya di soal ini, tidak pernah negatif
   feedback: Rentang privat 10.x dan 172.16–31; alamat publik dari ISP.

@@ -1,0 +1,63 @@
+# W7 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w07.concept.s03
+competency: comp-w07-abstract-01
+required_concepts:
+- menyaring informasi menurut tujuan
+- generalisasi dengan variabel
+format: CE-S1
+max_points: 4
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w07-c-s03-a
+  variant_id: mod-w07.concept.s03.vA
+  item_version: '1.0'
+  stem: Mengapa peta jalur kereta hanya menampilkan urutan stasiun dan tempat berganti jalur, bukan jarak
+    dan belokan rel yang sebenarnya?
+  options:
+  - id: a
+    text: Karena jarak sebenarnya tidak diketahui siapa pun
+  - id: b
+    text: Karena untuk memilih rute yang penting urutan stasiun dan pergantian jalur; detail lain diabaikan
+      (abstraksi)
+  - id: c
+    text: Karena peta harus berwarna
+  - id: d
+    text: Karena rel kereta selalu lurus
+  key: b
+  distractor_rationale:
+    a: Jarak dapat diukur, tetapi tidak dibutuhkan untuk tujuan ini
+    c: Warna tidak menjelaskan pilihan informasi
+    d: Fakta yang salah
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: Abstraksi menampilkan yang penting untuk tujuan pemakainya.
+- item_id: item-w07-c-s03-b
+  variant_id: mod-w07.concept.s03.vB
+  item_version: '2.0'
+  stem: Panitia lomba lari ingin mengelompokkan peserta menurut kategori umur dan jarak. Formulir pendaftaran
+    hanya meminta nama, tanggal lahir, dan pilihan jarak, tanpa warna sepatu dan lagu favorit. Mengapa?
+  options:
+  - id: a
+    text: Karena warna sepatu dan lagu favorit tidak dapat ditulis di formulir
+  - id: b
+    text: Karena formulir yang pendek selalu lebih benar
+  - id: c
+    text: Karena panitia sudah mengetahui warna sepatu semua peserta
+  - id: d
+    text: 'Karena tujuannya mengelompokkan peserta: tanggal lahir dan pilihan jarak menentukan kategori,
+      sedangkan warna sepatu dan lagu favorit tidak mengubah pengelompokan (abstraksi)'
+  key: d
+  distractor_rationale:
+    a: Informasi itu dapat ditulis, tetapi tidak dibutuhkan untuk tujuan ini
+    b: Panjang formulir bukan alasannya; yang menentukan adalah tujuan
+    c: Tidak ada dasar; alasannya tidak relevan dengan tujuan
+  credit_rule: 4 bila pilihan = kunci; selain itu 0
+  feedback: 'Abstraksi menyaring informasi menurut tujuan: simpan yang mengubah keputusan, abaikan yang
+    tidak.'

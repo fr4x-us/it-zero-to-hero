@@ -1,0 +1,50 @@
+# W8 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w08.theory.s11
+competency: comp-w08-loop-01
+format: TF-1
+difficulty: D2
+max_points: 3
+estimated_seconds: 75
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w08-t-s11-a
+  variant_id: mod-w08.theory.s11.vA
+  item_version: '1.0'
+  stem: Perulangan mana yang **tidak pernah berhenti**?
+  options:
+  - id: a
+    text: '`i ← 1`; selama `i ≤ 5`: `i ← i + 1`'
+  - id: b
+    text: '`i ← 10`; selama `i > 0`: `i ← i − 2`'
+  - id: c
+    text: '`i ← 1`; selama `i ≤ 5`: `i ← i − 1`'
+  - id: d
+    text: '`i ← 0`; selama `i < 3`: `i ← i + 1`'
+  key: c
+  distractor_rationale:
+    a: Berhenti saat i = 6
+    b: Berhenti saat i = 0
+    d: Berhenti saat i = 3
+  explanation: i makin kecil (0, −1, …), sehingga i ≤ 5 selalu benar.
+  option_order: urutan tetap penyusun
+- item_id: item-w08-t-s11-b
+  variant_id: mod-w08.theory.s11.vB
+  item_version: '1.0'
+  stem: Perulangan mana yang **tidak pernah berhenti**?
+  options:
+  - id: a
+    text: '`k ← 5`; selama `k > 0`: `k ← k + 1`'
+  - id: b
+    text: '`k ← 5`; selama `k > 0`: `k ← k − 1`'
+  - id: c
+    text: '`k ← 0`; selama `k < 4`: `k ← k + 2`'
+  - id: d
+    text: '`k ← 1`; selama `k ≤ 8`: `k ← k × 2`'
+  key: a
+  distractor_rationale:
+    b: Berhenti saat k = 0
+    c: Berhenti saat k = 4
+    d: Berhenti saat k = 16
+  explanation: k makin besar, sehingga k > 0 selalu benar.
+  option_order: urutan tetap penyusun

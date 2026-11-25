@@ -19,42 +19,56 @@ feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
 variants:
 - item_id: item-w03-c-s01-a
   variant_id: mod-w03.concept.s01.vA
-  item_version: '1.0'
-  stem: Mengapa laptop masih dapat mencetak ke printer di LAN rumah saat sambungan internet dari ISP **putus**?
+  item_version: '2.0'
+  stem: Laptop dan printer tersambung **kabel** ke satu kotak "router Wi-Fi" rumah yang berisi fungsi
+    switch, access point, dan router. Sambungan internet dari ISP **putus**, tetapi laptop masih dapat
+    mencetak ke printer. Pernyataan mana yang menjelaskan kejadian ini dengan **fungsi** yang benar?
   options:
   - id: a
-    text: Printer memakai sambungan internet cadangan
+    text: Fungsi router meneruskan data dari laptop ke printer di dalam LAN, sedangkan fungsi switch hanya
+      dipakai untuk menuju internet
   - id: b
-    text: Laptop dan printer berada di LAN yang sama; data di antara keduanya tidak perlu melewati internet
+    text: 'Laptop dan printer satu LAN: fungsi switch meneruskan data ke printer di LAN itu; fungsi router
+      hanya diperlukan untuk paket ke jaringan lain'
   - id: c
-    text: Printer menyimpan sambungan internet di RAM-nya
+    text: Fungsi switch dan fungsi router sama-sama menghubungkan LAN dengan internet, jadi saat internet
+      putus salah satunya menggantikan yang lain
   - id: d
-    text: Modem yang mencetak dokumen
+    text: Fungsi access point yang meneruskan data kabel dari laptop ke printer, karena access point juga
+      memancarkan Wi-Fi di rumah itu
   key: b
   distractor_rationale:
-    a: Tidak ada sambungan cadangan dalam skenario
-    c: RAM tidak menyimpan sambungan internet
-    d: Modem mengubah sinyal ke ISP
+    a: 'Fungsi tertukar: router menghubungkan jaringan berbeda; switch meneruskan data di dalam LAN'
+    c: Switch tidak menghubungkan LAN dengan jaringan lain; fungsi keduanya berbeda
+    d: Access point hanya memberi akses nirkabel; laptop dan printer di soal ini memakai kabel
   credit_rule: 4 bila pilihan = kunci; selain itu 0
-  feedback: Perangkat di LAN yang sama berkomunikasi lewat switch/access point di LAN itu, tanpa internet.
+  feedback: Satu kotak router Wi-Fi berisi beberapa fungsi. Data laptop → printer tetap di dalam LAN dan
+    diteruskan fungsi switch; fungsi router hanya dibutuhkan untuk meneruskan paket ke jaringan lain,
+    jadi internet putus tidak menghentikan pencetakan.
 - item_id: item-w03-c-s01-b
   variant_id: mod-w03.concept.s01.vB
-  item_version: '1.0'
-  stem: Mengapa rumah memerlukan **router**, bukan hanya switch, agar perangkat dapat membuka situs di
-    internet?
+  item_version: '2.0'
+  stem: Di lab sekolah, 20 komputer tersambung kabel hanya ke sebuah **switch**; tidak ada router. Komputer-komputer
+    itu dapat saling berbagi berkas, tetapi tidak dapat membuka situs di internet. Pernyataan mana yang
+    menjelaskan kejadian ini dengan **fungsi** yang benar?
   options:
   - id: a
-    text: Switch tidak dapat dipasangi kabel
+    text: Switch dapat meneruskan paket ke internet, tetapi komputer berkabel memerlukan access point
+      agar dapat keluar ke internet
   - id: b
-    text: Router menyimpan salinan semua situs
+    text: Switch tidak meneruskan data apa pun; berbagi berkas antarkomputer di lab itu sebenarnya berjalan
+      lewat internet sekolah
   - id: c
-    text: Switch membuat Wi-Fi menjadi lambat
+    text: Router yang meneruskan data antarkomputer di dalam LAN lab, jadi tanpa router berbagi berkas
+      seharusnya tidak berjalan
   - id: d
-    text: Situs berada di jaringan lain; router yang menghubungkan LAN dengan jaringan lain
+    text: Switch meneruskan data di dalam LAN lab, jadi berbagi berkas berjalan; situs ada di jaringan
+      lain dan memerlukan fungsi router
   key: d
   distractor_rationale:
-    a: Switch justru menghubungkan perangkat lewat kabel
-    b: Router meneruskan paket, tidak menyimpan situs
-    c: Tidak berkaitan dengan peran antarjaringan
+    a: Access point hanya memberi akses nirkabel; yang menghubungkan LAN dengan jaringan lain adalah router
+    b: Berbagi berkas berjalan justru karena switch meneruskan data di dalam LAN
+    c: 'Fungsi tertukar: di dalam LAN data diteruskan switch; router untuk antarjaringan'
   credit_rule: 4 bila pilihan = kunci; selain itu 0
-  feedback: Switch bekerja di dalam satu LAN; menuju jaringan lain butuh router.
+  feedback: Switch bekerja di dalam satu LAN, jadi berbagi berkas berjalan; situs berada di jaringan lain,
+    sehingga perlu fungsi router.

@@ -1,0 +1,28 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s13
+competency: comp-w06-ops-01
+format: TF-3
+difficulty: D1
+max_points: 2
+estimated_seconds: 60
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s13-a
+  variant_id: mod-w06.theory.s13.vA
+  item_version: '1.0'
+  stem: A = 1 dan B = 1. Nilai `NOT (A AND B)`? Tulis 0 atau 1.
+  accepted_answers:
+  - '0'
+  normalization: 'Buang spasi/tab di awal dan akhir; jawaban satu digit `0` (salah) atau `1` (benar) —
+    nilai Boolean, bukan bilangan. Ditolak: kata (`benar`, `true`), angka lain'
+  explanation: A AND B = 1; NOT 1 = 0.
+- item_id: item-w06-t-s13-b
+  variant_id: mod-w06.theory.s13.vB
+  item_version: '1.0'
+  stem: A = 0 dan B = 0. Nilai `NOT (A OR B)`? Tulis 0 atau 1.
+  accepted_answers:
+  - '1'
+  normalization: 'Buang spasi/tab di awal dan akhir; jawaban satu digit `0` (salah) atau `1` (benar) —
+    nilai Boolean, bukan bilangan. Ditolak: kata (`benar`, `true`), angka lain'
+  explanation: A OR B = 0; NOT 0 = 1.

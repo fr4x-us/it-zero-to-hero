@@ -1,0 +1,71 @@
+# W6 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.concept.s02
+competency: comp-w06-bin2dec-01
+required_concepts:
+- nomor posisi dari kanan mulai 0
+- bobot 2^posisi
+- jumlahkan bobot bit 1
+format: CE-S3
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w06-c-s02-a
+  variant_id: mod-w06.concept.s02.vA
+  item_version: '1.0'
+  stem: Urutkan langkah mengubah bilangan biner ke desimal.
+  items:
+  - id: A
+    text: Beri nomor posisi setiap bit dari kanan, mulai 0
+  - id: B
+    text: 'Tulis bobot setiap posisi: 2^posisi (1, 2, 4, 8, …)'
+  - id: C
+    text: Kalikan setiap bit dengan bobotnya
+  - id: D
+    text: Jumlahkan semua hasil perkalian
+  display_order:
+  - C
+  - D
+  - A
+  - B
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: Posisi menentukan bobot; bobot dikalikan bit; hasilnya dijumlahkan.
+- item_id: item-w06-c-s02-b
+  variant_id: mod-w06.concept.s02.vB
+  item_version: '1.0'
+  stem: Urutkan langkah memeriksa bahwa `1100₂` bernilai 12.
+  items:
+  - id: A
+    text: Tulis bobot 8, 4, 2, 1 di atas keempat bit dari kiri ke kanan
+  - id: B
+    text: 'Pilih bobot yang bitnya 1: 8 dan 4'
+  - id: C
+    text: 'Jumlahkan bobot terpilih: 8 + 4 = 12'
+  - id: D
+    text: 'Bandingkan dengan 12: sama, jadi benar'
+  display_order:
+  - D
+  - C
+  - A
+  - B
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  credit_rule: Skor = jumlah pasangan berurutan (x_i, x_{i+1}) yang juga berurutan di SATU urutan diterima;
+    maksimum atas urutan diterima; pasangan dari urutan berbeda tidak digabung (CE-S3a–S3c)
+  feedback: Bobot dulu, lalu pilih bit 1, jumlahkan, baru bandingkan.

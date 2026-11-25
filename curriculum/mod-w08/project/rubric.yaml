@@ -1,0 +1,500 @@
+# W8 — rubrik mini-project (MR-A, D-33). Kunci, contoh jawaban, dan contoh evaluasi
+# hanya untuk reviewer/penilai; tidak ditampilkan kepada pelajar sebelum dinilai.
+component: mod-w08.project
+content_version: '1.0'
+max_points: 100
+constants:
+  flowchart_template:
+  - - B1
+    - Oval
+    - Mulai
+    - B2
+  - - B2
+    - Jajar genjang
+    - Input daftar A berisi n nilai
+    - B3
+  - - B3
+    - Persegi panjang
+    - '[F1]; i ← 2'
+    - B4
+  - - B4
+    - Belah ketupat
+    - '[F2]'
+    - Ya → B5; Tidak → B9
+  - - B5
+    - Belah ketupat
+    - '[F3]'
+    - Ya → B6; Tidak → B7
+  - - B6
+    - Persegi panjang
+    - maks ← A[i]
+    - B7
+  - - B7
+    - Persegi panjang
+    - i ← i + 1
+    - B8
+  - - B8
+    - Penghubung
+    - kembali ke [F4]
+    - '[F4]'
+  - - B9
+    - Jajar genjang
+    - Output maks
+    - B10
+  - - B10
+    - Oval
+    - Selesai
+    - —
+  domain: Daftar A berisi n ≥ 1 bilangan bulat (boleh negatif, boleh sama); A[1] nilai pertama
+  options:
+    F1:
+      a: maks ← 0
+      b: maks ← A[1]
+      c: maks ← n
+      d: maks ← A[n]
+    F2:
+      a: i < n?
+      b: i ≤ n?
+      c: i ≥ n?
+      d: i = n?
+    F3:
+      a: A[i] > maks?
+      b: A[i] < maks?
+      c: A[i] = maks?
+      d: A[i] ≥ maks?
+    F4:
+      a: B3
+      b: B4
+      c: B5
+      d: B9
+  list_A:
+  - -7
+  - -2
+  - -2
+  - 5
+  - 3
+  - -9
+  list_B:
+  - -8
+  - -3
+  - -5
+  key:
+    F1:
+    - b
+    F2:
+    - b
+    F3:
+    - a
+    - d
+    F4:
+    - b
+    F5:
+      i2: -2
+      i3: -2
+      i4: 5
+      i5: 5
+      i6: 5
+    F6: -3
+    F7: 0
+    F8: 6
+  equivalent_choices: 'F3: `A[i] > maks?` dan `A[i] ≥ maks?` sama-sama benar (nilai sama tidak mengubah
+    nilai maks). Enumerasi 4⁴ = 256 kombinasi F1–F4 pada 14 daftar uji dengan interpreter tingkat-blok
+    (termasuk semua negatif, nilai sama, satu nilai): tepat 2 kombinasi benar, keduanya diterima'
+  trace_note: F5 berisi nilai maks setelah blok B5/B6 pada setiap putaran i = 2 … 6 untuk daftar A; nilainya
+    sama untuk > maupun ≥
+field_rules:
+  choice_readable: Satu huruf a–d (huruf besar/kecil bebas); selain itu tidak terbaca
+  number_readable: NB-5 bilangan bulat (tanda `-` atau `−` untuk negatif, tanpa nol di depan); F5–F7 boleh
+    diawali `maks =` atau `maks=`; F8 boleh diikuti `kali`. Akhiran kata/simbol satuan dibaca tanpa membedakan
+    huruf besar/kecil (mis. `PERSEN`, `Kali`); awalan `Rp` ditulis persis (kontrak NB-5 N3–N4).
+  number_strict: 'K3: bilangan saja (tanpa `maks =` atau kata)'
+  validity: 'Isian kosong/tidak terbaca → INVALID_ANSWER untuk isian itu saja; pemeriksaan yang depends_on
+    isian itu bernilai 0; isian lain tetap dinilai. F5: baris i2–i6 yang hilang = sel kosong; ID baris
+    tak dikenal diabaikan; struktur luar rusak (bukan tabel baris) → seluruh F5 tidak terbaca. Kegagalan
+    aplikasi/konten → EVALUATION_ERROR (D-24 IE-2), bukan skor 0'
+  value_compare: Setiap isian dibandingkan dengan kunci yang diturunkan dari flowchart acuan dan daftar
+    fixture, bukan dari pilihan blok pelajar (kredit independen MR-2)
+  dependency_rule: 'MR-2: pemeriksaan bernilai 0 bila isian yang dibutuhkannya kosong atau tidak terbaca;
+    tanpa gerbang nol global. Formulir tanpa isian sama sekali = 0 untuk K1–K3 (MR-6)'
+criteria:
+  K1:
+    name: Kebenaran fungsional
+    points: 60
+    checks:
+    - id: mod-w08.project.K1.c01
+      rule: F1 = b
+      depends_on:
+      - F1 terbaca
+      points: 6
+    - id: mod-w08.project.K1.c02
+      rule: F2 = b
+      depends_on:
+      - F2 terbaca
+      points: 6
+    - id: mod-w08.project.K1.c03
+      rule: F3 ∈ {a, d}
+      depends_on:
+      - F3 terbaca
+      points: 6
+    - id: mod-w08.project.K1.c04
+      rule: F4 = b (kembali ke B4)
+      depends_on:
+      - F4 terbaca
+      points: 6
+    - id: mod-w08.project.K1.c05
+      rule: F5.i2 = -2
+      depends_on:
+      - F5.i2 terbaca
+      points: 4
+    - id: mod-w08.project.K1.c06
+      rule: F5.i3 = -2
+      depends_on:
+      - F5.i3 terbaca
+      points: 4
+    - id: mod-w08.project.K1.c07
+      rule: F5.i4 = 5
+      depends_on:
+      - F5.i4 terbaca
+      points: 4
+    - id: mod-w08.project.K1.c08
+      rule: F5.i5 = 5
+      depends_on:
+      - F5.i5 terbaca
+      points: 4
+    - id: mod-w08.project.K1.c09
+      rule: F5.i6 = 5
+      depends_on:
+      - F5.i6 terbaca
+      points: 4
+    - id: mod-w08.project.K1.c10
+      rule: F6 = -3
+      depends_on:
+      - F6 terbaca
+      points: 6
+    - id: mod-w08.project.K1.c11
+      rule: F7 = 0
+      depends_on:
+      - F7 terbaca
+      points: 5
+    - id: mod-w08.project.K1.c12
+      rule: F8 = 6
+      depends_on:
+      - F8 terbaca
+      points: 5
+  K2:
+    name: Kelengkapan deliverable
+    points: 20
+    definition: 'MR-A (D-33): deliverable ada DAN terbaca; kebenaran di K1'
+    checks:
+    - id: mod-w08.project.K2.c01
+      rule: F1 terbaca
+      depends_on:
+      - F1
+      points: 2
+    - id: mod-w08.project.K2.c02
+      rule: F2 terbaca
+      depends_on:
+      - F2
+      points: 2
+    - id: mod-w08.project.K2.c03
+      rule: F3 terbaca
+      depends_on:
+      - F3
+      points: 2
+    - id: mod-w08.project.K2.c04
+      rule: F4 terbaca
+      depends_on:
+      - F4
+      points: 2
+    - id: mod-w08.project.K2.c05
+      rule: Kelima sel F5 terbaca
+      depends_on:
+      - F5
+      points: 6
+    - id: mod-w08.project.K2.c06
+      rule: F6 terbaca
+      depends_on:
+      - F6
+      points: 2
+    - id: mod-w08.project.K2.c07
+      rule: F7 terbaca
+      depends_on:
+      - F7
+      points: 2
+    - id: mod-w08.project.K2.c08
+      rule: F8 terbaca
+      depends_on:
+      - F8
+      points: 2
+  K3:
+    name: Struktur dan format
+    points: 10
+    checks:
+    - id: mod-w08.project.K3.c01
+      rule: Kelima sel F5 terbaca DAN number_strict
+      depends_on:
+      - F5
+      points: 4
+    - id: mod-w08.project.K3.c02
+      rule: F6 dan F7 terbaca DAN number_strict
+      depends_on:
+      - F6
+      - F7
+      points: 3
+    - id: mod-w08.project.K3.c03
+      rule: F8 terbaca DAN number_strict
+      depends_on:
+      - F8
+      points: 3
+  K4:
+    name: Penjelasan proyek (komposisi K-A, 5 × CE-S1, P = 2)
+    points: 10
+    note: 'Soal tentang tugas proyek ini; terpisah dari komponen Concept explanation W8 (D-33 A.2a). Posisi
+      kunci: d, a, c, b, d'
+    items:
+    - id: mod-w08.project.K4.q1
+      lo: comp-w08-correct-01
+      stem: Mengapa satu daftar uji yang menghasilkan output benar belum membuktikan flowchart benar?
+      options:
+        a: Karena output selalu salah
+        b: Karena daftar uji harus berisi tepat 6 nilai
+        c: Karena flowchart tidak boleh diuji
+        d: Karena pilihan blok yang salah bisa kebetulan benar untuk daftar tertentu; kebenaran harus
+          berlaku untuk semua daftar dalam domain
+      key: d
+      points: 2
+      feedback: Pilih beberapa kasus uji yang mengincar kesalahan umum (W8 pelajaran 4).
+    - id: mod-w08.project.K4.q2
+      lo: comp-w08-loop-01
+      stem: Blok mana pada templat yang membuat perulangan bergerak menuju berhenti?
+      options:
+        a: B7 `i ← i + 1`
+        b: B6 `maks ← A[i]`
+        c: B9 Output maks
+        d: B1 Mulai
+      key: a
+      points: 2
+      feedback: Variabel pengendali harus berubah mendekati syarat berhenti (W8 pelajaran 3).
+    - id: mod-w08.project.K4.q3
+      lo: comp-w08-branch-01
+      stem: Pada templat, bila keputusan B5 bernilai Ya, apa yang terjadi?
+      options:
+        a: Flowchart langsung selesai
+        b: i dikembalikan ke 2
+        c: '`maks` diganti A[i], lalu lanjut ke B7'
+        d: Output maks ditampilkan
+      key: c
+      points: 2
+      feedback: 'Ikuti kolom "Berikutnya" pada tabel blok: B5 Ya → B6 → B7.'
+    - id: mod-w08.project.K4.q4
+      lo: comp-w08-symbol-01
+      stem: Mengapa B5 berbentuk belah ketupat?
+      options:
+        a: Karena B5 memberi nilai pada variabel
+        b: Karena B5 adalah keputusan dengan dua jalur keluar, Ya dan Tidak
+        c: Karena B5 adalah input
+        d: Karena B5 adalah akhir flowchart
+      key: b
+      points: 2
+      feedback: Belah ketupat = keputusan; selalu punya dua cabang (W8 pelajaran 2).
+    - id: mod-w08.project.K4.q5
+      lo: comp-w08-trace-01
+      stem: Pada tabel penelusuran, mengapa nilai `maks` dapat sama pada beberapa baris berturut-turut?
+      options:
+        a: Karena perulangan berhenti
+        b: Karena i tidak berubah
+        c: Karena tabel penelusuran selalu berisi nilai yang sama
+        d: Karena bila B5 bernilai Tidak, B6 dilewati sehingga `maks` tidak berubah pada putaran itu
+      key: d
+      points: 2
+      feedback: Nilai lama tetap berlaku sampai diganti (W8 pelajaran 3).
+point_check: K1 4×6 + 5×4 + 6 + 5 + 5 = 60; K2 4×2 + 6 + 3×2 = 20; K3 4+3+3 = 10; K4 5×2 = 10; total 100
+solution_analysis:
+  blocks: 'Kombinasi F1–F4 bernilai penuh: 2 (F1 = b, F2 = b, F3 = a atau d, F4 = b), diverifikasi dengan
+    interpreter tingkat-blok yang menjalankan 4⁴ = 256 kombinasi pada 14 daftar uji (negatif, positif,
+    campuran, nilai sama, satu nilai). F4 = c (kembali ke B5) melewati penjaga B4 dan mengakses A[n +
+    1] (di luar daftar); F4 = a tidak berhenti untuk n ≥ 2; F4 = d keluar setelah satu putaran'
+  values: F5–F8 tunggal
+  total_full_score_sets: 2
+  reference_strict:
+    F1: b
+    F2: b
+    F3: a
+    F4: b
+    F5:
+      i2: '-2'
+      i3: '-2'
+      i4: '5'
+      i5: '5'
+      i6: '5'
+    F6: '-3'
+    F7: '0'
+    F8: '6'
+reviewer_examples:
+- id: E01
+  case: Isian acuan (F3 = a, `>`)
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E02
+  case: F3 = d (`≥`), lainnya acuan
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E03
+  case: F1 = a (`maks ← 0`)
+  K1: 54
+  K2: 20
+  K3: 10
+  total: 94
+  zero:
+  - K1.c01
+- id: E04
+  case: F2 = a (`i < n?`)
+  K1: 54
+  K2: 20
+  K3: 10
+  total: 94
+  zero:
+  - K1.c02
+- id: E05
+  case: F4 = a (kembali ke B3)
+  K1: 54
+  K2: 20
+  K3: 10
+  total: 94
+  zero:
+  - K1.c04
+- id: E06
+  case: F5.i2 = `-7` (lupa mengganti maks)
+  K1: 56
+  K2: 20
+  K3: 10
+  total: 96
+  zero:
+  - K1.c05
+- id: E07
+  case: F6 = `0` (menelusuri dengan nilai awal 0)
+  K1: 54
+  K2: 20
+  K3: 10
+  total: 94
+  zero:
+  - K1.c10
+- id: E08
+  case: F5 ditulis `maks = …`
+  K1: 60
+  K2: 20
+  K3: 6
+  total: 96
+  zero:
+  - K3.c01
+- id: E09
+  case: F8 = `5` (pemeriksaan terakhir tidak dihitung)
+  K1: 55
+  K2: 20
+  K3: 10
+  total: 95
+  zero:
+  - K1.c12
+- id: E10
+  case: F8 = `6 kali`
+  K1: 60
+  K2: 20
+  K3: 7
+  total: 97
+  zero:
+  - K3.c03
+- id: E11
+  case: Semua isian kosong
+  K1: 0
+  K2: 0
+  K3: 0
+  total: 0 untuk K1–K3 (MR-6); K4 sesuai jawaban
+  zero: semua K1–K3
+- id: E12
+  case: F3 = `e` (di luar a–d)
+  K1: 54
+  K2: 18
+  K3: 10
+  total: 92
+  zero:
+  - K1.c03
+  - K2.c03
+- id: E13
+  case: F5.i4 = `5,0` (desimal)
+  K1: 56
+  K2: 14
+  K3: 6
+  total: 86
+  zero:
+  - K1.c07
+  - K2.c05
+  - K3.c01
+- id: E14
+  case: F5 tanpa baris i6
+  K1: 56
+  K2: 14
+  K3: 6
+  total: 86
+  zero:
+  - K1.c09
+  - K2.c05
+  - K3.c01
+- id: E15
+  case: F5 berisi baris tak dikenal i9 di samping i2–i6 acuan
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E16
+  case: Struktur luar F5 rusak (daftar, bukan tabel baris)
+  K1: 40
+  K2: 14
+  K3: 6
+  total: 70
+  zero:
+  - K1.c05
+  - K1.c06
+  - K1.c07
+  - K1.c08
+  - K1.c09
+  - K2.c05
+  - K3.c01
+- id: E17
+  case: F6 memakai tanda minus `−` (U+2212)
+  K1: 60
+  K2: 20
+  K3: 10
+  total: 100
+  zero: []
+- id: E18
+  case: 'F4 = c (kembali ke B5: melewati penjaga B4, A[n + 1] di luar daftar)'
+  K1: 54
+  K2: 20
+  K3: 10
+  total: 94
+  zero:
+  - K1.c04
+- id: E19
+  case: 'F4 = d (kembali ke B9: keluar setelah satu putaran)'
+  K1: 54
+  K2: 20
+  K3: 10
+  total: 94
+  zero:
+  - K1.c04
+- id: E20
+  case: F4 = `e` (di luar a–d)
+  K1: 54
+  K2: 18
+  K3: 10
+  total: 92
+  zero:
+  - K1.c04
+  - K2.c04

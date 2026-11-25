@@ -43,7 +43,7 @@ variants:
     Langkah 3: /foto kosong. Langkah 4: a.jpg kembali ke /foto. Hasil /foto 1, /cadangan 2.'
 - item_id: item-w02-t-s17-b
   variant_id: mod-w02.theory.s17.vB
-  item_version: '1.0'
+  item_version: '2.0'
   stem: 'Keadaan awal: `/tugas` berisi `esai.docx` dan `peta.png`; `/kirim` berisi `peta.png`. Operasi
     pada tabel dijalankan berurutan dengan aturan model W2 (nama sama di tujuan → operasi ditolak; berkas
     di Tempat Sampah tidak dihitung). Berapa berkas di `/tugas` dan di `/kirim` setelah langkah 4?'
@@ -57,21 +57,21 @@ variants:
   - - '3'
     - Hapus /kirim/peta.png
   - - '4'
-    - Kosongkan Tempat Sampah
+    - Pulihkan peta.png dari Tempat Sampah
   options:
   - id: a
     text: /tugas 1 berkas, /kirim 2 berkas
   - id: b
-    text: /tugas 2 berkas, /kirim 1 berkas
+    text: /tugas 2 berkas, /kirim 2 berkas
   - id: c
     text: /tugas 1 berkas, /kirim 1 berkas
   - id: d
-    text: /tugas 2 berkas, /kirim 2 berkas
+    text: /tugas 2 berkas, /kirim 1 berkas
   key: b
   distractor_rationale:
     a: Mengabaikan penolakan langkah 1
-    c: Menganggap salin sama dengan pindah
-    d: Melupakan penghapusan di langkah 3
+    c: Menganggap salin sama dengan pindah dan melupakan pemulihan
+    d: Melupakan pemulihan di langkah 4
   explanation: 'Langkah 1 ditolak (peta.png sudah ada di /kirim). Langkah 2: /kirim = peta.png, esai.docx;
-    /tugas tetap 2. Langkah 3: peta.png di /kirim ke Tempat Sampah. Langkah 4: Tempat Sampah dikosongkan.
-    Hasil /tugas 2, /kirim 1.'
+    /tugas tetap 2. Langkah 3: peta.png di /kirim ke Tempat Sampah. Langkah 4: peta.png dipulihkan ke
+    /kirim. Hasil /tugas 2, /kirim 2.'

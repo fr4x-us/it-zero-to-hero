@@ -44,11 +44,11 @@ variants:
   feedback: Phishing memanipulasi orang; trojan menyamar; tanda adalah alasan curiga, bukan bukti pasti.
 - item_id: item-w04-c-s02-b
   variant_id: mod-w04.concept.s02.vB
-  item_version: '1.0'
+  item_version: '3.0'
   stem: Pilih **semua** pernyataan yang benar tentang ancaman.
   options:
   - id: a
-    text: Ransomware hanya menyerang perusahaan besar
+    text: Phishing tidak termasuk rekayasa sosial karena dilakukan lewat pesan, bukan tatap muka
   - id: b
     text: Rekayasa sosial memanipulasi orang agar menyerahkan akses atau informasi
   - id: c
@@ -56,15 +56,16 @@ variants:
   - id: d
     text: Spyware selalu menampilkan pemberitahuan saat bekerja
   - id: e
-    text: Satu tanda phishing sudah cukup alasan untuk berhati-hati
+    text: Satu tanda phishing sudah cukup alasan untuk berhati-hati, walaupun tanda itu belum membuktikan
+      pesannya pasti phishing
   key:
   - b
   - c
   - e
   distractor_rationale:
-    a: Serangan sering dikirim massal ke siapa saja
+    a: Phishing adalah salah satu bentuk rekayasa sosial, apa pun salurannya
     d: Spyware bekerja diam-diam
   credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
     pengurangan hanya di soal ini, tidak pernah negatif
   feedback: Rekayasa sosial menyasar orang; trojan menyamar sebagai aplikasi berguna; satu tanda cukup
-    untuk waspada.
+    untuk waspada, tetapi tanda bukan bukti pasti.

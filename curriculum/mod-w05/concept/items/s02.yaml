@@ -1,0 +1,72 @@
+# W5 — bank soal penjelasan konsep (D-23; kunci tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.concept.s02
+competency: comp-w05-expr-01
+required_concepts:
+- variabel
+- substitusi
+- pangkat
+- rata-rata
+format: CE-S2
+max_points: 3
+content_version: '1.0'
+validation:
+- CE-V1 kosong → 0 poin
+- CE-V2 ID tidak dikenal → 0 poin, INVALID_ANSWER
+- CE-V3 ID ganda → 0 poin, INVALID_ANSWER
+- CE-V4 bentuk salah → 0 poin, INVALID_ANSWER
+- CE-V5 jawaban sebagian dinilai sesuai format
+- CE-V7 kunci hilang/konten rusak → EVALUATION_ERROR, bukan 0 poin
+feedback_stage: Kunci dan umpan balik ditampilkan setelah attempt dinilai
+variants:
+- item_id: item-w05-c-s02-a
+  variant_id: mod-w05.concept.s02.vA
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: Variabel adalah nama untuk nilai yang dapat berbeda-beda
+  - id: b
+    text: Dalam `y = 2 × x`, bila `x = 5` maka `y = 10`
+  - id: c
+    text: '`3²` sama dengan `3 × 2`'
+  - id: d
+    text: Rata-rata = jumlah semua nilai dibagi banyaknya nilai
+  - id: e
+    text: Huruf dalam rumus selalu bernilai 0
+  key:
+  - a
+  - b
+  - d
+  distractor_rationale:
+    c: 3² = 3 × 3 = 9, bukan 6
+    e: Nilai huruf ditentukan saat substitusi
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: Variabel diganti nilainya saat substitusi; pangkat dua berarti dikalikan dengan dirinya sendiri;
+    rata-rata = jumlah ÷ banyak.
+- item_id: item-w05-c-s02-b
+  variant_id: mod-w05.concept.s02.vB
+  item_version: '1.0'
+  stem: Pilih **semua** pernyataan yang benar.
+  options:
+  - id: a
+    text: Nama variabel yang berbeda mengubah hasil perhitungan walaupun nilainya sama
+  - id: b
+    text: '`2³ = 8`'
+  - id: c
+    text: Substitusi berarti mengganti variabel dengan nilainya
+  - id: d
+    text: Rata-rata 4, 5, dan 9 adalah 18
+  - id: e
+    text: Dalam `total = harga × jumlah`, nilai `total` bergantung pada `harga` dan `jumlah`
+  key:
+  - b
+  - c
+  - e
+  distractor_rationale:
+    a: Nama hanyalah label; hasil bergantung pada nilai
+    d: 18 adalah jumlahnya; rata-rata = 18 ÷ 3 = 6
+  credit_rule: max(0, benar_dipilih − salah_dipilih); penuh hanya bila himpunan tepat sama dengan kunci;
+    pengurangan hanya di soal ini, tidak pernah negatif
+  feedback: 2³ = 2 × 2 × 2 = 8; substitusi mengganti variabel dengan nilai; total bergantung pada harga
+    dan jumlah.

@@ -1059,3 +1059,69 @@ NOT STARTED / NOT AUTHORIZED.
 
 PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
 D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.
+
+## 23. Pembaruan status — merge PR #27, W02-ACC–W04-ACC, CB-2 (W5–W8) (2026-11-24)
+
+PR #27 di-merge pada head `1a58338bcc863320ff4eafbb0f407cee4b2a9f59`
+(merge commit `846051f66ee4d1e36e9b34e0c9d1787fb713617b`) atas otorisasi
+eksplisit owner. Owner menerima W2–W4 (W02-ACC–W04-ACC) berdasarkan review
+independen "PASS — targeted delta review with disclosed limitations";
+penerimaan ini **bukan** verifikasi menyeluruh. Owner mengotorisasi CB-2
+(W5–W8).
+
+### 23.1 Perubahan per butir
+
+| ID | Sebelum | Sesudah | AC | Bukti |
+|---|---|---|---|---|
+| UW-37 | OPEN | OPEN (tidak berubah) | CUR:CC-01–CC-11 untuk 64 komponen + penerimaan | Diproduksi 32/64 (W1–W8); diterima owner 16/64 (W1–W4); W5–W8 belum direview independen; W9–W16 belum diproduksi. **Tidak** COMPLETE |
+| UW-26 | OPEN | OPEN (tidak berubah) | Rubrik/bank concept per modul (16 modul) | Bank concept W1–W8 ada (8/16 modul, 96/192 soal); 8 modul belum |
+| Lainnya | — | Tidak berubah | — | CB-2 hanya konten kurikulum + metadata penerimaan + dokumen status |
+
+### 23.2 Jumlah per status (56 butir)
+
+COMPLETE 32 · OPEN 4 (UW-12, UW-26, UW-37, UW-52) · BLOCKED 12 ·
+DEFERRED 3 · NOT VERIFIED 5 = **56** (tidak berubah dari §22). Jalur P
+32/43 (74,4%); register 32/56 (57,1%).
+
+### 23.3 Kurikulum (dilaporkan terpisah: produksi, review, penerimaan)
+
+| Ukuran | Diproduksi | Review independen | Diterima owner |
+|---|---|---|---|
+| Modul | 8/16 (W1–W8) | 4/16 (W1–W4, terbatas) | 4/16 (W1–W4) |
+| Komponen penilaian | **32/64** (50%) | 16/64 | **16/64** (25%) |
+| Soal teori | 320/620 | 160 | 160 |
+| Soal concept | 96/192 | 48 | 48 |
+| Spesifikasi lab | 48/96 | 24 | 24 |
+| Mini-project | 8/16 | 4 | 4 |
+
+W9–W16: NOT STARTED / NOT AUTHORIZED. Format editor flowchart (M-10) dan
+bentuk entri ekspresi Boolean tetap OPEN untuk owner; W6/W8 memakai bentuk
+jawaban terstruktur di bawah EB-4 (D-24).
+
+PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
+D-11: DEFERRED · PY:F-01–F-15 NOT VERIFIED · CT-1–CT-12 NOT VERIFIED.
+
+## 24. Pembaruan status — D-39 dan koreksi PR #28 putaran 3–4 (2026-11-25)
+
+Owner menyetujui D-39 (HYBRID COMPETENCY COVERAGE). Audit cakupan W1–W8 dan
+koreksi terarah tercatat di
+[CURRICULUM_COVERAGE_MATRIX_W01_W08.md](CURRICULUM_COVERAGE_MATRIX_W01_W08.md).
+Tidak ada perubahan status butir: COMPLETE 32 · OPEN 4 · BLOCKED 12 ·
+DEFERRED 3 · NOT VERIFIED 5 = **56**; jalur P 32/43; UW-26 dan UW-37 OPEN.
+Kurikulum: diproduksi 8/16 modul (32/64 komponen; 64/128 jam); diterima owner
+8/16 (32/64; 64/128 jam) — W1–W4 historis (W01-ACC–W04-ACC) dengan 21 varian revisi
+(14 sebelum putaran 6; 16 sebelum putaran 7; 20 sebelum putaran 8; 21 final) diterima
+pada versi review (PR #28 ACC); W5–W8 W05-ACC–W08-ACC (CB-2, batas diungkapkan). W9–W16 NOT STARTED / NOT AUTHORIZED.
+
+PLANNING CLEAR: NO · IMPLEMENTATION VERIFIED: NO · D-10: NOT AUTHORIZED ·
+D-11: DEFERRED.
+
+**Putaran 5 (review `796043c`)**: cakupan = **hasil penulis** 153 PASS, 3 OPEN (bukti semantik lemah: W3 peran router/switch, W4 OTP), 0 GAP; kesetaraan varian 43 PASS, 5 OPEN (W3 s03, W4 s01, s03, W7 s02, s03); usulan koreksi menunggu otorisasi owner (matriks §7). PR28-06 tetap OPEN. Status butir audit dan angka kurikulum tidak berubah (32/4/12/3/5 = 56; P 32/43; 8/16 dan 32/64 diproduksi; 4/16 dan 16/64 diterima historis; 14 varian W1–W4 PENDING).
+
+**Putaran 6 (koreksi terarah, otorisasi owner terbatas)**: diterapkan hanya W3 concept s03 vB, W4 concept s03 vB, W7 concept s02 vB, W7 concept s03 vB (versi 2.0; posisi kunci tetap). Cakupan = **hasil penulis** 153 PASS, 3 OPEN (W3 router/switch, W4 OTP — usulan §7 tidak diotorisasi), 0 GAP; kesetaraan 47 PASS, 1 OPEN (W4 concept s01). R5-01 elemen bernilai tepat, R5-04 NB-5 konten cacat, R5-05 field slot bersama di validator penerimaan; 16 varian W1–W4 PENDING. CB-2 belum diterima; PR28-06 tetap OPEN.
+
+**Putaran 7 (koreksi konsolidasi, otorisasi owner bersyarat)**: direvisi W3 concept s01 vA/vB, W4 concept s01 vA, W4 teori s10 vA (versi 2.0; kunci tetap); 4 revisi putaran 6 tidak diubah. Cakupan = **hasil penulis** 156 PASS, 0 OPEN, 0 GAP; kesetaraan 48 PASS, 0 OPEN — belum diverifikasi independen. R6-01 jangkar baseline penerimaan tepercaya, R6-02 identitas lokasi varian, R6-03 integritas kunci, R6-04 kombinasi afiks NB-5, R6-05 pemindai NB-5 tahan konten cacat, R6-06 akurasi dokumentasi; VA-2/R3-04 CONDITIONAL PASS (pencatatan atomik varian semua slot belum dinyatakan eksplisit; SB-12/OD-9). 20 varian W1–W4 PENDING. CB-2 belum diterima; PR28-06 tetap OPEN.
+
+**Putaran 8 (koreksi terarah final, otorisasi owner O-1/O-2)**: hanya stem W4 teori s10 vA (3.0) dan vB (2.0) diubah; kontrak desain atomik VA-4a dicatat (CCD §B.2, DECISIONS_LOG); R7-02 pemindai NB-5 mengenali konsumen dari deklarasi normalization. Cakupan 156/0/0 dan kesetaraan 48/0 (hasil penulis); R3-04 CONDITIONAL PASS (implementasi dan OD-9/UW-33 tertunda). 21 varian W1–W4 PENDING. CB-2 belum diterima; PR28-06 tetap OPEN.
+
+**Penerimaan owner final (2026-11-25)**: CB-2 **ACCEPTED WITH DISCLOSED LIMITATIONS** (verdict independen "PASS — targeted delta review with disclosed limitations"). W05-ACC–W08-ACC pada snapshot HEAD review `b54f930b0cf4479e2984fc148e2bc91c443e1ada`; 21 varian revisi W1–W4 (W1 1, W2 8, W3 5, W4 7) diterima owner pada versi persis di HEAD review `b54f930` (PR #28 ACC; `independent_review: TARGETED_LIMITED`, bukan verifikasi independen per varian); W01-ACC–W04-ACC dan baseline aslinya tetap. Kurikulum diproduksi 8/16 modul (64/128 jam) dan diterima 8/16 (64/128 jam). Disposisi: R7-01 FIX VERIFIED dan R7-02 PASS (review statis terarah); O-1 selesai; O-2/VA-4a PASS tingkat kontrak desain (belum diimplementasikan); R3-04 CONDITIONAL PASS; PR28-02 PARTIAL PASS independen; PR28-06 diterima untuk perencanaan kurikulum di bawah penerimaan owner dan batas review terarah. Batas review terarah (DECISIONS_LOG): bukan audit menyeluruh; putaran 8 memeriksa langsung 7 dari 20 berkas; 156 konsep tidak diverifikasi ulang independen; paket validasi tidak dijalankan ulang independen (clone terhambat); tanpa uji pelajar; tanpa runtime Android. Status butir audit **tidak berubah** (32/4/12/3/5 = 56; P 32/43): UW-26 dan UW-37 tetap OPEN karena W9–W16 belum diproduksi. OD-9, SB-12, UW-33, M-10, entri Boolean, huruf `Rp` tetap terbuka. Merge PR #28 menunggu kalimat otorisasi persis (CLAUDE.md).

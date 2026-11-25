@@ -1,0 +1,221 @@
+# W5 — pemeriksaan lab (kunci; tidak ditampilkan sebelum dievaluasi)
+activity_id: mod-w05.lab.act-02
+name: Persentase, pembulatan, dan rata-rata
+competencies:
+- comp-w05-pct-01
+- comp-w05-round-01
+- comp-w05-expr-01
+max_points: 40
+estimated_minutes: 40
+content_version: '1.0'
+xp: Tidak ada identitas XP per aktivitas; XP pada identitas komponen mod-w05.lab (D-28 XI-2)
+normalization: 'Buang spasi/tab di awal dan akhir; lalu terapkan kontrak NB-5 berurutan (N1–N6; N1 = buang
+  spasi tepi). N2 bentuk angka: bilangan bulat tanpa nol di depan; pemisah desimal hanya koma (`12,5`)
+  dengan tepat sebanyak angka desimal yang diminta soal; titik hanya sebagai pemisah ribuan dengan kelompok
+  tepat tiga digit (`1.250`); tanda minus `-` atau `−` hanya untuk bilangan negatif. N3 afiks: hanya awalan
+  `Rp` (butir rupiah) dan akhiran satuan yang tercantum pada accepted_answers butir ini, masing-masing
+  dengan/tanpa satu spasi. N4 huruf: besar/kecil diabaikan hanya pada akhiran satuan itu (mis. `MENIT`,
+  `°c`); awalan `Rp` ditulis persis. N5 kanonisasi: `−` → `-`, titik ribuan dan afiks dihapus. N6 bandingkan
+  angka kanonik dengan angka kanonik accepted_answers; accepted_answers adalah bentuk kanonik beserta
+  contoh bentuk yang diterima, bukan daftar tertutup. Ditolak: titik sebagai desimal (`12.5`), nol di
+  depan, pecahan (`1/2`), kata, satuan atau afiks lain, angka desimal lebih/kurang dari yang diminta.
+  Satuan data/kecepatan (bit/byte, mis. `MB/s`, `Mbps`) bukan bagian NB-5 dan tetap peka huruf (F-51).
+  Pembulatan: lihat satu angka setelah tempat pembulatan; 5 atau lebih → naik (bilangan positif)'
+answer_validation: Kosong atau bentuk ditolak (NB-5) → 0 untuk pemeriksaan itu (INVALID_ANSWER bila bentuk
+  tidak sah); pemeriksaan lain tetap dinilai (kredit independen)
+infrastructure: Kegagalan infrastruktur/konten → EVALUATION_ERROR, evaluasi diulang dari submission yang
+  sama tanpa attempt baru (D-24 IE-2); bukan skor 0
+feedback_stage: 'Setelah aktivitas dievaluasi: benar/salah per pemeriksaan + pembahasan langkah. W5 tidak
+  memiliki test kode tersembunyi (D-36 HF-A tidak berlaku)'
+runtime: Tidak memerlukan runtime Python; pemeriksaan deterministik atas jawaban angka/kata (evaluator
+  pasti, CUR §6)
+variants:
+- variant_id: mod-w05.lab.act-02.vA
+  visible_example:
+    note: 'Contoh terlihat (0 poin): 50% dari 18 = 9; 2,34 dibulatkan ke satu desimal = 2,3'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w05.lab.act-02.vA.c01
+    name: Persen dari
+    question: Berapa **15%** dari **260**?
+    accepted_answers:
+    - '39'
+    points: 5
+    explanation: 15/100 × 260 = 39
+  - check_id: mod-w05.lab.act-02.vA.c02
+    name: Diskon
+    question: Harga **Rp75.000** diskon **20%**. Harga setelah diskon (rupiah)?
+    accepted_answers:
+    - '60000'
+    - '60.000'
+    - Rp60000
+    - Rp 60000
+    - Rp60.000
+    - Rp 60.000
+    points: 5
+    explanation: 20% × 75.000 = 15.000; 75.000 − 15.000 = 60.000
+  - check_id: mod-w05.lab.act-02.vA.c03
+    name: Persen kenaikan
+    question: Nilai naik dari **50** menjadi **65**. Persen kenaikan terhadap nilai awal?
+    accepted_answers:
+    - '30'
+    - 30 %
+    - 30%
+    - 30 persen
+    - 30persen
+    points: 5
+    explanation: 15 ÷ 50 = 0,3 = 30%
+  - check_id: mod-w05.lab.act-02.vA.c04
+    name: Nilai awal
+    question: '**Rp96.000** adalah **80%** dari harga awal. Berapa harga awal (rupiah)?'
+    accepted_answers:
+    - '120000'
+    - '120.000'
+    - Rp120000
+    - Rp 120000
+    - Rp120.000
+    - Rp 120.000
+    points: 5
+    explanation: '96.000 ÷ 0,8 = 120.000 (periksa: 80% × 120.000 = 96.000)'
+  - check_id: mod-w05.lab.act-02.vA.c05
+    name: Pembulatan
+    question: Bulatkan **18,75** ke **satu** angka di belakang koma.
+    accepted_answers:
+    - 18,8
+    points: 5
+    explanation: 'Angka berikutnya 5 → naik: 18,8'
+  - check_id: mod-w05.lab.act-02.vA.c06
+    name: Pembulatan tidak bertahap
+    question: Bulatkan **6,449** ke **satu** angka di belakang koma.
+    accepted_answers:
+    - 6,4
+    points: 5
+    explanation: 'Hanya angka setelah persepuluhan (4) yang dilihat: 6,4'
+  - check_id: mod-w05.lab.act-02.vA.c07
+    name: Rata-rata
+    question: Rata-rata **7, 9, 10, 8, 9** (tepat, satu angka di belakang koma)?
+    accepted_answers:
+    - 8,6
+    points: 5
+    explanation: Jumlah 43; 43 ÷ 5 = 8,6
+  - check_id: mod-w05.lab.act-02.vA.c08
+    name: Pembulatan ke atas
+    question: '**73 peserta** duduk di meja berisi paling banyak **6 orang**. Meja paling sedikit?'
+    accepted_answers:
+    - '13'
+    - 13 meja
+    - 13meja
+    points: 5
+    explanation: 73 ÷ 6 = 12 sisa 1 → 13 meja
+- variant_id: mod-w05.lab.act-02.vB
+  visible_example:
+    note: 'Contoh terlihat (0 poin): 50% dari 18 = 9; 2,34 dibulatkan ke satu desimal = 2,3'
+  visibility: spec.md = terlihat pelajar sebelum dinilai (fixture dalam urutan tampil); berkas ini = khusus
+    penilai sebelum dinilai; feedback = setelah dinilai (CB-0 §1a)
+  checks:
+  - check_id: mod-w05.lab.act-02.vB.c01
+    name: Persen dari
+    question: Berapa **35%** dari **140**?
+    accepted_answers:
+    - '49'
+    points: 5
+    explanation: 35/100 × 140 = 49
+  - check_id: mod-w05.lab.act-02.vB.c02
+    name: Diskon
+    question: Harga **Rp84.000** diskon **25%**. Harga setelah diskon (rupiah)?
+    accepted_answers:
+    - '63000'
+    - '63.000'
+    - Rp63000
+    - Rp 63000
+    - Rp63.000
+    - Rp 63.000
+    points: 5
+    explanation: 25% × 84.000 = 21.000; 84.000 − 21.000 = 63.000
+  - check_id: mod-w05.lab.act-02.vB.c03
+    name: Persen kenaikan
+    question: Harga naik dari **Rp40.000** menjadi **Rp46.000**. Persen kenaikan terhadap harga awal?
+    accepted_answers:
+    - '15'
+    - 15 %
+    - 15%
+    - 15 persen
+    - 15persen
+    points: 5
+    explanation: 6.000 ÷ 40.000 = 0,15 = 15%
+  - check_id: mod-w05.lab.act-02.vB.c04
+    name: Nilai awal
+    question: '**Rp54.000** adalah **90%** dari harga awal. Berapa harga awal (rupiah)?'
+    accepted_answers:
+    - '60000'
+    - '60.000'
+    - Rp60000
+    - Rp 60000
+    - Rp60.000
+    - Rp 60.000
+    points: 5
+    explanation: '54.000 ÷ 0,9 = 60.000 (periksa: 90% × 60.000 = 54.000)'
+  - check_id: mod-w05.lab.act-02.vB.c05
+    name: Pembulatan
+    question: Bulatkan **24,35** ke **satu** angka di belakang koma.
+    accepted_answers:
+    - 24,4
+    points: 5
+    explanation: 'Angka berikutnya 5 → naik: 24,4'
+  - check_id: mod-w05.lab.act-02.vB.c06
+    name: Pembulatan tidak bertahap
+    question: Bulatkan **9,849** ke **satu** angka di belakang koma.
+    accepted_answers:
+    - 9,8
+    points: 5
+    explanation: 'Hanya angka setelah persepuluhan (4) yang dilihat: 9,8'
+  - check_id: mod-w05.lab.act-02.vB.c07
+    name: Rata-rata
+    question: Rata-rata **6, 9, 8, 10, 8** (tepat, satu angka di belakang koma)?
+    accepted_answers:
+    - 8,2
+    points: 5
+    explanation: Jumlah 41; 41 ÷ 5 = 8,2
+  - check_id: mod-w05.lab.act-02.vB.c08
+    name: Pembulatan ke atas
+    question: '**95 peserta** naik bus berisi paling banyak **40 orang**. Bus paling sedikit?'
+    accepted_answers:
+    - '3'
+    - 3 bus
+    - 3bus
+    points: 5
+    explanation: 95 ÷ 40 = 2 sisa 15 → 3 bus
+normalization_examples:
+  c02 (kunci 60000, vA):
+    diterima:
+    - '60000'
+    - '60.000'
+    - Rp60.000
+    - Rp 60.000
+    - Rp60000
+    ditolak (0 poin):
+    - 60,000
+    - '060000'
+    - '60.00'
+    - 60 ribu
+    - Rp 60.000,-
+  c05 (kunci 18,8, vA):
+    diterima:
+    - 18,8
+    - ' 18,8 '
+    ditolak (0 poin):
+    - '18.8'
+    - 18,80
+    - 18,7
+    - '19'
+  c03 (kunci 30, vA):
+    diterima:
+    - '30'
+    - 30%
+    - 30 %
+    - 30 persen
+    ditolak (0 poin):
+    - 0,3
+    - 30,0
+    - tiga puluh

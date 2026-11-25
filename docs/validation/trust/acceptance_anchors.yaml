@@ -1,0 +1,15 @@
+# R6-01: jangkar penerimaan historis — sumber kepercayaan TERPISAH dari module.yaml yang divalidasi.
+# Setiap jangkar diperiksa silang terhadap: (1) commit merge git dengan subjek "Merge pull request #<pr> ",
+# (2) commit itu leluhur HEAD, (3) baris keputusan owner "| <id> | OWNER ACCEPTED" di docs/DECISIONS_LOG.md.
+# BATAS KEPERCAYAAN: validasi lokal repositori, bukan bukti kriptografis otorisasi owner. Berkas ini sendiri
+# dapat diubah; perubahannya harus terlihat di diff PR dan direview. Jangan menulis ulang jangkar historis.
+# W5–W8 (basis accepted_review_head): baseline = HEAD review PR #28 yang diterima owner, bukan merge commit;
+# subjek merge tidak diperiksa, hanya keberadaan, status leluhur HEAD, dan baris keputusan owner.
+'01': {acceptance_id: W01-ACC, baseline_commit: df76c5fbf946e6e8d2ca9e8e87505454041623a3, pr: 25, decision_log: W01-ACC, revision_acceptance: {id: 'PR #28 ACC', reviewed_head: b54f930b0cf4479e2984fc148e2bc91c443e1ada, decision_log: 'PR #28 ACC'}}
+'02': {acceptance_id: W02-ACC, baseline_commit: 846051f66ee4d1e36e9b34e0c9d1787fb713617b, pr: 27, decision_log: W02-ACC, revision_acceptance: {id: 'PR #28 ACC', reviewed_head: b54f930b0cf4479e2984fc148e2bc91c443e1ada, decision_log: 'PR #28 ACC'}}
+'03': {acceptance_id: W03-ACC, baseline_commit: 846051f66ee4d1e36e9b34e0c9d1787fb713617b, pr: 27, decision_log: W03-ACC, revision_acceptance: {id: 'PR #28 ACC', reviewed_head: b54f930b0cf4479e2984fc148e2bc91c443e1ada, decision_log: 'PR #28 ACC'}}
+'04': {acceptance_id: W04-ACC, baseline_commit: 846051f66ee4d1e36e9b34e0c9d1787fb713617b, pr: 27, decision_log: W04-ACC, revision_acceptance: {id: 'PR #28 ACC', reviewed_head: b54f930b0cf4479e2984fc148e2bc91c443e1ada, decision_log: 'PR #28 ACC'}}
+'05': {acceptance_id: W05-ACC, baseline_commit: b54f930b0cf4479e2984fc148e2bc91c443e1ada, pr: 28, decision_log: W05-ACC, basis: accepted_review_head}
+'06': {acceptance_id: W06-ACC, baseline_commit: b54f930b0cf4479e2984fc148e2bc91c443e1ada, pr: 28, decision_log: W06-ACC, basis: accepted_review_head}
+'07': {acceptance_id: W07-ACC, baseline_commit: b54f930b0cf4479e2984fc148e2bc91c443e1ada, pr: 28, decision_log: W07-ACC, basis: accepted_review_head}
+'08': {acceptance_id: W08-ACC, baseline_commit: b54f930b0cf4479e2984fc148e2bc91c443e1ada, pr: 28, decision_log: W08-ACC, basis: accepted_review_head}

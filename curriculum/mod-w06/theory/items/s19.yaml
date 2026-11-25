@@ -1,0 +1,62 @@
+# W6 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w06.theory.s19
+competency: comp-w06-table-01
+format: TF-5
+difficulty: D2
+max_points: 3
+estimated_seconds: 105
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w06-t-s19-a
+  variant_id: mod-w06.theory.s19.vA
+  item_version: '1.0'
+  stem: Urutkan langkah menyusun tabel kebenaran `(A OR B) AND C`.
+  items:
+  - id: A
+    text: 'Tentukan variabel input (A, B, C) dan banyak baris: 2³ = 8'
+  - id: B
+    text: Tulis kedelapan kombinasi input berurutan dari 000 sampai 111
+  - id: C
+    text: Hitung kolom bantu `A OR B` untuk setiap baris
+  - id: D
+    text: Hitung kolom hasil `(A OR B) AND C` dari kolom bantu dan kolom C
+  display_order:
+  - C
+  - A
+  - D
+  - B
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Banyak baris ditentukan dari variabel; kombinasi ditulis dulu; bagian dalam kurung sebelum
+    hasil akhir.
+- item_id: item-w06-t-s19-b
+  variant_id: mod-w06.theory.s19.vB
+  item_version: '1.0'
+  stem: Urutkan langkah menyusun tabel kebenaran `NOT A OR (B AND C)`.
+  items:
+  - id: A
+    text: 'Tentukan variabel input (A, B, C) dan banyak baris: 2³ = 8'
+  - id: B
+    text: Tulis kedelapan kombinasi input berurutan dari 000 sampai 111
+  - id: C
+    text: Hitung kolom bantu `NOT A` dan `B AND C` untuk setiap baris
+  - id: D
+    text: Hitung kolom hasil `NOT A OR (B AND C)` dari kedua kolom bantu
+  display_order:
+  - D
+  - B
+  - A
+  - C
+  accepted_sequences:
+  - - A
+    - B
+    - C
+    - D
+  scoring_note: 'TP-B: semua-atau-tidak; poin penuh hanya bila urutan sama persis dengan urutan diterima'
+  explanation: Banyak baris ditentukan dari variabel; kombinasi ditulis dulu; kolom bantu sebelum hasil
+    akhir.

@@ -1,0 +1,29 @@
+# W5 — bank soal teori (kunci jawaban; tidak ditampilkan sebelum dinilai)
+slot_id: mod-w05.theory.s09
+competency: comp-w05-divmod-01
+format: TF-3
+difficulty: D2
+max_points: 3
+estimated_seconds: 90
+content_version: '1.0'
+feedback_stage: Kunci dan pembahasan hanya ditampilkan setelah attempt GRADED (FB-A, D-26)
+variants:
+- item_id: item-w05-t-s09-a
+  variant_id: mod-w05.theory.s09.vA
+  item_version: '1.0'
+  stem: Hari ini **Senin**. Hari apa **100 hari** lagi? (Tulis nama hari.)
+  accepted_answers:
+  - Rabu
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    nama hari bahasa Indonesia di accepted_answers. Ditolak: angka, singkatan, nama hari bahasa lain'
+  explanation: '100 ÷ 7 = 14 sisa 2. Setiap 7 hari hari kembali sama, jadi cukup maju 2 hari dari Senin:
+    Rabu.'
+- item_id: item-w05-t-s09-b
+  variant_id: mod-w05.theory.s09.vB
+  item_version: '1.0'
+  stem: Hari ini **Jumat**. Hari apa **45 hari** lagi? (Tulis nama hari.)
+  accepted_answers:
+  - Senin
+  normalization: 'Buang spasi/tab di awal dan akhir; abaikan huruf besar/kecil; cocokkan persis dengan
+    nama hari bahasa Indonesia di accepted_answers. Ditolak: angka, singkatan, nama hari bahasa lain'
+  explanation: '45 ÷ 7 = 6 sisa 3. Maju 3 hari dari Jumat: Sabtu, Minggu, Senin.'
